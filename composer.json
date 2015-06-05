@@ -1,0 +1,16 @@
+{
+    "name":        "phalcon/blog",
+    "description": "Phalcon official Blog http://blog.phalconphp.com",
+    "type":        "project",
+    "license":     "BSD-3-Clause",
+    "support": {
+        "source": "https://github.com/phalcon/blog",
+        "issues": "https://github.com/phalcon/blog/issues",
+        "wiki":   "https://github.com/phalcon/blog/wiki"
+    },
+    "require": {
+        "php": ">= 5.5",
+        "ext-phalcon": ">= 2.0.2",
+        "kzykhys/ciconia": "~1.0.0"
+    }    
+}

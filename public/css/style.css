@@ -1,0 +1,146 @@
+#wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#wrapper #content .post .title {
+    font-size: 28px;
+    color: #000;
+    display: block;
+    margin: 0;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+#wrapper #content .post .copy {
+    color: #000;
+    font-size: 16px;
+}
+
+#wrapper #sidebar #top .heading#followontumblr {
+    background: #0ec281;
+    color: #fff;
+    font-size: auto;
+    box-shadow: none;
+}
+
+#wrapper #sidebar #top #search form .query {
+    width: 170px;
+}
+
+#wrapper #sidebar #top #description {
+    margin-bottom: 10px;
+}
+
+#wrapper #sidebar #top #search form .submit {
+    background: #0ec281;
+}
+
+#wrapper #sidebar #top #search {
+    text-align: center;
+    background: #eaeaea;
+}
+
+#wrapper #sidebar #top #description {
+    font-size: 14px;
+}
+
+#wrapper #content .post .copy blockquote {
+    color: #333;
+    line-height: 24px;
+    padding: 10px;
+    background: #fafafa;
+    text-align: left;
+}
+
+#wrapper #content .bottom,
+#wrapper #sidebar #bottom {
+    background: none;
+}
+
+#wrapper #content {
+    padding-top: 0px;
+    margin-top: 30px;
+}
+
+#wrapper #sidebar {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+#wrapper #sidebar #top .content {
+    background: #fafafa;
+    color: #717171;
+}
+
+#wrapper li {
+    line-height: 24px;
+}
+
+#wrapper ul {
+    margin-top: 15px;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode, pre.sh_sourceCode {
+    border: none;
+    border-left: 3px solid #0ec281;
+    border-radius: 0px;
+    background: #f5f5f5;
+    color: #111111;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#wrapper #content .post .footer {
+    background: #fafafa;
+    color: #717171;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_symbol,
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_cbracket, pre.sh_sourceCode span.sh_symbol, pre.sh_sourceCode span.sh_cbracket {
+    color: #99968b;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_keyword, pre.sh_sourceCode span.sh_keyword {
+    color: #8ac6f2;
+}
+
+#wrapper #content .post em {
+    color: #717171;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: normal;
+    margin: 5px 0 3px;
+    margin-top: 17px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+#wrapper #content .post .copy p {
+    margin: 10px 0 0 0;
+    padding: 0;
+    line-height: 26px;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_string,
+pre .sh_sourceCode span.sh_string {
+    color: #95e454;
+}
+
+#wrapper #content .post .copy pre.sh_sourceCode span.sh_function,
+pre.sh_sourceCode span.sh_function {
+    color: #cae682;
+}
+
+.contributors img {
+    width: 58px;
+    filter: gray;
+    -webkit-filter: grayscale(95%);
+    -moz-filter: grayscale(95%);
+    filter: grayscale(95%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter ….3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}
