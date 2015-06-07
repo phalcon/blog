@@ -1,2 +1,15 @@
+# PHPStorm
+.idea/
+
+# Composer
 composer.lock
-cache/volt/*.php
+vendor/
+
+# Environment specific files
+var/config/config.php
+
+# Cache
+var/cache/
+
+# Logs
+var/logs/

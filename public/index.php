@@ -1,33 +1,24 @@
 <?php
 
+use \Phalcon\DI\FactoryDefault as PhDI;
+use \Kitsune\Bootstrap;
+
 error_reporting(E_ALL);
-
-use Phalcon\Mvc\Application;
-use Phalcon\Config\Adapter\Ini as ConfigIni;
-
 try {
+    /**
+     * Including the bootstrap file explicitly here. The app will be initialized
+     * in that file. All services, routes etc.
+     */
+    require_once '../library/Kitsune/Bootstrap.php';
 
-	define('APP_PATH', realpath('..') . '/');
+    $depInjector = new PhDI();
 
-	/**
-	 * Read the configuration
-	 */
-	$config = new ConfigIni(APP_PATH . 'app/config/config.ini');
+    echo Bootstrap::run($depInjector);
 
-	/**
-	 * Auto-loader configuration
-	 */
-	require APP_PATH . 'app/config/loader.php';
-
-	/**
-	 * Load application services
-	 */
-	require APP_PATH . 'app/config/services.php';
-
-	$application = new Application($di);
-
-	echo $application->handle()->getContent();
-
-} catch (Exception $e){
-	echo $e->getMessage();
+} catch (\Exception $e) {
+    $logger = $depInjector->get('logger');
+    $logger->error($e->getMessage());
+    if (defined('K_DEBUG') && K_DEBUG) {
+        $logger->error('<pre>' . $e->getTraceAsString() . '</pre>');
+    }
 }
