@@ -15,11 +15,11 @@
  +------------------------------------------------------------------------+
 */
 
-use Phalcon\Mvc\View;
 use Phalcon\Mvc\Dispatcher;
-use Phalcon\DI\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Events\Manager as EventsManager;
+use Phalcon\Mvc\Router;
+use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 
@@ -28,89 +28,80 @@ use Kitsune\Plugins\NotFoundPlugin;
 use Ciconia\Extension\Gfm\FencedCodeBlockExtension;
 
 /**
- * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
- */
-$di = new FactoryDefault();
-
-/**
  * We register the events manager
  */
 $di->set(
-	'dispatcher',
-	function() use ($di) {
+    'dispatcher',
+    function () use ($di) {
 
-		$eventsManager = new EventsManager;
+        $eventsManager = new EventsManager;
 
-		/**
-		 * Handle exceptions and not-found exceptions using NotFoundPlugin
-		 */
-		$eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
+        /**
+         * Handle exceptions and not-found exceptions using NotFoundPlugin
+         */
+        $eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
 
-		$dispatcher = new Dispatcher;
-		$dispatcher->setEventsManager($eventsManager);
+        $dispatcher = new Dispatcher;
+        $dispatcher->setEventsManager($eventsManager);
 
-		$dispatcher->setDefaultNamespace('Kitsune\Controllers');
+        $dispatcher->setDefaultNamespace('Kitsune\Controllers');
 
-		return $dispatcher;
-	}
+        return $dispatcher;
+    }
 );
 
 /**
  * The URL component is used to generate all kind of urls in the application
  */
 $di->set(
-	'url',
-	function() use ($config){
-		$url = new UrlProvider();
-		$url->setBaseUri($config->application->baseUri);
-		return $url;
-	}
+    'url',
+    function () use ($config){
+        $url = new UrlProvider();
+        $url->setBaseUri($config->baseUri);
+        return $url;
+    }
 );
 
 
 $di->set(
-	'view',
-	function() use ($config) {
+    'view',
+    function () use ($config) {
 
-		$view = new View();
+        $view = new View();
 
-		$view->setViewsDir(APP_PATH . $config->application->viewsDir);
+        $view->setViewsDir(K_PATH . '/app/views');
+        $view->registerEngines([".volt" => 'volt']);
 
-		$view->registerEngines(array(
-			".volt" => 'volt'
-		));
-
-		return $view;
-	}
+        return $view;
+    }
 );
 
 /**
  * Setting up volt
  */
 $di->set(
-	'volt',
-	function($view, $di) {
+    'volt',
+    function($view, $di) {
 
-		$volt = new VoltEngine($view, $di);
+        $volt = new VoltEngine($view, $di);
 
-		$volt->setOptions(array(
-			"compiledPath" => APP_PATH . "cache/volt/"
-		));
+        $volt->setOptions(["compiledPath" => K_PATH . '/var/cache/volt']);
 
-		return $volt;
-	}
-, true);
+        return $volt;
+    },
+true
+);
 
 /**
  * Start the session the first time some component request the session service
  */
 $di->set(
-	'session',
-	function() {
-		$session = new SessionAdapter();
-		$session->start();
-		return $session;
-	}
+    'session',
+    function () {
+        $session = new SessionAdapter();
+        $session->start();
+        return $session;
+    }
 );
 
 /**
@@ -127,12 +118,11 @@ $di->set(
 );
 
 /**
- * Router
+ * Routes
  */
-$di->set(
-    'router',
-    function () {
-        return require APP_PATH . "app/config/routes.php";
-    },
-    true
-);
+$router = new Router(false);
+$routes = $config->routes->toArray();
+pr($routes);
+foreach ($routes as $pattern => $options) {
+    $router->add($pattern, $options);
+}
