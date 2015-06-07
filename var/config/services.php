@@ -122,7 +122,6 @@ $di->set(
  */
 $router = new Router(false);
 $routes = $config->routes->toArray();
-pr($routes);
 foreach ($routes as $pattern => $options) {
     $router->add($pattern, $options);
 }
