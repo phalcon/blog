@@ -3,31 +3,25 @@
 error_reporting(E_ALL);
 
 use Phalcon\Mvc\Application;
-use Phalcon\Config\Adapter\Ini as ConfigIni;
 
 try {
 
-	define('APP_PATH', realpath('..') . '/');
+	define('K_PATH', dirname(dirname(__FILE__)));
 
 	/**
-	 * Read the configuration
+	 * Config, auto-loader, environment configuration
 	 */
-	$config = new ConfigIni(APP_PATH . 'app/config/config.ini');
-
-	/**
-	 * Auto-loader configuration
-	 */
-	require APP_PATH . 'app/config/loader.php';
+	require K_PATH . '/var/config/loader.php';
 
 	/**
 	 * Load application services
 	 */
-	require APP_PATH . 'app/config/services.php';
+	require K_PATH . '/var/config/services.php';
 
 	$application = new Application($di);
 
 	echo $application->handle()->getContent();
 
-} catch (Exception $e){
+} catch (\Exception $e){
 	echo $e->getMessage();
 }
