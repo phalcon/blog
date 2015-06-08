@@ -55,7 +55,7 @@ $di->set(
  */
 $di->set(
     'url',
-    function () use ($config){
+    function () use ($config) {
         $url = new UrlProvider();
         $url->setBaseUri($config->baseUri);
         return $url;
@@ -81,7 +81,7 @@ $di->set(
  */
 $di->set(
     'volt',
-    function($view, $di) {
+    function ($view, $di) {
 
         $volt = new VoltEngine($view, $di);
 
@@ -89,7 +89,7 @@ $di->set(
 
         return $volt;
     },
-true
+    true
 );
 
 /**
