@@ -1,0 +1,47 @@
+<!--
+slug: phalcon-0-8-released
+date: Wed Jan 09 2013 12:15:00 GMT-0500 (EST)
+tags: php, phalcon, release
+title: Phalcon 0.8 released
+id: 40101666697
+link: http://blog.phalconphp.com/post/40101666697/phalcon-0-8-released
+raw: {"blog_name":"phalconphp","id":40101666697,"post_url":"http://blog.phalconphp.com/post/40101666697/phalcon-0-8-released","slug":"phalcon-0-8-released","type":"text","date":"2013-01-09 17:15:00 GMT","timestamp":1357751700,"state":"published","format":"html","reblog_key":"vXxJx4Y9","tags":["php","phalcon","release"],"short_url":"http://tmblr.co/Z6PumvbMFj_9","highlighted":[],"note_count":2,"source_url":"http://phalconphp.com/download","source_title":"phalconphp.com","title":"Phalcon 0.8 released","body":"<div><img alt=\"image\" src=\"http://static.phalconphp.com/blog/img/falcon8.jpg\"/></div>\n<p>We&rsquo;re very proud to announce the immediate release of Phalcon 0.8. As mentioned in the <a href=\"http://blog.phalconphp.com/post/38117434637/phalcon-0-8-0-alpha-available\">alpha</a>/<a href=\"http://blog.phalconphp.com/post/39414289860/phalcon-0-8-0-beta-is-available\">beta</a> posts we&rsquo;ve introduce a lot of new and exciting features in this major release. As always we have improved performance and addressed several bugs increasing the overall stability of the framework.<br/><br/>A big thank you to all the community and every tester who has reported bugs and requested new features. We are constantly getting closer to the best balance between speed and functionality in the PHP world and this is mostly due to our community!<br/><br/>We would encourage you to update to this version to take advantage of all the new functionality :)</p>\n<ul><li><a href=\"http://docs.phalconphp.com/en/latest/\">Documentation</a></li>\n<li>Check the complete <a href=\"https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG\">CHANGELOG</a></li>\n</ul><p>If you have any questions about functionality, feel free to ask either in <a href=\"http://stackoverflow.com/questions/tagged/phalcon?sort=newest&amp;pagesize=15\">Stack Overflow</a> or in our <a href=\"https://groups.google.com/forum/?fromgroups#%21forum/phalcon\">Google Group</a>.</p>\n<p>We hope you enjoy this release and are looking forward to your comments,<br/><br/>Thanks for using Phalcon!</p>","reblog":{"tree_html":"","comment":"<div><img alt=\"image\" src=\"http://static.phalconphp.com/blog/img/falcon8.jpg\"></div>\n<p>We&rsquo;re very proud to announce the immediate release of Phalcon 0.8. As mentioned in the <a href=\"http://blog.phalconphp.com/post/38117434637/phalcon-0-8-0-alpha-available\">alpha</a>/<a href=\"http://blog.phalconphp.com/post/39414289860/phalcon-0-8-0-beta-is-available\">beta</a> posts we&rsquo;ve introduce a lot of new and exciting features in this major release. As always we have improved performance and addressed several bugs increasing the overall stability of the framework.<br><br>A big thank you to all the community and every tester who has reported bugs and requested new features. We are constantly getting closer to the best balance between speed and functionality in the PHP world and this is mostly due to our community!<br><br>We would encourage you to update to this version to take advantage of all the new functionality :)</p>\n<ul><li><a href=\"http://docs.phalconphp.com/en/latest/\">Documentation</a></li>\n<li>Check the complete <a href=\"https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG\">CHANGELOG</a></li>\n</ul><p>If you have any questions about functionality, feel free to ask either in <a href=\"http://stackoverflow.com/questions/tagged/phalcon?sort=newest&amp;pagesize=15\">Stack Overflow</a> or in our <a href=\"https://groups.google.com/forum/?fromgroups#%21forum/phalcon\">Google Group</a>.</p>\n<p>We hope you enjoy this release and are looking forward to your comments,<br><br>Thanks for using Phalcon!</p>"},"trail":[{"blog":{"name":"phalconphp","theme":{"header_full_width":1117,"header_full_height":426,"header_focus_width":758,"header_focus_height":426,"avatar_shape":"square","background_color":"#FAFAFA","body_font":"Helvetica Neue","header_bounds":"0,937,426,179","header_image":"http://static.tumblr.com/be2b0380984b972b47699d457f4c0ffb/ivjir8a/815nn0qo7/tumblr_static_28z87js742xwowwo0kco04ogs.jpg","header_image_focused":"http://static.tumblr.com/be2b0380984b972b47699d457f4c0ffb/ivjir8a/laHnn0qo9/tumblr_static_tumblr_static_28z87js742xwowwo0kco04ogs_focused_v3.jpg","header_image_scaled":"http://static.tumblr.com/be2b0380984b972b47699d457f4c0ffb/ivjir8a/815nn0qo7/tumblr_static_28z87js742xwowwo0kco04ogs_2048_v2.jpg","header_stretch":true,"link_color":"#529ECC","show_avatar":true,"show_description":true,"show_header_image":true,"show_title":true,"title_color":"#444444","title_font":"Gibson","title_font_weight":"bold"}},"post":{"id":"40101666697"},"content":"<div><img alt=\"image\" src=\"http://static.phalconphp.com/blog/img/falcon8.jpg\"></div>\n<p>We’re very proud to announce the immediate release of Phalcon 0.8. As mentioned in the <a href=\"http://blog.phalconphp.com/post/38117434637/phalcon-0-8-0-alpha-available\">alpha</a>/<a href=\"http://blog.phalconphp.com/post/39414289860/phalcon-0-8-0-beta-is-available\">beta</a> posts we’ve introduce a lot of new and exciting features in this major release. As always we have improved performance and addressed several bugs increasing the overall stability of the framework.<br><br>A big thank you to all the community and every tester who has reported bugs and requested new features. We are constantly getting closer to the best balance between speed and functionality in the PHP world and this is mostly due to our community!<br><br>We would encourage you to update to this version to take advantage of all the new functionality :)</p>\n<ul><li><a href=\"http://docs.phalconphp.com/en/latest/\">Documentation</a></li>\n<li>Check the complete <a href=\"https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG\">CHANGELOG</a></li>\n</ul><p>If you have any questions about functionality, feel free to ask either in <a href=\"http://stackoverflow.com/questions/tagged/phalcon?sort=newest&pagesize=15\">Stack Overflow</a> or in our <a href=\"https://groups.google.com/forum/?fromgroups#%21forum/phalcon\">Google Group</a>.</p>\n<p>We hope you enjoy this release and are looking forward to your comments,<br><br>Thanks for using Phalcon!</p>","content_raw":"<div><img alt=\"image\" src=\"http://static.phalconphp.com/blog/img/falcon8.jpg\"></div>\r\n<p>We're very proud to announce the immediate release of Phalcon 0.8. As mentioned in the <a href=\"http://blog.phalconphp.com/post/38117434637/phalcon-0-8-0-alpha-available\">alpha</a>/<a href=\"http://blog.phalconphp.com/post/39414289860/phalcon-0-8-0-beta-is-available\">beta</a> posts we've introduce a lot of new and exciting features in this major release. As always we have improved performance and addressed several bugs increasing the overall stability of the framework.<br><br>A big thank you to all the community and every tester who has reported bugs and requested new features. We are constantly getting closer to the best balance between speed and functionality in the PHP world and this is mostly due to our community!<br><br>We would encourage you to update to this version to take advantage of all the new functionality :)</p>\r\n<ul><li><a href=\"http://docs.phalconphp.com/en/latest/\">Documentation</a></li>\r\n<li>Check the complete <a href=\"https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG\">CHANGELOG</a></li>\r\n</ul><p>If you have any questions about functionality, feel free to ask either in <a href=\"http://stackoverflow.com/questions/tagged/phalcon?sort=newest&amp;pagesize=15\">Stack Overflow</a> or in our <a href=\"https://groups.google.com/forum/?fromgroups#%21forum/phalcon\">Google Group</a>.</p>\r\n<p>We hope you enjoy this release and are looking forward to your comments,<br><br>Thanks for using Phalcon!</p>","is_current_item":true,"is_root_item":true}]}
+publish: 2013-01-09
+-->
+
+
+Phalcon 0.8 released
+====================
+
+![image](http://static.phalconphp.com/blog/img/falcon8.jpg)
+
+We’re very proud to announce the immediate release of Phalcon 0.8. As
+mentioned in the
+[alpha](http://blog.phalconphp.com/post/38117434637/phalcon-0-8-0-alpha-available)/[beta](http://blog.phalconphp.com/post/39414289860/phalcon-0-8-0-beta-is-available)
+posts we’ve introduce a lot of new and exciting features in this major
+release. As always we have improved performance and addressed several
+bugs increasing the overall stability of the framework.\
+\
+A big thank you to all the community and every tester who has reported
+bugs and requested new features. We are constantly getting closer to the
+best balance between speed and functionality in the PHP world and this
+is mostly due to our community!\
+\
+We would encourage you to update to this version to take advantage of
+all the new functionality :)
+
+-   [Documentation](http://docs.phalconphp.com/en/latest/)
+-   Check the complete
+    [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG)
+
+If you have any questions about functionality, feel free to ask either
+in [Stack
+Overflow](http://stackoverflow.com/questions/tagged/phalcon?sort=newest&pagesize=15)
+or in our [Google
+Group](https://groups.google.com/forum/?fromgroups#%21forum/phalcon).
+
+We hope you enjoy this release and are looking forward to your
+comments,\
+\
+Thanks for using Phalcon!
+
