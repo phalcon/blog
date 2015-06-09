@@ -137,3 +137,5 @@ $routes = $config->routes->toArray();
 foreach ($routes as $pattern => $options) {
     $router->add($pattern, $options);
 }
+
+$di->set('router', $router);
