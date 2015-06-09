@@ -74,15 +74,15 @@ $di->set(
         $view->registerEngines([".volt" => 'volt']);
 
         //Create an events manager
-        $eventsManager = new EventsManager();
+        //$eventsManager = new EventsManager();
 
         //Attach a listener for type "view"
-        $eventsManager->attach("view", function($event, $view) {
-            file_put_contents('a.txt', $event->getType() . ' - ' . $view->getActiveRenderPath() . PHP_EOL, FILE_APPEND);
-        });
+        //$eventsManager->attach("view", function($event, $view) {
+        //    file_put_contents('a.txt', $event->getType() . ' - ' . $view->getActiveRenderPath() . PHP_EOL, FILE_APPEND);
+        //});
 
         //Bind the eventsManager to the view component
-        $view->setEventsManager($eventsManager);
+        //$view->setEventsManager($eventsManager);
 
         return $view;
     }
