@@ -37,7 +37,7 @@ Below is a comprehensive list of changes:
 - Dispatcher exceptions now throws a 404 Not found status correctly
 - Fixed many bugs in `Phalcon_Model_Query`
 
-New Features:
+*New Features*:
 
 - Added virtual foreign keys to Phalcon_Model (ORM) 
   [[More Info](https://docs.phalconphp.com/en/latest/reference/models.html#virtual-foreign-keys)]

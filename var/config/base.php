@@ -3,6 +3,7 @@
 return [
     'debugMode'  => 0,
     'baseUri'    => '/',
+    'cdnUrl'     => '',
     'paths'      => [
         'controllersDir' => '',
         'viewsDir'       => '',

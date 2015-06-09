@@ -82,7 +82,7 @@ class PostFinder
         /**
          * Sort the dates array
          */
-        ksort($this->dates);
+        krsort($this->dates);
     }
 
     public function getLatest($number)

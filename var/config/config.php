@@ -2,5 +2,6 @@
 
 return [
     'debugMode' => 1,
-    'baseUri'   => '/blog/',
+    'baseUri'   => '/',
+    'cdnUrl'    => '',
 ];
