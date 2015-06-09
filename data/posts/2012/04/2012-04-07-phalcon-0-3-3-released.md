@@ -28,3 +28,5 @@ A huge thanks to all involved in terms of both contributions through ideas,
 tickets, documentation, and those whom have otherwise contributed to the 
 framework. :)
 
+<3
+Phalcon Team
