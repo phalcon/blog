@@ -95,109 +95,11 @@
 
         <table>
             <tr>
-                <td>
+                <td width="80%" valign="top">
             <div class="post">
 
-                    <!--<div class="title">Phalcon 2.0.2 released</div>
-                    <div class="copy"><p>The development of Phalcon has been accelerated since we released 2.0.0. More and more contributors find <a href="http://zephir-lang.com/">Zephir</a> very easy to understand and work with, and as a result it is time to release Phalcon 2.0.2. This version includes many features, bug fixes and improvements in terms of performance:</p>
+                {{ content() }}
 
-<ul><li>Added `stats()` methods to Beanstalk</li>
- <li>Fixed segfault when a docblock does not have annotations #10301
- </li><li>Fixed wrong number of parameters passed when triggering an event in Mvc\Collection</li>
- <li>Now Mvc\Model checks if an attribute has a default value associated in the database and ignores it from the insert/update generated SQL</li>
- <li>Readded Http\Request::hasPut() (#10283)</li>
- <li>Phalcon\Text: Added method reduceSlashes() - Reduces multiple slashes in a string to single slashes</li>
- <li>Phalcon\Text: Added method concat() - Concatenates strings using the separator only once without duplication in places concatenation</li>
- <li>Added conditional on Session adapter start() to check if the session has already been started</li>
- <li>Added status() function in Session adapter to return the status of the session (disabled/none/started)</li>
- <li>Implementation of subqueries as expressions in PHQL</li>
- <li>Performance improvements focused on PHP 5.6</li>
-</ul><h3>Subqueries</h3>
-<p>One of the most requested requests by the community is now available in Phalcon 2.0.2. Now, you can take advantage of subqueries as shown below:</p>
-
-<pre>
-$phql = "SELECT c.* FROM Shop\Cars c
-WHERE c.brandId IN (SELECT id FROM Shop\Brands)
-ORDER BY c.name";
-$cars = $this-&gt;modelsManager-&gt;executeQuery($phql);
-</pre>
-
-<p>Models must belong to the same database in order to be used as source in a subquery.</p>
-
-<h3>Default Database Values</h3>
-<p>Now in the case that a column has a &lsquo;default&rsquo; value declared in the field of the mapped table, this 'default&rsquo; value will be used instead of inserting 'NULL&rsquo;:</p>
-
-<pre>
-$robots = new Robots();
-$robots-&gt;save(); // use all `default` values
-</pre>
-
-<h3>Update/Upgrade</h3>
-<p>This version can be installed from the master branch, if you don&rsquo;t have Zephir installed follow these instructions:</p>
-
-<pre class="sh_sh sh_sourceCode">
-git clone <a href="http://github.com/phalcon/cphalcon">http://github.com/phalcon/cphalcon</a>
-git checkout master
-cd ext
-sudo ./install
-</pre>
-
-<p>The standard installation method also works:</p>
-
-<pre class="sh_sh sh_sourceCode">
-git clone <a href="http://github.com/phalcon/cphalcon">http://github.com/phalcon/cphalcon</a>
-git checkout master
-cd build
-sudo ./install
-</pre>
-
-<p>If you have Zephir installed:</p>
-
-<pre class="sh_sh sh_sourceCode">
-git clone <a href="http://github.com/phalcon/cphalcon">http://github.com/phalcon/cphalcon</a>
-git checkout master
-zephir fullclean
-zephir build
-</pre>
-
-<p>Note that running the installation script will replace any version of Phalcon installed before.</p>
-
-<p>Windows DLLs are available in the <a href="http://phalconphp.com/en/download/windows">download page</a>.</p>
-
-<p>See the <a href="http://blog.phalconphp.com/post/115773676765/guide-upgrading-to-phalcon-2">upgrading guide</a> for more information about upgrading to Phalcon 2.0.x from 1.3.x.</p>
-
-<h3>Comming soon</h3>
-<p>In the future 2.0.x series, we will be concentrating our efforts on requests from the community:</p>
-
-<ul><li>Eager-Loading in PHQL</li>
-  <li>Optional string empty values in the ORM</li>
-  <li>PHQL custom functions</li>
-  <li>Case Statements in PHQL</li>
-  <li>Aliases for namespaces in PHQL</li>
-</ul><p>Later on, we will be planning the features to include in Phalcon 2.1, for now:</p>
-
-<ul><li>Complete deprecation of PHP 5.3</li>
-  <li>Unification of Phalcon\Mvc\Model\Validation and Phalcon\Validation</li>
-</ul><h3>Thanks</h3>
-<p>Thanks to everyone involved in making this version as well to the community for their continuous input and feedback!</p></div>
-
-
-                        <a href="http://blog.phalconphp.com/post/119885725880/phalcon-2-0-2-released">
-                            <div class="footer for_permalink">
-                                <div class="date">
-                                    Posted 1 week ago
-                                </div>
-                                <div class="notes">2 notes &bull; <a href="http://blog.phalconphp.com/post/119885725880/phalcon-2-0-2-released#disqus_thread">View comments</a></div>
-                                <div class="clear"></div>
-                            </div>
-                        </a>
-
-
-                    <div class="footer " style="display:none;">
-                        <div class="clear"></div>
-                    </div>
-
-                </div>-->
                 {{ something }}
 
                 <div class="bottom"></div>

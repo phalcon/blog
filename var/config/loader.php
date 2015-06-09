@@ -106,7 +106,9 @@ $logger = $di->get('logger');
  * ERROR HANDLING
  */
 ini_set('display_errors', boolval(K_DEBUG));
+
 error_reporting(E_ALL);
+
 set_error_handler(
     function ($exception) use ($logger) {
         if ($exception instanceof \Exception) {
@@ -116,11 +118,13 @@ set_error_handler(
         }
     }
 );
+
 set_exception_handler(
     function ($exception) use ($logger) {
         $logger->error($exception->getMessage());
     }
 );
+
 register_shutdown_function(
     function () use ($logger, $memoryUsage, $currentTime) {
         $memoryUsed = number_format(

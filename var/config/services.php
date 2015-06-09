@@ -17,11 +17,11 @@
 
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\Url as UrlProvider;
-use Phalcon\Events\Manager as EventsManager;
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Events\Manager as EventsManager;
 
 use Ciconia\Ciconia;
 use Kitsune\Plugins\NotFoundPlugin;
@@ -69,8 +69,20 @@ $di->set(
 
         $view = new View();
 
-        $view->setViewsDir(K_PATH . '/app/views');
+        $view->setViewsDir(K_PATH . '/app/views/');
+
         $view->registerEngines([".volt" => 'volt']);
+
+        //Create an events manager
+        $eventsManager = new EventsManager();
+
+        //Attach a listener for type "view"
+        $eventsManager->attach("view", function($event, $view) {
+            file_put_contents('a.txt', $event->getType() . ' - ' . $view->getActiveRenderPath() . PHP_EOL, FILE_APPEND);
+        });
+
+        //Bind the eventsManager to the view component
+        $view->setEventsManager($eventsManager);
 
         return $view;
     }

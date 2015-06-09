@@ -21,6 +21,6 @@ return [
         '/'        => [
             'controller' => 'posts',
             'action'     => 'index'
-        ],
+        ]
     ],
 ];
