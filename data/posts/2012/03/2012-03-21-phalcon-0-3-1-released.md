@@ -22,3 +22,5 @@ cloning it from Github.
 Before saying goodbye, we would like to thank again all the people who
 have contributed feedback or is following our project. Enjoy!
 
+<3
+Phalcon Team

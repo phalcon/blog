@@ -31,3 +31,5 @@ We would like to thank each and every person who has contributed
 feedback, testing, and more for the last release and invite you to send
 us your comments on the new branch.
 
+<3
+Phalcon Team

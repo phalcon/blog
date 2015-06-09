@@ -6,3 +6,5 @@ tutorials and tips from the community and the Phalcon developers. All
 this interesting content will be available soon. We think you’re going
 to love it.
 
+<3
+Phalcon Team
