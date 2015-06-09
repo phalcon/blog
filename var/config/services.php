@@ -24,6 +24,7 @@ use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Events\Manager as EventsManager;
 
 use Ciconia\Ciconia;
+use Kitsune\PostFinder;
 use Kitsune\Plugins\NotFoundPlugin;
 use Ciconia\Extension\Gfm\FencedCodeBlockExtension;
 
@@ -61,7 +62,6 @@ $di->set(
         return $url;
     }
 );
-
 
 $di->set(
     'view',
@@ -125,6 +125,14 @@ $di->set(
         $ciconia = new Ciconia();
         $ciconia->addExtension(new FencedCodeBlockExtension());
         return $ciconia;
+    },
+    true
+);
+
+$di->set(
+    'finder',
+    function () {
+        return new PostFinder();
     },
     true
 );

@@ -53,6 +53,7 @@ class PostFinder
             $slug = $post['slug'];
             $link = $post['link'];
             $date = $post['date'];
+            $dateParts = explode("-", $date);
 
             /**
              * Add the post in the master array
@@ -75,12 +76,21 @@ class PostFinder
             /**
              * Dates (sorting)
              */
-            $this->dates[$date] = $slug;
+            $this->dates[$date] = $dateParts[0] . '/' . $dateParts[1] . '/' . $date . '-' . $slug;
         }
 
         /**
          * Sort the dates array
          */
         ksort($this->dates);
+    }
+
+    public function getLatest($number)
+    {
+        $posts = [];
+        foreach (array_slice($this->dates, 0, $number) as $post) {
+            $posts[] = K_PATH . '/data/posts/' . $post . '.md';
+        }
+        return $posts;
     }
 }
