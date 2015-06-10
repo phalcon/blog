@@ -100,8 +100,6 @@
 
                 {{ content() }}
 
-                {{ something }}
-
                 <div class="bottom"></div>
 
                 <div id="navigation">

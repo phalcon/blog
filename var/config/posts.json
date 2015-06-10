@@ -16,7 +16,7 @@
   {
     "title": "Phalcon 0.3.1 released!",
     "slug": "phalcon-0-3-1-released",
-    "date": "2012-03-07",
+    "date": "2012-03-21",
     "tags": "phalcon, 0.3, release",
     "link": "19680425990\/phalcon-0-3-1-released"
   },
@@ -72,7 +72,7 @@
   {
     "title": "Introducing: Phalcon 0.4.0 alpha",
     "slug": "introducing-phalcon-0-4-0-alpha",
-    "date": "2012-05-015",
+    "date": "2012-05-15",
     "tags": "php, phalcon, frameworks, performance, 0.4, release",
     "link": "23111713730\/introducing-phalcon-0-4-0-alpha"
   },
@@ -91,10 +91,17 @@
     "link": "23849400049\/help-test-phalcon-0-4-0"
   },
   {
+    "title": "Phalcon 2.0.1 released",
+    "slug": "phalcon-2-0-1-released",
+    "date": "2015-05-08",
+    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "link": "118465365385\/phalcon-2-0-1-released"
+  },
+  {
     "title": "Phalcon 2.0.2 released",
     "slug": "phalcon-2-0-2-released",
     "date": "2015-05-25",
-    "tags": "php, phalcon, 2.0, phalcon2, release",
+    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
     "link": "119885725880\/phalcon-2-0-2-released"
   }
 ]

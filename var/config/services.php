@@ -97,7 +97,20 @@ $di->set(
 
         $volt = new VoltEngine($view, $di);
 
-        $volt->setOptions(["compiledPath" => K_PATH . '/var/cache/volt']);
+        $volt->setOptions(
+            [
+                "compiledPath" => K_PATH . '/var/cache/volt/',
+                'stat'              => true,
+                'compileAlways'     => true,
+            ]
+        );
+
+        $volt->getCompiler()->addFunction(
+            'markdown',
+            function ($parameters) {
+                return "\$this->markdown->render({$parameters})";
+            }
+        );
 
         return $volt;
     },

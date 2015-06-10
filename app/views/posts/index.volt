@@ -1,3 +1,8 @@
 {% for post in posts %}
-    <?php echo $this->markdown->render(file_get_contents($post)); ?>
+    <div>
+        {{ markdown(post['content']) }}
+        <span class="pull-right">
+            <a href="post/{{ post['url'] }}"><i class="fa fa-file-text-o"></i></a>
+        </span>
+    </div>
 {% endfor %}

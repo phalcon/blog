@@ -8,7 +8,8 @@ Phalcon 2.0.2. This version includes many features, bug fixes and
 improvements in terms of performance:
 
 - Added `stats()` methods to Beanstalk
-- Fixed segfault when a docblock does not have annotations \#10301
+- Fixed segfault when a docblock does not have annotations 
+  [#10301](https://github.com/phalcon/cphalcon/issues/10301)
 - Fixed wrong number of parameters passed when triggering an event in `Mvc\Collection`
 - Now Mvc\Model checks if an attribute has a default value associated in the 
   database and ignores it from the insert/update generated SQL
@@ -29,11 +30,12 @@ improvements in terms of performance:
 One of the most requested requests by the community is now available in Phalcon 
 2.0.2. Now, you can take advantage of subqueries as shown below:
 
+```sql
     $phql = "SELECT c.* FROM Shop\Cars c
     WHERE c.brandId IN (SELECT id FROM Shop\Brands)
     ORDER BY c.name";
     $cars = $this->modelsManager->executeQuery($phql);
-
+```
 Models must belong to the same database in order to be used as source in a 
 subquery.
 
@@ -43,38 +45,40 @@ Now in the case that a column has a ‘default’ value declared in the
 field of the mapped table, this 'default’ value will be used instead of
 inserting 'NULL’:
 
+```php
     $robots = new Robots();
     $robots->save(); // use all `default` values
+```
 
 ### Update/Upgrade
 
 This version can be installed from the master branch, if you don’t have Zephir 
 installed follow these instructions:
 
-~~~~ {.sh_sh .sh_sourceCode}
-git clone http://github.com/phalcon/cphalcon
-git checkout master
-cd ext
-sudo ./install
-~~~~
+```sh
+    git clone http://github.com/phalcon/cphalcon
+    git checkout master
+    cd ext
+    sudo ./install
+```
 
 The standard installation method also works:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```sh
 git clone http://github.com/phalcon/cphalcon
 git checkout master
 cd build
 sudo ./install
-~~~~
+```
 
 If you have Zephir installed:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```sh
 git clone http://github.com/phalcon/cphalcon
 git checkout master
 zephir fullclean
 zephir build
-~~~~
+```
 
 Note that running the installation script will replace any version of Phalcon 
 installed before.
