@@ -81,5 +81,4 @@ Let’s make this release the best yet.
 Thanks in advance for all your help and support — it’s appreciated more than 
 you know!
 
-<3
-Phalcon Team
+<3 Phalcon Team

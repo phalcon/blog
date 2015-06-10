@@ -8,13 +8,15 @@ This is a short list of changes that can be expected in this version:
 
 0.3.3
 
-- Added Phalcon\_Tag::setDefault as an alias for `Phalcon\Tag::displayTo`
-- Added Phalcon\_View::setVar as an alias for `Phalcon\View::setParamToView`
-- Added Phalcon\_ACL management with in-memory lists [More Info](https://docs.phalconphp.com/en/latest/reference/acl.html)
+- Added `Phalcon\Tag::setDefault` as an alias for `Phalcon\Tag::displayTo`
+- Added `Phalcon\View::setVar` as an alias for `Phalcon\View::setParamToView`
+- Added `Phalcon\ACL` management with in-memory lists 
+  [More Info](https://docs.phalconphp.com/en/latest/reference/acl.html)
 - Fixed segfaults on methods with array optional parameters
 - Fixed segfaults on some internal isset
-- Added built-in model attributes validators for `Phalcon\Model` [More Info](https://docs.phalconphp.com/en/latest/reference/models.html#validating-data-integrity)
-- Added missing Phalcon\Tag::passwordField [Bug #2](https://github.com/phalcon/cphalcon/issues/2)
+- Added built-in model attributes validators for `Phalcon\Model` 
+  [More Info](https://docs.phalconphp.com/en/latest/reference/models.html#validating-data-integrity)
+- Added missing `Phalcon\Tag::passwordField` [#2](https://github.com/phalcon/cphalcon/issues/2)
 
 0.3.2
 
@@ -28,5 +30,4 @@ A huge thanks to all involved in terms of both contributions through ideas,
 tickets, documentation, and those whom have otherwise contributed to the 
 framework. :)
 
-<3
-Phalcon Team
+<3 Phalcon Team

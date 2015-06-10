@@ -25,5 +25,4 @@ Thanks to everyone who took the time to provide feedback.
 
 We appreciate it!
 
-<3
-Phalcon Team
+<3 Phalcon Team

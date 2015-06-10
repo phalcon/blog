@@ -12,19 +12,20 @@ to this release will come one of the most highly requested features in Phalcon.Â
 
 The following changes can be expected in this version:
 
--   Most of throwing exception process has been rewritten to use less 
-    instructions
--   Super global initialization is now slightly faster
--   Fixed bug in `Phalcon\Db::close`
--   Added logging capabilities to `Phalcon\Db` [more info](https://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements)
--   Added `Phalcon\Model\Metadata::getIdentityField` returning the identity 
-    (auto_increment) field
--   Added [DDL](http://en.wikipedia.org/wiki/Data_Definition_Language)
-    and [DML](http://en.wikipedia.org/wiki/Data_Manipulation_Language)
-    methods to Phalcon\Db [more info](https://docs.phalconphp.com/en/latest/reference/db.html#creating-altering-dropping-tables)
--   Added `Phalcon\Db\Column` to define table columns
--   Added `Phalcon\Db\Index` to define table indexes
--   Added `Phalcon\Db\Reference` to define table references (foreign keys)
+- Most of throwing exception process has been rewritten to use less instructions
+- Super global initialization is now slightly faster
+- Fixed bug in `Phalcon\Db::close`
+- Added logging capabilities to `Phalcon\Db` 
+  [more info](https://docs.phalconphp.com/en/latest/reference/models.html#logging-low-level-sql-statements)
+- Added `Phalcon\Model\Metadata::getIdentityField` returning the identity 
+  (auto_increment) field
+- Added [DDL](http://en.wikipedia.org/wiki/Data_Definition_Language)
+  and [DML](http://en.wikipedia.org/wiki/Data_Manipulation_Language)
+  methods to `Phalcon\Db` 
+  [more info](https://docs.phalconphp.com/en/latest/reference/db.html#creating-altering-dropping-tables)
+- Added `Phalcon\Db\Column` to define table columns
+- Added `Phalcon\Db\Index` to define table indexes
+- Added `Phalcon\Db\Reference` to define table references (foreign keys)
 
 Our next development branch will be 0.4.0. We are very excited about the 
 upcoming changes and enhancements. We expect to add huge improvements to the 
@@ -36,5 +37,4 @@ Twitter for news, feature announcements and other goodies!
 
 Tell your friends about Phalcon and as always, stay tuned for more!
 
-<3
-Phalcon Team
+<3 Phalcon Team

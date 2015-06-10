@@ -1,10 +1,10 @@
 Introducing: Phalcon 0.4.0 alpha
 ================================
 
-We’re happy to announce that after weeks of refactoring and polishing,
-0.4.x are now ready to be tested. Although, it’s an alpha release, it
-has many improvements, specially focused on a more maintainable code
-base and get running applications even faster.
+We’re happy to announce that after weeks of refactoring and polishing, 0.4.x 
+are now ready to be tested. Although, it’s an alpha release, it has many 
+improvements, specially focused on a more maintainable code base and get 
+running applications even faster.
 
 [![image](https://static-blog.phalconphp.com/images/posts/2012-05-15-real-phalcon.png)](http://browse.deviantart.com/#/d15brzb)
 
@@ -63,6 +63,5 @@ and suggestions regarding new features.
 
 Feel free to send your comments to Phalcon team any time.
 
-<3
-Phalcon Team
+<3 Phalcon Team
 

@@ -13,7 +13,7 @@ improvements in terms of performance:
 - Fixed wrong number of parameters passed when triggering an event in `Mvc\Collection`
 - Now Mvc\Model checks if an attribute has a default value associated in the 
   database and ignores it from the insert/update generated SQL
-- Readded `Http\Request::hasPut()` (\#10283)
+- Readded `Http\Request::hasPut()` [#10283](https://github.com/phalcon/cphalcon/issues/10283)
 - Phalcon\Text: Added method reduceSlashes() - Reduces multiple slashes in a 
   string to single slashes
 - `Phalcon\Text`: Added method `concat()` - Concatenates strings using the 
@@ -65,19 +65,19 @@ installed follow these instructions:
 The standard installation method also works:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
-git checkout master
-cd build
-sudo ./install
+    git clone http://github.com/phalcon/cphalcon
+    git checkout master
+    cd build
+    sudo ./install
 ```
 
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
-git checkout master
-zephir fullclean
-zephir build
+    git clone http://github.com/phalcon/cphalcon
+    git checkout master
+    zephir fullclean
+    zephir build
 ```
 
 Note that running the installation script will replace any version of Phalcon 
@@ -85,7 +85,7 @@ installed before.
 
 Windows DLLs are available in the [download page](http://phalconphp.com/en/download/windows).
 
-See the [upgrading guide](http://blog.phalconphp.com/post/115773676765/guide-upgrading-to-phalcon-2)
+See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2) 
 for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
 ### Comming soon
@@ -110,5 +110,4 @@ for now:
 Thanks to everyone involved in making this version as well to the community for 
 their continuous input and feedback!
 
-<3
-Phalcon Team
+<3 Phalcon Team

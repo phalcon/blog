@@ -10,7 +10,8 @@ That has been one of the most highly requested features in Phalcon (we know...
 most frameworks also provide it), anyway, it always feels great when we deliver 
 something we know users have an acute need of.
 
-In short [database migrations](https://docs.phalconphp.com/en/latest/reference/migrations.html) are:
+In short 
+[database migrations](https://docs.phalconphp.com/en/latest/reference/migrations.html) are:
 
 > Migrations are a convenient way for you to alter your database in a
 > structured and organized manner.
@@ -21,5 +22,4 @@ While you’re here, why not watch a short screencast?
 
 And that’s it, Enjoy!
 
-<3
-Phalcon Team
+<3 Phalcon Team
