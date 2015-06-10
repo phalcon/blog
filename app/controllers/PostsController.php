@@ -20,4 +20,9 @@ class PostsController extends Controller
     {
         vdd($slug);
     }
+
+    public function viewLegacyAction($time, $slug)
+    {
+        vdd($slug);
+    }
 }
