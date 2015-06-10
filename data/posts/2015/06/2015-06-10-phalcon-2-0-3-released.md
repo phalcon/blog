@@ -38,30 +38,30 @@ This version contains many bug fixes as well as new functionality that derived f
 Now `CASE/WHEN/ELSE` is available in PHQL expressions:
 
 ```php
-    $robots = $this->modelsManager->executeQuery("
-        SELECT 
-            CASE r.Type
-                WHEN 'Mechanical' THEN 1
-                WHEN 'Virtual' THEN 2
-                ELSE 3
-            END 
-        FROM Store\Robots
-     ");
+$robots = $this->modelsManager->executeQuery("
+    SELECT 
+        CASE r.Type
+            WHEN 'Mechanical' THEN 1
+            WHEN 'Virtual' THEN 2
+            ELSE 3
+        END 
+    FROM Store\Robots
+");
 ```
 
 #### Support for CASE/WHEN/ELSE
 Now `CASE`/`WHEN`/`ELSE` is available in PHQL expressions:
 
 ```php
-    $robots = $this->modelsManager->executeQuery("
-        SELECT 
-            CASE r.Type
-                WHEN 'Mechanical' THEN 1
-                WHEN 'Virtual' THEN 2
-                ELSE 3
-            END 
-        FROM Store\Robots AS r
-    ");
+$robots = $this->modelsManager->executeQuery("
+    SELECT 
+        CASE r.Type
+            WHEN 'Mechanical' THEN 1
+            WHEN 'Virtual' THEN 2
+            ELSE 3
+        END 
+    FROM Store\Robots AS r
+");
 ```
 
 #### Namespace Aliases
@@ -71,43 +71,43 @@ By using this feature, you can add aliases to existing namespaces, which will
 speed up development time:
 
 ```php
-    // Before
-    $data = $this->modelsManager->executeQuery("
-        SELECT r.*, rp.*
-        FROM Store\Backend\Models\Robots AS r
-        JOIN Store\Backend\Models\RobotsParts AS rp
-    ");
+// Before
+$data = $this->modelsManager->executeQuery("
+    SELECT r.*, rp.*
+    FROM Store\Backend\Models\Robots AS r
+    JOIN Store\Backend\Models\RobotsParts AS rp
+");
 ```
 
 Define aliases in the models manager:
 
 ```php
-    use Phalcon\Mvc\Model\Manager as ModelsManager;
+use Phalcon\Mvc\Model\Manager as ModelsManager;
 
-    // ...
+// ...
 
-    $di->set(
-        'modelsManager', 
-        function() {
-            $modelsManager = new ModelsManager();
-            $modelsManager->registerNamespaceAlias(
-                'bm',
-                 'Store\Backend\Models\Robots'
-             );
-            return $modelsManager;
-        }
-    );
+$di->set(
+    'modelsManager', 
+    function() {
+        $modelsManager = new ModelsManager();
+        $modelsManager->registerNamespaceAlias(
+            'bm',
+             'Store\Backend\Models\Robots'
+         );
+        return $modelsManager;
+    }
+);
 ```
 
 And in the queries:
 
 ```php
-    // After
-    $data = $this->modelsManager->executeQuery("
-        SELECT r.*, rp.*
-        FROM bm:Robots AS r
-        JOIN bm:RobotsParts AS rp
-    ");
+// After
+$data = $this->modelsManager->executeQuery("
+    SELECT r.*, rp.*
+    FROM bm:Robots AS r
+    JOIN bm:RobotsParts AS rp
+");
 ```
 
 #### Custom Dialect Functions
@@ -116,34 +116,34 @@ functions. In the following example we're going to implement the MySQL's
 extension MATCH/BINARY. First of all you have to instantiate the SQL dialect
 
 ```php
-    use Phalcon\Db\Dialect\MySQL as SqlDialect;
-    use Phalcon\Db\Adapter\Pdo\MySQL as Connection;
+use Phalcon\Db\Dialect\MySQL as SqlDialect;
+use Phalcon\Db\Adapter\Pdo\MySQL as Connection;
 
-    $dialect = new SqlDialect();
+$dialect = new SqlDialect();
 
-    // Register a new function called MATCH_AGAINST
-    $dialect->registerCustomFunction(
-        'MATCH_AGAINST', 
-        function($dialect, $expression) {
-            $arguments = $expression['arguments'];
-            return sprintf(
-                " MATCH (%s) AGAINST (%)",
-                $dialect->getSqlExpression($arguments[0]),
-                $dialect->getSqlExpression($arguments[1])
-             );
-        }
-    );
+// Register a new function called MATCH_AGAINST
+$dialect->registerCustomFunction(
+    'MATCH_AGAINST', 
+    function($dialect, $expression) {
+        $arguments = $expression['arguments'];
+        return sprintf(
+            " MATCH (%s) AGAINST (%)",
+            $dialect->getSqlExpression($arguments[0]),
+            $dialect->getSqlExpression($arguments[1])
+         );
+    }
+);
 
-    // The dialect must be passed in the connection constructor
-    $connection = new Connection(
-        [
-            "host"          => "localhost",
-            "username"      => "root",
-            "password"      => "",
-            "dbname"        => "test",
-            "dialectClass"  => $dialect
-        ]
-    );
+// The dialect must be passed in the connection constructor
+$connection = new Connection(
+    [
+        "host"          => "localhost",
+        "username"      => "root",
+        "password"      => "",
+        "dbname"        => "test",
+        "dialectClass"  => $dialect
+    ]
+);
 
 ```
 
@@ -218,4 +218,3 @@ for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
 Thanks to everyone involved in making this version: collaborators and as well to the community for 
 their continuous input and feedback!
-
