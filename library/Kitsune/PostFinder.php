@@ -22,6 +22,7 @@
  */
 namespace Kitsune;
 
+use Kitsune\Post;
 use Kitsune\Exceptions\Exception as KException;
 
 class PostFinder
@@ -50,42 +51,30 @@ class PostFinder
         /**
          * First all the data will go in a master array
          */
-        foreach ($data as $post) {
-            $slug      = $post['slug'];
-            $link      = $post['link'];
-            $date      = $post['date'];
-            $dateParts = explode("-", $date);
-            $file      = sprintf(
-                '%s/%s/%s-%s',
-                $dateParts[0],
-                $dateParts[1],
-                $date,
-                $slug
-            );
+        foreach ($data as $item) {
+            $post = new Post($item);
 
             /**
-             * Add the file name in the post and it in the master array
+             * Add the element in the master array
              */
-            $post['file']      = $file;
-            $this->data[$slug] = $post;
+            $this->data[$post->slug] = $post;
 
             /**
              * Tags
              */
-            $tags = explode(',', $post['tags']);
-            foreach ($tags as $tag) {
-                $this->tags[trim($tag)][] = $slug;
+            foreach ($post->tags as $tag) {
+                $this->tags[trim($tag)][] = $post->slug;
             }
 
             /**
              * Links
              */
-            $this->links[$link] = $slug;
+            $this->links[$post->link] = $post->slug;
 
             /**
              * Dates (sorting)
              */
-            $dates[$date] = $slug;
+            $dates[$post->date] = $post->slug;
         }
 
         /**
@@ -101,14 +90,7 @@ class PostFinder
         $counter = 1;
 
         foreach ($this->dates as $key) {
-            $post = $this->data[$key];
-            $fileName = K_PATH . '/data/posts/' . $post['file'] . '.md';
-            if (file_exists($fileName)) {
-                $posts[] = [
-                    'content' => file_get_contents($fileName),
-                    'url'     => $key,
-                ];
-            }
+            $posts[] = $this->data[$key];
             $counter = $counter + 1;
 
             if ($counter > $number) {

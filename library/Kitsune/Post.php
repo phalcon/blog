@@ -22,7 +22,9 @@
  */
 namespace Kitsune;
 
-class Post extends Phalcon\DI\Injectable
+use \Phalcon\DI\Injectable as PhInjectable;
+
+class Post extends PhInjectable
 {
     public $content  = '';
     public $raw      = '';
@@ -40,11 +42,9 @@ class Post extends Phalcon\DI\Injectable
         $this->month   = $dateParts[1];
         $this->slug    = $post['slug'];
         $this->link    = $post['link'];
-        $this->content = $this->markdown->render($post['content']);
-        $this->raw     = $post['content'];
         $this->date    = $post['date'];
         $this->file    = sprintf(
-            '%s/%s/%s-%s',
+            '%s/%s/%s-%s.md',
             $dateParts[0],
             $dateParts[1],
             $this->date,
@@ -54,6 +54,15 @@ class Post extends Phalcon\DI\Injectable
         $tags = explode(',', $post['tags']);
         foreach ($tags as $tag) {
             $this->tags[] = trim($tag);
+        }
+
+        /**
+         * Get the post itself
+         */
+        $fileName = K_PATH . '/data/posts/' . $this->file;
+        if (file_exists($fileName)) {
+            $this->raw = file_get_contents($fileName);
+            $this->content = $this->markdown->render($this->raw);
         }
     }
 }
