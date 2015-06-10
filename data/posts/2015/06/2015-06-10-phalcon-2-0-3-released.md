@@ -179,28 +179,28 @@ This version can be installed from the master branch, if you don’t have Zephir
 installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
-git checkout master
-cd ext
-sudo ./install
+    git clone http://github.com/phalcon/cphalcon
+    git checkout master
+    cd ext
+    sudo ./install
 ```
 
 The standard installation method also works:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
-git checkout master
-cd build
-sudo ./install
+    git clone http://github.com/phalcon/cphalcon
+    git checkout master
+    cd build
+    sudo ./install
 ```
 
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
-git checkout master
-zephir fullclean
-zephir build
+    git clone http://github.com/phalcon/cphalcon
+    git checkout master
+    zephir fullclean
+    zephir build
 ```
 
 Note that running the installation script will replace any version of Phalcon 

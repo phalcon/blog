@@ -26,15 +26,17 @@ use \Phalcon\DI\Injectable as PhInjectable;
 
 class Post extends PhInjectable
 {
-    public $content  = '';
-    public $raw      = '';
-    public $date     = '';
-    public $year     = '';
-    public $month    = '';
-    public $link     = '';
-    public $tags     = [];
-    public $file     = '';
-    public $uid      = '';
+    public $title      = '';
+    public $content    = '';
+    public $raw        = '';
+    public $date       = '';
+    public $year       = '';
+    public $month      = '';
+    public $link       = '';
+    public $tags       = [];
+    public $file       = '';
+    public $disqus_id  = '';
+    public $disqus_url = '';
 
     public function __construct($post)
     {
@@ -44,17 +46,20 @@ class Post extends PhInjectable
         $this->slug     = $post['slug'];
         $this->link     = $post['link'];
         $this->date     = $post['date'];
+        $this->title    = $post['title'];
 
         /**
          * Old Tumblr posts have a link so we need the unique identifier
          * from them to be able to link to disqus
          */
-        if (!$this->link) {
-            $this->uniqueId = $post['date'] . '-' . $post['slug'];
+        if ($this->link) {
+            $this->disqus_url = 'http://phalconphp.tumblr.com/post/'
+                              . $this->link;
         } else {
-            $linkParts = explode('/', $this->link);
-            $this->uniqueId = 'post/' . $linkParts[0];
+            $this->disqus_url = 'https://blog.phalconphp.com/post/'
+                              . $this->slug;
         }
+        $this->disqus_id  = 'Phalcon Framework - ' . $this->title;
 
         $this->file     = sprintf(
             '%s/%s/%s-%s.md',
