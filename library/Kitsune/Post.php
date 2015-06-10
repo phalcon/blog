@@ -44,7 +44,18 @@ class Post extends PhInjectable
         $this->slug     = $post['slug'];
         $this->link     = $post['link'];
         $this->date     = $post['date'];
-        $this->uniqueId = $post['date'] . '-' . $post['slug'];
+
+        /**
+         * Old Tumblr posts have a link so we need the unique identifier
+         * from them to be able to link to disqus
+         */
+        if (!$this->link) {
+            $this->uniqueId = $post['date'] . '-' . $post['slug'];
+        } else {
+            $linkParts = explode('/', $this->link);
+            $this->uniqueId = 'post/' . $linkParts[0];
+        }
+
         $this->file     = sprintf(
             '%s/%s/%s-%s.md',
             $dateParts[0],
