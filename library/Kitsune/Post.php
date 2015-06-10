@@ -34,16 +34,18 @@ class Post extends PhInjectable
     public $link     = '';
     public $tags     = [];
     public $file     = '';
+    public $uid      = '';
 
     public function __construct($post)
     {
-        $dateParts     = explode("-", $post['date']);
-        $this->year    = $dateParts[0];
-        $this->month   = $dateParts[1];
-        $this->slug    = $post['slug'];
-        $this->link    = $post['link'];
-        $this->date    = $post['date'];
-        $this->file    = sprintf(
+        $dateParts      = explode("-", $post['date']);
+        $this->year     = $dateParts[0];
+        $this->month    = $dateParts[1];
+        $this->slug     = $post['slug'];
+        $this->link     = $post['link'];
+        $this->date     = $post['date'];
+        $this->uniqueId = $post['date'] . '-' . $post['slug'];
+        $this->file     = sprintf(
             '%s/%s/%s-%s.md',
             $dateParts[0],
             $dateParts[1],
