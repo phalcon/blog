@@ -84,7 +84,7 @@
 <div class="heading">
     <div class="container">
         <div class="row">
-            <h2>Blog and News</h2>
+            <h2><a href="https://blog.phalconphp.com">Blog and News</a></h2>
         </div>
     </div>
 </div>
@@ -93,7 +93,7 @@
 <div id="wrapper">
     <div id="content">
 
-        <table width="70%" align="center">
+        <table align="center">
             <tr>
                 <td width="80%" valign="top">
                     <div id="articles">
