@@ -18,11 +18,27 @@ class PostsController extends Controller
 
     public function viewAction($slug)
     {
-        vdd($slug);
+        $post = $this->finder->get($slug);
+
+        if (is_null($post)) {
+            $this->dispatcher->forward(
+                [
+                    'controller' => 'errors',
+                    'action'     => 'show404'
+                ]
+            );
+        }
+
+        $this->view->setVar('post', $post);
     }
 
     public function viewLegacyAction($time, $slug)
     {
-        vdd($slug);
+        $this->dispatcher->forward(
+            [
+                'controller' => 'errors',
+                'action'     => 'show404'
+            ]
+        );
     }
 }

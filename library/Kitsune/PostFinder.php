@@ -100,4 +100,9 @@ class PostFinder
 
         return $posts;
     }
+
+    public function get($slug)
+    {
+        return (array_key_exists($slug, $this->data)) ? $this->data[$slug] : null;
+    }
 }
