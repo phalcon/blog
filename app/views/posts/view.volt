@@ -15,8 +15,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname  = 'phalconphp';
-        var disqus_identifier = '{{ post.uniqueId }}';
-        var disqus_url        = 'https://blog.phalconphp.com/post/{{ post.slug }}';
+        var disqus_identifier = {{ post.disqus_id }}
+        var disqus_url        = {{ post.disqus_url }}
 
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
