@@ -93,72 +93,35 @@
 <div id="wrapper">
     <div id="content">
 
-        <table>
+        <table width="90%" align="center">
             <tr>
                 <td width="80%" valign="top">
-            <div class="post">
+                    {{ content() }}
+                </td>
+                <td valign="top">
+                    <div id="sidebar">
+                        <div id="top">
+                            <div align="center" style="padding:5px;padding-bottom:5px">
+                                <span style="font-size:9px;font-weight:bold;color:#333333">advertisement</span>
+                                <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div>
+                                <script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript";
+                                z.async = true; z.src = "http://engine.carbonads.com/z/56496/azcarbon_2_1_0_HORIZ";
+                                var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+                                </div></div>
+                            </div>
 
-                {{ content() }}
+                            <br/>
 
-                <div class="bottom"></div>
-
-                <div id="navigation">
-                    <a href="/page/2">Next page &rarr;</a>
-                </div>
-        </div>
-</td>
-<td valign="top">
-        <div xid="sidebar">
-            <div id="top">
-
-                <div align="center" style="padding:5px;padding-bottom:5px">
-                    <span style="font-size:9px;font-weight:bold;color:#333333">advertisement</span>
-                    <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div>
-                    <script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript";
-                    z.async = true; z.src = "http://engine.carbonads.com/z/56496/azcarbon_2_1_0_HORIZ";
-                    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
-                    </div></div>
-                </div>
-
-                <br/>
-
-                <div id="description">
-                    We are an open source web framework for PHP delivered as a C extension
-                    offering high performance and lower resource consumption
-                </div>
-
-                <!--<div id="search">
-                    <form action="/search" method="get" id="search-form">
-                        <input type="hidden" name="t" value="phalconphp" />
-                        <input type="hidden" name="scope" value="all_of_tumblr" />
-                        <input type="text" name="q" class="query" value="" />
-                        <input type="submit" value="Search" class="submit" />
-                        <div class="clear"></div>
-                    </form>
-                </div>
-
-                <div align="center">
-                    <div id="buttons">
-                        <div class="row">
-                            <div class="button" id="button-rss"><a href="http://blog.phalconphp.com/rss">RSS feed</a></div>
-                            <div class="button" id="button-random"><a href="/random">Random</a></div>
+                            <div id="description">
+                                We are an open source web framework for PHP delivered as a C extension
+                                offering high performance and lower resource consumption
+                            </div>
                         </div>
-                        <div class="clear"></div>
-                        <div class="row">
-                            <div class="button" id="button-archive"><a href="/archive">Archive</a></div>
-                            <div class="button" id="button-mobile"><a href="/mobile">Mobile</a></div>
-                        </div>
-                        <div class="clear"></div>
                     </div>
-                </div>-->
-
-            </div>
-        </div>
+                </td>
+            </tr>
+        </table>
     </div>
-    </tr>
-</table>
-
-</div>
 </section>
 
     <script type="text/javascript">

@@ -14,12 +14,6 @@ class PostsController extends Controller
     public function indexAction()
     {
         $this->view->posts = $this->finder->getLatest(5);
-
-        /*$this->markdown->render(
-            file_get_contents(
-                K_PATH . '/data/posts/2015-05-26-phalcon-2.0.2-released.md'
-            )
-        );*/
     }
 
     public function viewAction($slug)

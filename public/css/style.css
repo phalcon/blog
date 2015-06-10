@@ -17,6 +17,10 @@
     font-size: 16px;
 }
 
+#wrapper #sidebar {
+    padding: 30px;
+}
+
 #wrapper #sidebar #top .heading#followontumblr {
     background: #0ec281;
     color: #fff;
