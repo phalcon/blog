@@ -34,8 +34,9 @@ This version contains many bug fixes as well as new functionality that derived f
    [#10484](https://github.com/phalcon/cphalcon/issues/10484)
 
 ### Highlights
+
 #### Support for CASE/WHEN/ELSE
-Now `CASE/WHEN/ELSE` is available in PHQL expressions:
+Now `CASE/WHEN/ELSE` is available in [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html) expressions:
 
 ```php
 $robots = $this->modelsManager->executeQuery("
