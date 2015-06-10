@@ -33,108 +33,144 @@ This version contains many bug fixes as well as new functionality that derived f
    connections to avoid errors in PostgreSQL 
    [#10484](https://github.com/phalcon/cphalcon/issues/10484)
 
-### Support for CASE/WHEN/ELSE
-Now CASE/WHEN/ELSE is available in PHQL expressions:
+### Highlights
+#### Support for CASE/WHEN/ELSE
+Now `CASE/WHEN/ELSE` is available in PHQL expressions:
 
 ```php
-$robots = $this->modelsManager->executeQuery("
- SELECT CASE r.Type
-    WHEN 'Mechanical' THEN 1
-    WHEN 'Virtual' THEN 2
-    ELSE 3
- END FROM Store\Robots");
+    $robots = $this->modelsManager->executeQuery("
+        SELECT 
+            CASE r.Type
+                WHEN 'Mechanical' THEN 1
+                WHEN 'Virtual' THEN 2
+                ELSE 3
+            END 
+        FROM Store\Robots
+     ");
 ```
 
-### Support for CASE/WHEN/ELSE
-Now CASE/WHEN/ELSE is available in PHQL expressions:
+#### Support for CASE/WHEN/ELSE
+Now `CASE`/`WHEN`/`ELSE` is available in PHQL expressions:
 
 ```php
-$robots = $this->modelsManager->executeQuery("
- SELECT CASE r.Type
-    WHEN 'Mechanical' THEN 1
-    WHEN 'Virtual' THEN 2
-    ELSE 3
- END FROM Store\Robots AS r");
+    $robots = $this->modelsManager->executeQuery("
+        SELECT 
+            CASE r.Type
+                WHEN 'Mechanical' THEN 1
+                WHEN 'Virtual' THEN 2
+                ELSE 3
+            END 
+        FROM Store\Robots AS r
+    ");
 ```
 
-### Namespace Aliases
-If you are using namespaces to organize your models, sometimes it could be too long to write them each time manually, by employing this feature you can add aliases to existing namespaces so they can be shortened:
+#### Namespace Aliases
+If you are using namespaces to organize your models, you will often find 
+yourself typing a long namespaced string to just reference one of your models. 
+By using this feature, you can add aliases to existing namespaces, which will 
+speed up development time:
 
 ```php
-// Before
-$data = $this->modelsManager->executeQuery("
-SELECT r.*, rp.*
-FROM Store\Backend\Models\Robots AS r
-JOIN Store\Backend\Models\RobotsParts AS rp");
+    // Before
+    $data = $this->modelsManager->executeQuery("
+        SELECT r.*, rp.*
+        FROM Store\Backend\Models\Robots AS r
+        JOIN Store\Backend\Models\RobotsParts AS rp
+    ");
 ```
 
 Define aliases in the models manager:
 
 ```php
-use Phalcon\Mvc\Model\Manager as ModelsManager;
+    use Phalcon\Mvc\Model\Manager as ModelsManager;
 
-// ...
+    // ...
 
-$di->set('modelsManager', function() {
-  $modelsManager = new ModelsManager();
-  $modelsManager->registerNamespaceAlias('bm', 'Store\Backend\Models\Robots');
-  return $modelsManager;
-});
+    $di->set(
+        'modelsManager', 
+        function() {
+            $modelsManager = new ModelsManager();
+            $modelsManager->registerNamespaceAlias(
+                'bm',
+                 'Store\Backend\Models\Robots'
+             );
+            return $modelsManager;
+        }
+    );
 ```
 
 And in the queries:
 
 ```php
-// After
-$data = $this->modelsManager->executeQuery("
- SELECT r.*, rp.*
- FROM bm:Robots AS r
- JOIN bm:RobotsParts AS rp");
+    // After
+    $data = $this->modelsManager->executeQuery("
+        SELECT r.*, rp.*
+        FROM bm:Robots AS r
+        JOIN bm:RobotsParts AS rp
+    ");
 ```
 
-### Custom Dialect Functions
-This new functionality will help you to extend PHQL as you need using custom functions. In the following example
-we're going to implement the MySQL's extension MATCH/BINARY. First of all you have to instantiate the SQL dialect
+#### Custom Dialect Functions
+This new functionality will help you to extend PHQL as you need using custom 
+functions. In the following example we're going to implement the MySQL's 
+extension MATCH/BINARY. First of all you have to instantiate the SQL dialect
 
 ```php
-use Phalcon\Db\Dialect\MySQL as SqlDialect;
-use Phalcon\Db\Adapter\Pdo\MySQL as Connection;
+    use Phalcon\Db\Dialect\MySQL as SqlDialect;
+    use Phalcon\Db\Adapter\Pdo\MySQL as Connection;
 
-$dialect = new SqlDialect();
+    $dialect = new SqlDialect();
 
-// Register a new function called MATCH_AGAINST
-$dialect->registerCustomFunction('MATCH_AGAINST', function($dialect, $expression) {
-  $arguments = $expression['arguments'];
-  return  " MATCH ("   . $dialect->getSqlExpression($arguments[0]) .
-          ") AGAINST (" . $dialect->getSqlExpression($arguments[1]) . ")";
-});
+    // Register a new function called MATCH_AGAINST
+    $dialect->registerCustomFunction(
+        'MATCH_AGAINST', 
+        function($dialect, $expression) {
+            $arguments = $expression['arguments'];
+            return sprintf(
+                " MATCH (%s) AGAINST (%)",
+                $dialect->getSqlExpression($arguments[0]),
+                $dialect->getSqlExpression($arguments[1])
+             );
+        }
+    );
 
-// The dialect must be passed in the connection constructor
-$connection = new Connection(array(
-    "host"          => "localhost",
-    "username"      => "root",
-    "password"      => "",
-    "dbname"        => "test",
-    "dialectClass"  => $dialect
-));
+    // The dialect must be passed in the connection constructor
+    $connection = new Connection(
+        [
+            "host"          => "localhost",
+            "username"      => "root",
+            "password"      => "",
+            "dbname"        => "test",
+            "dialectClass"  => $dialect
+        ]
+    );
 
 ```
 
-Now you can use this function in PHQL and it internally translates to the right SQL using the custom function:
+Now you can use this function in PHQL and it internally translates to the 
+right SQL using the custom function:
 
 ```php
-$phql = "SELECT * FROM Posts WHERE MATCH_AGAINST(title, :pattern:)";
-$posts = $modelsManager->executeQuery($phql, ['pattern' => $pattern]);
+    $phql = "SELECT * 
+             FROM Posts 
+             WHERE MATCH_AGAINST(title, :pattern:)";
+    $posts = $modelsManager->executeQuery($phql, ['pattern' => $pattern]);
 ```
 
-### Improvements in Subqueries
+#### Improvements in Subqueries
 
-In Phalcon 2.0.2 subqueries were introduced in PHQL. Support for this feature had been improved in 2.0.3 by introducing the EXISTS operator:
+In Phalcon 2.0.2 subqueries were introduced in PHQL. Support for this feature 
+had been improved in 2.0.3 by introducing the EXISTS operator:
 
 ```php
-$phql = "SELECT c.* FROM Shop\Cars c
-WHERE EXISTS (SELECT id FROM Shop\Brands b WHERE b.id = c.brandId)";
-$cars = $this->modelsManager->executeQuery($phql);
+    $phql = "SELECT c.* 
+            FROM Shop\Cars c
+            WHERE EXISTS (
+                SELECT id 
+                FROM Shop\Brands b 
+                WHERE b.id = c.brandId
+            )";
+    $cars = $this->modelsManager->executeQuery($phql);
 ```
 
 ## Update/Upgrade
