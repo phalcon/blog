@@ -93,10 +93,12 @@
 <div id="wrapper">
     <div id="content">
 
-        <table width="90%" align="center">
+        <table width="70%" align="center">
             <tr>
                 <td width="80%" valign="top">
-                    {{ content() }}
+                    <div id="articles">
+                        {{ content() }}
+                    </div>
                 </td>
                 <td valign="top">
                     <div id="sidebar">

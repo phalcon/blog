@@ -2,7 +2,7 @@
 
 return [
     'debugMode'  => 0,
-    'baseUri'    => '/',
+    'baseUri'    => '/blog/',
     'cdnUrl'     => '',
     'paths'      => [
         'controllersDir' => '',
@@ -19,9 +19,13 @@ return [
             'controller' => 'sitemap',
             'action'     => 'index'
         ],
-        '/post'  => [
+        '/post/{slug:[0-9a-zA\-]+}'  => [
             'controller' => 'posts',
             'action'     => 'view'
+        ],
+        '/post/{timestamp:[0-9]+}/{slug:[0-9a-zA-Z\-]+}' => [
+            'controller' => 'posts',
+            'action'     => 'viewLegacy'
         ],
         '/'      => [
             'controller' => 'posts',
