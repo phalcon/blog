@@ -104,12 +104,11 @@
                     <div id="sidebar">
                         <div id="top">
                             <div align="center" style="padding:5px;padding-bottom:5px">
-                                <span style="font-size:9px;font-weight:bold;color:#333333">advertisement</span>
-                                <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div>
-                                <script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript";
-                                z.async = true; z.src = "//engine.carbonads.com/z/56496/azcarbon_2_1_0_HORIZ";
-                                var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
-                                </div></div>
+                                <div id="carbonads-container">
+                                    <div class="carbonad"><div id="azcarbon"></div>
+                                    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                                    </div></div>
+                                </div>
                             </div>
 
                             <br/>
@@ -136,7 +135,7 @@
                     query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
                 }
             }
-            document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/phalconphp/get_num_replies.js' + query + '"></' + 'script>');
+            document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/phalconphp/get_num_replies.js' + query + '"></' + 'script>');
         })();
         //]]>
     </script>
