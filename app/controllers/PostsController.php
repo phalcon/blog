@@ -21,4 +21,9 @@ class PostsController extends Controller
             )
         );*/
     }
+
+    public function viewAction($slug)
+    {
+        vdd($slug);
+    }
 }

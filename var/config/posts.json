@@ -91,6 +91,27 @@
     "link": "23849400049\/help-test-phalcon-0-4-0"
   },
   {
+    "title": "Phalcon 2 Release Candidate",
+    "slug": "phalcon-2-release-candidate",
+    "date": "2015-03-02",
+    "tags": "php, phalcon, 2.0, phalcon2, guide, zephir",
+    "link": "112516581325\/phalcon-2-release-candidate"
+  },
+  {
+    "title": "Guide: Upgrading to Phalcon 2",
+    "slug": "guide-upgrading-to-phalcon-2",
+    "date": "2015-04-07",
+    "tags": "php, phalcon, 2.0, phalcon2, guide, zephir",
+    "link": "115773676765\/guide-upgrading-to-phalcon-2"
+  },
+  {
+    "title": "Phalcon 2 released!",
+    "slug": "phalcon-2-0-1-released",
+    "date": "2015-04-17",
+    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "link": "116664774400\/phalcon-2-released"
+  },
+  {
     "title": "Phalcon 2.0.1 released",
     "slug": "phalcon-2-0-1-released",
     "date": "2015-05-08",

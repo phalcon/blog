@@ -10,18 +10,22 @@ return [
         'pluginsDir'     => '',
     ],
     'namespaces' => [
-        'Kitsune'               => K_PATH . '/library/Kitsune',
-        'Kitsune\Controllers'   => K_PATH . '/app/controllers',
-        'Kitsune\Plugins'       => K_PATH . '/app/plugins',
+        'Kitsune'             => K_PATH . '/library/Kitsune',
+        'Kitsune\Controllers' => K_PATH . '/app/controllers',
+        'Kitsune\Plugins'     => K_PATH . '/app/plugins',
     ],
     'routes'     => [
         '/sitemap' => [
             'controller' => 'sitemap',
             'action'     => 'index'
         ],
-        '/'        => [
+        '/post'  => [
+            'controller' => 'posts',
+            'action'     => 'view'
+        ],
+        '/'      => [
             'controller' => 'posts',
             'action'     => 'index'
-        ]
+        ],
     ],
 ];
