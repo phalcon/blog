@@ -13,7 +13,8 @@ class PostsController extends Controller
 
     public function indexAction()
     {
-        $this->view->posts = $this->finder->getLatest(5);
+        $this->view->showDisqus = false;
+        $this->view->posts      = $this->finder->getLatest(5);
     }
 
     public function viewAction($slug)
@@ -29,7 +30,8 @@ class PostsController extends Controller
             );
         }
 
-        $this->view->setVar('post', $post);
+        $this->view->showDisqus = true;
+        $this->view->post       = $post;
     }
 
     public function viewLegacyAction($time, $slug)
