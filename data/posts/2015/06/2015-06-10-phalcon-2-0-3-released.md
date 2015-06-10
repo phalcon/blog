@@ -151,10 +151,10 @@ Now you can use this function in PHQL and it internally translates to the
 right SQL using the custom function:
 
 ```php
-    $phql = "SELECT * 
-             FROM Posts 
-             WHERE MATCH_AGAINST(title, :pattern:)";
-    $posts = $modelsManager->executeQuery($phql, ['pattern' => $pattern]);
+$phql = "SELECT * 
+   FROM Posts 
+   WHERE MATCH_AGAINST(title, :pattern:)";
+$posts = $modelsManager->executeQuery($phql, ['pattern' => $pattern]);
 ```
 
 #### Improvements in Subqueries
@@ -163,17 +163,17 @@ In Phalcon 2.0.2 subqueries were introduced in PHQL. Support for this feature
 had been improved in 2.0.3 by introducing the EXISTS operator:
 
 ```php
-    $phql = "SELECT c.* 
-            FROM Shop\Cars c
-            WHERE EXISTS (
-                SELECT id 
-                FROM Shop\Brands b 
-                WHERE b.id = c.brandId
-            )";
-    $cars = $this->modelsManager->executeQuery($phql);
+$phql = "SELECT c.* 
+  FROM Shop\Cars c
+  WHERE EXISTS (
+     SELECT id 
+     FROM Shop\Brands b 
+     WHERE b.id = c.brandId
+  )";
+$cars = $this->modelsManager->executeQuery($phql);
 ```
 
-## Update/Upgrade
+### Update/Upgrade
 
 This version can be installed from the master branch, if you don’t have Zephir 
 installed follow these instructions:
@@ -210,6 +210,9 @@ Windows DLLs are available in the [download page](http://phalconphp.com/en/downl
 
 See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2) 
 for more information about upgrading to Phalcon 2.0.x from 1.3.x.
+
+* [Documentation](https://docs.phalconphp.com)
+* [API](https://api.phalconphp.com/) (Thanks to [gsouf](https://github.com/gsouf))
 
 ## Thanks
 
