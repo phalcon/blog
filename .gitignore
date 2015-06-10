@@ -1,2 +1,11 @@
+# Composer
 composer.lock
-cache/volt/*.php
+vendor/
+
+# PHPStorm
+.idea/
+
+# Cache
+var/cache/
+var/log/
+var/config/config.php

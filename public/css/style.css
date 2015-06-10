@@ -1,5 +1,10 @@
+p {
+  margin: 0 0 10px;
+  line-height: 24px;
+}
+
 #wrapper {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -15,6 +20,14 @@
 #wrapper #content .post .copy {
     color: #000;
     font-size: 16px;
+}
+
+#wrapper #sidebar {
+    padding: 10px;
+}
+
+#wrapper #articles {
+    padding: 10px;
 }
 
 #wrapper #sidebar #top .heading#followontumblr {
