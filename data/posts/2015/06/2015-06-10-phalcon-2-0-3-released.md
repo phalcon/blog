@@ -49,21 +49,6 @@ $robots = $this->modelsManager->executeQuery("
 ");
 ```
 
-#### Support for CASE/WHEN/ELSE
-Now `CASE`/`WHEN`/`ELSE` is available in PHQL expressions:
-
-```php
-$robots = $this->modelsManager->executeQuery("
-    SELECT 
-        CASE r.Type
-            WHEN 'Mechanical' THEN 1
-            WHEN 'Virtual' THEN 2
-            ELSE 3
-        END 
-    FROM Store\Robots AS r
-");
-```
-
 #### Namespace Aliases
 If you are using namespaces to organize your models, you will often find 
 yourself typing a long namespaced string to just reference one of your models. 
