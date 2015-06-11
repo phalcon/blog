@@ -72,6 +72,7 @@
                     <li><a href="https://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
                     <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
                     <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                    <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
                     <li><a href="https://phalconphp.com/en/about">About</a></li>
                     <li class="visible-lg"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
                     <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
