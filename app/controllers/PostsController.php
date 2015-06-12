@@ -30,6 +30,7 @@ class PostsController extends Controller
             );
         }
 
+        $this->view->pageTitle = $post->title;
         $this->view->showDisqus = true;
         $this->view->post       = $post;
     }
