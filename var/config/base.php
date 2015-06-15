@@ -15,6 +15,10 @@ return [
         'Kitsune\Plugins'     => K_PATH . '/app/plugins',
     ],
     'routes'     => [
+        '/rss' => [
+            'controller' => 'posts',
+            'action'     => 'rss'
+        ],
         '/sitemap' => [
             'controller' => 'sitemap',
             'action'     => 'index'
