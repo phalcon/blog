@@ -11,6 +11,7 @@
     "require": {
         "php": ">= 5.5",
         "ext-phalcon": ">= 2.0.2",
-        "kzykhys/ciconia": "~1.0.0"
+        "kzykhys/ciconia": "~1.0.0",
+        "mibe/feedwriter": "1.*"
     }    
 }
