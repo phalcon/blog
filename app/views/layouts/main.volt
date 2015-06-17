@@ -68,6 +68,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/prettify/0.1/prettify.css"/>
     <link rel="stylesheet" type="text/css" href="https://phosphorum-1618.kxcdn.com/css/theme.css?v=2.1.1"/>
 
+    <title>{% if pageTitle is defined %}{{ pageTitle }} - {% endif %}Phalcon Framework Blog</title>
+
     {{ stylesheet_link("css/style.css") }}
 
 </head>
