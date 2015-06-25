@@ -91,8 +91,15 @@
     "link": "23849400049\/help-test-phalcon-0-4-0"
   },
   {
+    "title": "Integrating Phalcon with PhpStorm IDE",
+    "slug": "integrating-phalcon-with-phpstorm-ide",
+    "date": "2012-06-05",
+    "tags": "php, phalcon, developer tools, phpstorm, ide",
+    "link": "24476683703\/integrating-phalcon-with-phpstorm-ide"
+  },
+  {
     "title": "Happy new year and What's coming",
-    "slug": "phalcon-1-2-5-released",
+    "slug": "happy-new-year-and-whats-coming",
     "date": "2014-01-02",
     "tags": "php, phalcon, roadmap",
     "link": "72003316776\/happy-new-year-and-whats-coming"
@@ -130,7 +137,7 @@
     "slug": "phalcon-statistics",
     "date": "2014-03-28",
     "tags": "php, phalcon, clot, zephir, statistics",
-    "link": "80996731603-\/phalcon-statistics"
+    "link": "80996731603\/phalcon-statistics"
   },
   {
     "title": "Introducing \"Pokémon: Phalcon Edition\"",
