@@ -27,10 +27,11 @@ use Kitsune\Exceptions\Exception as KException;
 
 class PostFinder
 {
-    private $data  = [];
-    private $tags  = [];
-    private $links = [];
-    private $dates = [];
+    private $data        = [];
+    private $tags        = [];
+    private $links       = [];
+    private $link_number = [];
+    private $dates       = [];
 
     public function __construct()
     {
@@ -72,6 +73,15 @@ class PostFinder
             $this->links[$post->link] = $post->slug;
 
             /**
+             * Check if the link is a tumblr one and get its number
+             */
+            $position = strpos($post->link, '/');
+            if (false !== $position) {
+                $link_number = substr($post->link, 0, $position);
+                $this->link_number[$link_number] = $post->slug;
+            }
+
+            /**
              * Dates (sorting)
              */
             $dates[$post->date] = $post->slug;
@@ -103,6 +113,14 @@ class PostFinder
 
     public function get($slug)
     {
-        return (array_key_exists($slug, $this->data)) ? $this->data[$slug] : null;
+        if (is_numeric($slug)) {
+            $slug = (array_key_exists($slug, $this->link_number)) ?
+                    $this->link_number[$slug]                     :
+                    null;
+        }
+
+        return (array_key_exists($slug, $this->data)) ?
+                $this->data[$slug]                    :
+                null;
     }
 }
