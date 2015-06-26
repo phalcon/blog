@@ -64,14 +64,12 @@ class PostsController extends Controller
 
     public function viewLegacyAction($time, $slug)
     {
-        vdd('hereL');
-
-//        $this->dispatcher->forward(
-//            [
-//                'controller' => 'errors',
-//                'action'     => 'show404'
-//            ]
-//        );
+        $this->dispatcher->forward(
+            [
+                'controller' => 'errors',
+                'action'     => 'show404'
+            ]
+        );
     }
 
     protected function getFullUrl($uri = '/')
