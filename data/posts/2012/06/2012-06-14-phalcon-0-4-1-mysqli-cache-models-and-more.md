@@ -1,7 +1,7 @@
 Phalcon 0.4.1: MySQLi, Cache + Models and more
 ==============================================
 
-![Phalcon](https://static.phalconphp.com/images/posts/2012-06-14-phalcon-green.jpg)
+![Phalcon](//static-blog.phalconphp.com/images/posts/2012-06-14-phalcon-green.jpg)
 
 We built Phalcon because we wanted a faster and better way to create web
 applications with PHP. Now we can’t imagine working without it. This
