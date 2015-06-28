@@ -91,6 +91,13 @@
     "link": "23849400049\/help-test-phalcon-0-4-0"
   },
   {
+    "title": "Phalcon 0.4.0 is finally here",
+    "slug": "phalcon-0-4-0-is-finally-here",
+    "date": "2012-06-02",
+    "tags": "php, frameworks, phalcon, release, 0.4",
+    "link": "24253047034\/phalcon-0-4-0-is-finally-here"
+  },
+  {
     "title": "Integrating Phalcon with PhpStorm IDE",
     "slug": "integrating-phalcon-with-phpstorm-ide",
     "date": "2012-06-05",
@@ -98,11 +105,11 @@
     "link": "24476683703\/integrating-phalcon-with-phpstorm-ide"
   },
   {
-    "title": "Phalcon 0.4.0 is finally here",
-    "slug": "phalcon-0-4-0-is-finally-here",
-    "date": "2012-06-02",
-    "tags": "php, frameworks, phalcon, release, 0.4",
-    "link": "24253047034\/phalcon-0-4-0-is-finally-here"
+    "title": "Sample Application: PHP Alternative site",
+    "slug": "sample-application-php-alternative-site",
+    "date": "2012-06-07",
+    "tags": "php, frameworks, phalcon, roadmap, sample, application",
+    "link": "24622423072\/sample-application-php-alternative-site"
   },
   {
     "title": "Phalcon 0.4.1: MySQLi, Cache + Models and more",
@@ -118,7 +125,13 @@
     "tags": "php, frameworks, phalcon, release, 0.4, postgresql, cache, views",
     "link": "25876131497\/phalcon-0-4-2-caching-views-and-postgresql"
   },
-
+  {
+    "title": "Moving towards Phalcon 0.5.x",
+    "slug": "moving-towards-phalcon-0-5-x",
+    "date": "2012-07-04",
+    "tags": "php, frameworks, phalcon, 0.5, roadmap",
+    "link": "26524358189\/moving-towards-phalcon-0-5-x"
+  },
 
   {
     "title": "Happy new year and What's coming",
