@@ -19,7 +19,7 @@ new features in the 2.0 series, the following is the CHANGELOG:
 - Fixed bug that makes instances returned in `Model::findFirst` to be not 
   completely initialized
 - Added support for general `SELECT ALL/SELECT DISTINCT` in PHQL
-- Added support for “not in” test in Volt 
+- Added support for "not in" test in Volt 
 - `Phalcon\Debug\Dump`
 -- Renamed method `var()` to `variable()` 
 -- Renamed method `vars()` to `variables()`

@@ -146,6 +146,41 @@
     "tags": "php, frameworks, phalcon, docs, documentation, readthedocs",
     "link": "27363858007\/we-are-now-on-readthedocs-org"
   },
+  {
+    "title": "Introduction Series 1: Phalcon's Dependency Injector",
+    "slug": "introduction-series-1-phalcons-dependency",
+    "date": "2012-08-09",
+    "tags": "php, frameworks, phalcon, series, mvc, di, 0.5",
+    "link": "29061488806\/introduction-series-1-phalcons-dependency"
+  },
+  {
+    "title": "Introduction Series 1: Phalcon's Dependency Injector",
+    "slug": "introduction-series-2-the-events-manager",
+    "date": "2012-08-12",
+    "tags": "php, frameworks, phalcon, series, mvc, events manager, 0.5",
+    "link": "29280239243\/introduction-series-2-the-events-manager"
+  },
+  {
+    "title": "Introduction series 3: Building an MVC application with 0.5.0",
+    "slug": "introduction-series-3-building-an-mvc-application",
+    "date": "2012-08-18",
+    "tags": "php, frameworks, phalcon, series, mvc, 0.5",
+    "link": "29703992127\/introduction-series-3-building-an-mvc-application"
+  },
+  {
+    "title": "Introduction Series 4: Phalcon Query Language (PHQL)",
+    "slug": "introduction-series-4-phalcon-query-language",
+    "date": "2012-08-21",
+    "tags": "php, frameworks, phalcon, series, phql, sql, mysql, hql, 0.5",
+    "link": "29905494935\/introduction-series-4-phalcon-query-language"
+  },
+  {
+    "title": "Phalcon 0.5.0 beta1 released!",
+    "slug": "phalcon-0-5-0-beta1-released",
+    "date": "2012-08-28",
+    "tags": "php, frameworks, phalcon, release, mvc, phql, events manager, 0.5, beta",
+    "link": "30325463805\/phalcon-0-5-0-beta1-released"
+  },
 
 
   {

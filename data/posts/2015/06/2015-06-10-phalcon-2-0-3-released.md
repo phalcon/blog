@@ -74,7 +74,7 @@ use Phalcon\Mvc\Model\Manager as ModelsManager;
 
 $di->set(
     'modelsManager', 
-    function() {
+    function () {
         $modelsManager = new ModelsManager();
         $modelsManager->registerNamespaceAlias(
             'bm',

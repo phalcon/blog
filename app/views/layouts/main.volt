@@ -151,7 +151,7 @@
 
         <script type="text/javascript">
             //<![CDATA[
-            (function() {
+            (function () {
                 var links = document.getElementsByTagName('a');
                 var query = '?';
                 for(var i = 0; i < links.length; i++) {

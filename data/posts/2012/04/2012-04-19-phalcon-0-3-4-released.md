@@ -1,7 +1,7 @@
 Phalcon 0.3.4 released
 ======================
 
-We’re part of the “speed up the web”, therefore, we want to have a rapid 
+We’re part of the "speed up the web", therefore, we want to have a rapid 
 release schedule releasing continuous improvements and bug fixes to Phalcon.
 
 The C language has not been designed for rapid development; however, we are 

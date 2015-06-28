@@ -63,7 +63,7 @@ you will probably have to change it:
 
 ```php
     // Passing a number as route ???
-    $app->add(100, function() {
+    $app->add(100, function () {
         // ...  
     })
 ```
@@ -72,7 +72,7 @@ Must be changed to:
 
 ```php
     // Passing a number as route ???
-    $app->add("100", function() {
+    $app->add("100", function () {
         // ...      
     })
 ```

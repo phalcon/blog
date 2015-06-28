@@ -49,11 +49,11 @@ Below is a comprehensive list of changes:
   `Phalcon_Cache_Frontend_None` and `Phalcon_Cache_Frontend_Data` 
   [[More Info](https://docs.phalconphp.com/en/latest/reference/cache.html)]
 - Added Phalcon_Request::hasPost and `Phalcon_Request::hasQuery`
-- Added parameter “persistent” to Phalcon_Db allowing to create persistent 
+- Added parameter "persistent" to Phalcon_Db allowing to create persistent 
   connections
 - Added alphanum to `Phalcon_Filter` to filter strings allowing filter only 
   alpha-numeric characters
-- Added `Phalcon_Tag::checkField` helper to create `input[type=“checkbox”]` tags
+- Added `Phalcon_Tag::checkField` helper to create `input[type="checkbox"]` tags
 - Added Phalcon_View::getParams to recover extra parameters sent in the request
 - Phalcon_View was refactored to allow other templating engines like Mustache 
   or Twig [[More info](https://docs.phalconphp.com/en/latest/reference/views.html#template-engines)]

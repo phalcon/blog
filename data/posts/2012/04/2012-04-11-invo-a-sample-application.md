@@ -22,7 +22,7 @@ With INVO you can learn about:
 
 - Define a web site project structure with Phalcon
 - Create a basic web site layout
-- Create a “contact us” section
+- Create a "contact us" section
 - Implement a simple sign-up for the service with its related validations
 - Create a login form using email/username/password combinations 
 - CRUD to manage companies, product types and products
