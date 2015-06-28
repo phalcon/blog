@@ -1,6 +1,7 @@
     <div>
         <span class="pull-right">
             <a href="post/{{ post.slug }}"><i class="fa fa-file-text-o"></i></a>
+            {{ post.date }}
         </span>
         {{ markdown(post.content) }}
         <div>

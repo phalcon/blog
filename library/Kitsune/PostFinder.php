@@ -22,10 +22,10 @@
  */
 namespace Kitsune;
 
-use Kitsune\Post;
+use Phalcon\Di\Injectable as PhDiInjectable;
 use Kitsune\Exceptions\Exception as KException;
 
-class PostFinder
+class PostFinder extends PhDiInjectable
 {
     private $data        = [];
     private $tags        = [];
@@ -35,7 +35,7 @@ class PostFinder
 
     public function __construct()
     {
-        $sourceFile = K_PATH . '/var/config/posts.json';
+        $sourceFile = K_PATH . '/data/posts.json';
 
         if (!file_exists($sourceFile)) {
             throw new KException('Posts JSON file cannot be located');
@@ -114,9 +114,10 @@ class PostFinder
     public function get($slug)
     {
         if (is_numeric($slug)) {
-            $slug = (array_key_exists($slug, $this->link_number)) ?
-                    $this->link_number[$slug]                     :
-                    null;
+            if (array_key_exists($slug, $this->link_number)) {
+                $slug = $this->link_number[$slug];
+                $this->response->redirect('/post/' . $slug, false, 301);
+            }
         }
 
         return (array_key_exists($slug, $this->data)) ?

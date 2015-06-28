@@ -59,9 +59,8 @@ class Post extends PhInjectable
             $this->disqus_url = 'https://blog.phalconphp.com/post/'
                               . $this->slug;
         }
-        $this->disqus_id  = 'Phalcon Framework - ' . $this->title;
-
-        $this->file     = sprintf(
+        $this->disqus_id = 'Phalcon Framework - ' . $this->title;
+        $this->file      = sprintf(
             '%s/%s/%s-%s.md',
             $dateParts[0],
             $dateParts[1],
@@ -75,11 +74,17 @@ class Post extends PhInjectable
         }
 
         /**
+         * Get the cdnUrl
+         */
+        $cdnUrl = $this->config->cdnUrl;
+
+        /**
          * Get the post itself
          */
         $fileName = K_PATH . '/data/posts/' . $this->file;
         if (file_exists($fileName)) {
-            $this->raw = file_get_contents($fileName);
+            $this->raw     = file_get_contents($fileName);
+            $this->raw     = str_replace('{{ cdnUrl }}', $cdnUrl, $this->raw);
             $this->content = $this->markdown->render($this->raw);
         }
     }
