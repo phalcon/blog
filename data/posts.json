@@ -129,9 +129,24 @@
     "title": "Moving towards Phalcon 0.5.x",
     "slug": "moving-towards-phalcon-0-5-x",
     "date": "2012-07-04",
-    "tags": "php, frameworks, phalcon, 0.5, roadmap",
+    "tags": "php, frameworks, phalcon, 0.5, roadmap, namespaces",
     "link": "26524358189\/moving-towards-phalcon-0-5-x"
   },
+  {
+    "title": "Phalcon 0.4.3 (stable) and 0.5.0 (alpha)",
+    "slug": "phalcon-0-4-3-stable-and-0-5-0-alpha",
+    "date": "2012-07-21",
+    "tags": "php, frameworks, phalcon, 0.4, 0.5, release, namespaces, roadmap",
+    "link": "27734788888\/phalcon-0-4-3-stable-and-0-5-0-alpha"
+  },
+  {
+    "title": "We are now on readthedocs.org!",
+    "slug": "we-are-now-on-readthedocs-org",
+    "date": "2012-07-16",
+    "tags": "php, frameworks, phalcon, docs, documentation, readthedocs",
+    "link": "27363858007\/we-are-now-on-readthedocs-org"
+  },
+
 
   {
     "title": "Happy new year and What's coming",
