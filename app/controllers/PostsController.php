@@ -11,6 +11,7 @@ class PostsController extends Controller
     public function initialize()
     {
         $this->view->setTemplateAfter('main');
+        $this->view->cdn_url = $this->config->cdnUrl;
     }
 
     public function indexAction()
