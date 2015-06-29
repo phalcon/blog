@@ -120,8 +120,15 @@ class PostFinder extends PhDiInjectable
             }
         }
 
-        return (array_key_exists($slug, $this->data)) ?
-                $this->data[$slug]                    :
-                null;
+        $key  = 'post-' . $slug . '.cache';
+        $post = $this->cache->get($key);
+
+        if ($post === null) {
+            if (array_key_exists($slug, $this->data)) {
+                $post = $this->data[$slug];
+                $this->cache->save($key, $post);
+            }
+        }
+        return $post;
     }
 }

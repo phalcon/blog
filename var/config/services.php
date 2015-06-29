@@ -130,6 +130,54 @@ $di->set(
 );
 
 /**
+ * Cache
+ */
+$di->set(
+    'viewCache',
+    function () {
+        $session = new SessionAdapter();
+        $session->start();
+        return $session;
+    }
+);
+
+/**
+ * viewCache
+ */
+$di->set(
+    'cache',
+    function () use ($config) {
+        $frontConfig = $config->cache_data->front->toArray();
+        $backConfig  = $config->cache_data->back->toArray();
+        $class       = '\Phalcon\Cache\Frontend\\' . $frontConfig['adapter'];
+        $frontCache  = new $class($frontConfig['params']);
+        /**
+         * Backend cache uses our own component which extends Libmemcached
+         */
+        $class       = '\Phalcon\Cache\Backend\\' . $backConfig['adapter'];
+        $cache       = new $class($frontCache, $backConfig['params']);
+        return $cache;
+    },
+    true
+);
+
+$di->set(
+    'viewCache',
+    function () use ($config) {
+        $frontConfig = $config->cache_view->front->toArray();
+        $backConfig  = $config->cache_view->back->toArray();
+        $class       = '\Phalcon\Cache\Frontend\\' . $frontConfig['adapter'];
+        $frontCache  = new $class($frontConfig['params']);
+        /**
+         * Backend cache uses our own component which extends Libmemcached
+         */
+        $class       = '\Phalcon\Cache\Backend\\' . $backConfig['adapter'];
+        $cache       = new $class($frontCache, $backConfig['params']);
+        return $cache;
+    }
+);
+
+/**
  * Markdown renderer
  */
 $di->set(
@@ -142,10 +190,17 @@ $di->set(
     true
 );
 
+$cache = $di->get('cache');
 $di->set(
     'finder',
-    function () {
-        return new PostFinder();
+    function () use ($cache) {
+        $key = 'post.finder.cache';
+        $postFinder = $cache->get($key);
+        if (null === $postFinder) {
+            $postFinder = new PostFinder();
+            $cache->save($key, $postFinder);
+        }
+        return $postFinder;
     },
     true
 );
