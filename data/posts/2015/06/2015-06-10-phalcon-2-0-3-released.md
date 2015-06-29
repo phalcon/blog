@@ -161,7 +161,7 @@ $cars = $this->modelsManager->executeQuery($phql);
 
 ### Update/Upgrade
 
-This version can be installed from the master branch, if you don’t have Zephir 
+This version can be installed from the master branch, if you don't have Zephir 
 installed follow these instructions:
 
 ```sh

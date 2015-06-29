@@ -3,7 +3,7 @@ Sample Application: PHP Alternative site
 
 [![Alternate site]({{ cdnUrl }}/images/posts/2012-06-07-php-site-1.png)](https://php.phalconphp.com/)
 
-Today, we’re launching another sample application for Phalcon. This
+Today, we're launching another sample application for Phalcon. This
 time, we wanted to create an [alternative
 version](http://php.phalconphp.com/) of the [PHP site](http://php.net)
 powered by the C-extension framework. This is the greatest example we
@@ -13,7 +13,7 @@ especially the newly added:
 and [Complex Routing](https://docs.phalconphp.com/en/latest/reference/routing.html).
 
 You will find some of the main content such as news and some other sections. 
-Note, that we have no intention that this site offer the official PHP’s content 
+Note, that we have no intention that this site offer the official PHP's content 
 is just one example that is familiar to us all.
 
 **Multilingual Support**
@@ -36,7 +36,7 @@ some routes like
 this kind of URLs are now possible thanks to the new routing system present in 
 most frameworks.
 
-If you’ve been thinking about creating a blog, or news site with Phalcon, it is 
+If you've been thinking about creating a blog, or news site with Phalcon, it is 
 possible that this application will help you so much. The code is available on 
 [github](https://github.com/phalcon/php-site), feel free to use it in your own 
 projects and improve it (if you have some extra time).

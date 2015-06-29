@@ -26,7 +26,7 @@ grows to a point that will require a complete rewrite.
 
 Another important change is to replace the current database adapters with PDO. 
 This would allow us to be
-[DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (Don’t Repeat 
+[DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (Don't Repeat 
 Yourself) and maintain less code using a common interface for different 
 database systems. 
 

@@ -5,7 +5,7 @@ INVO: A sample application
 
 [INVO](https://github.com/phalcon/invo) is a sample application completely 
 written with Phalcon. It will give you a closer insight into application 
-development with this framework. Although, it’s quite functional, have some 
+development with this framework. Although, it's quite functional, have some 
 flaws we expect to complement at the future (at this time does not produce 
 invoices, for example).
 

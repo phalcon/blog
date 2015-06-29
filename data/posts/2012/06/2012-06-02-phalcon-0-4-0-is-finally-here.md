@@ -1,7 +1,7 @@
 Phalcon 0.4.0 is finally here
 =============================
 
-We’ve been really busy this last month working on Phalcon 0.4.0, and for our 
+We've been really busy this last month working on Phalcon 0.4.0, and for our 
 pleasure is finally here! This release is giving much more satisfaction than 
 ever before knowing that have been built with many suggestions and feedback 
 from developers around all the globe.
@@ -34,7 +34,7 @@ ideas or suggestions you have, building together a new way to make the web even
 faster!
 
 As always lastest versions are available from the 
-[download page](https://phalconphp.com/download), we hope you’re as pleased 
+[download page](https://phalconphp.com/download), we hope you're as pleased 
 with these improvements as we are!
 
 <3 Phalcon Team

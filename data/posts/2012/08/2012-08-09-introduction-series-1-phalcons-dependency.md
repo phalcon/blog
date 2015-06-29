@@ -52,7 +52,7 @@ $di->set(
 ```
 
 In the above example, when the framework needs to access the request data, it 
-will ask for the service identified as ‘request’ in the container. The 
+will ask for the service identified as ‘request' in the container. The 
 container in turn will return an instance of the required service. A developer 
 might eventually replace the `Phalcon\Http\Request` component bundled with one 
 provided by another vendor or created by the developer him/herself.

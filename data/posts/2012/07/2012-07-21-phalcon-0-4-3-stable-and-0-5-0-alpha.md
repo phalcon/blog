@@ -36,7 +36,7 @@ There is still more to come. The next alpha release (0.5.0 Alpha 2) we are
 planning on migrating all the database adapters to PDO, while continuing on our 
 normal roadmap.
 
-If you have any problems you can send us your comments via the Phalcon’s
+If you have any problems you can send us your comments via the Phalcon's
 [forum](https://forum.phalconphp.com).
 
 Thanks for your help!

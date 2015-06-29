@@ -1,7 +1,7 @@
 About the name
 ==============
 
-Some of you have asked us: Why the framework was called Phalcon?, and we’re 
+Some of you have asked us: Why the framework was called Phalcon?, and we're 
 happy to respond.
 
 We look ourselves as a strange kind of geek personality that make a point to 

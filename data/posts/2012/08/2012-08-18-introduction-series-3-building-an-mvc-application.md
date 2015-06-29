@@ -168,7 +168,7 @@ try {
 
 *Creating a controller:*
 
-Let’s create a controller. As before, we only need to create a class with the 
+Let's create a controller. As before, we only need to create a class with the 
 suffix "Controller" in a location where the autoloader can discover it.
 
 ```php

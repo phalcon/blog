@@ -28,7 +28,7 @@ manage the documentation. Every time anyone commits a change, 
 [Read the Docs](http://readthedocs.org/) automatically downloads and rebuilds 
 the documentation, ensuring that it is up to date with the latest developments.
 
-**What’s next?**
+**What's next?**
 
 If you have some extra time, we invite you to take a look at the 
 [new documentation](http://docs.phalconphp.com) and share your thoughts with us. 

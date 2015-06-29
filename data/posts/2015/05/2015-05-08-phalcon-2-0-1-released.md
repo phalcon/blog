@@ -1,7 +1,7 @@
 Phalcon 2.0.1 released
 ======================
 
-Today we’re releasing Phalcon 2.0.1, this version fixes bugs and adds
+Today we're releasing Phalcon 2.0.1, this version fixes bugs and adds
 new features in the 2.0 series, the following is the CHANGELOG:
 
 - Fixed random segfaults in installations using PHP <= 5.5 caused by inline caches
@@ -29,7 +29,7 @@ new features in the 2.0 series, the following is the CHANGELOG:
 
 ### Update/Upgrade
 
-This version can be installed from the master branch. If you don’t have 
+This version can be installed from the master branch. If you don't have 
 [Zephir](http://www.zephir-lang.com) installed follow these instructions:
 
 ```sh
