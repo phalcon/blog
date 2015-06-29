@@ -47,7 +47,7 @@
         <link rel="icon" type="image/png" href="{{ cdn_url }}/images/favicon/favicon-128.png" sizes="128x128" />
 
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="//static.phalconphp.com/css/phalcon.min.css" />
+        <link rel="stylesheet" type="text/css" href="//static.phalconphp.com/www/css/phalcon.min.css" />
         <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
         <!--
         EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
@@ -67,8 +67,7 @@
 
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/prettify/0.1/prettify.css"/>
         <link rel="stylesheet" type="text/css" href="https://phosphorum-1618.kxcdn.com/css/theme.css?v=2.1.1"/>
-
-        {{ stylesheet_link("css/style.css") }}
+        <link rel="stylesheet" type="text/css" href="{{ cdn_url }}/css/style.css"/>
 
     </head>
     <body>
