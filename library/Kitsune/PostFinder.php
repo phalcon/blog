@@ -99,13 +99,19 @@ class PostFinder extends PhDiInjectable
         $posts   = [];
         $counter = 1;
 
-        foreach ($this->dates as $key) {
-            $posts[] = $this->data[$key];
-            $counter = $counter + 1;
+        $key  = 'posts-latest-1.cache';
+        $posts = $this->cache->get($key);
 
-            if ($counter > $number) {
-                break;
+        if ($posts === null) {
+            foreach ($this->dates as $key) {
+                $posts[] = $this->data[$key];
+                $counter = $counter + 1;
+
+                if ($counter > $number) {
+                    break;
+                }
             }
+            $this->cache->save($key, $posts);
         }
 
         return $posts;
