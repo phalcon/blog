@@ -49,11 +49,11 @@ Below is a comprehensive list of changes:
   `Phalcon_Cache_Frontend_None` and `Phalcon_Cache_Frontend_Data` 
   [[More Info](https://docs.phalconphp.com/en/latest/reference/cache.html)]
 - Added Phalcon_Request::hasPost and `Phalcon_Request::hasQuery`
-- Added parameter “persistent” to Phalcon_Db allowing to create persistent 
+- Added parameter "persistent" to Phalcon_Db allowing to create persistent 
   connections
 - Added alphanum to `Phalcon_Filter` to filter strings allowing filter only 
   alpha-numeric characters
-- Added `Phalcon_Tag::checkField` helper to create `input[type=“checkbox”]` tags
+- Added `Phalcon_Tag::checkField` helper to create `input[type="checkbox"]` tags
 - Added Phalcon_View::getParams to recover extra parameters sent in the request
 - Phalcon_View was refactored to allow other templating engines like Mustache 
   or Twig [[More info](https://docs.phalconphp.com/en/latest/reference/views.html#template-engines)]
@@ -62,7 +62,7 @@ Below is a comprehensive list of changes:
 - Added calculation functions to Phalcon_Model: count, sum, average, minimum 
   and maximum [[more info](https://docs.phalconphp.com/en/latest/reference/models.html#generating-calculations)]
 
-We’re pushing out a beta of the 0.4.0 code. Here’s how you can help us
+We're pushing out a beta of the 0.4.0 code. Here's how you can help us
 out:
 
 - Downloading the beta version from the downloads page and testing it with 
@@ -76,9 +76,9 @@ out:
 Although, the new version is passing all the [760 unit-tests](http://travis-ci.org/#!/phalcon/cphalcon/builds/1445961) 
 on Travis-CI, there might be some odd bug pending to be fixed.
 
-Let’s make this release the best yet. 
+Let's make this release the best yet. 
 
-Thanks in advance for all your help and support — it’s appreciated more than 
+Thanks in advance for all your help and support — it's appreciated more than 
 you know!
 
 <3 Phalcon Team

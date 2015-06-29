@@ -3,7 +3,7 @@ Phalcon 2 released!
 
 The wait is over! Phalcon 2.0 is here!
 
-After more than a year of development, we’re extremely excited to announce the 
+After more than a year of development, we're extremely excited to announce the 
 release of Phalcon 2.0 (final).
 
 Those that have been following the project closely, know that this has not been 
@@ -26,7 +26,7 @@ The results are something that we are very proud of:
 
 ### Installation
 
-This version can be installed from the master branch, if you don’t have
+This version can be installed from the master branch, if you don't have
 [Zephir](http://www.zephir-lang.com) installed follow these instructions:
 
 ```sh
@@ -64,13 +64,13 @@ See the
 [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2)
 for more information about installing and updating to Phalcon 2.
 
-### What’s next
+### What's next
 
 Our release schedule will be every one or two months (unless we need to issue a 
 security fix, which will be near instant). The target will be the most 
 requested features by the community, although with 
 [Zephir](http://www.zephir-lang.com), contributing to Phalcon will be a breeze. 
-We can’t wait to see those pull requests coming in :)
+We can't wait to see those pull requests coming in :)
 
 Smaller changes and fixes that can be bundled in a minor version will be 
 released as soon as we can. We will also be working on a LTS (Long Term 

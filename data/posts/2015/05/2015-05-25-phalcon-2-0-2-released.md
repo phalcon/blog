@@ -41,9 +41,9 @@ subquery.
 
 ### Default Database Values
 
-Now in the case that a column has a ‘default’ value declared in the
-field of the mapped table, this 'default’ value will be used instead of
-inserting 'NULL’:
+Now in the case that a column has a ‘default' value declared in the
+field of the mapped table, this 'default' value will be used instead of
+inserting 'NULL':
 
 ```php
     $robots = new Robots();
@@ -52,7 +52,7 @@ inserting 'NULL’:
 
 ### Update/Upgrade
 
-This version can be installed from the master branch, if you don’t have Zephir 
+This version can be installed from the master branch, if you don't have Zephir 
 installed follow these instructions:
 
 ```sh

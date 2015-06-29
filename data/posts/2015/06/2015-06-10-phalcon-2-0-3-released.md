@@ -74,7 +74,7 @@ use Phalcon\Mvc\Model\Manager as ModelsManager;
 
 $di->set(
     'modelsManager', 
-    function() {
+    function () {
         $modelsManager = new ModelsManager();
         $modelsManager->registerNamespaceAlias(
             'bm',
@@ -161,7 +161,7 @@ $cars = $this->modelsManager->executeQuery($phql);
 
 ### Update/Upgrade
 
-This version can be installed from the master branch, if you don’t have Zephir 
+This version can be installed from the master branch, if you don't have Zephir 
 installed follow these instructions:
 
 ```sh

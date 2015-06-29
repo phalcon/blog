@@ -10,7 +10,7 @@ has become very popular among developers lately.
 
 This screencast will cover the major integration points needed to have
 an enjoyable experience. The first point is the Phalcon Developer Tools
-integration, it’s easy to run commands from the IDE and work on the results 
+integration, it's easy to run commands from the IDE and work on the results 
 immediately.
 
 Another important and useful feature is the code completion. You could import 

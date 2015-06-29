@@ -1,3 +1,3 @@
-<h1>Not found</h1>
+<h3>Sorry this page cannot be found</h3>
 
-{{ dispatcher.getControllerName() }} {{ dispatcher.getActionName() }}
+{{ image( cdnUrl ~ 'images/404.png') }}

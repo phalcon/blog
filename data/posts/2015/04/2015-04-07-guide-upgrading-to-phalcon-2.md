@@ -14,9 +14,9 @@ Upgrading to the latest version has several benefits:
 - Older version of Phalcon will eventually no longer receive bugs, security or 
   feature updates
 
-If you’re upgrading an existing application, it’s a great idea to have good 
+If you're upgrading an existing application, it's a great idea to have good 
 test coverage before going in. You should also first upgrade to Phalcon 1.3.4 
-in case you haven’t and make sure your application still runs as expected 
+in case you haven't and make sure your application still runs as expected 
 before attempting an update to Phalcon 2.
 
 Most of the development of Phalcon 2 has been focused on maintaining backwards 
@@ -28,8 +28,8 @@ upgrade process as smooth as possible.
 **Interfaces and parameter types**
 Phalcon 1.3 sometimes does not validate data types and interfaces compliance in 
 parameters with the rigorousness as Phalcon 2 does. In many cases this should 
-not be a problem. If you’re implementing your own adapters or components based 
-on Phalcon’s interfaces then will be necessary to update the method prototypes:
+not be a problem. If you're implementing your own adapters or components based 
+on Phalcon's interfaces then will be necessary to update the method prototypes:
 
 ```php
     use Phalcon\Di\InjectionAwareInterface;
@@ -63,7 +63,7 @@ you will probably have to change it:
 
 ```php
     // Passing a number as route ???
-    $app->add(100, function() {
+    $app->add(100, function () {
         // ...  
     })
 ```
@@ -72,7 +72,7 @@ Must be changed to:
 
 ```php
     // Passing a number as route ???
-    $app->add("100", function() {
+    $app->add("100", function () {
         // ...      
     })
 ```
@@ -98,7 +98,7 @@ the best performance we recommend to use this version.
 
 **Installation**\
 
-This version can be installed from the 2.0.0 branch, if you don’t have
+This version can be installed from the 2.0.0 branch, if you don't have
 [Zephir](http://www.zephir-lang.com) installed follow these instructions:
 
 ```sh
@@ -132,7 +132,7 @@ Windows DLLs are available in the [download page](https://phalconphp.com/en/down
 
 **Deployment**\
 When you are sufficiently confident your application is working with Phalcon 2, 
-you’re ready to go ahead and deploy your upgraded Phalcon project.
+you're ready to go ahead and deploy your upgraded Phalcon project.
 
 Happy Upgrading!
 
