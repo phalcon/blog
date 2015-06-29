@@ -14,7 +14,7 @@ return [
         'back'  => [
             'adapter' => 'File',
             'params'  => [
-                'cacheDir' => K_PATH . '/var/data/cache/'
+                'cacheDir' => K_PATH . '/var/data/cache'
             ]
         ]
     ],
@@ -28,7 +28,7 @@ return [
         'back'  => [
             'adapter' => 'File',
             'params'  => [
-                'cacheDir' => K_PATH . '/var/data/cache/'
+                'cacheDir' => K_PATH . '/var/data/cache'
             ]
         ]
     ],
