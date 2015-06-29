@@ -200,7 +200,7 @@ for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 * [Documentation](https://docs.phalconphp.com)
 * [API](https://api.phalconphp.com/) (Thanks to [gsouf](https://github.com/gsouf))
 
-## Thanks
+### Thanks
 
 Thanks to everyone involved in making this version: collaborators and as well to the community for 
 their continuous input and feedback!
