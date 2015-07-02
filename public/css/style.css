@@ -180,3 +180,12 @@ pre.sh_sourceCode span.sh_function {
 h1, h2, h3 {
     border-bottom: 1px solid #c0c0c0;
 }
+
+.horizontal-ruler {
+    padding: 20px;
+    color: #dadada;
+}
+
+.h2, h2 {
+  font-size: 28px;
+}
