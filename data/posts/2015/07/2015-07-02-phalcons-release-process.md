@@ -1,7 +1,7 @@
 Phalcon's release process
 =========================
 
-# Official Releases
+## Official Releases
 
 Since version 0.5, release numbering works as follows:
 
@@ -15,20 +15,20 @@ Before Phalcon 2, all versions including minor versions had their own branch,
 starting from Phalcon 2 major versions have their own branch, but minor
 versions all they share the branch of the major version.
 
-## Major release
+### Major release
 
 Major release will happen between 6 and 9 months. These release contain
 new features, improvements and bug fixes. A major release may deprecate
 features from previous releases.
 
-## Minor release
+### Minor release
 
 Minor releases add bug and security fixes and new features. These releases
 are compatible with versions of the same major version. A.B.C+1 is compatible
 with A.B.C. These versions will happen between 3 and 5 weeks. We encourage
 all Phalcon users to update minor versions.
 
-# Supported versions
+## Supported versions
 
 Development is isolated in each respective branch. The Master branch will always 
 contain the current version released as stable. Each supported version will be 
