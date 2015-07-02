@@ -55,11 +55,14 @@ class Post extends PhInjectable
         if ($this->link) {
             $this->disqus_url = 'http://phalconphp.tumblr.com/post/'
                               . $this->link;
+            $this->disqus_id = 'Phalcon Framework - ' . $this->title;
         } else {
             $this->disqus_url = 'https://blog.phalconphp.com/post/'
                               . $this->slug;
+            $this->disqus_id = 'Phalcon Framework - ' .
+                                str_replace(['"', "''"], ['', ''], $this->title);
         }
-        $this->disqus_id = 'Phalcon Framework - ' . $this->title;
+
         $this->file      = sprintf(
             '%s/%s/%s-%s.md',
             $dateParts[0],
