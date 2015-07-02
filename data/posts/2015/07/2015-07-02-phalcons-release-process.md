@@ -46,3 +46,6 @@ will be communicated with the community well in advance.
 * Phalcon 1.3.x: Supported until 2014-01-13. No longer supported.
 * Phalcon 2.0.x: Supported until 2015-09-30
 * Phalcon 2.1.x: Supported until 2016-09-30
+
+
+<3 Phalcon Team
