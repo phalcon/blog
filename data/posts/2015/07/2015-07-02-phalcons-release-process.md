@@ -1,6 +1,8 @@
 Phalcon's release process
 =========================
 
+The following post explain our release process:
+
 ## Official Releases
 
 Since version 0.5, release numbering works as follows:
@@ -42,10 +44,9 @@ will be communicated with the community well in advance.
 
 ## State of Phalcon versions
 
-* Phalcon 1.2.x: Supported until 2014-01-13. No longer supported.
-* Phalcon 1.3.x: Supported until 2014-01-13. No longer supported.
+* Phalcon 1.2.x: Supported until 2014-03-17. No longer supported.
+* Phalcon 1.3.x: Supported until 2015-05-08. No longer supported.
 * Phalcon 2.0.x: Supported until 2015-09-30
 * Phalcon 2.1.x: Supported until 2016-09-30
-
 
 <3 Phalcon Team
