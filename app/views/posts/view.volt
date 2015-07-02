@@ -16,7 +16,7 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname  = 'phalconphp';
-        var disqus_identifier = '{{ post.disqus_id }}';
+        var disqus_identifier = "{{ post.disqus_id }}";
         var disqus_url        = '{{ post.disqus_url }}';
 
         (function () {
