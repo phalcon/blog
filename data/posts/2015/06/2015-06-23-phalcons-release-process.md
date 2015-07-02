@@ -30,12 +30,19 @@ all Phalcon users to update minor versions.
 
 # Supported versions
 
-Development happens in the respective branch. Master branch always have
-the current version released as stable.
+Development is isolated in each respective branch. The Master branch will always 
+contain the current version released as stable. Each supported version will be 
+updated with any minor revisions that happen in the current version. Older 
+versions will receive only bug fixes and security updates.
 
-The following are the state of the Phalcon versions out there:
+If a new version has to have an API change which will change backwards compatibility 
+then we will extend the support on older versions to allow users to adjust their 
+code. Naturally any upcoming changes that will break backwards compatibility 
+will be communicated with the community well in advance.
 
-* Phalcon 1.2.x: This version was supported until 2014/01/13. No longer supported.
-* Phalcon 1.3.x: This version was supported until 2014/01/13. No longer supported.
-* Phalcon 2.0.x: This version will be supported until 2015/09/30
-* Phalcon 2.1.x: This version will be supported until 2016/05/31
+## State of Phalcon versions
+
+* Phalcon 1.2.x: Supported until 2014-01-13. No longer supported.
+* Phalcon 1.3.x: Supported until 2014-01-13. No longer supported.
+* Phalcon 2.0.x: Supported until 2015-09-30
+* Phalcon 2.1.x: Supported until 2016-05-31
