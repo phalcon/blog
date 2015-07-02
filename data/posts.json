@@ -337,5 +337,12 @@
     "date": "2015-06-10",
     "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
     "link": ""
+  },
+  {
+    "title": "Phalcon release process",
+    "slug": "phalcon-release-process",
+    "date": "2015-07-02",
+    "tags": "php, phalcon, 2.0, phalcon2, release, zephir, lts",
+    "link": ""
   }
 ]
