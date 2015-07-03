@@ -1,6 +1,10 @@
 Phalcon's release process
 =========================
 
+![Phalcon Process](https://blog.phalconphp.com/images/posts/2015-05-peregrine-falcon-kelly-harris.jpg)
+
+The following post explain our release process:
+
 ## Official Releases
 
 Since version 0.5, release numbering works as follows:
@@ -30,22 +34,21 @@ all Phalcon users to update minor versions.
 
 ## Supported versions
 
-Development is isolated in each respective branch. The Master branch will always 
-contain the current version released as stable. Each supported version will be 
-updated with any minor revisions that happen in the current version. Older 
+Development is isolated in each respective branch. The Master branch will always
+contain the current version released as stable. Each supported version will be
+updated with any minor revisions that happen in the current version. Older
 versions will receive only bug fixes and security updates.
 
-If a new version has to have an API change which will change backwards compatibility 
-then we will extend the support on older versions to allow users to adjust their 
-code. Naturally any upcoming changes that will break backwards compatibility 
+If a new version has to have an API change which will change backwards compatibility
+then we will extend the support on older versions to allow users to adjust their
+code. Naturally any upcoming changes that will break backwards compatibility
 will be communicated with the community well in advance.
 
 ## State of Phalcon versions
 
-* Phalcon 1.2.x: Supported until 2014-01-13. No longer supported.
-* Phalcon 1.3.x: Supported until 2014-01-13. No longer supported.
-* Phalcon 2.0.x: Supported until 2015-09-30
-* Phalcon 2.1.x: Supported until 2016-09-30
-
+* Phalcon 1.2.x: Supported until 2014-03-17. No longer supported.
+* Phalcon 1.3.x: Supported until 2015-05-08. No longer supported.
+* Phalcon 2.0.x: Supported until 2016-04-17 (1 year from release date)
+* Phalcon 2.1.x: LTS release. Supported until 2017-09-30 (2 years from release date)
 
 <3 Phalcon Team
