@@ -14,7 +14,7 @@
 
         <meta property="og:site_name" content="Phalcon" />
         <meta property="og:type" content="website" /> <!-- article or subpages-->
-        <meta property="og:title" content="Phalcon Framework" />
+        <meta property="og:title" content="{{ title is defined ? title|e : "Phalcon Framework Blog" }}" />
         <meta property="og:url" content="http://blog.phalconphp.com/?og=1" />
         <meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and..." />
 
@@ -68,6 +68,8 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/prettify/0.1/prettify.css"/>
         <link rel="stylesheet" type="text/css" href="https://phosphorum-1618.kxcdn.com/css/theme.css?v=2.1.1"/>
         <link rel="stylesheet" type="text/css" href="{{ cdn_url }}/css/style.css"/>
+
+        <title>{{ title is defined ? title|e ~ " - Phalcon Framework" : "Phalcon Framework Blog" }}</title>
 
     </head>
     <body>

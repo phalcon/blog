@@ -168,16 +168,20 @@ pre.sh_sourceCode span.sh_function {
     display: block;
 }
 
-.carboands a {
+#carbonads a {
     font-size: 12px;
     color: #717171
 }
 
-.carboands {
+#carbonads {
     border: 1px solid #dadada;
 }
 
-h1, h2, h3 {
+h1 {
+    margin-bottom: 30px;
+}
+
+h2, h3 {
     border-bottom: 1px solid #c0c0c0;
 }
 
@@ -187,5 +191,19 @@ h1, h2, h3 {
 }
 
 .h2, h2 {
-  font-size: 28px;
+  font-size: 26px;
+}
+
+.tags-container {
+    margin-bottom: 20px;
+}
+
+.heading h2 {
+    color: #fff;
+    border: none;
+}
+
+.post-date {
+    color: #969696;
+    font-size: 12px;
 }

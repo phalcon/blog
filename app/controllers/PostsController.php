@@ -28,8 +28,7 @@ class PostsController extends Controller
         $feed->setDescription('We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption');
         $feed->setLink($this->getFullUrl());
 
-
-        foreach ($this->finder->getLatest(10) as $post) {
+        foreach ($this->finder->getLatest(20) as $post) {
             $feedItem = new \FeedWriter\Item();
             $feedItem->setTitle($post->title);
             $feedItem->setLink($this->getFullUrl('/post/'.$post->slug));
@@ -61,6 +60,7 @@ class PostsController extends Controller
 
         $this->view->showDisqus = true;
         $this->view->post       = $post;
+        $this->view->title      = $post->title;
     }
 
     public function viewLegacyAction($time, $slug)

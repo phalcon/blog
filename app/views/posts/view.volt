@@ -1,10 +1,10 @@
     <div>
-        <span class="pull-right">
+        <span class="pull-right post-date">
             <a href="post/{{ post.slug }}"><i class="fa fa-file-text-o"></i></a>
             {{ post.date }}
         </span>
         {{ markdown(post.content) }}
-        <div>
+        <div class="tags-container">
             {% for tag in post.tags %}
             <a href="/tag/{{ tag }}">
                 <span class="badge">{{ tag }}</span>
