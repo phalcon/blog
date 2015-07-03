@@ -10,8 +10,12 @@ class ErrorsController extends Controller
     {
         $this->view->setTemplateAfter('main');
     }
-
+    
     public function show404Action()
+    {
+    }
+
+    public function show401Action()
     {
 
     }
