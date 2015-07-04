@@ -1,5 +1,7 @@
+# .htaccess
+.htaccess
+
 # Composer
-composer.lock
 vendor/
 
 # PHPStorm
