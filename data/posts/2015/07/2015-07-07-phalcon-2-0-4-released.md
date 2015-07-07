@@ -163,12 +163,12 @@ $robots = $modelsManager->executeQuery(
 
 This causes the following exception:
 
-``
+```
 Fatal error: Uncaught exception 'PDOException' with message 'SQLSTATE[42000]:
 Syntax error or access violation: 1064 You have an error in your SQL syntax;
 check the manual that corresponds to your MySQL server version for the right
 syntax to use near ''100'' at line 1' in /Users/scott/demo.php:78
-``
+```
 
 This happens because 100 is a string variable. It is easily fixable by casting
 the value to integer first:
