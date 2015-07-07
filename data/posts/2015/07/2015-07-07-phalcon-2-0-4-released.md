@@ -265,8 +265,8 @@ class Companies extends Model
         $this->hasMany('id', 'Invoices', 'inv_id', [
             'alias'    => 'invoicesUnpaid',
             'params'   => [
-              'conditions' => "inv_status <> :paid:",
-              'bind' => 'unpaid'
+              'conditions' => "inv_status <> :status:",
+              'bind' => ['status' => 'unpaid']
             ]
           ]
         );
