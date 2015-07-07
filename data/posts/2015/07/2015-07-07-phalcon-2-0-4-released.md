@@ -133,17 +133,17 @@ $robots = $this->modelsManager->executeQuery(
 
 The following types are available:
 
-| Bind Type  | Bind Type Constant                 | Example         |
-|------------|------------------------------------|-----------------|
-| str        | Column::BIND_PARAM_STR             | {name:str}      |
-| int        | Column::BIND_PARAM_INT             | {number:int}    |
-| double     | Column::BIND_PARAM_DECIMAL         | {price:double}  |
-| bool       | Column::BIND_PARAM_BOOL            | {enabled:bool}  |
-| blob       | Column::BIND_PARAM_BLOB            | {image:blob}    |
-| null       | Column::BIND_PARAM_NULL            | {exists:null}   |
-| array      | Array of Column::BIND_PARAM_STR    | {codes:array}   |
-| array-str  | Array of Column::BIND_PARAM_STR    | {names:array}   |
-| array-int  | Array of Column::BIND_PARAM_INT    | {flags:array}   |
+| Bind Type  | Bind Type Constant                 | Example           |
+|------------|------------------------------------|-------------------|
+| str        | `Column::BIND_PARAM_STR`           | `{name:str}`      |
+| int        | `Column::BIND_PARAM_INT`           | `{number:int}`    |
+| double     | `Column::BIND_PARAM_DECIMAL`       | `{price:double}`  |
+| bool       | `Column::BIND_PARAM_BOOL`          | `{enabled:bool}`  |
+| blob       | `Column::BIND_PARAM_BLOB`          | `{image:blob}`    |
+| null       | `Column::BIND_PARAM_NULL`          | `{exists:null}`   |
+| array      | Array of `Column::BIND_PARAM_STR`  | `{codes:array}`   |
+| array-str  | Array of `Column::BIND_PARAM_STR`  | `{names:array}`   |
+| array-int  | Array of `Column::BIND_PARAM_INT`  | `{flags:array}`   |
 
 #### Cast bound parameters values
 By default, bound parameters aren't casted in the PHP userland to the specified
@@ -191,12 +191,12 @@ avoid unexpected exceptions you can instruct Phalcon to do this casting for you:
 
 The following actions are performed according to the bind type specified:
 
-| Bind Type                  | Action                                   |
-|----------------------------|------------------------------------------|
-| Column::BIND_PARAM_STR     | Cast the value as a native PHP string    |
-| Column::BIND_PARAM_INT     | Cast the value as a native PHP integer   |
-| Column::BIND_PARAM_BOOL    | Cast the value as a native PHP boolean   |
-| Column::BIND_PARAM_DECIMAL | Cast the value as a native PHP double    |
+| Bind Type                    | Action                                   |
+|------------------------------|------------------------------------------|
+| `Column::BIND_PARAM_STR`     | Cast the value as a native PHP string    |
+| `Column::BIND_PARAM_INT`     | Cast the value as a native PHP integer   |
+| `Column::BIND_PARAM_BOOL`    | Cast the value as a native PHP boolean   |
+| `Column::BIND_PARAM_DECIMAL` | Cast the value as a native PHP double    |
 
 #### Cast on Hydrate
 Values returned from the database system are always represented as string values
