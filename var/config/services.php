@@ -184,6 +184,10 @@ $di->set(
     'markdown',
     function () {
         $ciconia = new Ciconia();
+
+        $ciconia->addExtension(new \Kitsune\Markdown\TableExtension());
+        $ciconia->addExtension(new \Kitsune\Markdown\UrlAutoLinkExtension());
+        $ciconia->addExtension(new \Ciconia\Extension\Gfm\FencedCodeBlockExtension());
         $ciconia->addExtension(new FencedCodeBlockExtension());
         return $ciconia;
     },
