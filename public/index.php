@@ -1,26 +1,19 @@
 <?php
 
+use \Phalcon\DI\FactoryDefault as PhDI;
+use \Kitsune\Bootstrap;
+
 error_reporting(E_ALL);
 
-use Phalcon\Mvc\Application;
-
 try {
-    define('K_PATH', dirname(dirname(__FILE__)));
 
-    /**
-     * Config, auto-loader, environment configuration
-     */
-    require K_PATH . '/var/config/loader.php';
-
-    /**
-     * Load application services
-     */
-    require K_PATH . '/var/config/services.php';
-
-    $application = new Application($di);
-
-    echo $application->handle()->getContent();    
+    require_once '../library/Kitsune/Bootstrap.php';
+    $di = new PhDI();
+    echo Bootstrap::run($di, []);
 
 } catch (\Exception $e) {
-    echo $e->getMessage();
+
+    $logger = $di->getShared('logger');
+    $logger->error($e->getMessage());
+    $logger->error('<pre>' . $e->getTraceAsString() . '</pre>');
 }
