@@ -69,7 +69,7 @@ releases in the 2.0.x series:
 
 #### Typed Placeholders in the ORM
 Before this version, only standard placeholders (strings and numerical) were
-supported in PHQL [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html).
+supported in [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html).
 Placeholders allowed you to bind parameters to avoid SQL injections:
 
 ```php
@@ -232,63 +232,43 @@ based on the relationship the condition will be automatically appended to the
 query:
 
 ```php
+use Phalcon\Mvc\Model;
+
 // Companies have invoices issued to them (paid/unpaid)
+
 // Invoices model
-class Invoices extends Phalcon\Mvc\Model
+class Invoices extends Model
 {
-    public function getSource()
-    {
-        return 'invoices';
-    }
+    
 }
 
 // Companies model
-class Companies extends Phalcon\Mvc\Model
+class Companies extends Model
 {
-    public function getSource()
-    {
-        return 'companies';
-    }
-
     public function initialize()
     {
         // All invoices relationship
-        $this->hasMany(
-            'id',
-            'Invoices',
-            'inv_id',
-            [
-                'alias' => 'invoices',
-                'reusable' => true,
-            ]
-        );
+        $this->hasMany('id', 'Invoices', 'inv_id', [
+            'alias' => 'invoices'
+        ]);
 
         // Paid invoices relationship
-        $this->hasMany(
-            'id',
-            'Invoices',
-            'inv_id',
-            [
-                'alias'    => 'invoicesPaid',
-                'reusable' => true,
-                'params'   => [
-                    'conditions' => "inv_status = 'paid'"
-                ]
+        $this->hasMany('id', 'Invoices', 'inv_id', [
+            'alias'    => 'invoicesPaid',
+            'params'   => [
+              'conditions' => "inv_status = 'paid'"
             ]
+          ]
         );
 
-        // Unpaid invoices relationship
-        $this->hasMany(
-            'id',
-            'Invoices',
-            'inv_id',
-            [
-                'alias'    => 'invoicesUnpaid',
-                'reusable' => true,
-                'params'   => [
-                    'conditions' => "inv_status <> 'paid'"
-                ]
+        // Unpaid invoices relationship + bound parameters
+        $this->hasMany('id', 'Invoices', 'inv_id', [
+            'alias'    => 'invoicesUnpaid',
+            'params'   => [
+              'conditions' => "inv_status <> :paid:",
+              'bind' => 'unpaid'
             ]
+          ]
         );
     }
 }
