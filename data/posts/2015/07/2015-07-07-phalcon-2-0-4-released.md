@@ -52,7 +52,7 @@ releases in the 2.0.x series:
 - Added global setting `orm.ignore_unknown_columns` to ignore unexpected
   columns when hydrating instances in the ORM. This fixes extra auxiliary
   columns used in `Db\Adapter\Pdo\Oracle`
-- Added support for afterFetch in `Mvc\Collection`
+- Added support for `afterFetch` in `Mvc\Collection`
 - Added `beforeMatch` parameter in `@Route` annotation of `Mvc\Router\Annotations`
 - Added `groupBy`/`getGroupBy`/`having`/`getHaving` to `Mvc\Model\Criteria`
 - `Phalcon\Mvc\Model::count()` now return values as integer
