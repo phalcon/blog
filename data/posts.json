@@ -344,5 +344,12 @@
     "date": "2015-07-02",
     "tags": "php, phalcon, 2.0, phalcon2, release, zephir, lts",
     "link": ""
+  },
+  {
+    "title": "Phalcon 2.0.4 released!",
+    "slug": "phalcon-2-0-4-released",
+    "date": "2015-07-07",
+    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "link": ""
   }
 ]

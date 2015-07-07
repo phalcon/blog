@@ -26,11 +26,11 @@ releases in the 2.0.x series:
   `Phalcon\Mvc\Model` and `Phalcon\Mvc\Collection` instances. This interface 
   allows `Mvc\Model\Validators` to be used in `Mvc\Collection`
 - Added `Phalcon\Session\Adapter::setName()` to change the session name
-- Added BIGINT column type support in Phalcon\Db
+- Added `BIGINT` column type support in `Phalcon\Db`
 - Added new types `Phalcon\Db\Column::BLOB` and `Phalcon\Db\Column::DOUBLE` 
   [#10506](https://github.com/phalcon/cphalcon/pull/10506)
 - Automatic binding of Large Object data (LOB) in the ORM
-- Support for BIT types in MySQL with binding as booleans
+- Support for `BIT` types in MySQL with binding as booleans
 - Added `Phalcon\Flash\Direct::output()` allowing to place flash messages in a 
   specific place of the view [#629](https://github.com/phalcon/cphalcon/pull/629)
 - Added 'autoescape' option that allows to globally enable autoescape in any 
@@ -53,7 +53,7 @@ releases in the 2.0.x series:
   columns when hydrating instances in the ORM. This fixes extra auxiliary 
   columns used in `Db\Adapter\Pdo\Oracle`
 - Added support for afterFetch in `Mvc\Collection`
-- Added `beforeMatch` parameter in @Route annotation of `Mvc\Router\Annotations`
+- Added `beforeMatch` parameter in `@Route` annotation of `Mvc\Router\Annotations`
 - Added `groupBy`/`getGroupBy`/`having`/`getHaving` to `Mvc\Model\Criteria`
 - `Phalcon\Mvc\Model::count()` now return values as integer
 - Removed `__construct` from `Phalcon\Mvc\View\EngineInterface`
