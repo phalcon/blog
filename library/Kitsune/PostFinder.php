@@ -27,11 +27,11 @@ use Kitsune\Exceptions\Exception as KException;
 
 class PostFinder extends PhDiInjectable
 {
-    private $data        = [];
-    private $tags        = [];
-    private $links       = [];
-    private $link_number = [];
-    private $dates       = [];
+    private $data       = [];
+    private $tags       = [];
+    private $links      = [];
+    private $linkNumber = [];
+    private $dates      = [];
 
     public function __construct()
     {
@@ -78,7 +78,7 @@ class PostFinder extends PhDiInjectable
             $position = strpos($post->link, '/');
             if (false !== $position) {
                 $link_number = substr($post->link, 0, $position);
-                $this->link_number[$link_number] = $post->slug;
+                $this->linkNumber[$link_number] = $post->slug;
             }
 
             /**
@@ -96,7 +96,6 @@ class PostFinder extends PhDiInjectable
 
     public function getLatest($number)
     {
-        $posts   = [];
         $counter = 1;
 
         $key  = 'posts-latest-1.cache';
@@ -120,8 +119,8 @@ class PostFinder extends PhDiInjectable
     public function get($slug)
     {
         if (is_numeric($slug)) {
-            if (array_key_exists($slug, $this->link_number)) {
-                $slug = $this->link_number[$slug];
+            if (array_key_exists($slug, $this->linkNumber)) {
+                $slug = $this->linkNumber[$slug];
                 $this->response->redirect('/post/' . $slug, false, 301);
             }
         }
