@@ -3,6 +3,7 @@
 namespace Kitsune\Controllers;
 
 use FeedWriter\RSS2;
+use FeedWriter\Item;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 
@@ -24,14 +25,14 @@ class PostsController extends Controller
     {
         $feed = new RSS2();
         $feed->setEncoding('UTF-8');
-        $feed->setTitle('Phalcon Framework Blog');
-        $feed->setDescription('We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption');
+        $feed->setTitle($this->config->rss->title);
+        $feed->setDescription($this->config->rss->description);
         $feed->setLink($this->getFullUrl());
 
         foreach ($this->finder->getLatest(20) as $post) {
-            $feedItem = new \FeedWriter\Item();
+            $feedItem = new Item();
             $feedItem->setTitle($post->title);
-            $feedItem->setLink($this->getFullUrl('/post/'.$post->slug));
+            $feedItem->setLink($this->getFullUrl('/post/' . $post->slug));
             $feedItem->setDescription($post->content);
             $feedItem->setDate($post->date);
 

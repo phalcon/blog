@@ -4,6 +4,15 @@ return [
     'debugMode'  => 0,
     'baseUri'    => '/blog/',
     'cdnUrl'     => '',
+    'blog'       => [
+        'title'  => 'Phalcon Framework Blog',
+    ],
+    'rss'        => [
+        'title'       => 'Phalcon Framework Blog',
+        'description' => 'We are an open source web framework for PHP ' .
+                         'delivered as a C extension offering high ' .
+                         'performance and lower resource consumption',
+    ],
     'cache_data' => [
         'front' => [
             'adapter' => 'Data',

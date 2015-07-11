@@ -85,7 +85,7 @@ class Bootstrap
 
         /**
          * The configuration is split into two different files. The first one
-         * is the base configuration. The second one is machine/installation 
+         * is the base configuration. The second one is machine/installation
          * specific.
          */
         if (!file_exists(K_PATH . '/var/config/base.php')) {
@@ -131,7 +131,8 @@ class Bootstrap
         }
 
         /**
-         * We're a registering a set of directories taken from the configuration file
+         * We're a registering a set of directories taken from the
+         * configuration file
          */
         $loader = new Loader();
         $loader->registerNamespaces($config->namespaces->toArray());
@@ -209,7 +210,6 @@ class Bootstrap
          * Routes
          */
         if (!K_CLI) {
-
             $di->set(
                 'router',
                 function () use ($config) {
@@ -269,17 +269,6 @@ class Bootstrap
                 $view->setViewsDir(K_PATH . '/app/views/');
 
                 $view->registerEngines([".volt" => 'volt']);
-
-                //Create an events manager
-                //$eventsManager = new EventsManager();
-
-                //Attach a listener for type "view"
-                //$eventsManager->attach("view", function($event, $view) {
-                //    file_put_contents('a.txt', $event->getType() . ' - ' . $view->getActiveRenderPath() . PHP_EOL, FILE_APPEND);
-                //});
-
-                //Bind the eventsManager to the view component
-                //$view->setEventsManager($eventsManager);
 
                 return $view;
             }
@@ -395,7 +384,7 @@ class Bootstrap
         $di->set(
             'finder',
             function () use ($cache) {
-                $key = 'post.finder.cache';
+                $key        = 'post.finder.cache';
                 $postFinder = $cache->get($key);
                 if (null === $postFinder) {
                     $postFinder = new PostFinder();
@@ -407,12 +396,7 @@ class Bootstrap
         );
 
         /**
-         * Run
-         */
-        PhDI::setDefault($di);
-
-        /**
-         * For CLI I only need the dep injector
+         * For CLI I only need the dependency injector
          */
         if (K_CLI) {
             return $di;
@@ -420,7 +404,7 @@ class Bootstrap
 
         $application = new Application($di);
 
-        if (K_TESTS || K_CLI) {
+        if (K_TESTS) {
             return $application;
         } else {
             return $application->handle()->getContent();
