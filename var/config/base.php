@@ -60,7 +60,7 @@ return [
             'controller' => 'sitemap',
             'action'     => 'index'
         ],
-        '/post/{slug:[0-9a-zA\-]+}'  => [
+        '/post/{slug:[0-9a-zA-Z\-]+}' => [
             'controller' => 'posts',
             'action'     => 'view'
         ],
