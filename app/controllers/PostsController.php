@@ -63,7 +63,17 @@ class PostsController extends Controller
         $this->view->title      = $post->title;
     }
 
-    public function viewLegacyAction($time, $slug)
+    public function viewLegacyBySlugAction($time, $slug)
+    {
+        $this->dispatcher->forward(
+            [
+                'controller' => 'errors',
+                'action'     => 'show404'
+            ]
+        );
+    }
+
+    public function viewLegacyByTimeAction($time, $slug)
     {
         $this->dispatcher->forward(
             [
