@@ -4,17 +4,11 @@ namespace Kitsune\Controllers;
 
 use FeedWriter\RSS2;
 use FeedWriter\Item;
-use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
+use Kitsune\Controller;
 
 class PostsController extends Controller
 {
-    public function initialize()
-    {
-        $this->view->setTemplateAfter('main');
-        $this->view->cdn_url = $this->config->cdnUrl;
-    }
-
     public function indexAction()
     {
         $this->view->showDisqus = false;
