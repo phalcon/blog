@@ -123,8 +123,6 @@ class PostFinder extends PhDiInjectable
         if ($posts === null) {
             $page = ($page < 1) ? 1 : $page;
             $dates = $this->utils->fetch($this->dates, $page, null);
-            vd($page);
-            vdd($dates);
             if (!is_null($dates)) {
                 foreach ($dates as $date) {
                     $posts[] = $this->data[$date];
