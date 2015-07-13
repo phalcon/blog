@@ -128,6 +128,7 @@ class PostFinder extends PhDiInjectable
             foreach ((array) $this->tags[$tag] as $key) {
                 $posts[strtotime($this->data[$key]->date)] = $this->data[$key];
             }
+            ksort($posts);
             $posts = array_slice(array_reverse($posts), 0, $number);
             $this->cache->save($key, $posts);
         }
