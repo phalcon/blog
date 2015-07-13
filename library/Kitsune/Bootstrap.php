@@ -71,14 +71,20 @@ class Bootstrap
         require_once K_PATH . '/library/Kitsune/Utils.php';
 
         /**
+         * Utils class
+         */
+        $utils = new Utils();
+        $di->set('utils', $utils, true);
+
+        /**
          * Check if this is a CLI app or not
          */
-        $cli    = Utils::fetch($options, 'cli', false);
+        $cli   = $utils->fetch($options, 'cli', false);
         if (!defined('K_CLI')) {
             define('K_CLI', $cli);
         }
 
-        $tests  = Utils::fetch($options, 'tests', false);
+        $tests = $utils->fetch($options, 'tests', false);
         if (!defined('K_TESTS')) {
             define('K_TESTS', $tests);
         }
@@ -103,13 +109,8 @@ class Bootstrap
         $specific = require(K_PATH . '/var/config/config.php');
         $combined = array_replace_recursive($base, $specific);
 
-        $di->set(
-            'config',
-            function () use ($combined) {
-                return new Config($combined);
-            },
-            true
-        );
+        $config = new Config($combined);
+        $di->set('config', $config, true);
 
         $config = $di->get('config');
 
@@ -117,9 +118,7 @@ class Bootstrap
          * Check if we are in debug/dev mode
          */
         if (!defined('K_DEBUG')) {
-            $debugMode = boolval(
-                Utils::fetch($config, 'debugMode', false)
-            );
+            $debugMode = boolval($utils->fetch($config, 'debugMode', false));
             define('K_DEBUG', $debugMode);
         }
 
@@ -145,21 +144,12 @@ class Bootstrap
          *
          * The essential logging service
          */
-        $di->set(
-            'logger',
-            function () use ($config, $di) {
-                $format = '[%date%][%type%] %message%';
-                $name   = K_PATH
-                    . '/var/log/'
-                    . date('Y-m-d') . '-kitsune.log';
-                $logger = new LoggerFile($name);
-                $formatter = new LoggerFormatter($format);
-                $logger->setFormatter($formatter);
-                return $logger;
-            },
-            true
-        );
-        $logger = $di->get('logger');
+        $format    = '[%date%][%type%] %message%';
+        $name      = K_PATH . '/var/log/' . date('Y-m-d') . '-kitsune.log';
+        $logger    = new LoggerFile($name);
+        $formatter = new LoggerFormatter($format);
+        $logger->setFormatter($formatter);
+        $di->set('logger', $logger, true);
 
         /**
          * ERROR HANDLING
@@ -214,6 +204,7 @@ class Bootstrap
                 'router',
                 function () use ($config) {
                     $router = new Router(false);
+                    $router->removeExtraSlashes(true);
                     $routes = $config->routes->toArray();
                     foreach ($routes as $pattern => $options) {
                         $router->add($pattern, $options);
@@ -285,17 +276,10 @@ class Bootstrap
 
                 $volt->setOptions(
                     [
-                        "compiledPath" => K_PATH . '/var/cache/volt/',
-                        'stat'              => true,
-                        'compileAlways'     => true,
+                        "compiledPath"  => K_PATH . '/var/cache/volt/',
+                        'stat'          => K_DEBUG,
+                        'compileAlways' => K_DEBUG,
                     ]
-                );
-
-                $volt->getCompiler()->addFunction(
-                    'markdown',
-                    function ($parameters) {
-                        return "\$this->markdown->render({$parameters})";
-                    }
                 );
 
                 return $volt;
@@ -319,19 +303,13 @@ class Bootstrap
         /**
          * Cache
          */
-        $di->set(
-            'cache',
-            function () use ($config) {
-                $frontConfig = $config->cache_data->front->toArray();
-                $backConfig  = $config->cache_data->back->toArray();
-                $class       = '\Phalcon\Cache\Frontend\\' . $frontConfig['adapter'];
-                $frontCache  = new $class($frontConfig['params']);
-                $class       = '\Phalcon\Cache\Backend\\' . $backConfig['adapter'];
-                $cache       = new $class($frontCache, $backConfig['params']);
-                return $cache;
-            },
-            true
-        );
+        $frontConfig = $config->cache_data->front->toArray();
+        $backConfig  = $config->cache_data->back->toArray();
+        $class       = '\Phalcon\Cache\Frontend\\' . $frontConfig['adapter'];
+        $frontCache  = new $class($frontConfig['params']);
+        $class       = '\Phalcon\Cache\Backend\\' . $backConfig['adapter'];
+        $cache       = new $class($frontCache, $backConfig['params']);
+        $di->set('cache', $cache, true);
 
         /**
          * viewCache
@@ -365,12 +343,14 @@ class Bootstrap
             true
         );
 
-        $cache = $di->get('cache');
+        /**
+         * Posts Finder
+         */
         $di->set(
             'finder',
-            function () use ($cache) {
+            function () use ($utils, $cache) {
                 $key        = 'post.finder.cache';
-                $postFinder = $cache->get($key);
+                $postFinder = $utils->cacheGet($key);
                 if (null === $postFinder) {
                     $postFinder = new PostFinder();
                     $cache->save($key, $postFinder);
@@ -385,14 +365,14 @@ class Bootstrap
          */
         if (K_CLI) {
             return $di;
-        }
-
-        $application = new Application($di);
-
-        if (K_TESTS) {
-            return $application;
         } else {
-            return $application->handle()->getContent();
+            $application = new Application($di);
+
+            if (K_TESTS) {
+                return $application;
+            } else {
+                return $application->handle()->getContent();
+            }
         }
     }
 }
