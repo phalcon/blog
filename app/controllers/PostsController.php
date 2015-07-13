@@ -9,10 +9,13 @@ use Kitsune\Controller;
 
 class PostsController extends Controller
 {
-    public function indexAction($page = 1, $number = 10)
+    public function indexAction($page = 1)
     {
         $this->view->setVar('showDisqus', false);
-        $this->view->setVar('posts', $this->finder->getLatest($page, $number));
+        $this->view->setVar(
+            'posts',
+            $this->finder->getLatest($page, $this->config->blog->postsPerPage)
+        );
         $this->view->setVar('pages', $this->finder->getPages($page));
     }
 
@@ -74,7 +77,6 @@ class PostsController extends Controller
 
     public function viewLegacyBySlugAction($time, $slug)
     {
-        vdd($time);
         $this->dispatcher->forward(
             [
                 'controller' => 'errors',
@@ -85,7 +87,6 @@ class PostsController extends Controller
 
     public function viewLegacyByTimeAction($time, $slug)
     {
-        vdd($time);
         $this->dispatcher->forward(
             [
                 'controller' => 'errors',

@@ -121,9 +121,12 @@ class PostFinder extends PhDiInjectable
         $posts = $this->utils->cacheGet($key);
 
         if ($posts === null) {
-            $page  = ($page < 0) ? 0  : $page;
-            if (isset($this->dates[$page]) && count($this->dates) > 0) {
-                foreach ($this->dates[$page] as $date) {
+            $page = ($page < 1) ? 1 : $page;
+            $dates = $this->utils->fetch($this->dates, $page, null);
+            vd($page);
+            vdd($dates);
+            if (!is_null($dates)) {
+                foreach ($dates as $date) {
                     $posts[] = $this->data[$date];
                 }
                 $this->cache->save($key, $posts);
