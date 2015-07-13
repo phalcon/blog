@@ -9,12 +9,19 @@ use Kitsune\Controller;
 
 class PostsController extends Controller
 {
-    public function indexAction()
+    public function indexAction($page = 1, $number = 10)
     {
-        $this->view->showDisqus = false;
-        $this->view->posts      = $this->finder->getLatest(5);
+        $this->view->setVar('showDisqus', false);
+        $this->view->setVar('posts', $this->finder->getLatest($page, $number));
+        $this->view->setVar('pages', $this->finder->getPages($page));
     }
 
+    /**
+     * Handles the RSS action. Constructs the rss feed of the latest posts. The
+     * number of posts to return is stored in the configuration section
+     *
+     * @return Response
+     */
     public function rssAction()
     {
         $feed = new RSS2();
@@ -23,7 +30,8 @@ class PostsController extends Controller
         $feed->setDescription($this->config->rss->description);
         $feed->setLink($this->getFullUrl());
 
-        foreach ($this->finder->getLatest(20) as $post) {
+        $posts = $this->finder->getLatest($this->config->blog->postsPerPage);
+        foreach ($posts as $post) {
             $feedItem = new Item();
             $feedItem->setTitle($post->title);
             $feedItem->setLink($this->getFullUrl('/post/' . $post->slug));
@@ -40,10 +48,16 @@ class PostsController extends Controller
         return $response;
     }
 
+    /**
+     * Handles the viewing of a post. The $slug can be either a number or a
+     * string (actual slug). The number is when we have previous posts i.e.
+     * from Disqus
+     *
+     * @param string|integer $slug The unique identifier of the post
+     */
     public function viewAction($slug)
     {
         $post = $this->finder->get($slug);
-
         if (is_null($post)) {
             $this->dispatcher->forward(
                 [
@@ -53,13 +67,14 @@ class PostsController extends Controller
             );
         }
 
-        $this->view->showDisqus = true;
-        $this->view->post       = $post;
-        $this->view->title      = $post->title;
+        $this->view->setVar('showDisqus', true);
+        $this->view->setVar('post', $post);
+        $this->view->setVar('title', $post->getTitle());
     }
 
     public function viewLegacyBySlugAction($time, $slug)
     {
+        vdd($time);
         $this->dispatcher->forward(
             [
                 'controller' => 'errors',
@@ -70,6 +85,7 @@ class PostsController extends Controller
 
     public function viewLegacyByTimeAction($time, $slug)
     {
+        vdd($time);
         $this->dispatcher->forward(
             [
                 'controller' => 'errors',

@@ -1,11 +1,11 @@
     <div>
         <span class="pull-right post-date">
-            <a href="post/{{ post.slug }}"><i class="fa fa-file-text-o"></i></a>
-            {{ post.date }}
+            <a href="post/{{ post.getSlug() }}"><i class="fa fa-file-text-o"></i></a>
+            {{ post.getDate() }}
         </span>
-        {{ markdown(post.content) }}
+        {{ post.getContent() }}
         <div class="tags-container">
-            {% for tag in post.tags %}
+            {% for tag in post.getTags() %}
             <a href="/tag/{{ tag }}">
                 <span class="badge">{{ tag }}</span>
             </a>
@@ -16,8 +16,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname  = 'phalconphp';
-        var disqus_identifier = "{{ post.disqus_id }}";
-        var disqus_url        = '{{ post.disqus_url }}';
+        var disqus_identifier = "{{ post.getDisqusId() }}";
+        var disqus_url        = '{{ post.getDisqusUrl() }}';
 
         (function () {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
