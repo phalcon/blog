@@ -20,6 +20,13 @@ class PostsController extends Controller
         $this->view->posts      = $this->finder->getLatest(5);
     }
 
+    public function tagAction($tag)
+    {
+        $this->view->pick('posts/index');
+        $this->view->showDisqus = false;
+        $this->view->posts = $this->finder->getLatestByTag($tag, 10);
+    }
+
     public function rssAction()
     {
         $feed = new RSS2();
