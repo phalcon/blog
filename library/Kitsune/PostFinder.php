@@ -33,6 +33,12 @@ class PostFinder extends PhDiInjectable
     private $linkNumber = [];
     private $dates      = [];
 
+    /**
+     * The constructor. Reads the posts JSON file and creates the necessary
+     * mapping indexes
+     *
+     * @throws KException
+     */
     public function __construct()
     {
         $sourceFile = K_PATH . '/data/posts.json';
@@ -58,64 +64,86 @@ class PostFinder extends PhDiInjectable
             /**
              * Add the element in the master array
              */
-            $this->data[$post->slug] = $post;
+            $this->data[$post->getSlug()] = $post;
 
             /**
              * Tags
              */
-            foreach ($post->tags as $tag) {
-                $this->tags[trim($tag)][] = $post->slug;
+            foreach ($post->getTags() as $tag) {
+                $this->tags[trim($tag)][] = $post->getSlug();
             }
 
             /**
              * Links
              */
-            $this->links[$post->link] = $post->slug;
+            $this->links[$post->getLink()] = $post->getSlug();
 
             /**
              * Check if the link is a tumblr one and get its number
              */
-            $position = strpos($post->link, '/');
+            $position = strpos($post->getLink(), '/');
             if (false !== $position) {
-                $link_number = substr($post->link, 0, $position);
-                $this->linkNumber[$link_number] = $post->slug;
+                $linkNumber = substr($post->getLink(), 0, $position);
+                $this->linkNumber[$linkNumber] = $post->getSlug();
             }
 
             /**
              * Dates (sorting)
              */
-            $dates[$post->date] = $post->slug;
+            $dates[$post->getDate()] = $post->getSlug();
         }
 
         /**
          * Sort the dates array
          */
         krsort($dates);
-        $this->dates = $dates;
+        $postsPerPage = intval($this->config->blog->postsPerPage);
+        $postsPerPage = ($postsPerPage < 0) ? 10 : $postsPerPage;
+        $this->dates  = array_chunk($dates, $postsPerPage);
+
+        /**
+         * Adding one element to the beginning of the array to deal with the
+         * 0 based array index since the array keys correspond to the pages
+         */
+        array_unshift($this->dates, []);
     }
 
-    public function getLatest($number)
+    /**
+     * Gets the latest number of posts for the blog. Used in the first page
+     *
+     * @param  int $page   The page
+     *
+     * @return array
+     */
+    public function getLatest($page = 1)
     {
-        $counter = 1;
-
-        $key  = 'posts-latest-1.cache';
-        $posts = $this->cache->get($key);
+        $key   = sprintf('posts-latest-%s.cache', $page);
+        $posts = $this->utils->cacheGet($key);
 
         if ($posts === null) {
-            foreach ($this->dates as $key) {
-                $posts[] = $this->data[$key];
-                $counter = $counter + 1;
-
-                if ($counter > $number) {
-                    break;
+            $page  = ($page < 0) ? 0  : $page;
+            if (isset($this->dates[$page]) && count($this->dates) > 0) {
+                foreach ($this->dates[$page] as $date) {
+                    $posts[] = $this->data[$date];
                 }
+                $this->cache->save($key, $posts);
+            } else {
+                $this->response->redirect('', false, 301);
             }
-            $this->cache->save($key, $posts);
         }
 
         return $posts;
     }
 
+    /**
+     * Gets a post from the internal collection based on a slug. If the slug is
+     * numeric, this is a Disqus link. The function will find it and return the
+     * correct post.
+     *
+     * @param  string $slug The slug of the post
+     *
+     * @return mixed
+     */
     public function get($slug)
     {
         if (is_numeric($slug)) {
@@ -126,7 +154,7 @@ class PostFinder extends PhDiInjectable
         }
 
         $key  = 'post-' . $slug . '.cache';
-        $post = $this->cache->get($key);
+        $post = $this->utils->cacheGet($key);
 
         if ($post === null) {
             if (array_key_exists($slug, $this->data)) {
@@ -134,6 +162,27 @@ class PostFinder extends PhDiInjectable
                 $this->cache->save($key, $post);
             }
         }
+
         return $post;
+    }
+
+    public function getPages($page = 1)
+    {
+        $return = [
+            'previous' => $page - 1,
+            'next'     => $page + 1
+        ];
+
+        $totalPages = count($this->dates);
+
+        if (($page + 1) > $totalPages) {
+            $return['next'] = 0;
+        }
+
+        if (($page - 1) < 1) {
+            $return['previous'] = 0;
+        }
+
+        return $return;
     }
 }
