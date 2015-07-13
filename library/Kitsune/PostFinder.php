@@ -64,7 +64,7 @@ class PostFinder extends PhDiInjectable
              * Tags
              */
             foreach ($post->tags as $tag) {
-                $this->tags[trim($tag)][] = $post->slug;
+                $this->tags[strtolower(trim($tag))][] = $post->slug;
             }
 
             /**
@@ -119,6 +119,7 @@ class PostFinder extends PhDiInjectable
 
     public function getLatestByTag($tag, $number)
     {
+        $tag = strtolower(urldecode($tag));
         $posts = [];
 
         $key = "posts-tags-{$tag}-{$number}.cache";
