@@ -117,6 +117,25 @@ class PostFinder extends PhDiInjectable
         return $posts;
     }
 
+    public function getLatestByTag($tag, $number)
+    {
+        $posts = [];
+
+        $key = "posts-tags-{$tag}-{$number}.cache";
+        $posts = $this->cache->get($key);
+
+        if ($posts === null) {
+            foreach ((array) $this->tags[$tag] as $key) {
+                $posts[strtotime($this->data[$key]->date)] = $this->data[$key];
+            }
+            $posts = array_slice(array_reverse($posts), 0, $number);
+            $this->cache->save($key, $posts);
+        }
+
+        return $posts;
+    }
+
+
     public function get($slug)
     {
         if (is_numeric($slug)) {
