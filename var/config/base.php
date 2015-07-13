@@ -5,7 +5,8 @@ return [
     'baseUri'    => '/blog/',
     'cdnUrl'     => '',
     'blog'       => [
-        'title'  => 'Phalcon Framework Blog',
+        'title'        => 'Phalcon Framework Blog',
+        'postsPerPage' => 10,
     ],
     'rss'        => [
         'title'       => 'Phalcon Framework Blog',
@@ -69,6 +70,14 @@ return [
             'action'     => 'viewLegacy'
         ],
         '/'      => [
+            'controller' => 'posts',
+            'action'     => 'index'
+        ],
+        '/{page:[0-9]+}' => [
+            'controller' => 'posts',
+            'action'     => 'index'
+        ],
+        '/{page:[0-9]+}/{number:[0-9]+}' => [
             'controller' => 'posts',
             'action'     => 'index'
         ],
