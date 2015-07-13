@@ -22,7 +22,9 @@
  */
 namespace Kitsune;
 
-class Utils
+use Phalcon\Di\Injectable as PhDiInjectable;
+
+class Utils extends PhDiInjectable
 {
     /**
      * Gets an element from an array or an object. If the element exists it is
@@ -36,7 +38,7 @@ class Utils
      *
      * @return  mixed
      */
-    public static function fetch($object, $element, $default)
+    public function fetch($object, $element, $default)
     {
         if (is_array($object)) {
             $return = (isset($object[$element])) ? $object[$element] : $default;
@@ -46,5 +48,24 @@ class Utils
             $return = $default;
         }
         return $return;
+    }
+
+    /**
+     * This is used as a proxy to the cache. If the K_DEBUG is defined it
+     * always returns an empty array so that when developing the cache does
+     * not affect results
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
+    public function cacheGet($key)
+    {
+        $results = null;
+        if (!K_DEBUG) {
+            $results = $this->cache->get($key);
+        }
+
+        return $results;
     }
 }
