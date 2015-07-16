@@ -21,8 +21,7 @@ installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
-git checkout master
-cd build
+cd cphalcon/build
 sudo ./install
 ```
 
@@ -30,7 +29,7 @@ If you have Zephir installed:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
-git checkout master
+cd cphalon
 zephir fullclean
 zephir build
 ```
