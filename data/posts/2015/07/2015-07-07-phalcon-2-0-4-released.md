@@ -289,8 +289,7 @@ If you have Zephir installed:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
-cd cphalon
-zephir fullclean
+cd cphalcon
 zephir build
 ```
 

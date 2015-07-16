@@ -184,7 +184,6 @@ If you have Zephir installed:
 ```sh
 git clone http://github.com/phalcon/cphalcon
 cd cphalcon
-zephir fullclean
 zephir build
 ```
 
