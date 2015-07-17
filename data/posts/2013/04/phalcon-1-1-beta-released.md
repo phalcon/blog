@@ -27,7 +27,7 @@ paginator, this version introduces the QueryBuilder paginator which uses
 a SQL LIMIT/OFFSET clause to obtain the requested results. This
 paginator is suitable to handle ​large datasets.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 use Phalcon\Paginator\Adapter\QueryBuilder;
 
 $builder = $this->modelsManager->createBuilder()
@@ -42,14 +42,14 @@ $paginator = new Paginator(array(
 ));
 
 $page = $paginator->getPaginate();
-~~~~
+```
 
 ### Beanstalkd Queuing client
 
 A simple client for the [Beanstalkd](http://kr.github.io/beanstalkd/)
 queuing server is now available as part of Phalcon:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 //Connect to the queue
@@ -74,14 +74,14 @@ while (($job = $queue->peekReady()) !== false) {
 
     $job->delete();
 }
-~~~~
+```
 
 ### Encryption
 
 This version includes a simple class to encrypt/decrypt data based on
 the PHP's [mcrypt](http://php.net/manual/en/book.mcrypt.php) library.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 //Create an instance
 $encryption = new Phalcon\Crypt();
 
@@ -91,14 +91,14 @@ $text = 'This is a secret text';
 $encrypted = $encryption->encrypt($text, $key);
 
 echo $encryption->decrypt($encrypted, $key);
-~~~~
+```
 
 ### Assets Management
 
 This component eases the task of adding static resources such as CSS
 scripts and Javascript libraries to then output them in the views:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 //Add some local CSS resources
 $this->assets
     ->addCss('css/style.css')
@@ -108,11 +108,11 @@ $this->assets
 $this->assets
     ->addJs('js/jquery.js')
     ->addJs('js/bootstrap.min.js');
-~~~~
+```
 
 Then in the view:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <html>
     <head>
         <title>Some amazing website</title>
@@ -125,7 +125,7 @@ Then in the view:
         <?php $this->assets->outputJs() ?>
     </body>
 </html>
-~~~~
+```
 
 ### Exception mode in ORM Validations
 
@@ -134,7 +134,7 @@ fails, the methods save()/create()/update return ​ ​a boolean
 value​stating the success ​or failure ​of this operation. Now, you can
 change this behavior to use exceptions:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 use Phalcon\Mvc\Model\ValidationFailed;
 
 try {
@@ -146,13 +146,13 @@ try {
 } catch (ValidationFailed $e) {
     echo 'Reason: ', $e->getMessage();
 }
-~~~~
+```
 
 ### Hostname routing
 
 Phalcon\\Mvc\\Router now accepts hostname restrictions on their routes
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $router = new Phalcon\Mvc\Router();
 
 $router->addGet('/api/robots', array(
@@ -160,11 +160,11 @@ $router->addGet('/api/robots', array(
     'controller' => 'robots',
     'action' => 'index'
 ))->setHostName('api.phalconphp.com');
-~~~~
+```
 
 Or use a group:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $group = new Phalcon\Mvc\Router();
 
 $group->setHostName('api.phalconphp.com');
@@ -182,14 +182,14 @@ $groop->addGet('/api/robots/{id}', array(
 ));
 
 $router->mount($group);
-~~~~
+```
 
 ### Use Controllers in Mvc\\Micro
 
 To organize better micro applications, now you can set up classes as
 controllers
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $collection = new Phalcon\Mvc\Micro\Collection();
 
 //Use direct instantiation
@@ -209,7 +209,7 @@ $collection->get('/edit/{id}', 'edit');
 $collection->delete('/delete/{id}', 'delete');
 
 $app->mount($collection);
-~~~~
+```
 
 1.1.0 includes other minor changes, bug fixes, stability and performance
 improvements. You can see the complete
@@ -221,12 +221,12 @@ for this version
 
 This version can be installed from the 1.1.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 cd build
 git checkout 1.1.0
 sudo ./install
-~~~~
+```
 
 Windows users can download a DLL from the [download
 page](http://phalconphp.com/download).

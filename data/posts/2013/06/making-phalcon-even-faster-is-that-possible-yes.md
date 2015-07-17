@@ -61,18 +61,18 @@ The functioning works as follows:
 You need at least GCC 4.5 to use PGO, the instruction to compile with
 profiling is:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 cd cphalcon/build
 ./pgo-install
-~~~~
+```
 
 Restart your webserver, test/execute the applications, Restart your
 webserver again, compile using the data collected:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 cd cphalcon/build
 ./use-pgo-install
-~~~~
+```
 
 Restart your webserver and enjoy and even-more-optimized version of
 Phalcon for your specific needs!

@@ -88,7 +88,7 @@ long time from a possible attack with rainbow tables.
 
 Phalcon gives you the ability to use this algorithm in a simple way:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class UsersController extends Phalcon\Mvc\Controller
 {
 
@@ -109,13 +109,13 @@ class UsersController extends Phalcon\Mvc\Controller
     }
 
 }
-~~~~
+```
 
 We saved the password hashed with a work factor of 10. A higher work
 factor will make the password less vulnerable as its encryption will be
 slow. We can check if the password is correct as follows:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class SessionController extends Phalcon\Mvc\Controller
 {
 
@@ -139,7 +139,7 @@ class SessionController extends Phalcon\Mvc\Controller
     }
 
 }
-~~~~
+```
 
 #### Cross-Site Request Forgery (CSRF) protection
 
@@ -154,14 +154,14 @@ each form, add the token in the session and then validate the token once
 the form posts data back to our application by comparing the stored
 token in the session to the one submitted by the form:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
 value="<?php echo $this->security->getToken() ?>"/>
-~~~~
+```
 
 Then in your application:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class SessionController extends Phalcon\Mvc\Controller
 {
 
@@ -175,7 +175,7 @@ class SessionController extends Phalcon\Mvc\Controller
     }
 
 }
-~~~~
+```
 
 Adding a captcha is also recommended to completely avoid the risks of
 this attack.
@@ -184,7 +184,7 @@ this attack.
 
 New features were added to Phalcon\\Config to ease its usage:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $config = new Phalcon\Config(array(
     'database' => array(
         'host' => 'localhost',
@@ -204,7 +204,7 @@ $config->merge($config2);
 
 //Accessing its elements using the array-syntax
 echo $config['database']['host'];
-~~~~
+```
 
 ### Volt
 
@@ -216,61 +216,61 @@ version:
 
 Volt now supports caching fragments natively:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {# Cache by 500 seconds the sidebar #}
 {% cache sidebar 500 %}
     <!-- your side bar here -->
 {% endcache %}
-~~~~
+```
 
 #### Service Injection
 
 Calling methods from services registered in the DI:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {{ session.get("user-name" )}}
-~~~~
+```
 
 the same as:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php echo $this->session->get("user-name") ?>
-~~~~
+```
 
 #### Register User Functions
 
 Now you can add functions to the Volt compiler or rename the current
 ones:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $volt = new Phalcon\Mvc\View\Engine\Volt();
 
 $volt->addFunction('markdown', function($arguments) {
     return 'My\Markdown\Component::processText('.$arguments.')';
 });
-~~~~
+```
 
 Then in your view:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {{ markdown("*Some bold text*") }}
-~~~~
+```
 
 #### Register User Filters
 
 Or adding new filters or rename the current ones:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $volt->addFilter('replace', function($arguments) {
     return 'strtr('.$arguments.')';
 });
-~~~~
+```
 
 In your view:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {{ ":greeting:, My name is :name:"|replace(['greeting': 'Hello', 'name': 'Bob']) }}
-~~~~
+```
 
 #### Multiple Inheritance/Two-way block Replacement
 
@@ -278,28 +278,28 @@ Volt now allows that extended templates to extend other templates.
 Additionally the parent block can be inserted in the extended block. The
 following example demonstrates this:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {# a.html #}
 <head>{% block head %}{% endblock %}</head>
-~~~~
+```
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {# b.html #}
 {% extends 'a.html' %}{% block head %}.parent-style { color: #333; }{% endblock %}
-~~~~
+```
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {# c.html #}
 {% extends 'b.html' %}
 
 {% block head %} <style type="text/css">.local-style { font-family: Arial; } {{ super() }} </style>{% endblock %}
-~~~~
+```
 
 Compiling c.html produce:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <head> <style type="text/css">.local-style { font-family: Arial; } .parent-style { color: #333; } </style></head>
-~~~~
+```
 
 #### ORM
 
@@ -313,7 +313,7 @@ Behaviors are shared conducts that several models may adopt in order to
 re-use code, a well-known is adding a timestamp indicating when a record
 was created or updated:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 use Phalcon\Mvc\Model\Behaviors\Timestampable;
@@ -337,7 +337,7 @@ class Users extends \Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 Additionally to the built in behaviors you can create your own behaviors
 as well.
@@ -348,7 +348,7 @@ With this feature you can rename a relationship making your code more
 readable, have multiple relationships on a table or work easier with
 namespaces:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Users extends \Phalcon\Mvc\Model
 {
     public $id;
@@ -369,24 +369,24 @@ class Users extends \Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 Then you can use:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $profile = Users::findFirst()->getProfile();
-~~~~
+```
 
 #### Help to Testing
 
 This version can be installed from the 0.8.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 cd build
 git checkout 0.8.0
 sudo ./install
-~~~~
+```
 
 All tests are passing on
 [Travis](https://travis-ci.org/phalcon/cphalcon/builds/3692718), still

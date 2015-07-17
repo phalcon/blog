@@ -53,7 +53,7 @@ Although there are important differences between platforms, we could
 generalize that Phalcon's DLL/Shared object is composed mainly by these
 parts:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 +------------------------+
 | Variable Data Section  |
 +------------------------+
@@ -67,7 +67,7 @@ parts:
 |                        |
 |                        |
 +------------------------+
-~~~~
+```
 
 Currently Phalcon's compilation produces a binary of about 1.5Mb - which
 is very small. As seen in the above diagram, the *Code Section* and the

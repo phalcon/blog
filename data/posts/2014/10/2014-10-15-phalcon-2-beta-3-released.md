@@ -33,10 +33,10 @@ message. If you have created user adapters or extended framework
 components and they do not implement the necessary interfaces and/or
 types you may need to fix them.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 Catchable fatal error: Argument 2 passed to Phalcon\Mvc\Model\Query::__construct() must implement 
 interface Phalcon\DiInterface, instance of stdClass given in /home/scott/test.php on line 17
-~~~~
+```
 
 #### Better debug information
 
@@ -44,13 +44,13 @@ interface Phalcon\DiInterface, instance of stdClass given in /home/scott/test.ph
 exception was thrown and it will provide more information as to where
 the error occurred.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 Exception: The static method 'someMethod' doesn't exist on model 'Robots'
 File=phalcon/mvc/model.zep Line=4042
 #0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
 #1 /home/scott/test.php(64): Robots::someMethod()
 #2 {main}
-~~~~
+```
 
 This could help you to find solutions for your problems by just looking
 at the framework source.
@@ -61,7 +61,7 @@ Phalcon 2 provides better facilities to handle exceptions, for instance,
 in micro applications you can use the new error handler which will allow
 you to do something like this:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 use Phalcon\Http\Response;
 use Phalcon\Mvc\Micro;
 
@@ -74,7 +74,7 @@ $app->map('/say/{name}', function ($name) {
 $app->error(function($e) {
     return new Response('Internal error');      
 });
-~~~~
+```
 
 These facilities were easily implemented thanks to the low-level
 exception system provided by Zephir.
@@ -115,20 +115,20 @@ Phalcon 2 into a single test-suite powered by
 This version can be installed from the 2.0.0 branch, if you don't have
 Zephir installed follow these instructions:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 git checkout 2.0.0
 cd ext
 sudo ./install
-~~~~
+```
 
 If you have Zephir installed:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 git checkout 2.0.0
 zephir build
-~~~~
+```
 
 We hope that you will enjoy these improvements and additions. We invite
 you to share your thoughts and questions about this version

@@ -67,12 +67,12 @@ Here are some links that may interest you if want to learn more:
 
 This version can be installed from the 2.0.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 git checkout 2.0.0
 cd ext
 sudo ./install-test
-~~~~
+```
 
 We welcome your comments regarding this new release. If you discover any
 bugs, please (if possible) create a failing test and submit a pull

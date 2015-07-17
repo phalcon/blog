@@ -26,7 +26,7 @@ because you can save the same data in several cache​ locations​ with
 different lifetimes ​, reading ​first from the one with the faster
 adapter and ending with the slowest one until the data expire​s​:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 $ultraFastFrontend = new Phalcon\Cache\Frontend\Data(array(
@@ -59,7 +59,7 @@ $cache = new \Phalcon\Cache\Multiple(array(
 
 //Save, saves in every backend
 $cache->save('my-key', $data);
-~~~~
+```
 
 We're ​are releasing today the beta version of Phalcon 1.0.0. Our goal
 is to get this version out to the community so as to discover bugs and
@@ -74,7 +74,7 @@ because you can save the same data in several cache​ locations​ with
 different lifetimes, reading ​first from the one with the faster adapter
 and ending with the slowest one until the data expire​s​:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 $ultraFastFrontend = new Phalcon\Cache\Frontend\Data(array(
@@ -110,13 +110,13 @@ $cache->save('my-key', $data);
 
 //Read, reads every cache, if one of them return data returns it
 $data = $cache->get('my-key');
-~~~~
+```
 
 ### Volt Improvements
 
 Several volt improvements are introduced in this version:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {# Ternary operator #}
 {{ total > 0 ? total|format('%0.2f') : '0.0' }}
 
@@ -157,7 +157,7 @@ Several volt improvements are introduced in this version:
     <li>  {{- robot.name -}}</li>
     {%- endfor %}
 </ul>
-~~~~
+```
 
 ### Vertical/Horizontal Sharding Improvements
 
@@ -165,7 +165,7 @@ Now you can define a define a different connection to read from a model
 and a different one ​ for write​. This is especially beneficial when
 dealing with master/slave configurations in a RDBMS​:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Robots extends Phalcon\Mvc\Model
 {
     public function initialize()
@@ -174,12 +174,12 @@ class Robots extends Phalcon\Mvc\Model
         $this->setWriteConnectionService('dbMaster');
     }
 }
-~~~~
+```
 
 Horizontal sharding implies that the connection to read is selected
 acording to the data that will be queried:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Robots extends Phalcon\Mvc\Model
 {
     public function selectReadConnection($intermediate, $bindParams, $bindTypes)
@@ -206,7 +206,7 @@ class Robots extends Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 ### Record Snapshots
 
@@ -215,7 +215,7 @@ snapshot when they're queried. You can use this feature to implement
 auditing or just to know what fields are changed according to the data
 queried from the persistence:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Robots extends Phalcon\Mvc\Model
 {
     public function initalize()
@@ -223,17 +223,17 @@ class Robots extends Phalcon\Mvc\Model
         $this->keepSnapshots(true);
     }
 }
-~~~~
+```
 
 This way you can check what fields changed:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $robot = new Robots();
 $robot->name = 'Other name';
 var_dump($robot->getChangedFields()); // ['name']
 var_dump($robot->hasChanged('name')); // true
 var_dump($robot->hasChanged('type')); // false
-~~~~
+```
 
 ### Dynamic Update
 
@@ -242,7 +242,7 @@ with just the fields that changed instead of the full all-field SQL
 update. In some cases this could improve the performance by reducing the
 traffic between the application and the database server:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Robots extends Phalcon\Mvc\Model
 {
     public function initalize()
@@ -250,7 +250,7 @@ class Robots extends Phalcon\Mvc\Model
         $this->useDynamicUpdate(true);
     }
 }
-~~~~
+```
 
 ### Validation
 
@@ -259,7 +259,7 @@ validation system implemented in the ORM and the ODM. This component can
 be used to implement validation rules that does not belong to a model or
 collection:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $validation = new Phalcon\Validation();
 
 $validation
@@ -286,7 +286,7 @@ if (count($messages)) {
         echo $message;
     }
 } 
-~~~~
+```
 
 1.0.0 includes other minor changes, bug fixes and stability
 improvements. You can see the
@@ -296,12 +296,12 @@ complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.0.0/CHANGELOG)\
 
 This version can be installed from the 1.0.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 cd build
 git checkout 1.0.0
 sudo ./install
-~~~~
+```
 
 Windows users can [download](http://phalconphp.com/download) a DLL from
 the download page.​​

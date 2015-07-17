@@ -108,33 +108,33 @@ In short, Phalcon's ORM allows you to do things like:
 
 Find all users and first user with active state:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $users = Users::find();
 $user = Users::findFirst(‘state = ' . User::STATE_ACTIVE); 
-~~~~
+```
 
 Count users and the user posts:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 echo Users::count(); 
 echo $user->countPosts(); 
-~~~~
+```
 
 Retrieve user posts:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $userPosts = $user->getPosts(); 
-~~~~
+```
 
 Retrieve average user age:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 echo Users::average(array("column" => "age")); //get average user age
-~~~~
+```
 
 Create user with appropriate login, security key and password hash:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 //...
 $salt = '$2a$#$#DwaxE59';
 //...
@@ -142,16 +142,16 @@ $user = new Users;  //creates ORM instance of Users model
 $user->login = "Steve";
 $user->password = crypt($myPassword . $salt); 
 $user->save();
-~~~~
+```
 
 It is not uncommon (and quite convenient) to directly query your models
 inside views:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php foreach(Posts::find("active = 'Yes'") as $post){ ?>
     <?= $post->title ?>
 <?php } ?>
-~~~~
+```
 
 #### Developer tools
 

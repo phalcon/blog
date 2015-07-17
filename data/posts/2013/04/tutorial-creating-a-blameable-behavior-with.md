@@ -33,7 +33,7 @@ executed after the creating and updating operations respectively.
 The simpler way to add logic to these events is implement them as
 methods in the model:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 class Products extends Phalcon\Mvc\Model
@@ -50,14 +50,14 @@ class Products extends Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 However, if we want to reuse that logic across several models, we could
 use other better alternatives. We can create a base class that
 implements these methods then use it as base class in the required
 models:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 class BlameableModel extends Phalcon\Mvc\Model
@@ -74,16 +74,16 @@ class BlameableModel extends Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 Then in the model:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Products extends BlameableModel
 {
 
 }
-~~~~
+```
 
 This approach is very simple too, but it has some disadvantages, a class
 only can inherit one class at the same time, so if we want to implement
@@ -93,7 +93,7 @@ Recently in PHP 5.4, Traits were introduced allowing us to reuse method
 across classes without explicitly set a class inheritance. In our case a
 trait that fits our purposes looks like this:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 trait Blameable
 {
 
@@ -108,16 +108,16 @@ trait Blameable
     }
 
 }
-~~~~
+```
 
 Then in then model:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Products extends Phalcon\Mvc\Model
 {
     use Blameable;
 }
-~~~~
+```
 
 This way also has limitations; you can't add more than one trait that
 has implemented the same methods because it produces collisions.
@@ -130,7 +130,7 @@ allowing us to add several behaviors to the same model that implements
 the same events. A behavior can be easily added to a model in the
 following way:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Products extends Phalcon\Mvc\Model
 {
     public function initialize()
@@ -138,12 +138,12 @@ class Products extends Phalcon\Mvc\Model
         $this->addBehavior(new MyBehavior());
     }
 }
-~~~~
+```
 
 A behavior can respond to events produced by a model, our behavior
 "Blameable" initially looks like:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 use Phalcon\Mvc\ModelInterface,
@@ -164,14 +164,14 @@ class Blameable extends Behavior implements BehaviorInterface
         // ...
     }
 }
-~~~~
+```
 
 It simply implements a method called "notify", this method receives two
 parameters: the event name triggered by the models manager and the model
 that produced the event. As mentioned before, we're only interested in
 'afterCreate' and 'afterUpdate':
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 /**
  * Receives notifications from the Models Manager
  *
@@ -187,12 +187,12 @@ public function notify($eventType, $model)
         //...
     }
 }
-~~~~
+```
 
 Now, returning to our idea, we're going to store the information about
 creating/updating operations in the following additional tables:
 
-~~~~ {.sh_sql .sh_sourceCode}
+```
 CREATE TABLE audit (
     id integer primary key auto_increment,
     user_name varchar(32) not null,
@@ -209,11 +209,11 @@ CREATE TABLE audit_detail (
     old_value varchar(32),
     new_value varchar(32) not null
 )
-~~~~
+```
 
 The respective models are:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Audit extends \Phalcon\Mvc\Model
 {
 
@@ -235,7 +235,7 @@ class AuditDetail extends \Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 "Audit" stores general information about the operation, while
 "AuditDetail" stores every new value or every changed value. You can
@@ -249,7 +249,7 @@ To achieve this, we must set up our model to store a snapshot of the
 original record so that we can compare it with the new and know their
 changes.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 class Products extends Phalcon\Mvc\Model
@@ -261,11 +261,11 @@ class Products extends Phalcon\Mvc\Model
     }
 
 }
-~~~~
+```
 
 Now we have everything we need to complete the behavior.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 public function notify($eventType, $model)
 {
     //Fires 'logAfterUpdate' if the event is 'afterUpdate'
@@ -273,12 +273,12 @@ public function notify($eventType, $model)
         return $this->auditAfterUpdate($model);
     }
 }
-~~~~
+```
 
 The method 'auditAfterUpdate' receives the model, creates a new "Audit"
 together with its detail:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 public function auditAfterUpdate(ModelInterface $model)
 {
 
@@ -332,7 +332,7 @@ public function auditAfterUpdate(ModelInterface $model)
 
     return null;
 }
-~~~~
+```
 
 Check out the complete source of the behavior on the
 [Incubator](https://github.com/phalcon/incubator/tree/master/Library/Phalcon/Mvc/Model/Behavior).

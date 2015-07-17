@@ -30,7 +30,7 @@ Now ‘compiledPath' option in
 a closure allowing the developer to dynamically create the compilation
 path for templates:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 // Just append the .php extension to the template path
 $volt->setOptions([
     'compiledPath' => function($templatePath) {      
@@ -48,7 +48,7 @@ $volt->setOptions([
                return CACHE_DIR . $dirName . '/'. $templatePath . '.php';
     }
 ]);
-~~~~
+```
 
 ### Volt extensions
 
@@ -59,7 +59,7 @@ functions/filters, and more. The class below allows to use any PHP
 function in
 [Volt](http://docs.phalconphp.com/en/latest/reference/volt.html):
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class PhpFunctionExtension
 {
     public function compileFunction($name, $arguments)
@@ -69,13 +69,13 @@ class PhpFunctionExtension
           }          
     }
 }
-~~~~
+```
 
 Load the extension in Volt:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $volt->getCompiler()->addExtension(new PHPFunctionExtension());
-~~~~
+```
 
 ### Phalcon\\Mvc\\Url static/dynamic paths
 
@@ -84,7 +84,7 @@ resources and define a different one for dynamic resources. This is
 particularly handy if a CDN or a different domain serving static
 resources​ are used:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $di['url'] = function () {
     $url = new Phalcon\Mvc\Url();
 
@@ -96,7 +96,7 @@ $di['url'] = function () {
 
     return $url;
 };
-~~~~
+```
 
 ### Phalcon\\Mvc\\View\\Simple
 
@@ -109,7 +109,7 @@ rendering hierarchy it's more suitable to be used together with the
 inheritance](http://docs.phalconphp.com/en/latest/reference/volt.html#template-inheritance)
 provided by Volt.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 // ​ ​View service
 $di['view'] = function () {
 
@@ -119,11 +119,11 @@ $di['view'] = function () {
 
     return $view;
 };
-~~~~
+```
 
 Using in micro-apps:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $app->map('/login', function () use ($app) {
 
     echo $app->view->render('security/login', array(
@@ -131,7 +131,7 @@ $app->map('/login', function () use ($app) {
     ));
 
 });
-~~~~
+```
 
 It supports multiple render engines and also have automatic caching
 capabilities.
@@ -143,7 +143,7 @@ format. ​Returned instances of
 [Phalcon\\Http\\Response](http://docs.phalconphp.com/en/latest/reference/response.html)
 in micro applications are automatically sent by the application:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $app->post('/api/robots', function () use ($app) {
 
     $data = $app->request->getJsonRawBody();
@@ -176,7 +176,7 @@ $app->post('/api/robots', function () use ($app) {
 
     return $response;
 });
-~~~~
+```
 
 ### Support for Many-To-Many in the ORM
 
@@ -185,7 +185,7 @@ Finally Many-to-Many relations are supported in the
 Direct relationships between two models using an intermediate model can
 now be defined:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Artists extends Phalcon\Mvc\Model
 {
     public $id;
@@ -203,31 +203,31 @@ class Artists extends Phalcon\Mvc\Model
         );
     }
 }
-~~~~
+```
 
 ​The songs from an artist can be retrieved by accessing the relationship
 alias:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $artist = Artists::findFirst();
 
 //Get all artist's songs
 foreach ($artist->songs as $song) {
     echo $song->name;
 }
-~~~~
+```
 
 Many-to-Many relations can be joined in PHQL:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $phql = 'SELECT Artists.name, Songs.name FROM Artists JOIN Songs WHERE Artists.genre = "Trip-Hop"';
 $result = $this->modelsManager->query($phql);
-~~~~
+```
 
 Many-to-Many related instances can be directly added to a model, the
 intermediate instances are automatically created in the sav​e process:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $songs = array()
 
 $song = new Song();
@@ -242,7 +242,7 @@ $artist = new Artists();
 $artist->name = 'Daft Punk';
 $artist->songs = $songs; //Assign the n-m relation
 $artist->save();
-~~~~
+```
 
 ### Cascade/Restrict actions in Virtual Foreign Keys
 
@@ -251,7 +251,7 @@ keys](http://docs.phalconphp.com/en/latest/reference/models.html#virtual-foreign
 can ​now be set up to delete all the referenced records if the master
 record is deleted:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 use Phalcon\Mvc\Model
     Phalcon\Mvc\Model\Relation;
 
@@ -272,16 +272,16 @@ class Artists extends Model
     }
 
 }
-~~~~
+```
 
 When a record in Artists is deleted all the related songs are deleted
 too:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $artist = Artists::findFirst();
 
 $artist->delete(); // Deleting also its songs
-~~~~
+```
 
 ### Assets Minification
 
@@ -296,7 +296,7 @@ of javascript files for maximum performance. In the CSS land,
 [CSSMin](https://github.com/soldair/cssmin/blob/master/cssmin.c) by Ryan
 Day is also available to minify css files.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $manager = new Phalcon\Assets\Manager(array(
     'sourceBasePath' => './js/',
     'targetBasePath' => './js/production/'
@@ -330,7 +330,7 @@ $manager
     ->addFilter(new MyApp\Assets\Filters\LicenseStamper());
 
 $manager->outputJs();
-~~~~
+```
 
 This component still needs a bit more of work​,​ adding caching,
 versioning and detection ​of changes to reduce processing. These changes
@@ -347,9 +347,9 @@ The developer can now disable literals in PHQL. This means that directly
 using strings, numbers and boolean values in PHQL strings will be
 disallowed. If by mistake a developer​ writes:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $artist = Artists::findFirst("name = '$name'");
-~~~~
+```
 
 An exception will be thrown forcing the developer to use bound
 parameters.
@@ -360,31 +360,31 @@ parameters.
 [partial](http://docs.phalconphp.com/en/latest/reference/views.html#using-partials)
 that only exists in the scope of the partial:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php $this->partial('footer', ['links' => $myLinks]);
-~~~~
+```
 
 In Volt:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {{ partial('footer', ['links': myLinks]) }}
 {% include 'footer' with ['links': myLinks] %}
-~~~~
+```
 
 ### Use Phalcon\\Tag as Service
 
 Phalcon\\Tag is now a service in DI\\FactoryDefault​. So instead of
 doing this:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 Phalcon\Tag::setDefault('name', $robot->name);
-~~~~
+```
 
 You can ​do one better and write:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $this->tag->setDefault('name', $robot->name);
-~~~~
+```
 
 From now both syntax's are supported, but in further releases, the
 former will be deprecated. ​ There will be ample time for developers to
@@ -396,7 +396,7 @@ application stability.
 
 Initial support for macros in Volt is implemented in this version:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 {%- macro input_text(name, attributes=null) -%}
  {{- '<input type="' ~ name ~ '" ' -}}
  {%- for key, value in attributes -%}
@@ -406,7 +406,7 @@ Initial support for macros in Volt is implemented in this version:
 {%- endmacro -%}
 
 {{ input_text("telephone", ['placeholder': 'Type telephone']) }}
-~~~~
+```
 
 ### BadMethodCallException instead of warnings
 
@@ -415,19 +415,19 @@ warning was raised. Starting from 1.2.0 BadMethodCallException
 exceptions will be thrown so you can see a complete trace ​ where the
 problem is generated.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $e = new Phalcon\Escaper();
 $e->escapeCss('a {}', 1, 2, 3);
-~~~~
+```
 
 Shows:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 Fatal error: Uncaught exception 'BadMethodCallException' with message 'Wrong number of parameters' in test.php:4
 Stack trace:
 #0 test.php(4): Phalcon\Escaper->escapeCss('a {}', 1, 2, 3)
 #1 {main}
-~~~~
+```
 
 ### Debug Component
 
@@ -437,9 +437,9 @@ presentation format. This helps with debugging and identifying errors.
 To use this component just remove any try/catch from your bootstrap. Add
 the following at the beginning of ​your script:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 (new Phalcon\Debug)->listen();
-~~~~
+```
 
 A backtrace like this is showed when an exception is generated:
 
@@ -452,12 +452,12 @@ is​ here.
 
 This version can be installed from the 1.2.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 cd build
 git checkout 1.2.0
 sudo ./install
-~~~~
+```
 
 Windows users can download a DLL from the [download
 page](http://phalconphp.com/download).

@@ -70,7 +70,7 @@ to create and maintain a project like Phalcon.
 
 This how Zephir code looks like:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 namespace Test;
 class MyTest extends SomeNamespace\MyAnotherClass 
 {
@@ -79,13 +79,13 @@ class MyTest extends SomeNamespace\MyAnotherClass
         return a + b;
     }
 }
-~~~~
+```
 
 All the code in Zephir must be placed in classes (a namespace is
 required), the use of \$ in variables is not required. By default
 variables have dynamic typing like PHP, which means you can do:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 namespace Test;
 class MyTest extends SomeNamespace\MyAnotherClass 
 {
@@ -95,14 +95,14 @@ class MyTest extends SomeNamespace\MyAnotherClass
         return a + b;
     }
 }
-~~~~
+```
 
 While the above code works, in a big code base, the frequent use of
 dynamic variables could reduce the performance down. Zephir introduces
 static typing, allowing compilers to do a better Job, producing compiler
 errors when implicit conversions are done:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 namespace Test;
 class MyTest extends SomeNamespace\MyAnotherClass 
 {
@@ -112,7 +112,7 @@ class MyTest extends SomeNamespace\MyAnotherClass
         return  a+ b;
     }
 }
-~~~~
+```
 
 The static types supported are: long/int, double/float, bool and
 strings, all these types are converted to C types. Static and dynamic
@@ -122,7 +122,7 @@ aware of allocating or freeing memory like in PHP.
 The syntax of Zephir is inspired by C, PHP, Rust and Javascript, making
 it easy for developers to adapt to the new language:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 namespace Test;
 class MyTest 
 {
@@ -146,7 +146,7 @@ class MyTest
         return fruits;
     }
 }
-~~~~
+```
 
 **Goals**
 
