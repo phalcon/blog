@@ -27,12 +27,18 @@ use Kitsune\Exceptions\Exception as KException;
 
 class PostFinder extends PhDiInjectable
 {
-    private $data        = [];
-    private $tags        = [];
-    private $links       = [];
-    private $link_number = [];
-    private $dates       = [];
+    private $data       = [];
+    private $tags       = [];
+    private $links      = [];
+    private $linkNumber = [];
+    private $dates      = [];
 
+    /**
+     * The constructor. Reads the posts JSON file and creates the necessary
+     * mapping indexes
+     *
+     * @throws KException
+     */
     public function __construct()
     {
         $sourceFile = K_PATH . '/data/posts.json';
@@ -58,60 +64,74 @@ class PostFinder extends PhDiInjectable
             /**
              * Add the element in the master array
              */
-            $this->data[$post->slug] = $post;
+            $this->data[$post->getSlug()] = $post;
 
             /**
              * Tags
              */
-            foreach ($post->tags as $tag) {
-                $this->tags[strtolower(trim($tag))][] = $post->slug;
+            foreach ($post->getTags() as $tag) {
+                $key                = strtolower(trim($tag));
+                $this->tags[$key][] = $post->getSlug();
             }
 
             /**
              * Links
              */
-            $this->links[$post->link] = $post->slug;
+            $this->links[$post->getLink()] = $post->getSlug();
 
             /**
              * Check if the link is a tumblr one and get its number
              */
-            $position = strpos($post->link, '/');
+            $position = strpos($post->getLink(), '/');
             if (false !== $position) {
-                $link_number = substr($post->link, 0, $position);
-                $this->link_number[$link_number] = $post->slug;
+                $linkNumber = substr($post->getLink(), 0, $position);
+                $this->linkNumber[$linkNumber] = $post->getSlug();
             }
 
             /**
              * Dates (sorting)
              */
-            $dates[$post->date] = $post->slug;
+            $dates[$post->getDate()] = $post->getSlug();
         }
 
         /**
          * Sort the dates array
          */
         krsort($dates);
-        $this->dates = $dates;
+        $postsPerPage = intval($this->config->blog->postsPerPage);
+        $postsPerPage = ($postsPerPage < 0) ? 10 : $postsPerPage;
+        $this->dates  = array_chunk($dates, $postsPerPage);
+
+        /**
+         * Adding one element to the beginning of the array to deal with the
+         * 0 based array index since the array keys correspond to the pages
+         */
+        array_unshift($this->dates, []);
     }
 
-    public function getLatest($number)
+    /**
+     * Gets the latest number of posts for the blog. Used in the first page
+     *
+     * @param  int $page   The page
+     *
+     * @return array
+     */
+    public function getLatest($page = 1)
     {
-        $posts   = [];
-        $counter = 1;
+        $key   = sprintf('posts-latest-%s.cache', $page);
+        $posts = $this->utils->cacheGet($key);
 
-        $key  = 'posts-latest-1.cache';
-        $posts = $this->cache->get($key);
-
-        if ($posts === null) {
-            foreach ($this->dates as $key) {
-                $posts[] = $this->data[$key];
-                $counter = $counter + 1;
-
-                if ($counter > $number) {
-                    break;
+        if (null === $posts) {
+            $page = ($page < 1) ? 1 : $page;
+            $dates = $this->utils->fetch($this->dates, $page, null);
+            if (!is_null($dates)) {
+                foreach ($dates as $date) {
+                    $posts[] = $this->data[$date];
                 }
+                $this->cache->save($key, $posts);
+            } else {
+                $this->response->redirect('', false, 301);
             }
-            $this->cache->save($key, $posts);
         }
 
         return $posts;
@@ -119,13 +139,11 @@ class PostFinder extends PhDiInjectable
 
     public function getLatestByTag($tag, $number)
     {
-        $tag = strtolower(urldecode($tag));
-        $posts = [];
+        $tag   = strtolower(urldecode($tag));
+        $key   = "posts-tags-{$tag}-{$number}.cache";
+        $posts = $this->utils->cacheGet($key);
 
-        $key = "posts-tags-{$tag}-{$number}.cache";
-        $posts = $this->cache->get($key);
-
-        if ($posts === null) {
+        if (null === $posts) {
             foreach ((array) $this->tags[$tag] as $key) {
                 $posts[strtotime($this->data[$key]->date)] = $this->data[$key];
             }
@@ -137,25 +155,98 @@ class PostFinder extends PhDiInjectable
         return $posts;
     }
 
+    /**
+     * Gets the tag cloud for the sidebar
+     *
+     * @return array
+     */
+    public function getTagCloud()
+    {
+        $cacheKey = 'tag-cloud.cache';
+        $tagCloud = $this->utils->cacheGet($cacheKey);
 
+        if (null === $tagCloud) {
+            $max  = 0;
+            $tags = [];
+
+            foreach ($this->tags as $key => $items) {
+                $tags[$key] = count($items);
+                $max        = ($max > count($items)) ? $max : count($items);
+            }
+
+            foreach ($tags as $key => $count) {
+                $percent = floor(($count / $max) * 100);
+                if ($percent < 20) {
+                    $class = 'x-small';
+                } elseif ($this->utils->between($percent, 21, 40)) {
+                    $class = 'small';
+                } elseif ($this->utils->between($percent, 41, 60)) {
+                    $class = 'medium';
+                } elseif ($this->utils->between($percent, 61, 80)) {
+                    $class = 'large';
+                } else {
+                    $class = 'larger';
+                }
+                $tags[$key] = $class;
+            }
+
+            $tagCloud = $this->utils->shuffle($tags);
+
+            $this->cache->save($cacheKey, $tagCloud);
+        }
+
+        return $tagCloud;
+    }
+
+    /**
+     * Gets a post from the internal collection based on a slug. If the slug is
+     * numeric, this is a Disqus link. The function will find it and return the
+     * correct post.
+     *
+     * @param  string $slug The slug of the post
+     *
+     * @return mixed
+     */
     public function get($slug)
     {
         if (is_numeric($slug)) {
-            if (array_key_exists($slug, $this->link_number)) {
-                $slug = $this->link_number[$slug];
+            if (array_key_exists($slug, $this->linkNumber)) {
+                $slug = $this->linkNumber[$slug];
                 $this->response->redirect('/post/' . $slug, false, 301);
             }
         }
 
         $key  = 'post-' . $slug . '.cache';
-        $post = $this->cache->get($key);
+        $post = $this->utils->cacheGet($key);
 
-        if ($post === null) {
+        if (null === $post) {
             if (array_key_exists($slug, $this->data)) {
                 $post = $this->data[$slug];
                 $this->cache->save($key, $post);
             }
         }
+
         return $post;
     }
+
+    public function getPages($page = 1)
+    {
+        $return = [
+            'previous' => $page - 1,
+            'next'     => $page + 1
+        ];
+
+        $totalPages = count($this->dates);
+
+        if (($page + 1) > $totalPages) {
+            $return['next'] = 0;
+        }
+
+        if (($page - 1) < 1) {
+            $return['previous'] = 0;
+        }
+
+        return $return;
+    }
+
 }

@@ -22,7 +22,9 @@
  */
 namespace Kitsune;
 
-class Utils
+use Phalcon\Di\Injectable as PhDiInjectable;
+
+class Utils extends PhDiInjectable
 {
     /**
      * Gets an element from an array or an object. If the element exists it is
@@ -36,7 +38,7 @@ class Utils
      *
      * @return  mixed
      */
-    public static function fetch($object, $element, $default)
+    public function fetch($object, $element, $default)
     {
         if (is_array($object)) {
             $return = (isset($object[$element])) ? $object[$element] : $default;
@@ -46,5 +48,59 @@ class Utils
             $return = $default;
         }
         return $return;
+    }
+
+    /**
+     * This is used as a proxy to the cache. If the K_DEBUG is defined it
+     * always returns an empty array so that when developing the cache does
+     * not affect results
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
+    public function cacheGet($key)
+    {
+        $results = null;
+        if (!K_DEBUG) {
+            $results = $this->cache->get($key);
+        }
+
+        return $results;
+    }
+
+    /**
+     * Checks if a numeric value is within the lower and upper limit parameters
+     *
+     * @param int $value The value to check
+     * @param int $upper The lower limit
+     * @param int $lower The upper limit
+     *
+     * @return bool
+     */
+    public function between($value, $lower, $upper)
+    {
+        return boolval($value >= $lower && $value <= $upper);
+    }
+
+    /**
+     * Shuffles an array preserving its keys
+     *
+     * @param array $input The input array
+     *
+     * @return array
+     */
+    public function shuffle($input)
+    {
+        $output = [];
+        $keys   = array_keys($input);
+
+        shuffle($keys);
+
+        foreach ($keys as $key) {
+            $output[$key] = $input[$key];
+        }
+
+        return $output;
     }
 }

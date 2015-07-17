@@ -4,6 +4,16 @@ return [
     'debugMode'  => 0,
     'baseUri'    => '/blog/',
     'cdnUrl'     => '',
+    'blog'       => [
+        'title'        => 'Phalcon Framework Blog',
+        'postsPerPage' => 10,
+    ],
+    'rss'        => [
+        'title'       => 'Phalcon Framework Blog',
+        'description' => 'We are an open source web framework for PHP ' .
+                         'delivered as a C extension offering high ' .
+                         'performance and lower resource consumption',
+    ],
     'cache_data' => [
         'front' => [
             'adapter' => 'Data',
@@ -51,7 +61,7 @@ return [
             'controller' => 'sitemap',
             'action'     => 'index'
         ],
-        '/post/{slug:[0-9a-zA\-]+}'  => [
+        '/post/{slug:[0-9a-zA-Z\-]+}' => [
             'controller' => 'posts',
             'action'     => 'view'
         ],
@@ -64,6 +74,14 @@ return [
             'action'     => 'viewLegacy'
         ],
         '/'      => [
+            'controller' => 'posts',
+            'action'     => 'index'
+        ],
+        '/{page:[0-9]+}' => [
+            'controller' => 'posts',
+            'action'     => 'index'
+        ],
+        '/{page:[0-9]+}/{number:[0-9]+}' => [
             'controller' => 'posts',
             'action'     => 'index'
         ],
