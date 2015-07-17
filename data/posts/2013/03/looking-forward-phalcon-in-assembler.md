@@ -32,13 +32,13 @@ assembler and be executed within PHP:
 
 Instead of this ugly and slow code:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 echo "hello";
-~~~~
+```
 
 You can run it in a faster and flexible way:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $asm = '
 .extern printf
 .section .data
@@ -58,7 +58,7 @@ do_php_echo:
 ret';
 
 Phalcon\Asm::run($asm);
-~~~~
+```
 
 We are looking forward to the support of the community to begin this​
 new phase. If you work in PHP and also are an expert in assembler, we

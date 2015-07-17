@@ -57,20 +57,20 @@ announcement.
 This version can be installed from the 2.0.0 branch, if you don't have
 Zephir installed follow these instructions:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 git checkout 2.0.0
 cd ext
 sudo ./install
-~~~~
+```
 
 If you have Zephir installed:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 git checkout 2.0.0
 zephir build
-~~~~
+```
 
 We rely on the feedback from everyone in the community to flush out bugs
 and upgrade issues ahead of a big release like this. So please give

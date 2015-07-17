@@ -32,16 +32,16 @@ For the upcoming 1.3/1.4 versions, developers should expect to see:
 -   Our initial attempt on addressing subqueries in PHQL. We will start
     with the \
 
-    ~~~~ {.sh_php .sh_sourceCode}
+    ```php
     WHERE (SELECT ... FROM ...)
-    ~~~~
+    ```
 
     support for MySQL and move towards other ORMs. Once that is
     completed we will address other usages of subqueries such as \
 
-    ~~~~ {.sh_php .sh_sourceCode}
+    ```php
     SELECT x = (SELECT ... FROM ...)
-    ~~~~
+    ```
 
     etc. This feature will span through more than one versions.
 

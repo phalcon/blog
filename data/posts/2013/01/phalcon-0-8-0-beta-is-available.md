@@ -25,12 +25,12 @@ we are today releasing the first beta version of 0.8.0.
 
 This version can be installed from the 0.8.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 cd build
 git checkout 0.8.0
 sudo ./install
-~~~~
+```
 
 Windows users can download a DLL from the [download
 page](http://phalconphp.com/download).

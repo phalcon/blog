@@ -56,16 +56,16 @@ MongoDb collection.
 
 A model can be just a class with the same name of the mapped collection:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 class Products extends Phalcon\Mvc\Collection
 {
 
 }
-~~~~
+```
 
 Adding validators/events as required:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 use Phalcon\Mvc\Model\Message;
 use Phalcon\Mvc\Model\Validators\PresenceOf;
 use Phalcon\Mvc\Model\Validators\Uniqueness;
@@ -123,9 +123,9 @@ class Products extends Phalcon\Mvc\Collection
     }
 
 }
-~~~~
+```
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 //Create a product
 $product = new Products();
 $product->name = 'Artichoke';
@@ -154,13 +154,13 @@ $product = Products::findFirst(array(
 
 //Deleting a product
 $product->delete();
-~~~~
+```
 
 Additionally, as already mentioned above, an adapter for the Cache
 component is available. The following example shows how to use MongoDB
 as a cache for a SQL database, reducing the load:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 //Cache for one hour
 $frontCache = new Phalcon\Cache\Frontend\Output(array(
     'lifetime' => 3600
@@ -192,7 +192,7 @@ if ($products === null) {
 foreach ($products as $product) {
     echo $product->name, "\n";
 }
-~~~~
+```
 
 Complete documentation for the ODM is available
 [here](http://docs.phalconphp.com/en/0.6.0/reference/odm.html)

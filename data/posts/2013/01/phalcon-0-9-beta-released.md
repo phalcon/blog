@@ -25,7 +25,7 @@ It is now easier to obtain records related to a current model in the
 simply accessing a property with the same alias of the relationship (the
 relationship has to be set up first in the models):
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 // Get a song
@@ -45,12 +45,12 @@ foreach ($album->songs as $song) {
 
 // Delete all the songs related to the album
 $album->songs->delete();
-~~~~
+```
 
 Magic properties can also be used to store model instances and their
 related relations:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 // Create an artist
@@ -70,11 +70,11 @@ $album->year = 2008;
 // Messages are passed back to the user for information regarding
 // any errors
 $album->save();
-~~~~
+```
 
 Also has-many relations are supported:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 // Get an existing artist
@@ -102,7 +102,7 @@ $album->songs = $songs;
 
 // Save the album + its songs
 $album->save();
-~~~~
+```
 
 **Priorities in the Events component**
 
@@ -110,13 +110,13 @@ The [Events](http://docs.phalconphp.com/en/latest/reference/events.html)
 component is now supporting priorities. With this feature you can attach
 listeners indicating the order in which they must be called.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 $evManager->attach('db', new DbListener(), 150); //More priority
 $evManager->attach('db', new DbListener(), 100); //Normal priority
 $evManager->attach('db', new DbListener(), 50); //Less priority
-~~~~
+```
 
 **Annotations**
 
@@ -131,7 +131,7 @@ Let's pretend we've the following controller and the developer wants to
 create a plugin to automatically start the cache if the latest action
 executed is marked as cacheable:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
  
 class NewsController extends \Phalcon\Mvc\Controller
@@ -151,11 +151,11 @@ class NewsController extends \Phalcon\Mvc\Controller
     }
  
 }
-~~~~
+```
 
 We setup the dispatch service to send events to an events manager:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 $eventsManager = new \Phalcon\Events\Manager();
@@ -169,12 +169,12 @@ $di->set('dispatcher', function () use ($eventsManager) {
     $dispatcher->setEventsManager($eventsManager);
     return $dispatcher;
 });
-~~~~
+```
 
 The ‘CacheEnablerPlugin' enables the cache in the view if the method
 implements the annotation called 'Cache':
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
  
 class CacheEnablerPlugin extends \Phalcon\Mvc\User\Plugin
@@ -202,7 +202,7 @@ class CacheEnablerPlugin extends \Phalcon\Mvc\User\Plugin
     }
  
 }
-~~~~
+```
 
 Check the complete example [here](https://gist.github.com/4544542)
 
@@ -220,7 +220,7 @@ code a lot easier to read.:
 
 Let's pretend we've the following controller:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 namespace MyApi\Controllers\Users;
@@ -264,11 +264,11 @@ class UsersController extends Phalcon\Mvc\Controller
     }
  
 }
-~~~~
+```
 
 The annotations router must be used:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 <?php
 
 $di->set('router', function () {
@@ -284,7 +284,7 @@ $di->set('router', function () {
      
     return $router;
 });
-~~~~
+```
 
 This version also fixes bugs and add some minor improvements. Check the
 complete changelog for this version
@@ -294,12 +294,12 @@ complete changelog for this version
 
 This version can be installed from the 0.9.0 branch:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 git clone http://github.com/phalcon/cphalcon
 cd build
 git checkout 0.9.0
 sudo ./install
-~~~~
+```
 
 Windows users can [download](http://phalconphp.com/download) a DLL from
 the download page.

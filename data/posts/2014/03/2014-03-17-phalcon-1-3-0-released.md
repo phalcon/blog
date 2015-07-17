@@ -39,7 +39,7 @@ strings will be disallowed. In Phalcon 1.3 this option has been improved
 and now works with\
 most query builders, finders and PHQL generators.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 Phalcon\Mvc\Model::setup(array('phqlLiterals' => false));
 
 $phql = "SELECT Robots.* FROM Robots WHERE Robots.type = :type: LIMIT :limit:";
@@ -48,7 +48,7 @@ $result = $this->modelsManager->executeQuery($phql, array(
     'type' => $this->request->getPost('name')
     'limit' => $this->request->getPost('limit')
 ));
-~~~~
+```
 
 ### Registry
 
@@ -57,7 +57,7 @@ introduced in this version. This component implements the Registry
 pattern, allowing the developer to store and retrieve all kinds of
 values using simple keys.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 $registry = new \Phalcon\Registry();
 
 //Store a simple value
@@ -65,34 +65,34 @@ $registry->mydata = "hello";
 
 //Store a complex resultset
 $registry->robots = Robots::find();
-~~~~
+```
 
 Registries can be iterated as arrays:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 foreach ($registry as $key => $value) {
     var_dump($key);
     var_dump($value);
 }
-~~~~
+```
 
 And can be accessed as objects or arrays:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 echo $registry->key;
 echo $registry['some key'];
 echo $registry[$key];
 echo $registry->{$key};
 echo $registry[0];
 echo $registry->{0};
-~~~~
+```
 
 ### Ini Settings
 
 Phalcon 1.3 introduces php.ini settings to alter the global behavior of
 the extension:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 ; Enables/Disables globally the internal events
 phalcon.orm.events = On
 
@@ -113,7 +113,7 @@ phalcon.orm.enable_literals = On
 
 ; Enables/Disables auttomatic escape
 phalcon.db.escape_identifiers = On
-~~~~
+```
 
 ### PSR-3 Logger Implementation
 
@@ -134,9 +134,9 @@ extension:
 
 You can enable/disable them via the following php.ini directive:
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 phalcon.register_psr3_classes = On;
-~~~~
+```
 
 This also would allow other components implement and use these
 interfaces directly where Phalcon is installed.
@@ -148,7 +148,7 @@ contributors Phalcon\\Image is available for developers that need to
 manipulate images using GD or Imagemagick. A unified interface is
 provided to manipulate images using either library.
 
-~~~~ {.sh_php .sh_sourceCode}
+```php
 use Phalcon\Image\Adapter\GD as GdAdapter;
 use Phalcon\Image\Adapter\Imagick as ImagickAdapter;
 
@@ -158,7 +158,7 @@ $image
     ->crop(200, 200)
     ->resize(70, 50)
     ->save('new-logo.jpg');
-~~~~
+```
 
 For now only the most commonly used functions have been unified and
 implemented since both libraries provide different functionality.

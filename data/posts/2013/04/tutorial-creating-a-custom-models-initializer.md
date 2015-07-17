@@ -24,7 +24,7 @@ Phalcon application. You can find the complete code on
 [Github](https://github.com/phalcon/tutorial-models-init). The following
 structure is used:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 example/
  cache/ db/
  models/
@@ -35,7 +35,7 @@ example/
    AnnotationsMetaDataInitializer.php
  services.php index.php
  
-~~~~
+```
 
 The file
 [services.php](https://github.com/phalcon/tutorial-models-init/blob/master/services.php)
@@ -47,19 +47,19 @@ The first is the database connection, we used Sqlite as adapter, but you
 can use any other of the [supported database
 systems](http://docs.phalconphp.com/en/latest/reference/db.html#database-adapters):
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 //Setup a connection
 $di['db'] = function () {
     return new \Phalcon\Db\Adapter\Pdo\Sqlite(array(
         "dbname" => "sample.db"
     ));
 };
-~~~~
+```
 
 Then, we create the model's manager with a custom plugin that perform
 extra initialization tasks:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 //Set a models manager
 $di['modelsManager'] = function () {
 
@@ -74,7 +74,7 @@ $di['modelsManager'] = function () {
 
     return $modelsManager;
 };
-~~~~
+```
 
 ### Model initialization
 
@@ -83,7 +83,7 @@ is a plugin that reads the annotations in the model's class performing
 the appropriate tasks according to the annotations used. A model with
 annotations is the following:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 /**
@@ -119,7 +119,7 @@ class Robots extends \Phalcon\Mvc\Model
     public $year;
 
 }
-~~~~
+```
 
 Both class and properties are initialized using annotations rather than
 use the standard methods ‘initialize', 'columnMap', 'getSource', etc. In
@@ -131,7 +131,7 @@ Our second model is "Parts", every part represents a possible part to
 assemble our robots. This model contains every possible part that a
 robot could have.
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 /**
@@ -157,12 +157,12 @@ class Parts extends \Phalcon\Mvc\Model
     public $name;
 
 }
-~~~~
+```
 
 The relation between the robots and their parts are managed via the
 model RobotsParts:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 /**
@@ -198,14 +198,14 @@ class RobotsParts extends \Phalcon\Mvc\Model
     public $partsId;
 
 }
-~~~~
+```
 
 To make these annotations work, we return to the AnnotationsInitializer,
 as mentioned before, this plugin is called after any model is
 initialized in the models manager allowing us to perform extra
 initializations:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 use Phalcon\Events\Event,
@@ -226,7 +226,7 @@ class AnnotationsInitializer extends Phalcon\Mvc\User\Plugin
     }
 
 }
-~~~~
+```
 
 The method 'afterInitialize' has the same name as the event triggered by
 the models manager, telling the events manager that this method must be
@@ -236,7 +236,7 @@ initialized.
 Now, we could extract the annotations in the model's class giving a
 useful meaning to each of them:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 //Get the annotations reflection
@@ -257,14 +257,14 @@ if ($annotations) {
         }
     }
 }
-~~~~
+```
 
 Annotations found are traversed and according to its name we're going to
 initialize the desired functionality, for example, if the name is
 'Source' we're going to assign its parameter as the model's mapped
 table:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 /**
@@ -274,7 +274,7 @@ case 'Source':
     $arguments = $annotation->getArguments();
     $manager->setModelSource($model, $arguments[0]);
     break;
-~~~~
+```
 
 This way you can create new annotations, change the current names, etc.
 adding more functionality according to your application needs. Check out
@@ -303,7 +303,7 @@ This adapter is called
 initializes the main meta-data and the second any column map found in
 the class:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 use Phalcon\Mvc\ModelInterface,
@@ -339,13 +339,13 @@ class AnnotationsMetaDataInitializer
     }
 
 }
-~~~~
+```
 
 Following the same philosophy used in the model initializer we're going
 to find which annotations are defined in the properties, giving a
 meaning to each of them:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 foreach ($reflection->getPropertiesAnnotations() as $name => $collection) {
@@ -355,13 +355,13 @@ foreach ($reflection->getPropertiesAnnotations() as $name => $collection) {
     }
 
 }
-~~~~
+```
 
 Returning to the file
 [services.php](https://github.com/phalcon/tutorial-models-init/blob/master/services.php),
 we see how this adapter is set up instead of the default one:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 $di['modelsMetadata'] = function () {
@@ -376,7 +376,7 @@ $di['modelsMetadata'] = function () {
 
     return $metaData;
 };
-~~~~
+```
 
 ### Caching Annotations/Meta-Data
 
@@ -389,7 +389,7 @@ annotations and meta-data using some of the adapters provided by the
 framework. In our example, we're using files to export the processed
 data avoiding the permanent processing in each request:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 //Use the memory meta-data adapter in development
 $metaData = new MetaDataAdapter(array(
     'metaDataDir' => './cache/meta-data/'
@@ -401,7 +401,7 @@ $di['annotations'] = function () {
         'annotationsDir' => './cache/annotations/'
     ));
 };
-~~~~
+```
 
 Note that these adapters aren't suitable for development because they
 don't reload the changes made to the classes, you can use the Memory
@@ -412,7 +412,7 @@ adapters to achieve this result.
 Once everything is correctly working you can use the models as is
 normally done in Phalcon:
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 <?php
 
 $robot = Robots::findFirst("type = 'mechanical'");
@@ -420,7 +420,7 @@ $robot = Robots::findFirst("type = 'mechanical'");
 foreach ($robot->robotsParts as $robotPart) {
     echo 'Name:', $robotPart->part->name, PHP_EOL;
 }
-~~~~
+```
 
 ### Conclusion
 

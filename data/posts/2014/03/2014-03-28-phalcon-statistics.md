@@ -22,7 +22,7 @@ below is a table that might prove helpful.
 
 The output has been created with [cloc](http://cloc.sourceforge.net/).
 
-~~~~ {.sh_sh .sh_sourceCode}
+```
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code
 --------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ Javascript                        2              0              0              2
 --------------------------------------------------------------------------------
 SUM:                           1015         133947          70528         462384
 --------------------------------------------------------------------------------
-~~~~
+```
 
 C is king. However things will change once 2.0.0 is out, making
 [Zephir](http://www.zephir-lang.com) the top language.

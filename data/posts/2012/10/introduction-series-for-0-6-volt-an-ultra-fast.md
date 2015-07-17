@@ -34,7 +34,7 @@ working with Phalcon.
 
 The following example shows its basic usage:
 
-~~~~ {.sh_php}
+```
 {# app/views/products/show.volt #}
 {% for product in products %}
   * Name: {{ product.name|e }}
@@ -42,27 +42,27 @@ The following example shows its basic usage:
        Price: {{ product.price + product.taxes/100 }}
   {% endif  %}
 {% endfor  %}
-~~~~
+```
 
 Volt views are compiled to pure PHP code, so basically they save the
 effort of writing PHP code manually. For the above example, the
 following PHP code is generated:
 
-~~~~ {.sh_php}
+```
 <?php foreach ($products as $product) { ?>
   * Name: <?php echo $this->escaper->escapeHtml($product->name); ?>
   <?php if ($product->status == 'Active') { ?>
        Price: <?php echo $product->price + $product->taxes / 0; ?>
   <?php } ?>
 <?php } ?>
-~~~~
+```
 
 As an added value, Volt is integrated with
 [Phalcon\\Tag](http://docs.phalconphp.com/en/latest/reference/tags.html),
 making the creation of views in Phalcon applications much easier than
 before:
 
-~~~~ {.sh_php}
+```
 {{ form('products/save', 'method': 'post') }}
 
     <label>Name</label>
@@ -72,11 +72,11 @@ before:
     {{ select("type", productTypes, 'using': ['id', 'name']) }}
 
 </form>
-~~~~
+```
 
 Producing:
 
-~~~~ {.sh_php}
+```
 <?php echo Phalcon\Tag::form(array('products/save', 'method' => 'post')); ?>
 
     <label>Name</label>
@@ -86,7 +86,7 @@ Producing:
     <?php echo Phalcon\Tag::select(array('type', $productTypes, 'using' => array('id', 'name'))); ?>
 
 </form>
-~~~~
+```
 
 A core design feature in Volt is security, therefore Volt offers a
 limited set of functions that can be used in the templates, while aiding
