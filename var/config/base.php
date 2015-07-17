@@ -65,6 +65,10 @@ return [
             'controller' => 'posts',
             'action'     => 'view'
         ],
+        '/tag/{tag:[0-9a-zA-Z\-\ \%]+}'  => [
+            'controller' => 'posts',
+            'action'     => 'tag'
+        ],
         '/post/{timestamp:[0-9]+}/{slug:[0-9a-zA-Z\-]+}' => [
             'controller' => 'posts',
             'action'     => 'viewLegacy'

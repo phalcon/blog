@@ -321,35 +321,42 @@
     "title": "Phalcon 2.0.1 released",
     "slug": "phalcon-2-0-1-released",
     "date": "2015-05-08",
-    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "tags": "php, phalcon, 2.0, phalcon2, release",
     "link": "118465365385\/phalcon-2-0-1-released"
   },
   {
     "title": "Phalcon 2.0.2 released",
     "slug": "phalcon-2-0-2-released",
     "date": "2015-05-25",
-    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "tags": "php, phalcon, 2.0, phalcon2, release",
     "link": "119885725880\/phalcon-2-0-2-released"
   },
   {
     "title": "Phalcon 2.0.3 released",
     "slug": "phalcon-2-0-3-released",
     "date": "2015-06-10",
-    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "tags": "php, phalcon, 2.0, phalcon2, release",
     "link": ""
   },
   {
     "title": "Phalcon's release process",
     "slug": "phalcons-release-process",
     "date": "2015-07-02",
-    "tags": "php, phalcon, 2.0, phalcon2, release, zephir, lts",
+    "tags": "php, phalcon, 2.0, phalcon2, release, lts",
     "link": ""
   },
   {
     "title": "Phalcon 2.0.4 released!",
     "slug": "phalcon-2-0-4-released",
     "date": "2015-07-07",
-    "tags": "php, phalcon, 2.0, phalcon2, release, zephir",
+    "tags": "php, phalcon, 2.0, phalcon2, release",
+    "link": ""
+  },
+  {
+    "title": "Phalcon 2.0.5 released!",
+    "slug": "phalcon-2-0-5-released",
+    "date": "2015-07-14",
+    "tags": "php, phalcon, 2.0, phalcon2, release",
     "link": ""
   }
 ]

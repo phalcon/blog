@@ -68,4 +68,39 @@ class Utils extends PhDiInjectable
 
         return $results;
     }
+
+    /**
+     * Checks if a numeric value is within the lower and upper limit parameters
+     *
+     * @param int $value The value to check
+     * @param int $upper The lower limit
+     * @param int $lower The upper limit
+     *
+     * @return bool
+     */
+    public function between($value, $lower, $upper)
+    {
+        return boolval($value >= $lower && $value <= $upper);
+    }
+
+    /**
+     * Shuffles an array preserving its keys
+     *
+     * @param array $input The input array
+     *
+     * @return array
+     */
+    public function shuffle($input)
+    {
+        $output = [];
+        $keys   = array_keys($input);
+
+        shuffle($keys);
+
+        foreach ($keys as $key) {
+            $output[$key] = $input[$key];
+        }
+
+        return $output;
+    }
 }

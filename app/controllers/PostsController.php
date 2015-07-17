@@ -19,6 +19,13 @@ class PostsController extends Controller
         $this->view->setVar('pages', $this->finder->getPages($page));
     }
 
+    public function tagAction($tag)
+    {
+        $this->view->pick('posts/index');
+        $this->view->showDisqus = false;
+        $this->view->posts = $this->finder->getLatestByTag($tag, 10);
+    }
+
     /**
      * Handles the RSS action. Constructs the rss feed of the latest posts. The
      * number of posts to return is stored in the configuration section
