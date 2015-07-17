@@ -207,3 +207,29 @@ h2, h3 {
     color: #969696;
     font-size: 12px;
 }
+
+
+.tag-cloud {
+    width: 300px;
+    padding: 10px;
+    background: #70b599;
+    color: #000000;
+    border: 1px solid #000000;
+    text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.tag-cloud a:link, .tag-cloud a:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.tag-cloud a:hover {
+    text-decoration: underline;
+}
+
+.tag-cloud span {
+    padding: 4px;
+}

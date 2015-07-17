@@ -70,7 +70,8 @@ class PostFinder extends PhDiInjectable
              * Tags
              */
             foreach ($post->getTags() as $tag) {
-                $this->tags[strtolower(trim($tag))][] = $post->getSlug();
+                $key                = strtolower(trim($tag));
+                $this->tags[$key][] = $post->getSlug();
             }
 
             /**
@@ -120,7 +121,7 @@ class PostFinder extends PhDiInjectable
         $key   = sprintf('posts-latest-%s.cache', $page);
         $posts = $this->utils->cacheGet($key);
 
-        if ($posts === null) {
+        if (null === $posts) {
             $page = ($page < 1) ? 1 : $page;
             $dates = $this->utils->fetch($this->dates, $page, null);
             if (!is_null($dates)) {
@@ -138,13 +139,11 @@ class PostFinder extends PhDiInjectable
 
     public function getLatestByTag($tag, $number)
     {
-        $tag = strtolower(urldecode($tag));
-        $posts = [];
+        $tag   = strtolower(urldecode($tag));
+        $key   = "posts-tags-{$tag}-{$number}.cache";
+        $posts = $this->utils->cacheGet($key);
 
-        $key = "posts-tags-{$tag}-{$number}.cache";
-        $posts = $this->cache->get($key);
-
-        if ($posts === null) {
+        if (null === $posts) {
             foreach ((array) $this->tags[$tag] as $key) {
                 $posts[strtotime($this->data[$key]->date)] = $this->data[$key];
             }
@@ -156,6 +155,48 @@ class PostFinder extends PhDiInjectable
         return $posts;
     }
 
+    /**
+     * Gets the tag cloud for the sidebar
+     *
+     * @return array
+     */
+    public function getTagCloud()
+    {
+        $cacheKey = 'tag-cloud.cache';
+        $tagCloud = $this->utils->cacheGet($cacheKey);
+
+        if (null === $tagCloud) {
+            $max  = 0;
+            $tags = [];
+
+            foreach ($this->tags as $key => $items) {
+                $tags[$key] = count($items);
+                $max        = ($max > count($items)) ? $max : count($items);
+            }
+
+            foreach ($tags as $key => $count) {
+                $percent = floor(($count / $max) * 100);
+                if ($percent < 20) {
+                    $class = 'x-small';
+                } elseif ($this->utils->between($percent, 21, 40)) {
+                    $class = 'small';
+                } elseif ($this->utils->between($percent, 41, 60)) {
+                    $class = 'medium';
+                } elseif ($this->utils->between($percent, 61, 80)) {
+                    $class = 'large';
+                } else {
+                    $class = 'larger';
+                }
+                $tags[$key] = $class;
+            }
+
+            $tagCloud = $this->utils->shuffle($tags);
+
+            $this->cache->save($cacheKey, $tagCloud);
+        }
+
+        return $tagCloud;
+    }
 
     /**
      * Gets a post from the internal collection based on a slug. If the slug is
@@ -178,7 +219,7 @@ class PostFinder extends PhDiInjectable
         $key  = 'post-' . $slug . '.cache';
         $post = $this->utils->cacheGet($key);
 
-        if ($post === null) {
+        if (null === $post) {
             if (array_key_exists($slug, $this->data)) {
                 $post = $this->data[$slug];
                 $this->cache->save($key, $post);
@@ -207,4 +248,5 @@ class PostFinder extends PhDiInjectable
 
         return $return;
     }
+
 }
