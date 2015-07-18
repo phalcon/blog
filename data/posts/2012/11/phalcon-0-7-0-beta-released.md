@@ -20,7 +20,7 @@ the community, to make the framework more extensible and more robust.
 Some of the most important features introduced in this version are
 highlighted below:
 
-**Interfaces**\
+**Interfaces**
  We have added over 40 interfaces to the framework. Most of the
 components/classes now have
 [interfaces](http://php.net/manual/en/language.oop5.interfaces.php) that
@@ -81,7 +81,7 @@ class MySessionHandler implements Phalcon\Session\AdapterInterface
 }
 ```
 
-**Independent Column Map**\
+**Independent Column Map**
  The [ORM](http://docs.phalconphp.com/en/latest/reference/models.html)
 now supports a independent column map, which allows the developer to use
 different column names in the model to the ones in the table. Phalcon
@@ -134,7 +134,7 @@ $robot->theYear = 2999;
 $robot->save();
 ```
 
-**ORM queries through PHQL**\
+**ORM queries through PHQL**
  From 0.7.0, all the queries made by the ORM are now made through
 [PHQL](http://docs.phalconphp.com/en/latest/reference/phql.html).
 
@@ -154,7 +154,7 @@ databases more secure:
     dropping tables/databases by mistake or externally without
     authorization
 
-**Object/Oriented Builder for PHQL**\
+**Object/Oriented Builder for PHQL**
  A new builder is available to create PHQL queries without the need to
 write PHQL statements:
 
@@ -180,7 +180,7 @@ $phql = "SELECT r.*, p.*
 $result = $manager->executeQuery($phql);
 ```
 
-**Full escaping system for generated SQL**\
+**Full escaping system for generated SQL**
  Sometimes some our preferred names are reserved key words of the
 database system, so if they aren't correctly escaped using them as part
 of a SQL statement will cause a syntax error. To fix this Phalcon
@@ -212,7 +212,7 @@ HAVING SUM(`robots`.`price` + `robots`.`taxes`) > 1000
 Escaping columns also avoids possible SQL injections making applications
 more secure.
 
-**Events Propagation/Cancelation**\
+**Events Propagation/Cancelation**
  The
 [EventsManager](http://docs.phalconphp.com/en/latest/reference/events.html)
 now controls the event propagation allowing the developer to stop events
@@ -236,7 +236,7 @@ $eventsManager->attach('db', function($event, $connection){
 });
 ```
 
-**Registering services as "always shared"**\
+**Registering services as "always shared"**
 [Phalcon\\Di](http://docs.phalconphp.com/en/latest/reference/di.html)
 has been refactored to register services always as shared. Following the
 Singleton pattern, no matter how the service is retrieved from the

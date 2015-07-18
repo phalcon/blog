@@ -42,7 +42,7 @@ Group](https://groups.google.com/forum/#!forum/phalcon).
 
 \
 
-**Evangelism**\
+**Evangelism**
 
 Presenting Phalcon in every event about PHP, is something we would love
 to do but logistically is impossible. We are certain that many
@@ -52,7 +52,7 @@ talk about the project, you have our full support. Who does not want to
 know a tool that helps him/her make his/her applications faster?
 
 \
-**Share your experiences**\
+**Share your experiences**
  Since Phalcon is quite young, there could be few projects built with it
 out there. Feel free to share with the community, the ways that Phalcon
 was useful to you. Discuss what components needed extra work, what you
@@ -71,7 +71,7 @@ in a language other than English, we want to share it and potentially
 translate it if possible.
 
 \
-**Social Networks**\
+**Social Networks**
 Phalcon is evolving on a daily basis, through our desire to make it
 better. However, not everything can be developed as fast as we would
 like, thus we rely on user feedback and our road map. Social networks
@@ -107,7 +107,7 @@ us, you are helping increase the project visibility:
 -   [Official Blog](http://blog.phalconphp.com)
 -   [Star the project on Github](https://github.com/phalcon/cphalcon)
 
-**Feedback**\
+**Feedback**
  Phalcon is built for speed. This is part of the project's identity.
 Developers most likely have already been exposed to other frameworks and
 have already favorite components that could potentially want to see in
@@ -125,7 +125,7 @@ button will give us instant feedback that we are doing something right.
 Adding comments to our blog posts or social network postings also helps
 greatly. \
 \
-**Thank you!**\
+**Thank you!**
 We would like to thank all of our contributors and members of the
 community for pushing us to make Phalcon the best framework of its kind.
 Your kind words and engagement is what drives us to do better. We hope
@@ -135,6 +135,6 @@ to meet and exceed the trust you put in Phalcon.
 
 Thanks for flying with Phalcon!
 
-**\<3**\
+**<3**
 
 

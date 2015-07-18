@@ -82,7 +82,7 @@ To improve performance some protected methods have been marked as final. It is
 a good practice not to override these methods as these might change in this or 
 future versions and break applications.
 
-**Dependencies**\
+**Dependencies**
 In most cases it will be necessary to upgrade to the latest version of your 
 dependencies as well. If the Phalcon version was recently released or if some 
 of your dependencies are not well-maintained, some of your dependencies may not 
@@ -96,7 +96,7 @@ obsolete version. Additionally, you should know that many performance
 improvements have been particularly focused on PHP 5.6, so if you want to get 
 the best performance we recommend to use this version.
 
-**Installation**\
+**Installation**
 
 This version can be installed from the 2.0.0 branch, if you don't have
 [Zephir](http://www.zephir-lang.com) installed follow these instructions:
@@ -130,7 +130,7 @@ installed before.
 
 Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
 
-**Deployment**\
+**Deployment**
 When you are sufficiently confident your application is working with Phalcon 2, 
 you're ready to go ahead and deploy your upgraded Phalcon project.
 
