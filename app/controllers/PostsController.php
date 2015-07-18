@@ -79,7 +79,7 @@ class PostsController extends Controller
 
         $this->view->setVar('showDisqus', true);
         $this->view->setVar('post', $post);
-        $this->view->setVar('title', $post->getTitle());
+        $this->view->setVar('title', $post ? $post->getTitle() : '');
     }
 
     public function viewLegacyBySlugAction($time, $slug)
