@@ -4,7 +4,8 @@ Phalcon 2.0.3 released
 As part of our regular release schedule, we are happy to announce that
 Phalcon 2.0.3 has been released!
 
-This version contains many bug fixes as well as new functionality that derived from community NFRs.
+This version contains many bug fixes as well as new functionality that derived 
+from community NFRs.
 
 ### Changes
 
@@ -202,3 +203,6 @@ for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
 Thanks to everyone involved in making this version: collaborators and as well to the community for
 their continuous input and feedback!
+
+
+<3 Phalcon Team

@@ -32,49 +32,49 @@ not be a problem. If you're implementing your own adapters or components based
 on Phalcon's interfaces then will be necessary to update the method prototypes:
 
 ```php
-    use Phalcon\Di\InjectionAwareInterface;
-    
-    class MyComponent implements InjectionAwareInterface
+use Phalcon\Di\InjectionAwareInterface;
+
+class MyComponent implements InjectionAwareInterface
+{
+    public function setDi($di)
     {
-        public function setDi($di)
-        {
-    
-        }
+
     }
+}
 ```
 
 Must be changed to:
 
 ```php
-    use Phalcon\DiInterface;
-    use Phalcon\Di\InjectionAwareInterface;
-    
-    class MyComponent implements InjectionAwareInterface
+use Phalcon\DiInterface;
+use Phalcon\Di\InjectionAwareInterface;
+
+class MyComponent implements InjectionAwareInterface
+{
+    public function setDi(DiInterface $di)
     {
-        public function setDi(DiInterface $di)
-        {
-    
-        }
+
     }
+}
 ```
 
 If for any reason, a wrong type is passed to methods that are not suppose to, 
 you will probably have to change it:
 
 ```php
-    // Passing a number as route ???
-    $app->add(100, function () {
-        // ...  
-    })
+// Passing a number as route ???
+$app->add(100, function () {
+    // ...  
+})
 ```
 
 Must be changed to:
 
 ```php
-    // Passing a number as route ???
-    $app->add("100", function () {
-        // ...      
-    })
+// Passing a number as route ???
+$app->add("100", function () {
+    // ...      
+})
 ```
 
 **Protected methods**
@@ -102,27 +102,27 @@ This version can be installed from the 2.0.0 branch, if you don't have
 [Zephir](http://www.zephir-lang.com) installed follow these instructions:
 
 ```sh
-    git clone http://github.com/phalcon/cphalcon
-    git checkout 2.0.0
-    cd ext
-    sudo ./install
+git clone http://github.com/phalcon/cphalcon
+git checkout 2.0.0
+cd ext
+sudo ./install
 ```
 
 The standard installation method also works:
 
 ```sh
-    git clone http://github.com/phalcon/cphalcon
-    git checkout 2.0.0
-    cd build
-    sudo ./install
+git clone http://github.com/phalcon/cphalcon
+git checkout 2.0.0
+cd build
+sudo ./install
 ```
 
 If you have [Zephir](http://www.zephir-lang.com) installed:
 
 ```sh
-    git clone http://github.com/phalcon/cphalcon
-    git checkout 2.0.0
-    zephir build
+git clone http://github.com/phalcon/cphalcon
+git checkout 2.0.0
+zephir build
 ```
 
 Note that running the installation script will replace any version of Phalcon 
@@ -135,5 +135,6 @@ When you are sufficiently confident your application is working with Phalcon 2,
 you're ready to go ahead and deploy your upgraded Phalcon project.
 
 Happy Upgrading!
+
 
 <3 Phalcon Team
