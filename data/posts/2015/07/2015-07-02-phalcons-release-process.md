@@ -1,7 +1,7 @@
 Phalcon's release process
 =========================
 
-![Phalcon Process]({{ cdnUrl }}/images/posts/2015-05-peregrine-falcon-kelly-harris.jpg)
+![Phalcon Process]({{ cdnUrl }}/files/2015-05-peregrine-falcon-kelly-harris.jpg)
 
 The following post explain our release process:
 

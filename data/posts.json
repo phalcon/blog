@@ -189,6 +189,85 @@
     "link": "31730690409\/phalcon-0-5-0-is-finally-here"
   },
 
+
+
+  {
+    "title": "Sample Application: Vökuró // Authorization/Authentication/Security",
+    "slug": "sample-application-vokuro",
+    "date": "2013-05-02",
+    "tags": "php, phalcon, sample, vokuro",
+    "link": "49450016172\/sample-application-vokuro"
+  },
+  {
+    "title": "Phalcon 1.1 released!",
+    "slug": "phalcon-1-1-released",
+    "date": "2013-05-06",
+    "tags": "php, phalcon, 1.1, release",
+    "link": "49778100441\/phalcon-1-1-released"
+  },
+  {
+    "title": "Moving towards Phalcon 1.2: Help us to prioritize our roadmap",
+    "slug": "moving-towards-phalcon-1-2-help-us-to-prioritize",
+    "date": "2013-05-08",
+    "tags": "php, phalcon, 1.2, roadmap",
+    "link": "49976233142\/moving-towards-phalcon-1-2-help-us-to-prioritize"
+  },
+  {
+    "title": "Spread the word about Phalcon // Get Involved",
+    "slug": "spread-the-word-about-phalcon-get-involved",
+    "date": "2013-05-09",
+    "tags": "php, phalcon, community",
+    "link": "50027039292\/spread-the-word-about-phalcon-get-involved"
+  },
+  {
+    "title": "Success story: Phalcon Main Site/Phosphorum",
+    "slug": "success-story-phalcon-main-site-phosphorum",
+    "date": "2013-05-10",
+    "tags": "php, phalcon, analytics, visitors, traffic",
+    "link": "50091569267\/success-story-phalcon-main-site-phosphorum"
+  },
+  {
+    "title": "Success Story - Guitarama.ru",
+    "slug": "success-story-guitarama-ru",
+    "date": "2013-05-16",
+    "tags": "php, phalcon, success, implementation",
+    "link": "50579084184\/success-story-guitarama-ru"
+  },
+  {
+    "title": "Announcing the Phalcon Store!!",
+    "slug": "announcing-the-phalcon-store",
+    "date": "2013-05-20",
+    "tags": "php, phalcon, store",
+    "link": "50925831571\/announcing-the-phalcon-store"
+  },
+  {
+    "title": "Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO",
+    "slug": "phalcon-inner-workings-advantages-of-being-a-framework-as-a-dll-so",
+    "date": "2013-06-11",
+    "tags": "php, phalcon, internals, performance",
+    "link": "52719862920\/phalcon-inner-workings-advantages-of-being-a"
+  },
+  {
+    "title": "Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO",
+    "slug": "phalcon-1-2-beta-1-released",
+    "date": "2013-06-18",
+    "tags": "php, phalcon, 1.2, beta, release, mvc, sql, frameworks",
+    "link": "53287669607\/phalcon-1-2-beta-1-released"
+  },
+  {
+    "title": "Success Story: kolesa.kz and krisha.kz web API",
+    "slug": "success-story-kolesa-kz-and-krisha-kz-web-api",
+    "date": "2013-06-20",
+    "tags": "php, phalcon, implementation, success",
+    "link": "53441181179\/success-story-kolesa-kz-and-krisha-kz-web-api"
+  },
+  {
+    "title": "Making Phalcon even faster. Is that possible? Yes!",
+    "slug": "making-phalcon-even-faster-is-that-possible-yes",
+    "date": "2013-06-23",
+    "tags": "php, phalcon, optimization, performance, compilation",
+    "link": "53713853781\/making-phalcon-even-faster-is-that-possible-yes"
+  },
   {
     "title": "Phalcon 1.2.0 Released",
     "slug": "phalcon-1-2-0-released",
@@ -347,7 +426,7 @@
     "title": "Lezgro: Phalcon Framework Remains Solid Choice Among Technology Stack We Work With!",
     "slug": "lezgro-phalcon-framework-remains-solid-choice",
     "date": "2014-10-21",
-    "tags": "php, phalcon, lezgro, consulting",
+    "tags": "php, phalcon, lezgro, consulting, implementation",
     "link": "100637817485\/lezgro-phalcon-framework-remains-solid-choice"
   },
   {

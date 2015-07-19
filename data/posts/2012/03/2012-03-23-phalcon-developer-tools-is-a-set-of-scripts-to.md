@@ -7,7 +7,7 @@ They also provide code generators like scaffording.
 
 In this screencast we show you how to use it.
 
-[![Phalcon Developer Tools](https://static-blog.phalconphp.com/images/posts/2012-03-23-devtools-screencast.png)](https://vimeo.com/39035250 "Phalcon Developer Tools - Click to Watch!")
+[![Phalcon Developer Tools]({{ cdnUrl }}/files/2012-03-23-devtools-screencast.png)](https://vimeo.com/39035250 "Phalcon Developer Tools - Click to Watch!")
 
 <3
 Phalcon Team

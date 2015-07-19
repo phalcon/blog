@@ -250,7 +250,7 @@ Big kudos to main contributors on this version: [Vladimir Kolesnikov](https://gi
 
 ### Conclusion
 
-We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](http://forum.phalconphp.com/).
+We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalconphp.com/).
 
 Enjoy and thanks for using Phalcon!
 

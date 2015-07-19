@@ -1,7 +1,7 @@
 Phalcon 1.2.1 Released
 ======================
 
-![image]({{ cdnUrl }}/images/posts/2013-07-24-phalcon-php-logo.png)
+![image]({{ cdnUrl }}/files/2013-07-24-phalcon-php-logo.png)
 
 We are happy to announce that Phalcon 1.2.1 is available for download/compile for our users.
 

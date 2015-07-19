@@ -1,7 +1,7 @@
 INVO: A sample application
 ==========================
 
-![Invo Application](https://static-blog.phalconphp.com/images/posts/2012-04-07-invo.png)
+![Invo Application]({{ cdnUrl }}/files/2012-04-07-invo.png)
 
 [INVO](https://github.com/phalcon/invo) is a sample application completely 
 written with Phalcon. It will give you a closer insight into application 
