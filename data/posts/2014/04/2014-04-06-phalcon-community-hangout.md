@@ -18,7 +18,7 @@ For those that missed it, the video is below.
 
 <3 Phalcon Team
 
-[![image]({{ cdnUrl }}/images/posts/2014-04-06-youtube.png)](https://www.youtube.com/user/PhalconPHP)
-[![image]({{ cdnUrl }}/images/posts/2014-04-06-facebook.png)](http://www.facebook.com/pages/Phalcon/134230726685897)
-[![image]({{ cdnUrl }}/images/posts/2014-04-06-google-plus.png)](https://plus.google.com/+PhalconPHP)
-[![image]({{ cdnUrl }}/images/posts/2014-04-06-twitter.png)](https://twitter.com/phalconphp)
+[![image]({{ cdnUrl }}/files/2014-04-06-youtube.png)](https://www.youtube.com/user/PhalconPHP)
+[![image]({{ cdnUrl }}/files/2014-04-06-facebook.png)](http://www.facebook.com/pages/Phalcon/134230726685897)
+[![image]({{ cdnUrl }}/files/2014-04-06-google-plus.png)](https://plus.google.com/+PhalconPHP)
+[![image]({{ cdnUrl }}/files/2014-04-06-twitter.png)](https://twitter.com/phalconphp)

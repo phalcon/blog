@@ -16,6 +16,6 @@ kingdom!
 
 So PHP + Falcon = Phalcon, Simple. Fast. Easy.
 
-![image](https://static-blog.phalconphp.com/images/posts/2012-05-03-real-falcon.png)
+![image]({{ cdnUrl }}/files/2012-05-03-real-falcon.png)
 
 <3 Phalcon Team

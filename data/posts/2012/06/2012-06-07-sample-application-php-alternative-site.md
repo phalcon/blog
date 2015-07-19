@@ -1,7 +1,7 @@
 Sample Application: PHP Alternative site
 ========================================
 
-[![Alternate site]({{ cdnUrl }}/images/posts/2012-06-07-php-site-1.png)](https://php.phalconphp.com/)
+[![Alternate site]({{ cdnUrl }}/files/2012-06-07-php-site-1.png)](https://php.phalconphp.com/)
 
 Today, we're launching another sample application for Phalcon. This
 time, we wanted to create an [alternative
@@ -25,7 +25,7 @@ the whole site to Spanish, but we believe that it is enough of a sample to
 understand the translation concepts. In the page footer is possible to change 
 the current language:
 
-![Alternate site]({{ cdnUrl }}/images/posts/2012-06-07-php-site-2.png)
+![Alternate site]({{ cdnUrl }}/files/2012-06-07-php-site-2.png)
 
 **Complex Routing**
 

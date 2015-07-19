@@ -19,7 +19,7 @@ be accessed from localhost.
 
 Let's figure out how it works with this screencast. 
 
-[![Phalcon WebTools](https://static-blog.phalconphp.com/images/posts/2012-05-17-phalcon-webtools-screencast.png)](https://vimeo.com/42367665 "Phalcon WebTools - Click to Watch!")
+[![Phalcon WebTools]({{ cdnUrl }}/files/2012-05-17-phalcon-webtools-screencast.png)](https://vimeo.com/42367665 "Phalcon WebTools - Click to Watch!")
 
 Thanks to everyone who took the time to provide feedback. 
 

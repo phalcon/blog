@@ -13,7 +13,7 @@ The Zephir compiler itself still needs more work, to be able to produce better a
 
 The basic "hello world":
 
-![2.0 Benchmarks]({{ cdnUrl }}/images/posts/2013-09-17-benchmarks.png)
+![2.0 Benchmarks]({{ cdnUrl }}/files/2013-09-17-benchmarks.png)
 
 This simple ["hello world"](https://github.com/phalcon/framework-bench/tree/master/helloworld/phalcon) application, shows an important milestone reached in Phalcon, the MVC core functionality of Phalcon 2.0. It also demonstrates the unnoticeable performance impact between 1.x and 2.0 due to the migration. Note that Phalcon 2.0 is in average faster than 1.x due to the lack of functionality implemented.
 

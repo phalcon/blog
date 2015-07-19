@@ -1,7 +1,7 @@
 Phalcon 0.5.0 beta1 released!
 =============================
 
-![]({{ cdnUrl }}/images/posts/2012-08-28-working.jpg)
+![]({{ cdnUrl }}/files/2012-08-28-working.jpg)
 
 It has been a really busy month and a half. We concentrated all of our efforts 
 in developing Phalcon 0.5.0, which outlines a huge rewrite of core parts of the 

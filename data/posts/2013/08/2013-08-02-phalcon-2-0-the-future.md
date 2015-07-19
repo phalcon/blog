@@ -17,7 +17,7 @@ Taking into consideration these concerns of the community, our conclusion is tha
 
 ### Introducing Zephir
 
-![image]({{ cdnUrl }}/images/posts/2013-08-02-zephir.png)
+![image]({{ cdnUrl }}/files/2013-08-02-zephir.png)
 
 To address the specific needs associated by building a framework/library as a PHP extension written in C, we have decided to build a brand new tool that will help all of us in terms of developing, supporting and enhancing
 

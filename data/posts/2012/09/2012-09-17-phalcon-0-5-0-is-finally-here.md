@@ -1,7 +1,7 @@
 Phalcon 0.5.0 is finally here!
 ==============================
 
-![image]({{ cdnUrl }}/images/posts/2012-09-17-phalcon-attacking.jpg)
+![image]({{ cdnUrl }}/files/2012-09-17-phalcon-attacking.jpg)
 
 The long wait is over, Phalcon 0.5.0 final is here! This version marks a huge 
 step forward in our development roadmap, taking into account mostly features 
