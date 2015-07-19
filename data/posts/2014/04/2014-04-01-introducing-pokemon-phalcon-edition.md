@@ -1,15 +1,9 @@
 Introducing "Pokémon: Phalcon Edition"
 ======================================
 
-Today, we have an important announcement to make. A few weeks ago we received 
-an interesting proposal from an important japanese video-game company. They 
-wanted us to create a game that would help children to become interested in web 
-programming including open source alternatives like Phalcon. We are no way 
-video game experts, but we decided to give it a try and the result is simply 
-amazing.
+Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no way video game experts, but we decided to give it a try and the result is simply amazing.
 
-"Pokémon: Phalcon Edition" is a new member of this saga and it is sure to be 
-one of the favorite of its fans.
+"Pokémon: Phalcon Edition" is a new member of this saga and it is sure to be one of the favorite of its fans.
 
 The spokesman of this company was very excited about this new project:
 
@@ -26,14 +20,11 @@ The spokesman of this company was very excited about this new project:
 
 A sample of the progress of the game can be seen in the following video:
 
-The game will be available for
-[iOS](https://itunes.apple.com/us/genre/ios-games/id6014?mt=8) and
-[Android](https://play.google.com/store) starting this summer!
+The game will be available for [iOS](https://itunes.apple.com/us/genre/ios-games/id6014?mt=8) and [Android](https://play.google.com/store) starting this summer!
 
 Enjoy!
 
-**Update: No Pokemons were harmed in the making of that video, that was
-our April Fool's Joke LOL :D**
+**Update: No Pokemons were harmed in the making of that video, that was our April Fool's Joke LOL :D**
 
 
 <3 Phalcon Team

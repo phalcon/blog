@@ -1,11 +1,9 @@
 Phalcon 2.0.3 released
 ======================
 
-As part of our regular release schedule, we are happy to announce that
-Phalcon 2.0.3 has been released!
+As part of our regular release schedule, we are happy to announce that Phalcon 2.0.3 has been released!
 
-This version contains many bug fixes as well as new functionality that derived 
-from community NFRs.
+This version contains many bug fixes as well as new functionality that derived from community NFRs.
 
 ### Changes
 
@@ -13,26 +11,16 @@ from community NFRs.
  - Ability to define if a virtual foreign key must ignore `null` values or not
  - Added support for Behaviors in `Phalcon\Mvc\Collection`
  - Added `SoftDelete` and `Timestampable` behaviors to Collections
- - Fixed bug that added two ? in `Mvc\Url::get` when using query parameters
-   [#10421](https://github.com/phalcon/cphalcon/issues/10421)
- - String attributes in models can be marked to allow empty string values
-   [#440](https://github.com/phalcon/cphalcon/issues/440)
- - Added an option to return the SQL to be generated from a `Mvc\Model\Query`
-   instance [#1908](https://github.com/phalcon/cphalcon/issues/1908)
- - Fix doesn't correct column domain in `Phalcon\Db\Dialect::select()`
-   [#10439](https://github.com/phalcon/cphalcon/issues/10439)
+ - Fixed bug that added two ? in `Mvc\Url::get` when using query parameters [GI:10421]
+ - String attributes in models can be marked to allow empty string values [GI:440]
+ - Added an option to return the SQL to be generated from a `Mvc\Model\Query` instance [GI:1908]
+ - Fix doesn't correct column domain in `Phalcon\Db\Dialect::select()` [GI:10439]
  - Added support for DOUBLE type in MySQL
- - `Phalcon\Tag\Select` now handles array values as strings avoiding that zero
-   will be handled as empty string
-   [#2921](https://github.com/phalcon/cphalcon/issues/2921)
- - PHQL now supports CASE/WHEN/ELSE expressions
-   [#651](https://github.com/phalcon/cphalcon/issues/651)
- - Fixed bug that passes non-string values to `Phalcon\Crypt::encrypt` from
-   `Phalcon\Http\Cookies`
- - Fixed bug that didn't pass the schema name in the sequence name (PostgreSQL)
- - Attribute persistent is now removed from the DNS attributes in PDO
-   connections to avoid errors in PostgreSQL
-   [#10484](https://github.com/phalcon/cphalcon/issues/10484)
+ - `Phalcon\Tag\Select` now handles array values as strings avoiding that zero will be handled as empty string [GI:2921]
+ - PHQL now supports CASE/WHEN/ELSE expressions [GI:651]
+ - Fixed bug that passes non-string values to `Phalcon\Crypt::encrypt` from `Phalcon\Http\Cookies`
+ - Fixed bug that didn't pass the schema name in the sequence name (PostgreSQL) 
+ - Attribute persistent is now removed from the DNS attributes in PDO connections to avoid errors in PostgreSQL [GI:10484]
 
 ### Highlights
 
@@ -52,10 +40,7 @@ $robots = $this->modelsManager->executeQuery("
 ```
 
 #### Namespace Aliases
-If you are using namespaces to organize your models, you will often find
-yourself typing a long namespaced string to just reference one of your models.
-By using this feature, you can add aliases to existing namespaces, which will
-speed up development time:
+If you are using namespaces to organize your models, you will often find yourself typing a long namespaced string to just reference one of your models. By using this feature, you can add aliases to existing namespaces, which will speed up development time:
 
 ```php
 // Before
@@ -98,9 +83,7 @@ $data = $this->modelsManager->executeQuery("
 ```
 
 #### Custom Dialect Functions
-This new functionality will help you to extend PHQL as you need using custom
-functions. In the following example we're going to implement the MySQL's
-extension MATCH/BINARY. First of all you have to instantiate the SQL dialect
+This new functionality will help you to extend PHQL as you need using custom functions. In the following example we're going to implement the MySQL's extension MATCH/BINARY. First of all you have to instantiate the SQL dialect
 
 ```php
 use Phalcon\Db\Dialect\MySQL as SqlDialect;
@@ -134,8 +117,7 @@ $connection = new Connection(
 
 ```
 
-Now you can use this function in PHQL and it internally translates to the
-right SQL using the custom function:
+Now you can use this function in PHQL and it internally translates to the right SQL using the custom function:
 
 ```php
 $phql = "SELECT *
@@ -146,8 +128,7 @@ $posts = $modelsManager->executeQuery($phql, ['pattern' => $pattern]);
 
 #### Improvements in Subqueries
 
-In Phalcon 2.0.2 subqueries were introduced in PHQL. Support for this feature
-had been improved in 2.0.3 by introducing the EXISTS operator:
+In Phalcon 2.0.2 subqueries were introduced in PHQL. Support for this feature had been improved in 2.0.3 by introducing the EXISTS operator:
 
 ```php
 $phql = "SELECT c.*
@@ -162,8 +143,7 @@ $cars = $this->modelsManager->executeQuery($phql);
 
 ### Update/Upgrade
 
-This version can be installed from the master branch, if you don't have Zephir
-installed follow these instructions:
+This version can be installed from the master branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
     git clone http://github.com/phalcon/cphalcon
@@ -188,21 +168,18 @@ cd cphalcon
 zephir build
 ```
 
-Note that running the installation script will replace any version of Phalcon
-installed before.
+Note that running the installation script will replace any version of Phalcon installed before.
 
-Windows DLLs are available in the [download page](http://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
 
-See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2)
-for more information about upgrading to Phalcon 2.0.x from 1.3.x.
+See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2) for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
 * [Documentation](https://docs.phalconphp.com)
 * [API](https://api.phalconphp.com/) (Thanks to [gsouf](https://github.com/gsouf))
 
 ### Thanks
 
-Thanks to everyone involved in making this version: collaborators and as well to the community for
-their continuous input and feedback!
+Thanks to everyone involved in making this version: collaborators and as well to the community for their continuous input and feedback!
 
 
 <3 Phalcon Team

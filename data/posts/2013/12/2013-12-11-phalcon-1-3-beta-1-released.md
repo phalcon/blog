@@ -3,31 +3,14 @@ Phalcon 1.3 beta 1 released!
 
 We are happy to announce the release of our first beta of Phalcon 1.3​!
 
-In this version we have introduced several new features and performance 
-improvements. The intend of this beta release is get input from the community, 
-test the new functionality making sure everything works fine once production 
-environments are updated to 1.3.
+In this version we have introduced several new features and performance improvements. The intend of this beta release is get input from the community, test the new functionality making sure everything works fine once production environments are updated to 1.3.
 
-1.3.0 includes several performance improvements, new components like 
-`Phalon\Image`, bug fixes, stability and performance improvements.​
+1.3.0 includes several performance improvements, new components like `Phalon\Image`, bug fixes, stability and performance improvements.​
 
-- Code cleanup: get rid of compiler warnings, dead code elimination, code 
-  deduplication, use static code analysers to eliminate possible bugs ([GI:801], 
-  [GI:802], [GI:810], [GI:825], [GI:827], [GI:838], [GI:849], [GI:942], [GI:968], 
-  [GI:1001], [GI:1093], [GI:1169], [GI:1214], [GI:1223], [GI:1224], [GI:1375], 
-  [GI:1430])
-- Fixed various memory leaks ([GI:469], [GI:860], [GI:910], [GI:914], [GI:916], 
-  [GI:1031], [GI:1067], [GI:1249], [GI:1273], [GI:1291], [GI:1309], [GI:1345], 
-  [GI:1455], [GI:1470])
-- Fixed memory access violations / segmentation faults / etc. ([GI:469], [GI:849], 
-  [GI:851], [GI:852], [GI:858], [GI:860], [GI:861], [GI:895], [GI:911], [GI:918], 
-  [GI:927], [GI:928], [GI:1000], [GI:1077], [GI:1112], [GI:1113], [GI:1131], 
-  [GI:1149], [GI:1173], [GI:1272], [GI:1284], [GI:1302], [GI:1340], [GI:1343], 
-  [GI:1368], [GI:1369], [GI:1371], [GI:1376], [GI:1379], [GI:1392], [GI:1451], 
-  [GI:1466], [GI:1485], [GI:1494], [GI:1501], [GI:1504], [GI:1509], [GI:1567], 
-  [GI:1607])
-- Fixed PHP notices, warnings and other incompatibilities ([GI:894], [GI:1222], 
-  [GI:1315], [GI:1413], [GI:1427], [GI:1428], [GI:1529])
+- Code cleanup: get rid of compiler warnings, dead code elimination, code deduplication, use static code analysers to eliminate possible bugs ([GI:801], [GI:802], [GI:810], [GI:825], [GI:827], [GI:838], [GI:849], [GI:942], [GI:968], [GI:1001], [GI:1093], [GI:1169], [GI:1214], [GI:1223], [GI:1224], [GI:1375], [GI:1430])
+- Fixed various memory leaks ([GI:469], [GI:860], [GI:910], [GI:914], [GI:916], [GI:1031], [GI:1067], [GI:1249], [GI:1273], [GI:1291], [GI:1309], [GI:1345], [GI:1455], [GI:1470])
+- Fixed memory access violations / segmentation faults / etc. ([GI:469], [GI:849], [GI:851], [GI:852], [GI:858], [GI:860], [GI:861], [GI:895], [GI:911], [GI:918], [GI:927], [GI:928], [GI:1000], [GI:1077], [GI:1112], [GI:1113], [GI:1131], [GI:1149], [GI:1173], [GI:1272], [GI:1284], [GI:1302], [GI:1340], [GI:1343], [GI:1368], [GI:1369], [GI:1371], [GI:1376], [GI:1379], [GI:1392], [GI:1451], [GI:1466], [GI:1485], [GI:1494], [GI:1501], [GI:1504], [GI:1509], [GI:1567], [GI:1607])
+- Fixed PHP notices, warnings and other incompatibilities ([GI:894], [GI:1222], [GI:1315], [GI:1413], [GI:1427], [GI:1428], [GI:1529])
 - Security fixes:
   - Hardening fixes ([GI:1044])
   - Interface validation ([GI:1043], [GI:1048])
@@ -41,8 +24,7 @@ environments are updated to 1.3.
   - 32 and 64 bit hashes can be computed on the same CPU architecture ([GI:817])
   - Reduced overall memory usage ([GI:834], [GI:891], [GI:893])
   - Memory allocation optimizations ([GI:912], [GI:1220])
-  - Faster internal array and string manipulation ([GI:822], [GI:823], [GI:830], 
-    [GI:833], [GI:837], [GI:890])
+  - Faster internal array and string manipulation ([GI:822], [GI:823], [GI:830], [GI:833], [GI:837], [GI:890])
   - Camelize does not ignore the last character of a string anymore ([GI:1436])
   - Fixed bug in `phalcon_fix_path()` ([GI:1601])
   - Use native counterparts for `memory_get_usage()`, `gettype()`, `json_encode()`, `json_decode()`, `session_XXX()`, `header()`, `headers_sent()`, `debug_backtrace()`, `lcfirst()`, `ob_XXX()`, `array_unshift()`, `array_values()`, `array_keys()`, `htmlentities()` ([GI:836], [GI:847], [GI:936], [GI:945], [GI:1099])
@@ -74,8 +56,7 @@ environments are updated to 1.3.
   - Fixed joining issue ([GI:951])
   - Added support for UTF-8 characters in jsmin
   - Fixed chaining of CSS/JS filters ([GI:1198])
-  - `Phalcon\Assets\Filters\CssMin` and `Phalcon\Assets\Filters\JsMin` implement `Phalcon\Assets\FilterInterface` (
-    [GI:1539])
+  - `Phalcon\Assets\Filters\CssMin` and `Phalcon\Assets\Filters\JsMin` implement `Phalcon\Assets\FilterInterface` ([GI:1539])
   - Added `Phalcon\Assets\Collection::setTargetLocal()` ([GI:1532])
 - `Phalcon\Cache`:
   - Added Libmemcached cache backend ([GI:913])
@@ -165,24 +146,19 @@ environments are updated to 1.3.
   - Added `getPut()`/`hasPut()` methods to `Phalcon\Http\Request` ([GI:680], [GI:1403])
   - Implemented `Phalcon\Http\Request\File::getRealType` ([GI:1442], [GI:1444])
 - `Phalcon\Image`:
-  - Added `Phalcon\Image\Adapter`, `Phalcon\Image\Adapter\Gd`, `Phalcon\Image\Adapter\Imagick` (
-    [GI:902], [GI:1025], [GI:1030], [GI:1041], [GI:1050], [GI:1063], [GI:1076], 
-    [GI:1081], [GI:1114], [GI:1120], [GI:1158], [GI:1195], [GI:1206], [GI:1214], 
-    [GI:1370])
+  - Added `Phalcon\Image\Adapter`, `Phalcon\Image\Adapter\Gd`, `Phalcon\Image\Adapter\Imagick` ([GI:902], [GI:1025], [GI:1030], [GI:1041], [GI:1050], [GI:1063], [GI:1076], [GI:1081], [GI:1114], [GI:1120], [GI:1158], [GI:1195], [GI:1206], [GI:1214], [GI:1370])
 - `Phalcon\Logger`:
   - Added FirePHP Log Adapter and Formatter ([GI:845], [GI:1333])
   - Implemented `Phalcon\Logger\Adapter::isTransaction()` ([GI:1238])
   - Fixed a bug preventing the `EMERGENCY` log type from being displayed correctly ([GI:1498])
   - Added `Phalcon\Logger\Adapter\File::getPath()` ([GI:1495], [GI:1508])
 - `Phalcon\Mvc`:
-  - `Phalcon\Mvc\Application::handle()` now checks whether the class exists before include()'ing its file (
-    [GI:812], [GI:818])
+  - `Phalcon\Mvc\Application::handle()` now checks whether the class exists before include()'ing its file ([GI:812], [GI:818])
   - `Phalcon\Mvc\Model\Criteria::fromInput()` now sets` _modelName` ([GI:866], [GI:873])
   - `Phalcon\Mvc\Model\Query\Builder` may now use both integer and string placeholders ([GI:701])
   - `Mvc\Model\getMessages()` is filterable now ([GI:885])
   - Fixed hasManyToMany relation implementation ([GI:938])
-  - Fixed regular expression in `\Phalcon\Mvc\Model\Validator\Email` (
-    [GI:1243])
+  - Fixed regular expression in `\Phalcon\Mvc\Model\Validator\Email` ([GI:1243])
   - `Phalcon\Mvc\Model::hasOne`/`hasMany`/`belongsTo`/`hasManyToMany`/`addBehavior()` are now public methods ([GI:1166])
   - Added `Phalcon\Mvc\Model\Row::toArray()` method ([GI:1506])
   - `Phalcon\Mvc\Model\Validator::getOption()` returns `NULL` if the option does not exist ([GI:1530])
@@ -250,12 +226,9 @@ environments are updated to 1.3.
   - Support for optional RVO ([GI:1147])
   - Added support for test coverage visualization ([GI:1307], [GI:1361])
   - Bug fixes in tests ([GI:1313], [GI:1334], [GI:1335], [GI:1449], [GI:1467])
-- Documentation bug fixes ([GI:1069], [GI:1070], [GI:1072], [GI:1145], 
-  [GI:1146], [GI:1205], [GI:1372], [GI:1397], [GI:1521], [GI:1523], 
-  [GI:1586], lots of them])
+- Documentation bug fixes ([GI:1069], [GI:1070], [GI:1072], [GI:1145], [GI:1146], [GI:1205], [GI:1372], [GI:1397], [GI:1521], [GI:1523], [GI:1586], lots of them])
 - Refactored, improved and optimized build script ([GI:1218])
-- Other bug fixes ([GI:1051], [GI:1131], [GI:1040], [GI:1275], [GI:1392], 
-  [GI:1396], [GI:1399], [GI:1425], [GI:1426]...)
+- Other bug fixes ([GI:1051], [GI:1131], [GI:1040], [GI:1275], [GI:1392], [GI:1396], [GI:1399], [GI:1425], [GI:1426]...)
 
 Help with Testing
 -----------------
@@ -269,9 +242,7 @@ git checkout 1.3.0
 sudo ./install
 ```
 
-We welcome your comments regarding this new release. If you discover any bugs, 
-please (if possible) create a failing test and submit a pull request, alongside 
-with an issue on Github.
+We welcome your comments regarding this new release. If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
 
 Thanks!
 

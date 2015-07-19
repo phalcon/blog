@@ -3,31 +3,23 @@ Phalcon 2 released!
 
 The wait is over! Phalcon 2.0 is here!
 
-After more than a year of development, we're extremely excited to announce the
-release of Phalcon 2.0 (final).
+After more than a year of development, we're extremely excited to announce the release of Phalcon 2.0 (final).
 
-Those that have been following the project closely, know that this has not been
-a small feat.
+Those that have been following the project closely, know that this has not been a small feat.
 
-- We had to create a brand new language [Zephir](http://www.zephir-lang.com)
-  which allows developers to write PHP extensions easily.
-- We had to completely rewrite most of Phalcon 1.3.x, offering the same
-  functionality as before so as to ensure that upgrading will be very easy.
-- Zephir had to be adjusted and enhanced as we moved through the rewrite,
-  offering more functions and options to developers.
-- Additional features were implemented for 2.0, mostly thanks to our
-  contributors!
+- We had to create a brand new language [Zephir](http://www.zephir-lang.com) which allows developers to write PHP extensions easily.
+- We had to completely rewrite most of Phalcon 1.3.x, offering the same functionality as before so as to ensure that upgrading will be very easy.
+- Zephir had to be adjusted and enhanced as we moved through the rewrite, offering more functions and options to developers.
+- Additional features were implemented for 2.0, mostly thanks to our contributors!
 
 The results are something that we are very proud of:
 
 - Phalcon 2.0, offering compatible functionality (and more) as before
-- [Zephir](http://www.zephir-lang.com), allowing developers to write their own
-  extensions easily without the need to know C.
+- [Zephir](http://www.zephir-lang.com), allowing developers to write their own extensions easily without the need to know C.
 
 ### Installation
 
-This version can be installed from the master branch, if you don't have
-[Zephir](http://www.zephir-lang.com) installed follow these instructions:
+This version can be installed from the master branch, if you don't have [Zephir](http://www.zephir-lang.com) installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
@@ -51,43 +43,25 @@ cd cphalcon
 zephir build
 ```
 
-Note that running the installation script will replace any version of Phalcon
-installed before.
+Note that running the installation script will replace any version of Phalcon installed before.
 
-Windows DLLs are available in the
-[download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
 
-See the
-[upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2)
-for more information about installing and updating to Phalcon 2.
+See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2) for more information about installing and updating to Phalcon 2.
 
 ### What's next
 
-Our release schedule will be every one or two months (unless we need to issue a
-security fix, which will be near instant). The target will be the most
-requested features by the community, although with
-[Zephir](http://www.zephir-lang.com), contributing to Phalcon will be a breeze.
-We can't wait to see those pull requests coming in :)
+Our release schedule will be every one or two months (unless we need to issue a security fix, which will be near instant). The target will be the most requested features by the community, although with [Zephir](http://www.zephir-lang.com), contributing to Phalcon will be a breeze. We can't wait to see those pull requests coming in :)
 
-Smaller changes and fixes that can be bundled in a minor version will be
-released as soon as we can. We will also be working on a LTS (Long Term
-Support) model for our community.
+Smaller changes and fixes that can be bundled in a minor version will be released as soon as we can. We will also be working on a LTS (Long Term Support) model for our community.
 
-Finally we are going to start the research on PHP 7, so that we can adjust
-[Zephir](http://www.zephir-lang.com) accordingly and of course Phalcon. This
-task will require a lot of preparation and work but we have our targets set on
-it due to the new functionality and features it offers.
+Finally we are going to start the research on PHP 7, so that we can adjust [Zephir](http://www.zephir-lang.com) accordingly and of course Phalcon. This task will require a lot of preparation and work but we have our targets set on it due to the new functionality and features it offers.
 
 ### Conclusion and acknowledgments
 
-We are super excited about this release and are looking forward to the future.
-A big thank you to all the contributors and donors! We could not have done this
-without you. And of course, we would like to thank everyone that tested the
-alpha, betas and release candidates and finding, filing issues and providing
-feedback. We really hope you enjoy this release.
+We are super excited about this release and are looking forward to the future. A big thank you to all the contributors and donors! We could not have done this without you. And of course, we would like to thank everyone that tested the alpha, betas and release candidates and finding, filing issues and providing feedback. We really hope you enjoy this release.
 
-We would like to express our deep gratitude for tremendous efforts migrating
-and testing the code in this version, specially to:
+We would like to express our deep gratitude for tremendous efforts migrating and testing the code in this version, specially to:
 
 - [Andres Gutierrez](https://github.com/andresgutierrez)
 - [Nikolaos Dimopoulos](https://github.com/niden)

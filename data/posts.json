@@ -189,7 +189,41 @@
     "link": "31730690409\/phalcon-0-5-0-is-finally-here"
   },
 
-
+  {
+    "title": "Phalcon 1.2.0 Released",
+    "slug": "phalcon-1-2-0-released",
+    "date": "2013-07-09",
+    "tags": "php, phalcon, 1.2, release",
+    "link": "55004790452\/phalcon-1-2-0-released"
+  },
+  {
+    "title": "Phalcon 1.2.1 Released",
+    "slug": "phalcon-1-2-1-released",
+    "date": "2013-07-23",
+    "tags": "php, phalcon, 1.2, release",
+    "link": "56351424566\/phalcon-1-2-1-released"
+  },
+  {
+    "title": "The road ahead",
+    "slug": "the-road-ahead",
+    "date": "2013-07-24",
+    "tags": "php, phalcon, update, roadmap",
+    "link": "56248847111\/the-road-ahead"
+  },
+  {
+    "title": "Phalcon 2.0 - The future",
+    "slug": "phalcon-2-0-the-future",
+    "date": "2013-08-02",
+    "tags": "php, phalcon, phalcon2, zephir, roadmap",
+    "link": "57161129440\/phalcon-2-0-the-future"
+  },
+  {
+    "title": "Security Update: BREACH, PHP and Phalcon",
+    "slug": "security-update-breach-php-and-phalcon",
+    "date": "2013-08-06",
+    "tags": "php, phalcon, security, breach",
+    "link": "57552534494\/security-update-breach-php-and-phalcon"
+  },
   {
     "title": "Phalcon 1.2.4 beta released",
     "slug": "phalcon-1-2-4-beta-released",
