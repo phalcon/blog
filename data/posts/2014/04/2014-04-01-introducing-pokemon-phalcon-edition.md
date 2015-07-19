@@ -1,49 +1,30 @@
-<!--
-slug: introducing-pokemon-phalcon-edition
-date: Tue Apr 01 2014 00:23:00 GMT-0400 (EDT)
-tags: phalcon, pokemon
-title: Introducing "Pokémon: Phalcon Edition"
-id: 81362067066
-link: http://blog.phalconphp.com/post/81362067066/introducing-pokemon-phalcon-edition
-raw: {"blog_name":"phalconphp","id":81362067066,"post_url":"http://blog.phalconphp.com/post/81362067066/introducing-pokemon-phalcon-edition","slug":"introducing-pokemon-phalcon-edition","type":"text","date":"2014-04-01 04:23:00 GMT","timestamp":1396326180,"state":"published","format":"html","reblog_key":"B6FaVXg3","tags":["phalcon","pokemon"],"short_url":"http://tmblr.co/Z6Pumv1BnZfvw","highlighted":[],"note_count":4,"title":"Introducing \"Pokémon: Phalcon Edition\"","body":"<p>Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no video-game experts by far, but we decided to give it a try and the result is simply amazing.</p>\n<p>&ldquo;Pokémon: Phalcon Edition&rdquo; is a new member of this saga and it is sure to be one of the favorite of its fans.</p>\n<p>The spokesman of this company was very excited about this new project:</p>\n<blockquote>\n<p>We never doubted that Phalcon Team could get on track with this new project. We have rescued the art of Pokémon battle in 2D, but we have introduced elements of the web programming world. </p>\n<p><span>This game will include a new Framework Pokemon type, the 19th type of Pokemon to be introduced to the franchise. <span>The Framework type is super effective against bugs and bad programming practices.</span></span></p>\n<p>I can&rsquo;t say more but It will certainly be one of the most exciting games of this year!</p>\n</blockquote>\n<p>A sample of the progress of the game can be seen in the following video:</p>\n<div>\n<div></div>\n<iframe frameborder=\"0\" height=\"313\" src=\"//player.vimeo.com/video/89163387\" width=\"500\"></iframe></div>\n<p>The game will be available for <a href=\"https://itunes.apple.com/us/genre/ios-games/id6014?mt=8\">iOS</a> and <a href=\"https://play.google.com/store\">Android</a> starting this summer!</p>\n<p>Enjoy!</p>\n<p><strong>Update: No Pokemons were harmed in the making of that video, that was our April Fool&rsquo;s Joke LOL :D</strong></p>","reblog":{"tree_html":"","comment":"<p>Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no video-game experts by far, but we decided to give it a try and the result is simply amazing.</p>\n<p>&ldquo;Pok&eacute;mon: Phalcon Edition&rdquo; is a new member of this saga and it is sure to be one of the favorite of its fans.</p>\n<p>The spokesman of this company was very excited about this new project:</p>\n<blockquote>\n<p>We never doubted that Phalcon Team could get on track with this new project. We have rescued the art of Pok&eacute;mon battle in 2D, but we have introduced elements of the web programming world.&nbsp;</p>\n<p><span>This game will include a new Framework Pokemon type, the 19th type of Pokemon to be introduced to the franchise.&nbsp;<span>The Framework type is super effective against bugs and bad programming practices.</span></span></p>\n<p>I can&rsquo;t say more but&nbsp;It will certainly be one of the most exciting games of this year!</p>\n</blockquote>\n<p>A sample of the progress of the game can be seen in the following video:</p>\n<div>\n<div></div>\n<iframe frameborder=\"0\" height=\"313\" src=\"//player.vimeo.com/video/89163387\" width=\"500\"></iframe></div>\n<p>The game will be available for <a href=\"https://itunes.apple.com/us/genre/ios-games/id6014?mt=8\">iOS</a> and <a href=\"https://play.google.com/store\">Android</a> starting this summer!</p>\n<p>Enjoy!</p>\n<p><strong>Update: No Pokemons were harmed in the making of that video, that was our April Fool&rsquo;s Joke LOL :D</strong></p>"},"trail":[{"blog":{"name":"phalconphp","theme":{"header_full_width":1117,"header_full_height":426,"header_focus_width":758,"header_focus_height":426,"avatar_shape":"square","background_color":"#FAFAFA","body_font":"Helvetica Neue","header_bounds":"0,937,426,179","header_image":"http://static.tumblr.com/be2b0380984b972b47699d457f4c0ffb/ivjir8a/815nn0qo7/tumblr_static_28z87js742xwowwo0kco04ogs.jpg","header_image_focused":"http://static.tumblr.com/be2b0380984b972b47699d457f4c0ffb/ivjir8a/laHnn0qo9/tumblr_static_tumblr_static_28z87js742xwowwo0kco04ogs_focused_v3.jpg","header_image_scaled":"http://static.tumblr.com/be2b0380984b972b47699d457f4c0ffb/ivjir8a/815nn0qo7/tumblr_static_28z87js742xwowwo0kco04ogs_2048_v2.jpg","header_stretch":true,"link_color":"#529ECC","show_avatar":true,"show_description":true,"show_header_image":true,"show_title":true,"title_color":"#444444","title_font":"Gibson","title_font_weight":"bold"}},"post":{"id":"81362067066"},"content":"<p>Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no video-game experts by far, but we decided to give it a try and the result is simply amazing.</p>\n<p>"Pokémon: Phalcon Edition" is a new member of this saga and it is sure to be one of the favorite of its fans.</p>\n<p>The spokesman of this company was very excited about this new project:</p>\n<blockquote>\n<p>We never doubted that Phalcon Team could get on track with this new project. We have rescued the art of Pokémon battle in 2D, but we have introduced elements of the web programming world. </p>\n<p><span>This game will include a new Framework Pokemon type, the 19th type of Pokemon to be introduced to the franchise. <span>The Framework type is super effective against bugs and bad programming practices.</span></span></p>\n<p>I can't say more but It will certainly be one of the most exciting games of this year!</p>\n</blockquote>\n<p>A sample of the progress of the game can be seen in the following video:</p>\n<div>\n<div></div>\n<iframe frameborder=\"0\" height=\"313\" src=\"//player.vimeo.com/video/89163387\" width=\"500\"></iframe></div>\n<p>The game will be available for <a href=\"https://itunes.apple.com/us/genre/ios-games/id6014?mt=8\">iOS</a> and <a href=\"https://play.google.com/store\">Android</a> starting this summer!</p>\n<p>Enjoy!</p>\n<p><strong>Update: No Pokemons were harmed in the making of that video, that was our April Fool's Joke LOL :D</strong></p>","content_raw":"<p>Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no video-game experts by far, but we decided to give it a try and the result is simply amazing.</p>\r\n<p>\"Pok&eacute;mon: Phalcon Edition\" is a new member of this saga and it is sure to be one of the favorite of its fans.</p>\r\n<p>The spokesman of this company was very excited about this new project:</p>\r\n<blockquote>\r\n<p>We never doubted that Phalcon Team could get on track with this new project. We have rescued the art of Pok&eacute;mon battle in 2D, but we have introduced elements of the web programming world.&nbsp;</p>\r\n<p><span>This game will include a new Framework Pokemon type, the 19th type of Pokemon to be introduced to the franchise.&nbsp;<span>The Framework type is super effective against bugs and bad programming practices.</span></span></p>\r\n<p>I can't say more but&nbsp;It will certainly be one of the most exciting games of this year!</p>\r\n</blockquote>\r\n<p>A sample of the progress of the game can be seen in the following video:</p>\r\n<div>\r\n<div></div>\r\n<iframe frameborder=\"0\" height=\"313\" src=\"//player.vimeo.com/video/89163387\" width=\"500\"></iframe></div>\r\n<p>The game will be available for <a href=\"https://itunes.apple.com/us/genre/ios-games/id6014?mt=8\">iOS</a> and <a href=\"https://play.google.com/store\">Android</a> starting this summer!</p>\r\n<p>Enjoy!</p>\r\n<p><strong>Update: No Pokemons were harmed in the making of that video, that was our April Fool's Joke LOL :D</strong></p>","is_current_item":true,"is_root_item":true}]}
-publish: 2014-04-01
--->
-
-
 Introducing "Pokémon: Phalcon Edition"
 ======================================
 
-Today, we have an important announcement to make. A few weeks ago we
-received an interesting proposal from an important japanese video-game
-company. They wanted us to create a game that would help children to
-become interested in web programming including open source alternatives
-like Phalcon. We are no video-game experts by far, but we decided to
-give it a try and the result is simply amazing.
+Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no way video game experts, but we decided to give it a try and the result is simply amazing.
 
-"Pokémon: Phalcon Edition" is a new member of this saga and it is sure
-to be one of the favorite of its fans.
+"Pokémon: Phalcon Edition" is a new member of this saga and it is sure to be one of the favorite of its fans.
 
 The spokesman of this company was very excited about this new project:
 
-> We never doubted that Phalcon Team could get on track with this new
-> project. We have rescued the art of Pokémon battle in 2D, but we have
-> introduced elements of the web programming world. 
+> We never doubted that Phalcon Team could get on track with this new project. 
+> We have rescued the art of Pokémon battle in 2D, but we have introduced 
+> elements of the web programming world. 
 >
-> This game will include a new Framework Pokemon type, the 19th type of
-> Pokemon to be introduced to the franchise. The Framework type is super
-> effective against bugs and bad programming practices.
+> This game will include a new Framework Pokemon type, the 19th type of Pokemon 
+> to be introduced to the franchise. The Framework type is super effective 
+> against bugs and bad programming practices.
 >
-> I can't say more but It will certainly be one of the most exciting
-> games of this year!
+> I can't say more but It will certainly be one of the most exciting games of 
+> this year!
 
 A sample of the progress of the game can be seen in the following video:
 
-The game will be available for
-[iOS](https://itunes.apple.com/us/genre/ios-games/id6014?mt=8) and
-[Android](https://play.google.com/store) starting this summer!
+The game will be available for [iOS](https://itunes.apple.com/us/genre/ios-games/id6014?mt=8) and [Android](https://play.google.com/store) starting this summer!
 
 Enjoy!
 
-**Update: No Pokemons were harmed in the making of that video, that was
-our April Fool's Joke LOL :D**
+**Update: No Pokemons were harmed in the making of that video, that was our April Fool's Joke LOL :D**
 
+
+<3 Phalcon Team

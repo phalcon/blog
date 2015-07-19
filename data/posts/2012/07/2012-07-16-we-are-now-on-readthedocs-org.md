@@ -31,7 +31,7 @@ the documentation, ensuring that it is up to date with the latest developments.
 **What's next?**
 
 If you have some extra time, we invite you to take a look at the 
-[new documentation](http://docs.phalconphp.com) and share your thoughts with us. 
+[new documentation](https://docs.phalconphp.com) and share your thoughts with us. 
 If you find a typo, want to improve a section, wish to see something new that 
 we have not covered, feel free to fork the repository and send us the changes 
 via pull request.

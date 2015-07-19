@@ -40,11 +40,17 @@ use Phalcon\Events\Manager as EventsManager;
 
 use Ciconia\Ciconia;
 use Ciconia\Extension\Gfm\FencedCodeBlockExtension;
+use Ciconia\Extension\Gfm\TaskListExtension;
+use Ciconia\Extension\Gfm\InlineStyleExtension;
+use Ciconia\Extension\Gfm\WhiteSpaceExtension;
+use Ciconia\Extension\Gfm\TableExtension;
+use Ciconia\Extension\Gfm\UrlAutoLinkExtension;
 
 use Kitsune\PostFinder;
 use Kitsune\Plugins\NotFoundPlugin;
-use Kitsune\Markdown\TableExtension;
-use Kitsune\Markdown\UrlAutoLinkExtension;
+use Kitsune\Markdown\Github\MentionExtension;
+use Kitsune\Markdown\Github\IssueExtension;
+use Kitsune\Markdown\Github\PullRequestExtension;
 use Kitsune\Utils;
 
 /**
@@ -256,11 +262,8 @@ class Bootstrap
             function () use ($config) {
 
                 $view = new View();
-
                 $view->setViewsDir(K_PATH . '/app/views/');
-
                 $view->registerEngines([".volt" => 'volt']);
-
                 return $view;
             }
         );
@@ -273,7 +276,6 @@ class Bootstrap
             function ($view, $di) {
 
                 $volt = new VoltEngine($view, $di);
-
                 $volt->setOptions(
                     [
                         "compiledPath"  => K_PATH . '/var/cache/volt/',
@@ -281,7 +283,6 @@ class Bootstrap
                         'compileAlways' => K_DEBUG,
                     ]
                 );
-
                 return $volt;
             },
             true
@@ -334,10 +335,25 @@ class Bootstrap
             'markdown',
             function () {
                 $ciconia = new Ciconia();
-
+                $ciconia->addExtension(new FencedCodeBlockExtension());
+                $ciconia->addExtension(new TaskListExtension());
+                $ciconia->addExtension(new InlineStyleExtension());
+                $ciconia->addExtension(new WhiteSpaceExtension());
                 $ciconia->addExtension(new TableExtension());
                 $ciconia->addExtension(new UrlAutoLinkExtension());
-                $ciconia->addExtension(new FencedCodeBlockExtension());
+                $ciconia->addExtension(new MentionExtension());
+
+                $extension = new IssueExtension();
+                $extension->setIssueUrl(
+                    '[#%s](https://github.com/phalcon/cphalcon/issues/%s)'
+                );
+                $ciconia->addExtension($extension);
+
+                $extension = new PullRequestExtension();
+                $extension->setIssueUrl(
+                    '[#%s](https://github.com/phalcon/cphalcon/pull/%s)'
+                );
+                $ciconia->addExtension($extension);
                 return $ciconia;
             },
             true
