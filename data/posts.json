@@ -192,6 +192,34 @@
 
 
   {
+    "title": "Tutorial: Creating a custom model's initializer with Annotations",
+    "slug": "tutorial-creating-a-custom-models-initializer",
+    "date": "2013-04-08",
+    "tags": "php, phalcon, sample, tutorial",
+    "link": "47471246411\/tutorial-creating-a-custom-models-initializer"
+  },
+  {
+    "title": "Tutorial: Creating a Blameable behavior with Phalcon",
+    "slug": "tutorial-creating-a-blameable-behavior-with",
+    "date": "2013-04-10",
+    "tags": "php, phalcon, sample, tutorial",
+    "link": "47652831003\/tutorial-creating-a-blameable-behavior-with"
+  },
+  {
+    "title": "Phalcon 1.1 beta released!",
+    "slug": "phalcon-1-1-beta-released",
+    "date": "2013-04-15",
+    "tags": "php, phalcon, 1.1, release",
+    "link": "48089073098\/phalcon-1-1-beta-released"
+  },
+  {
+    "title": "Help the community to make Phalcon available on cPanel",
+    "slug": "help-the-community-to-make-phalcon-available-on-cpanel",
+    "date": "2013-04-18",
+    "tags": "php, phalcon, cpanel, hosting",
+    "link": "48284679009\/help-the-community-to-make-phalcon-available-on"
+  },
+  {
     "title": "Sample Application: Vökuró // Authorization/Authentication/Security",
     "slug": "sample-application-vokuro",
     "date": "2013-05-02",
