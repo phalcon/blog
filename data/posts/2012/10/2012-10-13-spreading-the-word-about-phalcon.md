@@ -135,6 +135,5 @@ to meet and exceed the trust you put in Phalcon.
 
 Thanks for flying with Phalcon!
 
-**<3**
 
-
+<3 The Phalcon Team

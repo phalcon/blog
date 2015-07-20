@@ -102,3 +102,5 @@ A preliminary documentation is available
 
 Stay tuned, there's more news on the upcoming version of Phalcon!
 
+
+<3 The Phalcon Team
