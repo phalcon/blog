@@ -200,5 +200,5 @@ Complete documentation for the ODM is available
 A beta for 0.6.0 will be available tomorrow and the final version
 November 1st!
 
-:)
 
+<3 The Phalcon Team
