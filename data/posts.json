@@ -10,49 +10,49 @@
     "title": "Phalcon 0.3.0 released!",
     "slug": "phalcon-0-3-0-released",
     "date": "2012-03-12",
-    "tags": "phalcon, php, framework, 0.3, release",
+    "tags": "phalcon, php, framework, 0.3, release, 0.x",
     "link": "19178864207\/phalcon-0-3-0-released"
   },
   {
     "title": "Phalcon 0.3.1 released!",
     "slug": "phalcon-0-3-1-released",
     "date": "2012-03-21",
-    "tags": "phalcon, 0.3, release",
+    "tags": "phalcon, 0.3, release, 0.x",
     "link": "19680425990\/phalcon-0-3-1-released"
   },
   {
     "title": "Phalcon Developer Tools",
     "slug": "phalcon-developer-tools",
     "date": "2012-03-23",
-    "tags": "php, frameworks, screencast, programming, devtools",
+    "tags": "php, frameworks, screencast, programming, devtools, 0.x",
     "link": "19817453887\/phalcon-developer-tools-is-a-set-of-scripts-to"
   },
   {
     "title": "Phalcon 0.3.3 released",
     "slug": "phalcon-0-3-3-released",
     "date": "2012-04-07",
-    "tags": "framework, php, mvc, 0.3, release, phalcon",
+    "tags": "framework, php, mvc, 0.3, release, phalcon, 0.x",
     "link": "20686786558\/phalcon-0-3-3-released"
   },
   {
     "title": "INVO: A sample application",
     "slug": "invo-a-sample-application",
     "date": "2012-04-11",
-    "tags": "php, framework, mvc, invo, sample, tutorial",
+    "tags": "php, framework, mvc, invo, sample, tutorial, 0.x",
     "link": "20928554661\/invo-a-sample-application"
   },
   {
     "title": "Phalcon 0.3.4 released",
     "slug": "phalcon-0-3-4-released",
     "date": "2012-04-19",
-    "tags": "php, phalcon, framework, 0.3, release",
+    "tags": "php, phalcon, framework, 0.3, release, 0.x",
     "link": "21389804474\/phalcon-0-3-4-released"
   },
   {
     "title": "Phalcon 0.3.5: ORM, Database and more",
     "slug": "phalcon-0-3-5-orm-database-and-more",
     "date": "2012-05-02",
-    "tags": "phalcon, php, programming, frameworks, orm, 0.3",
+    "tags": "phalcon, php, programming, frameworks, orm, 0.3, 0.x",
     "link": "22282490948\/phalcon-0-3-5-orm-database-and-more"
   },
   {
@@ -66,35 +66,35 @@
     "title": "Database Migrations",
     "slug": "database-migrations",
     "date": "2012-05-04",
-    "tags": "database, migrations, phalcon, screencast, php",
+    "tags": "database, migrations, phalcon, screencast, php, 0.x",
     "link": "22411506007\/database-migrations"
   },
   {
     "title": "Introducing: Phalcon 0.4.0 alpha",
     "slug": "introducing-phalcon-0-4-0-alpha",
     "date": "2012-05-15",
-    "tags": "php, phalcon, frameworks, performance, 0.4, release",
+    "tags": "php, phalcon, frameworks, performance, 0.4, release, 0.x",
     "link": "23111713730\/introducing-phalcon-0-4-0-alpha"
   },
   {
     "title": "Don't like command line and consoles? No problem, read this story",
     "slug": "dont-like-command-line-and-consoles-no-problem",
     "date": "2012-05-17",
-    "tags": "php, frameworks, phalcon, ui, web, devtools",
+    "tags": "php, frameworks, phalcon, ui, web, devtools, 0.x",
     "link": "23251010409\/dont-like-command-line-and-consoles-no-problem"
   },
   {
     "title": "Help test Phalcon 0.4.0",
     "slug": "help-test-phalcon-0-4-0",
     "date": "2012-05-27",
-    "tags": "php, frameworks, test, help, 0.4, release",
+    "tags": "php, frameworks, test, help, 0.4, release, 0.x",
     "link": "23849400049\/help-test-phalcon-0-4-0"
   },
   {
     "title": "Phalcon 0.4.0 is finally here",
     "slug": "phalcon-0-4-0-is-finally-here",
     "date": "2012-06-02",
-    "tags": "php, frameworks, phalcon, release, 0.4",
+    "tags": "php, frameworks, phalcon, release, 0.4, 0.x",
     "link": "24253047034\/phalcon-0-4-0-is-finally-here"
   },
   {
@@ -108,35 +108,35 @@
     "title": "Sample Application: PHP Alternative site",
     "slug": "sample-application-php-alternative-site",
     "date": "2012-06-07",
-    "tags": "php, frameworks, phalcon, roadmap, sample, application",
+    "tags": "php, frameworks, phalcon, roadmap, sample, application, 0.x",
     "link": "24622423072\/sample-application-php-alternative-site"
   },
   {
     "title": "Phalcon 0.4.1: MySQLi, Cache + Models and more",
     "slug": "phalcon-0-4-1-mysqli-cache-models-and-more",
     "date": "2012-06-14",
-    "tags": "php, frameworks, phalcon, release, 0.4, cache, models",
+    "tags": "php, frameworks, phalcon, release, 0.4, cache, models, 0.x",
     "link": "25124040559\/phalcon-0-4-1-mysqli-cache-models-and-more"
   },
   {
     "title": "Phalcon 0.4.1: MySQLi, Cache + Models and more",
     "slug": "phalcon-0-4-2-caching-views-and-postgresql",
     "date": "2012-06-25",
-    "tags": "php, frameworks, phalcon, release, 0.4, postgresql, cache, views",
+    "tags": "php, frameworks, phalcon, release, 0.4, postgresql, cache, views, 0.x",
     "link": "25876131497\/phalcon-0-4-2-caching-views-and-postgresql"
   },
   {
     "title": "Moving towards Phalcon 0.5.x",
     "slug": "moving-towards-phalcon-0-5-x",
     "date": "2012-07-04",
-    "tags": "php, frameworks, phalcon, 0.5, roadmap, namespaces",
+    "tags": "php, frameworks, phalcon, 0.5, roadmap, namespaces, 0.x",
     "link": "26524358189\/moving-towards-phalcon-0-5-x"
   },
   {
     "title": "Phalcon 0.4.3 (stable) and 0.5.0 (alpha)",
     "slug": "phalcon-0-4-3-stable-and-0-5-0-alpha",
     "date": "2012-07-21",
-    "tags": "php, frameworks, phalcon, 0.4, 0.5, release, namespaces, roadmap",
+    "tags": "php, frameworks, phalcon, 0.4, 0.5, release, namespaces, roadmap, 0.x",
     "link": "27734788888\/phalcon-0-4-3-stable-and-0-5-0-alpha"
   },
   {
@@ -150,47 +150,65 @@
     "title": "Introduction Series 1: Phalcon's Dependency Injector",
     "slug": "introduction-series-1-phalcons-dependency",
     "date": "2012-08-09",
-    "tags": "php, frameworks, phalcon, series, mvc, di, 0.5",
+    "tags": "php, frameworks, phalcon, series, mvc, di, 0.5, 0.x",
     "link": "29061488806\/introduction-series-1-phalcons-dependency"
   },
   {
     "title": "Introduction Series 1: Phalcon's Dependency Injector",
     "slug": "introduction-series-2-the-events-manager",
     "date": "2012-08-12",
-    "tags": "php, frameworks, phalcon, series, mvc, events manager, 0.5",
+    "tags": "php, frameworks, phalcon, series, mvc, events manager, 0.5, 0.x",
     "link": "29280239243\/introduction-series-2-the-events-manager"
   },
   {
     "title": "Introduction series 3: Building an MVC application with 0.5.0",
     "slug": "introduction-series-3-building-an-mvc-application",
     "date": "2012-08-18",
-    "tags": "php, frameworks, phalcon, series, mvc, 0.5",
+    "tags": "php, frameworks, phalcon, series, mvc, 0.5, 0.x",
     "link": "29703992127\/introduction-series-3-building-an-mvc-application"
   },
   {
     "title": "Introduction Series 4: Phalcon Query Language (PHQL)",
     "slug": "introduction-series-4-phalcon-query-language",
     "date": "2012-08-21",
-    "tags": "php, frameworks, phalcon, series, phql, sql, mysql, hql, 0.5",
+    "tags": "php, frameworks, phalcon, series, phql, sql, mysql, hql, 0.5, 0.x",
     "link": "29905494935\/introduction-series-4-phalcon-query-language"
   },
   {
     "title": "Phalcon 0.5.0 beta1 released!",
     "slug": "phalcon-0-5-0-beta1-released",
     "date": "2012-08-28",
-    "tags": "php, frameworks, phalcon, release, mvc, phql, events manager, 0.5, beta",
+    "tags": "php, frameworks, phalcon, release, mvc, phql, events manager, 0.5, beta, 0.x",
     "link": "30325463805\/phalcon-0-5-0-beta1-released"
   },
   {
     "title": "Phalcon 0.5.0 is finally here!",
     "slug": "phalcon-0-5-0-is-finally-here",
     "date": "2012-09-17",
-    "tags": "php, frameworks, phalcon, release, mvc, phql, events manager, 0.5, beta",
+    "tags": "php, frameworks, phalcon, release, mvc, phql, events manager, 0.5, 0.x",
     "link": "31730690409\/phalcon-0-5-0-is-finally-here"
   },
-
-
-
+  {
+    "title": "Introduction series for 0.6: Volt: An ultra-fast template engine for Phalcon",
+    "slug": "introduction-series-for-0-6-volt-an-ultra-fast-template-engine",
+    "date": "2012-10-07",
+    "tags": "php, phalcon, volt, template engine, html, design, 0.6, 0.x",
+    "link": "33109442637\/introduction-series-for-0-6-volt-an-ultra-fast"
+  },
+  {
+    "title": "Spreading the word about Phalcon",
+    "slug": "spreading-the-word-about-phalcon",
+    "date": "2012-10-13",
+    "tags": "php, phalcon, community",
+    "link": "33523635514\/spreading-the-word-about-phalcon"
+  },
+  {
+    "title": "Announcing the release of Phalcon 0.6.0",
+    "slug": "introduction-series-for-0-6-mongodb-integration",
+    "date": "2012-10-22",
+    "tags": "php, phalcon, 0.6, 0.x, mongo",
+    "link": "34119544351\/introduction-series-for-0-6-mongodb-integration"
+  },
   {
     "title": "Announcing the release of Phalcon 0.6.0",
     "slug": "announcing-the-release-of-phalcon-0-6-0",
