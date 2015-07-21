@@ -40,13 +40,13 @@ class PostsController extends Controller
         $feed->setDescription($this->config->rss->description);
         $feed->setLink($this->getFullUrl());
 
-        $posts = $this->finder->getLatest($this->config->blog->postsPerPage);
+        $posts = $this->finder->getLatest(1);
         foreach ($posts as $post) {
             $feedItem = new Item();
-            $feedItem->setTitle($post->title);
-            $feedItem->setLink($this->getFullUrl('/post/' . $post->slug));
-            $feedItem->setDescription($post->content);
-            $feedItem->setDate($post->date);
+            $feedItem->setTitle($post->getTitle());
+            $feedItem->setLink($this->getFullUrl('/post/' . $post->getSlug()));
+            $feedItem->setDescription($post->getContent());
+            $feedItem->setDate($post->getDate());
 
             $feed->addItem($feedItem);
         }
