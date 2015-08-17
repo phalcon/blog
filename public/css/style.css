@@ -188,6 +188,7 @@ h2, h3 {
 .horizontal-ruler {
     padding: 20px;
     color: #dadada;
+    font-size: 12px;
 }
 
 .h2, h2 {
@@ -208,13 +209,10 @@ h2, h3 {
     font-size: 12px;
 }
 
-
 .tag-cloud {
     width: 300px;
     padding: 10px;
-    background: #70b599;
-    color: #000000;
-    border: 1px solid #000000;
+    color: #005399;
     text-align: center;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -223,7 +221,7 @@ h2, h3 {
 
 .tag-cloud a:link, .tag-cloud a:visited {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #005399;
 }
 
 .tag-cloud a:hover {
@@ -232,4 +230,8 @@ h2, h3 {
 
 .tag-cloud span {
     padding: 4px;
+}
+
+div#articles a {
+    color: #005399;
 }

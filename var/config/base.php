@@ -65,7 +65,7 @@ return [
             'controller' => 'posts',
             'action'     => 'view'
         ],
-        '/tag/{tag:[0-9a-zA-Z\-\ \%]+}'  => [
+        '/tag/{tag:[0-9a-zA-Z\-\ \%\.]+}'  => [
             'controller' => 'posts',
             'action'     => 'tag'
         ],
