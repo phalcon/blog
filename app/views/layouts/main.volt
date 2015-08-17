@@ -92,6 +92,7 @@
                         <ul class="nav navbar-nav main-menu">
                             <li class="first"><a href="https://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
                             <li><a href="https://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                            <li><a href="https://api.phalconphp.com" class="header-nav-link" target="_blank">API</a></li>
                             <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
                             <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
                             <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>

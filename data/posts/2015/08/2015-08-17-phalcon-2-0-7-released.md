@@ -2,6 +2,7 @@ Phalcon 2.0.7 released
 ======================
 
 We are excited to announce the release of Phalcon 2.0.7!
+This is our seventh release in the 2.0.x series and it contains bug fixes and new features enjoyment!
 
 ### Changes
 
@@ -52,5 +53,7 @@ Windows DLLs are available in the [download page](https://phalconphp.com/en/down
 
 * [Documentation](https://docs.phalconphp.com)
 * [API](https://api.phalconphp.com/)
+
+Thanks to everyone involved in this release and thanks for choosing Phalcon!
 
 <3 Phalcon Team
