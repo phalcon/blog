@@ -15,7 +15,7 @@
  +------------------------------------------------------------------------+
 */
 
-use \Phalcon\DI\FactoryDefault as PhDI;
+use \Phalcon\Di\FactoryDefault as PhDI;
 use \Kitsune\Bootstrap;
 
 error_reporting(E_ALL);

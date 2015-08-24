@@ -51,6 +51,8 @@ Run the composer installer:
 $ php composer.phar install
 ```
 
+Create `var/config/config.php` file (use `config.sample.php` as example).
+
 ## License
 
 Phosphorum is open-sourced software licensed under the [New BSD License][6]. © Phalcon Framework Team and contributors

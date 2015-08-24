@@ -3,7 +3,7 @@
  +------------------------------------------------------------------------+
  | Kitsune                                                                |
  +------------------------------------------------------------------------+
- | Copyright (c) 2015-2015 Phalcon Team and contributors                  |
+ | Copyright (c) 2015 Phalcon Team and contributors                       |
  +------------------------------------------------------------------------+
  | This source file is subject to the New BSD License that is bundled     |
  | with this package in the file docs/LICENSE.txt.                        |
@@ -22,7 +22,8 @@
  */
 namespace Kitsune;
 
-use Phalcon\DI\FactoryDefault as PhDI;
+use Phalcon\DiInterface;
+use Phalcon\Di\FactoryDefault as PhDI;
 use Phalcon\Config;
 use Phalcon\Loader;
 use Phalcon\Logger;
@@ -58,7 +59,7 @@ use Kitsune\Utils;
  */
 class Bootstrap
 {
-    public static function run($di, array $options = [])
+    public static function run(DiInterface $di, array $options = [])
     {
         $memoryUsage = memory_get_usage();
         $currentTime = microtime(true);
@@ -68,9 +69,8 @@ class Bootstrap
          */
         if (!defined('K_PATH')) {
             define('K_PATH', dirname(dirname(dirname(__FILE__))));
-
         }
-        
+
         /**
          * We will need the Utils class
          */
@@ -175,7 +175,7 @@ class Bootstrap
         );
 
         set_exception_handler(
-            function ($exception) use ($logger) {
+            function (\Exception $exception) use ($logger) {
                 $logger->error($exception->getMessage());
             }
         );
