@@ -1,6 +1,7 @@
 {
     "name":        "phalcon/blog",
-    "description": "Phalcon official Blog http://blog.phalconphp.com",
+    "description": "Phalcon official Blog",
+    "homepage":    "http://blog.phalconphp.com",
     "type":        "project",
     "license":     "BSD-3-Clause",
     "support": {
@@ -13,5 +14,5 @@
         "ext-phalcon": ">= 2.0.2",
         "kzykhys/ciconia": "~1.0.0",
         "mibe/feedwriter": "1.*"
-    }    
+    }
 }
