@@ -55,7 +55,7 @@ Create `var/config/config.php` file (use `config.sample.php` as example).
 
 ## License
 
-Phosphorum is open-sourced software licensed under the [New BSD License][6]. © Phalcon Framework Team and contributors
+Phalcon Blog is open-sourced software licensed under the [New BSD License][6]. © Phalcon Framework Team and contributors
 
 [1]: https://getcomposer.org/
 [2]: http://httpd.apache.org/
