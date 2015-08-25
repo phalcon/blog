@@ -16,7 +16,7 @@ We encourage you to upgrade to at least PHP 5.4 in order to use Phalcon 2.1.
 
 Phalcon\Mvc\Model\Validation is now deprecated
 ----------------------------------------------
-[Phalcon\Mvc\Model\Validation]() is now deprecated in favor of [Phalcon\\Validation](https://docs.phalconphp.com/en/latest/reference/validation.html).
+[Phalcon\Mvc\Model\Validation](https://docs.phalconphp.com/en/latest/reference/models.html#validating-data-integrity) is now deprecated in favor of [Phalcon\\Validation](https://docs.phalconphp.com/en/latest/reference/validation.html).
 We expect to merge the functionality duplicated between both components improving
 the understanding of the validation system in Phalcon applications.
 
@@ -76,6 +76,153 @@ class Users extends Model
         ));
 
         return $this->validate();
+    }
+}
+```
+
+Changed constructor of Phalcon\\Mvc\\Model
+------------------------------------------
+Constructor of models has been changed to allow you pass an array of initialization data:
+
+```php
+$customer = new Customer([
+    'name'   => 'Peter',
+    'status' => 'Active'
+]);
+```
+
+Using this method is the same as calling assing(), any setter available will be used
+and will fallback to property assignment.
+
+
+Phalcon\\Mvc\\View supports many views directories
+--------------------------------------------------
+If you are using the hierarchical view component, now you can place your views at several
+directories. This is specially useful to reuse views and layouts between more than one
+module:
+
+```php
+use Phalcon\Mvc\View;
+
+// ...
+
+$di->set('view', function () {
+
+	$view = new View();
+
+	$view->setViewsDir([
+        '/var/www/htdocs/blog/modules/backend/views/',
+        '/var/www/htdocs/blog/common/views/',
+    ]);
+
+	return $view;
+});
+```
+
+Phalcon\\Mvc\\View now supports absolute paths
+----------------------------------------------
+An absolute path can now be used to Mvc\View::setLayoutsDir and Mvc\View::setPartialsDir.
+This allow you to use directories outside the main views directory:
+
+```php
+use Phalcon\Mvc\View;
+
+// ...
+
+$di->set('view', function () {
+
+	$view = new View();
+
+	$view->setViewsDir('/var/www/htdocs/blog/modules/backend/views/');
+
+    $view->setLayoutsDir('/var/www/htdocs/common/views/layouts/');
+
+	return $view;
+});
+```
+
+Phalcon\\Di is now bound to services closures
+--------------------------------------------
+This allows to use Phalcon\\Di as $this and access services within closure definitions.
+Before this functionality you have to do something like:
+
+```php
+use Phalcon\Mvc\Dispatcher;
+
+// ...
+
+$di->set('dispatcher', function () use ($di) {
+
+	$eventsManager = $di->getEventsManager();
+
+	$eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
+
+	$dispatcher = new Dispatcher;
+	$dispatcher->setEventsManager($eventsManager);
+	return $dispatcher;
+});
+```
+
+Now you can access services without passing $di:
+
+```php
+use Phalcon\Mvc\Dispatcher;
+
+// ...
+
+$di->set('dispatcher', function () {
+
+	$eventsManager = $this->getEventsManager();
+
+	$eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
+
+	$dispatcher = new Dispatcher;
+	$dispatcher->setEventsManager($eventsManager);
+	return $dispatcher;
+});
+```
+
+Service resolve overriding
+--------------------------
+If an object is returned after firing the event beforeServiceResolve in Phalcon\\Di this overrides the default service localization process:
+
+
+```php
+use Phalcon\Http\Response;
+use Phalcon\Mvc\Dispatcher;
+use Phalcon\Events\Manager;
+use MyApp\Plugins\ResponseResolverInterceptor;
+
+$di = new Phalcon\Di;
+
+$eventsManager = new EventsManager;
+
+// Intercept service creation
+$eventsManager->attach('di', new ResponseResolverInterceptor);
+
+$di->set('response', Response::class);
+
+$di->setInternalEventsManager($eventsManager);
+
+```
+
+The plugin can now intercept the creation of services:
+
+```php
+namespace MyApp\Plugins;
+
+class ResponseResolverInterceptor
+{
+    private $cache = false;
+
+    public function beforeServiceResolve($event, $di, $parameters)
+    {
+        // Intercept creation of responses
+        if ($parameters['name'] == 'response' && $this->cache == false) {
+            $response = new Response();
+            $response->setHeader('Cache-Control', 'no-cache, must-revalidate');
+            return $response;
+        }
     }
 }
 ```
