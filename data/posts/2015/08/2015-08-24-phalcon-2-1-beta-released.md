@@ -7,13 +7,13 @@ The 2.1.x series are going to be supported for a much longer period than previou
 
 In the Phalcon 2.0.x series, we introduced a lot of new features as well as bug fixes. Our focus however has always been to keep backwards compatibility with Phalcon 1.3.x series, while at the same time encourage developers to upgrade to 2.0.x. This allowed ample time for developers to adjust their applications to work with the 2.0.x series.
 
-Phalcon 2.1 introduces new features some of them incompatible with previous released versions, so make sure you test your application before upgrading a production system. 
+Phalcon 2.1 introduces new features some of them incompatible with previous released versions, so make sure you test your application before upgrading a production system.
 
 We are confident that the changes in this release warrant the upgrade :)
 
 Deprecation for PHP 5.3
 -----------------------
-Phalcon 2.0.x is the latest series of releases supporting PHP 5.3 (>= 5.3.21). Due to this constraint, we were unable to include some performance enhancements to the framework. 
+Phalcon 2.0.x is the latest series of releases supporting PHP 5.3 (>= 5.3.21). Due to this constraint, we were unable to include some performance enhancements to the framework.
 
 From 2.1.x onwards we are deprecating support for PHP 5.3. We highly encourage developers to upgrade their installations to 5.6, since PHP 7 is just around the corner. We are working on PHP 7 support for Phalcon, but in the meantime the recommended PHP version with Phalcon is 5.6.
 
@@ -28,16 +28,16 @@ Previously validations were implemented as follows:
 
 namespace Invo\Models;
 
-use Phalcon\Mvc\Model as PhModel;
-use Phalcon\Mvc\Model\Validator\Email as PhEmailValidator;
-use Phalcon\Mvc\Model\Validator\Uniqueness as PhUniquenessValidator;
+use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Model\Validator\Email as EmailValidator;
+use Phalcon\Mvc\Model\Validator\Uniqueness as UniquenessValidator;
 
-class Users extends PhModel
+class Users extends Model
 {
     public function validation()
     {
         $this->validate(
-            new PhEmailValidator(
+            new EmailValidator(
                 [
                     'field' => 'email',
                 ]
@@ -45,7 +45,7 @@ class Users extends PhModel
         );
 
         $this->validate(
-            new PhUniquenessValidator(
+            new UniquenessValidator(
                 [
                     'field'   => 'username',
                     'message' => 'Sorry, That username is already taken',
@@ -67,25 +67,25 @@ Introducing [Phalcon\\Validation](https://docs.phalconphp.com/en/latest/referenc
 
 namespace Invo\Models;
 
-use Phalcon\Mvc\Model as PhModel;
-use Phalcon\Validation as PhValidation;
-use Phalcon\Validation\Validator\Email as PhEmailValidator;
-use Phalcon\Validation\Validator\Uniqueness as PhUniquenessValidator;
+use Phalcon\Mvc\Model;
+use Phalcon\Validation;
+use Phalcon\Validation\Validator\Email as EmailValidator;
+use Phalcon\Validation\Validator\Uniqueness as UniquenessValidator;
 
-class Users extends PhModel
+class Users extends Model
 {
     public function validation()
     {
-        $validator = new PhValidation();
+        $validator = new Validation();
 
         $validator->add(
-            'email', 
-            new PhEmailValidator()
+            'email',
+            new EmailValidator()
         );
 
         $validator->add(
             'username',
-            new PhUniquenessValidator(
+            new UniquenessValidator(
                 [
                     'message' => 'Sorry, That username is already taken',
                 ]
@@ -120,7 +120,7 @@ Using this method is the same as calling `assign()`, any setter available will b
 This has been one of the features that our community requested many times in the past. We are happy to announce that you can use any kind of folder hierarchy with your application for your view files. This is specially useful for reusing views and layouts between modules:
 
 ```php
-use Phalcon\Mvc\View as PhView;
+use Phalcon\Mvc\View;
 
 // ...
 
@@ -128,15 +128,15 @@ $di->set(
     'view',
     function () {
 
-        $view = new PhView();
-    
+        $view = new View();
+
         $view->setViewsDir(
             [
                 '/var/www/htdocs/blog/modules/backend/views/',
                 '/var/www/htdocs/blog/common/views/',
             ]
         );
-    
+
         return $view;
     }
 );
@@ -147,7 +147,7 @@ $di->set(
 An absolute path can now be used on `Mvc\View::setLayoutsDir` and `Mvc\View::setPartialsDir`. This allows the use of folders outside the main views folder:
 
 ```php
-use Phalcon\Mvc\View as PhView;
+use Phalcon\Mvc\View;
 
 // ...
 
@@ -155,19 +155,19 @@ $di->set(
     'view',
     function () {
 
-        $view = new PhView();
-    
+        $view = new View();
+
         $view->setViewsDir(
             [
                 '/var/www/htdocs/blog/modules/backend/views/',
                 '/var/www/htdocs/blog/common/views/',
             ]
         );
-    
+
         $view->setLayoutsDir(
             '/var/www/htdocs/common/views/layouts/'
         );
-        
+
         return $view;
     }
 );
@@ -180,7 +180,7 @@ In the past, we had to pass the dependency injector inside a service closure, if
 Code before:
 
 ```php
-use Phalcon\Mvc\Dispatcher as PhDispatcher;
+use Phalcon\Mvc\Dispatcher;
 
 // ...
 
@@ -188,15 +188,15 @@ $di->set(
     'dispatcher',
      function () use ($di) {
         $eventsManager = $di->getEventsManager();
-    
+
         $eventsManager->attach(
-            'dispatch:beforeException', 
+            'dispatch:beforeException',
             new NotFoundPlugin()
         );
-    
-        $dispatcher = new PhDispatcher;
+
+        $dispatcher = new Dispatcher;
         $dispatcher->setEventsManager($eventsManager);
-        
+
         return $dispatcher;
     }
 );
@@ -213,13 +213,13 @@ $di->set(
     'dispatcher',
     function () {
         $eventsManager = $this->getEventsManager();
-    
+
         $eventsManager->attach(
-            'dispatch:beforeException', 
+            'dispatch:beforeException',
             new NotFoundPlugin()
             );
-    
-        $dispatcher = new PhDispatcher;
+
+        $dispatcher = new Dispatcher;
         $dispatcher->setEventsManager($eventsManager);
         return $dispatcher;
     }
@@ -228,28 +228,28 @@ $di->set(
 
 Service Resolve overriding
 --------------------------
-If an object is returned after firing the event `beforeServiceResolve` in `Phalcon\Di`, the returned instance overrides the default service localization process. 
+If an object is returned after firing the event `beforeServiceResolve` in `Phalcon\Di`, the returned instance overrides the default service localization process.
 
 The following example shows how to override the creation of the service `response` from a custom plugin:
 
 ```php
-use Phalcon\Di as PhDi;
-use Phalcon\Events\Manager as PhEventsManager;
-use Phalcon\Http\Response as PhResponse;
+use Phalcon\Di;
+use Phalcon\Http\Response;
+use Phalcon\Events\Manager;
 
-use MyApp\Plugins\ResponseResolverInterceptor as MyAppResponseResolverInterceptor;
+use MyApp\Plugins\ResponseResolverInterceptor;
 
-$di = new PhDi();
+$di = new Di();
 
-$eventsManager = new PhEventsManager;
+$eventsManager = new EventsManager;
 
 // Intercept service creation
 $eventsManager->attach(
-    'di', 
-    new MyAppResponseResolverInterceptor()
+    'di',
+    new ResponseResolverInterceptor()
 );
 
-$di->set('response', PhResponse::class);
+$di->set('response', Response::class);
 
 $di->setInternalEventsManager($eventsManager);
 
@@ -260,7 +260,7 @@ The plugin can now intercept the creation of services:
 ```php
 namespace MyApp\Plugins;
 
-use Phalcon\Http\Response as PhResponse;
+use Phalcon\Http\Response;
 
 class ResponseResolverInterceptor
 {
@@ -270,9 +270,9 @@ class ResponseResolverInterceptor
     {
         // Intercept creation of responses
         if ($parameters['name'] == 'response' && $this->cache == false) {
-            $response = new PhResponse();
+            $response = new Response();
             $response->setHeader('Cache-Control', 'no-cache, must-revalidate');
-            
+
             return $response;
         }
     }
@@ -281,14 +281,14 @@ class ResponseResolverInterceptor
 
 Disabling the view from an action
 ---------------------------------
-Sometimes the view must be disabled by calling `$this->view->disable()` within an action in order to avoid the `Phalcon\Mvc\View` component to process the relevant view(s). 
+Sometimes the view must be disabled by calling `$this->view->disable()` within an action in order to avoid the `Phalcon\Mvc\View` component to process the relevant view(s).
 
 Now this much easier; simply return `false`:
 
 ```php
-use Phalcon\Mvc\Controller as PhController;
+use Phalcon\Mvc\Controller;
 
-class Api extends Controller as PhController
+class Api extends Controller
 {
     public function loginAction()
     {
@@ -304,13 +304,13 @@ class Api extends Controller as PhController
 
 Returning a string makes it the body of the response
 ----------------------------------------------------
-Return a string from an action takes it as the body of the response: 
+Return a string from an action takes it as the body of the response:
 (same as `return $this->response->setContent('Hello world')`)
 
 ```php
-use Phalcon\Mvc\Controller as PhController;
+use Phalcon\Mvc\Controller;
 
-class Session extends PhController
+class Session extends Controller
 {
     public function welcomeAction()
     {
@@ -322,9 +322,9 @@ class Session extends PhController
 This feature is specially handy if `Phalcon\Mvc\View\Simple` is used instead of `Phalcon\Mvc\View`:
 
 ```php
-use Phalcon\Mvc\Controller as PhController;
+use Phalcon\Mvc\Controller;
 
-class Session extends PhController
+class Session extends Controller
 {
     public function welcomeAction($name)
     {
@@ -341,9 +341,9 @@ class Session extends PhController
 This feature is also available in `Mvc\Micro` handlers:
 
 ```php
-use Phalcon\Mvc\Micro as PhMicro;
+use Phalcon\Mvc\Micro;
 
-$app = new PhMicro();
+$app = new Micro();
 
 // ...
 
@@ -366,23 +366,14 @@ Routes now can have an associated callback that can override the default dispatc
 
 ```php
 // Make a redirection if the /help route is matched
-$router
-    ->add('/help', [])
-    ->match(
-        function () {
-            return $this->getResponse()
-                        ->redirect('https://support.google.com/');
-        }
-    );
+$router->add('/help', [])->match(function () {
+    return $this->getResponse()->redirect('https://support.google.com/');
+});
 
 // Return a string directly from the route
-$router
-    ->add('/', [])
-    ->match(
-        function () {
-            return '<h1>It works</h1>';
-        }
-    );
+$router->add('/', [])->match(function () {
+    return '<h1>It works</h1>';
+});
 ```
 
 See the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/2.1.x/CHANGELOG.md#210-2015-xx-xx) for Phalcon 2.1.
@@ -408,6 +399,5 @@ zephir build
 ```
 
 We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalconphp.com/).
-
 
 <3 Phalcon Team
