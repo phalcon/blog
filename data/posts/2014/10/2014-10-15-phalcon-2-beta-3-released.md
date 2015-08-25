@@ -12,7 +12,7 @@ Phalcon 2 is almost fully functional and stable as Phalcon 1.x, virtually all te
 Thanks to [Zephir](http://www.zephir-lang.org), Phalcon 2 performs a greater number of type and class checks, and as a result this make the whole framework more stable and consistent. If a wrong type or class is passed to a method you'll see the relevant exception with a verbose message. If you have created user adapters or extended framework components and they do not implement the necessary interfaces and/or types you may need to fix them.
 
 ```php
-Catchable fatal error: Argument 2 passed to Phalcon\Mvc\Model\Query::__construct() must implement 
+Catchable fatal error: Argument 2 passed to Phalcon\Mvc\Model\Query::__construct() must implement
 interface Phalcon\DiInterface, instance of stdClass given in /home/scott/test.php on line 17
 ```
 
@@ -35,8 +35,8 @@ This could help you to find solutions for your problems by just looking at the f
 Phalcon 2 provides better facilities to handle exceptions, for instance, in micro applications you can use the new error handler which will allow you to do something like this:
 
 ```php
-use Phalcon\Http\Response;
 use Phalcon\Mvc\Micro;
+use Phalcon\Http\Response;
 
 $app = new Micro();
 
@@ -49,7 +49,7 @@ $app->map(
 
 $app->error(
     function ($e) {
-        return new Response('Internal error');      
+        return new Response('Internal error');
     }
 );
 ```
@@ -77,16 +77,17 @@ An important work has been done migrating and simplifying tests for Phalcon 2 in
 This version can be installed from the 2.0.0 branch. If you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 git checkout 2.0.0
-cd ext
+cd cphalcon/ext
 sudo ./install
 ```
 
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
+cd cphalcon
 git checkout 2.0.0
 zephir build
 ```

@@ -300,3 +300,38 @@ $app->get('/hello/{name}', function() {
     ]);
 });
 ```
+
+Override dispatcher+view behavior in routes
+-------------------------------------------
+Routes now can have an associated callback that can override the default dispatcher + view behavior:
+
+```php
+// Make a redirection if the /help route is matched
+$router->add('/help', [])->match(function () {
+    return $this->getResponse()->redirect('https://support.google.com/');
+});
+```
+
+See the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/2.1.x/CHANGELOG.md#210-2015-xx-xx) for Phalcon 2.1.
+
+### Help with Testing
+
+This version can be installed from the 2.1.x branch. If you don't have Zephir installed follow these instructions:
+
+```sh
+git clone https://github.com/phalcon/cphalcon
+git checkout 2.1.x
+cd cphalcon/ext
+sudo ./install
+```
+
+If you have Zephir installed:
+
+```sh
+git clone https://github.com/phalcon/cphalcon
+cd cphalcon/
+git checkout 2.1.x
+zephir build
+```
+
+We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalconphp.com/).
