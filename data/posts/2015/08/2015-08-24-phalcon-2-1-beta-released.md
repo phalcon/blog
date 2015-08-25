@@ -13,6 +13,7 @@ Deprecation for PHP 5.3
 Phalcon 2.0.x is the latest series of releases supporting PHP 5.3 (>= 5.3.21).
 Because of this, in the past, we weren't in the ability to include some features in Phalcon.
 We encourage you to upgrade to at least PHP 5.4 in order to use Phalcon 2.1.
+While support for PHP 7 is on its way, the recommended version is PHP 5.6.
 
 Phalcon\Mvc\Model\Validation is now deprecated
 ----------------------------------------------
@@ -184,8 +185,10 @@ $di->set('dispatcher', function () {
 
 Service resolve overriding
 --------------------------
-If an object is returned after firing the event beforeServiceResolve in Phalcon\\Di this overrides the default service localization process:
-
+If an object is returned after firing the event beforeServiceResolve in Phalcon\\Di,
+this returned instance overrides the default service localization process.
+The following example shows how to override the creation of the service 'response'
+from a custom plugin:
 
 ```php
 use Phalcon\Http\Response;
@@ -225,4 +228,75 @@ class ResponseResolverInterceptor
         }
     }
 }
+```
+
+Disabling the view from an action
+---------------------------------
+Sometimes the view must be disabled by calling $this->view->disable() within an action
+in order to avoid the view to process any view. Now this is easier by simply returning 'false':
+
+```php
+use Phalcon\Mvc\Controller;
+
+class Api extends Controller
+{
+    public function loginAction()
+    {
+        if ($this->safeApp->isBanned()) {
+            $this->response->setStatusCode(401, "Unauthorized");
+            return false;
+        }
+
+        // ...
+    }
+}
+```
+
+Returning a string makes it the body of the response
+----------------------------------------------------
+Return a string from an action takes it as the body of the response (same as `return $this->response->setContent('Hello world')``).
+
+```php
+use Phalcon\Mvc\Controller;
+
+class Session extends Controller
+{
+    public function welcomeAction()
+    {
+        return '<h1>Hello world!</h1>';
+    }
+}
+```
+
+This feature is specially handy if `Phalcon\Mvc\View\Simple` is used instead of
+`Phalcon\Mvc\View`:
+
+```php
+use Phalcon\Mvc\Controller;
+
+class Session extends Controller
+{
+    public function welcomeAction($name)
+    {
+        return $this->view->render('welcome/index', [
+            'name' => $name
+        ]);
+    }
+}
+```
+
+This feature is also available in Mvc\\Micro handlers:
+
+```php
+use Phalcon\Mvc\Micro;
+
+$app = new Phalcon\Mvc\Micro();
+
+// ...
+
+$app->get('/hello/{name}', function() {
+    return $this->view->render('hello', [
+        'name' => $name
+    ]);
+});
 ```
