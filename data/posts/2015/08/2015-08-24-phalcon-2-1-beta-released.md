@@ -310,6 +310,11 @@ Routes now can have an associated callback that can override the default dispatc
 $router->add('/help', [])->match(function () {
     return $this->getResponse()->redirect('https://support.google.com/');
 });
+
+// Return a string directly from the route
+$router->add('/', [])->match(function () {
+    return '<h1>It works</h1>';
+});
 ```
 
 See the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/2.1.x/CHANGELOG.md#210-2015-xx-xx) for Phalcon 2.1.
