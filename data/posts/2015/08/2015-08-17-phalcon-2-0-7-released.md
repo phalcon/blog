@@ -55,4 +55,5 @@ Windows DLLs are available in the [download page](https://phalconphp.com/en/down
 
 Thanks to everyone involved in this release and thanks for choosing Phalcon!
 
+
 <3 Phalcon Team
