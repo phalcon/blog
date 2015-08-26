@@ -24,8 +24,6 @@ From 2.1.x onwards we are deprecating support for PHP 5.3. We highly encourage d
 Previously validations were implemented as follows:
 
 ```php
-<?php
-
 namespace Invo\Models;
 
 use Phalcon\Mvc\Model;
@@ -63,8 +61,6 @@ class Users extends Model
 Introducing [Phalcon\\Validation](https://docs.phalconphp.com/en/latest/reference/validation.html), you will need to change the above to:
 
 ```php
-<?php
-
 namespace Invo\Models;
 
 use Phalcon\Mvc\Model;
