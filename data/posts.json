@@ -693,10 +693,18 @@
     "link": ""
   },
   {
-    "title": "Phalcon 2.1 beta released",
+    "title": "Phalcon 2.1 beta 1 released",
     "slug": "phalcon-2-1-beta-released",
     "date": "2015-08-24",
     "tags": "php, phalcon, 2.1, phalcon2, release, 2.x",
     "link": ""
+  },
+  {
+    "title": "Phalcon 2.0.8 and 2.1 beta 2 released",
+    "slug": "phalcon-2-0-8-and-2-1-0-beta2-released",
+    "date": "2015-09-25",
+    "tags": "php, phalcon, 2.1, phalcon2, release, 2.x",
+    "link": ""
   }
 ]
+
