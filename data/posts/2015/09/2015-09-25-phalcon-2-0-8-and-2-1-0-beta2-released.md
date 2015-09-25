@@ -30,7 +30,7 @@ major release.
 - Added default header: `Content-Type: "application/json; charset=UTF-8"` in method `Phalcon\Http\Response::setJsonContent`
 - Loop structure in Volt now can be passed to macros and functions as `loop.self`
 
-Last month, important improvements to support PHP7 have been done by the [Zephir Team](https://github.com/phalcon/zephir), so we by the Zephir Team, so we expect to have a usable version of Phalcon for PHP7 soon.
+Last month, important improvements to support PHP7 have been done by the [Zephir Team](https://github.com/phalcon/zephir), so we expect to have a usable version of Phalcon for PHP7 soon.
 
 ### Update/Upgrade
 
