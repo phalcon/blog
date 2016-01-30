@@ -110,9 +110,9 @@ A behavior can respond to events produced by a model, our behavior `Blameable` i
 ```php
 <?php
 
-use Phalcon\Mvc\ModelInterface,
-    Phalcon\Mvc\Model\Behavior,
-    Phalcon\Mvc\Model\BehaviorInterface;
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\Model\Behavior;
+use Phalcon\Mvc\Model\BehaviorInterface;
 
 class Blameable extends Behavior implements BehaviorInterface
 {
@@ -123,7 +123,7 @@ class Blameable extends Behavior implements BehaviorInterface
      * @param string $eventType
      * @param Phalcon\Mvc\ModelInterface $model
      */
-    public function notify($eventType, $model)
+    public function notify($eventType, ModelInterface $model)
     {
         // ...
     }
@@ -139,7 +139,7 @@ It simply implements a method called "notify", this method receives two paramete
  * @param string $eventType
  * @param Phalcon\Mvc\ModelInterface $model
  */
-public function notify($eventType, $model)
+public function notify($eventType, ModelInterface $model)
 {
     if ($eventType == 'afterCreate') {
         //...
