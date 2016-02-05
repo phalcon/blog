@@ -1,13 +1,12 @@
-Phalcon 2.0.8 and 2.1 beta 2 released
-=====================================
+Phalcon 2.0.9 released
+======================
 
-We are excited to announce the immediate availability of Phalcon 2.0.8 and Phalcon 2.1.0 beta 2!
+We are excited to announce the immediate availability of Phalcon 2.0.9!
 
-This is the eighth maintenance release in the 2.0.x series. In regards to Phalcon 2.1,
-the second beta introduces bug fixes and new features intended to stabilize our next
-major release.
+This is the ninth maintenance release in the 2.0.x series, adding more fixes
+and improvements to make the most of Phalcon.
 
-### Changes in 2.0.8
+### Changes in 2.0.9
 
 - Added `Phalcon\Security\Random::base58` - to generate a random base58 string
 - Added `Phalcon\Logger\Adapter::isTransaction()` to check whether the logger is currently in transaction mode or not (Phalcon 1.3 behavior)
@@ -21,17 +20,6 @@ major release.
 - Fixed `Phalcon\Db\Dialect\Postgresql::getColumnDefinition` for `BIGINT` and `BOOLEAN` data types
 - Fixed `BOOLEAN` default value in `Phalcon\Db\Dialect\Postgresql`
 - Added `Phalcon\Validation\Validator\CreditCard` - validation credit card number using luhn algorithm
-
-### Changes in 2.1.0 beta 2
-
-- `Phalcon\Mvc\Model` now implements JsonSerializable making easy serialize model instances
-- When destroying a `Mvc\Model\Manager` object the PHQL cache is clean
-- Method `isSetOption` in `Phalcon\Validation\ValidatorInterface` marked as deprecated, please use `hasOption`
-- Added internal check "allowEmpty" before calling a validator. If it option is true and the value of empty, the validator is skipped
-- Added default header: `Content-Type: "application/json; charset=UTF-8"` in method `Phalcon\Http\Response::setJsonContent`
-- Loop structure in Volt now can be passed to macros and functions as `loop.self`
-
-Last month, important improvements to support PHP7 have been done by the [Zephir Team](https://github.com/phalcon/zephir), so we expect to have a usable version of Phalcon for PHP7 soon.
 
 ### Update/Upgrade
 
