@@ -710,14 +710,21 @@
     "title": "Phalcon 2.0.9 released",
     "slug": "phalcon-2-0-9-released",
     "date": "2015-11-23",
-    "tags": "php, phalcon, 2.1, phalcon2, release, 2.x",
+    "tags": "php, phalcon, phalcon2, release, 2.x",
     "link": ""
   },
   {
     "title": "Phalcon 2.0.10 released",
     "slug": "phalcon-2-0-10-released",
     "date": "2016-02-04",
-    "tags": "php, phalcon, 2.1, phalcon2, release, 2.x",
+    "tags": "php, phalcon, phalcon2, release, 2.x",
     "link": ""
-  }
+ },
+ {
+  "title": "Phalcon 2.1.0 RC1 released",
+  "slug": "phalcon-2-1-0-RC1-released",
+  "date": "2016-03-22",
+  "tags": "php, phalcon, 2.1, phalcon2, release, 2.1",
+  "link": ""
+ }
 ]
