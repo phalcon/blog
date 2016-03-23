@@ -5,7 +5,7 @@ We are excited to announce the immediate availability of Phalcon 2.1 RC 1!
 
 This version is our first [LTS](https://en.wikipedia.org/wiki/Long-term_support) version and it will be supported 3 years from its final release date. Also, this will be our last release candidate before the final version of Phalcon 2.1.
 
-Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon even a better framework.
+Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon even a better framework. Final version will be available in two weeks.
 
 **NOTE**: Some of these changes will break existing Phalcon 2.x applications. Please ensure that you have tested your application sufficiently before migrating your application to 2.1 for production purposes.
 
@@ -70,6 +70,17 @@ Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon 
 
 ### PHP 7 support
 
+Phalcon 2.1.x has beta PHP7 support, we expect to fix any blocking bug in the next two weeks before the final release. You can try Phalcon running on PHP7 by compiling from the 2.1.x branch using Zephir:
+
+```sh
+git clone http://github.com/phalcon/cphalcon
+cd cphalcon
+git checkout 2.1.x
+zephir build --backend=ZendEngine3
+```
+
+After this, you only have to add `extension=phalcon.so` to your `php.ini` file.
+
 ### New Package Infrastructure
 
 We would like to share with you, our community, our plans for moving forward with regards to packaging and distributing Phalcon.
@@ -96,7 +107,7 @@ For the time being, each distribution will be manually compiled by the Phalcon T
 
 This move will make Phalcon available to a much wider variety of Linux based operating systems and reduce the time needed to produce those packages.
 
-We will announce in our blog when this change will happen, so for the time being you can keep getting new versions as you have been in the past
+We will announce in our blog when this change will happen, so for the time being you can keep getting new versions as you have been in the past.
 
 ### Update/Upgrade
 
@@ -123,6 +134,5 @@ Note that running the installation script will replace any version of Phalcon in
 Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
 
 As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!
-
 
 <3 Phalcon Team
