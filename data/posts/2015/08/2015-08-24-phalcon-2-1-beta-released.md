@@ -75,20 +75,22 @@ class Users extends Model
         $validator = new Validation();
 
         $validator->add(
-            'email',
-            new EmailValidator()
+            'email', //your field name
+            new EmailValidator([
+                'model' => $this,
+                "message" => 'Please enter a correct email address'
+            ])
         );
 
         $validator->add(
             'username',
-            new UniquenessValidator(
-                [
-                    'message' => 'Sorry, That username is already taken',
-                ]
-            )
+            new UniquenessValidator([
+                'model' => $this,
+                'message' => 'Sorry, That username is already taken',
+            ])
         );
 
-        return $this->validate();
+        return $this->validate($validator);
     }
 }
 ```
