@@ -75,7 +75,7 @@ class Users extends Model
         $validator = new Validation();
 
         $validator->add(
-            'email', //your filed name
+            'email', //your field name
             new EmailValidator([
                 'model' => $this,
                 "message" => 'Please enter a correct email address'
