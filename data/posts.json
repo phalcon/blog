@@ -726,5 +726,12 @@
   "date": "2016-03-22",
   "tags": "php, phalcon, 2.1, phalcon2, release, 2.1",
   "link": ""
+ },
+ {
+  "title": "Phalcon 2.0.13 Maintenance Release",
+  "slug": "2016-05-23-maintenance-release-2-0-13",
+  "date": "2016-05-23",
+  "tags": "php, phalcon, 2.0.x, phalcon2, release",
+  "link": ""
  }
 ]
