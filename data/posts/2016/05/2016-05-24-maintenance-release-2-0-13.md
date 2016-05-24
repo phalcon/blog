@@ -14,11 +14,11 @@ This maintenance release number of bug fixes (outlined below). We had 2 more min
 - Fixed `Phalcon\Mvc\View\Engine\Volt::callMacro` bug. Now it's correctly calling `call_user_func_array` instead of `call_user_func`
 - Fixed undefined method call `Phalcon\Mvc\Collection\Manager::getConnectionService`. Now `Phalcon\Mvc\Collection::getConnectionService` works correctly in according to documentation
 
-# [2.0.12](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.12) (2016-05-16)
+### [2.0.12](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.12) (2016-05-16)
 - Fixed regression changes for `Phalcon\Mvc\View\Engine\Volt::callMacro` [GI:11745]
 - Fixed the argument type of `Phalcon\Flash::success` [GPR:11764]
 
-# [2.0.13](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.13) (2016-05-19)
+### [2.0.13](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.13) (2016-05-19)
 - Restored `Phalcon\Text::camelize` behavior [GI:11767]
 - Used Zephir v0.9.2
 
