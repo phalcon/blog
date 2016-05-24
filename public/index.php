@@ -23,7 +23,9 @@ error_reporting(E_ALL);
 try {
     require_once '../library/Kitsune/Bootstrap.php';
     $di = new PhDI();
-    echo Bootstrap::run($di, []);
+    $bootstrap = new Bootstrap();
+    echo $bootstrap->run($di, []);
+
 } catch (\Exception $e) {
     if ($di->has('logger')) {
         $logger = $di->getShared('logger');

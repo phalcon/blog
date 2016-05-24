@@ -59,7 +59,7 @@ use Kitsune\Utils;
  */
 class Bootstrap
 {
-    public static function run(DiInterface $di, array $options = [])
+    public function run(DiInterface $di, array $options = [])
     {
         $memoryUsage = memory_get_usage();
         $currentTime = microtime(true);
