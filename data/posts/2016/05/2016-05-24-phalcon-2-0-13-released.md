@@ -1,9 +1,9 @@
-Phalcon 2.0.13 Maintenance Release
-==================================
+Phalcon 2.0.13 released
+=======================
 
 We are excited to announce the immediate availability of Phalcon 2.0.13!
 
-This maintenance release number of bug fixes (outlined below). We had 2 more minor releases since our last blog post, and the changelog for those is listed below.
+This maintenance release number of bug fixes (outlined below). We had 2 more minor releases providing minor fixes since our last blog post, and the CHANGELOG for those is listed below:
 
 ### [2.0.11](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.11) (2016-05-04)
 - Fixed Model magic `set` functionality to maintain variable visibility and utilize setter methods.[GI:11286]
@@ -20,16 +20,15 @@ This maintenance release number of bug fixes (outlined below). We had 2 more min
 
 ### [2.0.13](https://github.com/phalcon/cphalcon/releases/tag/phalcon-v2.0.13) (2016-05-19)
 - Restored `Phalcon\Text::camelize` behavior [GI:11767]
-- Used Zephir v0.9.2
+- Used Zephir v0.9.2 to maintain backwards compatibility
 
 ### Update/Upgrade
 
-Phalcon 2.0.10 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
+Phalcon 2.0.13 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
 cd cphalcon/build
-git checkout master
 sudo ./install
 ```
 
@@ -38,13 +37,23 @@ If you have Zephir installed:
 ```sh
 git clone http://github.com/phalcon/cphalcon
 cd cphalcon
-git checkout master
 zephir build
 ```
 
 Note that running the installation script will replace any version of Phalcon installed before.
 
 Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+
+### Phalcon 2.1.x
+
+As you know, we had plans to release 2.1.0 some weeks ago but we faced some blocking bugs running Phalcon in PHP7 that delayed the launch. These bugs have been fixed here and there, currently most bugs are passing on Travis and we're achieving the expected stability. We're tackling the latest bugs so we expect to release it soon. If you want to try it out install it from the 2.1.x branch:
+
+```sh
+git clone http://github.com/phalcon/cphalcon
+cd cphalcon
+git checkout 2.1.x
+zephir build --backend=ZendEngine3
+```
 
 As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!
 
