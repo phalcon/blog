@@ -46,7 +46,7 @@ Windows DLLs are available in the [download page](https://phalconphp.com/en/down
 
 ### Phalcon 2.1.x
 
-As you know, we had plans to release 2.1.0 some weeks ago but we faced some blocking bugs running Phalcon in PHP7 that delayed the launch. These bugs have been fixed here and there, currently most bugs are passing on Travis and we're achieving the expected stability. We're tackling the latest bugs so we expect to release it soon. If you want to try it out install it from the 2.1.x branch:
+As you know, we had plans to release 2.1.0 some weeks ago but we faced some blocking bugs running Phalcon in PHP7 that delayed the launch. Most of these bugs have been fixed and the tests are passing in Travis. We have a few more bugs to address, so we expect to release it soon. If you want to try it out install it from the 2.1.x branch:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
