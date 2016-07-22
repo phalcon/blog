@@ -9,10 +9,11 @@ The last few months, we have been working hard to push 2.1 out, which contains s
 For any future Phalcon releases we are adopting SemVer (http://semver.org). In short:
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
-> MAJOR version when you make incompatible API changes,
-> MINOR version when you add functionality in a backwards-compatible manner, and
-> PATCH version when you make backwards-compatible bug fixes.
-> Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+>
+> * MAJOR version when you make incompatible API changes,
+> * MINOR version when you add functionality in a backwards-compatible manner, and
+> * PATCH version when you make backwards-compatible bug fixes.
+> * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 Since 2.1 has many API changes, we decided that it would be best to not release it as is and start using [SemVer](http://semver.org) to better communicate with the community and keep track of our releases.
 
