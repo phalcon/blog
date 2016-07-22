@@ -423,7 +423,12 @@ public function headerAction()
 	 
 #### LOADER
 ##### Removed support for prefixes strategy in `Phalcon\Loader`
-> **BACKWARDS INCOMPATIBLE**: 
+> **BACKWARDS INCOMPATIBLE**: In Phalcon 2, you could load classes using a specific prefix. This method was very popular before namespaces were introduced. For instance:
+> ```
+> setPrefix('Shield_')
+> load('Sword'); // will load `Shield_Sword`
+>```
+> This functionality is no longer supported
 
 ##### Added '\Phalcon\Loader::registerFiles' and '\Phalcon\Loader::getFiles'. 
 `registerFiles` registers files that are "non-classes" hence need a "require". This is very useful for including files that only have functions. `getFiles` returns the files currently registered in the autoloader
@@ -479,7 +484,7 @@ You can pass arguments for function defined in `Phalcon\Acl\AdapterInterface:all
 #### ROUTES
 ##### Placeholders `:controller` and `:action` in `Mvc\Router` now defaults to `/([\\w0-9\\_\\-]+)` instead of `/([\\a-zA-Z0-9\\_\\-]+)`
 ##### Modifier `#u` (PCRE_UTF8) is now default in regex based routes in `Mvc\Router`
-##### `Mvc\Router\Route` now escapes characters such as . or + to avoid unexpected behaviors
+##### `Mvc\Router\Route` now escapes characters such as `.` or `+` to avoid unexpected behaviors
 ##### Routes now can have an associated callback that can override the default dispatcher + view behavior
 ##### Fixed the use of the annotation router with namespaced controllers
 ##### Fixed matching host name by `Phalcon\Mvc\Route::handle` when using port on current host name [GI:2573]
