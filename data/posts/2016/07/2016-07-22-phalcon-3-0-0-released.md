@@ -122,8 +122,8 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 - Removed methods `setMode()`, `getMode()`, `getAvailableModes()` in `Phalcon\CryptInterface` (no longer apply with openssl)
 
 > **BACKWARDS INCOMPATIBLE**: Backwards compatibility from openssl to mcrypt is problematic if not impossible. We had to remove several methods that are no longer applicable. Additionally the rijndael-256 from mcrypt is no longer valid in openssl. The default encryption algorithm is AES-256-CFB
-
-If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore `openssl`. Failure to do so will result in loss of data. A port is available in the incubator. Please see the code [here](https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy)
+> 
+> If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore `openssl`. **Failure to do so will result in loss of data**. A port is available in the incubator. Please see the code [here](https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy)
 
 #### DI
 - `Phalcon\Di` is now bound to services closures allowing use `Phalcon\Di` as `$this` to access services within them. Additionally, closures used as handlers in` Mvc\Micro` are now bound to the `$app` instance
