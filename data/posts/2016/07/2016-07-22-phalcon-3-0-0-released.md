@@ -184,6 +184,17 @@ $foo = function() {
 ```
 ##### If an object is returned after firing the event `beforeServiceResolve` in `Phalcon\Di` this overrides the default service localization process
 
+#### DATABASE
+##### Dropped support of Oracle [GI:12008][GPR:12009]
+Support of Oracle has been dropped from the Phalcon Core for the following reasons:
+* The lack of Oracle maintainer
+* The lack of relevant experience among the Phalcon Core Team
+* Weak support or interest from the community
+* Incomplete implementation that creates only the illusion of support for Oracle
+* Some issues hampering for the support of PHP 7 in Phalcon
+
+Oracle components will be ported to the Phalcon Incubator. If the adapter receives support and enhancements from the community, we will consider making it part of the core again.
+
 #### DISPATCHER
 ##### Added method `getActionSuffix()` in `Phalcon\DispatcherInterface`
 ```php
@@ -458,9 +469,15 @@ $customers = Customers::find();
 echo json_encode($customers); // {['id':1,...],['id':2,...], ...}
 ```
 ##### `Phalcon\Mvc\Model\Criteria::getOrder` renamed to `Phalcon\Mvc\Model\Criteria::getOrderBy`
+
+> **BACKWARDS INCOMPATIBLE**: Any references to `getOrder` will stop working. You will need to rename the function to `getOrderBy`
+
 ##### Added method `getOption()` in `Phalcon\Mvc\Model\RelationInterface`
+
 ##### Added `OR` operator for `Phalcon\Mvc\Model\Query\Builder` methods: `betweenWhere`, `notBetweenWhere`, `inWhere` and `notInWhere`
+
 ##### Added new getter `Phalcon\Mvc\Model\Query\Builder::getJoins()` - to get join parts from query builder
+
 ##### When destructing a `Mvc\Model\Manager` PHQL cache is cleaned
 ##### Added FULLTEXT index type to `Phalcon\Db\Adapter\Pdo\Mysql`
 ##### Fixed `afterFetch` event not being sent to behaviors
