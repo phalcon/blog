@@ -74,7 +74,7 @@ $this->assertEquals($jobId, $job->getId());
 &bull; The cache backend adapters now return boolean when calling `Phalcon\Cache\BackendInterface::save`
 ```php
 // Returns true/false
-$result = $backendCache->save(‘my_key’, $content);
+$result = $backendCache->save('my_key', $content);
 ```
 &bull; Added  `Phalcon\Cache\Frontend\Msgpack`. 
 [MsgPack](http://msgpack.org) is a new frontend cache. It is an efficient binary serialization format, which allows exchanging data among multiple languages like JSON. 
@@ -121,9 +121,9 @@ foreach ($robots as $robot) {
 
 &bull; Added `Phalcon\Cache\Backend\Memcache::addServers` to enable pool of servers for memcache
 ```php
-$memcache->addServers(‘10.4.6.10’, 11000, true);
-$memcache->addServers(‘10.4.6.11’, 11000, true);
-$memcache->addServers(‘10.4.6.12’, 11000, true);
+$memcache->addServers('10.4.6.10', 11000, true);
+$memcache->addServers('10.4.6.11', 11000, true);
+$memcache->addServers('10.4.6.12', 11000, true);
 ```
 
 #### CRYPT
@@ -207,7 +207,7 @@ Oracle components will be ported to the Phalcon Incubator. If the adapter receiv
 public function testAction() 
 {
     $dispatcher = $this->dispatcher;
-    $dispatcher->setActionSuffix(‘my’);
+    $dispatcher->setActionSuffix('my');
     var_dump($dispatcher->getActionSuffix()); // my
 }
 ```
@@ -216,7 +216,7 @@ public function testAction()
 public function testAction() 
 {
     $dispatcher = $this->dispatcher;
-    if (true === $dispatcher->hasParam(‘foo’)) {
+    if (true === $dispatcher->hasParam('foo')) {
         // Parameter exists
     }
 }
@@ -257,7 +257,7 @@ public function updateAction()
     /**
      * Update a document
      */
-    $robot = Robots::findFirst([‘id’ => 1]);
+    $robot = Robots::findFirst(['id' => 1]);
     $robot->name = 'MyRobot';
     $robot->type = ''Droid';
     $robot->update();
@@ -274,7 +274,7 @@ Old way:
 ```php
 public function cancelAction()
 {
-    if (true === $this->di->get(‘eventsManager’)->getCancelable()) {
+    if (true === $this->di->get('eventsManager')->getCancelable()) {
         // do something here
     }
 }
@@ -283,7 +283,7 @@ New way:
 ```php
 public function cancelAction()
 {
-    if (true === $this->di->get(‘eventsManager’)->isCancelable()) {
+    if (true === $this->di->get('eventsManager')->isCancelable()) {
         // do something here
     }
 }
@@ -295,14 +295,14 @@ Old way:
 ```php
 public function destroyAction()
 {
-    $this->di->get(‘eventsManager’)->dettachAll()
+    $this->di->get('eventsManager')->dettachAll()
 }
 ```
 New way:
 ```php
 public function destroyAction()
 {
-    $this->di->get(‘eventsManager’)->detachAll()
+    $this->di->get('eventsManager')->detachAll()
 }
 ```
 
@@ -349,7 +349,7 @@ use Phalcon\Http\Response;
 
 $data     = 'Phlying with Phalcon';
 $response = new Response();
-$response->setContentType(‘application/json;’);
+$response->setContentType('application/json;');
 $response->setJsonContent($data)
 $response->send();
 ```
@@ -697,17 +697,17 @@ class Users extends Model
 
 Old way:
 ```php
-if (true === $validation->isSetOption(‘my-option’)) {
+if (true === $validation->isSetOption('my-option')) {
     //
 }
 ```
 New way:
 ```php
-if (true === $validation->hasOption(‘my-option’)) {
+if (true === $validation->hasOption('my-option')) {
     //
 }
 ```
-&bull; Added internal check "allowEmpty" before calling a validator. If it option is true and the value of empty, the validator is skipped
+&bull; Added internal check `allowEmpty` before calling a validator. If it option is true and the value of empty, the validator is skipped
 
 &bull; Added option to validate multiple fields with one validator (fix uniqueness validator as well), also removes unnecessary `model => $this` in `Phalcon\Validation\Validator\Uniqueness`.
 
