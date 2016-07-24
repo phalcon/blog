@@ -58,7 +58,8 @@ Return the delayed job with the shortest delay left.
 $this->client->put('testPutInTube', ['delay' => 2]);
 $job = $this->client->peekDelayed();
 ```
-- Added `\Phalcon\Queue\Beanstalk::jobPeek()`. Returns the next available job.
+Added `\Phalcon\Queue\Beanstalk::jobPeek()`. 
+Returns the next available job.
 ```php
 $this->client->choose(self::TUBE_NAME_1);
 $jobId = $this->client->put('testPutInTube');
@@ -469,26 +470,32 @@ $customers = Customers::find();
 echo json_encode($customers); // {['id':1,...],['id':2,...], ...}
 ```
 ##### `Phalcon\Mvc\Model\Criteria::getOrder` renamed to `Phalcon\Mvc\Model\Criteria::getOrderBy`
-
 > **BACKWARDS INCOMPATIBLE**: Any references to `getOrder` will stop working. You will need to rename the function to `getOrderBy`
 
 ##### Added method `getOption()` in `Phalcon\Mvc\Model\RelationInterface`
+Returns an option by the specified name. If the option does not exist null is returned
 
 ##### Added `OR` operator for `Phalcon\Mvc\Model\Query\Builder` methods: `betweenWhere`, `notBetweenWhere`, `inWhere` and `notInWhere`
+```php
+$builder->betweenWhere('price', 100.25, 200.50);     // Appends a BETWEEN condition
+$builder->notBetweenWhere('price', 100.25, 200.50);  // Appends a NOT BETWEEN condition
+$builder->inWhere('id', [1, 2, 3]);                  // Appends an IN condition
+$builder->notInWhere('id', [1, 2, 3]);               // Appends an NOT IN condition
+```
 
-##### Added new getter `Phalcon\Mvc\Model\Query\Builder::getJoins()` - to get join parts from query builder
+##### Added new getter `Phalcon\Mvc\Model\Query\Builder::getJoins()`
+Returns the join parts from query builder
 
 ##### When destructing a `Mvc\Model\Manager` PHQL cache is cleaned
 ##### Added FULLTEXT index type to `Phalcon\Db\Adapter\Pdo\Mysql`
 ##### Fixed `afterFetch` event not being sent to behaviors
 ##### Fixed issue with `Model::__set` that was bypassing setters [GI:11286]
-##### Fixed issue with `Model::__set` that was setting hidden attributes directly when setters are not declared [GI:11286]
+##### Fixed issue with `Model::__set` setting hidden attributes directly when setters are not declared [GI:11286]
 ##### `Phalcon\Mvc\Model\Manager::load()` now can load models from aliased namespaces
 ##### `Phalcon\Mvc\Model\Transaction\Manager` now correctly keeps account of transactions [GI:11554]
 ##### `Phalcon\Db\Dialect\Sqlite` now maps additional column types to SQLite columns equivalents.
-##### Fixed `Phalcon\Db\Dialect\Oracle::prepareTable()` to correctly generate SQL for table aliases [GI:11799]
-##### Fixed `Phalcon\Mvc\Model\Resultset::update()` - removed endless loop queries
-##### Fixed `Phalcon\Mvc\Model\Manager::_mergeFindParameters` - Merging conditions
+##### Fixed `Phalcon\Mvc\Model\Resultset::update()` - Removed endless loop queries
+##### Fixed `Phalcon\Mvc\Model\Manager::_mergeFindParameters` - Merging conditions fix
 
 #### ROLES
 ##### Added `Phalcon\Acl\RoleAware` and `Phalcon\Acl\ResourceAware` Interfaces.
@@ -497,15 +504,44 @@ Now you can pass objects to `Phalcon\Acl\AdapterInterface::isAllowed` as `roleNa
 It will be called when using `Phalcon\Acl\AdapterInterface::isAllowed`
 ##### `Phalcon\Acl\AdapterInterface::isAllowed` have 4th argument - parameters.
 You can pass arguments for function defined in `Phalcon\Acl\AdapterInterface:allow` or `Phalcon\Acl\AdapterInterface::deny` as associative array where key is argument name
+##### Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [GI:12004][GPR:12006]
+```php
+$acl = new Memory();
+
+$acl->setDefaultAction(Acl::DENY);
+
+$roleGuest      = new Role("guest");
+$roleUser       = new Role("user");
+$roleAdmin      = new Role("admin");
+$roleSuperAdmin = new Role("superadmin");
+
+$acl->addRole($roleGuest);
+$acl->addRole($roleUser, $roleGuest);
+$acl->addRole($roleAdmin, $roleUser);
+$acl->addRole($roleSuperAdmin, $roleAdmin);
+
+$acl->addResource("payment", ["paypal", "facebook",]);
+
+$acl->allow($roleGuest->getName(), "payment", "paypal");
+$acl->allow($roleGuest->getName(), "payment", "facebook");
+
+$acl->allow($roleUser->getName(), "payment", "*");
+
+echo $acl->isAllowed($roleUser->getName(), "payment", "notSet");  // true
+echo $acl->isAllowed($roleUser->getName(), "payment", "*");       // true
+echo $acl->isAllowed($roleAdmin->getName(), "payment", "notSet"); // true
+echo $acl->isAllowed($roleAdmin->getName(), "payment", "*");      // true
+```
 
 #### ROUTES
+##### Routes now can have an associated callback that can override the default dispatcher + view behavior
+##### Amended `Phalcon\Mvc\RouterInterface` and `Phalcon\Mvc\Router`. Added missed `addPurge`, `addTrace` and `addConnect` methods
+Added `addConnect` for the `CONNECT` HTTP method, `addPurge` for the `PURGE` HTTP method and `addTrace` for the `TRACE` HTTP method
 ##### Placeholders `:controller` and `:action` in `Mvc\Router` now defaults to `/([\\w0-9\\_\\-]+)` instead of `/([\\a-zA-Z0-9\\_\\-]+)`
 ##### Modifier `#u` (PCRE_UTF8) is now default in regex based routes in `Mvc\Router`
 ##### `Mvc\Router\Route` now escapes characters such as `.` or `+` to avoid unexpected behaviors
-##### Routes now can have an associated callback that can override the default dispatcher + view behavior
 ##### Fixed the use of the annotation router with namespaced controllers
 ##### Fixed matching host name by `Phalcon\Mvc\Route::handle` when using port on current host name [GI:2573]
-##### Amended `Phalcon\Mvc\RouterInterface` and `Phalcon\Mvc\Router`. Added missed `addPurge`, `addTrace` and `addConnect` methods
 
 #### SECURITY
 ##### Added `Phalcon\Security::hasLibreSsl` and `Phalcon\Security::getSslVersionNumber`
@@ -524,6 +560,14 @@ You can pass arguments for function defined in `Phalcon\Acl\AdapterInterface:all
 
 #### TEXT
 ##### Added ability to use custom delimiter for `Phalcon\Text::camelize` and `Phalcon\Text::uncamelize` [GI:10396]
+```php
+use Phalcon\Text;
+        
+public function displayAction()
+{
+    echo Text::camelize('c+a+m+e+l+i+z+e', '+'); // CAMELIZE
+}
+```
 ##### Fixed `Phalcon\Text:dynamic()` to allow custom separator [GI:11215]
 
 #### VIEW
