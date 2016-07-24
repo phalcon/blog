@@ -140,7 +140,7 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 #### DI
 &bull; `Phalcon\Di` is now bound to services closures allowing use `Phalcon\Di` as `$this` to access services within them. Additionally, closures used as handlers in` Mvc\Micro` are now bound to the `$app` instance
 
-Old way:
+**Old way**:
 ```php
 $diContainer->setShared(
     'modelsCache',
@@ -158,7 +158,7 @@ $diContainer->setShared(
     }
 );
 ```
-New way:
+**New way**:
 ```php
 $diContainer->setShared(
     'modelsCache',
@@ -270,7 +270,7 @@ public function updateAction()
 &bull; `Phalcon\Events\Event::getCancelable` renamed to `Phalcon\Events\Event::isCancelable`
 > **BACKWARDS INCOMPATIBLE**: Any references to `getCancelable` will stop working. You will need to rename the function to `isCancelable`
 
-Old way:
+**Old way**:
 ```php
 public function cancelAction()
 {
@@ -279,7 +279,7 @@ public function cancelAction()
     }
 }
 ```
-New way:
+**New way**:
 ```php
 public function cancelAction()
 {
@@ -291,14 +291,14 @@ public function cancelAction()
 &bull; Removed `Phalcon\Events\Manager::dettachAll` in favor of `Phalcon\Events\Manager::detachAll`
 > **BACKWARDS INCOMPATIBLE**: Any references to `dettachAll` will stop working. You will need to rename the function to `detachAll`
 
-Old way:
+**Old way**:
 ```php
 public function destroyAction()
 {
     $this->di->get('eventsManager')->dettachAll()
 }
 ```
-New way:
+**New way**:
 ```php
 public function destroyAction()
 {
@@ -319,7 +319,7 @@ echo $flash->output();
 &bull; Fixed `Phalcon\Session\Flash::getMessages`. 
 Now it returns an empty array in case of non existent message type request [GI:11941]
 
-Old result:
+**Old result**:
 ```php
 $flash = new \Phalcon\Session\Flash();
 $flash->error('Error Message');
@@ -330,7 +330,7 @@ array (size=1)
     array (size=1)
       0 => string 'Error Message' (length=13)
 ```
-New result:
+**New result**:
 ```php
 $flash = new \Phalcon\Session\Flash();
 $flash->error('Error Message');
@@ -343,7 +343,7 @@ array (size=0)
 #### HTTP REQUEST/RESPONSE
 &bull; Added default header: `Content-Type: "application/json; charset=UTF-8"` in method `Phalcon\Http\Response::setJsonContent`
 
-Old way:
+**Old way**:
 ```php
 use Phalcon\Http\Response;
 
@@ -353,7 +353,7 @@ $response->setContentType('application/json;');
 $response->setJsonContent($data)
 $response->send();
 ```
-New way:
+**New way**:
 ```php
 $data     = 'Phlying with Phalcon';
 $response = new Response();
@@ -376,7 +376,7 @@ Now it always returns the hostname or empty an string. Optionally validates and 
 Left the originals functions as aliases and marked them deprecated. 
 > **CAUTION**: Any references to `isSoapRequest` need to be renamed to `isSoap`. Any references to `isSecureRequest` need to be renamed to `isSecure`.
 
-Old way:
+**Old way**:
 ```php
 public function testAction()
 {
@@ -389,7 +389,7 @@ public function testAction()
     }
 }
 ```
-New way:
+**New way**:
 ```php
 public function testAction()
 {
@@ -622,7 +622,7 @@ public function displayAction()
 &bull; `Phalcon\Mvc\Model\Validation` is now deprecated in favor of `Phalcon\Validation`
 The functionality of both components is merged into one, allowing us to reduce the codebase while offering the same functionality as before.
 
-Old way:
+**Old way**:
 ```php
 namespace Invo\Models;
 
@@ -695,13 +695,13 @@ class Users extends Model
 &bull; Method `isSetOption` in `Phalcon\Validation\ValidatorInterface` marked as deprecated, please use `hasOption`
 > **CAUTION**: Any references to `isSetOption` need to be renamed to `hasOption`
 
-Old way:
+**Old way**:
 ```php
 if (true === $validation->isSetOption('my-option')) {
     //
 }
 ```
-New way:
+**New way**:
 ```php
 if (true === $validation->hasOption('my-option')) {
     //
