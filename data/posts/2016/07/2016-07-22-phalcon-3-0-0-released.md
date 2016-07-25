@@ -889,7 +889,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * Tecno Soft Consultoría Informática, SL
 * Layer Seven Solutions INC
 * PHP Wisdom Ltd
-* Дмитрий Базильский
+* Dmitri Bazilski
 * Kamil Podkowka
 * Chen Shih Wei
 * Thomas Noack
@@ -925,7 +925,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * Adrian Bobowicz
 * Jegor Levkovskiy
 * Eugene Tsura
-* Ярослава Крутских
+* Yaroslava Krutskikh
 * Hugo Casanova
 * Gustavo Miranda
 * Radoslav Kirilov
@@ -935,7 +935,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * Hesam Bahrami Chahardah Cheriki
 * Ernesto Cánovas Conesa
 * Daniel Lusignan
-* Стадник Василий
+* Stadnik Vasili
 * Mekan Bashimov
 
 ### Conclusion
