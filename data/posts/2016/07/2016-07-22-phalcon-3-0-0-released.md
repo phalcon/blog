@@ -1,7 +1,7 @@
-Phalcon 3.0.0 released
-=======================
+Phalcon 3.0.0 final (LTS) released
+==================================
 
-The Phalcon team is excited to share some news with our community!
+The Phalcon team is very excited to share some news with our community!
 
 The last few months, we have been working hard to push 2.1 out, which contains significant enhancements as well as some API changes that require attention so as not to break compatibility with your application. On top of that we have been working in making Zephir PHP7 compatible so that you can enjoy Phalcon in your PHP7 application. Some news first though:
 
@@ -800,17 +800,154 @@ $validator->add(
 
 &bull; Fixed `Phalcon\Config::merge` for working with php7
 
+### PHP7
+Phalcon 3.0 supports PHP7, we'll focus the development of the framework to improve the compatibility and take advantage of the features and speed present in this version of PHP. You can install the framework in php7 using the usual installation instructions.
+
+### Support
+Phalcon 3.0 Long Term Support (LTS) version is out, and it’s packed with new features to help you better create web applications with PHP. This version of the framework will be maintained for 3 years from now.
+
+### Acknowledgments
+We want to greatly thank everyone who has contributed to accomplish and achieve the completion of this release. Special thanks to our friends around the world that have made possible this release:
+
+* [Serghei Iakovlev](https://github.com/sergeyklay)
+* [Nikolaos Dimopoulos](https://github.com/niden)
+* [Sid Roberts](https://github.com/SidRoberts)
+* [Wojciech Ślawski](https://github.com/Jurigag)
+* [Steffen Butzer](https://github.com/steffengy)
+* [Dmitry Patsura](https://github.com/ovr)
+* [Rian Orie](https://github.com/rianorie)
+* [Mark Johnson](https://github.com/virgofx)
+* [Clay Garland](http://www.agencymatrix.com/)
+* [Radek Crlík](https://github.com/CrNix)
+* [Rudi Servo](https://github.com/rudiservo)
+* [Bas Stottelaar](https://github.com/basilfx)
+* [Renzo Peralta](https://github.com/dred86)
+* [Mitchell Macpherson](https://github.com/phalcon/cphalcon/commit/5dd068d03fbe8cbea9f5f244672b93de1421c4f5)
+* [Hina Chen](https://github.com/hinablue)
+* [JIM](https://github.com/tembem)
+* [Mariusz Łączak](https://github.com/mruz)
+* [Jj](https://github.com/jdrmar)
+* [Rahul Datta Roy](https://github.com/rahuldroy)
+* [Cameron Hall](https://github.com/CameronHall)
+* [Clément Hallet](https://github.com/challet)
+* [Alexey Bobkov](https://github.com/alexprowars)
+* [Vladimir Metelitsa](https://github.com/Green-Cat)
+* [Aleksandr Besedin](https://github.com/phalcon/cphalcon/commit/4d79fdd63e2229311f8cafdbcedf5b64bb96e71c)
+* [Skydev0h](https://github.com/Skydev0h)
+* [Newbas](https://github.com/Newbas)
+* [Christopher CHEN](https://github.com/Fishdrowned)
+* [Alex Komrakov](https://github.com/AlexKomrakov)
+* [Dan](https://github.com/googlle)
+* [Marcin Butlak](https://github.com/makerlabs)
+* [Aaron Imming](https://github.com/aaronimming)
+* [Ragnis Armus](https://github.com/Ragnis)
+* [Studentsov](https://github.com/Studentsov)
+* [Bellardia](https://github.com/Bellardia)
+* [Julian Molina](https://github.com/phalcondroid)
+* [Dmitry Korolev](https://github.com/Chameleon-m)
+* [certainlysylvia](https://github.com/certainlysylvia)
+* [Jaskaran Singh](https://github.com/jaskaransingh156)
+* [Gustavo Verzola](https://github.com/verzola)
+* [Erik Wiesenthal](https://github.com/Surt)
+* [Karolis Mačiulskis](https://github.com/DestinyMKas)
+* [tmihalik](https://github.com/tmihalik)
+* [Rob](https://github.com/rkeplin)
+* [dzubchik](https://github.com/dzubchik)
+* [Brian Moore](https://github.com/bmoore)
+* [Przemysław Lazarek](https://github.com/Daredzik)
+* [acwtools](https://github.com/acwtools)
+* [nsossonko](https://github.com/nsossonko)
+* [Takuya Arita](https://github.com/ariarijp)
+* [Matthias von Bargen](https://github.com/mattvb91)
+* [Renato Montagna Junior](https://github.com/renatomjr)
+* [Ryo Moriwaki](https://github.com/ryomo)
+* [ifsnow](https://github.com/ifsnow)
+* [Zhao Yi](https://github.com/zhao5908)
+* [phecho](https://github.com/phecho)
+* [Decent Woo](https://github.com/mr5)
+* [Dreamszhu](https://github.com/dreamsxin)
+* [Eugene Smirnov](https://github.com/ashpumpkin)
+* [mich-grodno](https://github.com/mich-grodno)
+* [Alex Barinov](https://github.com/AlexDRiVER)
+* [Kostya Kufta](https://github.com/yankos)
+* [Nochum Sossonko](https://github.com/phalcon/cphalcon/commit/cd1152a6ac1f827d0109003e38104a96896c26e2)
+* [Ivan Guillen](https://github.com/zeopix)
+* [Stanislav Kiryukhin](https://github.com/KorsaR-ZN)
+* [Patrick Zippenfenig](https://github.com/patrick-zippenfenig)
+* [temuri416](https://github.com/temuri416)
+* [Yajie Zhu](https://github.com/snowair)
+* [michanismus](https://github.com/michanismus)
+* [Caio Almeida](https://github.com/caiofralmeida)
+* [jimjim2a](https://github.com/jimjim2a)
+* [Olivier Monaco](https://github.com/olivier-monaco)
+* [Alex Kalmikov](https://github.com/ph55)
+* [Olivier.Garbé](https://github.com/ogarbe)
+
+* Agency Matrix
+* Cazamba Serviços de Internet Ltda
+* AUMIX Networks
+* Tecno Soft Consultoría Informática, SL
+* Layer Seven Solutions INC
+* PHP Wisdom Ltd
+* Дмитрий Базильский
+* Kamil Podkowka
+* Chen Shih Wei
+* Thomas Noack
+* Jeroen Evers
+* Vladimir Merkushev
+* Oscar Candela Vera
+* Sebastian Machuca Arias
+* Rene Bravo
+* Ilya Slabukarau
+* Kamol Trade
+* Loris Luise
+* Karolis Mačiulskis
+* Julian Claus
+* Nikola Tesic
+* Daniel Martín
+* Matej Bádal
+* Daniel Martín Spiridione
+* Matej Bádal
+* Arturo Bernal Mayordomo
+* Christopher Söllinger
+* Giorgio Balestrieri
+* Oleg Lemeshenko
+* Hristomir Kotzev
+* Boris Delev
+* Takahashi Kotaro
+* Dave Turcotte
+* Khanh Tran
+* Martin Jentzsch
+* Frank Vlatten
+* Vicki Dahl Algot
+* 川合 亮
+* Larry Dennison
+* Adrian Bobowicz
+* Jegor Levkovskiy
+* Eugene Tsura
+* Ярослава Крутских
+* Hugo Casanova
+* Gustavo Miranda
+* Radoslav Kirilov
+* Callum Hopkins
+* Anthony Clarke
+* Michael Bergman
+* Hesam Bahrami Chahardah Cheriki
+* Ernesto Cánovas Conesa
+* Daniel Lusignan
+* Стадник Василий
+* Mekan Bashimov
+
 ### Conclusion
 Thank you to everyone
 
 ### Installation
-If you want to try it out install it from the 2.1.x branch:
+You can install Phalcon 3.0 for either PHP 5.5/5.6/7.0 using the following instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
-cd cphalcon
-git checkout 2.1.x
-zephir build --backend=ZendEngine3
+git clone --depth=5 http://github.com/phalcon/cphalcon
+cd cphalcon/build
+sudo ./install
 ```
 
 As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!
