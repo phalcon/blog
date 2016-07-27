@@ -519,10 +519,45 @@ Returns the join parts from query builder
 
 #### ROLES
 &bull; Added `Phalcon\Acl\RoleAware` and `Phalcon\Acl\ResourceAware` Interfaces. Now you can pass objects to `Phalcon\Acl\AdapterInterface::isAllowed` as `roleName` and `resourceName`, also they will be automatically passed to function defined in `Phalcon\Acl\AdapterInterface::allow` or `Phalcon\Acl\AdapterInterface::deny` by type
+```php
+use UserRole;       // Class implementing RoleAware interface
+use ModelResource;  // Class implementing ResourceAware interface
+
+// Set access level for role into resources
+$acl->allow('Guests', 'Customers', 'search');
+$acl->allow('Guests', 'Customers', 'create');
+$acl->deny('Guests', 'Customers', 'update');
+
+// Create our objects providing roleName and resourceName
+$customer     = new ModelResource(1, 'Customers', 2);
+$designer     = new UserRole(1, 'Designers');
+$guest        = new UserRole(2, 'Guests');
+$anotherGuest = new UserRole(3, 'Guests');
+
+// Check whether our user objects have access to the operation on model object
+$acl->isAllowed($designer, $customer, 'search')     // Returns false
+$acl->isAllowed($guest, $customer, 'search')        // Returns true
+$acl->isAllowed($anotherGuest, $customer, 'search') // Returns true
+```
 
 &bull; `Phalcon\Acl\AdapterInterface::allow` and `Phalcon\Acl\AdapterInterface::deny` have 4th argument - function. It will be called when using `Phalcon\Acl\AdapterInterface::isAllowed`
 
-&bull; `Phalcon\Acl\AdapterInterface::isAllowed` have 4th argument - parameters. You can pass arguments for function defined in `Phalcon\Acl\AdapterInterface:allow` or `Phalcon\Acl\AdapterInterface::deny` as associative array where key is argument name
+&bull; `Phalcon\Acl\AdapterInterface::isAllowed` have 4th argument - parameters. You can pass arguments for a function defined in `Phalcon\Acl\AdapterInterface:allow` or `Phalcon\Acl\AdapterInterface::deny` as associative array where key is argument name
+```php
+// Set access level for role into resources with custom function
+$acl->allow(
+    'Guests', 
+    'Customers', 
+    'search',
+    function ($a) {
+        return $a % 2 == 0;
+    }
+);
+
+// Check whether role has access to the operation with custom function
+$acl->isAllowed('Guests', 'Customers', 'search', ['a' => 4]); // Returns true
+$acl->isAllowed('Guests', 'Customers', 'search', ['a' => 3]); // Returns false
+```
 
 &bull; Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [GI:12004][GPR:12006]
 ```php
@@ -571,6 +606,7 @@ Added `addConnect` for the `CONNECT` HTTP method, `addPurge` for the `PURGE` HTT
 
 #### SECURITY
 &bull; Added `Phalcon\Security::hasLibreSsl` and `Phalcon\Security::getSslVersionNumber`
+Mostly these are used internally but can be used to get information about `libreSsl`.
 
 &bull; Changed default hash algorithm in `Phalcon\Security` to `CRYPT_BLOWFISH_Y`
 
@@ -607,16 +643,34 @@ public function displayAction()
 
 #### VIEW
 &bull; An absolute path can now be used to `Mvc\View::setLayoutsDir`
-
-&bull; Fixed odd view behavior [GI:1933] related to `setLayout()` and `pick()`
-
-&bull; Return `false` from an action disables the view component (same as `$this->view->disable()`)
-
-&bull; Return a string from an action takes it as the body of the response (same as return `$this->response->setContent('Hello world')`)
-
-&bull; Return a string from an `Mvc\Micro` handler takes it as the body of the response
+You can now use one layout path for all the landing pages of your application for instance, even from separate projects
 
 &bull; Now `Phalcon\Mvc\View` supports many views directories at the same time
+
+&bull; Return `false` from an action disables the view component (same as `$this->view->disable()`)
+```php
+public function displayAction()
+{
+    // Do some stuff here
+    
+    return false; // Same as $this->view->disable();
+}
+```
+
+&bull; Return a string from an action takes it as the body of the response
+
+&bull; Return a string from an `Mvc\Micro` handler takes it as the body of the response
+```php
+public function displayAction()
+{
+    // Do some stuff here
+    
+    // $this->response->setContent('<h1>Hello World</h1>');
+    return '<h1>Hello World</h1>';
+}
+```
+
+&bull; Fixed odd view behavior [GI:1933] related to `setLayout()` and `pick()`
 
 #### VALIDATION
 &bull; `Phalcon\Mvc\Model\Validation` is now deprecated in favor of `Phalcon\Validation`
@@ -778,8 +832,30 @@ $validator->add(
 ```
 &bull; Fixed `Phalcon\Validation::appendMessage` to allow append message to the empty stack [GI:10405]
 
+&bull; Added `convert` option to the `Phalcon\Validation\Validator\Uniqueness` to convert values to the database lookup [GI:12005][GPR:12030]
+```php
+use Phalcon\Validation\Validator\Uniqueness;
+
+$validator->add(
+    'username', 
+    new Uniqueness(
+        [
+            'convert' => function (array $values) {
+                $values['username'] = strtolower($values['username']);
+                
+                return $values;
+            }
+        ]
+    )
+);
+```
 #### INTERFACES
 &bull; Removed `__construct` from all interfaces [GI:11410][GPR:11441]
+
+&bull; Added `Phalcon\Cli\DispatcherInterface`, `Phalcon\Cli\TaskInterface`, `Phalcon\Cli\RouterInterface` and `Phalcon\Cli\Router\RouteInterface`.
+
+#### DOCUMENTATION
+&bull; Added Indonesian translation [GPR:840]
 
 &bull; Added `Phalcon\Cli\DispatcherInterface`, `Phalcon\Cli\TaskInterface`, `Phalcon\Cli\RouterInterface` and `Phalcon\Cli\Router\RouteInterface`.
 
