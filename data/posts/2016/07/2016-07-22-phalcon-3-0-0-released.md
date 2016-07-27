@@ -1,7 +1,7 @@
 Phalcon 3.0.0 final (LTS) released
 ==================================
 
-The Phalcon team is very excited to share some news with our community!
+The Phalcon team is **very excited** to share some news with our community!
 
 The last few months, we have been working hard to push 2.1 out, which contains significant enhancements as well as some API changes that require attention so as not to break compatibility with your application. On top of that we have been working in making Zephir PHP7 compatible so that you can enjoy Phalcon in your PHP7 application. Some news first though:
 
@@ -877,7 +877,7 @@ $validator->add(
 &bull; Fixed `Phalcon\Config::merge` for working with php7
 
 ### PHP7
-Phalcon 3.0 supports PHP7, we'll focus the development of the framework to improve the compatibility and take advantage of the features and speed present in this version of PHP. You can install the framework in php7 using the usual installation instructions.
+Phalcon 3.0 supports PHP7! In subsequent releases we will focus on the development of the framework to implove the compatibility and take advantage of the performance enhancements that PHP7 offers. You can install the framework in php7 using the usual installation instructions.
 
 ### Support
 Phalcon 3.0 Long Term Support (LTS) version is out, and it’s packed with new features to help you better create web applications with PHP. This version of the framework will be maintained for 3 years from now.
@@ -1015,7 +1015,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * Mekan Bashimov
 
 ### Conclusion
-Thank you to everyone
+Thank you once more to our wonderful community and users!
 
 ### Installation
 You can install Phalcon 3.0 for either PHP 5.5/5.6/7.0 using the following instructions:
