@@ -3,7 +3,10 @@ Phalcon 3.0.0 final (LTS) released
 
 The Phalcon team is **very excited** to share some news with our community!
 
-The last few months, we have been working hard to push 2.1 out, which contains significant enhancements as well as some API changes that require attention so as not to break compatibility with your application. On top of that we have been working in making Zephir PHP7 compatible so that you can enjoy Phalcon in your PHP7 application. Some news first though:
+The last few months, we have been working hard to push 2.1 out, which contains significant enhancements as well as some API changes 
+that require attention so as not to break compatibility with your application. 
+On top of that we have been working in making Zephir PHP7 compatible so that you can enjoy 
+Phalcon in your PHP7 application. Some news first though:
 
 ### Versioning
 For any future Phalcon releases we are adopting SemVer (http://semver.org). In short:
@@ -14,21 +17,30 @@ For any future Phalcon releases we are adopting SemVer (http://semver.org). In s
 > * PATCH version when you make backwards-compatible bug fixes.
 > * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-Since 2.1 has many API changes, we decided that it would be best to not release it as is and start using [SemVer](http://semver.org) to better communicate with the community and keep track of our releases.
+Since 2.1 has many API changes, we decided that it would be best to not release it as is and start using [SemVer](http://semver.org) to better 
+communicate with the community and keep track of our releases.
 
 ### 2.1 is dead, all hail 3.0
 As mentioned above, 2.1 will not be fully backwards compatible. As a result, we are changing the version number to 3.0.
 
 ### PHP version support
-The Phalcon team takes security very seriously and thus have decided to provide support to PHP versions that are [supported](http://php.net/supported-versions.php). As of 3.0, PHP 5.3 and 5.4 will be deprecated. We are making a small exception to this rule and will continue to support 5.5 for a little while, but since its support has expired a few days ago, it will too be deprecated in a future release.
+The Phalcon team takes security very seriously and thus have decided to provide support to PHP versions that are 
+[supported](http://php.net/supported-versions.php). As of 3.0, PHP 5.3 and 5.4 will be deprecated. We are making a
+ small exception to this rule and will continue to support 5.5 for a little while, but since its support has expired a 
+ few days ago, it will too be deprecated in a future release.
 
 ### The goodie bag
-So what does 3.0 offer? The [changelog](https://github.com/phalcon/cphalcon/blob/2.1.x/CHANGELOG.md) is extensive as you can see. Below are highlights of the changes as well as areas you need to concentrate.
+So what does 3.0 offer? The [changelog](https://github.com/phalcon/cphalcon/blob/3.0.x/CHANGELOG.md) is extensive as you can see. 
+Below are highlights of the changes as well as areas you need to concentrate.
 
 &bull; PHP 5.3 and 5.4 are fully deprecated.
-You can compile the code on your own, but we will not be able to support it nor can we guarantee that it will work as you expect it to. PHP 5.3 support expired mid 2014 and 5.4 expired mid 2015. We need to ensure our applications have all known vulnerabilities on the PHP side fixed and patched, thus we will not support any unsupported PHP version. This excludes PHP 5.5, whose support expired a few days ago. We will deprecate 5.5 in a future release but will make sure that you all know beforehand so that you can prepare.
+You can compile the code on your own, but we will not be able to support it nor can we guarantee that it will work as you expect it to. 
+PHP 5.3 support expired mid 2014 and 5.4 expired mid 2015. We need to ensure our applications have all known vulnerabilities on the 
+PHP side fixed and patched, thus we will not support any unsupported PHP version. This excludes PHP 5.5, whose support expired a few days ago. 
+We will deprecate 5.5 in a future release but will make sure that you all know beforehand so that you can prepare.
 
-> **INCOMPATIBLE**: You will need to upgrade your PHP installation to 5.6. You can always continue to use the Phalcon version you are using, but in 3.0 support for PHP 5.4 has been deprecated and we cannot guarantee that PHP 5.5 will be fully functional
+> **INCOMPATIBLE**: You will need to upgrade your PHP installation to 5.6. You can always continue to use the Phalcon version you are using, 
+but in 3.0 support for PHP 5.4 has been deprecated and we cannot guarantee that PHP 5.5 will be fully functional.
 
 #### APPLICATION
 &bull; `Phalcon\Cli\Console` and `Phalcon\Mvc\Application` now inherits `Phalcon\Application`. 
@@ -190,37 +202,18 @@ $foo = function() {
 ```
 &bull; If an object is returned after firing the event `beforeServiceResolve` in `Phalcon\Di` it overrides the default service localization process
 
-#### DATABASE
-&bull; Dropped support of Oracle [GI:12008][GPR:12009]
-Support of Oracle has been dropped from the Phalcon Core for the following reasons:
-* The lack of Oracle maintainer
-* The lack of relevant experience among the Phalcon Core Team
-* Weak support or interest from the community
-* Incomplete implementation that creates only the illusion of support for Oracle
-* Some issues hampering for the support of PHP 7 in Phalcon
-
-Oracle components will be ported to the Phalcon Incubator. If the adapter receives support and enhancements from the community, we will consider making it part of the core again.
-
 #### DISPATCHER
-&bull; Added method `getActionSuffix()` in `Phalcon\DispatcherInterface`
-```php
-public function testAction() 
-{
-    $dispatcher = $this->dispatcher;
-    $dispatcher->setActionSuffix('my');
-    var_dump($dispatcher->getActionSuffix()); // my
-}
-```
 &bull; Added `Phalcon\Dispatcher::hasParam()`.
 ```php
 public function testAction() 
-{
-    $dispatcher = $this->dispatcher;
-    if (true === $dispatcher->hasParam('foo')) {
+{    
+    if (true === $this->dispatcher->hasParam('foo')) {
         // Parameter exists
     }
 }
 ```
+&bull; Added method `getActionSuffix()` in `Phalcon\DispatcherInterface`. This allows you change the 'Action' suffix in controller actions.
+
 &bull; Corrected behavior to fire the `dispatch:beforeException` event when there is any exception during dispatching [GI:11458]
 
 &bull; CLI parameters are now handled consistently.
@@ -274,7 +267,7 @@ public function updateAction()
 ```php
 public function cancelAction()
 {
-    if (true === $this->di->get('eventsManager')->getCancelable()) {
+    if (true === $this->eventsManager->getCancelable()) {
         // do something here
     }
 }
@@ -283,7 +276,7 @@ public function cancelAction()
 ```php
 public function cancelAction()
 {
-    if (true === $this->di->get('eventsManager')->isCancelable()) {
+    if (true === $this->eventsManager->isCancelable()) {
         // do something here
     }
 }
@@ -295,14 +288,14 @@ public function cancelAction()
 ```php
 public function destroyAction()
 {
-    $this->di->get('eventsManager')->dettachAll()
+    $this->eventsManager->dettachAll()
 }
 ```
 **New way**:
 ```php
 public function destroyAction()
 {
-    $this->di->get('eventsManager')->detachAll()
+    $this->eventsManager->detachAll()
 }
 ```
 
@@ -321,7 +314,9 @@ Now it returns an empty array in case of non existent message type request [GI:1
 
 **Old result**:
 ```php
-$flash = new \Phalcon\Session\Flash();
+use Phalcon\Session\Flash as FlashSession;
+
+$flash = new FlashSession();
 $flash->error('Error Message');
 var_dump($flash->getMessages('success', false));
 
@@ -332,7 +327,9 @@ array (size=1)
 ```
 **New result**:
 ```php
-$flash = new \Phalcon\Session\Flash();
+use Phalcon\Session\Flash as FlashSession;
+
+$flash = new FlashSession();
 $flash->error('Error Message');
 var_dump($flash->getMessages('success', false));
 
@@ -464,6 +461,17 @@ $loader->registerFiles(
 );
 ```
 
+#### DATABASE
+&bull; Dropped support of Oracle [GI:12008][GPR:12009]
+Support of Oracle has been dropped from the Phalcon Core for the following reasons:
+* The lack of Oracle maintainer
+* The lack of relevant experience among the Phalcon Core Team
+* Weak support or interest from the community
+* Incomplete implementation that creates only the illusion of support for Oracle
+* Some issues hampering for the support of PHP 7 in Phalcon
+
+Oracle components will be ported to the Phalcon Incubator. If the adapter receives support and enhancements from the community, we will consider making it part of the core again.
+
 #### MODELS
 &bull; Changed constructor of `Phalcon\Mvc\Model` to allow pass an array of initialization data
 ```php
@@ -473,11 +481,11 @@ $customer = new Customer(
         'Status' => 'active',
     ]
 );
+$customer->save();
 ```
 &bull; `Phalcon\Mvc\Model` now implements `JsonSerializable` making easy serialize model instances
 ```php
 $customers = Customers::find();
-
 echo json_encode($customers); // {['id':1,...],['id':2,...], ...}
 ```
 &bull; `Phalcon\Mvc\Model\Criteria::getOrder` renamed to `Phalcon\Mvc\Model\Criteria::getOrderBy`
@@ -885,6 +893,7 @@ Phalcon 3.0 Long Term Support (LTS) version is out, and it’s packed with new f
 ### Acknowledgments
 We want to greatly thank everyone who has contributed to accomplish and achieve the completion of this release. Special thanks to our friends around the world that have made possible this release:
 
+* [Andres Gutierrez](https://github.com/andresgutierrez)
 * [Serghei Iakovlev](https://github.com/sergeyklay)
 * [Nikolaos Dimopoulos](https://github.com/niden)
 * [Sid Roberts](https://github.com/SidRoberts)
@@ -965,6 +974,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * Tecno Soft Consultoría Informática, SL
 * Layer Seven Solutions INC
 * PHP Wisdom Ltd
+* Brainz
 * Dmitri Bazilski
 * Kamil Podkowka
 * Chen Shih Wei
@@ -1015,16 +1025,23 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * Mekan Bashimov
 
 ### Conclusion
-Thank you once more to our wonderful community and users!
+Phalcon 3.0 takes a step forward towards a modern framework for PHP. We'll continue
+working making it more useful and performant for developers. Thank you once more to our 
+wonderful community and users!
 
 ### Installation
 You can install Phalcon 3.0 for either PHP 5.5/5.6/7.0 using the following instructions:
 
 ```sh
-git clone --depth=5 http://github.com/phalcon/cphalcon
+git clone --depth=5 https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```
+
+Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+
+* [Documentation](https://docs.phalconphp.com)
+* [API](https://api.phalconphp.com/)
 
 As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!
 
