@@ -235,3 +235,12 @@ h2, h3 {
 div#articles a {
     color: #005399;
 }
+
+blockquote {
+    font-size: 13px;
+    background: #fcfcfc;
+}
+
+.kwd {
+    color: #C678DD;
+}
