@@ -55,12 +55,14 @@ Can delay any new job being reserved for a given time.
 
 &bull; Added `\Phalcon\Queue\Beanstalk::kick()`. 
 It moves jobs into the ready queue. If there are any buried jobs, it will only kick buried jobs. Otherwise it will kick delayed jobs.
+
 ```php
 // Kick the job, it should move to the ready queue again
 if (false !== $job->kick()) {
     $job = $this->client->peekReady();
 }
 ```
+
 &bull; Added `\Phalcon\Queue\Beanstalk::listTubeUsed()`. 
 Returns the tube currently being used by the client.
 
@@ -69,12 +71,15 @@ Returns a list tubes currently being watched by the client.
 
 &bull; Added `\Phalcon\Queue\Beanstalk::peekDelayed()`. 
 Return the delayed job with the shortest delay left.
+
 ```php
 $this->client->put('testPutInTube', ['delay' => 2]);
 $job = $this->client->peekDelayed();
 ```
+
 &bull; Added `\Phalcon\Queue\Beanstalk::jobPeek()`. 
 Returns the next available job.
+
 ```php
 $this->client->choose(self::TUBE_NAME_1);
 $jobId = $this->client->put('testPutInTube');
@@ -84,12 +89,15 @@ $this->assertEquals($jobId, $job->getId());
 
 #### CACHE
 &bull; The cache backend adapters now return boolean when calling `Phalcon\Cache\BackendInterface::save`
+
 ```php
 // Returns true/false
 $result = $backendCache->save('my_key', $content);
 ```
+
 &bull; Added  `Phalcon\Cache\Frontend\Msgpack`. 
 [MsgPack](http://msgpack.org) is a new frontend cache. It is an efficient binary serialization format, which allows exchanging data among multiple languages like JSON. 
+
 ```php
 use Phalcon\Cache\Backend\File;
 use Phalcon\Cache\Frontend\Msgpack;
@@ -129,9 +137,11 @@ foreach ($robots as $robot) {
     echo $robot->name, "\n";
 }
 ```
+
 &bull; Fixed bug of `destroy` method of `Phalcon\Session\Adapter\Libmemcached`
 
 &bull; Added `Phalcon\Cache\Backend\Memcache::addServers` to enable pool of servers for memcache
+
 ```php
 $memcache->addServers('10.4.6.10', 11000, true);
 $memcache->addServers('10.4.6.11', 11000, true);
@@ -153,6 +163,7 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 &bull; `Phalcon\Di` is now bound to services closures allowing use `Phalcon\Di` as `$this` to access services within them. Additionally, closures used as handlers in` Mvc\Micro` are now bound to the `$app` instance
 
 **Old way**:
+
 ```php
 $diContainer->setShared(
     'modelsCache',
@@ -170,7 +181,9 @@ $diContainer->setShared(
     }
 );
 ```
+
 **New way**:
+
 ```php
 $diContainer->setShared(
     'modelsCache',
@@ -188,7 +201,9 @@ $diContainer->setShared(
     }
 );
 ```
+
 Also note the nested DI behavior:
+
 ```php
 $foo = function() {
     get_class($this); // DI
@@ -200,10 +215,12 @@ $foo = function() {
     }
 }
 ```
+
 &bull; If an object is returned after firing the event `beforeServiceResolve` in `Phalcon\Di` it overrides the default service localization process
 
 #### DISPATCHER
 &bull; Added `Phalcon\Dispatcher::hasParam()`.
+
 ```php
 public function testAction() 
 {    
@@ -212,6 +229,7 @@ public function testAction()
     }
 }
 ```
+
 &bull; Added method `getActionSuffix()` in `Phalcon\DispatcherInterface`. This allows you change the 'Action' suffix in controller actions.
 
 &bull; Corrected behavior to fire the `dispatch:beforeException` event when there is any exception during dispatching [GI:11458]
@@ -221,6 +239,7 @@ public function testAction()
 &bull; Added `Phalcon\Mvc\Controller\BindModelInterface` and associated model type hint loading through dispatcher.
 
 &bull; Added `Phalcon\Mvc\Collection::update`, `Phalcon\Mvc\Collection::create` and `Phalcon\Mvc\Collection::createIfNotExist`
+
 ```php
 public function createAction() 
 {
@@ -264,6 +283,7 @@ public function updateAction()
 > **BACKWARDS INCOMPATIBLE**: Any references to `getCancelable` will stop working. You will need to rename the function to `isCancelable`
 
 **Old way**:
+
 ```php
 public function cancelAction()
 {
@@ -272,7 +292,9 @@ public function cancelAction()
     }
 }
 ```
+
 **New way**:
+
 ```php
 public function cancelAction()
 {
@@ -281,17 +303,21 @@ public function cancelAction()
     }
 }
 ```
+
 &bull; Removed `Phalcon\Events\Manager::dettachAll` in favor of `Phalcon\Events\Manager::detachAll`
 > **BACKWARDS INCOMPATIBLE**: Any references to `dettachAll` will stop working. You will need to rename the function to `detachAll`
 
 **Old way**:
+
 ```php
 public function destroyAction()
 {
     $this->eventsManager->dettachAll()
 }
 ```
+
 **New way**:
+
 ```php
 public function destroyAction()
 {
@@ -301,6 +327,7 @@ public function destroyAction()
 
 #### FLASH
 &bull; Added ability to autoescape Flash messages [GI:11448]
+
 ```php
 $flash = new Phalcon\Flash\Session;
 $flash->setEscaperService(new Phalcon\Escaper);
@@ -309,10 +336,12 @@ $flash->success("<script>alert('This will execute as JavaScript!')</script>");
 echo $flash->output();
 // <div class="successMessage">&lt;script&gt;alert(&#039;This will execute as JavaScript!&#039;)&lt;/script&gt;</div>
 ```
+
 &bull; Fixed `Phalcon\Session\Flash::getMessages`. 
 Now it returns an empty array in case of non existent message type request [GI:11941]
 
 **Old result**:
+
 ```php
 use Phalcon\Session\Flash as FlashSession;
 
@@ -325,7 +354,9 @@ array (size=1)
     array (size=1)
       0 => string 'Error Message' (length=13)
 ```
+
 **New result**:
+
 ```php
 use Phalcon\Session\Flash as FlashSession;
 
@@ -341,6 +372,7 @@ array (size=0)
 &bull; Added default header: `Content-Type: "application/json; charset=UTF-8"` in method `Phalcon\Http\Response::setJsonContent`
 
 **Old way**:
+
 ```php
 use Phalcon\Http\Response;
 
@@ -350,7 +382,9 @@ $response->setContentType('application/json;');
 $response->setJsonContent($data)
 $response->send();
 ```
+
 **New way**:
+
 ```php
 $data     = 'Phlying with Phalcon';
 $response = new Response();
@@ -374,6 +408,7 @@ Left the originals functions as aliases and marked them deprecated.
 > **CAUTION**: Any references to `isSoapRequest` need to be renamed to `isSoap`. Any references to `isSecureRequest` need to be renamed to `isSecure`.
 
 **Old way**:
+
 ```php
 public function testAction()
 {
@@ -386,7 +421,9 @@ public function testAction()
     }
 }
 ```
+
 **New way**:
+
 ```php
 public function testAction()
 {
@@ -401,6 +438,7 @@ public function testAction()
 ```
 
 &bull; Added `Phalcon\Http\Request::setStrictHostCheck` and `Phalcon\Http\Request::isStrictHostCheck` to manage strict validation of the host name.
+
 ```php
 use Phalcon\Http\Request;
 
@@ -425,6 +463,7 @@ Returns the port on which the request is made i.e. 80, 8080, 443 etc.
 
 &bull; Added `setLastModified` method to `Phalcon\Http\Response`
 Sets the `Last-Modified` header
+
 ```php
 public function headerAction()
 {
@@ -434,6 +473,7 @@ public function headerAction()
 
 &bull; Add `setContentLength` method to `Phalcon\Http\Response`
 Sets the response content-length
+
 ```php
 public function headerAction()
 {
@@ -444,14 +484,38 @@ public function headerAction()
 #### LOADER
 &bull; Removed support for prefixes strategy in `Phalcon\Loader`
 > **BACKWARDS INCOMPATIBLE**: In Phalcon 2, you could load classes using a specific prefix. This method was very popular before namespaces were introduced. For instance:
+
 ```php
-setPrefix('Shield_')
-load('Sword'); // will load `Shield_Sword`
+<?php
+
+use Phalcon\Loader;
+
+// Creates the autoloader
+$loader = new Loader();
+
+// Register some prefixes
+$loader->registerPrefixes(
+    array(
+        "Example_Base"    => "vendor/example/base/",
+        "Example_Adapter" => "vendor/example/adapter/",
+        "Example_"        => "vendor/example/"
+    )
+);
+
+// Register autoloader
+$loader->register();
+
+// The required class will automatically include the
+// file vendor/example/adapter/Some.php
+$some = new Example_Adapter_Some();
 ```
+
 > This functionality is no longer supported
 
 &bull; Added `\Phalcon\Loader::registerFiles` and `\Phalcon\Loader::getFiles`. 
-`registerFiles` registers files that are "non-classes" hence need a "require". This is very useful for including files that only have functions. `getFiles` returns the files currently registered in the autoloader
+`registerFiles` registers files that are "non-classes" hence need a "require". This is very useful for including files that only have functions. `getFiles` 
+returns the files currently registered in the autoloader
+
 ```php
 $loader->registerFiles(
     [
@@ -474,6 +538,7 @@ Oracle components will be ported to the Phalcon Incubator. If the adapter receiv
 
 #### MODELS
 &bull; Changed constructor of `Phalcon\Mvc\Model` to allow pass an array of initialization data
+
 ```php
 $customer = new Customer(
     [
@@ -483,11 +548,14 @@ $customer = new Customer(
 );
 $customer->save();
 ```
+
 &bull; `Phalcon\Mvc\Model` now implements `JsonSerializable` making easy serialize model instances
+
 ```php
 $customers = Customers::find();
 echo json_encode($customers); // {['id':1,...],['id':2,...], ...}
 ```
+
 &bull; `Phalcon\Mvc\Model\Criteria::getOrder` renamed to `Phalcon\Mvc\Model\Criteria::getOrderBy`
 > **BACKWARDS INCOMPATIBLE**: Any references to `getOrder` will stop working. You will need to rename the function to `getOrderBy`
 
@@ -495,6 +563,7 @@ echo json_encode($customers); // {['id':1,...],['id':2,...], ...}
 Returns an option by the specified name. If the option does not exist null is returned
 
 &bull; Added `OR` operator for `Phalcon\Mvc\Model\Query\Builder` methods: `betweenWhere`, `notBetweenWhere`, `inWhere` and `notInWhere`
+
 ```php
 $builder->betweenWhere('price', 100.25, 200.50);     // Appends a BETWEEN condition
 $builder->notBetweenWhere('price', 100.25, 200.50);  // Appends a NOT BETWEEN condition
@@ -527,6 +596,7 @@ Returns the join parts from query builder
 
 #### ROLES
 &bull; Added `Phalcon\Acl\RoleAware` and `Phalcon\Acl\ResourceAware` Interfaces. Now you can pass objects to `Phalcon\Acl\AdapterInterface::isAllowed` as `roleName` and `resourceName`, also they will be automatically passed to function defined in `Phalcon\Acl\AdapterInterface::allow` or `Phalcon\Acl\AdapterInterface::deny` by type
+
 ```php
 use UserRole;       // Class implementing RoleAware interface
 use ModelResource;  // Class implementing ResourceAware interface
@@ -551,6 +621,7 @@ $acl->isAllowed($anotherGuest, $customer, 'search') // Returns true
 &bull; `Phalcon\Acl\AdapterInterface::allow` and `Phalcon\Acl\AdapterInterface::deny` have 4th argument - function. It will be called when using `Phalcon\Acl\AdapterInterface::isAllowed`
 
 &bull; `Phalcon\Acl\AdapterInterface::isAllowed` have 4th argument - parameters. You can pass arguments for a function defined in `Phalcon\Acl\AdapterInterface:allow` or `Phalcon\Acl\AdapterInterface::deny` as associative array where key is argument name
+
 ```php
 // Set access level for role into resources with custom function
 $acl->allow(
@@ -639,6 +710,7 @@ Mostly these are used internally but can be used to get information about `libre
 
 #### TEXT
 &bull; Added ability to use custom delimiter for `Phalcon\Text::camelize` and `Phalcon\Text::uncamelize` [GI:10396]
+
 ```php
 use Phalcon\Text;
         
@@ -647,6 +719,7 @@ public function displayAction()
     echo Text::camelize('c+a+m+e+l+i+z+e', '+'); // CAMELIZE
 }
 ```
+
 &bull; Fixed `Phalcon\Text:dynamic()` to allow custom separator [GI:11215]
 
 #### VIEW
@@ -656,6 +729,7 @@ You can now use one layout path for all the landing pages of your application fo
 &bull; Now `Phalcon\Mvc\View` supports many views directories at the same time
 
 &bull; Return `false` from an action disables the view component (same as `$this->view->disable()`)
+
 ```php
 public function displayAction()
 {
@@ -668,6 +742,7 @@ public function displayAction()
 &bull; Return a string from an action takes it as the body of the response
 
 &bull; Return a string from an `Mvc\Micro` handler takes it as the body of the response
+
 ```php
 public function displayAction()
 {
@@ -685,6 +760,7 @@ public function displayAction()
 The functionality of both components is merged into one, allowing us to reduce the codebase while offering the same functionality as before.
 
 **Old way**:
+
 ```php
 namespace Invo\Models;
 
@@ -719,7 +795,9 @@ class Users extends Model
     }
 }
 ```
+
 New way:
+
 ```php
 namespace Invo\Models;
 
@@ -758,17 +836,21 @@ class Users extends Model
 > **CAUTION**: Any references to `isSetOption` need to be renamed to `hasOption`
 
 **Old way**:
+
 ```php
 if (true === $validation->isSetOption('my-option')) {
     //
 }
 ```
+
 **New way**:
+
 ```php
 if (true === $validation->hasOption('my-option')) {
     //
 }
 ```
+
 &bull; Added internal check `allowEmpty` before calling a validator. If it option is true and the value of empty, the validator is skipped
 
 &bull; Added option to validate multiple fields with one validator (fix uniqueness validator as well), also removes unnecessary `model => $this` in `Phalcon\Validation\Validator\Uniqueness`.
@@ -778,6 +860,7 @@ if (true === $validation->hasOption('my-option')) {
 &bull; Added `Phalcon\Validation\CombinedFieldsValidator`, validation will pass array of fields to this validator if needed
 
 &bull; `Phalcon\Validation\Validator\Digit` now correctly validates digits [GI:11374]
+
 ```php
 use Phalcon\Validation\Validator\Digit as DigitValidator;
 
@@ -805,7 +888,9 @@ $validator->add(
     )
 );
 ```
+
 &bull; Added `Phalcon\Validation\Validator\Date`
+
 ```php
 use Phalcon\Validation\Validator\Date as DateValidator;
 
@@ -838,9 +923,11 @@ $validator->add(
     )
 );
 ```
+
 &bull; Fixed `Phalcon\Validation::appendMessage` to allow append message to the empty stack [GI:10405]
 
 &bull; Added `convert` option to the `Phalcon\Validation\Validator\Uniqueness` to convert values to the database lookup [GI:12005][GPR:12030]
+
 ```php
 use Phalcon\Validation\Validator\Uniqueness;
 
@@ -857,6 +944,7 @@ $validator->add(
     )
 );
 ```
+
 #### INTERFACES
 &bull; Removed `__construct` from all interfaces [GI:11410][GPR:11441]
 
