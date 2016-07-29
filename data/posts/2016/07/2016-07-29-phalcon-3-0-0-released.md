@@ -639,8 +639,12 @@ $acl->isAllowed('Guests', 'Customers', 'search', ['a' => 3]); // Returns false
 ```
 
 &bull; Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [GI:12004][GPR:12006]
+
 ```php
-$acl = new Memory();
+use Phalcon\Acl;
+use Phalcon\Acl\Adapter\Memory as MemoryAcl;
+
+$acl = new MemoryAcl();
 
 $acl->setDefaultAction(Acl::DENY);
 
@@ -999,6 +1003,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * [Hina Chen](https://github.com/hinablue)
 * [JIM](https://github.com/tembem)
 * [Mariusz Łączak](https://github.com/mruz)
+* [Dylan Anderson](https://github.com/quasipickle)
 * [Jj](https://github.com/jdrmar)
 * [Rahul Datta Roy](https://github.com/rahuldroy)
 * [Cameron Hall](https://github.com/CameronHall)
@@ -1055,7 +1060,6 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * [Olivier Monaco](https://github.com/olivier-monaco)
 * [Alex Kalmikov](https://github.com/ph55)
 * [Olivier.Garbé](https://github.com/ogarbe)
-
 * Agency Matrix
 * Cazamba Serviços de Internet Ltda
 * AUMIX Networks
