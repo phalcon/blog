@@ -30,6 +30,7 @@ p {
 #wrapper #articles {
     padding: 10px;
     padding-right: 20px;
+    text-align: left;
 }
 
 #wrapper #sidebar #top .heading#followontumblr {
