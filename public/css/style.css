@@ -28,9 +28,12 @@ p {
 }
 
 #wrapper #articles {
-    padding: 10px;
+    padding: 15px;
+    padding-top: 10px;
     padding-right: 20px;
+    padding-left: 20px;
     text-align: left;
+    background: #fafafa;
 }
 
 #wrapper #sidebar #top .heading#followontumblr {
@@ -97,6 +100,10 @@ p {
     margin-top: 15px;
 }
 
+#wrapper p {
+    color: #333;
+}
+
 #wrapper #content .post .copy pre.sh_sourceCode, pre.sh_sourceCode {
     border: none;
     border-left: 3px solid #0ec281;
@@ -127,7 +134,7 @@ p {
     color: #717171;
 }
 
-h3 {
+h3, h4 {
     font-size: 20px;
     line-height: 24px;
     font-weight: normal;
@@ -248,4 +255,49 @@ blockquote {
 
 .kwd {
     color: #C678DD;
+}
+
+.header-line {
+    min-width:980px;
+    height: 87px;
+    background: #42aaa9  url('https://static.phalconphp.com/images/header-line.jpg') 50% 0 no-repeat;
+    margin: 0 0 20px; overflow: hidden;
+}
+
+.header-line-title {
+    font-size:48px;
+    line-height: 50px;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.heading {
+    background: rgba(35, 56, 66, 0.98) none repeat scroll 0 0;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    border: none;
+}
+
+.heading h2 {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+section {
+    padding-top: 0px;
+}
+
+@media screen and (min-width: 992px) {
+    header .phalcon-logo {
+        margin-left: 0;
+        display: block;
+        width: 200px;
+        height: 90px;
+        background: url(//static.phalconphp.com/www/images/phalcon.png) 0 0/200px 90px no-repeat;
+    }
 }

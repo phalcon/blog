@@ -84,8 +84,8 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand phalcon-logo" href="https://phalconphp.com/">
-                            <span itemprop="name" class="sr-only">Phalcon PHP</span>
-                        </a>
+                            <span itemprop="name" class="sr-only">Phalcon Framework</span>
+                        </a>                        
                     </div>
 
                     <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
@@ -108,7 +108,7 @@
         <div class="heading">
             <div class="container">
                 <div class="row">
-                    <h2><a href="/">Blog and News</a></h2>
+                    <h2>Blog and News</h2>
                 </div>
             </div>
         </div>
