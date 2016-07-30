@@ -261,7 +261,7 @@ public function updateAction()
      */
     $robot = Robots::findFirst(['id' => 1]);
     $robot->name = 'MyRobot';
-    $robot->type = ''Droid';
+    $robot->type = 'Droid';
     $robot->update();
 }
 ```
