@@ -30,6 +30,7 @@ p {
 #wrapper #articles {
     padding: 10px;
     padding-right: 20px;
+    text-align: left;
 }
 
 #wrapper #sidebar #top .heading#followontumblr {
@@ -179,6 +180,11 @@ pre.sh_sourceCode span.sh_function {
 
 h1 {
     margin-bottom: 30px;
+    font-size: 4.0rem;
+}
+
+code {
+    font-size: 13px;
 }
 
 h2, h3 {
@@ -237,8 +243,7 @@ div#articles a {
 }
 
 blockquote {
-    font-size: 13px;
-    background: #fcfcfc;
+    font-size: 14px;
 }
 
 .kwd {
