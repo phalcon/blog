@@ -29,8 +29,7 @@ So what does 3.0 offer? The [changelog](https://github.com/phalcon/cphalcon/blob
 &bull; PHP 5.3 and 5.4 are fully deprecated.
 You can compile the code on your own, but we will not be able to support it nor can we guarantee that it will work as you expect it to. PHP 5.3 support expired mid 2014 and 5.4 expired mid 2015. We need to ensure our applications have all known vulnerabilities on the PHP side fixed and patched, thus we will not support any unsupported PHP version. This excludes PHP 5.5, whose support expired a few days ago. We will deprecate 5.5 in a future release but will make sure that you all know beforehand so that you can prepare.
 
-> **INCOMPATIBLE**: You will need to upgrade your PHP installation to 5.6. You can always continue to use the Phalcon version you are using, 
-but in 3.0 support for PHP 5.4 has been deprecated and we cannot guarantee that PHP 5.5 will be fully functional.
+> **INCOMPATIBLE**: You will need to upgrade your PHP installation to 5.6. You can always continue to use the Phalcon version you are using, but in 3.0 support for PHP 5.4 has been deprecated and we cannot guarantee that PHP 5.5 will be fully functional.
 
 #### APPLICATION
 &bull; `Phalcon\Cli\Console` and `Phalcon\Mvc\Application` now inherits `Phalcon\Application`. 
@@ -148,6 +147,17 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 > **BACKWARDS INCOMPATIBLE**: Backwards compatibility from openssl to mcrypt is problematic if not impossible. We had to remove several methods that are no longer applicable. Additionally the rijndael-256 from mcrypt is no longer valid in openssl. The default encryption algorithm is AES-256-CFB
 > 
 > If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore `openssl`. **Failure to do so will result in loss of data**. A port is available in the incubator. Please see the code [here](https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy)
+
+#### DATABASE
+&bull; Dropped support of Oracle [GI:12008][GPR:12009]
+Support of Oracle has been dropped from the Phalcon Core for the following reasons:
+&bull;&bull; The lack of Oracle maintainer
+&bull;&bull; The lack of relevant experience among the Phalcon Core Team
+&bull;&bull; Weak support or interest from the community
+&bull;&bull; Incomplete implementation that creates only the illusion of support for Oracle
+&bull;&bull; Some issues hampering for the support of PHP 7 in Phalcon
+
+Oracle components will be ported to the Phalcon Incubator. If the adapter receives support and enhancements from the community, we will consider making it part of the core again.
 
 #### DI
 &bull; `Phalcon\Di` is now bound to services closures allowing use `Phalcon\Di` as `$this` to access services within them. Additionally, closures used as handlers in` Mvc\Micro` are now bound to the `$app` instance
@@ -515,17 +525,6 @@ $loader->registerFiles(
 );
 ```
 
-#### DATABASE
-&bull; Dropped support of Oracle [GI:12008][GPR:12009]
-Support of Oracle has been dropped from the Phalcon Core for the following reasons:
-* The lack of Oracle maintainer
-* The lack of relevant experience among the Phalcon Core Team
-* Weak support or interest from the community
-* Incomplete implementation that creates only the illusion of support for Oracle
-* Some issues hampering for the support of PHP 7 in Phalcon
-
-Oracle components will be ported to the Phalcon Incubator. If the adapter receives support and enhancements from the community, we will consider making it part of the core again.
-
 #### MODELS
 &bull; Changed constructor of `Phalcon\Mvc\Model` to allow pass an array of initialization data
 
@@ -790,7 +789,7 @@ class Users extends Model
 }
 ```
 
-New way:
+**New way**:
 
 ```php
 namespace Invo\Models;
