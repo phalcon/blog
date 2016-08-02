@@ -943,9 +943,6 @@ $validator->add(
 
 &bull; Added `Phalcon\Cli\DispatcherInterface`, `Phalcon\Cli\TaskInterface`, `Phalcon\Cli\RouterInterface` and `Phalcon\Cli\Router\RouteInterface`.
 
-#### DOCUMENTATION
-&bull; Added Indonesian translation [GPR:840]
-
 #### VARIOUS
 &bull; Added `Phalcon\Assets\Manager::exists()` to check if collection exists
 
