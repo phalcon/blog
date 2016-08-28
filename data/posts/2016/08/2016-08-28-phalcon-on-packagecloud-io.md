@@ -5,7 +5,7 @@ One of the "complaints" that we regularly receive either via direct communicatio
   
 Admittedly, a lot of us have installed Phalcon so many times that it is second nature to perform the task. However some developers might find the task daunting, especially if this is the first time they are trying to install the framework.
 
-![image]({{ cdnUrl }}/files/2016-08-28-packagecloud-logo-dark.png)
+![image]({{ cdnUrl }}files/2016-08-28-packagecloud-logo-dark.png)
 
 To help with this task, we have employed the services of [PackageCloud.io](https://PackageCloud.io), so as to create packages for PhalconPHP. With [PackageCloud.io](https://PackageCloud.io) users can now add the relevant repository to their distribution, and install Phalcon with the package manager of their choice.
 
