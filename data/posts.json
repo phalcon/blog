@@ -747,5 +747,12 @@
   "date": "2016-08-24",
   "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
   "link": ""
+ },
+ {
+  "title": "Phalcon on Packagecloud.io",
+  "slug": "phalcon-on-packagecloud-io",
+  "date": "2016-08-28",
+  "tags": "php, phalcon, 3.0.x, phalcon3, packagecloud.io, installation, lts",
+  "link": ""
  }
 ]

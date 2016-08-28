@@ -6,7 +6,7 @@ After the introduction of many new and exciting features in our [alpha version](
 - [Documentation](https://docs.phalconphp.com/en/0.8.0/)
 - Check the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG)
 
-**Help to Testing**
+**Help with Testing**
 This version can be installed from the 0.8.0 branch:
 
 ```sh
