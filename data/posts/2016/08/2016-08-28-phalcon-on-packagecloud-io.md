@@ -11,15 +11,21 @@ To help with this task, we have employed the services of [PackageCloud.io](https
 
 For instance, if we are looking at a Ubuntu distribution, all we have to do is:
 
-### Add the repository to our distribution
+### DEB distributions (e.g. Ubuntu)
+
+#### Add the repository to your distribution
 
 ```sh
+# Stable releases
 curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
+
+# Nightly releases
+curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.deb.sh | sudo bash
 ```
 
-This will be done only once, unless your distribution changes or you want to use the nightly builds
+This will be done only once, unless your distribution changes or you want to switch from stable to nightly builds
 
-### Install Phalcon
+#### Install Phalcon
 
 ```sh
 sudo apt-get install php5-phalcon
@@ -29,6 +35,32 @@ or for PHP 7
 
 ```sh
 sudo apt-get install php7.0-phalcon
+```
+
+### RPM distributions (i.e. CentOS)
+
+#### Add the repository to our distribution
+
+```sh
+# Stable releases
+curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.rpm.sh | sudo bash
+
+# Nightly releases
+curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.rpm.sh | sudo bash
+```
+
+This will be done only once, unless your distribution changes or you want to switch from stable to nightly builds
+
+#### Install Phalcon
+
+```sh
+sudo yum install php56u-phalcon
+```
+
+or for PHP 7
+
+```sh
+sudo yum install php70u-phalcon
 ```
 
 ### Repositories
