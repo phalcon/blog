@@ -11,7 +11,7 @@ To help with this task, we have employed the services of [PackageCloud.io](https
 
 For instance, if we are looking at a Ubuntu distribution, all we have to do is:
 
-### DEB distributions (e.g. Ubuntu)
+### DEB distributions (i.e Ubuntu)
 
 #### Add the repository to your distribution
 
