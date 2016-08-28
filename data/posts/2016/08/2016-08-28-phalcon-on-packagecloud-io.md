@@ -1,7 +1,7 @@
 Phalcon on Packagecloud.io
 ======================
 
-One of the "complaints" that we regularly receive either via direct communications from members of our community or by Github issues, is how to install Phalcon.
+One of the most requested features by the community, is an easy way to install and upgrade Phalcon.
   
 Admittedly, a lot of us have installed Phalcon so many times that it is second nature to perform the task. However some developers might find the task daunting, especially if this is the first time they are trying to install the framework.
 
