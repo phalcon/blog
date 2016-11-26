@@ -40,7 +40,7 @@ The release tag can be found here: [3.0.2](https://github.com/phalcon/cphalcon/r
 
 ### Update/Upgrade
 
-Phalcon 3.0.1 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
+Phalcon 3.0.2 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
