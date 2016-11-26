@@ -719,40 +719,47 @@
     "date": "2016-02-04",
     "tags": "php, phalcon, phalcon2, release, 2.x",
     "link": ""
- },
- {
-  "title": "Phalcon 2.1.0 RC1 released",
-  "slug": "phalcon-2-1-0-RC1-released",
-  "date": "2016-03-22",
-  "tags": "php, phalcon, 2.1, phalcon2, release",
-  "link": ""
- },
- {
-  "title": "Phalcon 2.0.13 released",
-  "slug": "phalcon-2-0-13-released",
-  "date": "2016-05-24",
-  "tags": "php, phalcon, 2.0.x, phalcon2, release",
-  "link": ""
- },
- {
-  "title": "Phalcon 3.0.0 released",
-  "slug": "phalcon-3-0-0-released",
-  "date": "2016-07-29",
-  "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
-  "link": ""
- },
- {
-  "title": "Phalcon 3.0.1 released",
-  "slug": "phalcon-3-0-1-released",
-  "date": "2016-08-24",
-  "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
-  "link": ""
- },
- {
-  "title": "Phalcon on Packagecloud.io",
-  "slug": "phalcon-on-packagecloud-io",
-  "date": "2016-08-28",
-  "tags": "php, phalcon, 3.0.x, phalcon3, packagecloud.io, installation, lts",
-  "link": ""
- }
+  },
+  {
+    "title": "Phalcon 2.1.0 RC1 released",
+    "slug": "phalcon-2-1-0-RC1-released",
+    "date": "2016-03-22",
+    "tags": "php, phalcon, 2.1, phalcon2, release",
+    "link": ""
+  },
+  {
+    "title": "Phalcon 2.0.13 released",
+    "slug": "phalcon-2-0-13-released",
+    "date": "2016-05-24",
+    "tags": "php, phalcon, 2.0.x, phalcon2, release",
+    "link": ""
+  },
+  {
+    "title": "Phalcon 3.0.0 released",
+    "slug": "phalcon-3-0-0-released",
+    "date": "2016-07-29",
+    "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
+    "link": ""
+  },
+  {
+    "title": "Phalcon 3.0.1 released",
+    "slug": "phalcon-3-0-1-released",
+    "date": "2016-08-24",
+    "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
+    "link": ""
+  },
+  {
+    "title": "Phalcon on Packagecloud.io",
+    "slug": "phalcon-on-packagecloud-io",
+    "date": "2016-08-28",
+    "tags": "php, phalcon, 3.0.x, phalcon3, packagecloud.io, installation, lts",
+    "link": ""
+  },
+  {
+    "title": "Phalcon 3.0.2 released",
+    "slug": "phalcon-3-0-2-released",
+    "date": "2016-11-26",
+    "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
+    "link": ""
+  }
 ]
