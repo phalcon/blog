@@ -33,7 +33,9 @@ The levels of support we have are:
 
 The level of financial support that we receive, will allow our lead developer to devote more time on the project, addressing bugs both in Zephir and Phalcon much faster in addition to providing more functionality.
 
-We hope that you will consider becoming a [patron](https://www.patreon.com/phalcon) of Phalcon!
+We hope that you will consider becoming a [patron](https://www.patreon.com/bePatron?u=4653615) of Phalcon!
+
+<a href="https://www.patreon.com/bePatron?u=4653615" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://cdn6.patreon.com/becomePatronButton.bundle.js"></script>
 
 ### Goals for Q1
 
