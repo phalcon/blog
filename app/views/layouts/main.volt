@@ -4,19 +4,44 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+        <title>Phosphorum - Discussions</title>
+
         <meta charset="utf-8" />
 
+        <meta name="author" content="Phalcon Framework Team">
+        <meta name="generator" content="Phalcon Blog">
         <meta name="application-name" content="Phalcon Framework Blog" />
         <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework,zephir,phalcon2,release" />
 
-        <meta name="twitter:site" content="@phalconphp" />
-        <meta name="twitter:card" content="summary" />
+        <!-- Canonical URL to the thread -->
+        <meta property="og:url" content="https://blog.phalconphp.com/">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="object">
+        <!-- Thread title. Also used for Slack-->
+        <meta property="og:title" content="{{ title is defined ? title|e : "Phalcon Framework Blog" }}">
+        <!-- Thread description. Also used for Slack -->
+        <meta property="og:description" content="News regarding Phalcon, the next-generation PHP Framework. (blog description)">
+        <meta property="og:site_name" content="Phalcon Blog">
+        <!-- Thread author's photo -->
+        <meta property="og:image" content="img/logo.png">
+        <!-- Alt text for image -->
+        <meta name="twitter:image:alt" content="">
 
-        <meta property="og:site_name" content="Phalcon" />
-        <meta property="og:type" content="website" /> <!-- article or subpages-->
-        <meta property="og:title" content="{{ title is defined ? title|e : "Phalcon Framework Blog" }}" />
-        <meta property="og:url" content="http://blog.phalconphp.com/?og=1" />
-        <meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and..." />
+        <!-- Thread title-->
+        <meta name="twitter:title" content="Phalcon Blog (blog title)">
+        <!-- Thread short description -->
+        <meta name="twitter:description" content="News regarding Phalcon, the next-generation PHP Framework. (blog description) ">
+        <!-- Thread author's photo -->
+        <meta name="twitter:image" content="img/logo.png">
+        <!-- Thread long description -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@phalconphp">
+
+        <!-- Canonical URL to the thread -->
+        <link rel="canonical" href="https://blog.phalconphp.com/">
+        <link rel="publisher" href="https://blog.phalconphp.com/">
+        <!-- Thread author -->
+        <link rel="author" href="https://phalconphp.com/en/team">
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" />
@@ -178,5 +203,16 @@
 
         <script type="text/javascript" src="//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.1,prettify@0.1(prettify.js+lang-css.js+lang-sql.js)"></script>
         <script type="text/javascript">prettyPrint();</script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-90300500-3', 'auto');
+            ga('send', 'pageview');
+
+        </script>
     </body>
 </html>
