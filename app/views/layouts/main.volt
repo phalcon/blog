@@ -16,7 +16,7 @@
     <meta name="generator" content="Phalcon Blog">
     <meta name="application-name" content="Phalcon Framework Blog">
     <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework, zephir, phalcon2, phalcon3, release">
-    <meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" />
+    <meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption">
 
     <meta http-equiv="x-dns-prefetch-control" content="off">
 
@@ -65,16 +65,16 @@
     <link rel="icon" type="image/png" href="{{ cdnUrl }}/images/favicon/favicon-128x128.png" sizes="128x128">
     <link rel="icon" type="image/png" href="{{ cdnUrl }}/images/favicon/favicon-196x196.png" sizes="196x196">
 
-    <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss" />
+    <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss">
 
     <style type="text/css">figure {margin: 0;}</style>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//static.phalconphp.com/www/css/phalcon.min.css">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:700,400'>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/prettify/0.1/prettify.css"/>
-    <link rel="stylesheet" href="//phosphorum-1618.kxcdn.com/css/theme.css?v=2.1.1"/>
-    <link rel="stylesheet" href="{{ cdnUrl }}/css/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/prettify/1.1/prettify.css">
+    <link rel="stylesheet" href="//phosphorum-1618.kxcdn.com/css/theme.css?v=2.1.2">
+    <link rel="stylesheet" href="{{ cdnUrl }}/css/style.css?v=2.1.2">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -124,49 +124,44 @@
     </div>
 
     <section>
-        <div id="wrapper">
-            <div id="content">
-
-                <table align="center">
-                    <tr>
-                        <td width="80%" valign="top">
-                            <div id="articles">
-                                {{ content() }}
-                            </div>
-                        </td>
-                        <td valign="top">
-                            <div id="sidebar">
-                                <div id="top">
-                                    <div align="center" style="padding:5px;padding-bottom:5px">
-                                        <div id="carbonads-container">
-                                            <div class="carbonad">
-                                                <div id="azcarbon"></div>
-                                                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
-                                            </div>
-                                        </div>
+        <div id="wrapper" class="container">
+            <div id="content" class="row">
+                <div class="col-md-9 content-body">
+                    <div id="articles">
+                        {{ content() }}
+                    </div>
+                </div>
+                <div class="col-md-3 content-sidebar">
+                    <div id="sidebar">
+                        <div id="top">
+                            <div align="center" style="padding:5px;padding-bottom:5px">
+                                <div id="carbonads-container">
+                                    <div class="carbonad">
+                                        <div id="azcarbon"></div>
+                                        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
                                     </div>
                                 </div>
-
-                                <br/>
-
-                                <div id="description">
-                                    We are an open source web framework for PHP delivered as a C extension
-                                    offering high performance and lower resource consumption
-                                </div>
-
-                                <br/>
-
-                                <div class="tag-cloud">
-                                    {% for tag, class in tagCloud %}
-                                    <span style="font-size: {{ class }}">
-                                        <a href='/tag/{{ tag }}'>{{ tag }}</a>
-                                    </span>
-                                    {% endfor %}
-                                </div>
                             </div>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+
+                        <br>
+
+                        <div id="description">
+                            We are an open source web framework for PHP delivered as a C extension
+                            offering high performance and lower resource consumption
+                        </div>
+
+                        <br>
+
+                        <div class="tag-cloud">
+                            {% for tag, class in tagCloud %}
+                                <span style="font-size: {{ class }}">
+                                    <a href='/tag/{{ tag }}'>{{ tag }}</a>
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -186,7 +181,7 @@
         //]]>
     </script>
 
-    <script type="text/javascript" src="//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.1,prettify@0.1(prettify.js+lang-css.js+lang-sql.js)"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.3.7,prettify@1.1(prettify.js+lang-css.js+lang-sql.js)"></script>
     <script type="text/javascript">prettyPrint();</script>
 
     <script>
@@ -197,7 +192,6 @@
 
         ga('create', 'UA-90300500-3', 'auto');
         ga('send', 'pageview');
-
     </script>
 </body>
 </html>
