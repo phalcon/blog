@@ -73,8 +73,8 @@
     <link rel="stylesheet" href="//static.phalconphp.com/www/css/phalcon.min.css">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:700,400'>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/prettify/1.1/prettify.css">
-    <link rel="stylesheet" href="//phosphorum-1618.kxcdn.com/css/theme.css?v=2.1.2">
-    <link rel="stylesheet" href="{{ cdnUrl }}/css/style.css?v=2.1.2">
+    <link rel="stylesheet" href="//phosphorum-1618.kxcdn.com/css/theme.css?v={{ version }}">
+    <link rel="stylesheet" href="{{ cdnUrl }}/css/style.css?v={{ version }}">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

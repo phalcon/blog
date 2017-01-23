@@ -19,5 +19,6 @@ class Controller extends PhController
         $this->view->setTemplateAfter('main');
         $this->view->setVar('cdnUrl', $this->config->cdnUrl);
         $this->view->setVar('tagCloud', $this->finder->getTagCloud());
+        $this->view->setVar('version', $this->config->version);
     }
 }
