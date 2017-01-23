@@ -205,7 +205,7 @@ class PostFinder extends PhDiInjectable
      *
      * @param  string $slug The slug of the post
      *
-     * @return mixed
+     * @return \Kitsune\Post
      */
     public function get($slug)
     {

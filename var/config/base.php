@@ -2,7 +2,9 @@
 
 return [
     'debugMode'  => 0,
+    'version'    => '2.1.2',
     'baseUri'    => '/blog/',
+    'canonical'  => 'https://blog.phalconphp.com',
     'cdnUrl'     => '',
     'blog'       => [
         'title'        => 'Phalcon Framework Blog',
