@@ -3,22 +3,21 @@
 
 Greetings everyone!
 
-As an open source project, Phalcon relies on the contributions of developers throughout the globe, as well as the investment of personal time from the core team. Due to this, it is often that other factors (family, regular job, other obligations etc.) restrict the amount of time available to devote to the project. 
+As an open source project, Phalcon relies on the contributions of developers throughout the globe, as well as the investment of personal time from the core team. Due to this, it is often that other factors (regular job, other obligations etc.) restrict the amount of time available to devote to the project. 
  
 For the project to move forward, the core team and some contributors, have recently set some goals and milestones. We would like to share those with you, so that you are always informed as to where we are and where we are heading.
 
 ### 2016 Recap
 
-2016 has been quite the milestone year for Phalcon. We were not as active in releases, if one looks at the actual number of them, but we have been working very hard to release version 3.x. which not only offered Long Term Support (LTS) but had wide variety of enhancements and features. A small refresher on the [changelog](https://github.com/phalcon/cphalcon/releases/tag/v3.0.0) of the release.
+2016 has been quite the milestone year for Phalcon. We were working very hard to release version 3.x. which not only offered Long Term Support (LTS) but had wide variety of enhancements and features. A small refresher on the [changelog](https://github.com/phalcon/cphalcon/releases/tag/v3.0.0) of the release.
 
-Our Github page shows **571** closed issues for the year (a small number of those were just questions or duplicates). Additionally we had **912** commits in the main repository. This is a drop from previous years, where we have been averaging more than 1,000 commits, but still close enough.
+Our Github page shows **571** closed issues for the year (a small number of those were just questions or duplicates). Additionally we had **912** commits in the main repository. This is a drop from previous years, where we have been averaging more than 1,000 commits, but still close enough
  
 Our [Forum](https://forum.phalconphp.com) has enjoyed 2,484 new posts which generated 7,891 replies in term of discussion, problem solving or general chat. 
 
 Finally our [Slack](https://phalconchats.slack.com/messages/general/) channel has seen a flood of new members, engaging in the community, solving problems and forming friendships.
 
-
-### Funding Campaign - Patreon
+### 2017 Funding Campaign - Patreon
 
 We are excited to announce that we have launched a new campaign with [Patreon](https://www.patreon.com/phalcon)! Patreon is a platform where anyone can support their favorite projects. With each level of support come some modest rewards, whether you are an individual or a company.  
 
