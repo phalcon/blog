@@ -2,6 +2,7 @@
 
 namespace Kitsune\Controllers;
 
+use Phalcon\Text;
 use FeedWriter\RSS2;
 use FeedWriter\Item;
 use Phalcon\Http\Response;
@@ -68,18 +69,23 @@ class PostsController extends Controller
     public function viewAction($slug)
     {
         $post = $this->finder->get($slug);
-        if (is_null($post)) {
+
+        if (null === $post) {
             $this->dispatcher->forward(
                 [
                     'controller' => 'errors',
                     'action'     => 'show404'
                 ]
             );
+            return;
         }
 
-        $this->view->setVar('showDisqus', true);
-        $this->view->setVar('post', $post);
-        $this->view->setVar('title', $post ? $post->getTitle() : '');
+        $this->view->setVars([
+            'showDisqus' => true,
+            'post'       => $post,
+            'title'      => $post->getTitle(),
+            'canonical'  => Text::reduceSlashes(sprintf('%s/post/%s', $this->config->canonical, $post->getSlug())),
+        ]);
     }
 
     public function viewLegacyBySlugAction($time, $slug)
