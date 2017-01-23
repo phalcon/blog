@@ -70,7 +70,7 @@ class PostsController extends Controller
     {
         $post = $this->finder->get($slug);
 
-        if (!$post) {
+        if (is_null($post)) {
             $this->dispatcher->forward(
                 [
                     'controller' => 'errors',
