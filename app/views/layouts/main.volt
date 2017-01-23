@@ -20,7 +20,7 @@
 
     <meta http-equiv="x-dns-prefetch-control" content="off">
 
-    <meta property="og:url" content="https://blog.phalconphp.com/">
+    <meta property="og:url" content="{{ canonical is defined ? canonical : 'https://blog.phalconphp.com/' }}">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="object">
     <meta property="og:title" content="{{ title is defined ? title|e : "Phalcon Framework Blog" }}">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@phalconphp">
 
-    <link rel="canonical" href="https://blog.phalconphp.com/">
+    <link rel="canonical" href="{{ canonical is defined ? canonical : 'https://blog.phalconphp.com/' }}">
     <link rel="publisher" href="https://blog.phalconphp.com/">
     <link rel="author" href="https://phalconphp.com/en/team">
 
