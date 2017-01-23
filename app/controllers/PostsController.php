@@ -70,13 +70,14 @@ class PostsController extends Controller
     {
         $post = $this->finder->get($slug);
 
-        if (is_null($post)) {
+        if (null === $post) {
             $this->dispatcher->forward(
                 [
                     'controller' => 'errors',
                     'action'     => 'show404'
                 ]
             );
+            return;
         }
 
         $this->view->setVars([
