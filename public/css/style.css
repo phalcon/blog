@@ -3,11 +3,6 @@ p {
   line-height: 24px;
 }
 
-#wrapper {
-    width: 70%;
-    margin: 0 auto;
-}
-
 #wrapper #content .post .title {
     font-size: 28px;
     color: #000;
@@ -34,6 +29,10 @@ p {
     padding-left: 20px;
     text-align: left;
     background: #fafafa;
+}
+
+#wrapper #articles img {
+    width: 100%;
 }
 
 #wrapper #sidebar #top .heading#followontumblr {
@@ -157,6 +156,10 @@ pre .sh_sourceCode span.sh_string {
 #wrapper #content .post .copy pre.sh_sourceCode span.sh_function,
 pre.sh_sourceCode span.sh_function {
     color: #cae682;
+}
+
+pre.prettyprint {
+    padding: 8px;
 }
 
 .contributors img {
