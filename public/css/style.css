@@ -157,15 +157,6 @@ pre.prettyprint {
     padding: 8px;
 }
 
-.contributors img {
-    width: 58px;
-    filter: gray;
-    -webkit-filter: grayscale(95%);
-    -moz-filter: grayscale(95%);
-    filter: grayscale(95%);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter ….3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-}
-
 .heading a {
     color: #fff;
 }
