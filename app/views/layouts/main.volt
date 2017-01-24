@@ -133,17 +133,7 @@
                 </div>
                 <div class="col-md-3 content-sidebar">
                     <div id="sidebar">
-                        <div id="top">
-                            <div align="center" style="padding:5px;padding-bottom:5px">
-
-                                <div id="carbonads-container">
-                                    <div class="carbonad">
-                                        <div id="azcarbon"></div>
-                                        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{ partial("partials/carbonads") }}
 
                         <br>
 
