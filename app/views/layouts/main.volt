@@ -67,7 +67,6 @@
 
     <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss">
 
-    <style type="text/css">figure {margin: 0;}</style>
     {{- stylesheet_link("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", false) -}}
     {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", false) -}}
     {{- stylesheet_link("//static.phalconphp.com/www/css/phalcon.min.css", false) -}}
