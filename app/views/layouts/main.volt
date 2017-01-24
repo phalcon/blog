@@ -68,18 +68,18 @@
     <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss">
 
     <style type="text/css">figure {margin: 0;}</style>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//static.phalconphp.com/www/css/phalcon.min.css">
-    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:700,400'>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/prettify/1.1/prettify.css">
-    <link rel="stylesheet" href="//phosphorum-1618.kxcdn.com/css/theme.css?v={{ version }}">
-    <link rel="stylesheet" href="{{ cdnUrl }}/css/style.css?v={{ version }}">
+    {{- stylesheet_link("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", false) -}}
+    {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", false) -}}
+    {{- stylesheet_link("//static.phalconphp.com/www/css/phalcon.min.css", false) -}}
+    {{- stylesheet_link("//fonts.googleapis.com/css?family=Open+Sans:700,400", false) -}}
+    {{- stylesheet_link("//cdn.jsdelivr.net/prettify/1.1/prettify.css", false) -}}
+    {{- stylesheet_link("//phosphorum-1618.kxcdn.com/css/theme.css?v=" ~ version, false) -}}
+    {{- stylesheet_link(cdnUrl ~ "/css/style.css?v=" ~ version, false) -}}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    {{ javascript_include("//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js", false) }}
+    {{ javascript_include("//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js", false) }}
     <![endif]-->
 </head>
 <body>
@@ -135,6 +135,7 @@
                     <div id="sidebar">
                         <div id="top">
                             <div align="center" style="padding:5px;padding-bottom:5px">
+
                                 <div id="carbonads-container">
                                     <div class="carbonad">
                                         <div id="azcarbon"></div>
@@ -181,7 +182,8 @@
         //]]>
     </script>
 
-    <script type="text/javascript" src="//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.3.7,prettify@1.1(prettify.js+lang-css.js+lang-sql.js)"></script>
+    {{ javascript_include("//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.3.7,prettify@1.1(prettify.js+lang-css.js+lang-sql.js)", false) }}
+
     <script type="text/javascript">prettyPrint();</script>
 
     <script>
