@@ -1,4 +1,4 @@
-<div id="top">
+<div id="top" class="widget">
     <div id="carbonads-container" class="text-center">
         <div class="carbonad">
             <div id="azcarbon"></div>

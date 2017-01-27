@@ -16,11 +16,6 @@ p {
     font-size: 16px;
 }
 
-#wrapper #sidebar {
-    padding: 10px;
-    text-align: center;
-}
-
 #wrapper #articles {
     padding: 10px 20px 15px;
     text-align: left;
@@ -31,32 +26,9 @@ p {
     width: 100%;
 }
 
-#wrapper #sidebar #top .heading#followontumblr {
-    background: #0ec281;
-    color: #fff;
-    font-size: inherit;
-    box-shadow: none;
-}
-
-#wrapper #sidebar #top #search form .query {
-    width: 170px;
-}
-
-#wrapper #sidebar #top #description {
+#wrapper #sidebar #description {
     margin-bottom: 10px;
-}
-
-#wrapper #sidebar #top #search form .submit {
-    background: #0ec281;
-}
-
-#wrapper #sidebar #top #search {
-    text-align: center;
-    background: #eaeaea;
-}
-
-#wrapper #sidebar #top #description {
-    font-size: 14px;
+    font-size: 1.7rem;
 }
 
 #wrapper #content .post .copy blockquote {
@@ -82,9 +54,8 @@ p {
     margin-top: 0;
 }
 
-#wrapper #sidebar #top .content {
-    background: #fafafa;
-    color: #717171;
+#sidebar .widget {
+    margin-bottom: 1rem;
 }
 
 #wrapper li {
@@ -199,10 +170,7 @@ h2, h3 {
 }
 
 .tag-cloud {
-    width: 300px;
-    padding: 10px;
     color: #005399;
-    text-align: center;
     -webkit-border-radius: 4px;
        -moz-border-radius: 4px;
             border-radius: 4px;
@@ -219,6 +187,10 @@ h2, h3 {
 
 .tag-cloud span {
     padding: 4px;
+}
+
+.tag-cloud span > a {
+    font-size: 1.2em;
 }
 
 div#articles a {

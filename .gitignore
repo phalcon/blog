@@ -12,8 +12,3 @@
 # Composer
 vendor/
 composer.lock
-
-# Cache
-var/cache/
-var/log/
-var/config/config.php
