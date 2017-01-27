@@ -143,23 +143,9 @@
                 <div class="col-md-3 content-sidebar">
                     <div id="sidebar">
                         {{ partial("partials/carbonads") }}
-
-                        <br>
-
-                        <div id="description">
-                            We are an open source web framework for PHP delivered as a C extension
-                            offering high performance and lower resource consumption
-                        </div>
-
-                        <br>
-
-                        <div class="tag-cloud">
-                            {% for tag, class in tagCloud %}
-                                <span style="font-size: {{ class }}">
-                                    <a href='/tag/{{ tag }}'>{{ tag }}</a>
-                                </span>
-                            {% endfor %}
-                        </div>
+                        {{ partial("partials/patreon") }}
+                        {{ partial("partials/description") }}
+                        {{ partial("partials/tags", ["tags": tagCloud]) }}
                     </div>
                 </div>
             </div>
