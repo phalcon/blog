@@ -60,7 +60,7 @@ If every request takes 3Mb one could expect 256Mb / 3Mb = 75-90 requests filling
 As seen above, Phalcon has a very low memory footprint, which allows the developer to create significantly more complex applications while using a smaller overhead for the framework.
 
 **Network latency is my real problem**
-This point is quite true with almost all web applications. This is the reason that CDN was introduced as well as nginX implementations to serve static resources. If a page is generated in 240ms but the network latency is 450ms, the application will be delivering the page in more than 600ms and the page delivery perceived by the user will be around one second after the page is completely rendered.
+This point is quite true with almost all web applications. This is the reason that CDN was introduced as well as Nginx implementations to serve static resources. If a page is generated in 240ms but the network latency is 450ms, the application will be delivering the page in more than 600ms and the page delivery perceived by the user will be around one second after the page is completely rendered.
 
 Currently, getting a page in [more than 250ms is perceived as slow by the users](http://www.nytimes.com/2012/03/01/technology/impatient-web-users-flee-slow-loading-sites.html?pagewanted=all&_r=0), and slow websites/applications result in lost visitors, customers, money. etc.
 

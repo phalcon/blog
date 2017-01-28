@@ -38,7 +38,7 @@ We hope that you will consider becoming a [patron](https://www.patreon.com/bePat
 
 ### Goals for Q1
 
-Regaring our goals for Q1, we tried to be modest and not add a lot of things to do, since we all have a limited amount of time for now. Bare in mind that this is the minimum amount we have agreed to. Of course if time allows and we can address other issues/bugs, we will definitely do so. 
+Regarding our goals for Q1, we tried to be modest and not add a lot of things to do, since we all have a limited amount of time for now. Bare in mind that this is the minimum amount we have agreed to. Of course if time allows and we can address other issues/bugs, we will definitely do so. 
 
 * Zephir bugs - Segfaults ([2017-Q1](https://github.com/phalcon/zephir/milestone/1))
 * Phalcon bugs ([GI:12055][GI:12289])

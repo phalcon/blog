@@ -15,7 +15,7 @@ Check out the previous articles to get a complete list of changes :)
 
 Little by little, we try to make Phalcon increasingly competitive, but, if you think that Phalcon is missing something, remember that [Github](https://github.com/phalcon/cphalcon/issues) is enabled to receive ideas or suggestions you have, building together a new way to make the web even faster!
 
-As always lastest versions are available from the [download page](https://phalconphp.com/download), we hope you're as pleased with these improvements as we are!
+As always latest versions are available from the [download page](https://phalconphp.com/download), we hope you're as pleased with these improvements as we are!
 
 <3 Phalcon Team
 
