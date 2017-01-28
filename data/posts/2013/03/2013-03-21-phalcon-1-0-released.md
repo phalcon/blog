@@ -25,7 +25,7 @@ To this day, the main features that Phalcon offers are:
 
 - Full MVC Applications (Single-Module, Multi-Module and Micro Applications)
 - [ORM (Transactions, Behaviors, Relations, PHQL, Events, Validations, Hydration, Logging, Profiling, Sharding)](https://docs.phalconphp.com/en/latest/reference/models.html)
-- [HTTP Enviroment](https://docs.phalconphp.com/en/latest/reference/response.html)
+- [HTTP Environment](https://docs.phalconphp.com/en/latest/reference/response.html)
 - [ODM for Mongo](https://docs.phalconphp.com/en/latest/reference/odm.html)
 - [Template Engine (Volt)](https://docs.phalconphp.com/en/latest/reference/volt.html)
 - [DI/Ioc](https://docs.phalconphp.com/en/latest/reference/di.html)
