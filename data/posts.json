@@ -775,5 +775,12 @@
     "date": "2017-01-23",
     "tags": "php, phalcon, phalcon3, update, roadmap, goals",
     "link": ""
+  },
+  {
+    "title": "Phalcon Link and Update",
+    "slug": "phalcon-link-and-update",
+    "date": "2017-02-03",
+    "tags": "php, phalcon, phalcon3, update, link, roadmap, goals",
+    "link": ""
   }
 ]
