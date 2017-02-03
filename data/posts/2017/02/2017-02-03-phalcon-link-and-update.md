@@ -43,9 +43,9 @@ Work is underway to meet our goals for Q1.
 
 We have already started refactoring all of our websites, using different implementation techniques to showcase the power of Phalcon.
 
-Some might already have noticed the changes in the source code of our [forum](https://phalcon.link). This effort is led by [Serghei](https://phalcon.link/team).
+Some might already have noticed the changes in the source code of our [forum](https://phalcon.link).
 
-Also the main website is being refactored, using the Micro application and middleware. This is work in progress, and we will be updating you when we have finished it so that you can have a look and either adapt the implementation to your projects or get some ideas.
+Also the main website is being refactored, using the `\Phalcon\Mvc\Micro` ([application](https://docs.phalconphp.com/en/latest/reference/micro.html)) and middleware. This is work in progress, and we will be updating you when we have finished it so that you can have a look and either adapt the implementation to your projects or get some ideas.
 
 Finally, we have started working on the revamp of the documentation. Very soon a brand new introduction page will be published along with instructions on how to install Phalcon using source, packagecloud.io, docker, vagrant etc.
 				
