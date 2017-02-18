@@ -782,5 +782,12 @@
     "date": "2017-02-03",
     "tags": "php, phalcon, phalcon3, update, link, roadmap, goals",
     "link": ""
+  },
+  {
+    "title": "New website implementation and enhancements",
+    "slug": "new-website-implementation-and-enhancements",
+    "date": "2017-02-17",
+    "tags": "php, phalcon, phalcon3, website, implementation",
+    "link": ""
   }
 ]
