@@ -15,7 +15,7 @@
     <meta name="author" content="Phalcon Framework Team">
     <meta name="generator" content="Phalcon Blog">
     <meta name="application-name" content="Phalcon Framework Blog">
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework, zephir, phalcon2, phalcon3, release">
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework, zephir, phalcon2, phalcon3, release{% if post is defined %},{{ post.getTagsRaw() }}{% endif %}">
     <meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption">
 
     <meta http-equiv="x-dns-prefetch-control" content="off">
@@ -162,7 +162,7 @@
                     query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
                 }
             }
-            document.write('<script charset="utf-8" type="text/javascript" src="//disqus.com/forums/phalconphp/get_num_replies.js' + query + '"></' + 'script>');
+            document.write('<script charset="utf-8" type="text/javascript" src="https://disqus.com/forums/phalconphp/get_num_replies.js' + query + '"></' + 'script>');
         })();
         //]]>
     </script>

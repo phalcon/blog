@@ -248,5 +248,4 @@ class PostFinder extends PhDiInjectable
 
         return $return;
     }
-
 }
