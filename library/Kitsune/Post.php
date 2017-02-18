@@ -73,6 +73,11 @@ class Post extends PhInjectable
         return $this->data['tags'];
     }
 
+    public function getTagsRaw()
+    {
+        return $this->data['tagsRaw'];
+    }
+
     public function getFile()
     {
         return $this->data['file'];
@@ -127,6 +132,8 @@ class Post extends PhInjectable
             $this->getSlug()
         );
 
+        $this->data['tagsRaw'] = $post['tags'];
+
         $tags = explode(',', $post['tags']);
         foreach ($tags as $tag) {
             $this->data['tags'][] = trim($tag);
@@ -160,6 +167,7 @@ class Post extends PhInjectable
             'raw'       => '',
             'link'      => '',
             'tags'      => [],
+            'tagsRaw'   => [],
             'disqusId'  => '',
             'disqusUrl' => '',
             'file'      => '',

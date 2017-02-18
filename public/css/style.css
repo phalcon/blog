@@ -287,3 +287,11 @@ section {
         border-radius: 4px;
     }
 }
+
+.page-header {
+    margin: 0; border: none; padding-top: 20px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(37, 82, 95, 0.9);
+    box-shadow: 0 0 3px 0 rgba(37, 82, 95, 0.9);
+    background:url("https://static.phalconphp.com/www/images/flat_v3/texture.png") repeat-x;
+    z-index: 100;
+}
