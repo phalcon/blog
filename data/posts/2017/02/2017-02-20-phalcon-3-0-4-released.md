@@ -25,8 +25,8 @@ Prior to this release
 
 After 3.0.4 release
 
-• 3.1.x - This branch is used only for bug fixes
-• 3.2.x - This branch was only used for new features that were not breaking backward compatibility
+- 3.1.x - This branch is used only for bug fixes
+- 3.2.x - This branch was only used for new features that were not breaking backward compatibility
 - 4.0.x - This branch is used for the new version features but also certain changes will not be backwards compatible
 
 The appropriate branches will be prepared shortly.
