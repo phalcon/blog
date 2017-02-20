@@ -19,15 +19,15 @@ The release tag can be found here: [3.0.4](https://github.com/phalcon/cphalcon/r
 
 Prior to this release
 
-- 3.0.x - This branch was used only for bugfixes
-- 3.1.x - This branch was only used for new features that were not breaking backward compatibility
-- 4.0.x - This branch is used for the new version features but also certain changes will not be backwards compatible
+- 3.0.x - Only bug fixes
+- 3.1.x - Only for new features that were not breaking backward compatibility
+- 4.0.x - New version features but also certain changes will not be backwards compatible
 
 After 3.0.4 release
 
-- 3.1.x - This branch is used only for bug fixes
-- 3.2.x - This branch was only used for new features that were not breaking backward compatibility
-- 4.0.x - This branch is used for the new version features but also certain changes will not be backwards compatible
+- 3.1.x - Only bug fixes
+- 3.2.x - Only for new features that were not breaking backward compatibility
+- 4.0.x - New version features but also certain changes will not be backwards compatible
 
 The appropriate branches will be prepared shortly.
 
