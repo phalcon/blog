@@ -5,7 +5,7 @@ Hello everyone!
 
 We are really excited to announce Phalcon's latest release: 3.0.4!
 
-This is another maintenance release in the 3.0.x series which addresses several issues.
+This is another maintenance release for the 3.0.x series which addresses several issues.
 
 The release tag can be found here: [3.0.4](https://github.com/phalcon/cphalcon/releases/tag/v3.0.4)
 
