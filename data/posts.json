@@ -796,5 +796,26 @@
     "date": "2017-02-20",
     "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
     "link": ""
+  },
+  {
+    "title": "Stub",
+    "slug": "part1",
+    "date": "2017-02-26",
+    "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
+    "link": ""
+  },
+  {
+    "title": "Stub",
+    "slug": "part2",
+    "date": "2017-02-26",
+    "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
+    "link": ""
+  },
+  {
+    "title": "Stub",
+    "slug": "part3",
+    "date": "2017-02-26",
+    "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
+    "link": ""
   }
 ]
