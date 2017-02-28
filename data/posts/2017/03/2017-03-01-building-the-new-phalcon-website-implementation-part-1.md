@@ -1,25 +1,27 @@
-## Building the new Phalcon Website - Implementation
+## Building the new Phalcon Website - Implementation - Part 1
 
-Our website has undergone a number of iterations regarding its implementation.
+This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
-When we released Phalcon 3.0 we released also a new new fresh look for our website. However, some files were left over and some text on several pages was injected in each page. This made that particular text not translatable by [Transifex](https://transifex.com/phalcon/), the excellent service we use to handle translations for our site.
+Our website has undergone a number of iterations in its implementation.
+
+When we released Phalcon 3.0, we also released a fresh look for our website. However, some files were left over from a previous implementation and new text was introduced in several pages. This made that particular text not translatable by [Transifex](https://transifex.com/phalcon/), the excellent service we use to handle translations for our site.
 
 ### Goals
-One our Q1 goals for 2017 is to improve documentation and also offer better implementations of Phalcon in applications to our community. So what better way to clean up our website application and have it as a sample for our community to view different implementations and get inspiration for their own projects :)
+One our Q1 goals for 2017 is to improve documentation and also offer better implementations of Phalcon in applications to our community. So we cleaned up our website application, and will use it as an implementation sample for our community to inspire them for their own projects :)
 
 ### Standards
 Building the website we used a particular style throughout. Specifically:
  - PSR-2 was used as the coding standard
  - Yoda conditions were used for comparisons
  - Identical comparisons
- - Single quotes anywhere strings were concerned
+ - Single quotes for all strings
 
 ### Implementation
-This implementation of our website showcases the `Phalcon\Mvc\Micro` application with Middleware. It was built for maximum performance, so anything that was duplicated or not necessary was not included.
+This implementation of our website showcases the `Phalcon\Mvc\Micro` application with [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events). It was built for maximum performance.
 
 We implemented two applications for the website. One to dispatch the site for web users to see and a CLI application that allows for certain tasks that need to be run from the console, such as fetching the contributors from Github or cleaning the cache folders.
 
-Let's go through the implementation:
+Let's look at the implementation:
 
 ### Skeleton
 The skeleton of the application is very simple.
@@ -44,7 +46,7 @@ The skeleton of the application is very simple.
 ### `index.php`
 The `index.php` file is the entry point of our application. Apache has been configured with a virtual host to route all requests to that file as follows:
 
-```
+```apacheconfig
 <VirtualHost *:443>
     ServerName              phalconphp.com
     ServerAlias             www.phalconphp.com
@@ -109,9 +111,9 @@ The reason for this is because we do not want to have a variable available in th
 This particular syntax can be very useful in your application, especially if you want to ensure that a particular object cannot be used or overridden by accident.
 
 ### Bootstrap
-We opted in using abstraction for our bootstrap process. The main file for bootstrapping is `AbstractBootstrap.php` located in `app/library/Bootstrap` and contains our abstract bootstrap class. The files `Main.php` and `Cli.php` located in the same folder extend the abstract class, to bootstrap the main application as well as the CLI one.
+We opted using abstraction for our bootstrap process. The main file for bootstrapping is `AbstractBootstrap.php` located in `app/library/Bootstrap` and contains our abstract bootstrap class. The files `Main.php` and `Cli.php` located in the same folder extend the abstract class, to bootstrap the main application as well as the CLI one.
 
-The `run()` method makes several calls to protected functions within `AbstractBootstrap` to initialize objects and run through the whole bootstrapping cycle. 
+The `run()` method makes several calls to protected functions within `AbstractBootstrap` to initialize objects necessary for our application. 
 
 ```php
 public function run()
@@ -142,4 +144,13 @@ Similarly, the `initApplication()` returns an instance of `Phalcon\Mvc\Micro` fo
 
 ### Conclusion
 
-We have looked at the skeleton of our application and also discussed briefly about the bootstrap process. In the next part of these series we will discuss in depth the bootstrap process both for the main app as well as the CLI. 
+We have looked at the skeleton of our application and also discussed briefly about the bootstrap process. In the next part of these series we will discuss in depth the bootstrap process both for the main app as well as the CLI.
+ 
+### References
+- [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
+- [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
+- [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
+- [Micro Application](https://docs.phalconphp.com/en/latest/reference/micro.html)
+- [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events)
+- [Source Code](https://github.com/phalcon/website)
+- [Transifex](https://transifex.com/phalcon)

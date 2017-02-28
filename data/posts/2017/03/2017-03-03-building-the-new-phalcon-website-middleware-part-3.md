@@ -1,11 +1,11 @@
 ## Building the new Phalcon Website - Middleware - Part 3
 
-This is the third part of the "Building the new Phalcon Website" series. 
-[Part 1]()
-[Part 2]() 
+This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
+
+In the final part of our series, we are going to investigate [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events) and how it helps our application.
 
 ### Middleware
-The core of the application is its Middleware. We discussed how the middleware is set up in [Part 2]() in the `initRoutes()` method of our `AbstractBootstrap` class. Note that this only applies to our main application and not the CLI.  
+The core of the application is its Middleware. We discussed how the middleware is set up in [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) in the `initRoutes()` method of our `AbstractBootstrap` class. Note that this only applies to our main application and not the CLI.  
 
 #### Setup
 Middleware needs to be attached to specific events in our events manager. These events are:
@@ -17,7 +17,7 @@ Middleware needs to be attached to specific events in our events manager. These 
 You can attach as many middleware classes in each of these events. They will be processed in a sequential manner, i.e. the first one registered gets processed first, then the second one etc.
 
 #### Execution
-Each middleware class has specific events in it that get executed (if present). These are methods present in each middleware class. The main method that gets executed is `call`
+Each middleware class has specific events in it that get executed (if present). These are methods/events available in every middleware class. The main method that gets executed is `call`
 
 ```php
 public function call(Micro $application)
@@ -100,9 +100,9 @@ public function call(Micro $application)
     return true;
 }
 ```
-First we get a few parameters that have been passed to our application. One of those is the language. We use the `getLang()` method to check if the passed language exists. If not, we try to detect the browser language and if that fails it defaults to English.
+First we get a few parameters that have been passed to our application. One of those is the language. We use the `getLang()` method to check if the passed language exists. If not, we try to detect the browser language and if that fails it defaults to English. The `getLang()` method is located in the `LanguageTrait` (`app/library/Traits`).
 
-The `getLang()` method is located in the `LanguageTrait` (`app/library/Traits`).
+Then we set some more variables in the registry and as the last step, we set the contributors and releases only in the specific pages that require them. This way we remove unnecessary processing and transfer of data from the application to the view.
 
 #### `NotFoundMiddleware`
 We discussed briefly the `NotFoundMiddleware` above. The implementation uses the events within the middleware, in particular the `beforeNotFound` one.
@@ -123,7 +123,7 @@ public function beforeNotFound()
 This method is called within our middleware class, before the `call()` method is called. As a result, if we are here, that means that we have a 404 and therefore need to route the user to the relevant handler/view.
 
 #### `RedirectMiddleware`
-This middleware is responsible for redirections. In reality we only have one redirection from the `/roadmap` url/stub to our Github page, which can easily be achieved with a directive in our  `.htaccess` file.
+This middleware is responsible for redirections. We only have one actual redirection from the `/roadmap` url/stub to our Github page, which can be easily achieved with a directive in our  `.htaccess` file.
 
 Since this application serves as a showcase or tutorial, we opted to create a middleware class that will handle this.
 
@@ -160,7 +160,7 @@ Also if the user just requested the `/download` page, they will be redirected au
 There are many implementations that a developer can employ to achieve the above task. This is just one of them using Middleware.
 
 #### `AssetsMiddleware`
-The assets middleware is invoked to inject specific asset files to specific pages. The front page requires a few more CSS files than the other pages, so this middleware checks where we are and adds the relevant CSS pages in the `header_css` asset collection. 
+The assets middleware is invoked to inject specific asset files to specific pages. The front page requires a few more CSS files than the other pages, so this middleware checks where we are and adds the relevant CSS pages in the `header_css` asset collection if necessary. 
 
 
 ```php
@@ -288,9 +288,7 @@ This task class displays the available commands for our CLI application
 This task class checks all the available cache files (in `storage/cache/*/`) and deletes them when invoked. It is used to clear the cache after each deployment.
 
 #### FetchContributors
-For quite some time now, we have introduced a big image map at the bottom of our site, to thank our contributors. This command is responsible for fetching and calculating that content.
- 
-We are using the excellent [Guzzle]() library to perform this task.
+For quite some time now, we have introduced a big image map at the bottom of our site, to thank our contributors. This command is responsible for fetching the contributors from Github and constructing the final JSON file. To execute the HTTP request we are using the excellent [Guzzle](http://docs.guzzlephp.org/en/latest/) library.
 
 We first assign some weights in different repositories. The more updates, the "heavier" the repository. We then interrogate the Github API for each of the repositories, and retrieve all the contributors. 
 
@@ -313,4 +311,16 @@ If Phalcon has helped you with your personal projects, consider supporting us in
 Thank you all 
 
 <3 Phalcon Team
+
+### References
+- [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
+- [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
+- [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
+- [Micro Application](https://docs.phalconphp.com/en/latest/reference/micro.html)
+- [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events)
+- [Source Code](https://github.com/phalcon/website)
+- [Dotenv](https://github.com/vlucas/phpdotenv)
+- [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
+- [Guzzle](http://docs.guzzlephp.org/en/latest/)
+- [Transifex](https://transifex.com/phalcon)
 
