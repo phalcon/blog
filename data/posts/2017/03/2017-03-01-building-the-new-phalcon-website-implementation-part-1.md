@@ -12,7 +12,7 @@ One our Q1 goals for 2017 is to improve documentation and also offer better impl
 ### Standards
 Building the website we used a particular style throughout. Specifically:
  - PSR-2 was used as the coding standard
- - Yoda conditions were used for comparisons
+ - Used for comparisons, yoda conditions were
  - Identical comparisons
  - Single quotes for all strings
 
