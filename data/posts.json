@@ -796,5 +796,12 @@
     "date": "2017-02-20",
     "tags": "php, phalcon, 3.0.x, phalcon3, release, rfc, lts",
     "link": ""
+  },
+  {
+    "title": "Building the new Phalcon Website - Implementation (Part 1)",
+    "slug": "building-the-new-phalcon-website-implementation-part-1",
+    "date": "2017-03-01",
+    "tags": "php, phalcon, 3.0.x, phalcon3, implementation, website, series",
+    "link": ""
   }
 ]
