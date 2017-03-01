@@ -803,19 +803,5 @@
     "date": "2017-03-01",
     "tags": "php, phalcon, 3.0.x, phalcon3, implementation, website, series",
     "link": ""
-  },
-  {
-    "title": "Building the new Phalcon Website - Bootstrap (Part 2)",
-    "slug": "building-the-new-phalcon-website-bootstrap-part-2",
-    "date": "2017-03-02",
-    "tags": "php, phalcon, 3.0.x, phalcon3, implementation, website, series",
-    "link": ""
-  },
-  {
-    "title": "Building the new Phalcon Website - Middleware (Part 3)",
-    "slug": "building-the-new-phalcon-website-middleware-part-3",
-    "date": "2017-03-03",
-    "tags": "php, phalcon, 3.0.x, phalcon3, implementation, website, series",
-    "link": ""
   }
 ]
