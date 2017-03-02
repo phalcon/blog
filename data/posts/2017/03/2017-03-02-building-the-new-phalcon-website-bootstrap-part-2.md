@@ -541,7 +541,7 @@ protected function initAssets()
 ```
 
 #### `runApplication()`
-Finally we run our application. You can notice that for the main application we invoke the `handle()` method with no parameters
+Finally we run our application. You will notice that for the main application we invoke the `handle()` method with no parameters
 
 ```php
 protected function runApplication()
