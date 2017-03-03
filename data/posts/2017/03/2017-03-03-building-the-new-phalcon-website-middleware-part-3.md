@@ -209,24 +209,28 @@ public function call(Micro $application)
     $registry     = $application->registry;
     $viewName     = $registry->view;
 
-    if ('production' === $application->config->get('env')) {
+    if ('production' === $application->config->get('app')->get('env')) {
         $application->viewSimple->cache(['key' => $cacheKey]);
     }
 
-    $application->viewSimple->setVars(
-        [
-            'page'          => $registry->slug,
-            'language'      => $registry->language,
-            'imageLanguage' => $registry->imageLanguage,
-            'contributors'  => $registry->contributors,
-            'languages'     => $registry->menuLanguages,
-            'noindex'       => $registry->noindex,
-            'releases'      => $registry->releases,
-            'version'       => $registry->version,
-        ]
-    );
+    if (true === $application->viewCache->exists($cacheKey)) {
+        $contents = $application->viewCache->get($cacheKey);
+    } else {
+        $application->viewSimple->setVars(
+            [
+                'page'          => $registry->slug,
+                'language'      => $registry->language,
+                'imageLanguage' => $registry->imageLanguage,
+                'contributors'  => $registry->contributors,
+                'languages'     => $registry->menuLanguages,
+                'noindex'       => $registry->noindex,
+                'releases'      => $registry->releases,
+                'version'       => $registry->version,
+            ]
+        );
 
-    $contents = $application->viewSimple->render($viewName);
+        $contents = $application->viewSimple->render($viewName);
+    }
     $application->response->setContent($contents);
     $application->response->send();
 
@@ -236,9 +240,9 @@ public function call(Micro $application)
 
 We first check where we are. Using a simple `str_replace`, we create a unique file name based on the route, so that we can have a cache file name (or key depending on your cache adapter).
 
-We then check if we are in production mode (set in our `.env` file) and if so, we invoke the cache for the view.
+We then check if we are in production mode (set in our `.env` file) and if so, we invoke the cache for the view. If the data has been cached we use that.
 
-Several variables are being sent to the view, which have originally been set in our `EnvironmentMiddleware` or other areas of the site. We then render the view, set the response contents and send the response back.
+If we do not have a cache hit, several variables are being sent to the view, which have originally been set in our `EnvironmentMiddleware` or other areas of the site. We then render the view, set the response contents and send the response back.
 
 ### CLI Application
 
