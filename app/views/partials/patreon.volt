@@ -1,4 +1,23 @@
 <div class="widget">
-    <a href="https://www.patreon.com/bePatron?u=4653615" data-patreon-widget-type="become-patron-button">Become a Patron!</a>
-    <script async src="https://cdn6.patreon.com/becomePatronButton.bundle.js"></script>
+    <p>
+        <a href="https://phalcon.link/fund">
+            <button class="btn button-small btn-danger">
+                Become a patron
+            </button>
+        </a>
+    </p>
+    <div id="sponsors">
+        <a href="https://pdffiller.com/" target="_blank">
+            <img width="240px"
+                 src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/pdffiller-240x60.png">
+        </a>
+        <a href="https://mctekk.com/" target="_blank">
+            <img width="240px"
+                 src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/mctekk-240x60.png">
+        </a>
+        <a href="https://abits.com/" target="_blank">
+            <img width="240px"
+                 src="https://raw.githubusercontent.com/phalcon/cphalcon/master/backers/abits-240x60.png">
+        </a>
+    </div>
 </div>

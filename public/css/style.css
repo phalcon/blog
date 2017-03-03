@@ -55,9 +55,14 @@ p {
 }
 
 #sidebar .widget {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
+#sidebar .hr {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000000;
+}
 #wrapper li {
     line-height: 24px;
 }
@@ -295,3 +300,53 @@ section {
     background:url("https://static.phalconphp.com/www/images/flat_v3/texture.png") repeat-x;
     z-index: 100;
 }
+
+
+/**
+ * Sponsors div
+ */
+#sponsors {
+    text-align: center;
+}
+
+#sponsors .white-bg {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#sponsors h4 {
+    color: #999;
+    margin: 0 0 10px;
+}
+
+#sponsors a {
+    margin: 20px 15px 0;
+    position: relative;
+}
+
+#sponsors a,
+#sponsors img {
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#sponsors img {
+    transition: all 0.3s ease;
+    filter: contrast(0%);
+}
+
+#sponsors img:hover {
+    filter: none;
+}
+
+#sponsors a.gold {
+    display: block;
+    margin: 30px auto 15px;
+    width: 200px;
+}
+
+#sponsors a.gold img {
+    width: 200px;
+}
+

@@ -109,15 +109,87 @@
 
                 <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
                     <ul class="nav navbar-nav main-menu">
-                        <li class="first"><a href="https://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
-                        <li><a href="https://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                        <li><a href="https://api.phalconphp.com" class="header-nav-link" target="_blank">API</a></li>
-                        <li><a href="https://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                        <li><a href="https://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
-                        <li><a href="http://phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
-                        <li><a href="https://phalconphp.com/en/about">About</a></li>
-                        <li class="visible-lg"><a href="https://twitter.com/phalconphp" class="twitter">&nbsp;</a></li>
-                        <li class="visible-lg"><a href="https://github.com/phalcon/cphalcon/" class="github">&nbsp;</a></li>
+                        <li class="first">
+                            <a href="https://phalcon.link/download"
+                               class="header-nav-link">
+                                Download
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://phalcon.link/docs"
+                               class="header-nav-link"
+                               target="_blank">
+                                Documentation
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                Community <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://phalcon.link/forum" target="_blank">
+                                        Forum
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://phalcon.link/blog" target="_blank">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://phalcon.link/api" target="_blank">
+                                        API
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://phalcon.link/resources" target="_blank">
+                                        Resources
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="https://phalcon.link/f" target="_blank">
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://phalcon.link/t" target="_blank">
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://phalcon.link/g+" target="_blank">
+                                        Google+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://phalcon.link/gab" target="_blank">
+                                        Gab.ai
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://phalcon.link/about" class="header-nav-link">
+                                Contribute
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://phalconphp.com/en/sponsors" class="header-nav-link">
+                                Sponsors
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://phalcon.link/fund" class="header-nav-link">
+                                Support Us
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -143,8 +215,11 @@
                 <div class="col-md-3 content-sidebar">
                     <div id="sidebar">
                         {{ partial("partials/carbonads") }}
+                        <div class="hr"></div>
                         {{ partial("partials/patreon") }}
+                        <div class="hr"></div>
                         {{ partial("partials/description") }}
+                        <div class="hr"></div>
                         {{ partial("partials/tags", ["tags": tagCloud]) }}
                     </div>
                 </div>
