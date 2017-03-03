@@ -1,6 +1,6 @@
 ## Building the new Phalcon Website - Bootstrap - Part 2
 
-This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2)
+This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
 Continuing with our series, we will now discuss the bootstrapping process in depth.
 
@@ -566,6 +566,7 @@ We have looked at the boostrap of the application and each service setup for bot
 ### References
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
+- [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 - [Micro Application](https://docs.phalconphp.com/en/latest/reference/micro.html)
 - [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
