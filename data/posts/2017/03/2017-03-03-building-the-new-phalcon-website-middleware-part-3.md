@@ -12,7 +12,7 @@ Middleware needs to be attached to specific events in our events manager. These 
 
 * `before`: This attaches the middleware to the event that fires before the handler has been executed. 
 * `after`: This attaches the middleware to the event that fires after the handler has been executed. 
-* `final`: This attaches the middleware to the event that fires after the response has been sent to the caller.  
+* `finish`: This attaches the middleware to the event that fires after the response has been sent to the caller.  
 
 You can attach as many middleware classes in each of these events. They will be processed in a sequential manner, i.e. the first one registered gets processed first, then the second one etc.
 
