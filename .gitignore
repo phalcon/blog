@@ -8,6 +8,7 @@
 
 # .htaccess
 .htaccess
+.env
 
 # Composer
 vendor/

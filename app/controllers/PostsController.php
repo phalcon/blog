@@ -2,114 +2,57 @@
 
 namespace Kitsune\Controllers;
 
+use Phalcon\Cache\BackendInterface;
+use Phalcon\Config;
+use Phalcon\Mvc\Controller as PhController;
+use Phalcon\Mvc\View\Simple;
 use Phalcon\Text;
-use FeedWriter\RSS2;
-use FeedWriter\Item;
-use Phalcon\Http\Response;
-use Kitsune\Controller;
 
-class PostsController extends Controller
+/**
+ * Class PostsController
+ *
+ * @package Kitsune\Controllers
+ *
+ * @property BackendInterface $cacheData
+ * @property \ParsedownExtra  $parsedown
+ * @property Config           $config
+ * @property Simple           $viewSimple
+ */
+class PostsController extends PhController
 {
-    public function indexAction($page = 1)
-    {
-        $this->view->setVar('showDisqus', false);
-        $this->view->setVar(
-            'posts',
-            $this->finder->getLatest($page, $this->config->blog->postsPerPage)
-        );
-        $this->view->setVar('pages', $this->finder->getPages($page));
-    }
-
-    public function tagAction($tag)
-    {
-        $this->view->pick('posts/index');
-        $this->view->showDisqus = false;
-        $this->view->posts = $this->finder->getLatestByTag($tag, 10);
-    }
-
     /**
-     * Handles the RSS action. Constructs the rss feed of the latest posts. The
-     * number of posts to return is stored in the configuration section
+     * Displays a post
      *
-     * @return Response
+     * @param string $slug
+     *
+     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
      */
-    public function rssAction()
+    public function mainAction($slug = '')
     {
-        $feed = new RSS2();
-        $feed->setEncoding('UTF-8');
-        $feed->setTitle($this->config->rss->title);
-        $feed->setDescription($this->config->rss->description);
-        $feed->setLink($this->getFullUrl());
-
-        $posts = $this->finder->getLatest(1);
-        foreach ($posts as $post) {
-            $feedItem = new Item();
-            $feedItem->setTitle($post->getTitle());
-            $feedItem->setLink($this->getFullUrl('/post/' . $post->getSlug()));
-            $feedItem->setDescription($post->getContent());
-            $feedItem->setDate($post->getDate());
-
-            $feed->addItem($feedItem);
+        $cacheKey = sprintf('post-%s.cache', $slug);
+        if (true === empty($slug) || true !== $this->cacheData->exists($cacheKey)) {
+            return $this->response->redirect('/');
         }
 
-        $response = new Response();
-        $response->setHeader('Content-Type', 'application/xml');
-        $response->setContent($feed->generateFeed());
-
-        return $response;
-    }
-
-    /**
-     * Handles the viewing of a post. The $slug can be either a number or a
-     * string (actual slug). The number is when we have previous posts i.e.
-     * from Disqus
-     *
-     * @param string|integer $slug The unique identifier of the post
-     */
-    public function viewAction($slug)
-    {
-        $post = $this->finder->get($slug);
-
-        if (null === $post) {
-            $this->dispatcher->forward(
-                [
-                    'controller' => 'errors',
-                    'action'     => 'show404'
-                ]
-            );
-            return;
-        }
-
-        $this->view->setVars([
-            'showDisqus' => true,
-            'post'       => $post,
-            'title'      => $post->getTitle(),
-            'canonical'  => Text::reduceSlashes(sprintf('%s/post/%s', $this->config->canonical, $post->getSlug())),
-        ]);
-    }
-
-    public function viewLegacyBySlugAction($time, $slug)
-    {
-        $this->dispatcher->forward(
+        $post     = $this->cacheData->get($cacheKey);
+        $contents = $this->viewSimple->render(
+            'pages/view',
             [
-                'controller' => 'errors',
-                'action'     => 'show404'
+                'showDisqus' => true,
+                'post'       => $post,
+                'title'      => $post['title'],
+                'canonical'  => Text::reduceSlashes(
+                    sprintf(
+                        '%s/post/%s',
+                        $this->config->get('app')->get('url'),
+                        $post['slug']
+                    )
+                ),
             ]
         );
-    }
+        $this->response->setContent($contents);
 
-    public function viewLegacyByTimeAction($time, $slug)
-    {
-        $this->dispatcher->forward(
-            [
-                'controller' => 'errors',
-                'action'     => 'show404'
-            ]
-        );
-    }
+        return $this->response;
 
-    protected function getFullUrl($uri = '/')
-    {
-        return $this->request->getScheme() . '://' . $this->request->getServerName() . $uri;
     }
 }

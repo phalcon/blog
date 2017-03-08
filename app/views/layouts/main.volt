@@ -15,7 +15,8 @@
     <meta name="author" content="Phalcon Framework Team">
     <meta name="generator" content="Phalcon Blog">
     <meta name="application-name" content="Phalcon Framework Blog">
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework, zephir, phalcon2, phalcon3, release{% if post is defined %},{{ post.getTagsRaw() }}{% endif %}">
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework, zephir, phalcon2, phalcon3, release">
+
     <meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption">
 
     <meta http-equiv="x-dns-prefetch-control" content="off">
@@ -67,19 +68,7 @@
 
     <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss">
 
-    {{- stylesheet_link("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", false) -}}
-    {{- stylesheet_link("//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", false) -}}
-    {{- stylesheet_link("//static.phalconphp.com/www/css/phalcon.min.css", false) -}}
-    {{- stylesheet_link("//fonts.googleapis.com/css?family=Open+Sans:700,400", false) -}}
-    {{- stylesheet_link("//cdn.jsdelivr.net/prettify/1.1/prettify.css", false) -}}
-    {{- stylesheet_link("//phosphorum-1618.kxcdn.com/css/theme.css?v=" ~ version, false) -}}
-    {{- stylesheet_link(cdnUrl ~ "/css/style.css?v=" ~ version, false) -}}
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    {{ javascript_include("//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js", false) }}
-    {{ javascript_include("//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js", false) }}
-    <![endif]-->
+    {{- assets.outputCss('header_css') -}}
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -209,7 +198,7 @@
             <div id="content" class="row">
                 <div class="col-md-9 content-body">
                     <div id="articles">
-                        {{ content() }}
+                        {% block contents %}{% endblock %}
                     </div>
                 </div>
                 <div class="col-md-3 content-sidebar">
@@ -220,12 +209,15 @@
                         <div class="hr"></div>
                         {{ partial("partials/description") }}
                         <div class="hr"></div>
-                        {{ partial("partials/tags", ["tags": tagCloud]) }}
+                        {#{{ partial("partials/tags", ["tags": tagCloud]) }}#}
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    {{- assets.outputJs('footer_js') -}}
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <script type="text/javascript">
         //<![CDATA[
@@ -241,10 +233,6 @@
         })();
         //]]>
     </script>
-
-    {{ javascript_include("//cdn.jsdelivr.net/g/jquery@2.1,bootstrap@3.3.7,prettify@1.1(prettify.js+lang-css.js+lang-sql.js)", false) }}
-
-    <script type="text/javascript">prettyPrint();</script>
 
 </body>
 </html>

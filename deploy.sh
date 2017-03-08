@@ -4,5 +4,5 @@
 git pull
 
 # Clear cache
-rm -f var/cache/volt/*.php
-rm -f var/cache/data/*.cache
+./phalcon -clear-cache
+./phalcon -regenerate-cache
