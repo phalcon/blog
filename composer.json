@@ -1,30 +1,57 @@
 {
-    "name":        "phalcon/blog",
-    "description": "Phalcon official Blog",
-    "homepage":    "https://blog.phalconphp.com",
-    "keywords": [
-        "blog",
-        "phalcon"
-    ],
-    "type": "project",
-    "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "Phalcon Team",
-            "email": "team@phalconphp.com",
-            "homepage": "https://phalconphp.com/en/team"
-        }
-    ],
-    "support": {
-        "source": "https://github.com/phalcon/blog",
-        "issues": "https://github.com/phalcon/blog/issues",
-        "wiki":   "https://github.com/phalcon/blog/wiki",
-        "forum": "https://forum.phalconphp.com/"
+  "name": "phalcon/blog",
+  "description": "Phalcon Blog",
+  "keywords": [
+    "blog",
+    "phalcon",
+    "framework",
+    "extension"
+  ],
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "homepage": "https://docs.phalconphp.com/",
+  "authors": [
+    {
+      "name": "Phalcon Team",
+      "email": "team@phalconphp.com",
+      "homepage": "https://phalconphp.com/en/team"
     },
-    "require": {
-        "php": ">= 5.5",
-        "ext-phalcon": "~3.0",
-        "kzykhys/ciconia": "^1.0",
-        "mibe/feedwriter": "^1.0"
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/phalcon/cphalcon/graphs/contributors"
     }
+  ],
+  "support": {
+    "source": "https://github.com/phalcon/cphalcon",
+    "issues": "https://github.com/phalcon/cphalcon/issues",
+    "wiki": "https://github.com/phalcon/cphalcon/wiki",
+    "forum": "https://forum.phalconphp.com/",
+    "docs": "https://docs.phalconphp.com"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kitsune\\": "app/library",
+      "Kitsune\\Cli\\Tasks\\": "app/tasks/",
+      "Kitsune\\Controllers\\": "app/controllers/"
+    }
+  },
+  "require": {
+    "php": ">= 5.6",
+    "vlucas/phpdotenv": "^2.4",
+    "dariuszp/cli-progress-bar": "^1.0",
+    "mibe/feedwriter": "^1.0",documentation
+    "erusev/parsedown": "^1.6",
+    "erusev/parsedown-extra": "^0.7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "codeception/codeception": "^2.2",
+    "codeception/verify": "~0.3",
+    "codeception/specify": "~0.4",
+    "codeception/mockery-module": "^0.2",
+    "squizlabs/php_codesniffer": "~2.7"
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
 }
