@@ -41,7 +41,7 @@ We hope that you will consider becoming a [patron](https://www.patreon.com/bePat
 Regarding our goals for Q1, we tried to be modest and not add a lot of things to do, since we all have a limited amount of time for now. Bare in mind that this is the minimum amount we have agreed to. Of course if time allows and we can address other issues/bugs, we will definitely do so. 
 
 * Zephir bugs - Segfaults ([2017-Q1](https://github.com/phalcon/zephir/milestone/1))
-* Phalcon bugs ([GI:12055][GI:12289])
+* Phalcon bugs ([12055](https://github.com/phalcon/cphalcon/issues/12055), [12289](https://github.com/phalcon/cphalcon/issues/12289))
 * Refactor/rework our sites (www, forum, builtwith, blog) to allow for patreons to be recognized
 * Convert github:phalcon to an organization
 * Migrate all the relevant github:phalcon repositories to the new organization

@@ -19,7 +19,7 @@ Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon 
 - Removed support for prefixes strategy in `Phalcon\Loader`
 - `Phalcon\Mvc\View` now supports many views directories
 - An absolute path can now be used for `Mvc\View::setLayoutsDir`
-- Fixed odd view behavior [GI:1933] related to `setLayout()` and `pick()`
+- Fixed odd view behavior [1933](https://github.com/phalcon/cphalcon/issues/1933) related to `setLayout()` and `pick()`
 - `Phalcon\Di` is now bound to service closures allowing use `Phalcon\Di` as `$this` to access services within the closures
 - If an object is returned after firing the event `beforeServiceResolve` in `Phalcon\Di` it overrides the default service localization process
 - Placeholders `:controller` and `:action` in `Mvc\Router` now default to `/([\\w0-9\\_\\-]+)` instead of `/([\\a-zA-Z0-9\\_\\-]+)`
@@ -52,13 +52,13 @@ Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon 
 - Added `Phalcon\Dispatcher::hasParam()`
 - `Phalcon\Cli\Console` and `Phalcon\Mvc\Application` now inherit `Phalcon\Application`.
 - Fixed `afterFetch` event not being sent to behaviors
-- Fixed issue with radio not being checked when default value is 0 [GI:11358]
-- Fixed issue with `Model::__set` that was bypassing setters [GI:11286]
-- Fixed issue with `Model::__set` that was setting hidden attributes directly when setters are not declared [GI:11286]
+- Fixed issue with radio not being checked when default value is 0 [11358](https://github.com/phalcon/cphalcon/issues/11358)
+- Fixed issue with `Model::__set` that was bypassing setters [11286](https://github.com/phalcon/cphalcon/issues/11286)
+- Fixed issue with `Model::__set` that was setting hidden attributes directly when setters are not declared [11286](https://github.com/phalcon/cphalcon/issues/11286)
 - Added `Phalcon\Cli\DispatcherInterface`, `Phalcon\Cli\TaskInterface`, `Phalcon\Cli\RouterInterface` and `Phalcon\Cli\Router\RouteInterface`.
 - Added `Phalcon\Mvc\Collection::update`, `Phalcon\Mvc\Collection::create` and `Phalcon\Mvc\Collection::createIfNotExist`
-- Removed `__construct` from all interfaces [GI:11410]
-- Fire the `dispatch:beforeException` event when there is an exception during dispatching [GI:11458]
+- Removed `__construct` from all interfaces [11410](https://github.com/phalcon/cphalcon/issues/11410)
+- Fire the `dispatch:beforeException` event when there is an exception during dispatching [11458](https://github.com/phalcon/cphalcon/issues/11458)
 - Added `OR` operator for `Phalcon\Mvc\Model\Query\Builder` methods: `betweenWhere`, `notBetweenWhere`, `inWhere` and `notInWhere`
 - Fixed bug of `destroy` method of `Phalcon\Session\Adapter\Libmemcached`
 - Added `Phalcon\Cache\Backend\Memcache::addServers` to enable pool of servers for memcache

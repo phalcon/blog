@@ -138,7 +138,7 @@ $memcache->addServers('10.4.6.12', 11000, true);
 ```
 
 #### CRYPT
-&bull; Mcrypt is replaced with `openssl` in `Phalcon\Crypt` [GPR:11530][GI:11486]
+&bull; Mcrypt is replaced with `openssl` in `Phalcon\Crypt` [11530](https://github.com/phalcon/cphalcon/pull/11530)[11486](https://github.com/phalcon/cphalcon/issues/11486)
 Due to the lack of updates for mcrypt for a number of years, its slow performance and the fact that the PHP core team decided to deprecate mcrypt [as soon as possible](https://wiki.php.net/rfc/mcrypt-viking-funeral) (version 7.1 onward), we have replaced it with the much faster and supported openssl.
 
 &bull; Default encrypt algorithm in `Phalcon\Crypt` is now changed to `AES-256-CFB`
@@ -149,7 +149,7 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 > If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore `openssl`. **Failure to do so will result in loss of data**. A port is available in the incubator. Please see the code [here](https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy)
 
 #### DATABASE
-&bull; Dropped support of Oracle [GI:12008][GPR:12009]
+&bull; Dropped support of Oracle [12008](https://github.com/phalcon/cphalcon/issues/12008)[12009](https://github.com/phalcon/cphalcon/pull/12009)
 Support of Oracle has been dropped from the Phalcon Core for the following reasons:
 &bull;&bull; The lack of Oracle maintainer
 &bull;&bull; The lack of relevant experience among the Phalcon Core Team
@@ -232,7 +232,7 @@ public function testAction()
 
 &bull; Added method `getActionSuffix()` in `Phalcon\DispatcherInterface`. This allows you change the 'Action' suffix in controller actions.
 
-&bull; Corrected behavior to fire the `dispatch:beforeException` event when there is any exception during dispatching [GI:11458]
+&bull; Corrected behavior to fire the `dispatch:beforeException` event when there is any exception during dispatching [11458](https://github.com/phalcon/cphalcon/issues/11458)
 
 &bull; CLI parameters are now handled consistently.
 
@@ -326,7 +326,7 @@ public function destroyAction()
 ```
 
 #### FLASH
-&bull; Added ability to autoescape Flash messages [GI:11448]
+&bull; Added ability to autoescape Flash messages [11448](https://github.com/phalcon/cphalcon/issues/11448)
 
 ```php
 $flash = new Phalcon\Flash\Session;
@@ -338,7 +338,7 @@ echo $flash->output();
 ```
 
 &bull; Fixed `Phalcon\Session\Flash::getMessages`. 
-Now it returns an empty array in case of non existent message type request [GI:11941]
+Now it returns an empty array in case of non existent message type request [11941](https://github.com/phalcon/cphalcon/issues/11941)
 
 **Old result**:
 
@@ -401,7 +401,7 @@ Most browsers do not support sending `PUT` and `DELETE` requests via the method 
 - `PURGE`: Although not defined in the HTTP RFCs, some HTTP servers and caching systems implement this method and use it to purge cached data.
 
 &bull; Refactored `Phalcon\Http\Request::getHttpHost`. 
-Now it always returns the hostname or empty an string. Optionally validates and cleans host name [GI:2573][GPR:11921]
+Now it always returns the hostname or empty an string. Optionally validates and cleans host name [2573](https://github.com/phalcon/cphalcon/issues/2573)[11921](https://github.com/phalcon/cphalcon/pull/11921)
 
 &bull; Renamed `Phalcon\Http\Request::isSoapRequest` to `Phalcon\Http\Request::isSoap` and `Phalcon\Http\Request::isSecureRequest` to `Phalcon\Http\Request::isSecure`. 
 Left the originals functions as aliases and marked them deprecated. 
@@ -569,13 +569,13 @@ Returns the join parts from query builder
 
 &bull; Fixed `afterFetch` event not being sent to behaviors
 
-&bull; Fixed issue with `Model::__set` that was bypassing setters [GI:11286]
+&bull; Fixed issue with `Model::__set` that was bypassing setters [11286](https://github.com/phalcon/cphalcon/issues/11286)
 
-&bull; Fixed issue with `Model::__set` setting hidden attributes directly when setters are not declared [GI:11286]
+&bull; Fixed issue with `Model::__set` setting hidden attributes directly when setters are not declared [11286](https://github.com/phalcon/cphalcon/issues/11286)
 
 &bull; `Phalcon\Mvc\Model\Manager::load()` now can load models from aliased namespaces
 
-&bull; `Phalcon\Mvc\Model\Transaction\Manager` now correctly keeps account of transactions [GI:11554]
+&bull; `Phalcon\Mvc\Model\Transaction\Manager` now correctly keeps account of transactions [11554](https://github.com/phalcon/cphalcon/issues/11554)
 
 &bull; `Phalcon\Db\Dialect\Sqlite` now maps additional column types to SQLite columns equivalents.
 
@@ -627,7 +627,7 @@ $acl->isAllowed('Guests', 'Customers', 'search', ['a' => 4]); // Returns true
 $acl->isAllowed('Guests', 'Customers', 'search', ['a' => 3]); // Returns false
 ```
 
-&bull; Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [GI:12004][GPR:12006]
+&bull; Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [12004](https://github.com/phalcon/cphalcon/issues/12004)[12006](https://github.com/phalcon/cphalcon/pull/12006)
 
 ```php
 use Phalcon\Acl;
@@ -674,7 +674,7 @@ Added `addConnect` for the `CONNECT` HTTP method, `addPurge` for the `PURGE` HTT
 
 &bull; Fixed the use of the annotation router with namespaced controllers
 
-&bull; Fixed matching host name by `Phalcon\Mvc\Route::handle` when using port on current host name [GI:2573]
+&bull; Fixed matching host name by `Phalcon\Mvc\Route::handle` when using port on current host name [2573](https://github.com/phalcon/cphalcon/issues/2573)
 
 #### SECURITY
 &bull; Added `Phalcon\Security::hasLibreSsl` and `Phalcon\Security::getSslVersionNumber`
@@ -696,13 +696,13 @@ Mostly these are used internally but can be used to get information about `libre
 &bull; Added missing unit-tests for `Phalcon\Security`
 
 #### SESSION
-&bull; Removed `Phalcon\Session` [GI:11340]
+&bull; Removed `Phalcon\Session` [11340](https://github.com/phalcon/cphalcon/issues/11340)
 > **BACKWARDS INCOMPATIBLE**: Any references to `Phalcon\Session` have to be removed and replaced with the relevant adapter class
 
-&bull; Fixed the Session write callback [GI:11733]
+&bull; Fixed the Session write callback [11733](https://github.com/phalcon/cphalcon/issues/11733)
 
 #### TEXT
-&bull; Added ability to use custom delimiter for `Phalcon\Text::camelize` and `Phalcon\Text::uncamelize` [GI:10396]
+&bull; Added ability to use custom delimiter for `Phalcon\Text::camelize` and `Phalcon\Text::uncamelize` [10396](https://github.com/phalcon/cphalcon/issues/10396)
 
 ```php
 use Phalcon\Text;
@@ -713,7 +713,7 @@ public function displayAction()
 }
 ```
 
-&bull; Fixed `Phalcon\Text:dynamic()` to allow custom separator [GI:11215]
+&bull; Fixed `Phalcon\Text:dynamic()` to allow custom separator [11215](https://github.com/phalcon/cphalcon/issues/11215)
 
 #### VIEW
 &bull; An absolute path can now be used to `Mvc\View::setLayoutsDir`
@@ -746,7 +746,7 @@ public function displayAction()
 }
 ```
 
-&bull; Fixed odd view behavior [GI:1933] related to `setLayout()` and `pick()`
+&bull; Fixed odd view behavior [1933](https://github.com/phalcon/cphalcon/issues/1933) related to `setLayout()` and `pick()`
 
 #### VALIDATION
 &bull; `Phalcon\Mvc\Model\Validation` is now deprecated in favor of `Phalcon\Validation`
@@ -848,11 +848,11 @@ if (true === $validation->hasOption('my-option')) {
 
 &bull; Added option to validate multiple fields with one validator (fix uniqueness validator as well), also removes unnecessary `model => $this` in `Phalcon\Validation\Validator\Uniqueness`.
 
-&bull; `Phalcon\Validation\Validator\Alpha` now correctly validates non-ASCII characters [GI:11386]
+&bull; `Phalcon\Validation\Validator\Alpha` now correctly validates non-ASCII characters [11386](https://github.com/phalcon/cphalcon/issues/11386)
 
 &bull; Added `Phalcon\Validation\CombinedFieldsValidator`, validation will pass array of fields to this validator if needed
 
-&bull; `Phalcon\Validation\Validator\Digit` now correctly validates digits [GI:11374]
+&bull; `Phalcon\Validation\Validator\Digit` now correctly validates digits [11374](https://github.com/phalcon/cphalcon/issues/11374)
 
 ```php
 use Phalcon\Validation\Validator\Digit as DigitValidator;
@@ -917,9 +917,9 @@ $validator->add(
 );
 ```
 
-&bull; Fixed `Phalcon\Validation::appendMessage` to allow append message to the empty stack [GI:10405]
+&bull; Fixed `Phalcon\Validation::appendMessage` to allow append message to the empty stack [10405](https://github.com/phalcon/cphalcon/issues/10405)
 
-&bull; Added `convert` option to the `Phalcon\Validation\Validator\Uniqueness` to convert values to the database lookup [GI:12005][GPR:12030]
+&bull; Added `convert` option to the `Phalcon\Validation\Validator\Uniqueness` to convert values to the database lookup [12005](https://github.com/phalcon/cphalcon/issues/12005)[12030](https://github.com/phalcon/cphalcon/pull/12030)
 
 ```php
 use Phalcon\Validation\Validator\Uniqueness;
@@ -939,7 +939,7 @@ $validator->add(
 ```
 
 #### INTERFACES
-&bull; Removed `__construct` from all interfaces [GI:11410][GPR:11441]
+&bull; Removed `__construct` from all interfaces [11410](https://github.com/phalcon/cphalcon/issues/11410)[11441](https://github.com/phalcon/cphalcon/pull/11411)
 
 &bull; Added `Phalcon\Cli\DispatcherInterface`, `Phalcon\Cli\TaskInterface`, `Phalcon\Cli\RouterInterface` and `Phalcon\Cli\Router\RouteInterface`.
 
@@ -949,13 +949,13 @@ $validator->add(
 #### VARIOUS
 &bull; Added `Phalcon\Assets\Manager::exists()` to check if collection exists
 
-&bull; Fixed `Filter::add` method handler [GI:11581]
+&bull; Fixed `Filter::add` method handler [11581](https://github.com/phalcon/cphalcon/issues/11581)
 
-&bull; Fixed issue with radio not being checked when default value is 0 [GI:11358]
+&bull; Fixed issue with radio not being checked when default value is 0 [11358](https://github.com/phalcon/cphalcon/issues/11358)
 
 &bull; Phalcon\Tag::getTitle() shows a title depending on `prependTitle` and `appendTitle`
 
-&bull; Using a `settable` variable for the Mongo Connection Service name instead of a hard coded string [GI:11725]
+&bull; Using a `settable` variable for the Mongo Connection Service name instead of a hard coded string [11725](https://github.com/phalcon/cphalcon/issues/11725)
 
 &bull; `Phalcon\Debug\Dump` skip debugging di, fix detecting private/protected properties
 
