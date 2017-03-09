@@ -1,7 +1,7 @@
 Making Phalcon even faster. Is that possible? Yes!
 ==================================================
 
-![image]({{ cdnUrl }}/files/2013-06-23-phalcon-php-logo.png)
+![image]({{ cdnUrl }}files/2013-06-23-phalcon-php-logo.png)
 
 The Phalcon Team is constantly trying to find ways of making Phalcon even faster while keeping a good balance in terms of features offered and performance.
 

@@ -12,15 +12,15 @@ The number of improvements and bug fixes are a lot more compared to other releas
 - Implemented a more versatile way to assign variables in Volt allowing to assign properties and array indexes
 - Improved generation of macros in Volt using anonymous functions instead of plain PHP functions, which allows binding the adapter object and injecting services within them
 - Fixed generation and validation of default parameters in Volt's macros
-- Added `Phalcon\Assets\Manager::getCollections()` to return all collections registered [GPR:2488]
+- Added `Phalcon\Assets\Manager::getCollections()` to return all collections registered [2488](https://github.com/phalcon/cphalcon/pull/2488)
 - Now `Phalcon\Mvc\Url::getStatic()` generates URLs from routes
 - Introduced `Phalcon\Mvc\EntityInterface` to allow parameters receive both `Phalcon\Mvc\Model` and `Phalcon\Mvc\Collection` instances. This interface allows `Mvc\Model\Validators` to be used in `Mvc\Collection`
 - Added `Phalcon\Session\Adapter::setName()` to change the session name
 - Added `BIGINT` column type support in `Phalcon\Db`
-- Added new types `Phalcon\Db\Column::BLOB` and `Phalcon\Db\Column::DOUBLE` [GPR:10506]
+- Added new types `Phalcon\Db\Column::BLOB` and `Phalcon\Db\Column::DOUBLE` [10506](https://github.com/phalcon/cphalcon/pull/10506)
 - Automatic binding of Large Object data (LOB) in the ORM
 - Support for `BIT` types in MySQL with binding as booleans
-- Added `Phalcon\Flash\Direct::output()` allowing to place flash messages in a specific place of the view [GPR:629]
+- Added `Phalcon\Flash\Direct::output()` allowing to place flash messages in a specific place of the view [629](https://github.com/phalcon/cphalcon/pull/629)
 - Added 'autoescape' option that allows to globally enable autoescape in any Volt template
 - Added `readAttribute`/`writeAttribute` to `Phalcon\Mvc\Collection\Document`
 - Added toArray to `Phalcon\Mvc\Collection\Document`
@@ -31,7 +31,7 @@ The number of improvements and bug fixes are a lot more compared to other releas
 - Values in `LIMIT`/`OFFSET` clause are now passed using bound parameters in PHQL
 - Allowing late state binding in both Simple/Complex results to allow override `Mvc\Model::cloneResultMap`
 - Added method `distinct()` in `Phalcon\Mvc\Model\Criteria`
-  [#10536](https://github.com/phalcon/cphalcon/issues/10536)
+  [10536](https://github.com/phalcon/cphalcon/issues/10536)
 - Added global setting `orm.ignore_unknown_columns` to ignore unexpected columns when hydrating instances in the ORM. This fixes extra auxiliary columns used in `Db\Adapter\Pdo\Oracle`
 - Added support for `afterFetch` in `Mvc\Collection`
 - Added `beforeMatch` parameter in `@Route` annotation of `Mvc\Router\Annotations`

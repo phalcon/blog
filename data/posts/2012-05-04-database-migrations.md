@@ -12,7 +12,7 @@ In short [database migrations](https://docs.phalconphp.com/en/latest/reference/m
 
 While you're here, why not watch a short screencast?
 
-[![Database Migrations]({{ cdnUrl }}/files/2012-05-04-database-migrations-screencast.png)](https://vimeo.com/41381817 "Database Migrations - Click to Watch!")
+[![Database Migrations]({{ cdnUrl }}files/2012-05-04-database-migrations-screencast.png)](https://vimeo.com/41381817 "Database Migrations - Click to Watch!")
 
 And that's it, Enjoy!
 

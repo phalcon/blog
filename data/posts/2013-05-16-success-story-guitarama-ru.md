@@ -1,7 +1,7 @@
 Success Story - Guitarama.ru
 ============================
 
-![image]({{ cdnUrl }}/files/2013-05-16-guitarama.png)
+![image]({{ cdnUrl }}files/2013-05-16-guitarama.png)
 
 Yet another success story from our community member Michael ([Xpundel](https://github.com/xpundel)).
 

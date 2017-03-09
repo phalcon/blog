@@ -13,7 +13,7 @@ This is a short list of changes that can be expected in this version:
 - Fixed segfaults on methods with array optional parameters
 - Fixed segfaults on some internal isset
 - Added built-in model attributes validators for `Phalcon\Model` [More Info](https://docs.phalconphp.com/en/latest/reference/models.html#validating-data-integrity)
-- Added missing `Phalcon\Tag::passwordField` [#2](https://github.com/phalcon/cphalcon/issues/2)
+- Added missing `Phalcon\Tag::passwordField` [2](https://github.com/phalcon/cphalcon/issues/2)
 
 0.3.2
 

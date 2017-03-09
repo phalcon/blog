@@ -1,7 +1,7 @@
 Phalcon 2.0 alpha 1 released!
 =============================
 
-![image]({{ cdnUrl }}/files/2014-01-16-website.jpg)
+![image]({{ cdnUrl }}files/2014-01-16-website.jpg)
 
 We're very excited to announce the release of **Phalcon 2.0 Alpha 1**!
 

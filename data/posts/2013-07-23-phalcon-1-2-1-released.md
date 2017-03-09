@@ -1,7 +1,7 @@
 Phalcon 1.2.1 Released
 ======================
 
-![image]({{ cdnUrl }}/files/2013-07-24-phalcon-php-logo.png)
+![image]({{ cdnUrl }}files/2013-07-24-phalcon-php-logo.png)
 
 We are happy to announce that Phalcon 1.2.1 is available for download/compile for our users.
 
@@ -10,7 +10,7 @@ This new version of Phalcon includes a lot of optimizations, reducing memory whi
 A few key points are
 
 - Dispatching parameters now can be modified in `beforeExecuteRoute` events
-- `beforeException` events can now handle exceptions occurred when executing actions ([GI:140])
+- `beforeException` events can now handle exceptions occurred when executing actions ([140](https://github.com/phalcon/cphalcon/issue/140))
 - Added `Phalcon\Dispatcher::getHandlerClass` and `Phalcon\Dispatch::getActionMethod`
 - `Phalcon\Form\Element\*` classes now implement `Phalcon\Form\ElementInterface`
 - `Phalcon\Config\Adapter\Ini` correctly handles empty sections and INI files without any sections
