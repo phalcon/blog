@@ -74,6 +74,11 @@ class RegeneratePostsTask extends PhTask
             $cacheKey = 'post-' . $post['slug'] . '.cache';
             if (true === file_exists($file)) {
                 $data = file_get_contents($file);
+                $data = str_replace(
+                    '{{ cdnUrl }}',
+                    $this->config->get('app')->get('staticUrl'),
+                    $data
+                );
                 $data = $this->parsedown->text($data);
 
                 $post['content'] = $data;
