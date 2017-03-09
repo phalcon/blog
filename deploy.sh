@@ -5,4 +5,4 @@ git pull
 
 # Clear cache
 ./phalcon -clear-cache
-./phalcon -regenerate-cache
+./phalcon -regenerate-posts
