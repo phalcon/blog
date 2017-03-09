@@ -68,7 +68,12 @@
 
     <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss">
 
-    {{- assets.outputCss('header_css') -}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://static.phalconphp.com/www/css/phalcon.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -216,8 +221,10 @@
         </div>
     </section>
 
-    {{- assets.outputJs('footer_js') -}}
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 
     <script type="text/javascript">
         //<![CDATA[
