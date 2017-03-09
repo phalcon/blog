@@ -53,22 +53,14 @@ class Utils extends Component
         $fileName  = $pathInfo['filename'];
         $extension = $pathInfo['extension'];
 
-
         return sprintf(
-            '%s%s/%s.%s',
+            '%s%s/%s.%s.%s',
             $cdnUrl,
             $dirName,
             $fileName,
+            $version,
             $extension
         );
-//        return sprintf(
-//            '%s%s/%s.%s.%s',
-//            $cdnUrl,
-//            $dirName,
-//            $fileName,
-//            $version,
-//            $extension
-//        );
     }
 
     /**

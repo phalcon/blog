@@ -41,6 +41,7 @@ class PostsController extends PhController
                 'showDisqus' => true,
                 'post'       => $post,
                 'title'      => $post['title'],
+                'cdnUrl'     => $this->config->get('app')->get('staticUrl'),
                 'canonical'  => Text::reduceSlashes(
                     sprintf(
                         '%s/post/%s',

@@ -46,6 +46,12 @@ abstract class AbstractBootstrap
     private $executionTime = 0;
     private $mode          = 'development';
 
+    public function __construct()
+    {
+        $this->memory        = memory_get_usage();
+        $this->executionTime = microtime(true);
+    }
+
     /**
      * Runs the application
      *
@@ -168,9 +174,6 @@ abstract class AbstractBootstrap
      */
     protected function initEnvironment()
     {
-        $this->memory        = memory_get_usage();
-        $this->executionTime = microtime(true);
-
         (new Dotenv(APP_PATH))->load();
 
         $mode = getenv('APP_ENV');
@@ -220,13 +223,13 @@ abstract class AbstractBootstrap
         register_shutdown_function(
             function () use ($logger, $utils) {
                 $memory    = memory_get_usage() - $this->memory;
-                $execution = microtime(true) - $this->executionTime;
+                $execution = (microtime(true) - $this->executionTime) * 1000;
 
                 if ('development' === $this->mode) {
                     $logger->info(
                         sprintf(
-                            'Shutdown completed [%s] - [%s]',
-                            $utils->timeToHuman($execution),
+                            'Shutdown completed [%s ms] - [%s]',
+                            $execution,
                             $utils->bytesToHuman($memory)
                         )
                     );
