@@ -71,6 +71,6 @@ The repositories (stable/nightly) are located at [https://packagecloud.io/phalco
 
 A big thank you once more to our community for embracing this new change, even before the official announcement. We released 3.0.1 4 days ago, and as you can see, 388 installations in just 7 days!
 
-![Phalcon Installations]({{ cdnUrl }}/files/2016-08-28-installations.png)
+![Phalcon Installations]({{ cdnUrl }}files/2016-08-28-installations.png)
 
 <3 Phalcon Team

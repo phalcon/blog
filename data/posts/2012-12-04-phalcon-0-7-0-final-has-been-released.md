@@ -1,7 +1,7 @@
 Phalcon 0.7.0 final has been released!
 ======================================
 
-![image]({{ cdnUrl }}/files/2012-12-04-falcon.png)
+![image]({{ cdnUrl }}files/2012-12-04-falcon.png)
 
 We are very pleased to announce the immediate availability of Phalcon Framework 0.7.0 stable.
 

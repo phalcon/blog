@@ -1,7 +1,7 @@
 Phalcon 0.8 released
 ====================
 
-![image]({{ cdnUrl }}/files/2013-01-09-falcon.jpg)
+![image]({{ cdnUrl }}files/2013-01-09-falcon.jpg)
 
 We're very proud to announce the immediate release of Phalcon 0.8. As mentioned in the [alpha](/post/phalcon-0-8-0-alpha-available)/[beta](/post/phalcon-0-8-0-beta-is-available) posts we've introduce a lot of new and exciting features in this major release. As always we have improved performance and addressed several bugs increasing the overall stability of the framework.
 

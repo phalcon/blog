@@ -1,7 +1,7 @@
 Phosphorum: The Phalcon forum
 ===============================
 
-[![Phalcon Forum]({{ cdnUrl }}/files/2013-01-25-forum.jpg)](https://forum.phalconphp.com "Phalcon Forum")
+[![Phalcon Forum]({{ cdnUrl }}files/2013-01-25-forum.jpg)](https://forum.phalconphp.com "Phalcon Forum")
 
 Phalcon now has a discussion [forum](https://forum.phalconphp.com)!
 

@@ -32,7 +32,7 @@ Returning to the subject of this post, in this release, we're proud to announce 
 
 The diagram below explains the life cycle of an extension in a multi-threaded web server:
 
-![image]({{ cdnUrl }}/files/mpm.png)
+![image]({{ cdnUrl }}files/mpm.png)
 
 Framework documentation is also quite complete. [Check it out](https://docs.phalconphp.com)
 

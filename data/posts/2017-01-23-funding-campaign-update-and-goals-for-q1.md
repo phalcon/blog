@@ -34,7 +34,11 @@ The level of financial support that we receive, will allow our lead developer to
 
 We hope that you will consider becoming a [patron](https://www.patreon.com/bePatron?u=4653615) of Phalcon!
 
-<a href="https://www.patreon.com/bePatron?u=4653615" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://cdn6.patreon.com/becomePatronButton.bundle.js"></script>
+<a href="https://phalcon.link/fund">
+    <button class="btn button-small btn-danger">
+        Become a patron
+    </button>
+</a>
 
 ### Goals for Q1
 

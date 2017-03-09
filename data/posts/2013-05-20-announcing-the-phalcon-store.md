@@ -1,7 +1,7 @@
 Announcing the Phalcon Store!!
 ==============================
 
-![]({{ cdnUrl }}/files/2013-05-20-phalcon-sticker.png)
+![]({{ cdnUrl }}files/2013-05-20-phalcon-sticker.png)
 
 Further popular demand by our community, we have opened a modest [store](https://store.phalconphp.com/) where we have Phalcon stickers ready for you to purchase!
 

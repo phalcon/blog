@@ -49,9 +49,10 @@ class PagesController extends PhController
         $contents = $this->viewSimple->render(
             'pages/index',
             [
-                'pages' => $pages,
-                'posts' => $posts,
+                'pages'      => $pages,
+                'posts'      => $posts,
                 'showDisqus' => false,
+                'cdnUrl'     => $this->config->get('app')->get('staticUrl'),
             ]
         );
         $this->response->setContent($contents);

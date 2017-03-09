@@ -1,7 +1,7 @@
 The road ahead
 ==============
 
-![image]({{ cdnUrl }}/files/2013-07-24-phalcon-php-logo.png)
+![image]({{ cdnUrl }}files/2013-07-24-phalcon-php-logo.png)
 
 With every release, throughout the development of Phalcon, we have always focused on offering a good balance between new features (driven by the community) and bug fixes/optimizations.
 

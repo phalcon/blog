@@ -9,6 +9,6 @@ Coincidentally, a bird, more specifically the [Peregrine Falcon](http://en.wikip
 
 So PHP + Falcon = Phalcon, Simple. Fast. Easy.
 
-![image]({{ cdnUrl }}/files/2012-05-03-real-falcon.png)
+![image]({{ cdnUrl }}files/2012-05-03-real-falcon.png)
 
 <3 Phalcon Team
