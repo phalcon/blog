@@ -55,13 +55,20 @@ class Utils extends Component
 
 
         return sprintf(
-            '%s%s/%s.%s.%s',
+            '%s%s/%s.%s',
             $cdnUrl,
             $dirName,
             $fileName,
-            $version,
             $extension
         );
+//        return sprintf(
+//            '%s%s/%s.%s.%s',
+//            $cdnUrl,
+//            $dirName,
+//            $fileName,
+//            $version,
+//            $extension
+//        );
     }
 
     /**
