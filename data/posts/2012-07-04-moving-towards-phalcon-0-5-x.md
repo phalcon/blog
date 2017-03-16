@@ -1,5 +1,4 @@
-Moving towards Phalcon 0.5.x
-============================
+## Moving towards Phalcon 0.5.x
 
 Our main goal is to make Phalcon a great framework that everyone can benefit from.
 

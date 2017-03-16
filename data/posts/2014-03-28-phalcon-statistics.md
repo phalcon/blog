@@ -1,5 +1,4 @@
-Phalcon statistics
-==================
+## Phalcon statistics
 
 As with any project, statistics are always good to have around. Whether this is personal curiosity or showing off, statistics help us make decisions.
 

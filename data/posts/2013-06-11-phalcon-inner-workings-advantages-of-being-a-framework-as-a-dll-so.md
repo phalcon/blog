@@ -1,5 +1,4 @@
-Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO
-===================================================================
+## Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO
 
 This post is quite technical, explaining the inner workings of Phalcon. 
 

@@ -1,5 +1,4 @@
-Don't like command line and consoles? No problem!
-=================================================
+## Don't like command line and consoles? No problem!
 
 A couple of weeks a friend from Mexico, suggested us to create an alternative interface to Phalcon Developer Tools. It is true, some people have a hate relationship with the commend console ;).
 

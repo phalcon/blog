@@ -1,5 +1,4 @@
-Phalcon Community Hangout
-=========================
+## Phalcon Community Hangout
 
 Yesterday (2014-04-05) we had our first Phalcon community hangout. The main purpose of the hangout was to meet the community, discuss about what Phalcon is and what our future steps are, and hear news, concerns, success stories from the community itself.
 

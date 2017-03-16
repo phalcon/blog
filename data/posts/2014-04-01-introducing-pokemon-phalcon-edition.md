@@ -1,5 +1,4 @@
-Introducing "Pokémon: Phalcon Edition"
-======================================
+## Introducing "Pokémon: Phalcon Edition"
 
 Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no way video game experts, but we decided to give it a try and the result is simply amazing.
 

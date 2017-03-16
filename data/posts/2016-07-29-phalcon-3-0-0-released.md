@@ -1,5 +1,4 @@
-Phalcon 3.0.0 final (LTS) released
-==================================
+## Phalcon 3.0.0 final (LTS) released
 
 The Phalcon team is **very excited** to share some news with our community!
 

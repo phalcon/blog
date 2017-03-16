@@ -1,5 +1,4 @@
-Introduction Series 1: Phalcon's Dependency Injector
-====================================================
+## Introduction Series 1: Phalcon's Dependency Injector
 
 Development in the new version of Phalcon 0.5.0 is well underway. In this new version we are introducing new components for the community to use. In the blog posts to follow, we will explain these new features in length.
 

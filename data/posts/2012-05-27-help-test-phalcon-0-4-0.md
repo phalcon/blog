@@ -1,5 +1,4 @@
-Help test Phalcon 0.4.0
-=======================
+## Help test Phalcon 0.4.0
 
 Our next release, 0.4.0, is almost ready to rock, but we need your help to get the finish line in the best shape possible. Although [previous alpha](https://blog.phalconphp.com/post/introducing-phalcon-0-4-0-alpha) only included improvements in code structure and overall speed, this version (0.4.0 beta) is introducing several new features, improvements and bug fixes. 
 

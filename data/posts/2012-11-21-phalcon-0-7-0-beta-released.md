@@ -1,5 +1,4 @@
-Phalcon 0.7.0 beta released
-===========================
+## Phalcon 0.7.0 beta released
 
 The newest version of Phalcon has entered the beta stage. 0.7.0 Beta 1 is now available. This upcoming release introduces features requested by the community, to make the framework more extensible and more robust.
 

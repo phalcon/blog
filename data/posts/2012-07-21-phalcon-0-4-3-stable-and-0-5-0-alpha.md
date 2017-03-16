@@ -1,5 +1,4 @@
-Phalcon 0.4.3 (stable) and 0.5.0 (alpha)
-========================================
+## Phalcon 0.4.3 (stable) and 0.5.0 (alpha)
 
 Following up on the 0.4.2 release a few weeks ago, we have a fresh update to address some issues and minor bugs.
 

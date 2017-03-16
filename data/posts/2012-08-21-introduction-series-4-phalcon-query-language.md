@@ -1,5 +1,4 @@
-Introduction Series 4: Phalcon Query Language (PHQL)
-====================================================
+## Introduction Series 4: Phalcon Query Language (PHQL)
 
 This is the last part of the introduction series regarding our upcoming release of Phalcon 0.5.0.
 

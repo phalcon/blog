@@ -1,5 +1,4 @@
-Phalcon's release process
-=========================
+## Phalcon's release process
 
 ![Phalcon Process]({{ cdnUrl }}files/2015-05-peregrine-falcon-kelly-harris.jpg)
 

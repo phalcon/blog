@@ -1,5 +1,4 @@
-Phalcon 0.5.0 is finally here!
-==============================
+## Phalcon 0.5.0 is finally here!
 
 ![image]({{ cdnUrl }}files/2012-09-17-phalcon-attacking.jpg)
 

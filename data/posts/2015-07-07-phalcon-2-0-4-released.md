@@ -1,5 +1,4 @@
-Phalcon 2.0.4 released
-======================
+## Phalcon 2.0.4 released
 
 As part of our three to five weeks minor release schedule, we are excited to announce that Phalcon 2.0.4 has been released!
 

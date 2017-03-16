@@ -1,5 +1,4 @@
-Sample Application: Album O'Rama
-================================
+## Sample Application: Album O'Rama
 
 [![image]({{ cdnUrl }}files/2012-12-08-albumorama.jpg)](http://album-o-rama.phalconphp.com)
 

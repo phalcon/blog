@@ -1,5 +1,4 @@
-Phalcon 3.0.4 released!
-=======================
+## Phalcon 3.0.4 released!
 
 Hello everyone!
 

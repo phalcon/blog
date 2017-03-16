@@ -1,5 +1,4 @@
-INVO: A sample application
-==========================
+## INVO: A sample application
 
 ![Invo Application]({{ cdnUrl }}files/2012-04-07-invo.png)
 

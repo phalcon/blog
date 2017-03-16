@@ -1,5 +1,4 @@
-Phalcon 3.0.3 released and Merry Christmas
-==========================================
+## Phalcon 3.0.3 released and Merry Christmas
 
 ![image]({{ cdnUrl }}files/2016-12-24-xmas.jpg)
 

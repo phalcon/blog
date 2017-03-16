@@ -1,5 +1,4 @@
-The road ahead
-==============
+## The road ahead
 
 ![image]({{ cdnUrl }}files/2013-07-24-phalcon-php-logo.png)
 

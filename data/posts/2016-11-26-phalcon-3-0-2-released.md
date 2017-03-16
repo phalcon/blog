@@ -1,5 +1,4 @@
-Phalcon 3.0.2 released
-======================
+## Phalcon 3.0.2 released
 
 We are excited to announce the immediate availability of Phalcon 3.0.2 [LTS].
 

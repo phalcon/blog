@@ -1,5 +1,4 @@
-Phalcon 0.8 released
-====================
+## Phalcon 0.8 released
 
 ![image]({{ cdnUrl }}files/2013-01-09-falcon.jpg)
 

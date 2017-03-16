@@ -1,5 +1,4 @@
-Phalcon 2.0.3 released
-======================
+## Phalcon 2.0.3 released
 
 As part of our regular release schedule, we are happy to announce that Phalcon 2.0.3 has been released!
 

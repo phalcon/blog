@@ -1,5 +1,4 @@
-Integrating Phalcon with PhpStorm IDE
-=====================================
+## Integrating Phalcon with PhpStorm IDE
 
 [![Phalcon PHPStorm Integration]({{ cdnUrl }}files/2012-06-05-phpstorm-screencast.png)](https://vimeo.com/43455647 "Phalcon PHPStorm Integration - Click to Watch!")
 

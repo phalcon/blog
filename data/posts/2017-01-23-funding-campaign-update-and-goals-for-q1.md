@@ -1,5 +1,4 @@
-2016 Recap, Funding Campaign, Update and Goals for Q1
-=====================================================
+## 2016 Recap, Funding Campaign, Update and Goals for Q1
 
 Greetings everyone!
 

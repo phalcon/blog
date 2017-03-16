@@ -1,5 +1,4 @@
-Phalcon 2.0.9 released
-======================
+## Phalcon 2.0.9 released
 
 We are excited to announce the immediate availability of Phalcon 2.0.9!
 

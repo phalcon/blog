@@ -1,5 +1,4 @@
-Phalcon 0.3.4 released
-======================
+## Phalcon 0.3.4 released
 
 We're part of the "speed up the web", therefore, we want to have a rapid release schedule releasing continuous improvements and bug fixes to Phalcon.
 

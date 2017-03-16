@@ -1,5 +1,4 @@
-Phalcon 2.0 - The future
-========================
+## Phalcon 2.0 - The future
 
 It's time to talk about Phalcon 2 and the future of this project.
 

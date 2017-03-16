@@ -1,5 +1,4 @@
-Success story: Phalcon Main Site/Phosphorum
-===========================================
+## Success story: Phalcon Main Site/Phosphorum
 
 ![image]({{ cdnUrl }}files/2013-05-10-2013-01-stats.png)
 

@@ -1,5 +1,4 @@
-About the name
-==============
+## About the name
 
 Some of you have asked us: Why the framework was called Phalcon?, and we're happy to respond.
 

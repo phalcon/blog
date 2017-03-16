@@ -1,5 +1,4 @@
-Phalcon 0.5.0 beta1 released!
-=============================
+## Phalcon 0.5.0 beta1 released!
 
 ![]({{ cdnUrl }}files/2012-08-28-working.jpg)
 

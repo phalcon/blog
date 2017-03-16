@@ -1,5 +1,4 @@
-Introduction series for 0.6: Volt: An ultra-fast template engine for Phalcon
-============================================================================
+## Introduction series for 0.6: Volt: An ultra-fast template engine for Phalcon
 
 ![image]({{ cdnUrl }}files/2012-10-07-volt.jpg)
 

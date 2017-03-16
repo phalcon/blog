@@ -1,5 +1,4 @@
-Phalcon 0.4.1: MySQLi, Cache + Models and more
-==============================================
+## Phalcon 0.4.1: MySQLi, Cache + Models and more
 
 ![Phalcon]({{ cdnUrl }}files/2012-06-14-phalcon-green.jpg)
 

@@ -1,5 +1,4 @@
-Phalcon Framework 0.9.0 released!
-=================================
+## Phalcon Framework 0.9.0 released!
 
 ![image]({{ cdnUrl }}files/2013-02-05-phalcon-logo.jpg)
 
