@@ -1,5 +1,4 @@
-PHP as a Service + Phalcon – Fortrabbit
-=======================================
+## PHP as a Service + Phalcon – Fortrabbit
 
 [![Fortrabbit]({{ cdnUrl }}files/2013-02-08-fortrabbit.jpg)](http://fortrabbit.com/)
 

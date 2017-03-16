@@ -1,5 +1,4 @@
-Phalcon 1.1 beta released!
-==========================
+## Phalcon 1.1 beta released!
 
 After ​our successful 1.0 release, we continue improving Phalcon ​with our latest release 1.1.0 (beta). In this article, we're highlighting the most important features introduced:
 

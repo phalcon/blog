@@ -1,5 +1,4 @@
-Phalcon 1.2.1 Released
-======================
+## Phalcon 1.2.1 Released
 
 ![image]({{ cdnUrl }}files/2013-07-24-phalcon-php-logo.png)
 

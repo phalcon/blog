@@ -1,5 +1,4 @@
-Phalcon 1.3.2 Released
-======================
+## Phalcon 1.3.2 Released
 
 We are today releasing the much awaited 1.3.2 version. 
 

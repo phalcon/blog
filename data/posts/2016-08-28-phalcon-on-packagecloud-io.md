@@ -1,5 +1,4 @@
-Phalcon on Packagecloud.io
-======================
+## Phalcon on Packagecloud.io
 
 One of the most requested features by the community, is an easy way to install and upgrade Phalcon.
   

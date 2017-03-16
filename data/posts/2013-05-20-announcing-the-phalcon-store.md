@@ -1,5 +1,4 @@
-Announcing the Phalcon Store!!
-==============================
+## Announcing the Phalcon Store!!
 
 ![]({{ cdnUrl }}files/2013-05-20-phalcon-sticker.png)
 

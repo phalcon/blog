@@ -1,5 +1,4 @@
-2016 Recap, Funding Campaign, Update and Goals for Q1
-=====================================================
+## 2016 Recap, Funding Campaign, Update and Goals for Q1
 
 Greetings everyone!
 
@@ -49,7 +48,7 @@ Regarding our goals for Q1, we tried to be modest and not add a lot of things to
 * Refactor/rework our sites (www, forum, builtwith, blog) to allow for patreons to be recognized
 * Convert github:phalcon to an organization
 * Migrate all the relevant github:phalcon repositories to the new organization
-* Much more agressive social media strategy to keep our community informed and reach out to new users
+* Much more aggressive social media strategy to keep our community informed and reach out to new users
 * Refactor/rework the documentation
     * New welcome section
     * New and updated installation guide

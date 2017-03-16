@@ -1,5 +1,4 @@
-Speed as differentiating factor
-===============================
+## Speed as differentiating factor
 
 Optimization is based on improvements concerning network connectivity, the web server optimization and improvement of the different elements that have their own websites, from HTML to JavaScript, CSS or going by the number of requests to DNS servers.
 

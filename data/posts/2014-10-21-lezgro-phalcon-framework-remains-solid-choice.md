@@ -1,5 +1,4 @@
-Lezgro: Phalcon Framework Remains Solid Choice Among Technology Stack We Work With!
-===================================================================================
+## Lezgro: Phalcon Framework Remains Solid Choice Among Technology Stack We Work With!
 
 ![image]({{ cdnUrl }}files/2014-10-21-phalcon-lezgro.png)
 

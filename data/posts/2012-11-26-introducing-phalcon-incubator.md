@@ -1,5 +1,4 @@
-Introducing Phalcon Incubator
-=============================
+## Introducing Phalcon Incubator
 
 ![image]({{ cdnUrl }}files/2012-11-26-incubator.png)
 

@@ -1,5 +1,4 @@
-Phosphorum: The Phalcon forum
-===============================
+## Phosphorum: The Phalcon forum
 
 [![Phalcon Forum]({{ cdnUrl }}files/2013-01-25-forum.jpg)](https://forum.phalconphp.com "Phalcon Forum")
 

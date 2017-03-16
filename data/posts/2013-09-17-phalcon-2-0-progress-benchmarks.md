@@ -1,5 +1,4 @@
-Phalcon 2.0 progress + benchmarks
-=================================
+## Phalcon 2.0 progress + benchmarks
 
 After some weeks of hard work, long nights, burning the midnight oil (as all programmers do), we have reached a very important milestone in our roadmap for [Phalcon 2.0](https://github.com/phalcon/cphalcon/tree/2.0.0).
 

@@ -1,5 +1,4 @@
-Phalcon 2.0.1 released
-======================
+## Phalcon 2.0.1 released
 
 Today we're releasing Phalcon 2.0.1, this version fixes bugs and adds new features in the 2.0 series, the following is the CHANGELOG:
 

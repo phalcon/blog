@@ -1,5 +1,4 @@
-Phalcon 2 released!
-===================
+## Phalcon 2 released!
 
 The wait is over! Phalcon 2.0 is here!
 

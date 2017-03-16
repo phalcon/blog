@@ -1,5 +1,4 @@
-Phalcon 0.8.0 beta is available
-===============================
+## Phalcon 0.8.0 beta is available
 
 After the introduction of many new and exciting features in our [alpha version](/post/phalcon-0-8-0-alpha-available), we are today releasing the first beta version of 0.8.0.
 

@@ -1,5 +1,4 @@
-Making Phalcon even faster. Is that possible? Yes!
-==================================================
+## Making Phalcon even faster. Is that possible? Yes!
 
 ![image]({{ cdnUrl }}files/2013-06-23-phalcon-php-logo.png)
 

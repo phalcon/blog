@@ -1,5 +1,4 @@
-Introduction series for 0.6: MongoDB integration
-================================================
+## Introduction series for 0.6: MongoDB integration
 
 We are very excited to announce that the 0.6.0 version of Phalcon is just around the corner.
 

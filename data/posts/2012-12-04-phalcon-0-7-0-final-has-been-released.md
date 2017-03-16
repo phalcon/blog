@@ -1,5 +1,4 @@
-Phalcon 0.7.0 final has been released!
-======================================
+## Phalcon 0.7.0 final has been released!
 
 ![image]({{ cdnUrl }}files/2012-12-04-falcon.png)
 

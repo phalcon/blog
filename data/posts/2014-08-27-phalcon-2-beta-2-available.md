@@ -1,5 +1,4 @@
-Phalcon 2 beta 2 available
-==========================
+## Phalcon 2 beta 2 available
 
 It's been a while since we last communicated with our community. Rest assured our resolve and determination towards the project remains the same :)
 

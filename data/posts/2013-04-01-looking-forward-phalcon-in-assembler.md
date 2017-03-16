@@ -1,5 +1,4 @@
-Looking Forward: Phalcon in Assembler
-=====================================
+## Looking Forward: Phalcon in Assembler
 
 **UPDATE: Although write Phalcon in Assembler may be challenging, we regret to inform you that this was our April Fools' joke, thanks for your great sense of humor! :)**
 

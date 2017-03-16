@@ -1,5 +1,4 @@
-Phalcon 2.1.0 beta 1 released
-=============================
+## Phalcon 2.1.0 beta 1 released
 
 We're excited to announce the first beta release of **Phalcon 2.1**!
 

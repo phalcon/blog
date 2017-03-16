@@ -1,5 +1,4 @@
-Sample Application: Vökuró - Authorization/Authentication/Security
-===================================================================
+## Sample Application: Vökuró - Authorization/Authentication/Security
 
 ![Vokuro]({{ cdnUrl }}files/2013-05-02-vokuro.png)
 

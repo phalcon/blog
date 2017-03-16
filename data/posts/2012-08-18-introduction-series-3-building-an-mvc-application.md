@@ -1,5 +1,4 @@
-Introduction Series 3: Building an MVC application with 0.5.0
-=============================================================
+## Introduction Series 3: Building an MVC application with 0.5.0
 
 The third installment of our blog posts regarding the upcoming 0.5.0 version is about the MVC implementation. Below follows implementation concepts and examples of a MVC application using Phalcon 0.5.0.
 

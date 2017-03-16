@@ -1,5 +1,4 @@
-Guide: Upgrading to Phalcon 2
-=============================
+## Guide: Upgrading to Phalcon 2
 
 Phalcon 2 is the a major upgrade to the framework and will be released **April 17th, 2015**. This new version is a rewriting of about 85% total code from C to a high-level language we have created called [Zephir](http://zephir-lang.com/).
 

@@ -1,5 +1,4 @@
-Phalcon 0.3.5: ORM, Database and more
-=====================================
+## Phalcon 0.3.5: ORM, Database and more
 
 Since rolling out version 0.3.4 a few days ago, we've been hard at work on the next installment of Phalcon. In addition to a few bug fixes and minor tweaks, this release focuses on the [ORM](https://docs.phalconphp.com/en/latest/reference/models.html) component and its partner [Phalcon\Db](https://docs.phalconphp.com/en/latest/api/Phalcon_Db.html).
 

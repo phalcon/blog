@@ -1,5 +1,4 @@
-Phalcon 2 Release Candidate
-===========================
+## Phalcon 2 Release Candidate
 
 Today we're pleased to announce the first release-candidate for Phalcon 2.0. This release has been quite a while in the making, and includes new features, improvements and a clean and friendly code base.
 

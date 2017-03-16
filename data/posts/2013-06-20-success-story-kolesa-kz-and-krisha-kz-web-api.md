@@ -1,5 +1,4 @@
-Success Story: kolesa.kz and krisha.kz web API
-==============================================
+## Success Story: kolesa.kz and krisha.kz web API
 
 ![image]({{ cdnUrl }}files/2013-06-20-kolesa-krisha.png)
 

@@ -1,5 +1,4 @@
-Success Story - Guitarama.ru
-============================
+## Success Story - Guitarama.ru
 
 ![image]({{ cdnUrl }}files/2013-05-16-guitarama.png)
 

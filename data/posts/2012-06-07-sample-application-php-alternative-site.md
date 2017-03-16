@@ -1,5 +1,4 @@
-Sample Application: PHP Alternative site
-========================================
+## Sample Application: PHP Alternative site
 
 [![Alternate site]({{ cdnUrl }}files/2012-06-07-php-site-1.png)](https://php.phalconphp.com/)
 

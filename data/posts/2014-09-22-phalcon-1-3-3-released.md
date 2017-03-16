@@ -1,5 +1,4 @@
-Phalcon 1.3.3 released
-======================
+## Phalcon 1.3.3 released
 
 This version is maintenance release of the Phalcon 1.3.x branch and it has a contributions from our community and fixes to the framework. We thank everyone that has worked on this release, especially with their contributions both to 1.3.3 and our work in progress 2.0.0.
 

@@ -1,5 +1,4 @@
-Tutorial: your first encounter with Phalcon / Part 2
-====================================================
+## Tutorial: your first encounter with Phalcon / Part 2
 
 Our friend [Marcin @mailopl](https://twitter.com/mailopl) from Poland sent us this amazing tutorial and introduction to Phalcon. Check the first part here. Enjoy it!
 

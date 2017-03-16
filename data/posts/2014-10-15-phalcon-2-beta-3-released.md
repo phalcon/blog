@@ -1,5 +1,4 @@
-Phalcon 2 (beta 3) released
-===========================
+## Phalcon 2 (beta 3) released
 
 Today we're very excited to announce the release of the third beta (and possibly last one) of Phalcon 2!
 

@@ -1,5 +1,4 @@
-Phalcon 0.3.0 released
-======================
+## Phalcon 0.3.0 released
 
 Last week, we were working on a huge refactoring over many aspects of Phalcon. Once all code in the last 0.2.x branch has reached maturity and reasonable stability We are now working on a new exciting branch producing a cleaner code base which let us to add many improvements as possible.
 

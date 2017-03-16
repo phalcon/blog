@@ -1,5 +1,4 @@
-Announcing the release of Phalcon 0.6.0
-=======================================
+## Announcing the release of Phalcon 0.6.0
 
 ![image]({{ cdnUrl }}files/2012-11-01-phalcon-attack.jpg)
 

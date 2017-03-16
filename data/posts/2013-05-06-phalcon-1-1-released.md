@@ -1,5 +1,4 @@
-Phalcon 1.1 released!
-=====================
+## Phalcon 1.1 released!
 
 After a series of beta releases, Phalcon 1.1 is finally released!
 
