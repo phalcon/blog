@@ -5,7 +5,7 @@ Hello everyone!
 We would like to give you a quick update on the work done so far, trying to meet our Q1 goals.
 
 ### Github
-We have converted the Phalcon github account to an organization. This move offers much better flexibility and organization for the project. Several contributors/members of the core team have been added to it, and more will follow soon. 
+We have converted the [Phalcon Github](https://github.com/phalcon) account to an organization. This move offers much better flexibility and organization for the project. Several contributors/members of the core team have been added to it, and more will follow soon. 
 
 We also started creating different groups in the organization, that will allow for a much better and streamlined process of assigning bugs and issues, merging pull requests, maintaining documentation etc. We are also investigating viable options for NFRs, where we can get a feel of which NFRs are mostly requested so that we can address them first.
 
@@ -30,7 +30,7 @@ We started refactoring all the sites with different implementations. In recent b
 The next site to be revamped will be the `builtwith`. 
 
 ### Survey
-We recently asked the community to take a short survey, so that we can gauge why developers use Phalcon, whether it is used in production and any input they want to give us. 
+We recently asked the community to take a short survey, so that we can assess why developers use Phalcon, if it is used in production and also asked for any additional input they want to give us. 
  
 If you have not taken the survey yet, feel free to visit [this form](https://docs.google.com/a/phalconphp.com/forms/d/1bf-o_ta6MqsXk2kL9IxiJR8j9SENBD4iWTYz_WwyMks)
 
