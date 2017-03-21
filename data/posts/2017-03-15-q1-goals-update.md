@@ -21,7 +21,7 @@ Additionally we reached out to some very talented members of the community with 
 ### Documentation
 Admittedly our documentation needs a big revamp, adding more examples, tutorials, proper explanations for each component and keeping consistency throughout.
 
-We have already started the effort with rewriting some of the documentation, which will be in the form of `.md` files using Markdown for the formatting. Everyone is welcome to join our effort in our [Slack](https://phalconchats.slack.com/messages/documentation/) channel, where we discuss and collaborate on the content.
+We have already started the effort with rewriting some of the documentation, which will be in the form of `.md` files using Markdown for the formatting. Everyone is welcome to join our effort in our [Slack](https://slack.phalconphp.com) channel, where we discuss and collaborate on the content.
 
 
 ### Sites
