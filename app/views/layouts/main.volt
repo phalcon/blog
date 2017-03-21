@@ -68,8 +68,6 @@
 
     <link rel="alternate" type="application/rss+xml" href="http://blog.phalconphp.com/rss">
 
-    {{- assets.outputCss('header_css') -}}
-
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -79,6 +77,9 @@
         ga('create', 'UA-90300500-3', 'auto');
         ga('send', 'pageview');
     </script>
+
+    {{- assets.outputCss('header_css') -}}
+
 </head>
 <body>
     <header class="page-header">
@@ -91,8 +92,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand phalcon-logo" href="https://phalconphp.com/">
-                        <span itemprop="name" class="sr-only">Phalcon Framework</span>
+                    <a class="navbar-brand phalcon-logo" href="https://blog.phalconphp.com/">
+                        <span itemprop="name" class="sr-only">Phalcon Framework Blog</span>
                     </a>
                 </div>
 
@@ -203,8 +204,6 @@
                 </div>
                 <div class="col-md-3 content-sidebar">
                     <div id="sidebar">
-                        {{ partial("partials/carbonads") }}
-                        <div class="hr"></div>
                         {{ partial("partials/patreon") }}
                         <div class="hr"></div>
                         {{ partial("partials/description") }}
