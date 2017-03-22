@@ -824,5 +824,12 @@
     "date": "2017-03-15",
     "tags": "php, phalcon, 3.0.x, phalcon3, q1, update",
     "link": ""
+  },
+  {
+    "title": "Phalcon 3.1.0 released",
+    "slug": "phalcon-3-1-0-released",
+    "date": "2017-03-22",
+    "tags": "php, phalcon, 3.1.x, phalcon3, release, rfc, lts",
+    "link": ""
   }
 ]
