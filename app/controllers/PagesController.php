@@ -59,13 +59,18 @@ class PagesController extends PhController
                 }
             }
 
+            if ('production' === $this->config->get('app')->get('env')) {
+                $this
+                    ->viewSimple
+                    ->cache(
+                        [
+                            'key' => $viewCacheKey,
+                        ]
+                    );
+            }
+
             $contents = $this
                 ->viewSimple
-                ->cache(
-                    [
-                        'key' => $viewCacheKey,
-                    ]
-                )
                 ->render(
                 'pages/index',
                 [
