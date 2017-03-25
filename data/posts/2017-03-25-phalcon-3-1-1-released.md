@@ -172,9 +172,7 @@ $messages = $validation->validate(['description' => '']);   // will return messa
 ```
 
 - #### Added the ability to use `Phalcon\Validation` with `Phalcon\Mvc\Collection`, deprecated `Phalcon\Mvc\Model\Validator` classes [NEW]
-In Phalcon 3 we made changes to model validators so as to use the same classes as form validators. The same functionality was missing from the `Phalcon\Mvc\Collection`. We have addressed that issue and you can now use the `Phalcon\Validation` component for Mongo Collections. The required changes were also made in [phlacon/incubator](https://github.com/phalcon/incubator) and PHP7 related classes.
-
-We encourage you to switch to the new validation as soon as you can, since in Phalcon 4 we will remove old `Phalcon\Mvc\Model\Validator` namespace. From Phalcon 3.2, usage of old classes will trigger `E_DEPRECATED`
+In Phalcon 3 we made changes to model validators so as to use the same classes as form validators. The same functionality was missing from the `Phalcon\Mvc\Collection`. We have addressed that issue and you can now use the `Phalcon\Validation` component for Mongo Collections. The required changes were also made in [phlacon/incubator](https://github.com/phalcon/incubator) and PHP7 related classes. We encourage you to switch to the new validation as soon as you can, since in Phalcon 4 we will remove old `Phalcon\Mvc\Model\Validator` namespace. From Phalcon 3.2, usage of old classes will trigger `E_DEPRECATED`
 
 ```php
 <?php
