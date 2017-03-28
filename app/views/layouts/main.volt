@@ -204,7 +204,7 @@
                 </div>
                 <div class="col-md-3 content-sidebar">
                     <div id="sidebar">
-                        {{ partial("partials/patreon") }}
+                        {{ partial("partials/funding") }}
                         <div class="hr"></div>
                         {{ partial("partials/description") }}
                         <div class="hr"></div>

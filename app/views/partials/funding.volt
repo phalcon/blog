@@ -2,7 +2,7 @@
     <p>
         <a href="https://phalcon.link/fund">
             <button class="btn button-small btn-danger">
-                Become a patron
+                Support Us
             </button>
         </a>
     </p>
