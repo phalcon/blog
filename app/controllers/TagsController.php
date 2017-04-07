@@ -4,6 +4,7 @@ namespace Kitsune\Controllers;
 
 use Phalcon\Cache\BackendInterface;
 use Phalcon\Mvc\Controller as PhController;
+use Phalcon\Mvc\View\Simple;
 
 /**
  * Class DocsController
@@ -12,10 +13,11 @@ use Phalcon\Mvc\Controller as PhController;
  *
  * @property BackendInterface $cacheData
  * @property \ParsedownExtra  $parsedown
+ * @property Simple           $viewSimple
  */
 class TagsController extends PhController
 {
-    public function mainAction($page = '')
+    public function mainAction($language, $page = '')
     {
         $page = ($page) ?: 'index';
 
