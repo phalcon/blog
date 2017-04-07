@@ -208,7 +208,6 @@
                         <div class="hr"></div>
                         {{ partial("partials/description") }}
                         <div class="hr"></div>
-                        {#{{ partial("partials/tags", ["tags": tagCloud]) }}#}
                     </div>
                 </div>
             </div>
