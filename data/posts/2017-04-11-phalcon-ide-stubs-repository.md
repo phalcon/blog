@@ -2,7 +2,7 @@
 
 Hey everyone!!
 
-As part of our restructuring and working towards a better more robust framework in terms of features as well as organization, we have removed the IDE stubs from the Phalcon Devtools repository and moved to its own repository.
+As part of our restructuring and working towards a better more robust framework in terms of features as well as organization, we have removed the IDE stubs from the [Phalcon DevTools](https://github.com/phalcon/phalcon-devtools/) repository and moved to its own repository.
 
 Since Phalcon is a module that is loaded in memory and always available, there is no way for an IDE such as PHPStorm to interrogate the sources of the framework and offer autocomplete features for namespaces, classes, methods etc.
 
