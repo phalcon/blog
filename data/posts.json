@@ -852,5 +852,12 @@
     "date": "2017-04-06",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
     "link": ""
+  },
+  {
+    "title": "Phalcon IDE Stubs Repository",
+    "slug": "phalcon-ide-stubs-repository",
+    "date": "2017-04-11",
+    "tags": "php, phalcon, phalcon3, stubs, ide",
+    "link": ""
   }
 ]
