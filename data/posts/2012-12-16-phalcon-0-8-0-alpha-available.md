@@ -1,5 +1,3 @@
-## Phalcon 0.8.0 alpha available
-
 We're happy to announce the last release of this year, 0.8.0 Alpha. This release is a preview of Phalcon's next stable release which will come next year. We decided to release this alpha version, so that you can get acquainted with the new features coming down the line.
 
 In this article we highlight some of the features implemented:

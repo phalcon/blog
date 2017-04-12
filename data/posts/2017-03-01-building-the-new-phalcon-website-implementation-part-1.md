@@ -1,5 +1,3 @@
-## Building the new Phalcon Website - Implementation - Part 1
-
 This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
 Our website has undergone a number of iterations in its implementation.

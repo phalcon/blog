@@ -1,5 +1,3 @@
-## Introduction series for 0.6: MongoDB integration
-
 We are very excited to announce that the 0.6.0 version of Phalcon is just around the corner.
 
 With this version, we have made significant performance improvements in many components of the framework. We are also introducing the first template engine for PHP written in C called [Volt](https://docs.phalconphp.com/en/0.6.0/reference/volt.html).

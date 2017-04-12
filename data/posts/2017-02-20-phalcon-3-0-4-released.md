@@ -1,5 +1,3 @@
-## Phalcon 3.0.4 released!
-
 Hello everyone!
 
 We are really excited to announce Phalcon's latest release: 3.0.4!

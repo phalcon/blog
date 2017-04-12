@@ -1,8 +1,14 @@
-    <div>
-        <span class="pull-right post-date">
-            <a href="/post/{{ post['slug'] }}"><i class="fa fa-file-text-o"></i></a>
+    <div class="row">
+        <div class="col-md-10">
+            <a href="/post/{{ post['slug'] }}">
+                <h2>{{ post['title'] }}</h2>
+            </a>
+        </div>
+        <div class="col-md-2 post-date">
             {{ post['date'] }}
-        </span>
+        </div>
+    </div>
+    <div>
         {{ post['content'] }}
         <div class="tags-container">
             {#{% for tag in post.getTags() %}#}

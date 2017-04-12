@@ -1,5 +1,3 @@
-## BuiltWith Phalcon
-
 Today we are launching a new site that would help us spread the word about Phalcon and show where Phalcon is used, whether this is production applications, hobby projects or tutorials.
 
 Introducing [builtwith.phalconphp.com](http://builtwith.phalconphp.com)

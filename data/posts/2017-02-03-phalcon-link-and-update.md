@@ -1,5 +1,3 @@
-## Phalcon Link and Update
-
 Greetings everyone!
 
 We are happy to announce that we have recently registered a new domain ([https://phalcon.link/](https://phalcon.link/)) to help the project as well as our community.

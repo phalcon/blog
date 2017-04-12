@@ -1,5 +1,3 @@
-## New Website Implementation and Enhancements
-
 Hello everyone
 
 Today we have released a brand new implementation of our website.

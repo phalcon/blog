@@ -1,5 +1,3 @@
-## Phalcon 3.1.1 released!
-
 Hey everyone.
 
 We are releasing a hotfix today 3.1.1 that addresses some urgent issues with the framework. We strongly recommend that you upgrade your Phalcon version to the latest release 3.1.1.

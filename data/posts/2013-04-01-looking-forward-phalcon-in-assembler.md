@@ -1,5 +1,3 @@
-## Looking Forward: Phalcon in Assembler
-
 **UPDATE: Although write Phalcon in Assembler may be challenging, we regret to inform you that this was our April Fools' joke, thanks for your great sense of humor! :)**
 
 Continuing our work of trying to make Phalcon even faster, we have decided to start migrating our code to [assembler](http://en.wikipedia.org/wiki/Assembly_language).

@@ -1,5 +1,3 @@
-## Happy new year and What's coming
-
 Phalcon was released more or less 2 years ago and a lot of good things have happened. Our community is growing every day, many developers are excited to see what Phalcon will bring us in this new year.
 
 A great effort was made by the contributors last year to get here. To all of you thank you very much!

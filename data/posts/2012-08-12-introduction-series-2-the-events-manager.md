@@ -1,5 +1,3 @@
-## Introduction Series 2: The Events Manager
-
 In addition to the dependency injection component seen in the [previous post](/post/introduction-series-1-phalcons-dependency) of the introduction series, a new component makes its appearance in Phalcon 0.5: the Events Manager. Its purpose is to intercept the execution of most of the components of the framework by creating "hook points". These hook points allow the developer to obtain status information, manipulate data or change the flow of execution during the process of a component.
 
 In the following example, we use the EventManager to listen for events produced in a MySQL connection managed by `Phalcon\Db`. First of all, we need a listener object to do this. We create a class which methods are the events we want to listen:

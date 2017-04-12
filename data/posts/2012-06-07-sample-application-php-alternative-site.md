@@ -1,5 +1,3 @@
-## Sample Application: PHP Alternative site
-
 [![Alternate site]({{ cdnUrl }}files/2012-06-07-php-site-1.png)](https://php.phalconphp.com/)
 
 Today, we're launching another sample application for Phalcon. This time, we wanted to create an [alternative version](http://php.phalconphp.com/) of the [PHP site](http://php.net) powered by the C-extension framework. This is the greatest example we have done until now, implementing many of the main framework features, especially the newly added: [Multilingual Support](https://docs.phalconphp.com/en/latest/api/Phalcon_Translate_Adapter_NativeArray.html) and [Complex Routing](https://docs.phalconphp.com/en/latest/reference/routing.html).

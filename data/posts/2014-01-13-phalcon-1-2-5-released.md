@@ -1,5 +1,3 @@
-## Phalcon 1.2.5 released
-
 We are pleased to announce the release of Phalcon 1.2.5, the latest stable version of framework.
 
 1.2.5 includes mostly bug fixes:

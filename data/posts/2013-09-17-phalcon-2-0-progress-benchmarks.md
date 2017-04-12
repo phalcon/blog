@@ -1,5 +1,3 @@
-## Phalcon 2.0 progress + benchmarks
-
 After some weeks of hard work, long nights, burning the midnight oil (as all programmers do), we have reached a very important milestone in our roadmap for [Phalcon 2.0](https://github.com/phalcon/cphalcon/tree/2.0.0).
 
 Phalcon 2.0 will be a major upgrade as far as the internal code is concerned and the way it operates. We managed to do this without making big changes to the API that would break compatibility. Some minor changes might be introduced, and if they do we will inform everyone well in advance.
