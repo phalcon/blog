@@ -1,5 +1,3 @@
-## Phalcon 3.1.2 released (with PHP 7.1 support)!
-
 Hello everyone!!
 
 We are extremely happy today to announce the release of our newest Phalcon version: 3.1.2.

@@ -1,5 +1,3 @@
-## Phalcon 3.0.1 released
-
 We are excited to announce the immediate availability of Phalcon 3.0.1 [LTS].
 
 This maintenance release fixes bugs and improve the stability of Phalcon:

@@ -1,5 +1,3 @@
-## Phalcon 3.1.0 released!
-
 We are really excited to announce Phalcon's latest release: 3.1.0!
 
 This release addresses several bug fixes and also introduces additional functionality to the framework

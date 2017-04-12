@@ -1,5 +1,3 @@
-## Q1 Goals Update
-
 Hello everyone!
 
 We would like to give you a quick update on the work done so far, trying to meet our Q1 goals.

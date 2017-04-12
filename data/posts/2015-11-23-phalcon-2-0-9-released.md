@@ -1,5 +1,3 @@
-## Phalcon 2.0.9 released
-
 We are excited to announce the immediate availability of Phalcon 2.0.9!
 
 This is the ninth maintenance release in the 2.0.x series, adding more fixes

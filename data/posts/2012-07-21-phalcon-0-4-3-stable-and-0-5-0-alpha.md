@@ -1,5 +1,3 @@
-## Phalcon 0.4.3 (stable) and 0.5.0 (alpha)
-
 Following up on the 0.4.2 release a few weeks ago, we have a fresh update to address some issues and minor bugs.
 
 We are also very excited to announce the release of the 0.5.0 alpha 1 version! This new branch offers many improvements and a huge refactoring of the framework. We are happy that the changes we have introduced have increased performance even more.

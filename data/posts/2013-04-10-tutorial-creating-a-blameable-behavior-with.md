@@ -1,5 +1,3 @@
-## Tutorial: Creating a Blameable behavior with Phalcon
-
 In this tutorial, we're going to explain how to create a behavior for the Phalcon's ORM. Its goal is keep track of data changed by users on specific models. This behavior is often known as Blameable.
 
 A model in Phalcon triggers specific events when operations like create/update/delete are performed. These events help us to insert hook points extending the functionality according to our business needs.

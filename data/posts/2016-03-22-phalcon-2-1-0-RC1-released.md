@@ -1,5 +1,3 @@
-## Phalcon 2.1.0 RC1 released
-
 We are excited to announce the immediate availability of Phalcon 2.1 RC 1!
 
 This version is our first [LTS](https://en.wikipedia.org/wiki/Long-term_support) version and it will be supported 3 years from its final release date. Also, this will be our last release candidate before the final version of Phalcon 2.1.

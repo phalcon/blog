@@ -1,5 +1,3 @@
-## Introduction Series 4: Phalcon Query Language (PHQL)
-
 This is the last part of the introduction series regarding our upcoming release of Phalcon 0.5.0.
 
 With the 0.5x release, we have made changes in the architecture, introducing more components the framework while still keeping performance very high. We felt that the ORM could use some additional optimization as well as functionality, so that was the last area we concentrated on. We have made many improvements in the database and ORM components, such as the use of [PDO](http://php.net/manual/en/book.pdo.php), improved security with automatically binding parameters and much more.

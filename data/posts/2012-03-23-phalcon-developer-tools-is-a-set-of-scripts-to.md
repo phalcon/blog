@@ -1,5 +1,3 @@
-## Phalcon Developer Tools
-
 Phalcon Developer Tools is a set of scripts to help developers in creating application components such as Controllers or Models. 
 
 They also provide code generators like scaffording. 

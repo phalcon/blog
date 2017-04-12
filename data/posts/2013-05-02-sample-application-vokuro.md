@@ -1,5 +1,3 @@
-## Sample Application: Vökuró - Authorization/Authentication/Security
-
 ![Vokuro]({{ cdnUrl }}files/2013-05-02-vokuro.png)
 
 [Vökuró](https://vokuro.phalconphp.com/), is our new sample application to showcase the features of Phalcon. ​We implemented several features related to authorization​, authentication ​ and security. Some of the​se features have recently been introduced in the framework. This sample application ​provides a basic frontend and a backend where users/profiles/security can be managed.

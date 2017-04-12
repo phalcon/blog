@@ -1,5 +1,3 @@
-## Building the new Phalcon Website - Bootstrap - Part 2
-
 This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
 Continuing with our series, we will now discuss the bootstrapping process in depth.

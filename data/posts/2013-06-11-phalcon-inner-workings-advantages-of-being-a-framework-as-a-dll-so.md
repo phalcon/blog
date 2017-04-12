@@ -1,5 +1,3 @@
-## Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO
-
 This post is quite technical, explaining the inner workings of Phalcon. 
 
 As a web developer, you don't need to know how it works (most of the times) so long as it works, and works well. However we believe that this article will allow users of the framework to understand some of the inner workings of Phalcon, and allow them to make decisions on the hardware they use, so as to maximize performance for their applications.

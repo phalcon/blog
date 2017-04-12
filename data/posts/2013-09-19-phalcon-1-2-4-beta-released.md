@@ -1,5 +1,3 @@
-## Phalcon 1.2.4 beta released
-
 In addition to 2.0, the Phalcon Team is also focused on 1.3, a new version that will include new features, important improvements in the overall memory usage and new components like `Phalcon\Image`.
 
 Today, we are announcing the release of Phalcon 1.2.4, a maintenance release including several bug fixes, performance improvements and stability fixes available in the 1.3.0 branch.

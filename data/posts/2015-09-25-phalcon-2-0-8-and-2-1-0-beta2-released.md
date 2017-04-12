@@ -1,5 +1,3 @@
-## Phalcon 2.0.8 and 2.1 beta 2 released
-
 We are excited to announce the immediate availability of Phalcon 2.0.8 and Phalcon 2.1.0 beta 2!
 
 This is the eighth maintenance release in the 2.0.x series. In regards to Phalcon 2.1,

@@ -1,5 +1,3 @@
-## Spread the word about Phalcon - Get Involved
-
 Amazing projects need amazing tools. We might not know you just yet, but we think you'd be a great fit for building a better web. Together, we're ready to change the world!
 
 Here at Phalcon, we're building a new generation framework for PHP, we want to give you amazing performance, while help you develop with ease and fun.

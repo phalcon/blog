@@ -1,5 +1,3 @@
-## Phalcon 2.0.13 released
-
 We are excited to announce the immediate availability of Phalcon 2.0.13!
 
 This maintenance release number of bug fixes (outlined below). We had 2 more minor releases providing minor fixes since our last blog post, and the CHANGELOG for those is listed below:

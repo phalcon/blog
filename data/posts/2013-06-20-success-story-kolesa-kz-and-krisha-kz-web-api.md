@@ -1,5 +1,3 @@
-## Success Story: kolesa.kz and krisha.kz web API
-
 ![image]({{ cdnUrl }}files/2013-06-20-kolesa-krisha.png)
 
 Success story from our community member [Nikita Vershinin](https://github.com/endeveit):

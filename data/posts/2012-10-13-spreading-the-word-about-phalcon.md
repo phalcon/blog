@@ -1,5 +1,3 @@
-## Spreading the word about Phalcon
-
 Some of you have asked us on how to help to make the project to be more popular. This post consolidates previously discussed points on how to make Phalcon more popular.
 
 **TL;DR**

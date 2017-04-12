@@ -1,5 +1,3 @@
-## Phalcon 1.3.0 Released
-
 Right after our [2 year celebration](https://blog.phalconphp.com/post/3acec916ae9c026594fe0562ef3013be2cf47247) and several months of development, more than 1,500 commits and a lot of improvements and fixes, **Phalcon 1.3 is finally released**!
 
 Many important internal aspects of Phalcon have been rewritten and enhanced without breaking compatibility with older versions.

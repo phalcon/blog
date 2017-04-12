@@ -1,5 +1,3 @@
-## Phalcon 0.4.0 is finally here
-
 We've been really busy this last month working on Phalcon 0.4.0, and for our pleasure is finally here! This release is giving much more satisfaction than ever before knowing that have been built with many suggestions and feedback from developers around all the globe.
 
 Also, this final version is adding some highly requested features to Phalcon:

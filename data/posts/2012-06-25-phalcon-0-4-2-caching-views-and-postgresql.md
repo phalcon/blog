@@ -1,5 +1,3 @@
-## Phalcon 0.4.2: Caching Views and PostgreSQL support
-
 We are excited to announce that Phalcon supports the PostgreSQL RDBMS:
 
 > PostgreSQL is a powerful, open source relational database system. It
