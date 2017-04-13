@@ -859,5 +859,12 @@
     "date": "2017-04-11",
     "tags": "php, phalcon, phalcon3, stubs, ide",
     "link": ""
+  },
+  {
+    "title": "Benchmarking Phalcon",
+    "slug": "benchmarking-phalcon",
+    "date": "2017-04-12",
+    "tags": "php, phalcon, phalcon3, benchmarks, performance, cake, fuelphp, kohana, laravel, nette, micro, symfony, yii, zend framework",
+    "link": ""
   }
 ]
