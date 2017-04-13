@@ -189,11 +189,6 @@ Hello World!
 composer create-project symfony/framework-standard-edition symfony
 ```
 
-**symfony/web/app.php**
-```php
-$kernel = new AppKernel('prod', true);
-```
-
 **symfony/app/Resources/views/base.html.twig**
 ```html
 Hello World
@@ -513,37 +508,37 @@ Server Software:        Apache/2.4.18
 Server Hostname:        10.4.6.123
 Server Port:            80
 
-Document Path:          /symfony/web/
+Document Path:          /full/symfony/web/
 Document Length:        13 bytes
 
 Concurrency Level:      5
-Time taken for tests:   6.848 seconds
+Time taken for tests:   4.602 seconds
 Complete requests:      1000
 Failed requests:        0
 Total transferred:      252000 bytes
 HTML transferred:       13000 bytes
-Requests per second:    146.02 [#/sec] (mean)
-Time per request:       34.241 [ms] (mean)
-Time per request:       6.848 [ms] (mean, across all concurrent requests)
-Transfer rate:          35.94 [Kbytes/sec] received
+Requests per second:    217.31 [#/sec] (mean)
+Time per request:       23.008 [ms] (mean)
+Time per request:       4.602 [ms] (mean, across all concurrent requests)
+Transfer rate:          53.48 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0       3
-Processing:     6   34  10.5     33      91
-Waiting:        6   17  12.3     12      90
-Total:          6   34  10.6     34      91
+Connect:        0    0   0.4      0       4
+Processing:     4   23  21.3     21     277
+Waiting:        3   15  20.2      9     276
+Total:          4   23  21.3     22     277
 
 Percentage of the requests served within a certain time (ms)
-  50%     34
-  66%     37
-  75%     40
-  80%     42
-  90%     48
-  95%     52
-  98%     59
-  99%     62
- 100%     91 (longest request)
+  50%     22
+  66%     27
+  75%     30
+  80%     32
+  90%     38
+  95%     46
+  98%     55
+  99%     72
+ 100%    277 (longest request)
 ```
 
 #### Yii
@@ -637,3 +632,7 @@ Percentage of the requests served within a certain time (ms)
   99%     76
  100%    101 (longest request)
 ```
+
+### Revisions
+2017-04-13 18:22
+Symfony: changed `$kernel = new AppKernel('prod', false);` and rerun the results. Kudos (@msvrtan).
