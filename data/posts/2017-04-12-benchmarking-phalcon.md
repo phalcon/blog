@@ -70,7 +70,7 @@ Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
 ```
 
 ##### Modules
-OPCache was not enabled and the installation was the default one without any modifications in `php.ini`. The modules installed were:
+OPCache was enabled and the installation was the default one without any modifications in `php.ini`. The modules installed were:
 
 ```bash
 calendar, Core, ctype, curl, date, dom, exif, fileinfo, filter, ftp, gettext, hash, iconv, intl, json, libxml, mbstring, mcrypt, openssl, pcntl, pcre, PDO, phalcon, Phar, posix, readline, Reflection, session, shmop, SimpleXML, sockets , SPL, standard, sysvmsg, sysvsem, sysvshm, tokenizer, wddx, xml, xmlreader, xmlwriter, xsl, Zend OPcache, zlib
