@@ -41,7 +41,7 @@ Phalcon is clearly outperforming any other framework in this test.
 
 Again we will stress out that these are just the stock applications that come with each framework. The results will definitely vary based on your installation. For instance a developer could remove services from a particular framework which will speed it up (at least the included files) but could also add more services which would slow it down.
 
-Nothing beats a good design or better yet, the best design for the application needs. However, if you can gain some performance and lower your memory consumption by just using Phalcon, it is work a look and a try if you haven't done so already <i class="fa fa-smile-o"></i>.
+Nothing beats a good design or better yet, the best design for the application needs. However, if you can gain some performance and lower your memory consumption by just using Phalcon, it is worth a look and a try if you haven't done so already <i class="fa fa-smile-o"></i>.
 
 ##### NOTE: If any of our readers have suggestions that we could implement to make this benchmark as realistic as possible, feel free to issue a pull request with your suggestions. ##### {.alert .alert-danger}
 
