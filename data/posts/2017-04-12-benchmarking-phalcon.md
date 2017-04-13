@@ -15,23 +15,23 @@ The [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) benchmarking tool
 We will start with the results of our benchmark. The hardware used, raw data as well as setup/configuration changes we did for each framework are further down in this post.
 
 #### Included Files
-We have used the [get_included_files()](http://php.net/manual/en/function.get-included-files.php) function to figure out how many files have been included for one request. The call to the function was at the end of the entry point, usually `index.php`
+We have used the [get_included_files()](http://php.net/manual/en/function.get-included-files.php) function to figure out how many files have been included for one request. The call to the function was at the end of the entry point, usually `index.php` (lower is better).
 
 ![image]({{ cdnUrl }}files/2017-04-13-files-per-request.png)
 
 #### Memory used (KB)
-We have used the [memory_get_usage()](http://php.net/manual/en/function.memory_get_usage.php) function to figure out how many much memory was used for each request. The call to this function was at the end of the entry point, usually `index.php`.
+We have used the [memory_get_usage()](http://php.net/manual/en/function.memory_get_usage.php) function to figure out how many much memory was used for each request. The call to this function was at the end of the entry point, usually `index.php`. (lower is better).
 
 ![image]({{ cdnUrl }}files/2017-04-13-memory-per-request.png)
 
 #### Requests per Second (mean)
-Using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we measured the requests per second that each framework could handle. 
+Using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we measured the requests per second that each framework could handle.  (higher is better).
 
 ![image]({{ cdnUrl }}files/2017-04-13-requests-per-second.png)
 
 
 #### Time to complete 1,000 requests
-Again using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we measured the time it took to complete 1,000 requests. 
+Again using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we measured the time it took to complete 1,000 requests.  (lower is better).
 
 ![image]({{ cdnUrl }}files/2017-04-13-requests-time.png)
 
