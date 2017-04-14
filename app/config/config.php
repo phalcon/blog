@@ -34,6 +34,15 @@ return [
     ],
     'routes'        => [
         [
+            'class'   => Kitsune\Controllers\PagesController::class,
+            'methods' => [
+                'get'      => [
+                    '/'                           => 'mainAction',
+
+                ],
+            ],
+        ],
+        [
             'class'   => Kitsune\Controllers\PostsController::class,
             'methods' => [
                 'get'      => [
