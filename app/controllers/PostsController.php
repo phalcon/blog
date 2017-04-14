@@ -14,6 +14,7 @@ use Phalcon\Text;
  * @package Kitsune\Controllers
  *
  * @property BackendInterface $cacheData
+ * @property BackendInterface $viewCache
  * @property \ParsedownExtra  $parsedown
  * @property Config           $config
  * @property Simple           $viewSimple
@@ -43,18 +44,23 @@ class PostsController extends PhController
             true === $this->viewCache->exists($viewCacheKey)) {
             $contents = $this->viewCache->get($viewCacheKey);
         } else {
+            if ('production' === $this->config->get('app')->get('env')) {
+                $this
+                    ->viewSimple
+                    ->cache(
+                        [
+                            'key' => $viewCacheKey,
+                        ]
+                    );
+            }
+
             $post     = $this->cacheData->get($cacheKey);
             $contents = $this
                 ->viewSimple
-                ->cache(
-                    [
-                        'key' => $viewCacheKey,
-                    ]
-                )
                 ->render(
                     'pages/view',
                     [
-                        'showDisqus' => true,
+                        'showDisqus' => boolval('404' !== $slug),
                         'post'       => $post,
                         'title'      => $post['title'],
                         'cdnUrl'     => $this->config->get('app')->get('staticUrl'),
@@ -73,5 +79,15 @@ class PostsController extends PhController
 
         return $this->response;
 
+    }
+
+    /**
+     * 404
+     *
+     * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
+     */
+    public function notfoundAction()
+    {
+        return $this->mainAction('404');
     }
 }

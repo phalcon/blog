@@ -34,20 +34,11 @@ return [
     ],
     'routes'        => [
         [
-            'class'   => Kitsune\Controllers\PagesController::class,
-            'methods' => [
-                'get'      => [
-                    '/'                              => 'mainAction',
-                    '/{page:[0-9]+}'                 => 'mainAction',
-                    '/{page:[0-9]+}/{number:[0-9]+}' => 'mainAction',
-                ],
-            ],
-        ],
-        [
             'class'   => Kitsune\Controllers\PostsController::class,
             'methods' => [
                 'get'      => [
                     '/post/{slug:[0-9a-zA-Z\-]+}' => 'mainAction',
+                    '/404'                        => 'notfoundAction',
                 ],
             ],
         ],
