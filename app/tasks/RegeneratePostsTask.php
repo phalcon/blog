@@ -63,14 +63,10 @@ class RegeneratePostsTask extends PhTask
         /**
          * Iterate through the posts and create the markdown->html cache
          */
-        $template = '%s/data/posts/%s.md';
         foreach ($this->posts as $post) {
             $bar->progress();
-            $year     = substr($post['date'], 0, 4);
-            $month    = substr($post['date'], 5, 2);
             $fileName = sprintf('%s-%s', $post['date'], $post['slug']);
             $file     = sprintf('%s/data/posts/%s.md', APP_PATH, $fileName);
-            sprintf($template, APP_PATH, $year, $month, $fileName);
             $cacheKey = 'post-' . $post['slug'] . '.cache';
             if (true === file_exists($file)) {
                 $data = file_get_contents($file);

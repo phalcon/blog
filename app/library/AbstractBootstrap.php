@@ -3,6 +3,7 @@
 namespace Kitsune;
 
 use Dotenv\Dotenv;
+use Kitsune\Controllers\PostsController;
 use Phalcon\Cache\Frontend\Data as PhCacheFrontData;
 use Phalcon\Cache\Frontend\Output as PhCacheFrontOutput;
 use Phalcon\Config as PhConfig;
@@ -315,6 +316,15 @@ abstract class AbstractBootstrap
             $this->application->mount($collection);
         }
         $this->application->setEventsManager($eventsManager);
+
+        /**
+         * 404
+         */
+        $this->application->notFound(
+            function () {
+                return $this->application->response->redirect('/404');
+            }
+        );
     }
 
     /**

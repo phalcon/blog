@@ -1,5 +1,12 @@
 [
   {
+    "title": "Page Not found",
+    "slug": "404",
+    "date": "2012-03-01",
+    "tags": "",
+    "link": ""
+  },
+  {
     "title": "Welcome to the Phalcon Blog",
     "slug": "welcome-to-the-phalcon-blog",
     "date": "2012-03-07",
@@ -864,7 +871,7 @@
     "title": "Benchmarking Phalcon",
     "slug": "benchmarking-phalcon",
     "date": "2017-04-12",
-    "tags": "php, phalcon, phalcon3, benchmarks, performance, cake, fuelphp, kohana, laravel, nette, micro, symfony, yii, zend framework",
+    "tags": "php, phalcon, phalcon3, benchmarks, performance, fuelphp, kohana, laravel, nette, micro, symfony, yii, zend framework",
     "link": ""
   }
 ]
