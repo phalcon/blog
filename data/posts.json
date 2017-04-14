@@ -873,5 +873,12 @@
     "date": "2017-04-12",
     "tags": "php, phalcon, phalcon3, benchmarks, performance, fuelphp, kohana, laravel, nette, micro, symfony, yii, zend framework",
     "link": ""
+  },
+  {
+    "title": "Benchmarking Phalcon Micro",
+    "slug": "benchmarking-phalcon-micro",
+    "date": "2017-04-14",
+    "tags": "php, phalcon, phalcon3, benchmarks, performance, fatfree, limonade, lumen, phalcon micro, silex",
+    "link": ""
   }
 ]
