@@ -64,6 +64,8 @@ Clearly from this survey two things stand out:
 1. Speed/Performance is very important
 2. The documentation needs a lot of work
 
+We will ensure that speed/performance are number one in our priority list, while keeping the framework feature rich. Indeed our documentation has not been stellar and more importantly not uniformed. Work on this has [already started](https://github.com/niden/docs/tree/Refactor) in Q1 where a total revamp of the documentation is scheduled at the end of this quarter (Q2) or earlier if possible.
+
 We are also working on our Q2 goals (new blog post coming shortly) which take the above in consideration.
 
 ### Appendix
