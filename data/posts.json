@@ -880,5 +880,12 @@
     "date": "2017-04-14",
     "tags": "php, phalcon, phalcon3, benchmarks, performance, fatfree, limonade, lumen, phalcon micro, silex",
     "link": ""
+  },
+  {
+    "title": "2017 Survey results",
+    "slug": "2017-survey-results",
+    "date": "2017-04-17",
+    "tags": "php, phalcon, phalcon3, survey, results",
+    "link": ""
   }
 ]

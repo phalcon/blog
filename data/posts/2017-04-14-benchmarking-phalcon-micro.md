@@ -1,4 +1,4 @@
-Continuing from our yesterday's [post](http://blog.phalcon.ld/post/benchmarking-phalcon-micro), we are checking the benchmarks for micro PHP frameworks.
+Continuing from our yesterday's [post](/post/benchmarking-phalcon-micro), we are checking the benchmarks for micro PHP frameworks.
 
 ##### From feedback from the community, we intend to expand this test to be a bit more realistic, offering CRUD tests, JSON responses etc. We will work on this with the community in our repo so any help and suggestions are more than welcome! ##### {.alert .alert-info} 
 
