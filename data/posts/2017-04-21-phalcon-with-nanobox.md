@@ -108,4 +108,17 @@ exit
 ## Phalcon & Nanobox
 Nanobox gives you everything you need develop and run your Phalcon app in an isolated virtual environment. With the `boxfile.yml` in your project, collaborators can get up and running in minutes simply by running `nanobox run`.
 
-Nanobox has a [Phalcon Quickstart](https://github.com/nanobox-quickstarts/nanobox-phalcon) that includes everything covered in this post. They also have as guides for [using Phalcon with Nanobox](https://guides.nanobox.io/php/phalcon/). In future posts, we'd like to cover other aspects of using Phalcon with Nanobox, including adding and connecting to a database, deploying Phalcon into production, etc. If you're interested [let us know on Twitter](http://twitter.com/?status=@phalconphp @nanobox_io).
+Nanobox has a [Phalcon Quickstart](https://github.com/nanobox-quickstarts/nanobox-phalcon) that includes everything covered in this post. They also have as guides for [using Phalcon with Nanobox](https://guides.nanobox.io/php/phalcon/). In future posts, we'd like to cover other aspects of using Phalcon with Nanobox, including adding and connecting to a database, deploying Phalcon into production, etc. If you're interested [let us know on Twitter](http://twitter.com/nanobox_io).
+
+## Resources
+### Nanobox
+* [Website](https://nanobox.io)
+* [Twitter](http://twitter.com/nanobox_io)
+* [Slack](https://nanoboxio.slack.com)
+
+### Phalcon
+* [Slack](https://phalcon.link/slack)
+* [Twitter](https://phalcon.link/t)
+* [Facebook](https://phalcon.link/fb)
+* [Google+](https://phalcon.link/gplus)
+* [Forum](https://phalcon.link/forum)
