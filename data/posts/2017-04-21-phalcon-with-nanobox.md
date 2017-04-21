@@ -1,3 +1,5 @@
+*This is a guest post from [Scott Anderson at Nanobox](https://twitter.com/scott_dsgn).*
+
 [Nanobox](https://nanobox.io) is a portable, micro platform for developing and deploying apps. When working locally, Nanobox uses Docker to spin up and configure a virtual development environment configured to your specific needs. When you're ready to deploy to live servers, Nanobox will take that same environment and spin it up on your cloud provider of choice, where you can then manage and scale your app through the Nanobox dashboard.
 
 In this post, we'll walk through getting a brand new Phalcon app up and running locally, with nothing installed other than Nanobox. First [create a free Nanobox account](https://dashboard.nanobox.io/users/register), then [download and run the Nanobox installer](https://dashboard.nanobox.io/download).
@@ -43,7 +45,7 @@ Create a `composer.json` file in the root of your project and add the `phalcon/d
 }
 ```
 
-**Note:** *The version of Phalcon Devtools depends on which PHP version you're using.*
+##### **NOTE**: The version of Phalcon Devtools depends on which PHP version you're using ##### {.alert .alert-warning}
 
 ## Start Nanobox and Generate a New Phalcon App
 From the root of your project, run the following commands to start Nanobox and generate a new Phalcon app. As Nanobox starts, the PHP engine will automatically install and enable the Phalcon extension, run a `composer install` which will install Phalcon Devtools, then drop you into an interactive console inside the virtual environment. Your working directory is mounted into the `/app` directory in the VM, so as changes are made, they will be reflected both in the VM and in your local working directory.
