@@ -908,5 +908,12 @@
     "date": "2017-06-18",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
     "link": ""
+  },
+  {
+    "title": "Expanding on Phalcon 3.2.0 new features",
+    "slug": "phalcon-3-2-0-released-and-new-docs",
+    "date": "2017-06-23",
+    "tags": "php, phalcon, phalcon3, release, rfc, lts, php7, new features",
+    "link": ""
   }
 ]
