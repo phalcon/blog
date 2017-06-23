@@ -1,5 +1,3 @@
-## Expanding on Phalcon 3.2.0 new features
-
 With [Phalcon 3.2.0](https://blog.phalconphp.com/post/phalcon-3-2-0-released-and-new-docs) there were many new features and bugs fixed. Today we will write about most important things you need to know and show some code examples of new features.
 
 #### Added Factory Adapter loaders [#11001](https://github.com/phalcon/cphalcon/issues/11001)
@@ -154,16 +152,16 @@ And this code:
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Paginator\Adapter\QueryBuilder;
 
-class Stock extends Phalcon\Mvc\Model;
+class Stock extends Phalcon\Mvc\Model {};
 
-$di = new FactoryDefault();
+$di            = new FactoryDefault();
 $modelsManager = $di->get('modelsManager');
-$builder = $modelsManager
-                ->createBuilder()
-                ->columns('*, COUNT(*) as stock_count')
-                ->from(['Stock' => Stock::class])
-                ->groupBy('name')
-                ->having('SUM(Stock.stock) > 0');
+$builder       = $modelsManager
+                    ->createBuilder()
+                    ->columns('*, COUNT(*) as stock_count')
+                    ->from(['Stock' => Stock::class])
+                    ->groupBy('name')
+                    ->having('SUM(Stock.stock) > 0');
 
 $paginate = (
     new QueryBuilder(
@@ -190,14 +188,15 @@ Please note:
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Paginator\Adapter\QueryBuilder;
 
-class Stock extends Phalcon\Mvc\Model;
+class Stock extends Phalcon\Mvc\Model {};
 
-$di = new FactoryDefault();
+$di            = new FactoryDefault();
 $modelsManager = $di->get('modelsManager');
-$builder = $modelsManager->createBuilder()
-  ->columns('*, COUNT(*) as stock_count')
-  ->from(['Stock' => Stock::class])
-  ->having('SUM(Stock.stock) > 0');
+$builder       = $modelsManager
+                    ->createBuilder()
+                    ->columns('*, COUNT(*) as stock_count')
+                    ->from(['Stock' => Stock::class])
+                    ->having('SUM(Stock.stock) > 0');
 
 $paginate = (
     new QueryBuilder(
@@ -223,10 +222,10 @@ use Phalcon\Config;
 $config = new Config(
     [
         'test' => [
-          'parent' => [
-              'property' => 1,
-              'property2' => 'yeah'
-          ],
+            'parent' => [
+                'property'  => 1,
+                'property2' => 'yeah',
+            ],
         ],  
     ]
 );
