@@ -915,5 +915,12 @@
     "date": "2017-06-23",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7, new features",
     "link": ""
+  },
+  {
+    "title": "Translating documentation and our website",
+    "slug": "translating-documentation-and-our-website",
+    "date": "2017-06-28",
+    "tags": "php, phalcon, phalcon3, crowdin, documentation, website, translations",
+    "link": ""
   }
 ]
