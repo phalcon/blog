@@ -31,6 +31,8 @@ Note that running the installation script will replace any version of Phalcon in
 
 ##### NOTE: Windows DLLs are now available in our [Github Release](https://github.com/phalcon/cphalcon/releases/tag/v3.2.1) page. {.alert .alert-danger}
 
+##### NOTE: PackageCloud (linux distributions) will be updated within an hour of this blog post. {.alert .alert-info}
+
 We encourage existing Phalcon 3 users to update to this version.
 
 
