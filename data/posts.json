@@ -922,5 +922,12 @@
     "date": "2017-06-28",
     "tags": "php, phalcon, phalcon3, crowdin, documentation, website, translations",
     "link": ""
+  },
+  {
+    "title": "Phalcon 3.2.1 released",
+    "slug": "phalcon-3-2-1-released",
+    "date": "2017-07-10",
+    "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
+    "link": ""
   }
 ]
