@@ -163,6 +163,11 @@
                                         Gab.ai
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="https://phalcon.link/discord" target="_blank">
+                                        Discord
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li>
