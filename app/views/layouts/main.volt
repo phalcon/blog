@@ -220,22 +220,6 @@
     </section>
 
     {{- assets.outputJs('footer_js') -}}
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-
-    <script type="text/javascript">
-        //<![CDATA[
-        (function () {
-            var links = document.getElementsByTagName('a');
-            var query = '?';
-            for(var i = 0; i < links.length; i++) {
-                if(links[i].href.indexOf('#disqus_thread') >= 0) {
-                    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-                }
-            }
-            document.write('<script charset="utf-8" type="text/javascript" src="https://disqus.com/forums/phalconphp/get_num_replies.js' + query + '"></' + 'script>');
-        })();
-        //]]>
-    </script>
 
 </body>
 </html>
