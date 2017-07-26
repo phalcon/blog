@@ -22,6 +22,7 @@
     </div>
 
     {% if '404' !== post['slug'] %}
-        <div class="fb-comments"
-             data-href="https://blog.phalconphp.com//post/{{ post['slug'] }}" data-numposts="10"></div>
+        {#<div class="fb-comments"#}
+             {#data-href="https://blog.phalconphp.com//post/{{ post['slug'] }}" #}
+             {#data-numposts="10"></div>#}
     {% endif %}
