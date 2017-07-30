@@ -929,5 +929,12 @@
     "date": "2017-07-10",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
     "link": ""
+  },
+  {
+    "title": "Helping with Documentation",
+    "slug": "helping-with-documentation",
+    "date": "2017-07-29",
+    "tags": "php, phalcon, phalcon3, docs, setup, lts",
+    "link": ""
   }
 ]
