@@ -220,6 +220,6 @@
     </section>
 
     {{- assets.outputJs('footer_js') -}}
-
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

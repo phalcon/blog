@@ -103,18 +103,20 @@ abstract class AbstractBootstrap
         $assets->collection("header_js");
         $assets
             ->collection('header_css')
-            ->addCss('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', false)
-            ->addCss('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css', false)
-            ->addCss('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css', false)
+//            ->addCss('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', false)
+//            ->addCss('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css', false)
+//            ->addCss('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css', false)
+//            ->addCss('https://fonts.googleapis.com/css?family=Open+Sans:700,400', false)
+            ->addCss('https://cdn.jsdelivr.net/g/fontawesome@4.7.0,bootstrap@3.3.7(css/bootstrap.min.css),highlight.js@9.11.0(styles/monokai-sublime.min.css),font-lato@2.0', false)
             ->addCss('https://static.phalconphp.com/www/css/phalcon.min.css', false)
-            ->addCss('https://fonts.googleapis.com/css?family=Open+Sans:700,400', false)
             ->addCss($utils->getAsset('css/style.css'));
 
         $assets
             ->collection('footer_js')
-            ->addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', false)
-            ->addJs('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', false)
-            ->addJs('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js', false)
+//            ->addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', false)
+//            ->addJs('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', false)
+//            ->addJs('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js', false)
+            ->addJs('https://cdn.jsdelivr.net/g/jquery@3.2.1,bootstrap@3.3.7,highlight.js@9.11.0(highlight.min.js+languages/apache.min.js+languages/bash.min.js+languages/css.min.js+languages/dockerfile.min.js+languages/javascript.min.js+languages/json.min.js+languages/nginx.min.js+languages/php.min.js+languages/sql.min.js+languages/twig.min.js+languages/xml.min.js+languages/yaml.min.js+languages/zephir.min.js)', false)
         ;
     }
 
