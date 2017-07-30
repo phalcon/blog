@@ -21,7 +21,6 @@ So you want to set up the docs application to have the documents application run
 - Clone the `docs-app` to your machine.
 - Install [nanobox](https://nanobox.io) if you don't have it
 - Setup the `.env` file
-- Change the `deploy` script
 - Setup the app using nanobox
 - Run the `deploy` script
 - Run the app with nanobox
@@ -29,6 +28,8 @@ So you want to set up the docs application to have the documents application run
 
 #### Fork the repositories
 If you haven't done so already, fork the repositories from the phalcon github organization page [https://github.com/phalcon](https://github.com/phalcon). You will need the `docs-app` and `docs` repositories.
+- [Docs App](https://github.com/phalcon/docs-app)
+- [Docs](https://github.com/phalcon/docs)
 
 #### Clone the `docs-app` repository
 In a suitable location on your machine clone the `docs-app` repository (the fork)
@@ -40,13 +41,16 @@ $ git clone git@github.com:niden/docs-app
 ##### **NOTE** Your repository URL will be different than the above command {.alert .alert-warning}
 
 #### Install `nanobox`
-If you haven't done so already, visit [nanobox.io](https://nanobox.io) and download and install the application. It will ask you some basic questions (usually we use docker as the engine instead of Virtualbox) as part of its setup.
+If you haven't done so already, visit [nanobox.io](https://nanobox.io) and download and install the application. It will ask you some basic questions (usually we use Docker as the engine instead of Virtualbox) as part of its setup. If you don't meet the following requirements you should use VirtualBox.
+##### Docker Requirements
+- OS X 10.10.3 Yosemite or later
+- Windows [https://en.wikipedia.org/wiki/Hyper-V#Windows_Server_2008_R2](https://en.wikipedia.org/wiki/Hyper-V#Windows_Server_2008_R2)
+- Linux Version 3.10 or higher of the Linux kernel.
 
 #### Setup the `.env` file
-In the `docs-app` folder (or wherever you have cloned the `docs-app` repository), make a copy of the `.env.example` file and rename it to `.env`. Open the file and edit the `APP_URL` entry with a local domain. In this example we use `docs.phalcon.ld`.
-
-#### Change the `deploy` script
-Open the `deploy` script and change the `DOCS_REPO` entry to your fork of the `docs` repo. For example it will be something like this:
+In the `docs-app` folder (or wherever you have cloned the `docs-app` repository), make a copy of the `.env.example` file and rename it to `.env`. Open the file and edit:
+- `APP_URL` entry with a local domain. In this example we use `docs.phalcon.ld`.
+-`DOCS_REPO` entry to your fork of the `docs` repo. For example it will be something like this:
 
 ```bash
 git@github.com:niden/docs
@@ -92,6 +96,15 @@ Once nanobox finishes its tasks, you will be "inside" the container. Your prompt
 /app $
 ``` 
 
+#### Run the `deploy` script
+In the same terminal, (root folder of `docs-app`) run the `deploy` script
+
+```bash
+$ ./deploy
+```
+
+This script will start cloning the `docs` repository branches needed under the `./docs` folder of your `docs-app` application (mind boggling - too many `docs`! :D). The output on the terminal will provide information about the process.
+
 Type `exit` to exit the container.
 
 Run the following command to create a `hosts` entry for your environment so that you can use the local domain:
@@ -101,15 +114,6 @@ $ nanobox dns add local docs.phalcon.ld
 ```
 
 This command will be different in your system, depending on the name you chose for your local domain.
-
-#### Run the `deploy` script
-In the same terminal, (root folder of `docs-app`) run the `deploy` script
-
-```bash
-$ ./deploy
-```
-
-This script will start cloning the `docs` repository branches needed under the `./docs` folder of your `docs-app` application (mind boggling - too many `docs`! :D). The output on the terminal will provide information about the process.
 
 #### Run the app with nanobox
 Run the following command:
