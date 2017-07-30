@@ -115,8 +115,7 @@ abstract class AbstractBootstrap
             ->addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js', false)
             ->addJs('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', false)
             ->addJs('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js', false)
-            ->addJs('https://code.highcharts.com/highcharts.js', false)
-            ->addJs('https://code.highcharts.com/modules/exporting.js', false);
+        ;
     }
 
     /**
