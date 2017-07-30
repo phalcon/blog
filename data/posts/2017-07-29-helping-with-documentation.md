@@ -53,7 +53,7 @@ In the `docs-app` folder (or wherever you have cloned the `docs-app` repository)
 -`DOCS_REPO` entry to your fork of the `docs` repo. For example it will be something like this:
 
 ```bash
-https://github.com/niden/docs
+git@github.com:niden/docs
 ```
 
 #### Setup the app using nanobox
