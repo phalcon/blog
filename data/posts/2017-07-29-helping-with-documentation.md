@@ -49,8 +49,9 @@ If you haven't done so already, visit [nanobox.io](https://nanobox.io) and downl
 
 #### Setup the `.env` file
 In the `docs-app` folder (or wherever you have cloned the `docs-app` repository), make a copy of the `.env.example` file and rename it to `.env`. Open the file and edit:
+
 - `APP_URL` entry with a local domain. In this example we use `docs.phalcon.ld`.
--`DOCS_REPO` entry to your fork of the `docs` repo. For example it will be something like this:
+- `DOCS_REPO` entry to your fork of the `docs` repo. For example it will be something like this:
 
 ```bash
 git@github.com:niden/docs
