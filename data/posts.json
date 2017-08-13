@@ -936,5 +936,12 @@
     "date": "2017-07-29",
     "tags": "php, phalcon, phalcon3, docs, setup, lts",
     "link": ""
+  },
+  {
+    "title": "Phalcon 3.2.2 released",
+    "slug": "phalcon-3-2-2-released",
+    "date": "2017-08-13",
+    "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
+    "link": ""
   }
 ]

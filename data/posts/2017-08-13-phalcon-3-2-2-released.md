@@ -1,0 +1,36 @@
+Hello everyone!!!
+
+We are releasing Phalcon 3.2.2 today, addressing several bugs. 
+
+### Release
+The release tag can be found here: [3.2.2](https://github.com/phalcon/cphalcon/releases/tag/v3.2.2). The Windows DLLs are in the [releases](https://github.com/phalcon/cphalcon/releases/) Github page.
+
+#### Changelog
+- Fixed `Phalcon\Db\Adapter\Pdo\Postgresql::describeColumns` to work properly with `DOUBLE PRECISION` and `REAL` data types [#12842](https://github.com/phalcon/cphalcon/issues/12842)
+- Fixed `Phalcon\Paginator\Adapter\QueryBuilder::getPaginate` to use the db connection service of the model [#12957](https://github.com/phalcon/cphalcon/issues/12957)
+- Fixed `Phalcon\Paginator\Adapter\QueryBuilder::getPaginate` to escape reserved words [#12950](https://github.com/phalcon/cphalcon/issues/12950)
+- Fixed `Phalcon\Dispatcher::dispatch` to correct forward with the modified action suffix [#12988](https://github.com/phalcon/cphalcon/pull/12988)
+- Fixed `Phalcon\Forms\Element::_construct` to prevent create form element with empty name [#12954](https://github.com/phalcon/cphalcon/pull/12954)
+
+### Update/Upgrade
+Phalcon 3.2.2 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
+
+```sh
+git clone http://github.com/phalcon/cphalcon
+cd cphalcon/build
+sudo ./install
+```
+
+Note that running the installation script will replace any version of Phalcon installed before.
+
+[PackageCloud.io](https://packagecloud.io/phalcon/stable) has been updated to allow your package manager (for Linux machines) to upgrade to the new version seamlessly.
+
+##### NOTE: Windows DLLs are now available in our [Github Release](https://github.com/phalcon/cphalcon/releases/tag/v3.2.2) page. {.alert .alert-danger}
+
+##### NOTE: PackageCloud (linux distributions) will be updated within an hour of this blog post. {.alert .alert-info}
+
+We encourage existing Phalcon 3 users to update to this version.
+
+
+<3 Phalcon Team
+
