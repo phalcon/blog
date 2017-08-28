@@ -943,5 +943,12 @@
     "date": "2017-08-13",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
     "link": ""
+  },
+  {
+    "title": "Phalcon and cPanel",
+    "slug": "phalcon-and-cpanel",
+    "date": "2017-08-28",
+    "tags": "php, phalcon, phalcon3, cPanel, lts, php7",
+    "link": ""
   }
 ]
