@@ -25,13 +25,11 @@ sudo ./install
 
 Note that running the installation script will replace any version of Phalcon installed before.
 
-[PackageCloud.io](https://packagecloud.io/phalcon/stable) will be updated today or tomorrow to allow your package manager (for Linux machines) to upgrade to the new version seamlessly.
+[PackageCloud.io](https://packagecloud.io/phalcon/stable) has been updated to allow your package manager (for Linux machines) to upgrade to the new version seamlessly.
 
-##### NOTE: PackageCloud.io not longer supports Ubuntu 15.10 due to difficulties installing dependencies, updates and major security patches. Ubuntu 15.10 reached its end of life in July 28, 2016. We strongly suggest you upgrade your installation. If you cannot, you can always build the latest stable version of Phalcon from the source code. {.alert .alert-danger}
+##### NOTE: Our packaging system not longer supports Ubuntu 15.10 due to difficulties installing dependencies, updates and major security patches. Ubuntu 15.10 reached its end of life in July 28, 2016. We strongly suggest you upgrade your installation. If you cannot, you can always build the latest stable version of Phalcon from the source code. {.alert .alert-danger}
 
 ##### NOTE: Windows DLLs are now available in our [Github Release](https://github.com/phalcon/cphalcon/releases/tag/v3.2.3) page. {.alert .alert-danger}
-
-##### NOTE: PackageCloud (linux distributions) will be updated no later than tomorrow 2017-10-14. {.alert .alert-info}
 
 We encourage existing Phalcon 3 users to update to this version.
 
