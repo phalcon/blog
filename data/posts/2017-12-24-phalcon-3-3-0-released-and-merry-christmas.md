@@ -48,13 +48,13 @@ You can now use the `switch` statement in Volt
     {% case 0 %}
     {% case 1 %}
     {% case 2 %}
-        `foo` is less than 3 but not negative
+        "foo" is less than 3 but not negative
         {% break %}
     {% case 3 %}
-        `foo` is 3
+        "foo" is 3
         {% break %}
     {% default %}
-        `foo` is {{ foo }}
+        "foo" is {{ foo }}
 {% endswitch %}
 ```
 
