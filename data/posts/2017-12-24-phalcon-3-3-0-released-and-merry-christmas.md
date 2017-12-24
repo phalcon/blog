@@ -98,8 +98,6 @@ Will throw `Fatal error: Uncaught Phalcon\Mvc\View\Exception: A nested switch de
 
 Will throw `Fatal error: Uncaught Phalcon\Mvc\View\Exception: Syntax error, unexpected token %} in ... on line ....`
 
-The most notable additions are support for `switch/case` syntax in Volt, `hasHeader` in Request and the addition of the `router:beforeMount` event.
-
 #### `hasHeader` in `Phalcon\Http\Request`
 You can now use the `hasHeader` method, to check if a header has been set in the incoming request.
 
