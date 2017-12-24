@@ -102,8 +102,8 @@ Will throw `Fatal error: Uncaught Phalcon\Mvc\View\Exception: Syntax error, unex
 You can now use the `hasHeader` method, to check if a header has been set in the incoming request.
 
 ```php
-if ($request->hasHeader('myheader') {
-    echo 'Yay! Header was set!!'
+if ($request->hasHeader('myheader')) {
+    echo 'Yay! Header was set!!';
 }
 ```
 
