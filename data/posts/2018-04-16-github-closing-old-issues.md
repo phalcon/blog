@@ -8,7 +8,7 @@ Due to the team's increased workload (family/work), we reached out to a C develo
 ### Github issues
 Again, related to the workload, we have a number of Github issues that have been opened and are stale. Some of those issues have been open for months and are no longer valid because either they have been fixed but never updated and some have never been followed up (requesting information/examples).
 
-In an effort to clean up our issue list as well as be able to focus on valid issues, we have installed the stale bot in Github, which will close issues that have not been active for the last 90 days. This process is automated.
+In an effort to clean up our issue list as well as be able to focus on valid issues, we have installed the stale bot in Github, which will mark issues that have not been active for the last 90 days as stale. This process is automated.
 
 This new bot will allow us to shorten the list of issues and focus in fixing and closing valid issues from the list. 
 
