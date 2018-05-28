@@ -971,5 +971,19 @@
     "date": "2018-04-16",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7, github, issues",
     "link": ""
+  },
+  {
+    "title": "Phalcon 3.3.2 released",
+    "slug": "phalcon-3-3-2-released",
+    "date": "2018-04-17",
+    "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
+    "link": ""
+  },
+  {
+    "title": "Phalcon 3.4.0 released",
+    "slug": "phalcon-3-4-0-released",
+    "date": "2018-05-28",
+    "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
+    "link": ""
   }
 ]
