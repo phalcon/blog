@@ -985,5 +985,12 @@
     "date": "2018-05-28",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
     "link": ""
+  },
+  {
+    "title": "Repository reorganization",
+    "slug": "repository-reorganization",
+    "date": "2018-07-10",
+    "tags": "php, phalcon, phalcon3, repositories, github",
+    "link": ""
   }
 ]
