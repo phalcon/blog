@@ -16,17 +16,13 @@ The list of the projects that are marked as deprecated are:
 - ansible-role-zephir
 - blog-tutorial
 - box
-- json-c
 - maker
 - panthea 
 - phalcon-api-reference
 - phalcon-compose
-- php-psr
 - php-site
-- readthedocs.org
 - skeleton     
 - skeleton-single
 - try-phalcon
-- xdebug
             
 <3 Phalcon Team
