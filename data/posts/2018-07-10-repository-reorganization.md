@@ -11,22 +11,22 @@ As a result, we will be looking at all the repositories we have and add `DEPRECA
 We always appreciate the help of our community in our project. If you feel that a particular project should not be deprecated and can be updated (with your help) for all to use, by all means reach out to us on our discord server [https://phalcon.link/discord](https://phalcon.link/discord).
 
 The list of the projects that are marked as deprecated are:
-- album-o-rama          
-- ansible-role-zephir   
-- blog-tutorial         
-- box                   
-- json-c                
-- maker                 
-- invo                  
-- panthea               
-- phalcon-api-reference 
-- php-psr               
-- php-site              
-- readthedocs.org       
-- skeleton              
-- skeleton-single       
-- try-phalcon           
-- xdebug                
-
-
+        
+- ansible-role-ngrok
+- ansible-role-zephir
+- blog-tutorial
+- box
+- json-c
+- maker
+- panthea 
+- phalcon-api-reference
+- phalcon-compose
+- php-psr
+- php-site
+- readthedocs.org
+- skeleton     
+- skeleton-single
+- try-phalcon
+- xdebug
+            
 <3 Phalcon Team
