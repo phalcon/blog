@@ -999,5 +999,12 @@
     "date": "2018-08-06",
     "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
     "link": ""
+  },
+  {
+    "title": "Localized Zephir Documentation",
+    "slug": "localized-zephir-documentation",
+    "date": "2018-09-14",
+    "tags": "php, zephir, documentation, crowdin",
+    "link": ""
   }
 ]
