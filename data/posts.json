@@ -1006,5 +1006,12 @@
     "date": "2018-09-14",
     "tags": "php, zephir, documentation, crowdin",
     "link": ""
+  },
+  {
+    "title": "Status update (Phalcon / Zephir)",
+    "slug": "status-update-phalcon-zephir",
+    "date": "2018-10-24",
+    "tags": "php, phalcon, status, update, zephir, documentation",
+    "link": ""
   }
 ]
