@@ -32,7 +32,6 @@ We have a presence in most of the popular social networks. By following us, you 
 
 - [Follow us on Twitter](http://twitter.com/phalconphp)
 - [Facebook Page](http://www.facebook.com/pages/Phalcon/134230726685897)
-- [Google+ Page](https://plus.google.com/102376109340560896457)
 - [Official Blog](http://blog.phalconphp.com/)
 - [Star the project on Github](http://github.com/phalcon/cphalcon)
 

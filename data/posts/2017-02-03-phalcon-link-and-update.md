@@ -17,7 +17,6 @@ Phalcon Link offers short URLs that are easy to remember and easy to share with 
 * [https://phalcon.link/t](https://phalcon.link/t) (Phalcon Twitter account)
 * [https://phalcon.link/f](https://phalcon.link/f) (Phalcon Facebook account)
 * [https://phalcon.link/gab](https://phalcon.link/gab) (Phalcon Gab.ai account)
-* [https://phalcon.link/g+](https://phalcon.link/g+) (Phalcon Google+ account)
 * [https://phalcon.link/fund](https://phalcon.link/fund) (Phalcon funding campaign)
 
 There are many more links that we have set up. You can check the list of available short links here: [https://phalcon.link](https://phalcon.link).
