@@ -154,11 +154,6 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://phalcon.link/g+" target="_blank">
-                                        Google+
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="https://phalcon.link/gab" target="_blank">
                                         Gab.ai
                                     </a>
