@@ -1013,5 +1013,12 @@
     "date": "2018-10-24",
     "tags": "php, phalcon, status, update, zephir, documentation",
     "link": ""
+  },
+  {
+    "title": "Phalcon 3.4.2 released",
+    "slug": "phalcon-3-4-2-released",
+    "date": "2018-12-02",
+    "tags": "php, phalcon, phalcon3, release, rfc, lts, php7",
+    "link": ""
   }
 ]
