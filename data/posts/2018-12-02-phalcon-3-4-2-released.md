@@ -4,7 +4,7 @@ We are happy to announce that we have released Phalcon [3.4.2](https://github.co
 
 This a minor release, focused on bugs mostly.
 
-##### NOTE: This is the last release for the v3.x series. Our next version support only PHP version 7.2 or later. If you are using PHP < 7.2 then you will need to use this version {.alert .alert-danger}
+##### NOTE: This is the last release for the v3.x series. Our next version will only support PHP version 7.2 or later. If you are using PHP < 7.2 then you will need to use this version {.alert .alert-danger}
 
 #### Changelog
 - Added missing Volt tags to array helper in `Phalcon\Mvc\View\Engine\Volt\Compiler::functionCall` [#13447](https://github.com/phalcon/cphalcon/issues/13447)
