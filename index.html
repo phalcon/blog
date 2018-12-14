@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+                    <div id="articles">
+                        <div class="row">
+                            <a href="{{ post.url }}">
+                                <h2>{{ post.title }}</h2>
+                            </a>
+                        </div>
+                        <div>
+                            {{ post.excerpt }} <a href="{{ post.url }}">More...</a>
+                            <span class="pull-right"><small>[{{ post.date | date: "%Y-%m-%d"}}]</small></span>
+                        </div>
+                    </div>
+                    <div class="text-center horizontal-ruler">
+                        01010000011010000110000101101100011000110110111101101110010100000100100001010000
+                    </div>
+{% endfor %}
+{% include paginator.html %}

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+                    <div id="articles">
+                        <div class="row">
+                            <a href="{{ site.app.baseurl }}{{ page.url }}">
+                                <h2>{{ page.title }}</h2>
+                            </a>
+                        </div>
+                        <div>
+                            {{ page.content }}
+                            <span class="pull-right"><small>[{{ page.date | date: "%Y-%m-%d" }}]</small></span>
+                        </div>
+                        {% include disqus.html %}
+                    </div>
