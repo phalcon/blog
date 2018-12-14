@@ -36,7 +36,7 @@ Note that running the installation script will replace any version of Phalcon in
 </h5>
 
 <h5 class="alert alert-danger">
-<strong>NOTE</strong>: Windows DLLs are now available in our [Github Release](https://github.com/phalcon/cphalcon/releases/tag/v3.4.1) page.
+<strong>NOTE</strong>: Windows DLLs are now available in our <a href="https://github.com/phalcon/cphalcon/releases/tag/v3.4.1">Github Release</a> page.
 </h5>
 
 We encourage existing Phalcon 3 users to update to this version and as always a big thank you to our contributors!
