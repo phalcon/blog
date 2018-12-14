@@ -79,4 +79,4 @@ We are also working on our Q2 goals (new blog post coming shortly) which take th
 
 ### Appendix
 
-[Raw data file](assets/files/2017-04-17-2017-survey-responses.csv)
+[Raw data file](/assets/files/2017-04-17-2017-survey-responses.csv)

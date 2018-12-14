@@ -4,7 +4,7 @@ title: "Announcing the release of Phalcon 0.6.0"
 tags: [php, phalcon, 0.6, 0.x, release]
 ---
 
-![image](assets/files/2012-11-01-phalcon-attack.jpg)
+![image](/assets/files/2012-11-01-phalcon-attack.jpg)
 
 We are pleased to announce the release of Phalcon 0.6.0.
 

@@ -36,7 +36,7 @@ Mac OS X users need to consult respective documentation.
 
 In case of WAMP just add the following line: extension=php_phalcon.dll (when using LAMP - extension=php_phalcon.so ).
 
-![image](assets/files/2012-11-26-tutorial-part-2-1.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-1.png)
 
 This will tell PHP to load Phalcon extension. Then copy php_phalcon.dll (or .so) from archive you downloaded to your PHP extensions dir (`C:\wamp\bin\php\php5.3.X\ext` in WAMP, `/etc/php5/ext/` in LAMP).
 
@@ -49,11 +49,11 @@ After downloading phalcon-developer-tools package (or git clone `git://github.co
 
 On Windows you additionally need to add this path to and set `PTOOLSPATH` in `c:\wamp\phalcon-tools\phalcon.bat` file to `c:\wamp\phalcon-tools\` On Linux you just need to run `sh ~/phalcon/tools/phalcon.sh`.
 
-![image](assets/files/2012-11-26-tutorial-part-2-2.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-2.png)
 
 Remember to restart the console to reload the environment variables. Let's try it out by listing available commands. Type `phalcon commands`:
 
-![image](assets/files/2012-11-26-tutorial-part-2-3.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-3.png)
 
 Everything works as expected.
 
@@ -62,11 +62,11 @@ We've successfully set up the development environment. Now we proceed to create 
 
 Navigate to the root of your WWW server (`c:\wamp\www` for WAMP package) and type following command:
 
-![image](assets/files/2012-11-26-tutorial-part-2-4.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-4.png)
 
 Phalcon creates following directories which I will explain below:
 
-![image](assets/files/2012-11-26-tutorial-part-2-5.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-5.png)
 
 If you ever worked with MVC applications you should be familiar with this structure. We have here:
 
@@ -98,7 +98,7 @@ We also need to instruct Apache about incoming requests - up to this point Apach
 
 Restart Apache, and type in your browser `http://blog.net`
 
-![image](assets/files/2012-11-26-tutorial-part-2-6.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-6.png)
 
 #### Step 5 - Initial configuration
 There are a few things you need to configure at first:
@@ -140,7 +140,7 @@ For simplicity we're going to create just three essential tables containing blog
 
 Or if you prefer visual explanations, the same schema expressed as [EER](http://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model) diagram:
 
-![image](assets/files/2012-11-26-tutorial-part-2-7.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-7.png)
 
 ```sql
 create  table if not exists users (
@@ -222,7 +222,7 @@ We see here that it extends `Phalcon\Mvc\Model` class, like all database models 
 
 Mind the arguments provided: first is the primary key of `User`, second is the entity of the relationship (by convention written in plural form, because target model is `Posts`), last argument is the foreign key in the relationship.
 
-![image](assets/files/2012-11-26-tutorial-part-2-8.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-8.png)
 
 Second most important thing (one could argue that they are the most important) in models are validation rules. They ensure that no invalid records will be stored in the database. For example we often want to make sure that addresses that users enter are valid email addresses.
 
@@ -306,7 +306,7 @@ phalcon scaffold categories
 
 To check out how did that command work, simply open your browser and type: http://blog.net/posts and you should see the following result:
 
-![image](assets/files/2012-11-26-tutorial-part-2-6.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-6.png)
 
 #### Step 9 - Controllers
 Some facts for beginners - in Phalcon:
@@ -510,13 +510,13 @@ There are tree steps necessary: one involves configuration of our web server and
 
 In WAMP it's easy: click on the WAMP icon tray -> Apache -> Apache modules -> rewrite_module.
 
-![image](assets/files/2012-11-26-tutorial-part-2-9.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-9.png)
 
 On Ubuntu Linux just run `sudo a2enmod rewrite && sudo /etc/init.d/apache2 restart`.
 
 Now we are good to go when it comes to writing rewrite rules. Phalcon doesn't have a specified file for that matter, so let's create one and tell Phalcon where to find it.
 
-![image](assets/files/2012-11-26-tutorial-part-2-10.png)
+![image](/assets/files/2012-11-26-tutorial-part-2-10.png)
 
 ```php
 <?php

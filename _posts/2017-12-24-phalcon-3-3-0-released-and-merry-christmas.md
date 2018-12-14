@@ -4,7 +4,7 @@ title: "Phalcon 3.3.0 released and Merry Christmas"
 tags: [php, phalcon, phalcon3, release, rfc, lts, php7]
 ---
 
-![image](assets/files/2017-12-24-christmas.jpg)
+![image](/assets/files/2017-12-24-christmas.jpg)
 
 The Phalcon Team wishes all of our friends, contributors, developers and users of the framework a Merry Christmas!. We hope that the new year will bring health and happiness to you and your loved ones!
 

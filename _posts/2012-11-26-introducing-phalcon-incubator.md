@@ -4,7 +4,7 @@ title: "Introducing Phalcon Incubator"
 tags: [php, phalcon, incubator]
 ---
 
-![image](assets/files/2012-11-26-incubator.png)
+![image](/assets/files/2012-11-26-incubator.png)
 
 With the upcoming [release in a week or so of 0.7.0](/post/phalcon-0-7-0-beta-released) and the interfaces functionality attached to it, we have created a new repository in github called Phalcon Incubator:
 

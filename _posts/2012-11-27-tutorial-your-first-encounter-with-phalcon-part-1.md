@@ -36,7 +36,7 @@ Phalcon is also a full stack framework, which means you just need a minimal amou
 
 Following image demonstrates message flow during typical request when employing [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern, which is the preferred way to develop Phalcon applications. I won't go into details describing this scheme.
 
-![image](assets/files/2012-11-26-mvc-c.png)
+![image](/assets/files/2012-11-26-mvc-c.png)
 
 ### What makes Phalcon special
 
