@@ -4,7 +4,7 @@ title: "The road ahead"
 tags: [php, phalcon, update, roadmap, 1.x]
 ---
 
-![image](assets/files/2013-07-24-phalcon-php-logo.png)
+![image](/assets/files/2013-07-24-phalcon-php-logo.png)
 
 With every release, throughout the development of Phalcon, we have always focused on offering a good balance between new features (driven by the community) and bug fixes/optimizations.
 

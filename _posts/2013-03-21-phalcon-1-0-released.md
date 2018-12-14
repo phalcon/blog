@@ -4,7 +4,7 @@ title: "Phalcon 1.0 released!!"
 tags: [php, phalcon, mvc, frameworks, release, 1.0, 1.x]
 ---
 
-![Phalcon 1.0](assets/files/2013-03-21-phalcon-php-logo.png)
+![Phalcon 1.0](/assets/files/2013-03-21-phalcon-php-logo.png)
 
 Friends around the world, we're very proud and excited to announce that Phalcon 1.0 is ready for you!
 

@@ -26,7 +26,7 @@ To showcase our trust in our work, the following Phalcon powered software uses P
 
 #### Official WebSite
 
-![image](assets/files/2014-04-14-website.jpg)
+![image](/assets/files/2014-04-14-website.jpg)
 
 The official Phalcon website was one of the first Phalcon applications that we have focused on, to make sure that the Phalcon 2.0 code base is compatible with it and thus compatible with Phalcon 1.x.
 
@@ -34,13 +34,13 @@ Today, it runs entirely on Phalcon 2.0. If you have visited our site in the last
 
 #### INVO
 
-![image](assets/files/2014-04-14-invo.jpg)
+![image](/assets/files/2014-04-14-invo.jpg)
 
 INVO was the first application we launched several months ago to show how an application can be created using Phalcon. It's also now fully compatible with Phalcon 2.0.
 
 #### Phosphorum
 
-![image](assets/files/2014-04-14-phosphorum.jpg)
+![image](/assets/files/2014-04-14-phosphorum.jpg)
 
 Phosphorum is the software that powers our discussion forum. Everyone that has used Phosphorum in the last couple of weeks has been using an application that is powered by Phalcon 2.0 in production!
 

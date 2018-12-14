@@ -4,7 +4,7 @@ title: "INVO: A sample application"
 tags: [php, framework, mvc, invo, sample, tutorial, 0.x]
 ---
 
-![Invo Application](assets/files/2012-04-07-invo.png)
+![Invo Application](/assets/files/2012-04-07-invo.png)
 
 [INVO](https://github.com/phalcon/invo) is a sample application completely written with Phalcon. It will give you a closer insight into application development with this framework. Although, it's quite functional, have some flaws we expect to complement at the future (at this time does not produce invoices, for example).
 

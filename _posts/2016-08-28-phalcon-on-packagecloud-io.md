@@ -8,7 +8,7 @@ One of the most requested features by the community, is an easy way to install a
   
 Admittedly, a lot of us have installed Phalcon so many times that it is second nature to perform the task. However some developers might find the task daunting, especially if this is the first time they are trying to install the framework.
 
-![image](assets/files/2016-08-28-packagecloud-logo-dark.png)
+![image](/assets/files/2016-08-28-packagecloud-logo-dark.png)
 
 To help with this task, we have employed the services of [PackageCloud.io](https://PackageCloud.io), so as to create packages for PhalconPHP. With [PackageCloud.io](https://PackageCloud.io) users can now add the relevant repository to their distribution, and install Phalcon with the package manager of their choice.
 
@@ -75,6 +75,6 @@ The repositories (stable/nightly) are located at [https://packagecloud.io/phalco
 
 A big thank you once more to our community for embracing this new change, even before the official announcement. We released 3.0.1 4 days ago, and as you can see, 388 installations in just 7 days!
 
-![Phalcon Installations](assets/files/2016-08-28-installations.png)
+![Phalcon Installations](/assets/files/2016-08-28-installations.png)
 
 <3 Phalcon Team

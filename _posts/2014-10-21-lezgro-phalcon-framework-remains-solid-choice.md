@@ -4,7 +4,7 @@ title: "Lezgro: Phalcon Framework Remains Solid Choice Among Technology Stack We
 tags: [php, phalcon, lezgro, consulting, implementation]
 ---
 
-![image](assets/files/2014-10-21-phalcon-lezgro.png)
+![image](/assets/files/2014-10-21-phalcon-lezgro.png)
 
 This post has been cross posted from [Lezgro's](http://lezgro.com/phalcon-framework-for-superior-development/) blog, written by [Pavlo Pastushenko](http://lezgro.com/author/ppas/ "Posts by Pavlo Pastushenko")
 

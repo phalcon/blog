@@ -4,7 +4,7 @@ title: "Success Story: kolesa.kz and krisha.kz web API"
 tags: [php, phalcon, implementation, success, 1.x]
 ---
 
-![image](assets/files/2013-06-20-kolesa-krisha.png)
+![image](/assets/files/2013-06-20-kolesa-krisha.png)
 
 Success story from our community member [Nikita Vershinin](https://github.com/endeveit):
 
