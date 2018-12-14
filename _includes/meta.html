@@ -1,0 +1,74 @@
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="generator" content="{{ site.generator }}">
+    <meta name="application-name" content="{{ site.name }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="description" content="{{ site.description }}">
+
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="object">
+    <meta property="og:title" content="{{ site.name }}">
+    {% if page.excerpt %}
+    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    {% else %}
+    <meta property="og:description" content="{{ site.description }}">
+    {% endif %}
+    <meta property="og:site_name" content="Phalcon Blog">
+    <meta property="og:image" content="assets/images/logo.png">
+
+    <meta name="twitter:image:alt" content="{{ site.name }}">
+    <meta name="twitter:title" content="{{ site.name }}">
+    {% if page.excerpt %}
+    <meta name="twitter:description" content="{{ page.excerpt| strip_html }}" />
+    {% else %}
+    <meta name="twitter:description" content="{{ site.description }}">
+    {% endif %}
+    <meta name="twitter:image" content="assets/images/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{ social.twitter }}">
+
+    <link rel="canonical" href="{{ site.url }}">
+    <link rel="publisher" href="{{ site.url }}">
+    <link rel="author" href="https://phalconphp.com/en/team">
+
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-square70x70logo" content="assets/images/favicon/mstile-70x70.png">
+    <meta name="msapplication-TileImage" content="assets/images/favicon/mstile-144x144.png">
+    <meta name="msapplication-square150x150logo" content="assets/images/favicon/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="assets/images/favicon/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="assets/images/favicon/mstile-310x310.png">
+
+    <meta name="text:Disqus Shortname" content="phalconphp">
+
+    <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/images/favicon/apple-touch-icon-152x152.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/images/favicon/favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="196x196" href="assets/images/favicon/favicon-196x196.png">
+
+    <link rel="alternate"
+          type="application/rss+xml"
+          title="{{ site.name }} - {{ site.description }}"
+          href="feed.xml">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/g/bootstrap@3.3.7(css/bootstrap.min.css),highlight.js@9.11.0(styles/monokai-sublime.min.css),font-lato@2.0" />
+    <link rel="stylesheet" type="text/css" href="https://static.phalconphp.com/www/css/phalcon.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
