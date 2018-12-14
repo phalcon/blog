@@ -1,22 +1,28 @@
-                        {% if paginator.previous_page || paginator.next_page %}
                         <div id="articles">
                             <div class="row">
                                 <div class="col text-center">
-                                    {% if paginator.previous_page %}
+                                    {% if paginator.page > 1 %}
                                     <a href="{{ site.app.url }}{{ paginator.previous_page_path }}">
-                                    <button type="button" class="btn btn-primary" style="width: 40px;">
-                                        <i class="far fa-caret-square-left"></i>
-                                    </button>
+                                    {% endif %}
+                                        <button type="button" class="btn btn-info" style="width: 40px;">
+                                            <i class="far fa-caret-square-left"></i>
+                                        </button>
+                                    {% if paginator.page > 1 %}
+                                    <!--{ if paginator.previous_page }-->
                                     </a>
                                     {% endif %}
-                                    {% if paginator.next_page %}
+                                    <button type="button" class="btn btn-primary">
+                                        {{ paginator.page }} / {{ paginator.total_pages }}
+                                    </button>
+                                    {% if paginator.page < paginator.total_pages %}
                                     <a href="{{ site.app.url }}{{ paginator.next_page_path }}">
-                                        <button type="button" class="btn btn-primary" style="width: 40px;">
+                                    {% endif %}
+                                        <button type="button" class="btn btn-info" style="width: 40px;">
                                             <i class="far fa-caret-square-right"></i>
                                         </button>
+                                    {% if paginator.page < paginator.total_pages %}
                                     </a>
                                     {% endif %}
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
