@@ -14,13 +14,13 @@
                                     <button type="button" class="btn btn-primary">
                                         {{ paginator.page }} / {{ paginator.total_pages }}
                                     </button>
-                                    {% if paginator.total_pages < paginator.page %}
+                                    {% if paginator.page < paginator.total_pages %}
                                     <a href="{{ site.app.url }}{{ paginator.next_page_path }}">
                                     {% endif %}
                                         <button type="button" class="btn btn-info" style="width: 40px;">
                                             <i class="far fa-caret-square-right"></i>
                                         </button>
-                                    {% if paginator.total_pages < paginator.page %}
+                                    {% if paginator.page < paginator.total_pages %}
                                     </a>
                                     {% endif %}
                                 </div>
