@@ -18,5 +18,5 @@ layout: default
                         01010000011010000110000101101100011000110110111101101110010100000100100001010000
                     </div>
 {% endfor %}
-Paginator: {{paginator.previous_page_path}} - {{ paginator.next_page_path }} - {{ if paginator.previous_page }} - {{ if paginator.next_page }}
+Paginator: {{paginator.previous_page_path}} - {{ paginator.next_page_path }} - {{ paginator.previous_page }} - {{ paginator.next_page }}
 {% include paginator.html %}
