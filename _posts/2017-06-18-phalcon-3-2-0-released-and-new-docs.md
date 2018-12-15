@@ -19,9 +19,8 @@ We are now using [Crowdin](https://crowdin.com/project/phalcon-documentation) to
 Our new documentation needs admittedly a little bit of fine tuning in terms of the CSS and the menus. This will be done in the upcoming week. Also, we are going through all the documents and ensuring the content is correct and accurate throughout. Examples and new functionality of new releases will also be added from now on, before we release so that the documents are up to date always.
 
 <h5 class="alert alert-warning">
-<strong>NOTE</strong>: The documentation for previous versions is located here: [https://olddocs.phalconphp.com](https://olddocs.phalconphp.com).
+<strong>NOTE</strong>: The documentation for previous versions is located here: <a href="https://olddocs.phalconphp.com">https://olddocs.phalconphp.com</a>.
 </h5>
-
 
 ### Release
 The release tag can be found here: [3.2.0](https://github.com/phalcon/cphalcon/releases/tag/v3.2.0). The Windows DLLs are in the [releases](https://github.com/phalcon/cphalcon/releases/) Github page.
