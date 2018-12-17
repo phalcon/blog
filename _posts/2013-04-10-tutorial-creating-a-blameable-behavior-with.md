@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tutorial: Creating a Blameable behavior with Phalcon"
-tags: [php, phalcon, sample, tutorial, 1.x]
+tags: [php, phalcon, sample, tutorial, "1.x"]
 ---
 
 In this tutorial, we're going to explain how to create a behavior for the Phalcon's ORM. Its goal is keep track of data changed by users on specific models. This behavior is often known as Blameable.

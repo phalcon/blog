@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2.0 alpha 1 released!"
-tags: [php, phalcon, 2.0, zephir, alpha, 2.x]
+tags: [php, phalcon, "2.0", zephir, alpha, "2.x"]
 ---
 
 ![image](/assets/files/2014-01-16-website.jpg)

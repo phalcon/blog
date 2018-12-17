@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Security Update: BREACH, PHP and Phalcon"
-tags: [php, phalcon, security, breach, 1.x]
+tags: [php, phalcon, security, breach, "1.x"]
 ---
 
 Last week, security researchers announced that a new attack towards websites has been discovered called [BREACH](http://breachattack.com/). This attack allows the attacker to obtain data even if connections are secured with SSL connections. Several web sites and applications could be compromised. Note that this attack could affect any web application no matter the technology (language, os, frameworks, etc) that powers it. Their [paper](http://breachattack.com/resources/BREACH%20-%20SSL,%20gone%20in%2030%20seconds.pdf) explains the attack and provides full details on how it works.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.3.4 released"
-tags: [php, phalcon, framework, 0.3, release, 0.x]
+tags: [php, phalcon, framework, "0.3", release, "0.x"]
 ---
 
 We're part of the "speed up the web", therefore, we want to have a rapid release schedule releasing continuous improvements and bug fixes to Phalcon.

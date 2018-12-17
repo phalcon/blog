@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sample Application: Album-O-Rama"
-tags: [php, phalcon, sample, spotify, music, 0.8, 0.x]
+tags: [php, phalcon, sample, spotify, music, "0.8", "0.x"]
 ---
 
 [![image](/assets/files/2012-12-08-albumorama.jpg)](http://album-o-rama.phalconphp.com)

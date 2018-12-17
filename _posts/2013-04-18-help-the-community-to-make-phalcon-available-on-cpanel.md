@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Help the community to make Phalcon available on cPanel"
-tags: [php, phalcon, cpanel, hosting, 1.x]
+tags: [php, phalcon, cpanel, hosting, "1.x"]
 ---
 
 In an effort to help developers with the installation of Phalcon, we have created a feature request with [cPanel](http://cpanel.net/) so that we can develop an installation script that would allow cPanel customers install the extension with literally one click.

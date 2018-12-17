@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The road ahead"
-tags: [php, phalcon, update, roadmap, 1.x]
+tags: [php, phalcon, update, roadmap, "1.x"]
 ---
 
 ![image](/assets/files/2013-07-24-phalcon-php-logo.png)

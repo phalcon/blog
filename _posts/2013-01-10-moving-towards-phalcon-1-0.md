@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Moving towards Phalcon 1.0"
-tags: [php, phalcon, rfc, roadmap, 1.0, 1.x]
+tags: [php, phalcon, rfc, roadmap, "1.0", "1.x"]
 ---
 
 As we gradually get closer to Phalcon 1.0, we have introduced in each version more and more features, stabilizing the framework consistently without losing performance. Many of you have provided feedback and requested new features that have been implemented in each release or are soon to be implemented. Once again, a big thank you for your time and participation.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2 (beta 1) released!"
-tags: [php, phalcon, zephir, 2.0, beta, release, 2.x]
+tags: [php, phalcon, zephir, "2.0", beta, release, "2.x"]
 ---
 
 [Eight months ago](https://blog.phalconphp.com/post/phalcon-2-0-the-future) we announced the creation of a new high-level compiled language called [Zephir](http://www.zephir-lang.com) which we used to completely rewrite Phalcon 2.0.

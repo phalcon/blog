@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction series for 0.6: MongoDB integration"
-tags: [php, phalcon, mongo, 0.6, 0.x]
+tags: [php, phalcon, mongo, "0.6", "0.x"]
 ---
 
 We are very excited to announce that the 0.6.0 version of Phalcon is just around the corner.

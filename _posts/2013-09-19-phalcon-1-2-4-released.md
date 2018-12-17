@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 1.2.4 Released"
-tags: [php, phalcon, 1.2, release, 1.x]
+tags: [php, phalcon, "1.2", release, "1.x"]
 ---
 
 In addition to 2.0, the Phalcon Team is also focused on 1.3, a new version that will include new features, important improvements in the overall memory usage and new components like `Phalcon\Image`.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 1.2 BETA Released"
-tags: [php, phalcon, 1.2, beta, release, mvc, sql, frameworks, 1.x]
+tags: [php, phalcon, "1.2", beta, release, mvc, sql, frameworks, "1.x"]
 ---
 
 We are happy to announce the release of our first beta of Phalcon 1.2​!

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Announcing the Phalcon Store!!"
-tags: [php, phalcon, store, 1.x]
+tags: [php, phalcon, store, "1.x"]
 ---
 
 ![](/assets/files/2013-05-20-phalcon-sticker.png)

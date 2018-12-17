@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.4.1: MySQLi, Cache + Models and more"
-tags: [php, frameworks, phalcon, release, 0.4, cache, models, 0.x]
+tags: [php, frameworks, phalcon, release, "0.4", cache, models, "0.x"]
 ---
 
 ![Phalcon](/assets/files/2012-06-14-phalcon-green.jpg)

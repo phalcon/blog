@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sample Application: Vökuró // Authorization/Authentication/Security"
-tags: [php, phalcon, sample, vokuro, 1.x]
+tags: [php, phalcon, sample, vokuro, "1.x"]
 ---
 
 ![Vokuro](/assets/files/2013-05-02-vokuro.png)

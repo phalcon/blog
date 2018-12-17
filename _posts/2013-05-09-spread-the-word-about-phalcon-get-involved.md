@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spread the word about Phalcon // Get Involved"
-tags: [php, phalcon, community, 1.x]
+tags: [php, phalcon, community, "1.x"]
 ---
 
 Amazing projects need amazing tools. We might not know you just yet, but we think you'd be a great fit for building a better web. Together, we're ready to change the world!
