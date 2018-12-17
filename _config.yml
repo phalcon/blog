@@ -11,8 +11,8 @@ social:
   email: team@phalconphp.com
   facebook:
   github: phalcon
-  rss: # just type anything here for a working RSS icon
-  twitter: zephirlang
+  rss: phalcon
+  twitter: phalconphp
 
 meta:
   disqus:
