@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Phalcon 1.2 BETA Released"
+title: "Phalcon 1.2 beta Released"
 tags: [php, phalcon, "1.2", beta, release, mvc, sql, frameworks, "1.x"]
 ---
 

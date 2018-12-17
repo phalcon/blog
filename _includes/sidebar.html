@@ -33,12 +33,14 @@
                     </div>
                     <div class="hr"></div>
                     <div class="widget">
-                        <div>
-                            {% for tag in site.tags %}
-                            [{{ tag[0] }}] - [{{ tag[0] | slugify }}] <br>
-                            <!--<a href="/tags#{{ slug }}">-->
-                                <!--{{ tag[0] }}-->
-                            <!--</a>-->
+                        <div class="description">
+                            {% assign tags = site.tags | sort %}
+                            {% for tag in tags %}
+                            <span>
+                                <a href="/tags#{{ tag | first | slugify }}">
+                                    {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+                                </a>
+                            </span>
                             {% endfor %}
                         </div>
                     </div>
