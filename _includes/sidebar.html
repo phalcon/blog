@@ -25,12 +25,22 @@
                     </div>
                     <div class="hr"></div>
                     <div class="widget">
-                        <div id="description text-justify">
+                        <div class="description text-justify">
                             We are an open source web framework for PHP delivered as
                             a C extension offering high performance and lower
                             resource consumption
                         </div>
                     </div>
                     <div class="hr"></div>
+                    <div class="widget">
+                        <div>
+                            {% for tag in site.tags %}
+                            [{{ tag[0] }}] - [{{ tag[0] | slugify }}] <br>
+                            <!--<a href="/tags#{{ slug }}">-->
+                                <!--{{ tag[0] }}-->
+                            <!--</a>-->
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
