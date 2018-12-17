@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 3.3.0 released and Merry Christmas"
-tags: [php, phalcon, phalcon3, release, rfc, lts, php7]
+tags: [php, phalcon, phalcon3, "3.3.x", release, rfc, lts, php7]
 ---
 
 ![image](/assets/files/2017-12-24-christmas.jpg)

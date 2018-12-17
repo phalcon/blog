@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon on Packagecloud.io"
-tags: [php, phalcon, 3.0.x, phalcon3, packagecloud.io, installation, lts]
+tags: [php, phalcon, "3.0.x", phalcon3, packagecloud.io, installation, lts]
 ---
 
 One of the most requested features by the community, is an easy way to install and upgrade Phalcon.
