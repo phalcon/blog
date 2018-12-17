@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2.0.2 released"
-tags: [php, phalcon, 2.0, phalcon2, release, 2.x]
+tags: [php, phalcon, "2.0", phalcon2, release, "2.x"]
 ---
 
 The development of Phalcon has been accelerated since we released 2.0.0. More and more contributors find [Zephir](http://zephir-lang.com/) very easy to understand and work with, and as a result it is time to release Phalcon 2.0.2. This version includes many features, bug fixes and improvements in terms of performance:

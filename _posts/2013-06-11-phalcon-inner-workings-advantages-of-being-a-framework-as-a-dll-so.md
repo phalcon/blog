@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO"
-tags: [php, phalcon, internals, performance, 1.x]
+tags: [php, phalcon, internals, performance, "1.x"]
 ---
 
 This post is quite technical, explaining the inner workings of Phalcon. 

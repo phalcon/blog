@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2.0.13 released"
-tags: [php, phalcon, 2.0.x, phalcon2, release]
+tags: [php, phalcon, "2.0.x", phalcon2, release]
 ---
 
 We are excited to announce the immediate availability of Phalcon 2.0.13!

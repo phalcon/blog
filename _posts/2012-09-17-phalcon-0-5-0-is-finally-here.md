@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.5.0 is finally here!"
-tags: [php, frameworks, phalcon, release, mvc, phql, events manager, 0.5, 0.x]
+tags: [php, frameworks, phalcon, release, mvc, phql, events manager, "0.5", "0.x"]
 ---
 
 ![image](/assets/files/2012-09-17-phalcon-attacking.jpg)

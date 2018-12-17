@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 1.3 beta 1 released!"
-tags: [php, phalcon, 1.3, beta, release, 1.x]
+tags: [php, phalcon, "1.3", beta, release, "1.x"]
 ---
 
 We are happy to announce the release of our first beta of Phalcon 1.3​!

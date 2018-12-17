@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 3.0.0 released"
-tags: [php, phalcon, 3.0.x, phalcon3, release, rfc, lts]
+tags: [php, phalcon, "3.0.x", phalcon3, release, rfc, lts]
 ---
 
 The Phalcon team is **very excited** to share some news with our community!

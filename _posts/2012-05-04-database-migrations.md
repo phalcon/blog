@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Database Migrations"
-tags: [database, migrations, phalcon, screencast, php, 0.x]
+tags: [database, migrations, phalcon, screencast, php, "0.x"]
 ---
 
 If you spend a lot of time making software updates, you're probably familiar with the frustration of manually update every change you made on your development database to the production stage. :S

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BuiltWith Phalcon"
-tags: [php, phalcon, builtwith, 1.x]
+tags: [php, phalcon, builtwith, "1.x"]
 ---
 
 Today we are launching a new site that would help us spread the word about Phalcon and show where Phalcon is used, whether this is production applications, hobby projects or tutorials.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Making Phalcon even faster. Is that possible? Yes!"
-tags: [php, phalcon, optimization, performance, compilation, 1.x]
+tags: [php, phalcon, optimization, performance, compilation, "1.x"]
 ---
 
 ![image](/assets/files/2013-06-23-phalcon-php-logo.png)

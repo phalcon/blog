@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sample Application: PHP Alternative site"
-tags: [php, frameworks, phalcon, roadmap, sample, application, 0.x]
+tags: [php, frameworks, phalcon, roadmap, sample, application, "0.x"]
 ---
 
 [![Alternate site](/assets/files/2012-06-07-php-site-1.png)](https://php.phalconphp.com/)

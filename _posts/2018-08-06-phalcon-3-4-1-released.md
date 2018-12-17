@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 3.4.1 released"
-tags: [php, phalcon, phalcon3, repositories, github]
+tags: [php, phalcon, phalcon3, "3.4.x", repositories, github]
 ---
 
 Hello everyone!

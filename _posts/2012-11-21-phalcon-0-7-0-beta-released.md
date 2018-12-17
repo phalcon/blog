@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.7.0 beta released"
-tags: [php, phalcon, beta, release, 0.7, 0.x]
+tags: [php, phalcon, beta, release, "0.7", "0.x"]
 ---
 
 The newest version of Phalcon has entered the beta stage. 0.7.0 Beta 1 is now available. This upcoming release introduces features requested by the community, to make the framework more extensible and more robust.

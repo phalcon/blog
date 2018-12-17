@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2 beta 2 available"
-tags: [php, phalcon, 2.0, beta, zephir, release, 2.x]
+tags: [php, phalcon, "2.0", beta, zephir, release, "2.x"]
 ---
 
 It's been a while since we last communicated with our community. Rest assured our resolve and determination towards the project remains the same :)

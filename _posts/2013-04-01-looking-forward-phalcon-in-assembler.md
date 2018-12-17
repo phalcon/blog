@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Looking Forward: Phalcon in Assembler"
-tags: [php, phalcon, roadmap, aprilsfool, 1.x]
+tags: [php, phalcon, roadmap, aprilsfool, "1.x"]
 ---
 
 **UPDATE: Although write Phalcon in Assembler may be challenging, we regret to inform you that this was our April Fools' joke, thanks for your great sense of humor! :)**

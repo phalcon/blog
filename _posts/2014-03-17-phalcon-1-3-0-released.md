@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 1.3.0 Released"
-tags: [php, phalcon, 1.3, release, 1.x]
+tags: [php, phalcon, "1.3", release, "1.x"]
 ---
 
 Right after our [2 year celebration](https://blog.phalconphp.com/post/3acec916ae9c026594fe0562ef3013be2cf47247) and several months of development, more than 1,500 commits and a lot of improvements and fixes, **Phalcon 1.3 is finally released**!
@@ -155,7 +155,7 @@ Most of the symbols and names of internal functions and structures are not expor
 
 Big kudos to main contributors on this version: [Vladimir Kolesnikov](https://github.com/sjinks), [Dreamszhu](https://github.com/dreamsxin), [Piotr Gasiorowski](https://github.com/WooDzu) and all the army of developers behind this project that make Phalcon possible:
 
-[![phalcon](https://avatars.githubusercontent.com/u/1221505?s=48)](https://github.com/phalcon "phalcon")
+[![phalcon](https://avatars.githubusercontent.com/u/1221505?s=48)](https://github.com/phalcon phalcon)
 [![andresgutierrez](https://avatars.githubusercontent.com/u/213590?s=48)](https://github.com/andresgutierrez "andresgutierrez")
 [![niden](https://avatars.githubusercontent.com/u/1073784?s=48)](https://github.com/niden "niden")
 [![skinks](https://1.gravatar.com/avatar/f267e1bd107e7a9a8ed60b40493d69b6?d=https%3A%2F%2Fidenticons.github.com%2F687df531e2219852e1c9576ff9010958.png&r=x&s=48)](https://github.com/sjinks "sjinks")

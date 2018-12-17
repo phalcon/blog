@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction series 3: Building an MVC application with 0.5.0"
-tags: [php, frameworks, phalcon, series, mvc, 0.5, 0.x]
+tags: [php, frameworks, phalcon, series, mvc, "0.5", "0.x"]
 ---
 
 The third installment of our blog posts regarding the upcoming 0.5.0 version is about the MVC implementation. Below follows implementation concepts and examples of a MVC application using Phalcon 0.5.0.

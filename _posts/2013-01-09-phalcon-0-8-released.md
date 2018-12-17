@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.8 released"
-tags: [php, phalcon, release, 0.8, 0.x]
+tags: [php, phalcon, release, "0.8", "0.x"]
 ---
 
 ![image](/assets/files/2013-01-09-falcon.jpg)

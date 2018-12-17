@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.8.0 beta is available"
-tags: [php, phalcon, release, beta, 0.8, 0.x]
+tags: [php, phalcon, release, beta, "0.8", "0.x"]
 ---
 
 After the introduction of many new and exciting features in our [alpha version](/post/phalcon-0-8-0-alpha-available), we are today releasing the first beta version of 0.8.0.

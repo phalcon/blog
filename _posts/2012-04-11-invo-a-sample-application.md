@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "INVO: A sample application"
-tags: [php, framework, mvc, invo, sample, tutorial, 0.x]
+tags: [php, framework, mvc, invo, sample, tutorial, "0.x"]
 ---
 
 ![Invo Application](/assets/files/2012-04-07-invo.png)

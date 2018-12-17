@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Success Story - Guitarama.ru"
-tags: [php, phalcon, success, implementation, 1.x]
+tags: [php, phalcon, success, implementation, "1.x"]
 ---
 
 ![image](/assets/files/2013-05-16-guitarama.png)

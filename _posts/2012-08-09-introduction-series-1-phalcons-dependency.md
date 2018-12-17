@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction Series 1: Phalcon's Dependency Injector"
-tags: [php, frameworks, phalcon, series, mvc, di, 0.5, 0.x]
+tags: [php, frameworks, phalcon, series, mvc, di, "0.5", "0.x"]
 ---
 
 Development in the new version of Phalcon 0.5.0 is well underway. In this new version we are introducing new components for the community to use. In the blog posts to follow, we will explain these new features in length.

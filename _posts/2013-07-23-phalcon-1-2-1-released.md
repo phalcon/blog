@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 1.2.1 Released"
-tags: [php, phalcon, 1.2, release, 1.x]
+tags: [php, phalcon, "1.2", release, "1.x"]
 ---
 
 ![image](/assets/files/2013-07-24-phalcon-php-logo.png)

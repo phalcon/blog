@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2 Release Candidate"
-tags: [php, phalcon, 2.0, phalcon2, guide, zephir, 2.x]
+tags: [php, phalcon, "2.0", phalcon2, guide, zephir, "2.x"]
 ---
 
 Today we're pleased to announce the first release-candidate for Phalcon 2.0. This release has been quite a while in the making, and includes new features, improvements and a clean and friendly code base.

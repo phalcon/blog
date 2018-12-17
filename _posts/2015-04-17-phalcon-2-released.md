@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2 released!"
-tags: [php, phalcon, 2.0, phalcon2, release, zephir, 2.x]
+tags: [php, phalcon, "2.0", phalcon2, release, zephir, "2.x"]
 ---
 
 The wait is over! Phalcon 2.0 is here!

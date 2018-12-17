@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction series for 0.6: Volt: An ultra-fast template engine for Phalcon"
-tags: [php, phalcon, volt, template engine, html, design, 0.6, 0.x]
+tags: [php, phalcon, volt, template engine, html, design, "0.6", "0.x"]
 ---
 
 ![image](/assets/files/2012-10-07-volt.jpg)

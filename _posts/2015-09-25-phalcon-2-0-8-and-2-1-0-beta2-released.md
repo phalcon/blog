@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2.0.8 and 2.1 beta 2 released"
-tags: [php, phalcon, 2.1, phalcon2, release, 2.x]
+tags: [php, phalcon, "2.0", "2.1", phalcon2, release, "2.x"]
 ---
 
 We are excited to announce the immediate availability of Phalcon 2.0.8 and Phalcon 2.1.0 beta 2!

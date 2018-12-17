@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon statistics"
-tags: [php, phalcon, clot, zephir, statistics, 1.x]
+tags: [php, phalcon, clot, zephir, statistics, "1.x"]
 ---
 
 As with any project, statistics are always good to have around. Whether this is personal curiosity or showing off, statistics help us make decisions.

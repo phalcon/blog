@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tutorial: your first encounter with Phalcon / Part 2"
-tags: [php, phalcon, tutorial, 0.7, 0.x]
+tags: [php, phalcon, tutorial, "0.7", "0.x"]
 ---
 
 Our friend [Marcin @mailopl](https://twitter.com/mailopl) from Poland sent us this amazing tutorial and introduction to Phalcon. Check the first part here. Enjoy it!

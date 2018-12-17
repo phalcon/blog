@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 2 (beta 3) released"
-tags: [php, phalcon, 2.0, phalcon2, release, zephir, 2.x]
+tags: [php, phalcon, "2.0", phalcon2, release, zephir, "2.x"]
 ---
 
 Today we're very excited to announce the release of the third beta (and possibly last one) of Phalcon 2!

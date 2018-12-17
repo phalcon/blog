@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tutorial: Creating a custom model's initializer with Annotations"
-tags: [php, phalcon, sample, tutorial, 1.x]
+tags: [php, phalcon, sample, tutorial, "1.x"]
 ---
 
 This tutorial is oriented to an intermediate/advanced audience. We'll explain how to create a custom model's initializer via annotations that can be easily modified/adapted to initialize collections, plugins, etc.

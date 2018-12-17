@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phosphorum: The Phalcon forum"
-tags: [php, phalcon, forum, 0.x]
+tags: [php, phalcon, forum, "0.x"]
 ---
 
 [![Phalcon Forum](/assets/files/2013-01-25-forum.jpg)](https://forum.phalconphp.com "Phalcon Forum")
