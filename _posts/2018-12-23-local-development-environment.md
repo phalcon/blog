@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Phalcon development environment setup"
+title: "Phalcon local development environment setup"
 tags: [php, phalcon, development, nanobox, zephir, tests]
 ---
 
