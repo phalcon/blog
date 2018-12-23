@@ -22,7 +22,7 @@ excerpt_separator: <!--more-->
 
 paginate: 5
 paginate_path: "/page-:num"
-permalink: /post/:title/
+permalink: /post/:title
 version: v1.2.0
 kramdown:
   input: GFM
