@@ -32,11 +32,6 @@ kramdown:
 sass:
   style: :expanded # You might prefer to minify using :compressed
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-
 # Exclude these files from your production _site
 exclude:
   - Gemfile
