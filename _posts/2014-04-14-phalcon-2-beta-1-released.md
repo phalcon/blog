@@ -10,7 +10,6 @@ Zephir's purpose is to offer a new and easier syntax of writing PHP extensions, 
 
 For us and thanks to Zephir, the development of Phalcon is now more enjoyable. We have to deal less and less with low-level details and our base code is more readable for anyone who wants to understand, contribute and improve Phalcon.
 
-<!--more-->
 During these we have been implemented several interesting features in Zephir, that have enriched the quality of Phalcon and have made the development more robust:
 
 - [Static Typing](http://zephir-lang.com/types.html#static-types)

@@ -10,7 +10,6 @@ We're in the process putting the final touches on the second major release of Ph
 
 Phalcon 2 now implements most of the functionality that Phalcon 1.x offers and [it's now passing](https://travis-ci.org/phalcon/cphalcon/builds/33532701) an important number of tests in Travis. Yay!
 
-<!--more-->
 ### Phalcon 2 new look
 
 We're looking for a enthusiast graphic designer/company who want to contribute a new look for Phalcon when releasing Phalcon 2. Check [this forum thread](https://forum.phalconphp.com/discussion/3246/contribute-to-phalcon-s-new-look) for more information.

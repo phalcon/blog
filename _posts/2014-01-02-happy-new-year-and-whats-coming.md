@@ -8,7 +8,6 @@ Phalcon was released more or less 2 years ago and a lot of good things have happ
 
 A great effort was made by the contributors last year to get here. To all of you thank you very much!
 
-<!--more-->
 As always, bring up an open-source project represents many challenges, work and dedication. Hopefully, our plans for this year are:
 
 - **[Phalcon 2.0](https://github.com/phalcon/cphalcon/tree/2.0.0/phalcon):** 

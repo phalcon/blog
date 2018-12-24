@@ -8,7 +8,6 @@ tags: [php, phalcon, roadmap, aprilsfool, "1.x"]
 
 Continuing our work of trying to make Phalcon even faster, we have decided to start migrating our code to [assembler](http://en.wikipedia.org/wiki/Assembly_language).
 
-<!--more-->
 After some internal testing we have concluded that this is ​the next step for this project.
 
 We have​ estimated ​that the migration to assembler will take approximately two years but by the end Phalcon will be even faster.

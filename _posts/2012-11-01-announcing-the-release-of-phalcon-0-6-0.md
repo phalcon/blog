@@ -10,7 +10,6 @@ We are pleased to announce the release of Phalcon 0.6.0.
 
 This version marks two milestones in Phalcon's maturity and features such as support for [MongoDb](http://www.mongodb.org/) and Volt.
 
-<!--more-->
 As noted in our previous blog post, Phalcon is now offering a templating engine called [Volt](https://docs.phalconphp.com/en/latest/reference/volt.html), inspired by Twig. Volt is the only templating engine for PHP written completely in C. It is part of the framework so it shares the same performance optimizations as the rest of the framework and it is also rich in features. We have also completed our support for MongoDb and [ODM (Object Document Mappers](https://docs.phalconphp.com/en/latest/reference/odm.html)). This opens a lot of possibilities for future features regarding ODMs.
 
 Our main concern is always ease of use and performance. We are always trying to find ways to make the framework as fast as it can become. To that effect, a significant amount of performance enhancements have been implemented in this version, to ensure that performance is kept at high levels.

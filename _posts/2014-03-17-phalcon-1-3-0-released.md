@@ -10,7 +10,6 @@ Many important internal aspects of Phalcon have been rewritten and enhanced with
 
 Phalcon 1.3 consolidates the research, testing and implementation of new ways to improve the performance in the Phalcon kernel, which is also the heart of the extensions created by [Zephir](http://blog.zephir-lang.com/) in Phalcon 2.0.
 
-<!--more-->
 The [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG) for this version is huge. Some key improvements are:
 
 ### Disabling Literals

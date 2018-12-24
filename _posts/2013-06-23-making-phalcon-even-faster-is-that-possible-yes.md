@@ -10,7 +10,6 @@ The Phalcon Team is constantly trying to find ways of making Phalcon even faster
 
 Today, we are happy to announce that **profile-guided optimizations are available in Phalcon**!
 
-<!--more-->
 In a recent post, we have highlighted how implementing Phalcon as a DLL/Shared Object (so) helps with the optimization of the memory usage while running PHP applications on a web server. Phalcon's installation is structured in such a way that it takes advantage of specific optimizations available in the target machine. In most cases, this is more than enough to offer high performance.
 
 **PGO**

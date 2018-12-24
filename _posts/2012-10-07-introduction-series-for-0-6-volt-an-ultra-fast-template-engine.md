@@ -10,7 +10,6 @@ Following the major refactoring in 0.5.0, we are going to be posting several blo
 
 One of the most important component introduced in the 0.6.0 series is Volt, a completely new template engine, written in C, ready to be used in PHP applications.
 
-<!--more-->
 Volt is enhancing the view layer with a simple and user friendly syntax. Volt is inspired on [Jinja](http://jinja.pocoo.org/), originally created by [Armin Ronacher](https://github.com/vito/chyrp/wiki/Twig-Reference). Therefore many developers will be in familiar ground using the same syntax they have been using with other similar template engines. Volt's syntax and features have been enhanced with more elements and of course with the performance that developers have been accustomed to while working with Phalcon.
 
 The following example shows its basic usage:

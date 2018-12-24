@@ -10,7 +10,6 @@ They also provide code generators like scaffording.
 
 In this screencast we show you how to use it.
 
-<!--more-->
 [![Phalcon Developer Tools](/assets/files/2012-03-23-devtools-screencast.png)](https://vimeo.com/39035250 "Phalcon Developer Tools - Click to Watch!")
 
 <3

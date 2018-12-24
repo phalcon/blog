@@ -10,7 +10,6 @@ We are very pleased to announce the immediate availability of Phalcon Framework 
 
 As always, we would like to thank the community for their time and enthusiasm in getting Phalcon better.
 
-<!--more-->
 Some of the key features introduced are:
 
 - [Getting/Saving records with Magic Properties](https://docs.phalconphp.com/en/latest/reference/models.html#storing-related-records)]

@@ -6,7 +6,6 @@ tags: [php, phalcon, sample, tutorial, "1.x"]
 
 This tutorial is oriented to an intermediate/advanced audience. We'll explain how to create a custom model's initializer via annotations that can be easily modified/adapted to initialize collections, plugins, etc.
 
-<!--more-->
 ### Bootstrap
 The example provides a simple structure that can be implemented in any Phalcon application. You can find the complete code on [Github](https://github.com/phalcon/tutorial-models-init). The following structure is used:
 

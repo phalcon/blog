@@ -8,7 +8,6 @@ In addition to the dependency injection component seen in the [previous post](/p
 
 In the following example, we use the EventManager to listen for events produced in a MySQL connection managed by `Phalcon\Db`. First of all, we need a listener object to do this. We create a class which methods are the events we want to listen:
 
-<!--more-->
 ```php
 class MyDbListener 
 {

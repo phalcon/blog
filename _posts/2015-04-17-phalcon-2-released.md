@@ -10,7 +10,6 @@ After more than a year of development, we're extremely excited to announce the r
 
 Those that have been following the project closely, know that this has not been a small feat.
 
-<!--more-->
 - We had to create a brand new language [Zephir](http://www.zephir-lang.com) which allows developers to write PHP extensions easily.
 - We had to completely rewrite most of Phalcon 1.3.x, offering the same functionality as before so as to ensure that upgrading will be very easy.
 - Zephir had to be adjusted and enhanced as we moved through the rewrite, offering more functions and options to developers.

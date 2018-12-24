@@ -8,7 +8,6 @@ tags: [php, phalcon, implementation, success, "1.x"]
 
 Success story from our community member [Nikita Vershinin](https://github.com/endeveit):
 
-<!--more-->
 > Hello, Phalcon team. 
 > 
 > I would like to share with you our success story using Phalcon in [kolesa.kz](http://kolesa.kz) and [krisha.kz](http://krisha.kz) projects, [the most visited](http://www.alexa.com/siteinfo/kolesa.kz) and highloaded sites in Kazakhstan, ranked in TOP-10 classified sites in the CIS. Both sites work on single RESTful-like API written on [Phalcon\\Mvc\\Micro](https://docs.phalconphp.com/en/latest/reference/micro.html).

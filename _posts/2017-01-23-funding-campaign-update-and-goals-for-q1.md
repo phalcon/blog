@@ -10,7 +10,6 @@ As an open source project, Phalcon relies on the contributions of developers thr
  
 For the project to move forward, the core team and some contributors, have recently set some goals and milestones. We would like to share those with you, so that you are always informed as to where we are and where we are heading.
 
-<!--more-->
 ### 2016 Recap
 
 2016 has been quite the milestone year for Phalcon. We were working very hard to release version 3.x. which not only offered Long Term Support (LTS) but had wide variety of enhancements and features. A small refresher on the [changelog](https://github.com/phalcon/cphalcon/releases/tag/v3.0.0) of the release.

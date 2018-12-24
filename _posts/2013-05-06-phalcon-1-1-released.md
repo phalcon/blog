@@ -10,7 +10,6 @@ This release adds new functionality, fixes bugs, improves of the current compone
 
 Main features in this release were highlighted in the [beta article](https://blog.phalconphp.com/post/phalcon-1-1-beta-released).
 
-<!--more-->
 Summary of key features below:
 
 - [QueryBuilder Paginator](https://docs.phalconphp.com/en/latest/reference/pagination.html#adapters-usage)

@@ -4,10 +4,8 @@ title: "Closing old issues in Github and News"
 tags: [php, phalcon, phalcon3, release, rfc, lts, php7, github, issues]
 ---
 
-Hello everyone!
-
 It has been a while since we last posted an update regarding Phalcon. We apologize for this. As you all know this is an open source project and all of us in the community contribute using our free time and enthusiasm for the project. However sometimes, other tasks need more immediate attention such as work and family.
-<!--more-->
+
 ### Workload
 Due to the team's increased workload (family/work), we reached out to a C developer that can help us with some Zephir and Phalcon related bugs. We are working on compensation at the moment as well as the priority of bugs that need to be squashed so that we can move the project forward. We are going to use the funds that all of our supporters have graciously donated to the project in [OpenCollective](http://opencollective.com/phalcon). We are very careful about those funds and only use them when needed, so we have decided that this would be a great way to help the project. 
 

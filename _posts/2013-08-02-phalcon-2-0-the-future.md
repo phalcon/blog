@@ -8,7 +8,6 @@ It's time to talk about Phalcon 2 and the future of this project.
 
 Despite being a PHP extension implemented in C and its young age, Phalcon offers the same or better features than other frameworks that have been around a lot longer. Phalcon is a fast, robust, secure, extendable PHP framework for everyone to use.
 
-<!--more-->
 Since we have created a great framework, framework's development is an every day task, constant improvement and evolution is required to deliver more and better applications.
 
 We have often said that our team is small and sometimes the work that needs to be competed can be overwhelming. Thus far we have been very good in responding to new features that we identified or that the community has requested. Still this process requires the Phalcon team to implement the features.

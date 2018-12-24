@@ -8,7 +8,6 @@ The newest version of Phalcon has entered the beta stage. 0.7.0 Beta 1 is now av
 
 Some of the most important features introduced in this version are highlighted below:
 
-<!--more-->
 **Interfaces**
 We have added over 40 interfaces to the framework. Most of the components/classes now have [interfaces](http://php.net/manual/en/language.oop5.interfaces.php) that allow the framework to be extended as much as possible. The developers can now simply implement the relevant interface and replace specific (or all) parts of the framework with custom classes. In addition to this, developers can create new adapters for existing components thus expanding the framework according to their needs.
 

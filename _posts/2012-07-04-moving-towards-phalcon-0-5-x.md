@@ -8,7 +8,6 @@ Our main goal is to make Phalcon a great framework that everyone can benefit fro
 
 With that in mind, the 0.4.x branch was a great step forward and we are preparing for 0.5.x which will be a big redesign. The new branch will require some refactoring which we want to discuss with you. New changes will be introduced, big but necessary, which will affect the functionality of current applications.
 
-<!--more-->
 **Use of [namespaces](http://php.net/manual/en/language.namespaces.php) in class names**. 
 This feature was built into PHP 5.3 and will allow us to organize classes in packages.
 

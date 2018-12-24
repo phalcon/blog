@@ -8,7 +8,6 @@ Hello everyone!
 
 We would like to give you a quick update on the work done so far, trying to meet our Q1 goals.
 
-<!--more-->
 ### Github
 We have converted the [Phalcon Github](https://github.com/phalcon) account to an organization. This move offers much better flexibility and organization for the project. Several contributors/members of the core team have been added to it, and more will follow soon. 
 

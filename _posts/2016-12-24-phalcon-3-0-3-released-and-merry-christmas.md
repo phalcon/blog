@@ -14,7 +14,6 @@ This release concentrated on addressing a number of bugs, making the framework a
 
 **A big thank you to all of our contributors and the community!!**
 
-<!--more-->
 The release tag can be found here: [3.0.3](https://github.com/phalcon/cphalcon/releases/tag/v3.0.3)
 
 #### Highlights

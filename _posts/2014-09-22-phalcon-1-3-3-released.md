@@ -8,7 +8,6 @@ This version is maintenance release of the Phalcon 1.3.x branch and it has a con
 
 Many thanks to everyone that have contributed either on [Github or through discussion in our](https://github.com/phalcon/cphalcon) [forum](https://forum.phalconphp.com/) to this version.
 
-<!--more-->
 From now, we encourage all the community to dedicate some time to test and improve [Phalcon 2](http://blog.phalconphp.com/post/95931229730/phalcon-2-beta-2-available) our next big release.
 
 Thank you!

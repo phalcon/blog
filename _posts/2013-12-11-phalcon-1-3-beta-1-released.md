@@ -8,7 +8,6 @@ We are happy to announce the release of our first beta of Phalcon 1.3​!
 
 In this version we have introduced several new features and performance improvements. The intend of this beta release is get input from the community, test the new functionality making sure everything works fine once production environments are updated to 1.3.
 
-<!--more-->
 1.3.0 includes several performance improvements, new components like `Phalon\Image`, bug fixes, stability and performance improvements.​
 
 - Code cleanup: get rid of compiler warnings, dead code elimination, code deduplication, use static code analysers to eliminate possible bugs ([801](https://github.com/phalcon/cphalcon/issue/801), [802](https://github.com/phalcon/cphalcon/issue/802), [810](https://github.com/phalcon/cphalcon/issue/810), [825](https://github.com/phalcon/cphalcon/issue/825), [827](https://github.com/phalcon/cphalcon/issue/827), [838](https://github.com/phalcon/cphalcon/issue/838), [849](https://github.com/phalcon/cphalcon/issue/849), [942](https://github.com/phalcon/cphalcon/issue/942), [968](https://github.com/phalcon/cphalcon/issue/968), [1001](https://github.com/phalcon/cphalcon/issue/1001), [1093](https://github.com/phalcon/cphalcon/issue/1093), [1169](https://github.com/phalcon/cphalcon/issue/1169), [1214](https://github.com/phalcon/cphalcon/issue/1214), [1223](https://github.com/phalcon/cphalcon/issue/1223), [1224](https://github.com/phalcon/cphalcon/issue/1224), [1375](https://github.com/phalcon/cphalcon/issue/1375), [1430](https://github.com/phalcon/cphalcon/issue/1430))

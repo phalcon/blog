@@ -8,7 +8,6 @@ This post is quite technical, explaining the inner workings of Phalcon. 
 
 As a web developer, you don't need to know how it works (most of the times) so long as it works, and works well. However we believe that this article will allow users of the framework to understand some of the inner workings of Phalcon, and allow them to make decisions on the hardware they use, so as to maximize performance for their applications.
 
-<!--more-->
 In previous posts, we have explained how the compilation process aids in increasing Phalcon's performance by generating processor specific instructions.
 
 In addition to that, we need to take into account that C-compilers are very mature, and can detect where the code can be optimized, removing unnecessary code, and preventing lots of errors by indicating which part of the code could lead to bugs such as uninitialized variables, wrong data types, etc.

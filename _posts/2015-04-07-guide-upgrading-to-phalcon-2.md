@@ -8,7 +8,6 @@ Phalcon 2 is the a major upgrade to the framework and will be released **April 1
 
 Upgrading to the latest version has several benefits:
 
-<!--more-->
 - New features and improvements are added and bugs are fixed
 - Upgrading to the latest release available makes future upgrades less painful by keeping your code base up to date
 - Older version of Phalcon will eventually no longer receive bugs, security or feature updates

@@ -8,7 +8,6 @@ Our next release, 0.4.0, is almost ready to rock, but we need your help to get t
 
 Below is a comprehensive list of changes:
 
-<!--more-->
 *Internal Refactor:*
 
 - Moved zval separation to `phalcon_array_update_*`

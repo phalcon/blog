@@ -4,12 +4,8 @@ title: "Phalcon 3.3.2 released"
 tags: [php, phalcon, phalcon3, "3.3.x", release, rfc, lts, php7]
 ---
 
-Hello everyone!
+We are happy to announce that we have released Phalcon [3.3.2](https://github.com/phalcon/cphalcon/releases/tag/v3.3.2). This release contained some bug fixes.
 
-We are happy to announce that we have released Phalcon [3.3.2](https://github.com/phalcon/cphalcon/releases/tag/v3.3.2). 
-
-This release contained some bug fixes.
-<!--more-->
 #### Changelog
 - Fixed `Phalcon\Db\Dialect\Mysql::modifyColumn` to produce valid SQL for renaming the column [#13012](https://github.com/phalcon/cphalcon/issues/13012)
 - Fixed `Phalcon\Forms\Form::getMessages` to return back previous behaviour: return array of messages with element name as key [#13294](https://github.com/phalcon/cphalcon/issues/13294)

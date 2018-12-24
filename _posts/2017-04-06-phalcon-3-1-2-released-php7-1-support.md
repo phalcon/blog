@@ -12,7 +12,6 @@ This release fixes a few bugs, but one of them has been one of the most sought a
 
 The release tag can be found here: [3.1.2](https://github.com/phalcon/cphalcon/releases/tag/v3.1.2)
 
-<!--more-->
 #### `Imagick::getVersion()`
 Fixed `Imagick::getVersion()` error in some systems [#12729](https://github.com/phalcon/cphalcon/pull/12729). In certain systems, extending `Imagick::getVersion()` cannot be called and is correctly called now using `Imagick->getVersion()`.
 

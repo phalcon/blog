@@ -8,7 +8,6 @@ Today, we have an important announcement to make. A few weeks ago we received an
 
 "Pokémon: Phalcon Edition" is a new member of this saga and it is sure to be one of the favorite of its fans.
 
-<!--more-->
 The spokesman of this company was very excited about this new project:
 
 > We never doubted that Phalcon Team could get on track with this new project. 

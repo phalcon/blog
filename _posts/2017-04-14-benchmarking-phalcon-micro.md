@@ -12,7 +12,6 @@ From feedback from the community, we intend to expand this test to be a bit more
 
 Phalcon offers the `Phalcon\Mvc\Micro` application, used to create micro applications. Again we hope that this blog post will give an indication on what one can expect from a Phalcon Micro application. Note that this [blog](https://github.com/phalcon/blog) and our [website](https://github.com/phalcon/website) both run using the Phalcon Micro application. Both sites run on an Amazon VM with 512Mb RAM and 1 vCPU.
 
-<!--more-->
 ### Methodology
 We used the same methodology as when benchmarking the full frameworks. A simple `Hello World` was displayed on the screen. Naturally, this is not a real life example, but it demonstrates the minimum resources needed to display a simple string on the screen.
 

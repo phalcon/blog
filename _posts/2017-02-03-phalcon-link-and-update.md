@@ -12,7 +12,6 @@ The purpose of the new domain is:
 * Help the community share Phalcon related URLs using a short, easy to remember link
 * Showcase the ease of use of creating a new Phalcon application.
 
-<!--more-->
 Phalcon Link has been created using one single file, utilizing the `\Phalcon\Mvc\Micro` application ([documentation](https://docs.phalconphp.com/en/latest/reference/micro.html)).
 
 ### Links

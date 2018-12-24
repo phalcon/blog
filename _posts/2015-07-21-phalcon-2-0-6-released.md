@@ -8,7 +8,6 @@ We are excited to announce the release of Phalcon 2.0.6!
 
 This version contains mostly bug fixes as well as improvements to the 2.0.x series.
 
-<!--more-->
 ### Changes
 
 - Builds in TravisCI now uses Docker to perform faster builds

@@ -8,7 +8,6 @@ Last week, security researchers announced that a new attack towards websites has
 
 In short, your application may be affected if:
 
-<!--more-->
 - Your page is served with HTTP compression enabled (GZIP / DEFLATE).
 - Your page reflects user data via query string parameters, POST, etc.
 - Your application page serves Personally identifiable information*(*PII), a CSRF token, sensitive data.

@@ -10,7 +10,6 @@ tags: [php, phalcon, sample, vokuro, "1.x"]
 
 The following features are implemented:
 
-<!--more-->
 - Sign Up of Users
 - Confirmation by email
 - Login of Users

@@ -4,12 +4,10 @@ title: "Phalcon 3.4.0 released"
 tags: [php, phalcon, phalcon3, "3.4.x", release, rfc, lts, php7]
 ---
 
-Hello everyone!
-
 We are happy to announce that we have released Phalcon [3.4.0](https://github.com/phalcon/cphalcon/releases/tag/v3.4.0). 
 
 This is going to be the last major release in the 3.x series. We will continue bug fixes and release some minor releases in the future, but we are now going to concentrate fully on version 4.0.
-<!--more-->
+
 #### Changelog
 - Added `Phalcon\Mvc\Router::attach` to add `Route` object directly into `Router` [#13326](https://github.com/phalcon/cphalcon/issues/13326)
 - Added the ability to listen `request:beforeAuthorizationResolve` and `request:afterAuthorizationResolve` events. This ability enables using custom authorization resolvers [#13327](https://github.com/phalcon/cphalcon/pull/13327)

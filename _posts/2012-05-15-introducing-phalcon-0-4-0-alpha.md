@@ -8,7 +8,6 @@ We're happy to announce that after weeks of refactoring and polishing, 0.4.x are
 
 [![image](/assets/files/2012-05-15-real-phalcon.png)](http://browse.deviantart.com/#/d15brzb)
 
-<!--more-->
 At this time, we are not adding new features different than 0.3.x, but we hope to add some new components in less time than before and help contributors to understand better the framework structure.
 
 We want to present some new experimental features we've been working on. It will not be released as part of the standard Phalcon extension until they work properly. Moreover, you can try it and tell us the good/bad results. Those experimental features can easily enable by activating macros at compile time.

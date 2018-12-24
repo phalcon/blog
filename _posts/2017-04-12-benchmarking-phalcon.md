@@ -8,7 +8,6 @@ It has been quite a while since we run our benchmarks against other networks. Ac
 
 Hopefully this post will offer some perspective on what you can expect from Phalcon and your application. It goes without saying that every application needs the best design for its needs, but using Phalcon can also push your application's performance even further.
 
-<!--more-->
 ### Methodology
 We have installed the stock application for each framework. We have ensured that there is one route, one controller and one view that will allow us to display `Hello World` on the screen. Naturally, this is not a real life example, but it demonstrates the minimum resources needed to display a simple string on the screen.
 

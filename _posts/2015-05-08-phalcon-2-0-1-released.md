@@ -6,7 +6,6 @@ tags: [php, phalcon, "2.0", phalcon2, release, "2.x"]
 
 Today we're releasing Phalcon 2.0.1, this version fixes bugs and adds new features in the 2.0 series, the following is the CHANGELOG:
 
-<!--more-->
 - Fixed random segfaults in installations using PHP <= 5.5 caused by inline caches
 - Added missing `Phalcon\Debug::listenLowSeverity`
 - Added new theme in `Phalcon\Debug`

@@ -10,7 +10,6 @@ We are happy to announce that Phalcon 1.2.1 is available for download/compile fo
 
 This new version of Phalcon includes a lot of optimizations, reducing memory while increasing performance (yet again :))
 
-<!--more-->
 A few key points are
 
 - Dispatching parameters now can be modified in `beforeExecuteRoute` events

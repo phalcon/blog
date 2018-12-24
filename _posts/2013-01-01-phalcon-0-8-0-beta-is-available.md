@@ -6,7 +6,6 @@ tags: [php, phalcon, release, beta, "0.8", "0.x"]
 
 After the introduction of many new and exciting features in our [alpha version](/post/phalcon-0-8-0-alpha-available), we are today releasing the first beta version of 0.8.0.
 
-<!--more-->
 - [Documentation](https://docs.phalconphp.com/en/0.8.0/)
 - Check the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG)
 

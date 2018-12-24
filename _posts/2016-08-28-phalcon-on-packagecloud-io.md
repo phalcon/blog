@@ -12,7 +12,6 @@ Admittedly, a lot of us have installed Phalcon so many times that it is second n
 
 To help with this task, we have employed the services of [PackageCloud.io](https://PackageCloud.io), so as to create packages for PhalconPHP. With [PackageCloud.io](https://PackageCloud.io) users can now add the relevant repository to their distribution, and install Phalcon with the package manager of their choice.
 
-<!--more-->
 For instance, if we are looking at a Ubuntu distribution, all we have to do is:
 
 ### DEB distributions (i.e Ubuntu)

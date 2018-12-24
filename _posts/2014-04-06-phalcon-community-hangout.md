@@ -8,7 +8,6 @@ Yesterday (2014-04-05) we had our first Phalcon community hangout. The main purp
 
 We are excited to announce that the first Phalcon community hangout was a great success!
 
-<!--more-->
 We had an awesome turnout from all around the world, with members of the community filling the hangout (10 concurrent users) and more viewing online, asking questions and interacting with the team.
 
 We talked about where we are, where we came from and what the future steps are with Zephir and Phalcon 2.0. Contributions, bugs and NFRs were also topics in our discussion, as well as who are team and how Phalcon is funded.

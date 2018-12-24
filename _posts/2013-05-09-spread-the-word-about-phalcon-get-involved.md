@@ -8,7 +8,6 @@ Amazing projects need amazing tools. We might not know you just yet, but we thin
 
 Here at Phalcon, we're building a new generation framework for PHP, we want to give you amazing performance, while help you develop with ease and fun.
 
-<!--more-->
 We hope that you enjoy Phalcon as much as we do. Our doors are always open to receive your collaboration with the many things a project like this requires:
 
 **Documentation**

@@ -10,7 +10,6 @@ This release marks another small milestone in the evolution of Phalcon, addressi
 
 **A big thank you to all of our contributors and the community!!**
 
-<!--more-->
 The release tag can be found here: [3.0.2](https://github.com/phalcon/cphalcon/releases/tag/v3.0.2)
 
 #### Highlights

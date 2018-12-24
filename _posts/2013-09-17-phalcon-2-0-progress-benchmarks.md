@@ -8,7 +8,6 @@ After some weeks of hard work, long nights, burning the midnight oil (as all pro
 
 Phalcon 2.0 will be a major upgrade as far as the internal code is concerned and the way it operates. We managed to do this without making big changes to the API that would break compatibility. Some minor changes might be introduced, and if they do we will inform everyone well in advance.
 
-<!--more-->
 Phalcon 2.0 is currently being rewritten in [Zephir](http://zephir-lang.com/), a brand new high-level programming language that is used to help us code that is much easier maintainable than C itself and which translates its code to C instructions.
 
 We still have a long way to go before we release Phalcon 2.0. There are many components and functionality that we need to migrate, address bugs, improve functionality etc. However we are extremely excited with the results so far.

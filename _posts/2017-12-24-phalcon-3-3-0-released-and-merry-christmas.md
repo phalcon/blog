@@ -9,7 +9,7 @@ tags: [php, phalcon, phalcon3, "3.3.x", release, rfc, lts, php7]
 The Phalcon Team wishes all of our friends, contributors, developers and users of the framework a Merry Christmas!. We hope that the new year will bring health and happiness to you and your loved ones!
 
 As a small gift for this holiday/celebration, we are releasing Phalcon [3.3.0](https://github.com/phalcon/cphalcon/releases/tag/v3.3.0).
-<!--more-->
+
 This release concentrated on support for **PHP 7.2**, new features and fixing some bugs,
 
 <h5 class="alert alert-warning">

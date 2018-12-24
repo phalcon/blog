@@ -8,7 +8,6 @@ In this tutorial, we're going to explain how to create a behavior for the Phalco
 
 A model in Phalcon triggers specific events when operations like create/update/delete are performed. These events help us to insert hook points extending the functionality according to our business needs.
 
-<!--more-->
 In our example, we're especially interested in tracking what records a user creates and what fields he/she changes.
 
 Checking the list of events triggered by a model, the most appropriate to insert this logic are ‘afterCreate' and 'afterUpdate'. These are executed after the creating and updating operations respectively.

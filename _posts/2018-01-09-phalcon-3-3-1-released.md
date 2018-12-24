@@ -4,12 +4,10 @@ title: "Phalcon 3.3.1 released"
 tags: [php, phalcon, phalcon3, "3.3.x", release, rfc, lts, php7]
 ---
 
-Hello everyone!
-
-Phalcon [3.3.1](https://github.com/phalcon/cphalcon/releases/tag/v3.3.1) has been released, addressing some bugs. 
+We are excited to announce that Phalcon [3.3.1](https://github.com/phalcon/cphalcon/releases/tag/v3.3.1) has been released, addressing some bugs. 
 
 The release tag can be found here: [3.3.1](https://github.com/phalcon/cphalcon/releases/tag/v3.3.1)
-<!--more-->
+
 #### Changelog
 - Fixed a boolean logic error in the CSS minifier and a corresponding unit test so that whitespace is stripped [#13200](https://github.com/phalcon/cphalcon/pull/13200)
 - Fixed `default` Volt filter [#13242](https://github.com/phalcon/cphalcon/issues/13242), [#13244](https://github.com/phalcon/cphalcon/issues/13244)

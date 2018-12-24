@@ -8,7 +8,6 @@ We're part of the "speed up the web", therefore, we want to have a rapid release
 
 The C language has not been designed for rapid development; however, we are putting a lot of enthusiasm to get a better and faster framework.
 
-<!--more-->
 Unit-tests and the [continuous integration](http://travis-ci.org/#!/phalcon/cphalcon) server helped us a lot to discover bugs and maintain our repositories stable (during development).
 
 As you know, Phalcon is the fastest framework for PHP out there, so but more importantly than that, we want to get a balance between functionality and performance.

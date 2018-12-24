@@ -8,7 +8,6 @@ Last week, we were working on a huge refactoring over many aspects of Phalcon. O
 
 The current list of changes is:
 
-<!--more-->
 - Refactoring many code patterns as C macros, the total base code was reduced by about 8000 lines of code less.
 - Most function calls were rewritten to avoid any string length counting by avoiding potential use of strlen. Functions and method names have fixed string lengths improving general performance. This improvement was also implemented for static string concatenation.
 - We have implemented some kind of [Register Allocation](http://en.wikipedia.org/wiki/Register_allocation) to take advantage of processor registers. However, the compiler will choose best register allocations when it compiles the extension.

@@ -10,7 +10,6 @@ Introducing [builtwith.phalconphp.com](http://builtwith.phalconphp.com)
 
 Taking the example from our friends at [AngularJS](http://www.angularjs.org) we have cloned their [repository](https://github.com/angular/builtwith.angularjs.org) and we have Phalcon-ized it. Special thanks to the [AngularJS](http://en.wikipedia.org/wiki/AngularJS) team as well as [Ole Aass](https://github.com/oaass) ([website](http://oleaass.com)) who is leading the project.
 
-<!--more-->
 The new site has a very easy interface that users can navigate to and even search for projects with tags. 
 
 You can add your own project by simply cloning our [repository](https://github.com/phalcon/builtwith) and adding your project as well as a logo and screenshots and then issue a pull request for it to appear in the live site.

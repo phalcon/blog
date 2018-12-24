@@ -10,7 +10,6 @@ This version is our first [LTS](https://en.wikipedia.org/wiki/Long-term_support)
 
 Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon even a better framework. Final version will be available in two weeks.
 
-<!--more-->
 **NOTE**: Some of these changes will break existing Phalcon 2.x applications. Please ensure that you have tested your application sufficiently before migrating your application to 2.1 for production purposes.
 
 ### Changes in Phalcon 2.1

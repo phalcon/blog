@@ -8,7 +8,6 @@ As part of our three to five weeks minor release schedule, we are excited to ann
 
 The number of improvements and bug fixes are a lot more compared to other releases in the 2.0.x series:
 
-<!--more-->
 ### Changes
 
 - Fixed bug in `Phalcon\Mvc\Model::update()` that mistakenly throws an exception when the record does exist

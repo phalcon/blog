@@ -8,7 +8,6 @@ We are happy to announce that Phalcon 2.0.5 is released.
 
 This version contains bug fixes and small improvements to the 2.0.x series.
 
-<!--more-->
 ### Changes
 
 - Fixed a bug that makes that attaching an events manager to a `Mvc\Application` causes `view->render()` not being called

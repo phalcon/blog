@@ -10,7 +10,6 @@ With this version, we have made significant performance improvements in many com
 
 We are proud to be pioneers in PHP performance in many areas such as:
 
-<!--more-->
 - [Full stack frameworks](https://docs.phalconphp.com/en/0.6.0/reference/mvc.html)
 - [Micro frameworks](https://docs.phalconphp.com/en/0.6.0/reference/micro.html)
 - [ORM (Object Relational Mappers) for PHP](https://docs.phalconphp.com/en/0.6.0/reference/models.html)

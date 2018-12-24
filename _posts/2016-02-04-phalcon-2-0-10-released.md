@@ -9,7 +9,6 @@ We are excited to announce the immediate availability of Phalcon 2.0.10!
 This is the tenth maintenance release in the 2.0.x series, adding more fixes
 and improvements to make the most of Phalcon.
 
-<!--more-->
 ### Changes in 2.0.10
 
 - ORM: Added support for DATE columns in Oracle

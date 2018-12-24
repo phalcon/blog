@@ -6,7 +6,6 @@ tags: [php, phalcon, phalcon3, "3.2.x", release, rfc, lts, php7, new features]
 
 With [Phalcon 3.2.0](https://blog.phalconphp.com/post/phalcon-3-2-0-released-and-new-docs) there were many new features and bugs fixed. Today we will write about most important things you need to know and show some code examples of new features.
 
-<!--more-->
 #### Added Factory Adapter loaders [#11001](https://github.com/phalcon/cphalcon/issues/11001)
   With this feature you can load your services in more simplified way using for example ini file:
   

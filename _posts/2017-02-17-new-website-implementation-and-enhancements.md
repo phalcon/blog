@@ -10,7 +10,6 @@ Today we have released a brand new implementation of our website.
 
 Apart from some minor changes to the layout and addition of content, the website looks the same as before.
 
-<!--more-->
 ### Implementation
 
 In our previous application serving our website, we had used the [full stack](https://docs.phalconphp.com/en/latest/reference/applications.html) application that Phalcon offers.

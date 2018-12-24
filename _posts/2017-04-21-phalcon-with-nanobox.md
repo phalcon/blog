@@ -10,7 +10,6 @@ tags: [php, phalcon, nanobox, install, devtools]
 
 In this post, we'll walk through getting a brand new Phalcon app up and running locally, with nothing installed other than Nanobox. First [create a free Nanobox account](https://dashboard.nanobox.io/users/register), then [download and run the Nanobox installer](https://dashboard.nanobox.io/download).
 
-<!--more-->
 ## Create a New Project
 Create a project folder and `cd` into it:
 

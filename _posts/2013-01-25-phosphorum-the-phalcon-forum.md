@@ -12,7 +12,6 @@ While there are plenty of choices on the Internet, when in need of installing di
 
 Phosphorum is lightweight and simple in its design, thus it does not implement many sophisticated features, Currently it supports
 
-<!--more-->
 - Registration using Github (via [OAuth](http://developer.github.com/v3/oauth/))
 - Create/Edit posts
 - Reply posts

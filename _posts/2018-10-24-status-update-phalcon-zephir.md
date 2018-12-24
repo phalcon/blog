@@ -4,12 +4,10 @@ title: "Status update (Phalcon / Zephir)"
 tags: [php, phalcon, status, update, zephir, documentation]
 ---
 
-Hello everyone!!
-
 Just a status update for all of our followers and contributors! As usual, a big thank you to everyone that helps us making Phalcon better!
 
 We always championed transparency, so this blog post is to inform everyone where we are and what decisions we took moving forward - call it a mini roadmap.
-<!--more-->
+
 ### Moving woes
 It has been a very interesting and busy summer. Without even coordinating with each other, both Serghei and Nikos moved houses at the same time. These life events impacted the project and our responsiveness to bugs, issues, pull requests and discussions in Discord. Luckily we have both fully moved to our new homes, with Internet access and can now devote time to the project and address issues, questions etc.
 

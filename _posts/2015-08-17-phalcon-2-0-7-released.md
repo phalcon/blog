@@ -5,9 +5,9 @@ tags: [php, phalcon, "2.0", phalcon2, release, "2.x"]
 ---
 
 We are excited to announce the release of Phalcon 2.0.7!
+
 This is our seventh release in the 2.0.x series and it contains bug fixes and new features for your enjoyment!
 
-<!--more-->
 ### Changes
 
 - `Image\Adapter\Gd::save()` no longer fails if the method or the instance is created with a filename without an extension
