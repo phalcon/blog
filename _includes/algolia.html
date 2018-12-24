@@ -48,19 +48,21 @@
   `;
     };
 
-
     search.addWidget(
-        instantsearch.widgets.searchBox({
-            container: '#search-searchbar',
-            placeholder: 'Search...',
-            autofocus: true,
-            searchAsYouType: true,
-            showReset: true,
-            showSubmit: false,
-            showLoadingIndicator: true,
-            poweredBy: true
-            poweredBy: true // This is required if you're on the free Community plan
-        })
+        instantsearch
+            .widgets
+            .searchBox(
+                {
+                    container: '#search-searchbar',
+                    placeholder: 'Search...',
+                    autofocus: true,
+                    searchAsYouType: true,
+                    showReset: true,
+                    showSubmit: false,
+                    showLoadingIndicator: true,
+                    poweredBy: true
+                }
+            )
     );
 
     search.addWidget(
