@@ -29,6 +29,10 @@ kramdown:
   syntax_highlighter_opts:
     disable: true
 
+algolia:
+  application_id: QZSIJXM8NK
+  index_name: phalcon-blog
+
 sass:
   style: :expanded # You might prefer to minify using :compressed
 
