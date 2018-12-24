@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<div id="search-searchbar"></div>
+<div class="post-list" id="search-hits">
 {% for post in paginator.posts %}
                     <div id="articles">
                         <div class="row">
@@ -19,3 +21,4 @@ layout: default
                     </div>
 {% endfor %}
 {% include paginator.html %}
+</div>

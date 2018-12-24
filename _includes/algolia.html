@@ -22,7 +22,7 @@
     const hitTemplate = function(hit) {
         let date = '';
         if (hit.date) {
-            date = moment.unix(hit.date).format('MMM D, YYYY');
+            date = moment.unix(hit.date).format('Y-M-D');
         }
 
         let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
@@ -39,12 +39,20 @@
         const content = hit._highlightResult.html.value;
 
         return `
-    <div class="post-item">
-      <span class="post-meta">${date}</span>
-      <h2><a class="post-link" href="${url}">${title}</a></h2>
-      {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
-      <div class="post-snippet">${content}</div>
-    </div>
+                    <div id="articles">
+                        <div class="row">
+                            <a href=""${url}">
+                                <h2>${title}</h2>
+                            </a>
+                        </div>
+                        <div>
+                            ${content}
+                            <span class="pull-right"><small>[${date}]</small></span>
+                        </div>
+                    </div>
+                    <div class="text-center horizontal-ruler">
+                        01010000011010000110000101101100011000110110111101101110010100000100100001010000
+                    </div>
   `;
     };
 
@@ -65,9 +73,9 @@
     search.addWidget(
         instantsearch.widgets.hits({
             container: '#search-hits',
-            // templates: {
-            //     item: hitTemplate
-            // }
+            templates: {
+                item: hitTemplate
+            }
         })
     );
 
