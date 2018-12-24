@@ -1,15 +1,39 @@
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+
+<link rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+<base href="{{ site.baseurl }}">
+
 <script>
-    // Adding searchbar and results widgets
-    instantsearch.widgets.searchBox(
+    const search = instantsearch(
         {
-            container: '#searchbox',
-            placeholder: 'Search into posts...',
-            autofocus: true,
-            searchAsYouType: true,
-            showReset: true,
-            showSubmit: false,
-            showLoadingIndicator: true,
-            poweredBy: true
+            appId: '{{ site.algolia.application_id }}',
+            apiKey: '{{ site.algolia.search_only_api_key }}',
+            indexName: '{{ site.algolia.index_name }}'
         }
     );
+
+    search.addWidget(
+        instantsearch
+            .widgets
+            .searchBox(
+                {
+                    container: '#searchbox',
+                    placeholder: 'Search...',
+                    autofocus: true,
+                    searchAsYouType: true,
+                    showReset: true,
+                    showSubmit: false,
+                    showLoadingIndicator: true,
+                    poweredBy: true
+                }
+            )
+    );
+
+    search.start();
 </script>
