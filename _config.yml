@@ -32,8 +32,8 @@ kramdown:
 algolia:
   application_id: QZSIJXM8NK
   index_name: phalcon-blog
-  files_to_exclude:
-    - _posts/2014-03-17-phalcon-1-3-0-released.md
+#  files_to_exclude:
+#    - _posts/2014-03-17-phalcon-1-3-0-released.md
 
 sass:
   style: :expanded # You might prefer to minify using :compressed
