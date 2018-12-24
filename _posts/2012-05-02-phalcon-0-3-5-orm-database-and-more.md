@@ -10,6 +10,7 @@ It may not sound all that exciting at first, but trust us on this one. Thanks to
 
 The following changes can be expected in this version:
 
+<!--more-->
 - Most of throwing exception process has been rewritten to use less instructions
 - Super global initialization is now slightly faster
 - Fixed bug in `Phalcon\Db::close`

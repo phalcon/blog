@@ -8,6 +8,7 @@ As we continue to enhance Phalcon with new functionality and features, we have m
 
 Utilizing this service allows for:
 
+<!--more-->
 - Easy exporting the documentation to other formats like PDF or ePub
 - Managing the documentation for each release, independent of one another
 - Supporting additional languages (other than English) for the documentation

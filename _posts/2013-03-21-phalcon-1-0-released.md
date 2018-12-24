@@ -10,6 +10,7 @@ Friends around the world, we're very proud and excited to announce that Phalcon 
 
 After more than one year of hard work and several releases, we are happy to bring you the most stable and complete version of Phalcon.
 
+<!--more-->
 We would like to extend our thanks to all in the community, contributors and enthusiasts that have been helping us materialize our dream, a new approach in PHP frameworks: creating a robust tool for building web applications while keeping the performance to a maximum.
 
 Main features introduced in this release were highlighted in the [beta article](http://blog.phalconphp.com/post/phalcon-1-0-0-beta-released).

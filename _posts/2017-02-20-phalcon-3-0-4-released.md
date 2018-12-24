@@ -12,6 +12,7 @@ This is another maintenance release for the 3.0.x series which addresses several
 
 The release tag can be found here: [3.0.4](https://github.com/phalcon/cphalcon/releases/tag/v3.0.4)
 
+<!--more-->
 #### Roadmap
 
 - This is going to be the last release for the 3.0.x series

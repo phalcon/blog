@@ -10,6 +10,7 @@ For those that are wondering what languages are used to make Phalcon, below is a
 
 The output has been created with [cloc](http://cloc.sourceforge.net/).
 
+<!--more-->
 ```sh
 --------------------------------------------------------------------------------
 Language                      files          blank        comment           code

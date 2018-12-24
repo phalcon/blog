@@ -4,8 +4,11 @@ title: "Phalcon 3.2.2 released"
 tags: [php, phalcon, phalcon3, "3.2.x", release, rfc, lts, php7]
 ---
 
-We are excited to announce the immediate release of Phalcon 3.2.2 today, addressing several bugs. 
+Hello everyone!!!
 
+We are releasing Phalcon 3.2.2 today, addressing several bugs. 
+
+<!--more-->
 ### Release
 The release tag can be found here: [3.2.2](https://github.com/phalcon/cphalcon/releases/tag/v3.2.2). The Windows DLLs are in the [releases](https://github.com/phalcon/cphalcon/releases/) Github page.
 

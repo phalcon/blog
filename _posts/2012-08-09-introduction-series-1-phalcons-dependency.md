@@ -8,6 +8,7 @@ Development in the new version of Phalcon 0.5.0 is well underway. In this new ve
 
 With Phalcon 0.5.0 (still under development) we are introducing a new design pattern called [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection). In short, objects should not be instantiated inside a class, rather injected using constructors and/or setter methods. This pattern increases testability in the code, thus making it less prone to errors.
 
+<!--more-->
 **Phalcon\Di**
 `Phalcon\\Di` is a new component that will be available in 0.5.0 and offers a dependency injection container. `Phalcon\Di` works as a container of services.
 

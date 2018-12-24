@@ -10,6 +10,7 @@ Some of you have asked us on how to help to make the project to be more popular.
 
 Help to make Phalcon more popular.
 
+<!--more-->
 **Increase visibility**
 We love that you communicate with us via email, chat or internal messaging. However, if you do so, we may be very busy and thus your message might fall through the cracks. Despite the fact that our community is small, there is always someone willing to help. We would appreciate if you use [StackOverflow](http://stackoverflow.com/questions/tagged/phalcon) with your queries. StackOverflow is a social network visited by thousands of developers every day, helping greatly to increase the visibility of the project. It also contains answers to frequently asked questions regarding Phalcon, resource which is invaluable for people that just got introduced to our project**.**Additionally you can post questions/concerns/feedback in our [Google Group](https://groups.google.com/forum/#!forum/phalcon).
 

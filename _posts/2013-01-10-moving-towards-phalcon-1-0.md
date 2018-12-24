@@ -8,6 +8,7 @@ As we gradually get closer to Phalcon 1.0, we have introduced in each versio
 
 We are close to completing one year of building a PHP framework which follows a totally different perspective, taking on the challenges of innovation and the search for new and better ways of working and achieving our goals.
 
+<!--more-->
 We understand there are many features suggested would add value to the framework, so we are now prioritizing which may be more useful and necessary in order to build a wide range of applications while fulfilling the needs of our community.
 
 The features that we are currently focusing on are:

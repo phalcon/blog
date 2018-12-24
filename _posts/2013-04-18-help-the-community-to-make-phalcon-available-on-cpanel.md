@@ -8,6 +8,7 @@ In an effort to help developers with the installation of Phalcon, we have create
 
 [http://features.cpanel.net/responses/add-support-for-phalconphp-extension-apache-php](http://features.cpanel.net/responses/add-support-for-phalconphp-extension-apache-php)
 
+<!--more-->
 Kindly visit the link above and upvote this feature. If we get enough votes the feature will be included in cPanel powered hosted sites.
 
 Feel free to share the link with your peers and friends :)

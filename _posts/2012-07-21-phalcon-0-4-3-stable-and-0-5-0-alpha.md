@@ -8,6 +8,7 @@ Following up on the 0.4.2 release a few weeks ago, we have a fresh update to add
 
 We are also very excited to announce the release of the 0.5.0 alpha 1 version! This new branch offers many improvements and a huge refactoring of the framework. We are happy that the changes we have introduced have increased performance even more.
 
+<!--more-->
 The biggest change in this first Alpha release of 0.5.0 is that all classes now have been registered as [namespaces](http://www.php.net/manual/en/language.namespaces.rationale.php). Each component owns its own namespace with a base namespace called `\Phalcon`. This change offers a lot more flexibility for the future, but it will affect existing applications that will need some refactoring to operate with the 0.5.0 version.
 
 Our initial tests indicate that the 0.5.0 Alpha 1 works great. Our [official site](https://github.com/phalcon/website) and sample applications are running on it and all the unit tests are [passing](http://travis-ci.org/#!/phalcon/cphalcon). This version also has added stability improvements on older versions of PHP (< 5.3.4)

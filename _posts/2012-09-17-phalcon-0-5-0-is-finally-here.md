@@ -10,6 +10,7 @@ The long wait is over, Phalcon 0.5.0 final is here! This version marks a huge st
 
 The major changes in this version are:
 
+<!--more-->
 - **Namespaces**: Classes are now organized into namespaces. The components have been placed in their respective namespaces, offering better organization within the framework. [API](https://api.phalconphp.com)
 - **Dependency Injection**: The framework is equipped with the first service container and dependency injection component written in C for PHP. All components have been adjusted to make the most of this design pattern. Thus your code becomes more extensible, testable and flexible than ever before. [Using Dependency Injection](https://docs.phalconphp.com/en/latest/reference/di.html)
 - **Single and Multi-Module applications**: The MVC components are now capable of creating single and multi module applications. This allows for easier resource sharing between modules. [MVC Applications](https://docs.phalconphp.com/en/latest/reference/mvc.html)

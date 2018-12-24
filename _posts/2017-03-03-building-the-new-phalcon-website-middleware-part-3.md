@@ -8,6 +8,7 @@ This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-i
 
 In the final part of our series, we are going to investigate [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events) and how it helps our application.
 
+<!--more-->
 ### Middleware
 The core of the application is its Middleware. We discussed how the middleware is set up in [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) in the `initRoutes()` method of our `AbstractBootstrap` class. Note that this only applies to our main application and not the CLI.  
 

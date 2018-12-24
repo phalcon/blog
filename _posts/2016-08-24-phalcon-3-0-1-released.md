@@ -8,6 +8,7 @@ We are excited to announce the immediate availability of Phalcon 3.0.1 [LTS].
 
 This maintenance release fixes bugs and improve the stability of Phalcon:
 
+<!--more-->
 - Fixed memory leaks in PHP7 when setting undeclared properties in models
 - Fixed `Phalcon\Cache\Backend\Redis::flush` in order to flush cache correctly
 - Fixed `Phalcon\Mvc\Model\Manager::getRelationRecords` to correct using multi relation column [12035](https://github.com/phalcon/cphalcon/issues/12035)

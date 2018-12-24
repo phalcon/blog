@@ -12,6 +12,7 @@ As with any software, we have the `you broke it` scenario here. Thanks to the qu
 
 The release tag can be found here: [3.1.1](https://github.com/phalcon/cphalcon/releases/tag/v3.1.1)
 
+<!--more-->
 ### Undefined indexes in models
 After the upgrade to 3.1.0, all models were issuing warnings:
 

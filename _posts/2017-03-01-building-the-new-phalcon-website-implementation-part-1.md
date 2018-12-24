@@ -10,6 +10,7 @@ Our website has undergone a number of iterations in its implementation.
 
 When we released Phalcon 3.0, we also released a fresh look for our website. However, some files were left over from a previous implementation and new text was introduced in several pages. This made that particular text not translatable by [Transifex](https://transifex.com/phalcon/), the excellent service we use to handle translations for our site.
 
+<!--more-->
 ### Goals
 One our Q1 goals for 2017 is to improve documentation and also offer better implementations of Phalcon in applications to our community. So we cleaned up our website application, and will use it as an implementation sample for our community to inspire them for their own projects :)
 

@@ -8,6 +8,7 @@ We're happy to announce the last release of this year, 0.8.0 Alpha. This release
 
 In this article we highlight some of the features implemented:
 
+<!--more-->
 ### Performance Improvements
 This version includes more performance improvements, increasing performance while reducing memory usage:
 

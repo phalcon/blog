@@ -12,6 +12,7 @@ Since Phalcon is a module that is loaded in memory and always available, there i
 
 To work around this issue, the Phalcon team has been generating IDE stubs that can be used with such IDEs.
 
+<!--more-->
 You can now find those stubs in Packagist:
 
 [https://packagist.org/packages/phalcon/ide-stubs](https://packagist.org/packages/phalcon/ide-stubs)

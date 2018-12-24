@@ -10,6 +10,7 @@ For our Father's day present, we are extremely happy to announce the release of 
 
 Our Github issues page has well over 600 issues. However those are mostly New Feature Requests (NFRs), so we started clearing up more and more bugs as well as introducing suggested NFRs. Of course all this would not be feasible without the help of our amazing community: **Thank you**!
 
+<!--more-->
 ### Documentation
 Also as part of our goals for Q2, we are releasing our new documentation. We have been working hard to convert all the `rst` files (reStructuredText) to `md` (Markdown) and also have a first pass on identifying inconsistencies and enhancing the documentation. Of course a lot more is needed on that, but it will come in future versions.
 

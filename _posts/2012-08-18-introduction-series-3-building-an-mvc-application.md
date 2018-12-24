@@ -8,6 +8,7 @@ The third installment of our blog posts regarding the upcoming 0.5.0 version is 
 
 As far as the MVC implementation is concerned, our main goal with 0.5.0, was to make it more flexible than ever, giving more control to the developer. Due to this, Phalcon is now able to load simple MVC applications and multi-module ones.
 
+<!--more-->
 **Autoloaders**
 In previous versions of Phalcon, the developer had to assign specific folders for the controllers and the models that are going to be used from other components in the application. This was achieved with directives such as "controllersDir" and "modelsDir" passed in the front controller. This implementation was somewhat restrictive to the developers that wished to introduce different modules or implement complex routes and business logic in their application.
 

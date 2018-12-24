@@ -8,6 +8,7 @@ tags: [php, phalcon, success, implementation, "1.x"]
 
 Yet another success story from our community member Michael ([Xpundel](https://github.com/xpundel)).
 
+<!--more-->
 > Greetings, Phalcon team!
 >
 > As I wrote in comments to your post, I have a project, built on Phalcon framework.

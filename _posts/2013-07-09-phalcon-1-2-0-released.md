@@ -8,6 +8,7 @@ This new release of the Phalcon framework, contains several new features (mostly
 
 A summary of the new features introduced follows:
 
+<!--more-->
 - Dynamic compile path in Volt
 - Volt extensions
 - `Phalcon\Mvc\Url` static/dynamic paths

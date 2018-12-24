@@ -8,6 +8,7 @@ We are excited to announce the immediate availability of Phalcon 2.0.8 and Phalc
 
 This is the eighth maintenance release in the 2.0.x series. In regards to Phalcon 2.1, the second beta introduces bug fixes and new features intended to stabilize our next major release.
 
+<!--more-->
 ### Changes in 2.0.8
 
 - Added `Phalcon\Security\Random::base58` - to generate a random base58 string

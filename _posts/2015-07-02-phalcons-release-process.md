@@ -8,6 +8,7 @@ tags: [php, phalcon, "2.0", phalcon2, release, lts, "2.x"]
 
 The following post explain our release process:
 
+<!--more-->
 ## Official Releases
 
 Since version 0.5, release numbering works as follows:

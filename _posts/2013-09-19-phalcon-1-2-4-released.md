@@ -8,6 +8,7 @@ In addition to 2.0, the Phalcon Team is also focused on 1.3, a new version that 
 
 Today, we are announcing the release of Phalcon 1.2.4, a maintenance release including several bug fixes, performance improvements and stability fixes available in the 1.3.0 branch.
 
+<!--more-->
 This version does not include any new features. The complete [CHANGELOG​](https://github.com/phalcon/cphalcon/blob/1.2.4/CHANGELOG) is ​here.
 
 ### Help with Testing

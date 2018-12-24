@@ -10,6 +10,7 @@ We are very excited to release our third Phalcon demo after [INVO](/post/invo-a
 
 In this demo, we decided to go big! We created a music album library where one can get information about their favorite artists, discover new music and much more.
 
+<!--more-->
 We decided to add volume in this application to showcase how Phalcon behaves with a lot of data. In our database we have:
 
 - > 5,000 Artists

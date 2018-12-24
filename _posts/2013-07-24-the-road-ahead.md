@@ -10,6 +10,7 @@ With every release, throughout the development of Phalcon, we have always focuse
 
 Because of that, some areas of the framework have suffered, mainly unit tests and documentation. Despite the fact that our documentation is very thorough, there is a lot of room for improvement. The same goes with the unit tests of course.
 
+<!--more-->
 We have therefore decided to take a short NFR hiatus, dedicating two stints/versions to improve on those areas that need improving. 
 
 For the upcoming 1.3/1.4 versions, developers should expect to see:

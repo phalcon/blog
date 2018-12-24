@@ -6,6 +6,7 @@ tags: [php, frameworks, phalcon, release, "0.4", postgresql, cache, views, "0.x"
 
 We are excited to announce that Phalcon supports the PostgreSQL RDBMS:
 
+<!--more-->
 > PostgreSQL is a powerful, open source relational database system. It
 > has more than 15 years of active development and a proven architecture
 > that has earned it a strong reputation for reliability, data

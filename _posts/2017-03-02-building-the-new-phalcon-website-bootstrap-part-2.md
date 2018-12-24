@@ -8,6 +8,7 @@ This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-i
 
 Continuing with our series, we will now discuss the bootstrapping process in depth.
 
+<!--more-->
 ### Bootstrap process
 The call stack is as follows:
 

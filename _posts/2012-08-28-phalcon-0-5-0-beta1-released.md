@@ -10,6 +10,7 @@ It has been a really busy month and a half. We concentrated all of our efforts i
 
 Most of the examples and features present in previous versions work - however there might be some unexpected behavior (bugs) lurking around. All the tests are passing in our [Travis CI server](http://travis-ci.org/#!/phalcon/cphalcon/jobs/2247188) and the [official site](https://phalconphp.com) has been running on 0.5.0b1 for a few days now with no problems.
 
+<!--more-->
 We are now concentrating in writing documentation, fixing bugs and attending to areas that still need a bit of work.
 
 We would like to invite the community to install and test the new features of 0.5.0b1.

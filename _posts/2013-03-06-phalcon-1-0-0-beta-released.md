@@ -6,6 +6,7 @@ tags: [php, phalcon, mvc, frameworks, base, release "1.0", "1.x"]
 
 We're ​are releasing today the beta version of Phalcon 1.0.0. Our goal is to get this version out to the community so as to discover bugs and get feedback. This post highlights some of the more important features introduced in this release:
 
+<!--more-->
 ### Multi-Level Cache
 This new feature ​of the cache component, ​allows ​the developer to implement a multi-level cache​. This new feature is very ​ useful because you can save the same data in several cache​ locations​ with different lifetimes ​, reading ​first from the one with the faster adapter and ending with the slowest one until the data expire​s​:
 

@@ -8,6 +8,7 @@ Hello community!!
 
 We are releasing Phalcon 3.2.1 today, addressing several bugs. 
 
+<!--more-->
 ### Release
 The release tag can be found here: [3.2.1](https://github.com/phalcon/cphalcon/releases/tag/v3.2.1). The Windows DLLs are in the [releases](https://github.com/phalcon/cphalcon/releases/) Github page.
 

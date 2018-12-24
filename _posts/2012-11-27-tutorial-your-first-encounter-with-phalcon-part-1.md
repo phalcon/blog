@@ -6,6 +6,7 @@ tags: [php, phalcon, tutorial, "0.7", "0.x"]
 
 Our friend [Marcin @mailopl](https://twitter.com/mailopl) from Poland sent us this amazing tutorial and introduction to Phalcon. Enjoy it!
 
+<!--more-->
 ### Foreword
 This tutorial was going to be published on [net.tutsplus.com](http://net.tutsplus.com/) but that process took more than 2 months and finally due to no response I decided to publish it on Phalcon's blog.
 

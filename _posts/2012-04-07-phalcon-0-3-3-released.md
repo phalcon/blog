@@ -8,6 +8,7 @@ We're proud to announce the immediate availability of Phalcon 0.3.3. The last ve
 
 This is a short list of changes that can be expected in this version:
 
+<!--more-->
 0.3.3
 
 - Added `Phalcon\Tag::setDefault` as an alias for `Phalcon\Tag::displayTo`

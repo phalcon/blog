@@ -9,7 +9,7 @@ Hello everyone!!
 Often we get queries/requests on how someone can help with the documentation, and how they can set up the docs application on their local machine so as to see changes immediately on their screen before issuing a pull request with their changes.
 
 This blog post outlines how to set up our docs app and how you can help with the documentation effort. 
-
+<!--more-->
 ### Overview
 Our documentation is split into two repositories:
 - [Docs App](https://github.com/phalcon/docs-app). This repo contains the application that handles our documentation (templates, CSS, etc.).

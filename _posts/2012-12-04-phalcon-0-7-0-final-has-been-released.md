@@ -10,6 +10,7 @@ We are very pleased to announce the immediate availability of Phalcon Framework 
 
 It's only been a month since we released 0.6.x, but we're already back with more updates. And they're pretty good!
 
+<!--more-->
 After some weeks of development and testing we are taking yet another step forward in our roadmap. We would like to thank the community for investing their time and enthusiasm in getting Phalcon better.
 
 Some of the [key features](/post/phalcon-0-7-0-beta-released) introduced are:

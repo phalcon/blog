@@ -8,6 +8,7 @@ We are pleased to announce the release of Phalcon 1.2.5, the latest stable versi
 
 1.2.5 includes mostly bug fixes:
 
+<!--more-->
 - `Http\Cookie::__toString()` will not throw exceptions ([1427](https://github.com/phalcon/cphalcon/issue/1427))
 - `Phalcon\Http\Cookie::__toString() will return a string value ([1428](https://github.com/phalcon/cphalcon/issue/1428))
 - Camelize does not ignore the last character of a string anymore ([1436](https://github.com/phalcon/cphalcon/issue/1436))

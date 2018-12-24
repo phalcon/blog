@@ -6,6 +6,7 @@ tags: [php, phalcon, "1.1", release, "1.x"]
 
 After ​our successful 1.0 release, we continue improving Phalcon ​with our latest release 1.1.0 (beta). In this article, we're highlighting the most important features introduced:
 
+<!--more-->
 ### QueryBuilder Paginator
 In addition to the [ModelResultset](https://docs.phalconphp.com/en/latest/reference/pagination.html) and [NativeArray](https://docs.phalconphp.com/en/latest/reference/pagination.html) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle ​large datasets.
 

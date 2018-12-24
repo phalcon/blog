@@ -10,6 +10,7 @@ We're very proud to announce the immediate release of Phalcon 0.8. As mentioned 
 
 A big thank you to all the community and every tester who has reported bugs and requested new features. We are constantly getting closer to the best balance between speed and functionality in the PHP world and this is mostly due to our community!
 
+<!--more-->
 We would encourage you to update to this version to take advantage of all the new functionality :)
 
 - [Documentation](https://docs.phalconphp.com/en/latest/)

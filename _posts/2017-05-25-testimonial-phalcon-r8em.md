@@ -6,6 +6,7 @@ tags: [php, phalcon, r8em, testimonial]
 
 We have received the following testimony from Michael Hanekom in our team email. Michael agreed to share his experience in our blog, and we are doing so without any edits:
 
+<!--more-->
 > Greetings to the Phalcon Team!
 > 
 > I am a 20 year veteran of corporate software development and I have followed Phalcon PHP with much excitement from it's early days till now.

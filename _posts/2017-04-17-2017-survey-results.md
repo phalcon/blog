@@ -10,6 +10,7 @@ Back in March, we asked our community to fill in a short survey, in order to gau
 
 The survey was very brief and consisted of the following questions:
 
+<!--more-->
 * Why did you choose to use Phalcon (main reason but also expand please)? *
 * Do you use Phalcon in production? (elaborate) *
 * Comments for the team (optional)

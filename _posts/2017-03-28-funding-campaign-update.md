@@ -10,6 +10,7 @@ We would like to update you on our funding campaign. As most know, we started a 
  
 The funds would be used to hire specialists in C, sponsor bug fixes and features, cover expenses for potential conferences etc.
 
+<!--more-->
 In order to increase transparency and so that everyone knows how much money we have, who the backers are and where we spent it, it was suggested that we switch our funding vendor to [Open Collective](https://opencollective.com).
 
 Our Patreon campain therefore has been suspended, and replaced with Open Collective. You can find our new funding page here:

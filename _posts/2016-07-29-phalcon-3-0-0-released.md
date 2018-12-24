@@ -7,9 +7,9 @@ tags: [php, phalcon, "3.0.x", phalcon3, release, rfc, lts]
 The Phalcon team is **very excited** to share some news with our community!
 
 The last few months, we have been working hard to push 2.1 out, which contains significant enhancements as well as some API changes  that require attention so as not to break compatibility with your application. 
-
 On top of that we have been working in making Zephir PHP7 compatible so that you can enjoy  Phalcon in your PHP7 application. Some news first though:
 
+<!--more-->
 ### Versioning
 For any future Phalcon releases we are adopting SemVer (http://semver.org). In short:
 
