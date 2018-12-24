@@ -36,7 +36,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-algolia
 
 # Exclude these files from your production _site
 exclude:
