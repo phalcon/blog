@@ -4,10 +4,7 @@ title: "Status update and new development environment"
 tags: [php, phalcon, status, update, zephir, tests, development]
 ---
 
-Hello everyone!!
-
 We have been working hard to ensure that bugs are fixed and v4 is getting close to a release state. As always we would like to thank all of our [contributors](https://github.com/phalcon/cphalcon/graphs/contributors) who have been helping in this effort, as well as everyone on our community sites ([forum](https://phalcon.link/forum), [discord](https://phalcon.link/discord) etc.) for engaging in conversations, sharing criticism and ideas! We couldn't have made it this far without this input.
-
 <!--more-->
 ### v4
 Phalcon v4 is moving closer and closer to a release date. We have started using Github Projects to keep track on what needs to be done, what is in progress and what has been done. The project for v4 is located [here](https://github.com/phalcon/cphalcon/projects/3). As you can see there is a bit of work to be completed still prior to the release. The great news though is that more than 100 cards have been `Done` both from the team's work as well as pull requests from you, the community!

@@ -1,15 +1,23 @@
 ---
 layout: default
 ---
-                    <div id="articles">
-                        <div class="row">
-                            <a href="{{ page.url }}">
-                                <h2>{{ page.title }}</h2>
-                            </a>
-                        </div>
-                        <div>
-                            {{ page.content }}
-                            <span class="pull-right"><small>[{{ page.date | date: "%Y-%m-%d" }}]</small></span>
-                        </div>
-                        {% include disqus.html %}
+
+                <div id="articles">
+                    <div class="row">
+                        <a href="/post/local-development-environment">
+                            <h2 itemprop="name headline">
+                                {{ page.title | escape }}
+                            </h2>
+                        </a>
                     </div>
+                    <div>
+                        {{ content }}
+                        <span class="pull-right"><small>[{{ page.date | date: "%Y-%m-%d" }}]</small></span>
+                    </div>
+
+                    {%- if site.disqus.shortname -%}
+                    {%- include disqus_comments.html -%}
+                    {%- endif -%}
+
+                    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+                </div>

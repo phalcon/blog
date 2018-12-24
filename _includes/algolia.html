@@ -1,0 +1,78 @@
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+<link rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+<base href="{{ site.baseurl }}">
+
+<script>
+    const search = instantsearch(
+        {
+            appId: '{{ site.algolia.application_id }}',
+            apiKey: '{{ site.algolia.search_only_api_key }}',
+            indexName: '{{ site.algolia.index_name }}'
+        }
+    );
+
+    const hitTemplate = function(hit) {
+        let date = '';
+        if (hit.date) {
+            date = moment.unix(hit.date).format('Y-M-D');
+        }
+
+        let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
+
+        const title = hit._highlightResult.title.value;
+        const content = hit._highlightResult.html.value;
+
+        return `
+                    <div id="articles">
+                        <div class="row">
+                            <a href="${url}">
+                                <h2>${title}</h2>
+                            </a>
+                        </div>
+                        <div>
+                            ${content}
+                            <span class="pull-right"><small>[${date}]</small></span>
+                        </div>
+                    </div>
+                    <div class="text-center horizontal-ruler">
+                        01010000011010000110000101101100011000110110111101101110010100000100100001010000
+                    </div>
+  `;
+    };
+
+    search.addWidget(
+        instantsearch
+            .widgets
+            .searchBox(
+                {
+                    container: '#search-searchbar',
+                    placeholder: 'Search...',
+                    autofocus: true,
+                    searchAsYouType: true,
+                    showReset: false,
+                    showSubmit: false,
+                    showLoadingIndicator: false,
+                    poweredBy: true
+                }
+            )
+    );
+
+    search.addWidget(
+        instantsearch.widgets.hits({
+            container: '#search-hits',
+            templates: {
+                item: hitTemplate
+            }
+        })
+    );
+
+    search.start();
+</script>
