@@ -32,20 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.27.1/dist/algoliasearchLite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script>
-        instantsearch.widgets.searchBox(
-            {
-                container: 'searchbox',
-                // Optional parameters
-                placeholder: 'Search',
-                autofocus: true,
-                searchAsYouType: true,
-                showReset: true,
-                showSubmit: false,
-                showLoadingIndicator: true
-            }
-        );
-    </script>
+    {% include algolia.html %}
     {% include analytics.html %}
 </body>
 </html>

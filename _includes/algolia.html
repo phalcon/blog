@@ -1,0 +1,42 @@
+<script>
+    // Adding searchbar and results widgets
+    search.addWidget(
+        instantsearch.widgets.searchBox(
+            {
+                container: '#searchbox',
+                placeholder: 'Search into posts...',
+                autofocus: true,
+                searchAsYouType: true,
+                showReset: true,
+                showSubmit: false,
+                showLoadingIndicator: true,
+                poweredBy: true
+            }
+        )
+    );
+    // search.addWidget(
+    //     instantsearch.widgets.hits({
+    //         container: '#search-hits'
+    //     })
+    // );
+
+    // Starting the search
+    search.start();
+
+//     search.addWidget(
+//         instantsearch.widgets.hits({
+//             container: '#searcbox',
+//             templates: {
+//                 item: function (hit) {
+//                     return `
+// <div class="post-item">
+//     <span class="post-meta">${hit.date}</span>
+//     <h2><a class="post-link" href="{{ site.baseurl }}${hit.url}">${hit.title}</a></h2>
+//     <div class="post-snippet">${hit.html}</div>
+// </div>
+// `;
+//                 }
+//             }
+//         })
+//     );
+</script>
