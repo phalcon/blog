@@ -22,7 +22,7 @@ Second and equally important:
 <strong>This release IS NOT BACKWARDS COMPATIBLE - YOU WILL NEED TO REFACTOR YOUR EXISTING APPLICATIONS</strong>
 </h5>
 
-The release tag can be found here: [v4.0.0.alpha1](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0.alpha1). 
+The release tag can be found here: [v4.0.0-alpha1](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha1). 
 
 We still have a lot of work ahead of us until v4 is marked as stable. The project page that we keep the status of the work we have done and need to do can be found [here](https://github.com/phalcon/cphalcon/projects/3). As you can see there are a few bugs that we need to address but also a couple of big items that require significant refactoring. 
 
@@ -207,14 +207,19 @@ Some highlights of this version include:
 - Removed `Phalcon\Validation\Message\Group` in favor of `Phalcon\Messages\Messages`
 - Removed calling `Phalcon\Mvc\Collection::validate` with object of type `Phalcon\Mvc\Model\ValidatorInterface`
 
+#### Installation/Upgrade
+The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You can also download the zip file from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha1).
+
+You can also clone the repository and checkout the tag, and then run 
+
+```bash
+zephir fullclean
+zephir build
+```
+to install the new extension. For more information you can check the [installation guide)(https://docs.phalconphp.com/en/3.4/installation).
 
 ## Thank you
 Once again **a huge thank you to all of our contributors!** You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues] (https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord](https://phalcon.link/discord) server or our [Forum](https://forum.phalconphp.com).
-
-<h5 class="alert alert-info">
-For this release we do not have Windows DLLs. We need to check those and most likely we will be able to offer them in our next pre-release version.
-</h5>
-
 
 
 <3 Phalcon Team
