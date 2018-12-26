@@ -22,6 +22,11 @@ Second and equally important:
 <strong>This release IS NOT BACKWARDS COMPATIBLE - YOU WILL NEED TO REFACTOR YOUR EXISTING APPLICATIONS</strong>
 </h5>
 
+<h5 class="alert alert-danger">
+    <strong>YOU NEED TO LOAD THE PSR EXTENSION BEFORE THE PHALCON ONE [<a href="https://github.com/jbboehr/php-psr.git">REPO</a></strong>]
+</h5>
+
+
 The release tag can be found here: [v4.0.0-alpha1](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha1). 
 
 We still have a lot of work ahead of us until v4 is marked as stable. The project page that we keep the status of the work we have done and need to do can be found [here](https://github.com/phalcon/cphalcon/projects/3). As you can see there are a few bugs that we need to address but also a couple of big items that require significant refactoring. 
