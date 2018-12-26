@@ -25,7 +25,7 @@
             date = moment.unix(hit.date).format('Y-M-D');
         }
 
-        let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
+        let url = `{{ site.baseurl }}${hit.url}`;
 
         const title = hit._highlightResult.title.value;
         const content = hit._highlightResult.html.value;
