@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Merry Christmas and Phalcon v4.0.0-alpha1 released"
+title: "Upgrading to Phalcon v4.0.0-alpha1"
 tags: [php, phalcon, release, phalcon4, upgrade, v4]
 ---
 This blog post will help you upgrade your existing Phalcon application to v4-alpha1. We will outline the areas that you need to pay attention to and make necessary alterations so that your code can run as smooth as it has been with v3. Although the changes are significant, it is more of a methodical task than a daunting one.
