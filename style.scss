@@ -158,6 +158,8 @@ pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;backgrou
 .container:after,.container:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.row:after,.row:before{display:table;content:" ";}
 .container:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.row:after{clear:both;}
 .pull-right{float:right!important;}
+#articles .pull-right{margin-top: -24px;}
+.ais-hits--item .pull-right{margin-top: 0;}
 .pull-left{float:left!important;}
 .hljs{display:block;overflow-x:auto;padding:0.5em;background:#23241f;}
 .hljs{color:#f8f8f2;}
