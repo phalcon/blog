@@ -39,6 +39,7 @@
     <link rel="author" href="/humans.txt">
 
     <title>{{ site.app.name }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.app.name }} – {{ site.app.description }}</title>
 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-square70x70logo"
