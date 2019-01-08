@@ -250,9 +250,8 @@ Some adapters do not support certain types. For instance `JSON` is not supported
 #### `Logger`
 - Removed `Phalcon\Logger\Multiple`
 - Changed `Phalcon\Logger` to comply with PSR-3. The component has been rewritten to use adapters that allow logging to different areas. The logger now is a single component that is instantiated and can be used with different adapters. The `File` adapter has been renamed to `Stream`. By adding multiple adapters to your logger you can log to multiple places. This is why the `Multiple` adapter has been removed. If you set up multiple adapters to your logger but want to log a specific message only to one or two, you can use the `excludeAdapters([])` method.
-```php
-<?php
 
+```php
 use Phalcon\Logger;
 use Phalcon\Logger\Adapter\Stream;
 
