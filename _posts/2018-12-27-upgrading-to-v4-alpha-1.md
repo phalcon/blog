@@ -365,10 +365,10 @@ $logger
 #### `Session`
 - `Phalcon\Session` and `Phalcon\Session\Bag` no longer get loaded by default in `Phalcon\DI\FactoryDefault`
 - Refactored `Phalcon\Session`
- 	- `Phalcon\Session\Manager` is now the single component offering session manipulation by using adapters.
- 	- Each adapter implements PHP's `SessionHandlerInterface`.
- 	- Available adapters are `Phalcon\Session\Files`, `Phalcon\Session\Libmemcached`, `Phalcon\Session\Noop` and `Phalcon\Session\Redis`.
- 	- Developers can now add any adapter that implements the `SessionHandlerInterface` in the `Phalcon\Session\Manager`
+- `Phalcon\Session\Manager` is now the single component offering session manipulation by using adapters.
+- Each adapter implements PHP's `SessionHandlerInterface`.
+- Available adapters are `Phalcon\Session\Adapter\Files`, `Phalcon\Session\Adapter\Libmemcached`, `Phalcon\Session\Adapter\Noop` and `Phalcon\Session\Adapter\Redis`.
+- Developers can now add any adapter that implements the `SessionHandlerInterface` in the `Phalcon\Session\Manager`
 
 #### `Security`
 - Added a retainer for the current token to be used during the checks, so when `getToken` is called the token used for checks does not change
