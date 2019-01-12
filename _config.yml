@@ -35,7 +35,7 @@ algolia:
   search_only_api_key: 'ed266d1fbb836f531f335570585c3c07'
 
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # You might prefer to minify using :compressed
 
 # Exclude these files from your production _site
 exclude:
@@ -44,3 +44,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - vendor
