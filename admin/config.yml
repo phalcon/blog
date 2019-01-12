@@ -3,7 +3,7 @@ backend:
   branch: master
 
 publish_mode: 'editorial_workflow'
-media_folder: '/assets/files'  # Media files will be stored in the repo under assets/files
+media_folder: 'assets/files'  # Media files will be stored in the repo under assets/files
 
 collections:
   - name: 'post'
