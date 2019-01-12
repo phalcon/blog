@@ -4,8 +4,6 @@ title: "Phalcon 3.3.2 released"
 tags: [php, phalcon, phalcon3, "3.3.x", release, rfc, lts, php7]
 ---
 
-Hello everyone!
-
 We are happy to announce that we have released Phalcon [3.3.2](https://github.com/phalcon/cphalcon/releases/tag/v3.3.2). 
 
 This release contained some bug fixes.

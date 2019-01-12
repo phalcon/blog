@@ -4,8 +4,6 @@ title: "Phalcon 3.2.1 released"
 tags: [php, phalcon, phalcon3, "3.2.x", release, rfc, lts, php7]
 ---
 
-Hello community!!
-
 We are releasing Phalcon 3.2.1 today, addressing several bugs. 
 
 <!--more-->

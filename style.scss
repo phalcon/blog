@@ -147,7 +147,7 @@ pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;backgrou
   .navbar-nav>li{float:left;}
   .navbar-nav>li>a{padding-top:15px;padding-bottom:15px;}
 }
-.navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0;}
+.navbar-nav>li>.dropdown-menu{margin-top:0;border: none}
 @media (min-width:768px){
   .navbar-right{float:right!important;margin-right:-15px;}
 }
@@ -158,6 +158,8 @@ pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;backgrou
 .container:after,.container:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.row:after,.row:before{display:table;content:" ";}
 .container:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.row:after{clear:both;}
 .pull-right{float:right!important;}
+#articles .pull-right{margin-top: -24px;}
+.ais-hits #articles .pull-right{margin-top: 0;}
 .pull-left{float:left!important;}
 .hljs{display:block;overflow-x:auto;padding:0.5em;background:#23241f;}
 .hljs{color:#f8f8f2;}
@@ -167,15 +169,18 @@ pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;backgrou
 h4{text-transform:uppercase;}
 h2,h3,h4{font-weight:700;}
 button,section{text-align:center;}
-header .dropdown-menu{background:rgba(255,255,255,.6);}
+header .dropdown-menu{background:#fff;}
 header .dropdown-menu li a{font-size:12px;color:#4d4a4c;text-shadow:none;background:8px 6px no-repeat;padding:4px 0 4px 32px;}
-header .dropdown-menu li a:hover{background-color:rgba(255,255,255,.4);color:#4d4a4c;}
 .nav>li>a:focus,.nav>li>a:hover{background-color:transparent;color:#e0f6ec;}
 nav:hover{background:0 0!important;}
 header .main-menu{margin-top:38px;}
 header .main-menu li{margin:0 3px;}
-header .main-menu li a{color:#bae1e6;font-size:17px;text-shadow:1px 1px 1px #0e566a;padding:8px 18px;}
-header .main-menu li a:hover{color:#fff;background-color:transparent;}
+header .main-menu li a{color:#fff;font-size:17px;padding:8px 18px;}
+header .main-menu li a:hover{color:#e0f6ec;background-color:transparent;}
+header .dropdown-menu li {
+  margin: 0;}
+header .dropdown-menu li a {color: #4d4a4c;text-shadow: none}
+header .dropdown-menu li a:hover{background-color:#f5f5f5;color:#4d4a4c;}
 button{border:none;}
 h2{margin-top:0;}
 body{background:#eeeff1;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-size:1.6rem;line-height:1.5;color:#8f96a9;}
@@ -204,6 +209,7 @@ p{margin:0 0 10px;line-height:24px;}
 #wrapper li{line-height:24px;}
 #wrapper ul{margin-top:15px;}
 #wrapper p{color:#333;}
+.content-body{margin-bottom:30px;}
 h3,h4{font-size:20px;line-height:24px;font-weight:normal;margin:17px 0 3px;border-bottom:1px solid #c0c0c0;text-transform:none;}
 code{font-size:13px;}
 h2,h3{border-bottom:1px solid #c0c0c0;}
@@ -230,3 +236,12 @@ section{padding-top:0;}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
+
+.search-searchbar {
+  position: relative;
+  width: 100%;
+}
+
+.ais-search-box {
+  position:absolute;
+}

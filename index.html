@@ -2,7 +2,9 @@
 layout: default
 ---
 
-{% for post in paginator.posts %}
+<div id="search-searchbar"></div>
+<div id="search-hits">
+{% for post in site.posts %}
                     <div id="articles">
                         <div class="row">
                             <a href="{{ post.url }}">
@@ -18,4 +20,4 @@ layout: default
                         01010000011010000110000101101100011000110110111101101110010100000100100001010000
                     </div>
 {% endfor %}
-{% include paginator.html %}
+</div>

@@ -29,13 +29,13 @@ kramdown:
   syntax_highlighter_opts:
     disable: true
 
+algolia:
+  application_id: 'QZSIJXM8NK'
+  index_name: 'phalcon-blog'
+  search_only_api_key: 'ed266d1fbb836f531f335570585c3c07'
+
 sass:
   style: :expanded # You might prefer to minify using :compressed
-
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
 
 # Exclude these files from your production _site
 exclude:

@@ -1,32 +1,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="{{ site.author }}">
-    <meta name="generator" content="{{ site.generator }}">
-    <meta name="application-name" content="{{ site.name }}">
-    <meta name="keywords" content="{{ site.keywords }}">
-    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="{{ site.app.author }}">
+    <meta name="generator" content="{{ site.app.generator }}">
+    <meta name="application-name" content="{{ site.app.name }}">
+    <meta name="keywords" content="{{ site.app.keywords }}">
+    <meta name="description" content="{{ site.app.description }}">
 
     <meta http-equiv="x-dns-prefetch-control" content="off">
 
     <meta property="og:url" content="{{ site.url }}">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="object">
-    <meta property="og:title" content="{{ site.name }}">
+    <meta property="og:title" content="{{ site.app.name }}">
     {% if page.excerpt %}
     <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
     {% else %}
-    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.app.description }}">
     {% endif %}
     <meta property="og:site_name" content="Phalcon Blog">
     <meta property="og:image" content="/assets/images/logo.png">
 
-    <meta name="twitter:image:alt" content="{{ site.name }}">
-    <meta name="twitter:title" content="{{ site.name }}">
+    <meta name="twitter:image:alt" content="{{ site.app.name }}">
+    <meta name="twitter:title" content="{{ site.app.name }}">
     {% if page.excerpt %}
     <meta name="twitter:description" content="{{ page.excerpt| strip_html }}" />
     {% else %}
-    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:description" content="{{ site.app.description }}">
     {% endif %}
     <meta name="twitter:image" content="https://assets.phalconphp.com/phalcon/logo.png">
     <meta name="twitter:card" content="summary">
@@ -36,72 +36,79 @@
 
     <link rel="canonical" href="{{ site.url }}">
     <link rel="publisher" href="{{ site.url }}">
-    <link rel="author" href="https://phalconphp.com/en/team">
+    <link rel="author" href="/humans.txt">
+
+    <title>{{ site.app.name }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.app.name }} – {{ site.app.description }}</title>
 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-square70x70logo"
-          content="https://assets.phalconphp.com/phalcon/images/icons/mstile-70x70.png">
+          content="https://assets.phalconphp.com/phalcon/icons/mstile-70x70.png">
     <meta name="msapplication-TileImage"
-          content="https://assets.phalconphp.com/phalcon/images/icons/mstile-144x144.png">
+          content="https://assets.phalconphp.com/phalcon/icons/mstile-144x144.png">
     <meta name="msapplication-square150x150logo"
-          content="https://assets.phalconphp.com/phalcon/images/icons/mstile-150x150.png">
+          content="https://assets.phalconphp.com/phalcon/icons/mstile-150x150.png">
     <meta name="msapplication-wide310x150logo"
-          content="https://assets.phalconphp.com/phalcon/images/icons/mstile-310x150.png">
+          content="https://assets.phalconphp.com/phalcon/icons/mstile-310x150.png">
     <meta name="msapplication-square310x310logo"
-          content="https://assets.phalconphp.com/phalcon/images/icons/mstile-310x310.png">
+          content="https://assets.phalconphp.com/phalcon/icons/mstile-310x310.png">
 
     <link rel="apple-touch-icon"
-          href="https://assets.phalconphp.com/phalcon/images/icons//apple-touch-icon.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon.png">
 
     <link rel="apple-touch-icon-precomposed"
           sizes="57x57"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-57x57.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="60x60"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-60x60.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="72x72"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-72x72.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="76x76"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-76x76.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-76x76.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="114x114"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-114x114.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="120x120"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-120x120.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="144x144"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-144x144.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon-precomposed"
           sizes="152x152"
-          href="https://assets.phalconphp.com/phalcon/images/icons/apple-touch-icon-152x152.png">
+          href="https://assets.phalconphp.com/phalcon/icons/apple-touch-icon-152x152.png">
 
     <link rel="icon"
           type="image/png"
           sizes="16x16"
-          href="https://assets.phalconphp.com/phalcon/images/icons/favicon/favicon-16x16.png">
+          href="https://assets.phalconphp.com/phalcon/icons/favicon-16x16.png">
     <link rel="icon"
           type="image/png"
           sizes="32x32"
-          href="https://assets.phalconphp.com/phalcon/images/icons/favicon/favicon-32x32.png">
+          href="https://assets.phalconphp.com/phalcon/icons/favicon-32x32.png">
     <link rel="icon"
           type="image/png"
           sizes="96x96"
-          href="https://assets.phalconphp.com/phalcon/images/icons/favicon/favicon-96x96.png">
+          href="https://assets.phalconphp.com/phalcon/icons/favicon-96x96.png">
     <link rel="icon"
           type="image/png"
           sizes="128x128"
-          href="https://assets.phalconphp.com/phalcon/images/icons/favicon/favicon-128x128.png">
+          href="https://assets.phalconphp.com/phalcon/icons/favicon-128x128.png">
     <link rel="icon"
           type="image/png"
           sizes="196x196"
-          href="https://assets.phalconphp.com/phalcon/images/icons/favicon/favicon-196x196.png">
+          href="https://assets.phalconphp.com/phalcon/icons/favicon-196x196.png">
+    <link rel="shortcut icon"
+          type="image/png"
+          href="https://assets.phalconphp.com/phalcon/favicon.ico"/>
+
 
     <link rel="alternate"
           type="application/rss+xml"
-          title="{{ site.name }} - {{ site.description }}"
+          title="{{ site.app.name }} - {{ site.app.description }}"
           href="/feed.xml">
 
     <link rel="stylesheet"
