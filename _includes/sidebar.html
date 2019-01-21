@@ -41,13 +41,12 @@
                     <div class="hr"></div>
                     <div class="widget">
                         <div class="description">
-                            {% assign tags = site.tags | sort %}
-                            {% for tag in tags %}
-                            <span>
-                                <a href="/tags#{{ tag | first | slugify }}">
-                                    {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
-                                </a>
-                            </span>
+                            {% for tag in site.tags %}
+                                <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size }}%">
+                                    <a href="/tags#{{ tag | first | slugize }}/">
+                                        {{ tag | first }}
+                                    </a>
+                                </li>
                             {% endfor %}
                         </div>
                     </div>
