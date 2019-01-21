@@ -41,13 +41,31 @@
                     <div class="hr"></div>
                     <div class="widget">
                         <div class="description">
+                            {% capture siteTags %}
                             {% for tag in site.tags %}
-                                <span class="badge badge-primary"
-                                      style="font-size: {{ tag | last | size | times: 4 | plus: 80 | divided_by: site.tags.size }}%">
-                                    <a href="/tags#{{ tag | first | slugize }}/">
-                                        {{ tag | first }}
-                                    </a>
-                                </span>
+                                {% if tag[1].size > 0 and tag[1].size < 10 %}
+                                    {{ tag[1].size | prepend: '00' }}#
+                                {% elsif tag[1].size > 9 and tag[1].size < 100 %}
+                                    {{ tag[1].size | prepend: '0' }}#
+                                {% else %}
+                                    {{ tag[1].size }}#
+                                {% endif %}
+                                {{ tag[1].size }}#
+                                {{ tag | first | downcase }}#
+                                {{ tag | first }}{% unless forloop.last %},{% endunless %}
+                            {% endfor %}
+                            {% endcapture %}
+
+                            {% assign tagHashes = siteTags | split:',' | sort %}
+                            {% for hash in tagHashes reversed %}
+                                {% if forloop.index < 40 %}
+                                {% assign keyValue = hash | split: '#' %}
+                            <span class="badge badge-info">
+                                <a href="/tags#{{ keyValue[2] | strip | slugize }}">
+                                    {{ keyValue[3] | strip  }} ({{ keyValue[1] | strip }})
+                                </a>
+                            </span>
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>
