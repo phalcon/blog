@@ -247,10 +247,18 @@ section{padding-top:0;}
 }
 
 .widget a{
-  color: #fafafa;
+  color: #71ad94;
 }
 
 .widget a:hover{
+  color: #82ac95;
+}
+
+.widget span.badge.badge-info a{
+  color: #fafafa;
+}
+
+.widget span.badge.badge-info a:hover{
   color: #fafafa;
 }
 
