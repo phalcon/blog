@@ -1,4 +1,16 @@
-# Phalcon Blog
+### Phalcon Blog
+
+<p align="center"><a href="https://docs.phalconphp.com" target="_blank">
+    <img src="https://assets.phalconphp.com/phalcon/logo-transparent-phalcon-black.svg" height="100" alt="Phalcon"/>
+</a></p>
+
+<p align="center">
+    Hosting By:
+    <br />
+    <a href="https://www.netlify.com">
+        <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+    </a>
+</p>
 
 Phalcon PHP is a web framework delivered as a C extension providing high performance and lower resource consumption.
 
@@ -6,11 +18,11 @@ This is the official Phalcon Blog. It is hosted in [netlify.com](https://netlify
 
 Thanks.
 
-## NOTE
+#### NOTE
 
 The master branch will always contain the latest stable version which is served by Github Pages. If you are looking for the Phalcon based implementation, please click the "Releases" link.
 
-## License
+#### License
 
 Phalcon Blog is open-sourced software licensed under the [New BSD License][6]. © Phalcon Framework Team and contributors
 
