@@ -12,6 +12,8 @@ The first community hangout of 2019 was awesome and super fun! We are really hap
 
 If you have missed the live hangout, you can watch it on YouTube:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OAN7W2zVRaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Watch it here](https://www.youtube.com/watch?v=OAN7W2zVRaI)
 
 The slides of the hangout are [here](https://docs.google.com/presentation/d/1fmazYoeTj2YXwTVJDzpxavo5MkSN_G0tmA7A1f5dOpU/edit?usp=sharing)
