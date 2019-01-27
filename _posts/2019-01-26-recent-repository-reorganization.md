@@ -62,7 +62,7 @@ A `git push` is all that is needed after that and Netlify starts building the ne
 We will expand more in future posts on exactly how all this works and what challenges we had moving to these solutions.
 
 ### Conclusion
-We ended with roughly 10 sites and applications that we no longer have to maintain. This frees up a bit more time to concentrate on the framework as well as building solid examples/applications/tutorials that demonstrate all the features that Phalcon has to offer.
+We ended with roughly 10 sites and applications that we no longer have to maintain (it's actually 9 for now, the main website will be moved in the next week or so). This frees up a bit more time to concentrate on the framework as well as building solid examples/applications/tutorials that demonstrate all the features that Phalcon has to offer.
 
 If you see anything that is not correct, feel free to open a pull request in the respective repository or let us know in our [Discord Server](https://phalcon.link/discord)
 
