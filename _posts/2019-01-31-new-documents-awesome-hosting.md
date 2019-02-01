@@ -10,12 +10,12 @@ tags:
 ---
 For Phalcon v4 we wanted to enhance our documentation and make it as thorough and precise as possible. Admittedly our documentation has been lacking a lot of content, with features not being well documented, being incorrect or not documented at all. Along with that, we had a lot of broken links that were already indexed by search engines, and our redirect rules were not covering everything. That lead to a lot of frustration because developers were not able to find what they were looking for. We started an effort to correct all the above, and continuing to do so on a daily basis, with the goal being that v4 documentation is as thorough and precise as possible.
 
-We mentioned in our [previous blog post](post/recent-repository-reorganization) that we started moving a lot of our applications to static websites in order to reduce the maintenance needed from the core team and concentrate on the framework itself. To that effect we started using Jekyll to build those sites and moved everything to netlify.
+We mentioned in our [previous blog post](post/recent-repository-reorganization) that we started moving a lot of our applications to static websites in order to reduce the maintenance needed from the core team and concentrate on the framework itself. To that effect we started using Jekyll to build those sites and moved everything to [Netlify](https://netlify.com).
 
 ### v3 Documentation
 The most challenging project was the documentation website. First of all we needed to keep all the v3 documentation intact. All those documents need to remain static as we no longer introduce new functionality for that release. After many unsuccessful attempts, we managed to generate a proper structure that Jekyll will understand and thus generate that documentation with the correct URLs.
 
-We also used Google Webmaster Tools to figure out where are any broken links and add appropriate redirects for those pages. More on that below
+We also used Google Webmaster Tools to figure out where are any broken links and add appropriate redirects for those pages. More on that below.
 
 ### v4 Documentation
 With the v4 documentation we focused on reaching the following goals:
@@ -30,7 +30,7 @@ With the v4 documentation we focused on reaching the following goals:
 #### Site
 Prior to releasing v4, we had changed the layout of the Phalcon Documentation website. We purchased a theme and commissioned UI developers to help us with setting everything up in a mobile friendly website. After that we wired everything together.
 
-Using that layout and with some minor modifications, we converted the site to use Jekyll. Upon deployment, Jekyll will parse the whole site and generate HTML documents, one per URL that we have, and as a result the site will be static. With this process, the site becomes much faster and allows us to concentrate on the content vs the maintenance of the application.
+Using that layout and with some minor modifications, we converted the site to use Jekyll. Upon deployment, Jekyll will parse the whole site and generate HTML documents, one per URL that we have, and as a result the site will be static. With this process, the site becomes much faster and allows us to concentrate on the content vs the maintenance of the application that serves the content.
 
 #### Versions
 We have several versions in our documentation. We really wanted to keep all the documents we have because not everyone is using v4 alpha (well not yet anyway). As such, to make everything work as expected, we created different folders and added the relevant markdown files there. The folder structure looks something like this:
