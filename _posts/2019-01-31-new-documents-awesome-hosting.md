@@ -18,7 +18,7 @@ The most challenging project was the documentation website. First of all we need
 We also used Google Webmaster Tools to figure out where are any broken links and add appropriate redirects for those pages. More on that below.
 
 ### v4 Documentation
-With the v4 documentation we focused on reaching the following goals:
+The documentation should be suitable for all type of users. From beginner to expert. To achieve that have set the following goals for v4:
 - The documentation site must offer a clear and easy to navigate design
 - The site must be mobile friendly
 - The code examples must be thorough and snippets of code should be avoided
