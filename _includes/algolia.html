@@ -22,7 +22,7 @@
     const hitTemplate = function(hit) {
         let date = '';
         if (hit.date) {
-            date = moment.unix(hit.date).format('Y-M-D');
+            date = moment.unix(hit.date).format('YYYY-MM-DD');
         }
 
         let url = `{{ site.baseurl }}${hit.url}`;
