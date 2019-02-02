@@ -55,7 +55,7 @@ We have several versions in our documentation. We really wanted to keep all the 
 /3.4/ru-ru/
 /3.4/ru-ru/index.md
 ...
-/4.0/ < submodule
+/4.0/ -- submodule
 ```
 So all the documents are going to be served from their respective versions, allowing us to keep older versions of the documentation, serving them all from the same site.
 
@@ -82,7 +82,7 @@ Due to the number of those files, we were expecting that the build time would ta
 When reaching out to the Netlify team, one of the engineers was extremely polite and professional and worked with us to try and identify the issue and offer solutions. It appears that the problem was stemming from the cache busting that we had introduced for our assets. i.e:
 
 ```html
-<llnk rel="stylesheet" href="/assets/css/main.css?v{{ date | format: '%Y%m%d'" }}" />
+<llnk rel="stylesheet" href="/assets/css/main.css?v{% raw %}{{ date | format: '%Y%m%d'" }}{% endraw %}" />
 ```
 
 [Netlify](https://netlify.com) has an awesome algorithm where each page is cached and a hash of the page contents is kept when the site is deployed the first time. In a subsequent deployment, after the site is built, the hash of the new page is compared to the cached hash and if they are identical, the particular content is not uploaded to the live site, well because there is no reason to. This allows the deployments to be blistering fast even for large sites as ours.

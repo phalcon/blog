@@ -1,11 +1,28 @@
 ---
 layout: default
 ---
+{% assign num_words = page.content | strip_html | number_of_words %}
+{% assign minutes   = num_words    | divided_by: 200 %}
+{% assign minutes   = num_words    | divided_by: 200.0 %}
+{% assign minutes_f = num_words    | divided_by: 200.0 %}
+{% assign minutes_i = num_words    | divided_by: 200 %}
+{% assign diff      = minutes_f    | minus: minutes_i %}
+{% if diff >= 0.5 %}
+    {% assign minutes = minutes_i | plus: 1 %}
+{% else %}
+    {% assign minutes = minutes_i %}
+{% endif %}
 
+{% if minutes <= 1 %}
+    {% assign reading_time = '1' | append: ' minute' %}
+{% else %}
+    {% assign reading_time = minutes | append: ' minutes' %}
+{% endif %}
                 <div id="articles">
                     <div class="row">
                         <h2 itemprop="name headline">
                             {{ page.title | escape }}
+                            <span class="pull-right"><small>[Read time: {{ reading_time }}]</small></span>
                         </h2>
                     </div>
                     <div>
