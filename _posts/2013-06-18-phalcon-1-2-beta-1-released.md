@@ -151,7 +151,7 @@ $app->post(
 ```
 
 ### Support for Many-To-Many in the ORM
-Finally Many-to-Many relations are supported in the [ORM](https://docs.phalconphp.com/latest/en/models.html)! Direct relationships between two models using an intermediate model can now be defined:
+Finally Many-to-Many relations are supported in the [ORM](https://docs.phalconphp.com/latest/en/db-models.html)! Direct relationships between two models using an intermediate model can now be defined:
 
 ```php
 class Artists extends Phalcon\Mvc\Model
@@ -215,7 +215,7 @@ $artist->save();
 
 ### Cascade/Restrict actions in Virtual Foreign Keys
 
-​[Virtual foreign keys](https://docs.phalconphp.com/latest/en/models.html#virtual-foreign-keys) can ​now be set up to delete all the referenced records if the master record is deleted:
+​[Virtual foreign keys](https://docs.phalconphp.com/latest/en/db-models.html#virtual-foreign-keys) can ​now be set up to delete all the referenced records if the master record is deleted:
 
 ```php
 use Phalcon\Mvc\Model;

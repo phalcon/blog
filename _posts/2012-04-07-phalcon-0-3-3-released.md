@@ -16,7 +16,7 @@ This is a short list of changes that can be expected in this version:
 - Added `Phalcon\ACL` management with in-memory lists [More Info](https://docs.phalconphp.com/latest/en/acl)
 - Fixed segfaults on methods with array optional parameters
 - Fixed segfaults on some internal isset
-- Added built-in model attributes validators for `Phalcon\Model` [More Info](https://docs.phalconphp.com/latest/en/models#validating-data-integrity)
+- Added built-in model attributes validators for `Phalcon\Model` [More Info](https://docs.phalconphp.com/latest/en/db-models#validating-data-integrity)
 - Added missing `Phalcon\Tag::passwordField` [2](https://github.com/phalcon/cphalcon/issues/2)
 
 0.3.2

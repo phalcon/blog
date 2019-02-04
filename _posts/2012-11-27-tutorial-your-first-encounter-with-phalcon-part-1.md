@@ -50,7 +50,7 @@ picking them apart, but it requires time, effort and (more often than
 not) advanced skills.
 
 #### C-language ORM
-Phalcon is the first PHP framework to implement a [ORM](https://docs.phalconphp.com/latest/en/models) in pure C. The consequence of this fact is improved performance, when compared to typical ORMs.
+Phalcon is the first PHP framework to implement a [ORM](https://docs.phalconphp.com/latest/en/db-models) in pure C. The consequence of this fact is improved performance, when compared to typical ORMs.
 
 Since ORM is a key component of so many applications and is used so extensively, any positive changes to performance have a noticeable effect.
 

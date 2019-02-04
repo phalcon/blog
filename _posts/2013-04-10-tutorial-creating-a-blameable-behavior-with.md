@@ -97,7 +97,7 @@ class Products extends Phalcon\Mvc\Model
 
 This way also has limitations; you can't add more than one trait that has implemented the same methods because it produces collisions. Although such collisions can be resolved, we must choose which implementation to use.
 
-Phalcon provides [behavior management](https://docs.phalconphp.com/latest/en/models#behaviors), allowing us to add several behaviors to the same model that implements the same events. A behavior can be easily added to a model in the following way:
+Phalcon provides [behavior management](https://docs.phalconphp.com/latest/en/db-models#behaviors), allowing us to add several behaviors to the same model that implements the same events. A behavior can be easily added to a model in the following way:
 
 ```php
 class Products extends Phalcon\Mvc\Model

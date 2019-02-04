@@ -62,7 +62,7 @@ class MySessionHandler implements Phalcon\Session\AdapterInterface
 ```
 
 **Independent Column Map**
-The [ORM](https://docs.phalconphp.com/latest/en/models) now supports a independent column map, which allows the developer to use different column names in the model to the ones in the table. Phalcon will recognize the new column names and will rename them accordingly to match the respective columns in the database. This is a great feature when one needs to rename fields in the database without having to worry about all the queries in the code. A change in the column map in the model will take care of the rest. For example:
+The [ORM](https://docs.phalconphp.com/latest/en/db-models) now supports a independent column map, which allows the developer to use different column names in the model to the ones in the table. Phalcon will recognize the new column names and will rename them accordingly to match the respective columns in the database. This is a great feature when one needs to rename fields in the database without having to worry about all the queries in the code. A change in the column map in the model will take care of the rest. For example:
 
 ```php
 <?php

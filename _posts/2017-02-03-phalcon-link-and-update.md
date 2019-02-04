@@ -38,7 +38,7 @@ We are pleased to announce that our funding campaign is moving along nicely. Our
 
 If you wish to become a patron, you can always visit [https://phalcon.link/fund](https://phalcon.link/fund) and pledge your support on a one time or recurring basis. 
 
-Also if you wish to support the project with buying some swag, you can always purchase some stickers from our [store](https://store.phalconphp.com) for you and your team, or you can purchase [T-shirts]([https://phalcon.link/store). Please note that the T-shirt campaign will only be available until the beginning of February. 
+Also if you wish to support the project with buying some swag, you can always purchase some stickers from our [store](https://store.phalconphp.com) for you and your team, or you can purchase [T-shirts](https://phalcon.link/store). Please note that the T-shirt campaign will only be available until the beginning of February. 
 
 ### Goals for Q1
 

@@ -238,7 +238,7 @@ Compiling c.html produce:
 ```
 
 #### ORM
-Some missing features are added to the [ORM](https://docs.phalconphp.com/latest/en/models) in this version:
+Some missing features are added to the [ORM](https://docs.phalconphp.com/latest/en/db-models) in this version:
 
 #### Behaviors
 Behaviors are shared conducts that several models may adopt in order to re-use code, a well-known is adding a timestamp indicating when a record was created or updated:

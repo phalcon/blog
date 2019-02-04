@@ -13,7 +13,7 @@ We are proud to be pioneers in PHP performance in many areas such as:
 <!--more-->
 - [Full stack frameworks](https://docs.phalconphp.com/latest/en/mvc)
 - [Micro frameworks](https://docs.phalconphp.com/latest/en/micro)
-- [ORM (Object Relational Mappers) for PHP](https://docs.phalconphp.com/latest/en/models)
+- [ORM (Object Relational Mappers) for PHP](https://docs.phalconphp.com/latest/en/db-models)
 - [PHP Template Engines](https://docs.phalconphp.com/latest/en/volt) and
 - ODM (Object Document Mappers)
 
