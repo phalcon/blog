@@ -4,7 +4,7 @@ title: "Sample Application: Album-O-Rama"
 tags: [php, phalcon, sample, spotify, music, "0.8", "0.x"]
 ---
 
-[![image](/assets/files/2012-12-08-albumorama.jpg)](http://album-o-rama.phalconphp.com)
+![image](/assets/files/2012-12-08-albumorama.jpg)
 
 We are very excited to release our third Phalcon demo after [INVO](/post/invo-a-sample-application) and the [alternative PHP website](/post/sample-application-php-alternative-site) to the community, so as to showcase the power of Phalcon.
 
@@ -22,7 +22,7 @@ We decided to add volume in this application to showcase how Phalcon behaves wit
 
 To make things even more interesting we introduced a custom layout generator which is invoked every time a new album is requested. This improves aesthetics and showcases the power of [Volt](https://docs.phalconphp.com/latest/en/volt), Phalcon's template engine:
 
-[![image](/assets/files/2012-12-08-album.jpg)](http://album-o-rama.phalconphp.com/album/155/Battle+Born)
+![image](/assets/files/2012-12-08-album.jpg)
 
 If you have [Spotify](http://spotify.com/) installed you may listen most popular songs.
 
@@ -36,8 +36,6 @@ In this demo you will find:
 - Implementation of [custom routing](https://docs.phalconphp.com/latest/en/routing)
 - Implementation of [views caching](https://docs.phalconphp.com/latest/en/views#caching-view-fragments)
 - Implementation of a custom error handle
-
-Complete code here: [https://github.com/phalcon/album-o-rama](https://github.com/phalcon/album-o-rama)
 
 We hope that you enjoy it and looking forward to your comments as well as submissions of your implementations in our [Incubator](https://github.com/phalcon/incubator)!
 

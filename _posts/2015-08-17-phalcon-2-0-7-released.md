@@ -55,7 +55,7 @@ Note that running the installation script will replace any version of Phalcon in
 Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
 
 * [Documentation](https://docs.phalconphp.com)
-* [API](https://api.phalconphp.com/)
+* [API](https://phalcon.link/api)
 
 Thanks to everyone involved in this release and thanks for choosing Phalcon!
 

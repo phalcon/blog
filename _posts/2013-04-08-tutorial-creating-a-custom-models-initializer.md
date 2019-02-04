@@ -8,7 +8,7 @@ This tutorial is oriented to an intermediate/advanced audience. We'll explain ho
 
 <!--more-->
 ### Bootstrap
-The example provides a simple structure that can be implemented in any Phalcon application. You can find the complete code on [Github](https://github.com/phalcon/tutorial-models-init). The following structure is used:
+The example provides a simple structure that can be implemented in any Phalcon application. You can find the complete code on Github. The following structure is used:
 
 ```sh
 example/
@@ -25,7 +25,7 @@ example/
    index.php
 ```
 
-The file [services.php](https://github.com/phalcon/tutorial-models-init/blob/master/services.php) is the example's bootstrap, on it you can find the service initialization, we are only initializing the basic services necessary to run the example.
+The file services.php is the example's bootstrap, on it you can find the service initialization, we are only initializing the basic services necessary to run the example.
 
 The first is the database connection, we used Sqlite as adapter, but you can use any other of the [supported database systems](https://docs.phalconphp.com/latest/en/db#database-adapters):
 
@@ -60,7 +60,7 @@ $di['modelsManager'] = function () {
 ```
 
 ### Model initialization
-[AnnotationsInitializer](https://github.com/phalcon/tutorial-models-init/blob/master/library/AnnotationsInitializer.php) is a plugin that reads the annotations in the model's class performing the appropriate tasks according to the annotations used. A model with annotations is the following:
+AnnotationsInitializer is a plugin that reads the annotations in the model's class performing the appropriate tasks according to the annotations used. A model with annotations is the following:
 
 ```php
 <?php
@@ -247,7 +247,7 @@ Phalcon provides the built-in strategy class:
 [Phalcon\Mvc\Model\MetaData\Strategy\Annotations](https://docs.phalconphp.com/latest/en/db-models#annotations-strategy) which performs the same task we'll going to explain below. Our custom meta-data strategy also uses annotations but it gives us understanding of how this task is achieved. You can adapt this code to create dynamic schemas, row level security, new annotations, etc.
 
 This adapter is called
-[AnnotationsMetaDataInitializer](https://github.com/phalcon/tutorial-models-init/blob/master/library/AnnotationsMetaDataInitializer.php) (found in the library/ directory). It implements two methods: the former initializes the main meta-data and the second any column map found in the class:
+AnnotationsMetaDataInitializer (found in the library/ directory). It implements two methods: the former initializes the main meta-data and the second any column map found in the class:
 
 ```php
 <?php
@@ -301,7 +301,7 @@ foreach ($reflection->getPropertiesAnnotations() as $name => $collection) {
 }
 ```
 
-Returning to the file [services.php](https://github.com/phalcon/tutorial-models-init/blob/master/services.php), we see how this adapter is set up instead of the default one:
+Returning to the file services.php, we see how this adapter is set up instead of the default one:
 
 ```php
 <?php

@@ -547,7 +547,7 @@ $di->set(
 );
 ```
 
-Your public/index.php file must look like [this](https://github.com/phalcon/blog-tutorial/blob/master/public/index.php)
+Your public/index.php file must look like this
 
 That's it, routing should now work as expected. You may now test these settings by entering `http://blog.net/login/`.
 
@@ -556,7 +556,7 @@ That was the last step in creating Phalcon web application, you may want to find
 ### Summary
 I explained how to install Phalcon under Windows using WAMP or Ubuntu Linux and configure developer tools.
 
-We went through the process of creating a simple blog application with twitter bootstrap, simple authorization and very simple ACL. Check out the complete source code of this tutorial [here](https://github.com/phalcon/blog-tutorial)
+We went through the process of creating a simple blog application with twitter bootstrap, simple authorization and very simple ACL.
 
 
 <3 The Phalcon Team

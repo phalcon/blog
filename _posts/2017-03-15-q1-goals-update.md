@@ -16,7 +16,7 @@ We also started creating different groups in the organization, that will allow f
 
 We believe that this move will allow us to maintain a proper workflow, something that Phalcon and our community deserve.
 
-We have also started moving some of the satellite repositories into the organization (such as [link](https://github.com/phalcon/link), [phalcon-compose](https://github.com/phalcon/phalcon-compose) etc.) to help with resources and the organization of the project.
+We have also started moving some of the satellite repositories into the organization (such as [link](https://github.com/phalcon/link), phalcon-compose etc.) to help with resources and the organization of the project.
 
 ### PHP 7.1
 Work is continuing on fixing some PHP 7.1 blocking bugs with Phalcon and Zephir. We have managed so far to compile Phalcon with PHP 7.1 but it is not ready yet for release.
