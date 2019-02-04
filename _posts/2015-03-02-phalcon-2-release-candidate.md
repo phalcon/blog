@@ -11,7 +11,7 @@ As with all pre-release packages, this is not for production use. But if you'd l
 <!--more-->
 We're also preparing a new website and documentation for your joy.
 
-This version can be installed from the 2.0.0 branch, if you don't have [Zephir](http://zephir-lang.com) installed follow these instructions:
+This version can be installed from the 2.0.0 branch, if you don't have [Zephir](https://zephir-lang.com) installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
@@ -20,7 +20,7 @@ cd ext
 sudo ./install
 ```
 
-If you have [Zephir](http://zephir-lang.com) installed:
+If you have [Zephir](https://zephir-lang.com) installed:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon

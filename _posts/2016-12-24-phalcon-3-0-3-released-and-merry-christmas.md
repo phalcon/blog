@@ -27,7 +27,7 @@ The release tag can be found here: [3.0.3](https://github.com/phalcon/cphalcon/r
 - Fixed `Phalcon\Http\Request::getHeaders` to handle auth headers correctly [12480](https://github.com/phalcon/cphalcon/issues/12480)
 - Fixed `Phalcon\Http\Request::getMethod` to handle `X-HTTP-Method-Override` header correctly [12478](https://github.com/phalcon/cphalcon/issues/12478)
 - Fixed `Phalcon\Mvc\Model\Criteria::limit` and `Phalcon\Mvc\Model\Query\Builder::limit` to work with limit and offset properly [12419](https://github.com/phalcon/cphalcon/issues/12419)
-- Fixed `Phalcon\Forms\Form` to correct form validation and set messages for elements [12465](https://github.com/phalcon/cphalcon/issues/12465), [11500](https://github.com/phalcon/cphalcon/issues/11500), [11135]((https://github.com/phalcon/cphalcon/issues/11135)), [3167](https://github.com/phalcon/cphalcon/issues/3167), [12395](https://github.com/phalcon/cphalcon/issues/12395)
+- Fixed `Phalcon\Forms\Form` to correct form validation and set messages for elements [12465](https://github.com/phalcon/cphalcon/issues/12465), [11500](https://github.com/phalcon/cphalcon/issues/11500), [11135](https://github.com/phalcon/cphalcon/issues/11135), [3167](https://github.com/phalcon/cphalcon/issues/3167), [12395](https://github.com/phalcon/cphalcon/issues/12395)
 - Fixed `Phalcon\Cache\Backend\Libmemcached::queryKeys` to correct query the existing cached keys #11024
 - Fixed building extension for ImageMagick 7 [mkoppanen/imagick#180](https://github.com/mkoppanen/imagick/issues/180)
 - Fixed `Phalcon\Cache\Backend\Redis::save` to allow save data termlessly [12327](https://github.com/phalcon/cphalcon/issues/12327)

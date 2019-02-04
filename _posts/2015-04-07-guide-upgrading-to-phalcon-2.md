@@ -4,7 +4,7 @@ title: "Guide: Upgrading to Phalcon 2"
 tags: [php, phalcon, "2.0", phalcon2, guide, zephir, "2.x"]
 ---
 
-Phalcon 2 is the a major upgrade to the framework and will be released **April 17th, 2015**. This new version is a rewriting of about 85% total code from C to a high-level language we have created called [Zephir](http://zephir-lang.com/).
+Phalcon 2 is the a major upgrade to the framework and will be released **April 17th, 2015**. This new version is a rewriting of about 85% total code from C to a high-level language we have created called [Zephir](https://zephir-lang.com/).
 
 Upgrading to the latest version has several benefits:
 
@@ -76,7 +76,7 @@ Like Phalcon 1.3, Phalcon 2.0 requires PHP 5.3.21 or above, however we will no l
 
 **Installation**
 
-This version can be installed from the 2.0.0 branch, if you don't have [Zephir](http://www.zephir-lang.com) installed follow these instructions:
+This version can be installed from the 2.0.0 branch, if you don't have [Zephir](https://zephir-lang.com) installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
@@ -94,7 +94,7 @@ cd build
 sudo ./install
 ```
 
-If you have [Zephir](http://www.zephir-lang.com) installed:
+If you have [Zephir](https://zephir-lang.com) installed:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon

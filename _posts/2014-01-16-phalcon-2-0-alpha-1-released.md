@@ -31,10 +31,10 @@ Thanks to the help and contributions from the community, we have made huge progr
 
 Here are some links that may interest you if want to learn more:
 
-- [Introductory Screencast](http://vimeo.com/84180223)
-- [Tutorial](http://zephir-lang.com/tutorial)
-- [Documentation](http://zephir-lang.com/)
-- [Blog](http://blog.zephir-lang.com/)
+- [Introductory Screencast](https://vimeo.com/84180223)
+- [Tutorial](https://docs.zephir-lang.com/latest/en/tutorial)
+- [Documentation](https://docs.zephir-lang.com/)
+- [Blog](https://blog.zephir-lang.com/)
 - [Github](https://github.com/phalcon/zephir)
 
 ### Help with Testing

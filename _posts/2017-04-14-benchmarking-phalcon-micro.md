@@ -24,12 +24,12 @@ The [ab](https://httpd.apache.org/docs/current/programs/ab.html) benchmarking to
 We will start with the results of our benchmark. The hardware used, raw data as well as setup/configuration changes we did for each framework are further down in this post.
 
 #### Included Files
-We have used the [get_included_files()](http://php.net/manual/en/function.get-included-files.php) function to figure out how many files have been included for one request. The call to the function was at the end of the entry point, usually `index.php` (lower is better). As one can expect, most micro frameworks can be dispatched in one file. 
+We have used the [get_included_files()](https://secure.php.net/manual/en/function.get-included-files.php) function to figure out how many files have been included for one request. The call to the function was at the end of the entry point, usually `index.php` (lower is better). As one can expect, most micro frameworks can be dispatched in one file. 
 
 ![image](/assets/files/2017-04-14-files-per-request.png)
 
 #### Memory used (KB)
-We have used the [memory_get_usage()](http://php.net/manual/en/function.memory_get_usage.php) function to figure out how many much memory was used for each request. The call to this function was at the end of the entry point, usually `index.php`. (lower is better).
+We have used the [memory_get_usage()](https://secure.php.net/manual/en/function.memory-get-usage.php) function to figure out how many much memory was used for each request. The call to this function was at the end of the entry point, usually `index.php`. (lower is better).
 
 ![image](/assets/files/2017-04-14-memory-per-request.png)
 

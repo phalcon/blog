@@ -4,7 +4,7 @@ title: "Phalcon 2 (beta 1) released!"
 tags: [php, phalcon, zephir, "2.0", beta, release, "2.x"]
 ---
 
-[Eight months ago](https://blog.phalconphp.com/post/phalcon-2-0-the-future) we announced the creation of a new high-level compiled language called [Zephir](http://www.zephir-lang.com) which we used to completely rewrite Phalcon 2.0.
+[Eight months ago](https://blog.phalconphp.com/post/phalcon-2-0-the-future) we announced the creation of a new high-level compiled language called [Zephir](https://zephir-lang.com) which we used to completely rewrite Phalcon 2.0.
 
 Zephir's purpose is to offer a new and easier syntax of writing PHP extensions, translating its PHP/JS inspired syntax to C instructions and thus allowing more and more developers to be involved with the project. In addition, it offers the ability to create new PHP extensions without the need to know C or any of the PHP internals.
 
@@ -13,12 +13,12 @@ For us and thanks to Zephir, the development of Phalcon is now more enjoyable. W
 <!--more-->
 During these we have been implemented several interesting features in Zephir, that have enriched the quality of Phalcon and have made the development more robust:
 
-- [Static Typing](http://zephir-lang.com/types#static-types)
-- [Named Parameters](http://blog.zephir-lang.com/post/76596064349/whats-new-in-zephir-v)
-- [Getter/Setter shortcuts](http://zephir-lang.com/oop#getter-setter-shortcuts)
-- [Return Type Hints](http://zephir-lang.com/oop#return-type-hints)
-- [Use static types as objects](http://zephir-lang.com/builtin-methods)
-- [And more...](https://zephir-lang.com)
+- [Static Typing](https://docs.zephir-lang.com/latest/en/types#static-types)
+- [Named Parameters](https://blog.zephir-lang.com/post/whats-new-in-zephir-v)
+- [Getter/Setter shortcuts](https://docs.zephir-lang.com/latest/en/oop#getter-setter-shortcuts)
+- [Return Type Hints](https://docs.zephir-lang.com/latest/en/oop#return-type-hints)
+- [Use static types as objects](https://docs.zephir-lang.com/latest/en/builtin-methods)
+- [And more...](https://docs.zephir-lang.com/)
 
 The result of all this hard work is now available for all to use. Today, we are excited to announce the release of Phalcon 2 beta 1!
 

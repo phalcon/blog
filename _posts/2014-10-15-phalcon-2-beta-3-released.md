@@ -22,7 +22,7 @@ interface Phalcon\DiInterface, instance of stdClass given in /home/scott/test.ph
 
 #### Better debug information
 
-[Zephir](http://zephir-lang.com/) provides the exact place where an exception was thrown and it will provide more information as to where the error occurred.
+[Zephir](https://zephir-lang.com/) provides the exact place where an exception was thrown and it will provide more information as to where the error occurred.
 
 ```php
 Exception: The static method 'someMethod' doesn't exist on model 'Robots'
@@ -66,7 +66,7 @@ Zephir/Phalcon 2 takes advantage of the [improved way to return values](http://l
 
 ### Phalcon 2 new look
 
-Our community have contributed 4 amazing proposals for the new design in the Phalcon 2 era. Contribute by voting your favorite design [here](http://survey.phalconphp.com).
+Our community have contributed 4 amazing proposals for the new design in the Phalcon 2 era. Contribute by voting your favorite design here.
 
 ### Want to contribute?
 

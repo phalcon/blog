@@ -36,7 +36,7 @@ SUM:                           1015         133947          70528         462384
 --------------------------------------------------------------------------------
 ```
 
-C is king. However things will change once 2.0.0 is out, making [Zephir](http://www.zephir-lang.com) the top language.
+C is king. However things will change once 2.0.0 is out, making [Zephir](https://zephir-lang.com) the top language.
 
 
 <3 Phalcon Team

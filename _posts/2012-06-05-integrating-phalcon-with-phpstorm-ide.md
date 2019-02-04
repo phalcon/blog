@@ -17,6 +17,6 @@ This integration requires the latest version of Phalcon DevTools, PhpStorm is av
 
 Happy developing!
 
-PS: Brought to you thanks to an idea of [mailopl](https://phalcon.uservoice.com/forums/154026-general/suggestions/2724445-code-completion-to-major-ide-s-based-on-stub-files)
+PS: Brought to you thanks to an idea of [mailopl]
 
 <3 Phalcon Team

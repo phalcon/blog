@@ -17,7 +17,7 @@ We are proud to be pioneers in PHP performance in many areas such as:
 - [PHP Template Engines](https://docs.phalconphp.com/latest/en/volt) and
 - ODM (Object Document Mappers)
 
-NoSQL databases have earned a place in the development world, solving problems that relational databases could not. In 0.6.0 we have begun an effort to integrate NoSQL databases in Phalcon. [MongoDB](https://mongodb.org/) is one of the most popular NoSQL databases offering an interesting set of features.
+NoSQL databases have earned a place in the development world, solving problems that relational databases could not. In 0.6.0 we have begun an effort to integrate NoSQL databases in Phalcon. [MongoDB](https://mongodb.com/) is one of the most popular NoSQL databases offering an interesting set of features.
 
 We have integrated MongoDB with the [Cache](https://docs.phalconphp.com/latest/en/cache) and [Session](https://docs.phalconphp.com/latest/en/session) components. An ODM was created that extends the functionality of the [MongoDB PHP extension](http://www.php.net/manual/en/book.mongo.php). This allowed us to add new features such as events and validators, improving the integration with Phalcon.
 

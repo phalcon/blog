@@ -11,7 +11,7 @@ After more than a year of development, we're extremely excited to announce the r
 Those that have been following the project closely, know that this has not been a small feat.
 
 <!--more-->
-- We had to create a brand new language [Zephir](http://www.zephir-lang.com) which allows developers to write PHP extensions easily.
+- We had to create a brand new language [Zephir](https://zephir-lang.com) which allows developers to write PHP extensions easily.
 - We had to completely rewrite most of Phalcon 1.3.x, offering the same functionality as before so as to ensure that upgrading will be very easy.
 - Zephir had to be adjusted and enhanced as we moved through the rewrite, offering more functions and options to developers.
 - Additional features were implemented for 2.0, mostly thanks to our contributors!
@@ -19,11 +19,11 @@ Those that have been following the project closely, know that this has not been 
 The results are something that we are very proud of:
 
 - Phalcon 2.0, offering compatible functionality (and more) as before
-- [Zephir](http://www.zephir-lang.com), allowing developers to write their own extensions easily without the need to know C.
+- [Zephir](https://zephir-lang.com), allowing developers to write their own extensions easily without the need to know C.
 
 ### Installation
 
-This version can be installed from the master branch, if you don't have [Zephir](http://www.zephir-lang.com) installed follow these instructions:
+This version can be installed from the master branch, if you don't have [Zephir](https://zephir-lang.com) installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
@@ -39,7 +39,7 @@ cd cphalcon/build
 sudo ./install
 ```
 
-If you have [Zephir](http://www.zephir-lang.com) installed:
+If you have [Zephir](https://zephir-lang.com) installed:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
@@ -55,11 +55,11 @@ See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-ph
 
 ### What's next
 
-Our release schedule will be every one or two months (unless we need to issue a security fix, which will be near instant). The target will be the most requested features by the community, although with [Zephir](http://www.zephir-lang.com), contributing to Phalcon will be a breeze. We can't wait to see those pull requests coming in :)
+Our release schedule will be every one or two months (unless we need to issue a security fix, which will be near instant). The target will be the most requested features by the community, although with [Zephir](https://zephir-lang.com), contributing to Phalcon will be a breeze. We can't wait to see those pull requests coming in :)
 
 Smaller changes and fixes that can be bundled in a minor version will be released as soon as we can. We will also be working on a LTS (Long Term Support) model for our community.
 
-Finally we are going to start the research on PHP 7, so that we can adjust [Zephir](http://www.zephir-lang.com) accordingly and of course Phalcon. This task will require a lot of preparation and work but we have our targets set on it due to the new functionality and features it offers.
+Finally we are going to start the research on PHP 7, so that we can adjust [Zephir](https://zephir-lang.com) accordingly and of course Phalcon. This task will require a lot of preparation and work but we have our targets set on it due to the new functionality and features it offers.
 
 ### Conclusion and acknowledgments
 

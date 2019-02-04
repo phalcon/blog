@@ -6,7 +6,7 @@ tags: [php, phalcon, "2.0", beta, zephir, release, "2.x"]
 
 It's been a while since we last communicated with our community. Rest assured our resolve and determination towards the project remains the same :)
 
-We're in the process putting the final touches on the second major release of Phalcon in its two years of life. Phalcon 2 is powered by [Zephir](http://zephir-lang.com/) a brand new high-level language that makes the development more enjoyable and easier.
+We're in the process putting the final touches on the second major release of Phalcon in its two years of life. Phalcon 2 is powered by [Zephir](https://zephir-lang.com/) a brand new high-level language that makes the development more enjoyable and easier.
 
 Phalcon 2 now implements most of the functionality that Phalcon 1.x offers and [it's now passing](https://travis-ci.org/phalcon/cphalcon/builds/33532701) an important number of tests in Travis. Yay!
 
