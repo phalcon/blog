@@ -65,7 +65,7 @@ We are using the `$_SERVER` array to access the passed variables. We could have 
 We initialize the DI container and set it as a default. It is also stored in a private variable so that it can be passed in the application later on, but also to access relevant services if necessary.
 
 #### `initLoader()`
-Our application uses several packages such as [Dotenv](https://github.com/vlucas/phpdotenv), [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar) and [Guzzle](http://docs.guzzlephp.org/en/latest/). To ensure that those packages are available in our application, we use the composer autoloader. 
+Our application uses several packages such as [Dotenv](https://github.com/vlucas/phpdotenv), [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar) and [Guzzle](http://docs.guzzlephp.org/latest/en/). To ensure that those packages are available in our application, we use the composer autoloader. 
 
 ```php
 protected function initLoader()
@@ -96,7 +96,7 @@ composer install --optimize-autoloader
 ```
 
 #### `initRegistry()`
-We use the `Phalcon\Registry` as a storage of information that can be used throughout the request process. For instance we store the actual `view` file name that needs to be rendered. How we render views will be discussed later on when we will discuss [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events).
+We use the `Phalcon\Registry` as a storage of information that can be used throughout the request process. For instance we store the actual `view` file name that needs to be rendered. How we render views will be discussed later on when we will discuss [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events).
 
 ```php
 protected function initRegistry()
@@ -232,7 +232,7 @@ protected function initDispatcher()
 #### `initCache()`
 We now initialize the cache for our main application. We initialize two caches. One for data and one for the view. The CLI application overrides this function and is empty, since the CLI application does not require a cache service.
 
-More about the `viewCache` later on when we explore [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events).
+More about the `viewCache` later on when we explore [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events).
 
 ```php
 protected function initCache()
@@ -572,11 +572,11 @@ We have looked at the boostrap of the application and each service setup for bot
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
 - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
-- [Micro Application](https://docs.phalconphp.com/en/latest/reference/micro.html)
-- [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events)
+- [Micro Application](https://docs.phalconphp.com/latest/en/micro.html)
+- [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
-- [Guzzle](http://docs.guzzlephp.org/en/latest/)
+- [Guzzle](http://docs.guzzlephp.org/latest/en/)
 - [Transifex](https://transifex.com/phalcon)
 

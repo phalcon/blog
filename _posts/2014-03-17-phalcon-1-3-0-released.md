@@ -15,7 +15,7 @@ The [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG) for t
 
 ### Disabling Literals
 
-Literals can be disabled in [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html), this means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. In Phalcon 1.3 this option has been improved and now works with most query builders, finders and PHQL generators.
+Literals can be disabled in [PHQL](https://docs.phalconphp.com/latest/en/phql.html), this means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. In Phalcon 1.3 this option has been improved and now works with most query builders, finders and PHQL generators.
 
 ```php
 Phalcon\Mvc\Model::setup(['phqlLiterals' => false]);

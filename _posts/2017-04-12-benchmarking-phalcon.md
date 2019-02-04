@@ -40,7 +40,7 @@ Using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we me
 
 
 #### Time to complete 1,000 requests
-Again using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we measured the time it took to complete 1,000 requests.  (lower is better).
+Again using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab) tool, we measured the time it took to complete 1,000 requests.  (lower is better).
 
 ![image](/assets/files/2017-04-13-requests-time.png)
 
@@ -97,7 +97,7 @@ The frameworks compared were:
 - [Nette (v2.4)](https://nette.org/)
 - [Phalcon (v3.1.2)](https://phalconphp.com/en/)
 - [Symfony (v3.2)](http://symfony.com)
-- [Yii (v2.0.11)](www.yiiframework.com)
+- [Yii (v2.0.11)](https://www.yiiframework.com)
 - [Zend Framework (v.3.0.1)](https://framework.zend.com/)
 
 #### Installation and Changes

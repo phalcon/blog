@@ -13,7 +13,7 @@ A big thank you to all the community and every tester who has reported bugs and 
 <!--more-->
 We would encourage you to update to this version to take advantage of all the new functionality :)
 
-- [Documentation](https://docs.phalconphp.com/en/latest/)
+- [Documentation](https://docs.phalconphp.com/latest/en/)
 - Check the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.8.0/CHANGELOG)
 
 If you have any questions about functionality, feel free to ask either in [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon?sort=newest&pagesize=15) or in our [Google Group](https://groups.google.com/forum/?fromgroups#%21forum/phalcon).

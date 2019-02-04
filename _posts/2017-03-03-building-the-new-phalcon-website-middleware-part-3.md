@@ -6,7 +6,7 @@ tags: [php, phalcon, "3.0.x", phalcon3, implementation, website, series]
 
 This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
-In the final part of our series, we are going to investigate [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events) and how it helps our application.
+In the final part of our series, we are going to investigate [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events) and how it helps our application.
 
 <!--more-->
 ### Middleware
@@ -297,7 +297,7 @@ This task class displays the available commands for our CLI application
 This task class checks all the available cache files (in `storage/cache/*/`) and deletes them when invoked. It is used to clear the cache after each deployment.
 
 #### FetchContributors
-For quite some time now, we have introduced a big image map at the bottom of our site, to thank our contributors. This command is responsible for fetching the contributors from Github and constructing the final JSON file. To execute the HTTP request we are using the excellent [Guzzle](http://docs.guzzlephp.org/en/latest/) library.
+For quite some time now, we have introduced a big image map at the bottom of our site, to thank our contributors. This command is responsible for fetching the contributors from Github and constructing the final JSON file. To execute the HTTP request we are using the excellent [Guzzle](http://docs.guzzlephp.org/latest/en/) library.
 
 We first assign some weights in different repositories. The more updates, the "heavier" the repository. We then interrogate the Github API for each of the repositories, and retrieve all the contributors. 
 
@@ -325,11 +325,11 @@ Thank you all
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
 - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
-- [Micro Application](https://docs.phalconphp.com/en/latest/reference/micro.html)
-- [Middleware](https://docs.phalconphp.com/en/latest/reference/micro.html#middleware-events)
+- [Micro Application](https://docs.phalconphp.com/latest/en/micro.html)
+- [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
-- [Guzzle](http://docs.guzzlephp.org/en/latest/)
+- [Guzzle](http://docs.guzzlephp.org/latest/en/)
 - [Transifex](https://transifex.com/phalcon)
 

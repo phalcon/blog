@@ -17,7 +17,7 @@ Main features introduced in this release were highlighted in the [beta article](
 
 1.0.0 also includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.0.0/CHANGELOG) here.
 
-- [Documentation](https://docs.phalconphp.com/en/latest/)
+- [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)
 
 If you have any questions about functionality, feel free to ask either in our [Forum](https://forum.phalconphp.com) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon)
@@ -26,24 +26,24 @@ If you have any questions about functionality, feel free to ask either in our [F
 To this day, the main features that Phalcon offers are:
 
 - Full MVC Applications (Single-Module, Multi-Module and Micro Applications)
-- [ORM (Transactions, Behaviors, Relations, PHQL, Events, Validations, Hydration, Logging, Profiling, Sharding)](https://docs.phalconphp.com/en/latest/reference/models.html)
-- [HTTP Environment](https://docs.phalconphp.com/en/latest/reference/response.html)
-- [ODM for Mongo](https://docs.phalconphp.com/en/latest/reference/odm.html)
-- [Template Engine (Volt)](https://docs.phalconphp.com/en/latest/reference/volt.html)
-- [DI/Ioc](https://docs.phalconphp.com/en/latest/reference/di.html)
-- [Events Management](https://docs.phalconphp.com/en/latest/reference/events.html)
-- [Escaping/Filtering](https://docs.phalconphp.com/en/latest/reference/escaper.html)
-- [Forms Builder/Validation](https://docs.phalconphp.com/en/latest/reference/forms.html)
-- [Flashing](https://docs.phalconphp.com/en/latest/reference/flash.html)
-- [Caching](https://docs.phalconphp.com/en/latest/reference/cache.html)
-- [Pagination](https://docs.phalconphp.com/en/latest/reference/pagination.html)
-- [Annotations](https://docs.phalconphp.com/en/latest/reference/annotations.html)
-- [Security](https://docs.phalconphp.com/en/latest/reference/security.html)
-- [Translation](https://docs.phalconphp.com/en/latest/reference/translate.html)
-- [Universal Auto-Loader](https://docs.phalconphp.com/en/latest/reference/loader.html)
-- [Logging](https://docs.phalconphp.com/en/latest/reference/logging.html)
+- [ORM (Transactions, Behaviors, Relations, PHQL, Events, Validations, Hydration, Logging, Profiling, Sharding)](https://docs.phalconphp.com/latest/en/models)
+- [HTTP Environment](https://docs.phalconphp.com/latest/en/response)
+- [ODM for Mongo](https://docs.phalconphp.com/latest/en/odm)
+- [Template Engine (Volt)](https://docs.phalconphp.com/latest/en/volt)
+- [DI/Ioc](https://docs.phalconphp.com/latest/en/di)
+- [Events Management](https://docs.phalconphp.com/latest/en/events)
+- [Escaping/Filtering](https://docs.phalconphp.com/latest/en/escaper)
+- [Forms Builder/Validation](https://docs.phalconphp.com/latest/en/forms)
+- [Flashing](https://docs.phalconphp.com/latest/en/flash)
+- [Caching](https://docs.phalconphp.com/latest/en/cache)
+- [Pagination](https://docs.phalconphp.com/latest/en/pagination)
+- [Annotations](https://docs.phalconphp.com/latest/en/annotations)
+- [Security](https://docs.phalconphp.com/latest/en/security)
+- [Translation](https://docs.phalconphp.com/latest/en/translate)
+- [Universal Auto-Loader](https://docs.phalconphp.com/latest/en/loader)
+- [Logging](https://docs.phalconphp.com/latest/en/logging)
 
-And [much more!](https://docs.phalconphp.com/en/latest/index.html)
+And [much more!](https://docs.phalconphp.com/latest/en/)
 
 ### Looking forward
 There's still more to be done, and although we have come a long way with very few resources, we would love to spend more resources (particularly our time) in improving the framework and the whole ecosystem around it (documentation, tools, support, etc).

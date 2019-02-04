@@ -20,7 +20,7 @@ We decided to add volume in this application to showcase how Phalcon behaves wit
 - > 100,000 Tracks
 - > 200,000 Photos
 
-To make things even more interesting we introduced a custom layout generator which is invoked every time a new album is requested. This improves aesthetics and showcases the power of [Volt](https://docs.phalconphp.com/en/latest/reference/volt.html), Phalcon's template engine:
+To make things even more interesting we introduced a custom layout generator which is invoked every time a new album is requested. This improves aesthetics and showcases the power of [Volt](https://docs.phalconphp.com/latest/en/volt), Phalcon's template engine:
 
 [![image](/assets/files/2012-12-08-album.jpg)](http://album-o-rama.phalconphp.com/album/155/Battle+Born)
 
@@ -28,16 +28,14 @@ If you have [Spotify](http://spotify.com/) installed you may listen most popular
 
 In this demo you will find:
 
-- Usage the [Volt](https://docs.phalconphp.com/en/latest/reference/volt.html) template engine in a real application
-- Generating queries using [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html) (relations, joins, groupings, etc)
+- Usage the [Volt](https://docs.phalconphp.com/latest/en/volt) template engine in a real application
+- Generating queries using [PHQL](https://docs.phalconphp.com/latest/en/phql) (relations, joins, groupings, etc)
 - Basic pagination
-- Use of [view helpers](https://docs.phalconphp.com/en/latest/reference/tags.html)
+- Use of [view helpers](https://docs.phalconphp.com/latest/en/tag)
 - Implementation of custom components
-- Implementation of [custom routing](https://docs.phalconphp.com/en/latest/reference/routing.html)
-- Implementation of [views caching](https://docs.phalconphp.com/en/latest/reference/views.html#caching-view-fragments)
+- Implementation of [custom routing](https://docs.phalconphp.com/latest/en/routing)
+- Implementation of [views caching](https://docs.phalconphp.com/latest/en/views#caching-view-fragments)
 - Implementation of a custom error handle
-
-Check the application running here: [https://album-o-rama.phalconphp.com](https://album-o-rama.phalconphp.com)
 
 Complete code here: [https://github.com/phalcon/album-o-rama](https://github.com/phalcon/album-o-rama)
 

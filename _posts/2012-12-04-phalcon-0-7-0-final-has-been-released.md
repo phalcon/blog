@@ -31,7 +31,7 @@ Additionally, in this version the [incubator](https://github.com/phalcon/incubat
 
 0.7.0 includes other minor changes and bug fixes. You can see the complete [CHANGELOG here](https://github.com/phalcon/cphalcon/blob/0.7.0/CHANGELOG). Applications created with 0.5.x/0.6.x are compatible with this new version.
 
-- [Documentation](https://docs.phalconphp.com/en/latest/)
+- [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)
 
 A big thank you to the community and contributors!

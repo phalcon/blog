@@ -9,7 +9,7 @@ tags: [php, framework, mvc, invo, sample, tutorial, "0.x"]
 [INVO](https://github.com/phalcon/invo) is a sample application completely written with Phalcon. It will give you a closer insight into application development with this framework. Although, it's quite functional, have some flaws we expect to complement at the future (at this time does not produce invoices, for example).
 
 <!--more-->
-Its user interface is written using the amazing [Bootstrap](https://twitter.github.com) from Twitter. A code generator for this framework is also available for the [Phalcon Developer Tools](https://docs.phalconphp.com/en/latest/reference/tools.html).
+Its user interface is written using the amazing [Bootstrap](https://twitter.github.com) from Twitter. A code generator for this framework is also available for the [Phalcon Developer Tools](https://docs.phalconphp.com/latest/en/tools).
 
 Thanks to bootstrap the application is fully responsive. Screens are scaled according to a range of resolutions and devices to provide a consistent experience, no matter what.
 

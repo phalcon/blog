@@ -134,7 +134,7 @@ echo $config['database']['host'];
 ```
 
 ### Volt
-More features are added to [Volt](https://docs.phalconphp.com/en/0.8.0/reference/volt.html) in this version:
+More features are added to [Volt](https://docs.phalconphp.com/latest/en/volt) in this version:
 
 #### Cache statement
 Volt now supports caching fragments natively:
@@ -238,7 +238,7 @@ Compiling c.html produce:
 ```
 
 #### ORM
-Some missing features are added to the [ORM](https://docs.phalconphp.com/en/latest/reference/models.html) in this version:
+Some missing features are added to the [ORM](https://docs.phalconphp.com/latest/en/models) in this version:
 
 #### Behaviors
 Behaviors are shared conducts that several models may adopt in order to re-use code, a well-known is adding a timestamp indicating when a record was created or updated:

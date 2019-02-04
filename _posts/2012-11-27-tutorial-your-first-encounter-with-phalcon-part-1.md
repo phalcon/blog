@@ -32,7 +32,7 @@ In the following tutorial I am going to assume that you are familiar with:
 #### What is Phalcon - MVC in C
 Phalcon is a very recent framework on the market developed by the group of enthusiastic developers. In contrast to traditional frameworks which are written in PHP - Phalcon is a C extension to PHP interpreter itself. It means that its code doesn't have to be interpreted on every request by PHP - it's loaded only once, when server is booted (restarted) or reloaded.
 
-Phalcon is also a full stack framework, which means you just need a minimal amount of code to take advantage of available components, which cover many typical use cases. There is nothing stopping you from using only certain Phalcon's components (classes) on their own, for example if you just need [Phalcon's Cache component](https://docs.phalconphp.com/en/latest/reference/cache.html), you can use it in any application written in either pure PHP or using a framework.
+Phalcon is also a full stack framework, which means you just need a minimal amount of code to take advantage of available components, which cover many typical use cases. There is nothing stopping you from using only certain Phalcon's components (classes) on their own, for example if you just need [Phalcon's Cache component](https://docs.phalconphp.com/latest/en/cache), you can use it in any application written in either pure PHP or using a framework.
 
 Following image demonstrates message flow during typical request when employing [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern, which is the preferred way to develop Phalcon applications. I won't go into details describing this scheme.
 
@@ -41,7 +41,7 @@ Following image demonstrates message flow during typical request when employing 
 ### What makes Phalcon special
 
 #### Performance
-Phalcon performance is clearly distinguishable from standard PHP frameworks. In terms of performance it is only fair to compare Phalcon to the other C-written frameworks. Still, to get at least a feeling for the level of performance check its benchmarks [here](https://docs.phalconphp.com/en/latest/reference/benchmark.html).
+Phalcon performance is clearly distinguishable from standard PHP frameworks. In terms of performance it is only fair to compare Phalcon to the other C-written frameworks. Still, to get at least a feeling for the level of performance check its benchmarks [here](https://docs.phalconphp.com/latest/en/benchmark).
 
 Bear in mind, that the goal of this minimal overhead benchmark is not to start another "benchmark" war. It demonstrates "base level" of performance that each framework provides and shows the difference between compiled and interpreted code.
 
@@ -50,7 +50,7 @@ picking them apart, but it requires time, effort and (more often than
 not) advanced skills.
 
 #### C-language ORM
-Phalcon is the first PHP framework to implement a [ORM](https://docs.phalconphp.com/en/latest/reference/models.html) in pure C. The consequence of this fact is improved performance, when compared to typical ORMs.
+Phalcon is the first PHP framework to implement a [ORM](https://docs.phalconphp.com/latest/en/models) in pure C. The consequence of this fact is improved performance, when compared to typical ORMs.
 
 Since ORM is a key component of so many applications and is used so extensively, any positive changes to performance have a noticeable effect.
 
@@ -103,11 +103,11 @@ It is not uncommon (and quite convenient) to directly query your models inside v
 ```
 
 #### Developer tools
-[Phalcon developer tools](https://docs.phalconphp.com/en/latest/reference/tools.html) allow you to generate boilerplate code and jump straight to implementation of your application's logic.
+[Phalcon developer tools](https://docs.phalconphp.com/latest/en/tools.html) allow you to generate boilerplate code and jump straight to implementation of your application's logic.
 
 They can generate any element of MVC triad separately – model, view or controller, or create scaffolding (complete code for managing records in the database) which is very efficient way to have running prototype.
 
-They can also generate skeleton of your project, or even employ [twitter bootstrap](https://docs.phalconphp.com/en/latest/reference/tools.html#scaffold-with-twitter-bootstrap) for nice looking prototypes. If you are not a command line ninja, you can use web interface (both console tools and their web counterparts are provided).
+They can also generate skeleton of your project, or even employ [twitter bootstrap](https://docs.phalconphp.com/latest/en/tools#scaffold-with-twitter-bootstrap) for nice looking prototypes. If you are not a command line ninja, you can use web interface (both console tools and their web counterparts are provided).
 
 #### Code Completion
 You may think that since Phalcon is a C framework, it's not possible to provide code completion for your favorite IDE.

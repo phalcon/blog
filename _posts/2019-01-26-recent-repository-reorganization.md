@@ -40,7 +40,7 @@ There repositories and subsequent sites that were ported to [Netlify](https://ne
 * [Phalcon Blog](https://blog.phalconphp.com)
 * [Phalcon Link](https://phalcon.link)
 * [Zephir Website](https://zephir-lang.com)
-* [Zephir Documentation](docs.zephir-lang.com)
+* [Zephir Documentation](https://docs.zephir-lang.com)
 * [Built With Phalcon](https://builtwith.phalconphp.com)
 * [Zephir Blog](https://blog.zephir-lang.com)
 * [Phalcon License](https://license.phalconphp.com)

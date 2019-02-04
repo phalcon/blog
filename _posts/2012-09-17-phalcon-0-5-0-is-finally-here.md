@@ -12,30 +12,30 @@ The major changes in this version are:
 
 <!--more-->
 - **Namespaces**: Classes are now organized into namespaces. The components have been placed in their respective namespaces, offering better organization within the framework. [API](https://api.phalconphp.com)
-- **Dependency Injection**: The framework is equipped with the first service container and dependency injection component written in C for PHP. All components have been adjusted to make the most of this design pattern. Thus your code becomes more extensible, testable and flexible than ever before. [Using Dependency Injection](https://docs.phalconphp.com/en/latest/reference/di.html)
-- **Single and Multi-Module applications**: The MVC components are now capable of creating single and multi module applications. This allows for easier resource sharing between modules. [MVC Applications](https://docs.phalconphp.com/en/latest/reference/mvc.html)
-- **Micro Applications**: With a minimal amount of code, it is now possible to create small applications such as  prototypes, apis, RESTFul applications and more. [Micro Applications](https://docs.phalconphp.com/en/latest/reference/micro.html)
-- **PhalconQL (PHQL)**: PHQL is a high level, object oriented SQL dialect that allows to write queries using a standardized SQL-like language. PHQL is implemented as a parser (written in C) that translates syntax in that of the target RDBMS. To achieve the highest performance possible, the parser uses the same technology as [SQLite](http://en.wikipedia.org/wiki/Lemon_Parser_Generator). This technology provides a small in-memory parser with a very low memory footprint that is also thread-safe. [Phalcon Query Language (PHQL)](https://docs.phalconphp.com/en/latest/reference/phql.html)
-- **Events Manager**: With this new component you can add "hook points" and listen for events of the framework's components as well as your own. Listeners could change the normal behavior of a component or simply obtain real-time information about them. [Events Manager](https://docs.phalconphp.com/en/latest/reference/events.html)
-- **CLI Applications**: Now you can create command line applications. These are useful to create cron jobs, scripts, command utilities and more. [Command Line Applications](https://docs.phalconphp.com/en/latest/reference/cli.html)
-- **PDO Database Adapters**: All the database adapters have been migrated their PDO equivalents. This improves reuse of the framework's code as well as offers an easier way to add more adapters in the future. PDO adapters increase the security of applications by reducing the SQL injection attacks. Also, from this version is available an adapter for SQLite. [Database Adapters](https://docs.phalconphp.com/en/latest/reference/db.html#database-adapters)
-- **Reflection and Introspection**: Despite being written in C, Phalcon runs methods in the PHP userland, providing the debug capability that any other application or framework written in PHP has. Additionally, now, any instance of a Phalcon class offers exactly the same behavior than a PHP normal one. It's possible to use the [Reflection API](http://www.php.net/manual/en/book.reflection.php) or simply print any object to show how is its internal state. [Debugging Applications](https://docs.phalconphp.com/en/latest/reference/debug.html)
+- **Dependency Injection**: The framework is equipped with the first service container and dependency injection component written in C for PHP. All components have been adjusted to make the most of this design pattern. Thus your code becomes more extensible, testable and flexible than ever before. [Using Dependency Injection](https://docs.phalconphp.com/latest/en/di.html)
+- **Single and Multi-Module applications**: The MVC components are now capable of creating single and multi module applications. This allows for easier resource sharing between modules. [MVC Applications](https://docs.phalconphp.com/latest/en/mvc.html)
+- **Micro Applications**: With a minimal amount of code, it is now possible to create small applications such as  prototypes, apis, RESTFul applications and more. [Micro Applications](https://docs.phalconphp.com/latest/en/micro.html)
+- **PhalconQL (PHQL)**: PHQL is a high level, object oriented SQL dialect that allows to write queries using a standardized SQL-like language. PHQL is implemented as a parser (written in C) that translates syntax in that of the target RDBMS. To achieve the highest performance possible, the parser uses the same technology as [SQLite](http://en.wikipedia.org/wiki/Lemon_Parser_Generator). This technology provides a small in-memory parser with a very low memory footprint that is also thread-safe. [Phalcon Query Language (PHQL)](https://docs.phalconphp.com/latest/en/phql.html)
+- **Events Manager**: With this new component you can add "hook points" and listen for events of the framework's components as well as your own. Listeners could change the normal behavior of a component or simply obtain real-time information about them. [Events Manager](https://docs.phalconphp.com/latest/en/events.html)
+- **CLI Applications**: Now you can create command line applications. These are useful to create cron jobs, scripts, command utilities and more. [Command Line Applications](https://docs.phalconphp.com/latest/en/cli.html)
+- **PDO Database Adapters**: All the database adapters have been migrated their PDO equivalents. This improves reuse of the framework's code as well as offers an easier way to add more adapters in the future. PDO adapters increase the security of applications by reducing the SQL injection attacks. Also, from this version is available an adapter for SQLite. [Database Adapters](https://docs.phalconphp.com/latest/en/db.html#database-adapters)
+- **Reflection and Introspection**: Despite being written in C, Phalcon runs methods in the PHP userland, providing the debug capability that any other application or framework written in PHP has. Additionally, now, any instance of a Phalcon class offers exactly the same behavior than a PHP normal one. It's possible to use the [Reflection API](http://www.php.net/manual/en/book.reflection.php) or simply print any object to show how is its internal state. [Debugging Applications](https://docs.phalconphp.com/latest/en/debug.html)
 
 Other changes:
 
-- **URL Generation**: Now is possible to create URLs based on routes. [Generating URLs and Paths](https://docs.phalconphp.com/en/latest/reference/url.html)
-- **Universal Class Loader**: The component to load classes is now PSR-0 compliant. [Universal Class Loader](https://docs.phalconphp.com/en/latest/reference/loader.html)
-- **HTTP Constraints on Routes**: Routes can be set if they match on certain HTTP methods. [Routing](https://docs.phalconphp.com/en/latest/reference/routing.html)
-- **Session Flash Messenger**: Flash messages can be directly printed or be stored in session to be shown in future requests [Flashing Messages](https://docs.phalconphp.com/en/latest/reference/flash.html)
+- **URL Generation**: Now is possible to create URLs based on routes. [Generating URLs and Paths](https://docs.phalconphp.com/latest/en/url.html)
+- **Universal Class Loader**: The component to load classes is now PSR-0 compliant. [Universal Class Loader](https://docs.phalconphp.com/latest/en/loader.html)
+- **HTTP Constraints on Routes**: Routes can be set if they match on certain HTTP methods. [Routing](https://docs.phalconphp.com/latest/en/routing.html)
+- **Session Flash Messenger**: Flash messages can be directly printed or be stored in session to be shown in future requests [Flashing Messages](https://docs.phalconphp.com/latest/en/flash.html)
 
 Alongside with the above changes, improvements have been introduced within the framework to ensure stability and low memory usage.
 
 **Documentation**
 The documentation now provides 3 tutorials:
 
-- [Tutorial 1: Let's learn by example](https://docs.phalconphp.com/en/latest/reference/tutorial.html)
-- [Tutorial 2: Explaining INVO](https://docs.phalconphp.com/en/latest/reference/tutorial-invo.html)
-- [Tutorial 3: Creating a Simple REST API](https://docs.phalconphp.com/en/latest/reference/tutorial-rest.html)
+- [Tutorial 1: Let's learn by example](https://docs.phalconphp.com/latest/en/tutorial.html)
+- [Tutorial 2: Explaining INVO](https://docs.phalconphp.com/latest/en/tutorial-invo.html)
+- [Tutorial 3: Creating a Simple REST API](https://docs.phalconphp.com/latest/en/tutorial-rest.html)
 
 The sample applications have been updated too:
 

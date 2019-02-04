@@ -51,7 +51,7 @@ The number of improvements and bug fixes are a lot more compared to other releas
 ### Highlights
 
 #### Typed Placeholders in the ORM
-Before this version, only standard placeholders (strings and numerical) were supported in [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html). Placeholders allowed you to bind parameters to avoid SQL injections:
+Before this version, only standard placeholders (strings and numerical) were supported in [PHQL](https://docs.phalconphp.com/latest/en/phql). Placeholders allowed you to bind parameters to avoid SQL injections:
 
 ```php
 $phql = "SELECT * FROM Store\Robots WHERE id > :id:";

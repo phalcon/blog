@@ -17,8 +17,8 @@ During these we have been implemented several interesting features in Zephir, th
 - [Named Parameters](http://blog.zephir-lang.com/post/76596064349/whats-new-in-zephir-v)
 - [Getter/Setter shortcuts](http://zephir-lang.com/oop.html#getter-setter-shortcuts)
 - [Return Type Hints](http://zephir-lang.com/oop.html#return-type-hints)
-- [Use static types as objects](http://zephir-lang.com/builtin-methods.html)
-- [And more...](http://zephir-lang.com/index.html)
+- [Use static types as objects](http://zephir-lang.com/builtin-methods)
+- [And more...](https://zephir-lang.com)
 
 The result of all this hard work is now available for all to use. Today, we are excited to announce the release of Phalcon 2 beta 1!
 

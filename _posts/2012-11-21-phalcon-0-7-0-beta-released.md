@@ -62,7 +62,7 @@ class MySessionHandler implements Phalcon\Session\AdapterInterface
 ```
 
 **Independent Column Map**
-The [ORM](https://docs.phalconphp.com/en/latest/reference/models.html) now supports a independent column map, which allows the developer to use different column names in the model to the ones in the table. Phalcon will recognize the new column names and will rename them accordingly to match the respective columns in the database. This is a great feature when one needs to rename fields in the database without having to worry about all the queries in the code. A change in the column map in the model will take care of the rest. For example:
+The [ORM](https://docs.phalconphp.com/latest/en/models) now supports a independent column map, which allows the developer to use different column names in the model to the ones in the table. Phalcon will recognize the new column names and will rename them accordingly to match the respective columns in the database. This is a great feature when one needs to rename fields in the database without having to worry about all the queries in the code. A change in the column map in the model will take care of the rest. For example:
 
 ```php
 <?php
@@ -107,7 +107,7 @@ $robot->save();
 ```
 
 **ORM queries through PHQL**
-From 0.7.0, all the queries made by the ORM are now made through [PHQL](https://docs.phalconphp.com/en/latest/reference/phql.html).
+From 0.7.0, all the queries made by the ORM are now made through [PHQL](https://docs.phalconphp.com/latest/en/phql).
 
 In PHQL, we've implemented a set of features to make your access to databases more secure:
 
@@ -175,7 +175,7 @@ HAVING   SUM(`robots`.`price` + `robots`.`taxes`) > 1000
 Escaping columns also avoids possible SQL injections making applications more secure.
 
 **Events Propagation/Cancelation**
-The [EventsManager](https://docs.phalconphp.com/en/latest/reference/events.html) now controls the event propagation allowing the developer to stop events preventing other listeners from being notified of an event in course. This is a great feature for those that need to control every step of the application logic.
+The [EventsManager](https://docs.phalconphp.com/latest/en/events) now controls the event propagation allowing the developer to stop events preventing other listeners from being notified of an event in course. This is a great feature for those that need to control every step of the application logic.
 
 ```php
 <?php
@@ -195,7 +195,7 @@ $eventsManager->attach(
 ```
 
 **Registering services as "always shared"**
-[Phalcon\Di](https://docs.phalconphp.com/en/latest/reference/di.html) has been refactored to register services always as shared. Following the Singleton pattern, no matter how the service is retrieved from the services container it will return always the first instance created:
+[Phalcon\Di](https://docs.phalconphp.com/latest/en/di) has been refactored to register services always as shared. Following the Singleton pattern, no matter how the service is retrieved from the services container it will return always the first instance created:
 
 ```php
 <?php

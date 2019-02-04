@@ -9,9 +9,9 @@ We've been really busy this last month working on Phalcon 0.4.0, and for our ple
 Also, this final version is adding some highly requested features to Phalcon:
 
 <!--more-->
-- A better routing system allowing you to define custom routes different than `/:controller/:action/:parameters` [[idea](https://phalcon.uservoice.com/admin/forums/154026-general/suggestions/2884092-custom-routing)] [[more info](https://docs.phalconphp.com/en/latest/reference/routing.html)]
+- A better routing system allowing you to define custom routes different than `/:controller/:action/:parameters` [[idea](https://phalcon.uservoice.com/admin/forums/154026-general/suggestions/2884092-custom-routing)] [[more info](https://docs.phalconphp.com/latest/en/routing)]
 - A component to help you creating multilingual applications [[idea](http://phalcon.uservoice.com/forums/154026-general/suggestions/2766990-native-multi-language-support)]
-- A final implementation of external template engines such as Mustache or Twig [[idea](https://phalcon.uservoice.com/forums/154026-general/suggestions/2867335-support-for-template-systems)] [[more info](https://docs.phalconphp.com/en/latest/reference/views.html#template-engines)]
+- A final implementation of external template engines such as Mustache or Twig [[idea](https://phalcon.uservoice.com/forums/154026-general/suggestions/2867335-support-for-template-systems)] [[more info](https://docs.phalconphp.com/latest/en/views#template-engines)]
 
 This time, an [alpha](https://blog.phalconphp.com/post/introducing-phalcon-0-4-0-alpha) and [beta](https://blog.phalconphp.com/post/help-test-phalcon-0-4-0) version were released before this final version to be sure that most of changes will not affect things that already worked fine in the past. 
 

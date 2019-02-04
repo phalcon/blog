@@ -38,7 +38,7 @@ Volt views are compiled to pure PHP code, so basically they save the effort of w
 <?php } ?>
 ```
 
-As an added value, Volt is integrated with [Phalcon\\Tag](https://docs.phalconphp.com/en/latest/reference/tags.html), making the creation of views in Phalcon applications much easier than before:
+As an added value, Volt is integrated with [Phalcon\\Tag](https://docs.phalconphp.com/latest/en/tags), making the creation of views in Phalcon applications much easier than before:
 
 ```php
 {% raw %}
@@ -72,7 +72,7 @@ A core design feature in Volt is security, therefore Volt offers a limited set o
 
 The first iteration of the Volt templating engine is introduced in 0.6.0, which covers a basic functional basis. As time passes by, more and more features will be added.You can try Volt installing Phalcon from the 0.6.0 branch on [Github](https://github.com/phalcon/cphalcon).
 
-A preliminary documentation is available [here](https://docs.phalconphp.com/en/0.6.0/reference/volt.html)
+A preliminary documentation is available [here](https://docs.phalconphp.com/latest/en/volt)
 
 Stay tuned, there's more news on the upcoming version of Phalcon!
 

@@ -13,13 +13,13 @@ Main features in this release were highlighted in the [beta article](https://blo
 <!--more-->
 Summary of key features below:
 
-- [QueryBuilder Paginator](https://docs.phalconphp.com/en/latest/reference/pagination.html#adapters-usage)
-- [Encryption component](https://docs.phalconphp.com/en/latest/reference/crypt.html)
-- [Assets Management](https://docs.phalconphp.com/en/latest/reference/assets.html)
-- [Hostname routing](https://docs.phalconphp.com/en/latest/reference/routing.html#hostname-constraints)
-- [Cookies Management](https://docs.phalconphp.com/en/latest/reference/cookies.html)
-- [Built-In Controllers support in Mvc\\Micro applications](https://docs.phalconphp.com/en/latest/reference/micro.html#using-controllers-as-handlers)
-- Improvements to the [Forms Builder](https://docs.phalconphp.com/en/latest/reference/forms.html)/[Validation](https://docs.phalconphp.com/en/latest/reference/validation.html) components
+- [QueryBuilder Paginator](https://docs.phalconphp.com/latest/en/pagination#adapters-usage)
+- [Encryption component](https://docs.phalconphp.com/latest/en/crypt)
+- [Assets Management](https://docs.phalconphp.com/latest/en/assets)
+- [Hostname routing](https://docs.phalconphp.com/latest/en/routing#hostname-constraints)
+- [Cookies Management](https://docs.phalconphp.com/latest/en/cookies)
+- [Built-In Controllers support in Mvc\\Micro applications](https://docs.phalconphp.com/latest/en/micro#using-controllers-as-handlers)
+- Improvements to the [Forms Builder](https://docs.phalconphp.com/latest/en/forms)/[Validation](https://docs.phalconphp.com/latest/en/validation) components
 - Oracle Database support (Thanks to [Marcio Paiva](https://twitter.com/mpaivabarbosa))
 - Performance improvements for both PHP 5.3/5.4
 
@@ -31,7 +31,7 @@ This time we also want to give thanks to our donors. Thank you for helping us ma
 
 1.1.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG#L1) here.
 
-- [Documentation](https://docs.phalconphp.com/en/latest/)
+- [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)
 
 If you have any questions about functionality, feel free to ask either

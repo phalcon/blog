@@ -10,7 +10,7 @@ We're very excited to announce the release of **Phalcon 2.0 Alpha 1**!
 
 This release showcases yet another huge step forward in Phalcon releases.
 
-Unlike previous versions of Phalcon, most of this version is written in [Zephir](http://zephir-lang.com/index.html). Zephir is a new language that we have been developing for several months now, which is specifically intended to ease the creation of extensions for PHP.
+Unlike previous versions of Phalcon, most of this version is written in [Zephir](https://zephir-lang.com/). Zephir is a new language that we have been developing for several months now, which is specifically intended to ease the creation of extensions for PHP.
 
 <!--more-->
 To demonstrate the progress we have made in this release, we are running our official site with it. You can see this [here](http://two.phalconphp.com/website).
@@ -32,7 +32,7 @@ Thanks to the help and contributions from the community, we have made huge progr
 Here are some links that may interest you if want to learn more:
 
 - [Introductory Screencast](http://vimeo.com/84180223)
-- [Tutorial](http://zephir-lang.com/tutorial.html)
+- [Tutorial](http://zephir-lang.com/tutorial)
 - [Documentation](http://zephir-lang.com/)
 - [Blog](http://blog.zephir-lang.com/)
 - [Github](https://github.com/phalcon/zephir)
