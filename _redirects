@@ -2,7 +2,6 @@
 /page/*                                                                         /
 /8                                                                              /
 /page/2?route=/page/:page                                                       /
-/cdn-cgi/l/email-protection                                                     /
 /post/post/*                                                                    /post/:splat
 /post/78883849784/3acec916ae9c026594fe0562ef3013be2cf47247                      /post/3acec916ae9c026594fe0562ef3013be2cf47247
 /post/23251010409/dont-like-command-line-and-consoles-no-problem                /post/dont-like-command-line-and-consoles-no-problem
