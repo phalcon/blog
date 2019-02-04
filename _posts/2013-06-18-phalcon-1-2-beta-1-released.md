@@ -381,7 +381,7 @@ To use this component just remove any try/catch from your bootstrap. Add the fol
 
 A backtrace like this is showed when an exception is generated:
 
-1.2.0 includes other minor changes, bug fixes, stability and performance improvements.​ The complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.2.0/CHANGELOG)​ is​ here.
+1.2.0 includes other minor changes, bug fixes, stability and performance improvements.​ The complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.0/CHANGELOG)​ is​ here.
 
 ### Help with Testing
 This version can be installed from the 1.2.0 branch:

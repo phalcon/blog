@@ -181,7 +181,7 @@ foreach ($products as $product) {
 }
 ```
 
-Complete documentation for the ODM is available [here](https://docs.phalconphp.com/en/0.6.0/reference/odm)
+Complete documentation for the ODM is available [here](https://docs.phalconphp.com/latest/en/odm)
 
 A beta for 0.6.0 will be available tomorrow and the final version November 1st!
 

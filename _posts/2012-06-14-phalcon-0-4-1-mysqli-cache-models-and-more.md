@@ -17,7 +17,7 @@ We built Phalcon because we wanted a faster and better way to create web applica
 - **Universal Class Loader**: Added improvements to the Universal Auto-loader aka `Phalcon\Loader` component. [[more info]](https://docs.phalconphp.com/latest/en/loader) 
 - **Caching Tables Meta-Data**: `Phalcon\Model` dumps the attributes of each table used in order to generate dynamically SQL, validate constraints, etc. Once the application is in a production stage, it is not necessary to query the metadata of the table from the database system each time you use the table. Phalcon now supports caching in the meta-data layer. [[more info]](https://docs.phalconphp.com/latest/en/db-models-cache)
 
-Check out the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG) for this version.
+Check out the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG.md) for this version.
 
 Thanks to all of you who took the time to send us recommendations and ideas. Enjoy!
 

@@ -15,7 +15,7 @@ We would like to extend our thanks to all in the community, contributors and ent
 
 Main features introduced in this release were highlighted in the [beta article](http://blog.phalconphp.com/post/phalcon-1-0-0-beta-released).
 
-1.0.0 also includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.0.0/CHANGELOG) here.
+1.0.0 also includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.0.0/CHANGELOG) here.
 
 - [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)

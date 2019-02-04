@@ -13,7 +13,7 @@ This release showcases yet another huge step forward in Phalcon releases.
 Unlike previous versions of Phalcon, most of this version is written in [Zephir](https://zephir-lang.com/). Zephir is a new language that we have been developing for several months now, which is specifically intended to ease the creation of extensions for PHP.
 
 <!--more-->
-To demonstrate the progress we have made in this release, we are running our official site with it. You can see this [here](http://two.phalconphp.com/website).
+To demonstrate the progress we have made in this release, we are running our official site with it. You can see this here.
 
 ### What's missing?
 

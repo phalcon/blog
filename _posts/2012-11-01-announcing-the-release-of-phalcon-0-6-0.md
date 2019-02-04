@@ -17,7 +17,7 @@ Our main concern is always ease of use and performance. We are always trying to 
 
 Several components have now additional features. The most notable is the [Phalcon\\Tag](https://docs.phalconphp.com/latest/en/tags#document-type-of-content) which generates elements based on a doctype and [Phalcon\\Mvc\\Model](https://docs.phalconphp.com/latest/en/db-models), which now allows for manual definition of meta data on the model. Feedback from the community also drove the implementation of [skipAttributes](https://docs.phalconphp.com/latest/en/db-models#skipping-columns) which allows a group of attributes in a model to be skipped when performing inserts or updates.
 
-In this release, we concentrated on the community and its needs. A long awaited templating engine as well as support for MongoDb were the two largest areas of work. The remaining issues addressed can be found in our [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.6.0/CHANGELOG) and the vast majority of them were requests and discussions from the community or contributions to the project.
+In this release, we concentrated on the community and its needs. A long awaited templating engine as well as support for MongoDb were the two largest areas of work. The remaining issues addressed can be found in our [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.6.1/CHANGELOG) and the vast majority of them were requests and discussions from the community or contributions to the project.
 
 - [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)

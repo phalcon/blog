@@ -13,7 +13,7 @@ Phalcon 2 is almost fully functional and stable as Phalcon 1.x, virtually all te
 
 #### Interfaces and type checkings
 
-Thanks to [Zephir](http://www.zephir-lang.org), Phalcon 2 performs a greater number of type and class checks, and as a result this make the whole framework more stable and consistent. If a wrong type or class is passed to a method you'll see the relevant exception with a verbose message. If you have created user adapters or extended framework components and they do not implement the necessary interfaces and/or types you may need to fix them.
+Thanks to [Zephir](https://zephir-lang.com), Phalcon 2 performs a greater number of type and class checks, and as a result this make the whole framework more stable and consistent. If a wrong type or class is passed to a method you'll see the relevant exception with a verbose message. If you have created user adapters or extended framework components and they do not implement the necessary interfaces and/or types you may need to fix them.
 
 ```php
 Catchable fatal error: Argument 2 passed to Phalcon\Mvc\Model\Query::__construct() must implement
@@ -62,7 +62,7 @@ These facilities were easily implemented thanks to the low-level exception syste
 
 #### Performance Improvements
 
-Zephir/Phalcon 2 takes advantage of the [improved way to return values](http://lxr.php.net/xref/PHP_5_6/UPGRADING.INTERNALS#56) in PHP 5.6. This optimization greatly reduces the number of unnecessary copies improving the performance.
+Zephir/Phalcon 2 takes advantage of the improved way to return values in PHP 5.6. This optimization greatly reduces the number of unnecessary copies improving the performance.
 
 ### Phalcon 2 new look
 
@@ -74,7 +74,7 @@ From the beginning, Phalcon has been a different framework than any other framew
 
 ### Codeception
 
-An important work has been done migrating and simplifying tests for Phalcon 2 into a single test-suite powered by [CodeCeption](http://codeception.com/). See the migrated tests [here](https://github.com/phalcon/cphalcon/tree/2.0.0/tests).
+An important work has been done migrating and simplifying tests for Phalcon 2 into a single test-suite powered by [CodeCeption](http://codeception.com/). See the migrated tests [here](https://github.com/phalcon/cphalcon/tree/phalcon-v2.0.0/tests).
 
 ### Help with Testing
 

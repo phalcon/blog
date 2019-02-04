@@ -307,7 +307,7 @@ if (count($messages)) {
 } 
 ```
 
-1.0.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.0.0/CHANGELOG)\> here.
+1.0.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.0.0/CHANGELOG) here.
 
 ### Help with Testing
 This version can be installed from the 1.0.0 branch:

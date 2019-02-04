@@ -228,11 +228,11 @@ $session = $di->get('session'); // By name
 $session = $di->getSession();   // Using the magic getter
 ```
 
-0.7.0 includes other minor changes and bug fixes, see complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.7.0/CHANGELOG) here. Applications created with 0.5.x/0.6.x will compatible with this new version.
+0.7.0 includes other minor changes and bug fixes, see complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.7.0/CHANGELOG) here. Applications created with 0.5.x/0.6.x will compatible with this new version.
 
 All the tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon/builds/3287750), and [our website](https://phalconphp.com/) is running with it some couple of weeks ago, please update your applications to this version and report any problems/bugs on [github](https://github.com/phalcon/cphalcon).
 
-Linux/Unix/Mac users please compile the extension from the [0.7.0](https://github.com/phalcon/cphalcon/tree/0.7.0) branch:
+Linux/Unix/Mac users please compile the extension from the [0.7.0](https://github.com/phalcon/cphalcon/tree/phalcon-v0.7.0) branch:
 
 ```sh
 git clone https://github.com/phalcon/cphalcon

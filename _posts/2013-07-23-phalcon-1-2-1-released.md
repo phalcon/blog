@@ -22,9 +22,9 @@ A few key points are
 - Added support for various padding schemes (PKCS7, ANSI X.923, ISO 10126, ISO/IEC 7816-4, zero padding, space padding) to `Phalcon\Crypt`
 - Added getKey(), getError(), isUploadedFile() methods to `Phalcon\Http\Request\File`
 
-and much more. You can read the full list in our [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.2.1/CHANGELOG).
+and much more. You can read the full list in our [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.1/CHANGELOG).
 
-Phalcon 1.2.1 is now available on the master branch and DLLs are available for download in our [download](https://www.phalconphp.com/download) area. You can also access the latest [documentation](https://www.phalconphp.com/documentation) here.
+Phalcon 1.2.1 is now available on the master branch and DLLs are available for download in our [download](https://www.phalconphp.com/download) area. You can also access the latest [documentation](https://docs.phalconphp.com/) here.
 
 
 <3 The Phalcon Team

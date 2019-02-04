@@ -29,7 +29,7 @@ You guys rock!
 
 This time we also want to give thanks to our donors. Thank you for helping us maintain a very active development! Special thanks to [NetBear Software](http://netbear.com.au/) for its continued support to the project.
 
-1.1.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG#L1) here.
+1.1.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG.md#L1) here.
 
 - [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)

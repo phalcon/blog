@@ -22,7 +22,7 @@ Some of the key features introduced are:
 - [Refactoring of Logger component making it more flexible and extensible](https://docs.phalconphp.com/latest/en/logging)]
 - [Support for Hydration Modes in the ORM](https://docs.phalconphp.com/latest/en/db-models#hydration-modes)
 
-0.9.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/0.9.0/CHANGELOG) here.
+0.9.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.9.0/CHANGELOG) here.
 
 - [Documentation](https://docs.phalconphp.com/latest/en/)
 - [Download](https://phalconphp.com/download)

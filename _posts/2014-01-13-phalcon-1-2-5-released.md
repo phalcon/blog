@@ -12,7 +12,7 @@ We are pleased to announce the release of Phalcon 1.2.5, the latest stable versi
 - `Http\Cookie::__toString()` will not throw exceptions ([1427](https://github.com/phalcon/cphalcon/issues/1427))
 - `Phalcon\Http\Cookie::__toString() will return a string value ([1428](https://github.com/phalcon/cphalcon/issues/1428))
 - Camelize does not ignore the last character of a string anymore ([1436](https://github.com/phalcon/cphalcon/issues/1436))
-- APC tests do not run under CLI when `apc.enable_cli` is 0 ([1449](https://github.com/phalcon/cphalcon/issues/1449))
+- APC tests do not run under CLI when `apc.enable_cli` is 0 
 - `Phalcon\Debug::uri` now supports both http and https ([987](https://github.com/phalcon/cphalcon/issues/987))
 - Fixed inconsistency in `Tag::stylesheetLink/javascriptInclude` w.r.t. local URLs ([1486](https://github.com/phalcon/cphalcon/issues/1486))
 - Fixed bug in `Phalcon\Queue\Beanstalk::read()` ([1348](https://github.com/phalcon/cphalcon/issues/1348), [1612](https://github.com/phalcon/cphalcon/issues/1612))

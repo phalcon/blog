@@ -255,7 +255,7 @@ $di->set(
 );
 ```
 
-This version also fixes bugs and add some minor improvements. Check the complete changelog for this version [here](https://github.com/phalcon/cphalcon/blob/0.9.0/CHANGELOG).
+This version also fixes bugs and add some minor improvements. Check the complete changelog for this version [here](https://github.com/phalcon/cphalcon/blob/phalcon-v0.9.0/CHANGELOG).
 
 **Help with Testing**
 This version can be installed from the 0.9.0 branch:

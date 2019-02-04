@@ -92,7 +92,7 @@ Nanobox provides a `php-server` helper script that starts both Apache (or Nginx 
 nanobox run php-server
 ```
 
-Once running, you can visit your app at [phalcon.dev](http://phalcon.dev).
+Once running, you can visit your app at http://phalcon.dev.
 
 ## Check Out the Environment
 Your virtual environment includes everything you need to run your Phalcon app. Feel free to poke around.

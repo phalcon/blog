@@ -11,7 +11,7 @@ Many stories about how large Internet companies have improved their businesses b
 <!--more-->
 - **Amazon**: 0.1 second delay means a [loss of 1% of revenues](http://glinden.blogspot.com/2006/11/marissa-mayer-at-web-20.html).
 - **Google**: 0.4 second delay causes a [drop of 0.59% of searches](http://velocityconf.com/velocity2009/public/schedule/detail/8523) per user, 0.5 seconds to load involves 25% fewer searches.
-- **Google Maps**: reduced by 30% the size of their files and the [number of requests increased 30%](http://news.cnet.com/8301-10784_3-9954972-7.html).
+- **Google Maps**: reduced by 30% the size of their files and the number of requests increased 30%.
 - **Bing**: 1 second delay implies a fall of 2.8% of revenue, 2 second delay implies a drop of 4.3% in revenue per user
 - **Yahoo!**: 0.4 seconds of delay causes a drop [between 5% and 9% of the traffic](http://www.slideshare.net/stoyan/dont-make-me-wait-or-building-highperformance-web-applications).
 - **Mozilla**: make their download page [2.2 seconds faster](http://blog.mozilla.org/metrics/2010/03/31/firefox-page-load-speed-part-i/) and there was a growth of 15.4% downloads.

@@ -30,7 +30,7 @@ This issue took us a lot longer to address than we would have liked. We had to t
 The wait is over though! Phalcon can be installed with PHP 7.1 installations, so enjoy it!
 
 ### Q1 update
-Regarding our goals, we are a bit behind on our [Zephir Milestone](https://github.com/phalcon/zephir/milestone/1) with 50% done. We are working however hard to fix all the issues remaining. The [documentation revamp](https://github.com/phalcon/docs/tree/Refactor) also is moving along nicely.
+Regarding our goals, we are a bit behind on our [Zephir Milestone](https://github.com/phalcon/zephir/milestone/1) with 50% done. We are working however hard to fix all the issues remaining. The documentation revamp also is moving along nicely.
 
 ### Community 
 A huge thank you and kudos to our community for the patience and support all this time. Also huge thank you to our contributors for making this release possible!

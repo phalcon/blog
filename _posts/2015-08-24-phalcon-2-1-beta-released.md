@@ -378,7 +378,7 @@ $router->add('/', [])->match(function () {
 });
 ```
 
-See the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/2.1.x/CHANGELOG.md#210-2015-xx-xx) for Phalcon 2.1.
+See the full CHANGELOG for Phalcon 2.1.
 
 ### Help with Testing
 

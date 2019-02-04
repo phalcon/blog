@@ -199,7 +199,7 @@ $collection->delete('/delete/{id}', 'delete');
 $app->mount($collection);
 ```
 
-1.1.0 includes other minor changes, bug fixes, stability and performance improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/1.1.0/CHANGELOG) here. Check the [documentation](https://docs.phalconphp.com/en/1.1.0/) for this version
+1.1.0 includes other minor changes, bug fixes, stability and performance improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.1.0/CHANGELOG) here. Check the [documentation](https://docs.phalconphp.com/latest/en/) for this version
 
 ### Help with Testing
 This version can be installed from the 1.1.0 branch:

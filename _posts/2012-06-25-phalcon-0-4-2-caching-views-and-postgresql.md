@@ -18,7 +18,7 @@ Another important feature in this version is the ability to cache the entire out
 
 If you need help implementing any of the Phalcon features (new or old), visit our [forum](https://forum.phalconphp.com) and discuss your idea there. We would be happy to help.
 
-Check out the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG) for this version.
+Check out the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG.md) for this version.
 
 We are a tiny core team of developers working very hard, so any support the community can offer to the project is more than appreciated!
 

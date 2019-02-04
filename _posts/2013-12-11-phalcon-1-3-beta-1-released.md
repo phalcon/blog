@@ -224,15 +224,15 @@ In this version we have introduced several new features and performance improvem
 - Unit tests:
   - Travis CI improvements ([819](https://github.com/phalcon/cphalcon/issues/819), [846](https://github.com/phalcon/cphalcon/issues/846), [949](https://github.com/phalcon/cphalcon/issues/949))
   - Use markTestSkipped(]) instead of echo ([862](https://github.com/phalcon/cphalcon/issues/862))
-  - Do not run APC tests under CLI when apc.enable_cli is 0 ([1449](https://github.com/phalcon/cphalcon/issues/1449))
+  - Do not run APC tests under CLI when apc.enable_cli is 0 
   - Added new tests ([865](https://github.com/phalcon/cphalcon/issues/865), [1256](https://github.com/phalcon/cphalcon/issues/1256), [1260](https://github.com/phalcon/cphalcon/issues/1260), [1339](https://github.com/phalcon/cphalcon/issues/1339), [1560](https://github.com/phalcon/cphalcon/issues/1560), [1563](https://github.com/phalcon/cphalcon/issues/1563))
   - Skip database tests when the DBMS is not available ([970](https://github.com/phalcon/cphalcon/issues/970))
   - Support for optional RVO ([1147](https://github.com/phalcon/cphalcon/issues/1147))
   - Added support for test coverage visualization ([1307](https://github.com/phalcon/cphalcon/issues/1307), [1361](https://github.com/phalcon/cphalcon/issues/1361))
-  - Bug fixes in tests ([1313](https://github.com/phalcon/cphalcon/issues/1313), [1334](https://github.com/phalcon/cphalcon/issues/1334), [1335](https://github.com/phalcon/cphalcon/issues/1335), [1449](https://github.com/phalcon/cphalcon/issues/1449), [1467](https://github.com/phalcon/cphalcon/issues/1467))
+  - Bug fixes in tests ([1313](https://github.com/phalcon/cphalcon/issues/1313), [1334](https://github.com/phalcon/cphalcon/issues/1334), [1335](https://github.com/phalcon/cphalcon/issues/1335), 1449, [1467](https://github.com/phalcon/cphalcon/issues/1467))
 - Documentation bug fixes ([1069](https://github.com/phalcon/cphalcon/issues/1069), [1070](https://github.com/phalcon/cphalcon/issues/1070), [1072](https://github.com/phalcon/cphalcon/issues/1072), [1145](https://github.com/phalcon/cphalcon/issues/1145), [1146](https://github.com/phalcon/cphalcon/issues/1146), [1205](https://github.com/phalcon/cphalcon/issues/1205), [1372](https://github.com/phalcon/cphalcon/issues/1372), [1397](https://github.com/phalcon/cphalcon/issues/1397), [1521](https://github.com/phalcon/cphalcon/issues/1521), [1523](https://github.com/phalcon/cphalcon/issues/1523), [1586](https://github.com/phalcon/cphalcon/issues/1586), lots of them])
 - Refactored, improved and optimized build script ([1218](https://github.com/phalcon/cphalcon/issues/1218))
-- Other bug fixes ([1051](https://github.com/phalcon/cphalcon/issues/1051), [1131](https://github.com/phalcon/cphalcon/issues/1131), [1040](https://github.com/phalcon/cphalcon/issues/1040), [1275](https://github.com/phalcon/cphalcon/issues/1275), [1392](https://github.com/phalcon/cphalcon/issues/1392), [1396](https://github.com/phalcon/cphalcon/issues/1396), [1399](https://github.com/phalcon/cphalcon/issues/1399), [1425](https://github.com/phalcon/cphalcon/issues/1425), [1426](https://github.com/phalcon/cphalcon/issues/1426)...)
+- Other bug fixes ([1051](https://github.com/phalcon/cphalcon/issues/1051), [1131](https://github.com/phalcon/cphalcon/issues/1131), [1040](https://github.com/phalcon/cphalcon/issues/1040), [1275](https://github.com/phalcon/cphalcon/issues/1275), [1392](https://github.com/phalcon/cphalcon/issues/1392), [1396](https://github.com/phalcon/cphalcon/issues/1396), [1399](https://github.com/phalcon/cphalcon/issues/1399), 1425, 1426...)
 
 Help with Testing
 -----------------
