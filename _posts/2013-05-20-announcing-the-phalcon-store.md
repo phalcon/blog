@@ -15,7 +15,7 @@ The stickers are just 5 USD (for quantity of 5) and you will also pay the delive
 
 This allows us to get some funds toward our hosting bills and other immediate expenses. We hope you like them!
 
-Don't forget, you can always offer monetary contributions by clicking the [Donate button](https://phalconphp.com/donate) locate at the top bar.
+Don't forget, you can always offer monetary contributions by clicking the [Donate button](https://phalcon.link/donate) locate at the top bar.
 
 Thank you for flying with Phalcon!
 

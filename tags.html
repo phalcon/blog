@@ -12,6 +12,7 @@ permalink: /tags
 	<div>
 		{% assign tags = site.tags | sort %}
 		{% for tag in tags %}
+		{if tag[0] != '' %}
 		<a name="{{ tag | first | slugify }}"></a>
 		<button type="button" class="btn btn-info btn-sm">{{ tag[0] }}</button>
 		<p>
@@ -22,6 +23,7 @@ permalink: /tags
 			{% endfor %}
 		</ul>
 		</p>
+		{% endif %}
 		{% endfor %}
 	</div>
 </div>
