@@ -1,7 +1,11 @@
 ---
 layout: post
 title: "Merry Christmas and Phalcon v4.0.0-alpha1 released"
-tags: [php, phalcon, release, phalcon4]
+tags: 
+  - php
+  - phalcon
+  - release
+  - phalcon4
 ---
 
 ![image](/assets/files/2017-12-24-christmas.jpg)

@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "Status update (Phalcon / Zephir)"
-tags: [php, phalcon, status, update, zephir, documentation]
+tags: 
+  - php
+  - phalcon
+  - status
+  - update
+  - zephir
+  - documentation
 ---
 
 Just a status update for all of our followers and contributors! As usual, a big thank you to everyone that helps us making Phalcon better!

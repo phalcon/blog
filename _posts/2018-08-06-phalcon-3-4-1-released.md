@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "Phalcon 3.4.1 released"
-tags: [php, phalcon, phalcon3, "3.4.x", repositories, github]
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - "3.4.x"
+  - repositories
+  - github
 ---
 
 We are happy to announce that we have released Phalcon [3.4.1](https://github.com/phalcon/cphalcon/releases/tag/v3.4.1). 

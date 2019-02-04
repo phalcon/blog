@@ -1,7 +1,11 @@
 ---
 layout: post
 title: "Localized Zephir Documentation"
-tags: [php, zephir, documentation, crowdin]
+tags: 
+  - php
+  - zephir
+  - documentation
+  - crowdin
 ---
 
 We had some requests in the past to localize our documentation for [Zephir](https://zephir-lang.com). Today we are happy to announce that we now have full localization for our Zephir documentation. 
