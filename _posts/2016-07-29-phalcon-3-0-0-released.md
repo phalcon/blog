@@ -995,7 +995,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * [JIM](https://github.com/tembem)
 * [Mariusz Łączak](https://github.com/mruz)
 * [Dylan Anderson](https://github.com/quasipickle)
-* [Jj](https://github.com/jdrmar)
+* Jj
 * [Rahul Datta Roy](https://github.com/rahuldroy)
 * [Cameron Hall](https://github.com/CameronHall)
 * [Clément Hallet](https://github.com/challet)
@@ -1008,7 +1008,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * [Alex Komrakov](https://github.com/AlexKomrakov)
 * [Dan](https://github.com/googlle)
 * [Marcin Butlak](https://github.com/makerlabs)
-* [Aaron Imming](https://github.com/aaronimming)
+* Aaron Imming
 * [Ragnis Armus](https://github.com/Ragnis)
 * [Studentsov](https://github.com/Studentsov)
 * [Bellardia](https://github.com/Bellardia)

@@ -24,11 +24,11 @@ In the very near future, we will create additional blog posts as tutorials for t
 
 ### Translations
 
-We use [Transifex](https://www.transifex.com/phalcon/) to handle the translations to our main website. In our previous website we had some orphaned strings and some text that was not translated at all.
+We use Transifex to handle the translations to our main website. In our previous website we had some orphaned strings and some text that was not translated at all.
 
 We have reviewed the whole site and ensured that all translation strings are where they are supposed to be.
 
-If you wish to translate our website to any language other than English, you can join our [team in Transifex](https://www.transifex.com/phalcon/) and either join an existing language or request a new one.
+If you wish to translate our website to any language other than English, you can join our team in Transifex and either join an existing language or request a new one.
 
 All of the translations occur in Transifex and we regularly pull down translated strings in their respective languages so as to update our site.
  

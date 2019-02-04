@@ -11,7 +11,7 @@ The development of Phalcon has been accelerated since we released 2.0.0. More an
 - Fixed segfault when a docblock does not have annotations [10301](https://github.com/phalcon/cphalcon/issues/10301)
 - Fixed wrong number of parameters passed when triggering an event in `Mvc\Collection`
 - Now Mvc\Model checks if an attribute has a default value associated in the database and ignores it from the insert/update generated SQL
-- Re-added `Http\Request::hasPut()` [10283](https://github.com/phalcon/cphalcon/issue/10283)
+- Re-added `Http\Request::hasPut()` [10283](https://github.com/phalcon/cphalcon/issues/10283)
 - `Phalcon\Text`: Added method reduceSlashes() - Reduces multiple slashes in a string to single slashes
 - `Phalcon\Text`: Added method `concat()` - Concatenates strings using the separator only once without duplication in places concatenation
 - Added conditional on Session adapter `start()` to check if the session has already been started

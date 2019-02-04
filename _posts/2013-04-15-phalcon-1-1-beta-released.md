@@ -8,7 +8,7 @@ After ​our successful 1.0 release, we continue improving Phalcon ​with our l
 
 <!--more-->
 ### QueryBuilder Paginator
-In addition to the [ModelResultset](https://docs.phalconphp.com/latest/en/pagination.html) and [NativeArray](https://docs.phalconphp.com/latest/en/pagination.html) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle ​large datasets.
+In addition to the [ModelResultset](https://docs.phalconphp.com/latest/en/pagination) and [NativeArray](https://docs.phalconphp.com/latest/en/pagination) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle ​large datasets.
 
 ```php
 use Phalcon\Paginator\Adapter\QueryBuilder;

@@ -8,7 +8,7 @@ This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-i
 
 Our website has undergone a number of iterations in its implementation.
 
-When we released Phalcon 3.0, we also released a fresh look for our website. However, some files were left over from a previous implementation and new text was introduced in several pages. This made that particular text not translatable by [Transifex](https://transifex.com/phalcon/), the excellent service we use to handle translations for our site.
+When we released Phalcon 3.0, we also released a fresh look for our website. However, some files were left over from a previous implementation and new text was introduced in several pages. This made that particular text not translatable by Transifex, the excellent service we use to handle translations for our site.
 
 <!--more-->
 ### Goals
@@ -22,7 +22,7 @@ Building the website we used a particular style throughout. Specifically:
  - Single quotes for all strings
 
 ### Implementation
-This implementation of our website showcases the `Phalcon\Mvc\Micro` application with [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events). It was built for maximum performance.
+This implementation of our website showcases the `Phalcon\Mvc\Micro` application with [Middleware](https://docs.phalconphp.com/latest/en/micro#middleware-events). It was built for maximum performance.
 
 We implemented two applications for the website. One to dispatch the site for web users to see and a CLI application that allows for certain tasks that need to be run from the console, such as fetching the contributors from Github or cleaning the cache folders.
 
@@ -155,7 +155,7 @@ We have looked at the skeleton of our application and also discussed briefly abo
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
 - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
-- [Micro Application](https://docs.phalconphp.com/latest/en/micro.html)
-- [Middleware](https://docs.phalconphp.com/latest/en/micro.html#middleware-events)
+- [Micro Application](https://docs.phalconphp.com/latest/en/micro)
+- [Middleware](https://docs.phalconphp.com/latest/en/micro#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
-- [Transifex](https://transifex.com/phalcon)
+- Transifex

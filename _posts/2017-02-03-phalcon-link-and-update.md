@@ -13,7 +13,7 @@ The purpose of the new domain is:
 * Showcase the ease of use of creating a new Phalcon application.
 
 <!--more-->
-Phalcon Link has been created using one single file, utilizing the `\Phalcon\Mvc\Micro` application ([documentation](https://docs.phalconphp.com/latest/en/micro.html)).
+Phalcon Link has been created using one single file, utilizing the `\Phalcon\Mvc\Micro` application ([documentation](https://docs.phalconphp.com/latest/en/micro)).
 
 ### Links
 
@@ -48,7 +48,7 @@ We have already started refactoring all of our websites, using different impleme
 
 Some might already have noticed the changes in the source code of our [forum](https://phalcon.link).
 
-Also the main website is being refactored, using the `\Phalcon\Mvc\Micro` ([application](https://docs.phalconphp.com/latest/en/micro.html)) and middleware. This is work in progress, and we will be updating you when we have finished it so that you can have a look and either adapt the implementation to your projects or get some ideas.
+Also the main website is being refactored, using the `\Phalcon\Mvc\Micro` ([application](https://docs.phalconphp.com/latest/en/micro)) and middleware. This is work in progress, and we will be updating you when we have finished it so that you can have a look and either adapt the implementation to your projects or get some ideas.
 
 Finally, we have started working on the revamp of the documentation. Very soon a brand new introduction page will be published along with instructions on how to install Phalcon using source, packagecloud.io, docker, vagrant etc.
 				

@@ -174,11 +174,11 @@ Big kudos to main contributors on this version: [Vladimir Kolesnikov](https://gi
 * [mobli](https://github.com/mobli)
 * [jerejones](https://github.com/jerejones)
 * [inouet](https://github.com/inouet)
-* [SneakyBobito](https://github.com/SneakyBobito)
+* SneakyBobito
 * [tmihalik](https://github.com/tmihalik)
 * [Chameleon-m](https://github.com/Chameleon-m)
 * [wenchen](https://github.com/wenchen)
-* [g3dut1s](https://github.com/g3dut1s)
+* g3dut1s
 * [richmulhern](https://github.com/richmulhern)
 * [relort](https://github.com/relort)
 * [thecodeassassin](https://github.com/thecodeassassin)
@@ -222,7 +222,7 @@ Big kudos to main contributors on this version: [Vladimir Kolesnikov](https://gi
 * [PyYoshi](https://github.com/PyYoshi)
 * [ianbytchek](https://github.com/ianbytchek)
 * [nini](https://github.com/nini)
-* [charnad](https://github.com/charnad)
+* charnad
 * [AlexDRiVER](https://github.com/AlexDRiVER)
 * [fabfuel](https://github.com/fabfuel)
 * [bicouy0](https://github.com/bicouy0)
@@ -237,7 +237,7 @@ Big kudos to main contributors on this version: [Vladimir Kolesnikov](https://gi
 * [romcart](https://github.com/romcart)
 * [Xrymz](https://github.com/Xrymz)
 * [kbsali](https://github.com/kbsali)
-* [bohdan4ik](https://github.com/bohdan4ik)
+* bohdan4ik
 * [suxxes](https://github.com/suxxes)
 * [w5m](https://github.com/w5m)
 * [yvmarques](https://github.com/yvmarques)
@@ -248,7 +248,7 @@ Big kudos to main contributors on this version: [Vladimir Kolesnikov](https://gi
 * [mattpavelle](https://github.com/mattpavelle)
 * [omissis](https://github.com/omissis)
 * [kolypto](https://github.com/kolypto)
-* [jdfreeman](https://github.com/jdfreeman)
+* jdfreeman
 * [11mariom](https://github.com/11mariom)
 
 ### Conclusion

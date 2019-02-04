@@ -18,23 +18,23 @@ Note: These are the stock applications that each framework offers. The only thin
 
 This benchmark only measures the time it takes for each framework to start, run each action, present the result needed and free up the resources at the end of the request. Any PHP application based on the said framework will need this time and resources. It is safe to assume that any implementations that will be much more complex than this one will require additional resources per request.
 
-The [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) benchmarking tool from Apache was used for these tests. 1,000 requests using 5 concurrent connections for each framework.
+The [ab](https://httpd.apache.org/docs/current/programs/ab.html) benchmarking tool from Apache was used for these tests. 1,000 requests using 5 concurrent connections for each framework.
 
 ### Results
 We will start with the results of our benchmark. The hardware used, raw data as well as setup/configuration changes we did for each framework are further down in this post.
 
 #### Included Files
-We have used the [get_included_files()](http://php.net/manual/en/function.get-included-files.php) function to figure out how many files have been included for one request. The call to the function was at the end of the entry point, usually `index.php` (lower is better).
+We have used the [get_included_files()](https://secure.php.net/manual/en/function.get-included-files.php) function to figure out how many files have been included for one request. The call to the function was at the end of the entry point, usually `index.php` (lower is better).
 
 ![image](/assets/files/2017-04-13-files-per-request.png)
 
 #### Memory used (KB)
-We have used the [memory_get_usage()](http://php.net/manual/en/function.memory_get_usage.php) function to figure out how many much memory was used for each request. The call to this function was at the end of the entry point, usually `index.php`. (lower is better).
+We have used the [memory_get_usage()](https://secure.php.net/manual/en/function.memory_get_usage.php) function to figure out how many much memory was used for each request. The call to this function was at the end of the entry point, usually `index.php`. (lower is better).
 
 ![image](/assets/files/2017-04-13-memory-per-request.png)
 
 #### Requests per Second (mean)
-Using the [ab](http://httpd.apache.org/docs/2.4/en/programs/ab.html) tool, we measured the requests per second that each framework could handle.  (higher is better).
+Using the [ab](https://httpd.apache.org/docs/current/programs/ab.html) tool, we measured the requests per second that each framework could handle.  (higher is better).
 
 ![image](/assets/files/2017-04-13-requests-per-second.png)
 

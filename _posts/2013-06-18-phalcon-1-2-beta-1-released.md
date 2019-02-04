@@ -12,7 +12,7 @@ In this version we have introduced several new features and performance improvem
 This post is extensive but we have a lot of new features, so bare with us!
 
 ### Dynamic compile path in Volt
-Now `compiledPath` option in [Volt](https://docs.phalconphp.com/latest/en/volt.html) accepts a closure allowing the developer to dynamically create the compilation path for templates:
+Now `compiledPath` option in [Volt](https://docs.phalconphp.com/latest/en/volt) accepts a closure allowing the developer to dynamically create the compilation path for templates:
 
 ```php
 // Just append the .php extension to the template path
@@ -39,7 +39,7 @@ $volt->setOptions(
 ```
 
 ### Volt extensions
-With extensions the developer has more flexibility to extend the template engine, and override the compilation of a​ specific instruction, change the behavior of an expression or operator, add functions/filters, and more. The class below allows to use any PHP function in [Volt](https://docs.phalconphp.com/latest/en/volt.html):
+With extensions the developer has more flexibility to extend the template engine, and override the compilation of a​ specific instruction, change the behavior of an expression or operator, add functions/filters, and more. The class below allows to use any PHP function in [Volt](https://docs.phalconphp.com/latest/en/volt):
 
 ```php
 class PhpFunctionExtension
@@ -77,7 +77,7 @@ $di['url'] = function () {
 ```
 
 ### `Phalcon\Mvc\View\Simple`
-This component is an alternative component similar to `Phalcon\Mvc\View` but lacks of a render hierarchy. It is particularly useful for [micro applications](https://docs.phalconphp.com/latest/en/micro.html) or obtaining​ the content of an arbitrary view as an string. Due to the lack of the rendering hierarchy it's more suitable to be used together with the [template inheritance](https://docs.phalconphp.com/latest/en/volt.html#template-inheritance) provided by Volt.
+This component is an alternative component similar to `Phalcon\Mvc\View` but lacks of a render hierarchy. It is particularly useful for [micro applications](https://docs.phalconphp.com/latest/en/micro) or obtaining​ the content of an arbitrary view as an string. Due to the lack of the rendering hierarchy it's more suitable to be used together with the [template inheritance](https://docs.phalconphp.com/latest/en/volt#template-inheritance) provided by Volt.
 
 ```php
 //  ​View service
@@ -106,7 +106,7 @@ $app->map('/login', function () use ($app) {
 It supports multiple render engines and also have automatic caching capabilities.
 
 ### Improved support for JSON
-Now it's easier get input as JSON and return responses in the same format. ​Returned instances of [Phalcon\Http\Response](https://docs.phalconphp.com/latest/en/response.html) in micro applications are automatically sent by the application:
+Now it's easier get input as JSON and return responses in the same format. ​Returned instances of [Phalcon\Http\Response](https://docs.phalconphp.com/latest/en/response) in micro applications are automatically sent by the application:
 
 ```php
 $app->post(
@@ -151,7 +151,7 @@ $app->post(
 ```
 
 ### Support for Many-To-Many in the ORM
-Finally Many-to-Many relations are supported in the [ORM](https://docs.phalconphp.com/latest/en/db-models.html)! Direct relationships between two models using an intermediate model can now be defined:
+Finally Many-to-Many relations are supported in the [ORM](https://docs.phalconphp.com/latest/en/db-models)! Direct relationships between two models using an intermediate model can now be defined:
 
 ```php
 class Artists extends Phalcon\Mvc\Model
@@ -215,7 +215,7 @@ $artist->save();
 
 ### Cascade/Restrict actions in Virtual Foreign Keys
 
-​[Virtual foreign keys](https://docs.phalconphp.com/latest/en/db-models.html#virtual-foreign-keys) can ​now be set up to delete all the referenced records if the master record is deleted:
+​[Virtual foreign keys](https://docs.phalconphp.com/latest/en/db-models#virtual-foreign-keys) can ​now be set up to delete all the referenced records if the master record is deleted:
 
 ```php
 use Phalcon\Mvc\Model;
@@ -252,7 +252,7 @@ $artist->delete(); // Deleting also its songs
 ```
 
 ### Assets Minification
-[Phalcon\Assets](https://docs.phalconphp.com/latest/en/assets.html) provides built-in minification of Javascript and CSS resources. The developer can create a collection of resources instructing the Assets Manager which ones must be filtered and which ones must be​left as they are. In addition to the above, [Jsmin](https://github.com/douglascrockford/JSMin/blob/master/jsmin.c) by Douglas Crockford is now part of the extension offering minification of javascript files for maximum performance. In the CSS land, [CSSMin](https://github.com/soldair/cssmin/blob/master/cssmin.c) by Ryan Day is also available to minify css files.
+[Phalcon\Assets](https://docs.phalconphp.com/latest/en/assets) provides built-in minification of Javascript and CSS resources. The developer can create a collection of resources instructing the Assets Manager which ones must be filtered and which ones must be​left as they are. In addition to the above, [Jsmin](https://github.com/douglascrockford/JSMin/blob/master/jsmin.c) by Douglas Crockford is now part of the extension offering minification of javascript files for maximum performance. In the CSS land, [CSSMin](https://github.com/soldair/cssmin/blob/master/cssmin.c) by Ryan Day is also available to minify css files.
 
 ```php
 $manager = new Phalcon\Assets\Manager(
@@ -295,7 +295,7 @@ $manager->outputJs();
 This component still needs a bit more of work​,​ adding caching, versioning and detection ​of changes to reduce processing. These changes will be available in the next beta.
 
 ### Disallow literals in PHQL
-[PHQL](https://docs.phalconphp.com/latest/en/phql.html) provides a set of features that aids the developer to secure his/her applications. Comparing to straight SQL, PHQL now has a new feature that increases even more security, thus avoiding a large number of potential [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) scenarios. The developer can now disable literals in PHQL. This means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. If by mistake a developer​ writes:
+[PHQL](https://docs.phalconphp.com/latest/en/phql) provides a set of features that aids the developer to secure his/her applications. Comparing to straight SQL, PHQL now has a new feature that increases even more security, thus avoiding a large number of potential [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) scenarios. The developer can now disable literals in PHQL. This means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. If by mistake a developer​ writes:
 
 ```php
 $artist = Artists::findFirst("name = '$name'");
@@ -304,7 +304,7 @@ $artist = Artists::findFirst("name = '$name'");
 An exception will be thrown forcing the developer to use bound parameters.
 
 ### Own Scope for Partials
-​A developer can now pass an array of variables to a [partial](https://docs.phalconphp.com/latest/en/views.html#using-partials) that only exists in the scope of the partial:
+​A developer can now pass an array of variables to a [partial](https://docs.phalconphp.com/latest/en/views#using-partials) that only exists in the scope of the partial:
 
 ```php
 <?php $this->partial('footer', ['links' => $myLinks]);

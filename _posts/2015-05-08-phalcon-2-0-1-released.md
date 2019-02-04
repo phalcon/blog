@@ -22,7 +22,7 @@ Today we're releasing Phalcon 2.0.1, this version fixes bugs and adds new featur
 - `Phalcon\Debug\Dump`
 -- Renamed method `var()` to `variable()`
 -- Renamed method `vars()` to `variables()`
-- `Phalcon\Mvc\Model::findFirst()` now allows hydration [10259](https://github.com/phalcon/cphalcon/issue/10259)
+- `Phalcon\Mvc\Model::findFirst()` now allows hydration [10259](https://github.com/phalcon/cphalcon/issues/10259)
 - Fixed high memory consumption when serializing `Cache\Backend\Memory`.
 
 ### Update/Upgrade

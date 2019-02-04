@@ -65,7 +65,7 @@ Some highlights of this version include:
 - Added `Phalcon\Mvc\Model::isRelationshipLoaded` to check if relationship is loaded [#12772](https://github.com/phalcon/cphalcon/pull/12772)
 - Added an easy way to work with Phalcon and run the tests locally, using [nanobox.io](https://nanobox.io) [#13578](https://github.com/phalcon/cphalcon/issues/13578)
 - Added response handler to `Phalcon\Mvc\Micro`, `Phalcon\Mvc\Micro::setResponseHandler`, to allow use of a custom response handler. [#12452](https://github.com/phalcon/cphalcon/pull/12452)
-- Added two new events `response::beforeSendHeaders` and `response::afterSendHeaders` to `Phalcon\Http\Response` [#10689](https://github.com/phalcon/cphalcon/issue/10689)
+- Added two new events `response::beforeSendHeaders` and `response::afterSendHeaders` to `Phalcon\Http\Response` [#10689](https://github.com/phalcon/cphalcon/issues/10689)
 - Added a retainer for the current token to be used during the checkings, so when `Phalcon\Security::getToken` is called the token used for checkings don't change. [#12392](https://github.com/phalcon/cphalcon/issues/12392)
 - Added `Phalcon\Html\Tag`, a component that creates HTML elements. It will replace `Phalcon\Tag` in a future version. This component does not use static method calls. [#12392](https://github.com/phalcon/cphalcon/issues/12392)
 - Added `Phalcon\Paginator\RepositoryInterface` for repository the current state of `paginator` and also optional sets the aliases for properties repository [#10985](https://github.com/phalcon/cphalcon/pull/10985), [#10957](https://github.com/phalcon/cphalcon/issues/10957)

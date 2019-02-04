@@ -23,12 +23,12 @@ than `Mvc\Model\Query\Builder` to avoid collisions
 - `afterCreate`/`afterUpdate` are only called if saving related records was successful
 - Added an optional parameter removeData to `Session\Adapter::remove()` to remove any data in `$_SESSION` that belongs to the uniqueId or the whole session data
 - Now session variables making use of unique prefixes use `#` as internal separator
-- Added parameter that changes the default operator for conditions in method `Mvc\Model\Criteria::fromImput()` [10749](https://github.com/phalcon/cphalcon/issue/10749)
+- Added parameter that changes the default operator for conditions in method `Mvc\Model\Criteria::fromImput()` [10749](https://github.com/phalcon/cphalcon/issues/10749)
 - Added `\Phalcon\Queue\Beanstalk::listTubes()` to get list of a tubes
 - Added a fix to avoid that a table present in many sub-queries causes invalid SQL generation
-- Add `CookieInterface`, update `Cookie` and `Cookies` to use this interface - Decoupling `Cookies` and `Cookie` - Check `Session` state before using it in `Cookie`. [10789](https://github.com/phalcon/cphalcon/issue/10789)
+- Add `CookieInterface`, update `Cookie` and `Cookies` to use this interface - Decoupling `Cookies` and `Cookie` - Check `Session` state before using it in `Cookie`. [10789](https://github.com/phalcon/cphalcon/issues/10789)
 - Fixed merge of two `Phalcon\Config` instances that contains object values different than `Phalcon\Config` compatible instances
-- When creating tables in Postgres, inline PRIMARY keys are now escaped properly [10797](https://github.com/phalcon/cphalcon/issue/10797)
+- When creating tables in Postgres, inline PRIMARY keys are now escaped properly [10797](https://github.com/phalcon/cphalcon/issues/10797)
 - Fixed incorrect generation of `SELECT COUNT(*)` causing unexpected exceptions when `phqlLiterals` is disabled
 - Added `Phalcon\Security\Random` - secure random number generator class. Provides secure random number generator which is suitable for generating session key in HTTP cookies, etc
 

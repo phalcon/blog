@@ -13,10 +13,10 @@ For us and thanks to Zephir, the development of Phalcon is now more enjoyable. W
 <!--more-->
 During these we have been implemented several interesting features in Zephir, that have enriched the quality of Phalcon and have made the development more robust:
 
-- [Static Typing](http://zephir-lang.com/types.html#static-types)
+- [Static Typing](http://zephir-lang.com/types#static-types)
 - [Named Parameters](http://blog.zephir-lang.com/post/76596064349/whats-new-in-zephir-v)
-- [Getter/Setter shortcuts](http://zephir-lang.com/oop.html#getter-setter-shortcuts)
-- [Return Type Hints](http://zephir-lang.com/oop.html#return-type-hints)
+- [Getter/Setter shortcuts](http://zephir-lang.com/oop#getter-setter-shortcuts)
+- [Return Type Hints](http://zephir-lang.com/oop#return-type-hints)
 - [Use static types as objects](http://zephir-lang.com/builtin-methods)
 - [And more...](https://zephir-lang.com)
 

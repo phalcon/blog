@@ -20,13 +20,13 @@ This version contains mostly bug fixes as well as improvements to the 2.0.x seri
 - Errors generated in `Cache\Backend\Memcached` now shows the result code to easily debug problems
 - Fixed `LIMIT/OFFSET` SQL generation in `Mvc\Model\Query\Builder`
 - Fixed `Logger\Formatter\Line` to match 1.3.x behavior
-- Fixed warning when `castOnHydrate` is true [10648](https://github.com/phalcon/cphalcon/issue/10648)
+- Fixed warning when `castOnHydrate` is true [10648](https://github.com/phalcon/cphalcon/issues/10648)
 - Added name before `int`/`float`/`numeric`/`string`/`bool`/`null`/other variables in `Debug\Dump::output`
 - Now `Validation\Validator\Identical` allows both 'accepted' and 'value' as value to keep backwards compatibility
 - Added `\Phalcon\Mvc\Model\MetaData\Redis` adapter.
 - Added Redis Session adapter
 - Fixed bug in `Mvc\Model\Criteria::fromInput` preventing it from using renamed columns
-- Fixed bug in `Http\Request` `getRawBody()`/`getPut()` clears input buffer [10694](https://github.com/phalcon/cphalcon/issue/10694)
+- Fixed bug in `Http\Request` `getRawBody()`/`getPut()` clears input buffer [10694](https://github.com/phalcon/cphalcon/issues/10694)
 
 ### Update/Upgrade
 

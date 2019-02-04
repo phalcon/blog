@@ -103,7 +103,7 @@ It is not uncommon (and quite convenient) to directly query your models inside v
 ```
 
 #### Developer tools
-[Phalcon developer tools](https://docs.phalconphp.com/latest/en/tools.html) allow you to generate boilerplate code and jump straight to implementation of your application's logic.
+[Phalcon developer tools](https://docs.phalconphp.com/latest/en/tools) allow you to generate boilerplate code and jump straight to implementation of your application's logic.
 
 They can generate any element of MVC triad separately – model, view or controller, or create scaffolding (complete code for managing records in the database) which is very efficient way to have running prototype.
 

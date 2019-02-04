@@ -94,7 +94,7 @@ We would like to express our deep gratitude for tremendous efforts migrating and
 - [Soufiane Ghzal](https://github.com/gsouf)
 - [Kenji Suzuki](https://github.com/kenjis)
 - [Vladimir Metelitsa](https://github.com/Green-Cat)
-- [Carlos Guimaraes](https://github.com/cvsguimaraes)
+- Carlos Guimaraes
 
 Thanks again to all!
 

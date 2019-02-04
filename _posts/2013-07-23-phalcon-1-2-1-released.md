@@ -14,7 +14,7 @@ This new version of Phalcon includes a lot of optimizations, reducing memory whi
 A few key points are
 
 - Dispatching parameters now can be modified in `beforeExecuteRoute` events
-- `beforeException` events can now handle exceptions occurred when executing actions ([140](https://github.com/phalcon/cphalcon/issue/140))
+- `beforeException` events can now handle exceptions occurred when executing actions ([140](https://github.com/phalcon/cphalcon/issues/140))
 - Added `Phalcon\Dispatcher::getHandlerClass` and `Phalcon\Dispatch::getActionMethod`
 - `Phalcon\Form\Element\*` classes now implement `Phalcon\Form\ElementInterface`
 - `Phalcon\Config\Adapter\Ini` correctly handles empty sections and INI files without any sections

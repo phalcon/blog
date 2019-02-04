@@ -27,7 +27,7 @@ example/
 
 The file [services.php](https://github.com/phalcon/tutorial-models-init/blob/master/services.php) is the example's bootstrap, on it you can find the service initialization, we are only initializing the basic services necessary to run the example.
 
-The first is the database connection, we used Sqlite as adapter, but you can use any other of the [supported database systems](https://docs.phalconphp.com/latest/en/db.html#database-adapters):
+The first is the database connection, we used Sqlite as adapter, but you can use any other of the [supported database systems](https://docs.phalconphp.com/latest/en/db#database-adapters):
 
 ```php
 // Setup a connection
@@ -244,7 +244,7 @@ This way you can create new annotations, change the current names, etc. adding m
 The second part of the initialization is the model's meta-data. This information is required to automate the operation of ORM in Phalcon. The meta-data contains: field names, primary keys, data types, column maps, etc. Normally, Phalcon uses database introspection to read this information from the database. In our case, we're going to define those data in annotations.
 
 Phalcon provides the built-in strategy class:
-[Phalcon\Mvc\Model\MetaData\Strategy\Annotations](https://docs.phalconphp.com/latest/en/db-models.html#annotations-strategy) which performs the same task we'll going to explain below. Our custom meta-data strategy also uses annotations but it gives us understanding of how this task is achieved. You can adapt this code to create dynamic schemas, row level security, new annotations, etc.
+[Phalcon\Mvc\Model\MetaData\Strategy\Annotations](https://docs.phalconphp.com/latest/en/db-models#annotations-strategy) which performs the same task we'll going to explain below. Our custom meta-data strategy also uses annotations but it gives us understanding of how this task is achieved. You can adapt this code to create dynamic schemas, row level security, new annotations, etc.
 
 This adapter is called
 [AnnotationsMetaDataInitializer](https://github.com/phalcon/tutorial-models-init/blob/master/library/AnnotationsMetaDataInitializer.php) (found in the library/ directory). It implements two methods: the former initializes the main meta-data and the second any column map found in the class:
@@ -323,7 +323,7 @@ $di['modelsMetadata'] = function () {
 ```
 
 ### Caching Annotations/Meta-Data
-Parsing/Reading annotations and processing meta-data could add an important amount of overhead to the application in every request reducing the performance. While the Phalcon's [annotations parser](https://docs.phalconphp.com/latest/en/annotations.html) is very fast, you could improve the speed by aggressively caching the annotations and meta-data using some of the adapters provided by the framework. In our example, we're using files to export the processed data avoiding the permanent processing in each request:
+Parsing/Reading annotations and processing meta-data could add an important amount of overhead to the application in every request reducing the performance. While the Phalcon's [annotations parser](https://docs.phalconphp.com/latest/en/annotations) is very fast, you could improve the speed by aggressively caching the annotations and meta-data using some of the adapters provided by the framework. In our example, we're using files to export the processed data avoiding the permanent processing in each request:
 
 ```php
 // Use the memory meta-data adapter in development
@@ -359,7 +359,7 @@ foreach ($robot->robotsParts as $robotPart) {
 ```
 
 ### Conclusion
-This tutorial explains various strategies to extend Phalcon, the use of annotations, some additional information about the inner workings of the [ORM](https://docs.phalconphp.com/latest/en/db-models.html). We hope that this example serve as a guide to create more robust applications with Phalcon.
+This tutorial explains various strategies to extend Phalcon, the use of annotations, some additional information about the inner workings of the [ORM](https://docs.phalconphp.com/latest/en/db-models). We hope that this example serve as a guide to create more robust applications with Phalcon.
 
 
 <3 The Phalcon Team
