@@ -195,7 +195,7 @@ button{background:#65D38D;}
 button:hover{background:#81c4a8;}
 section{background:#eeeff1;}
 section{padding-top:30px;}
-.page-header{background:url(//static.phalconphp.com/www/images/flat_v3/texture.png) repeat-x;}
+.page-header{background-image:url(//static.phalconphp.com/www/images/flat_v3/texture.png);background-repeat: repeat-x; background-color: #455e6c}
 section p{color:#8f96a9;margin:23px 0 0;}
 .page-header{margin:0;border:none;padding-top:20px;-webkit-box-shadow:0 0 3px 0 rgba(37,82,95,.9);box-shadow:0 0 3px 0 rgba(37,82,95,.9);z-index:100;}
 /*! CSS Used from: https://blog.phalconphp.com/css/style.3.1.2.css */
