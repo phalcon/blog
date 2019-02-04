@@ -5,6 +5,7 @@ app:
   keywords: "php, phalcon, phalcon php, php framework, faster php framework"
   generator: "Github Pages"
   avatar: https://avatars3.githubusercontent.com/u/1221505?v=4
+  url: https://blog.phalconphp.com
   baseurl: "/"
 
 social:
