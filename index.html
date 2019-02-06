@@ -1,23 +1,63 @@
 ---
 layout: default
 ---
-
-<div id="search-searchbar"></div>
-<div id="search-hits">
-{% for post in site.posts %}
-                    <div id="articles">
-                        <div class="row">
-                            <a href="{{ post.url }}">
-                                <h2>{{ post.title }}</h2>
-                            </a>
+{% for post in paginator.posts %}
+{% if forloop.index == 1 %}
+                <div class="phalcon-blog__last-article">
+                    <div class="phalcon-blog__item">
+                        <div class="phalcon-blog__item-content">
+                            <div class="phalcon-blog__item-title">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </div>
+                            <div class="phalcon-blog__item-info">
+                                <div class="phalcon-blog__item-date">
+                                    {{ post.date | date: "%b %d, %Y" }}
+                                </div>
+                                <div class="phalcon-blog__item-author">
+                                    Phalcon Team
+                                </div>
+                            </div>
+                            <div class="phalcon-blog__item-article">
+                                {{ post.excerpt }}
+                            </div>
+                            <a href="{{ post.url }}"
+                               class="phalcon-blog__item-read-more">Read More</a>
                         </div>
-                        <div>
-                            {{ post.excerpt }} <a href="{{ post.url }}">More...</a>
-                            <span class="pull-right"><small>[{{ post.date | date: "%Y-%m-%d"}}]</small></span>
+<!--                        <a href="#" class="phalcon-blog__item-img">-->
+<!--                            <img src="img/elephant.jpg" alt="">-->
+<!--                        </a>-->
+                    </div>
+                </div>
+                <div class="phalcon-blog__main-title">
+                    LATEST POSTS
+                </div>
+                <div class="phalcon-blog__items">
+{% else %}
+                    <div class="phalcon-blog__item">
+                        <div class="phalcon-blog__item-content">
+                            <div class="phalcon-blog__item-title">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </div>
+                            <div class="phalcon-blog__item-info">
+                                <div class="phalcon-blog__item-date">
+                                    {{ post.date | date: "%b %d, %Y" }}
+                                </div>
+                                <div class="phalcon-blog__item-author">
+                                    Phalcon Team
+                                </div>
+                            </div>
+                            <div class="phalcon-blog__item-article">
+                                {{ post.excerpt }}
+                            </div>
+                            <a href="{{ post.url }}"
+                               class="phalcon-blog__item-read-more">Read More</a>
                         </div>
+<!--                        <a href="#" class="phalcon-blog__item-img">-->
+<!--                            <img src="img/elephant.jpg" alt="">-->
+<!--                        </a>-->
                     </div>
-                    <div class="text-center horizontal-ruler">
-                        01010000011010000110000101101100011000110110111101101110010100000100100001010000
-                    </div>
+{% endif %}
 {% endfor %}
-</div>
+                </div>
+
+

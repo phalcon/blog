@@ -18,17 +18,20 @@ layout: default
 {% else %}
     {% assign reading_time = minutes | append: ' minutes' %}
 {% endif %}
-                <div id="articles">
-                    <div class="row">
-                        <h2 itemprop="name headline" class="headline">
-                            {{ page.title | escape }}
-                            <span class="pull-right readtime"><small>[Read time: {{ reading_time }}]</small></span>
-                        </h2>
+                <div class="phalcon-blog-detail">
+                    <h2 itemprop="name headline" class="headline">
+                        {{ page.title | escape }}
+                    </h2>
+                    <div class="phalcon-blog-detail__info">
+                        <div class="phalcon-blog-detail__date">
+                            {{ page.date | date: "%b %d, %Y" }}
+                        </div>
+                        <div class="phalcon-blog-detail__author">Phalcon Team</div>
+                        <div class="phalcon-blog-detail__author">Read time: {{ reading_time }}</div>
                     </div>
-                    <div>
-                        {{ content }}
-                        <span class="pull-right"><small>[{{ page.date | date: "%Y-%m-%d" }}]</small></span>
-                    </div>
-
+                    {% if post.image %}
+                    <img src="{{ page.image }}" alt="{{ page.title }}">
+                    {% endif %}
+                    {{ page.content }}
                     <div id="commento"></div>
                 </div>

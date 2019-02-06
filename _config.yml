@@ -6,6 +6,7 @@ app:
   avatar: https://avatars3.githubusercontent.com/u/1221505?v=4
   url: https://blog.phalconphp.com
   baseurl: "/"
+  analytics: 'UA-133802124-2'
 
 social:
   email: team@phalconphp.com
@@ -15,19 +16,30 @@ social:
   twitter: phalconphp
 
 meta:
-  disqus:
-  google_analytics: 'UA-133802124-2'
 
 excerpt_separator: <!--more-->
 
-paginate: 5
+paginate: 10
 paginate_path: "/page-:num"
 permalink: /post/:title
 version: v1.2.0
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+incremental: false
+
+# Markdown Processing
 kramdown:
   input: GFM
-  syntax_highlighter_opts:
-    disable: true
+  syntax_highlighter: rouge
+  hard_wrap: false
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
 algolia:
   application_id: 'QZSIJXM8NK'

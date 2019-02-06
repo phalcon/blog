@@ -1,46 +1,25 @@
-<!doctype html>
-<!--[if IE 8]> <html lang="en-US" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en-US" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en-US" class="no-js">
-<!--<![endif]-->
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+<!DOCTYPE html>
+<html lang="en">
+<head>
     {% include meta.html %}
     {% include analytics.html %}
 </head>
-
 <body>
-    {% include header.html %}
-    <section>
-        <div id="wrapper" class="container">
-            <div id="content" class="row">
-                <div class="col-md-9 content-body">
-                    {{ content }}
-                </div>
-                {% include sidebar.html %}
-            </div>
-        </div>
-    </section>
+{% include header.html %}
 
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/g/jquery@3.2.1,bootstrap@3.3.7,highlight.js@9.11.0(highlight.min.js+languages/apache.min.js+languages/bash.min.js+languages/css.min.js+languages/dockerfile.min.js+languages/javascript.min.js+languages/json.min.js+languages/nginx.min.js+languages/php.min.js+languages/sql.min.js+languages/twig.min.js+languages/xml.min.js+languages/yaml.min.js+languages/zephir.min.js)"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"
-            integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ"
-            crossorigin="anonymous"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    {% include algolia.html %}
-    <script src="https://cdn.commento.io/js/commento.js"></script>
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-            });
-            }
-        });
-        }
-    </script>
+<div class="phalcon-blog">
+    <div class="container">
+        <div class="phalcon-blog__main">
+            {{ content }}
+        </div>
+        <div class="phalcon-blog__right">
+            {% include sponsors.html %}
+            {% include widget.html %}
+            {% include tags.html %}
+        </div>
+    </div>
+</div>
+{% include footer.html %}
 </body>
 </html>
 
