@@ -11,7 +11,7 @@ tags:
   - alpha
 ---
 We wanted to close the year in a high note, so we worked really hard and managed to release Phalcon v4-alpha1 on Christmas day. This was a present to the community and we are very happy that it was well received, with its bugs and all :)
-
+<!--more-->
 During that release, we pushed the alpha version to our [stable](https://packagecloud.io/phalcon/stable) channel.
 
 ### The problem

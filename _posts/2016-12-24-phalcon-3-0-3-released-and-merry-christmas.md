@@ -1,11 +1,16 @@
 ---
 layout: post
 title: "Phalcon 3.0.3 released and Merry Christmas"
-tags: [php, phalcon, "3.0.x", phalcon3, release, rfc, lts]
+tags: 
+  - php
+  - phalcon
+  - "3.0.x"
+  - phalcon3
+  - release
+  - rfc
+  - lts
+image: '/assets/files/2016-12-24-xmas.jpg'
 ---
-
-![image](/assets/files/2016-12-24-xmas.jpg)
-
 The Phalcon Team wishes all of our friends, contributors, developers and users of the framework a Merry Christmas!. We hope that the new year will bring health and happiness to you and your loved ones!
 
 As a small gift for this holiday/celebration, we are releasing Phalcon 3.0.3 [LTS].

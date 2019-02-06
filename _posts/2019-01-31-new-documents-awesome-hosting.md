@@ -9,6 +9,7 @@ tags:
   - jekyll
 ---
 For Phalcon v4 we wanted to enhance our documentation and make it as thorough and precise as possible. Admittedly our documentation has been lacking a lot of content, with features not being well documented, being incorrect or not documented at all. Along with that, we had a lot of broken links that were already indexed by search engines, and our redirect rules were not covering everything. That lead to a lot of frustration because developers were not able to find what they were looking for. We started an effort to correct all the above, and continuing to do so on a daily basis, with the goal being that v4 documentation is as thorough and precise as possible.
+<!--more-->
 
 We mentioned in our [previous blog post](/post/recent-repository-reorganization) that we started moving a lot of our applications to static websites in order to reduce the maintenance needed from the core team and concentrate on the framework itself. To that effect we started using Jekyll to build those sites and moved everything to [Netlify](https://netlify.com).
 
@@ -82,7 +83,7 @@ Due to the number of those files, we were expecting that the build time would ta
 When reaching out to the Netlify team, one of the engineers was extremely polite and professional and worked with us to try and identify the issue and offer solutions. It appears that the problem was stemming from the cache busting that we had introduced for our assets. i.e:
 
 ```html
-<llnk rel="stylesheet" href="/assets/css/main.css?v{% raw %}{{ date | format: '%Y%m%d'" }}{% endraw %}" />
+<link rel="stylesheet" href="/assets/css/main.css?v{% raw %}{{ date | format: '%Y%m%d'" }}{% endraw %}" />
 ```
 
 [Netlify](https://netlify.com) has an awesome algorithm where each page is cached and a hash of the page contents is kept when the site is deployed the first time. In a subsequent deployment, after the site is built, the hash of the new page is compared to the cached hash and if they are identical, the particular content is not uploaded to the live site, well because there is no reason to. This allows the deployments to be blistering fast even for large sites as ours.

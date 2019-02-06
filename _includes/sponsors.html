@@ -1,27 +1,22 @@
-{% if site.disqus %}
-						<div class="comments">
-							<div id="disqus_thread"></div>
-							<script>
-								var disqus_config = function () {
-									this.page.url = '{{ site.app.baseurl }}{{ page.url }}';
-									this.page.identifier = '{{ page.date | date: "%Y-%m-%d" }}-{{ site.app.baseurl }}{{ page.url }}';
-								};
-
-								(function() {
-									var d = document, s = d.createElement('script');
-
-									// IMPORTANT: Replace EXAMPLE with your forum shortname!
-									s.src = 'https://phalconphp.disqus.com/embed.js';
-
-									s.setAttribute('data-timestamp', +new Date());
-									(d.head || d.body).appendChild(s);
-								})();
-							</script>
-							<noscript>
-								Please enable JavaScript to view the
-								<a href="https://disqus.com/?ref_noscript" rel="nofollow">
-									comments powered by Disqus.
-								</a>
-							</noscript>
-						</div>
-{% endif %}
+			<div class="phalcon-blog__right-item phalcon-blog__sponsors">
+				<div class="phalcon-blog__title">
+					Supporters
+				</div>
+				<div class="phalcon-blog__sponsors-items">
+					<a href="https://pdffiller.com" class="phalcon-blog__sponsors-item">
+						<img src="https://assets.phalconphp.com/phalcon/images/backers/pdffiller-164x34.svg"
+							 alt="PDFfiller">
+					</a>
+					<a href="#" class="phalcon-blog__sponsors-item">
+						<img src="https://assets.phalconphp.com/phalcon/images/backers/mctekk-149x34.svg"
+							 alt="{mctekk}">
+					</a>
+					<a href="#" class="phalcon-blog__sponsors-item">
+						<img src="https://assets.phalconphp.com/phalcon/images/backers/abits-100x34.svg"
+							 alt="Abits">
+					</a>
+					<a href="https://phalcon.link/fund" class="phalcon-blog__sponsors-item">
+						<span>Support Us</span>
+					</a>
+				</div>
+			</div>

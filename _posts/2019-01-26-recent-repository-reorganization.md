@@ -12,6 +12,7 @@ tags:
   - netlify
 ---
 We had a wonderful hangout [today](https://www.youtube.com/watch?v=OAN7W2zVRaI), in which we talked about a lot of things. One of them was the actual size of our team and the obvious lack of time to address everything.
+<!--more-->
 
 ### More reorganization
 

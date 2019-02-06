@@ -8,11 +8,10 @@ tags:
   - release
   - alpha
 ---
-The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 2**! 
-
-[Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.2)
-
+The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 2**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.2)
+                                                                         
 We cannot thank your community enough! By reporting bugs, offering feedback and suggestions, pull requests, being active in discussions about how the framework should move towards the future, you all help us make Phalcon better with every release.
+<!--more-->
 
 As mentioned before, we took a different approach with our releases, with v4. The goal is to release often and release small. This way we allow the community to catch up, find bugs, provide feedback etc. 
 

@@ -11,6 +11,7 @@ tags:
 The first community hangout of 2019 was awesome and super fun! We are really happy to interact with the community and offer news, vision and problems we are facing in the Phalcon ecosystem. 
 
 If you have missed the live hangout, you can watch it on YouTube:
+<!--more-->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OAN7W2zVRaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
