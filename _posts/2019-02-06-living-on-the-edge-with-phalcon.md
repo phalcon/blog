@@ -12,6 +12,7 @@ tags:
 ---
 Phalcon is a framework that differs from the rest. Developers cannot update the framework using tools like composer with one command. Instead the extension needs to be recompiled with each new update. Some people find this a problem and a nuisance. Others, like us, find it entertaining!
 <!--more-->
+
 We have just launched a new version ([4.0.0-alpha.2](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.2)). In this new version we have addressed several bugs (some found in the previous alpha version), but also introduced a large number of improvements. As with any release, especially alpha ones, we may find bugs or defects. Traditionally alpha versions are not as stable, so bugs are expected. Bugs are usually fixed and pushed in the currently working branch, and are available with the next release. Some of us like living on the edge so to speak. We really cannot wait for the next release and always want to work with the latest and greatest version! To achieve this, we will need to either compile Phalcon from Zephir or download the latest build from the working branch.
 
 To get the latest version of Phalcon go to [Phalcon's GitHub page](https://github.com/phalcon/cphalcon), switch to the relevant branch (currently `4.0.x`) and download it. You can also clone the repository and switch to the `4.0.x` branch.
