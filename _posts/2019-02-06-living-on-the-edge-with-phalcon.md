@@ -22,7 +22,7 @@ https://github.com/phalcon/cphalcon/tree/4.0.x
 
 Now you have 2 options: building or recompiling. In this article we focus on building Phalcon.
 
-## Building
+### Building
 Download the latest version either via git or direct download
 
 ```bash
@@ -80,5 +80,6 @@ $ /etc/init.d/php-fpm restart
 Welcome to the living on the edge with Phalcon. ;)
 
 Enjoy! If you find bugs please report them on [GitHub](https://github.com/phalcon/cphalcon/issues).
+
 
 <3 Phalcon Team
