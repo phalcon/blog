@@ -571,7 +571,7 @@ a:focus {
     background-repeat: no-repeat;
     -webkit-background-size: contain;
             background-size: contain;
-    background-image: url("https://assets.phalconphp.com/phalcon/phalcon/logo-white-105x40.svg"); }
+    background-image: url("https://assets.phalconphp.com/phalcon/logo-white-105x40.svg"); }
 
 .header__sitename {
   height: 18px;
@@ -613,7 +613,7 @@ a:focus {
       .header-nav > li.expand:hover .header-dropdown-wrapper {
         display: block; }
       .header-nav > li.expand > a::after {
-        content: url("https://assets.phalconphp.com/phalcon/phalcon/arrow.svg");
+        content: url("https://assets.phalconphp.com/phalcon/arrow.svg");
         color: #fff;
         position: relative;
         top: -2px;
