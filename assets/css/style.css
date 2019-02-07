@@ -613,7 +613,7 @@ a:focus {
       .header-nav > li.expand:hover .header-dropdown-wrapper {
         display: block; }
       .header-nav > li.expand > a::after {
-        content: url("https://assets.phalconphp.com/phalcon/arrow.svg");
+        content: url("https://assets.phalconphp.com/phalcon/images/svg/arrow.svg");
         color: #fff;
         position: relative;
         top: -2px;
@@ -812,7 +812,7 @@ a:focus {
     .header__lang.expand:hover .header-dropdown-wrapper {
       display: block; }
     .header__lang.expand:after {
-      content: url("../../design/img/arrow.svg");
+      content: url("https://assets.phalconphp.com/phalcon/images/svg/arrow.svg");
       color: #fff;
       position: relative;
       top: -2px;
