@@ -860,6 +860,13 @@ a:focus {
 
 .header__github {
   margin-right: 10px; }
+  .header__github a {
+    display: block;
+    height: 20px; }
+
+.header__discord a {
+  display: block;
+  height: 22px; }
 
 .hidden {
   overflow: hidden; }
