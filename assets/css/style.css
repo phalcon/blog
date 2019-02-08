@@ -1379,7 +1379,8 @@ a:focus {
 
 .phalcon-blog-detail__author {
   margin-right: 22px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  position: relative; }
   .phalcon-blog-detail__author:nth-child(2):after {
     position: absolute;
     content: '';
