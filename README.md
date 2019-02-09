@@ -1,7 +1,7 @@
 ### Phalcon Blog
 
 <p align="center"><a href="https://docs.phalconphp.com" target="_blank">
-    <img src="https://assets.phalconphp.com/phalcon/logo-transparent-phalcon-black.svg" height="100" alt="Phalcon"/>
+    <img src="https://assets.phalconphp.com/phalcon/images/svg/phalcon-logo-transparent-black.svg" height="100" alt="Phalcon"/>
 </a></p>
 
 <p align="center">
