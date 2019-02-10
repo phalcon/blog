@@ -135,7 +135,7 @@ Since `resource` is a reserved word in PHP, it has been causing serious issues w
 	- Renamed `Phalcon\Acl\Adapter\Memory::isRole` to `Phalcon\Acl\Adapter\Memory::isOperation` 
 	- Renamed `Phalcon\Acl\Adapter\Memory::getRoless` to `Phalcon\Acl\Adapter\Memory::getOperations` 
 
-#### `Acl\Adapter\Memory`
+#### Acl\Adapter\Memory
 - Added `getActiveKey`, `activeFunctionCustomArgumentsCount` and `getActiveFunction` to get latest key, number of custom arguments, and function used to acquire access
 - Added `addOpertion` support multiple inherited
 
