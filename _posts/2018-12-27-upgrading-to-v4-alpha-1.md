@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Upgrading to Phalcon v4.0.0-alpha1"
-tags: 
+title: Upgrading to Phalcon v4.0.0-alpha1
+date: 2018-12-27T16:41:03.192Z
+tags:
   - php
   - phalcon
   - release
@@ -103,7 +104,7 @@ We went through pretty much all interfaces and classes that implement them and c
 - You can no longer assign data to models while saving them
 
 #### Components
-#### `Acl`
+#### Acl
 Since `resource` is a reserved word in PHP, it has been causing serious issues with Phalcon. As a result we had to rename components that use the word `resource` as their class name or method name. We have renamed the `Acl` sub classes as follows:
 - `Resource` is now `Subject`. This is the focus of your ACL. What are you allowing, what is the subject of your application? : `/users/`, `/login` etc.
 	- Renamed `Phalcon\Acl\Resource` to `Phalcon\Acl\Subject`
@@ -147,38 +148,38 @@ Similar to the `Acl` component `Resource` has been renamed to `Asset`. Specifica
 	- Renamed `Phalcon\Assets\Manager::addResourceByType` to `Phalcon\Assets\Manager::addAssetByType`
 	- Renamed `Phalcon\Assets\Manager::collectionResourcesByType` to `Phalcon\Assets\Manager::collectionAssetsByType`
 
-#### `Cache\Backend\*`
+#### Cache\Backend\*
 - Changed `get` to use only positive numbers for `lifetime`
 
-#### `Cache\Backend\Redis`
+#### Cache\Backend\Redis
 - Made the `specialKey` (`_PHCR`) optional
 - By configuring `prefix` and `statsKey` the `queryKeys` no longer returns prefixed keys, now it returns original keys without prefix.
 
-#### `Db`
+#### Db
 - Added global setting `orm.case_insensitive_column_map` to attempt to find value in the column map case-insensitively. Can be also enabled by setting `caseInsensitiveColumnMap` key in `\Phalcon\Mvc\Model::setup()`.
 
-#### `Cli\Console`
+#### Cli\Console
 - Removed `Phalcon\Cli\Console::addModules` in favor of `Phalcon\Cli\Console::registerModules`
 
-#### `Cli\Router\RouteInterface`                        
+#### Cli\Router\RouteInterface                      
 - Added `delimiter`, `getDelimiter`                        
 
-#### `Cli\Dispatcher`
+#### Cli\Dispatcher
 - Added `getTaskSuffix()`, `setTaskSuffix()`
 
-#### `Cli\DispatcherInterface`
+#### Cli\DispatcherInterface
 - Added `setOptions`, `getOptions`
 
-#### `Container`
+#### Container
 - Added `Phalcon\Container`, a proxy container class to the `Phalcon\DI` implementing PSR-11
 
-#### `Debug`
+#### Debug
 - Removed `Phalcon\Debug::getMajorVersion`
 
-#### `Db\AdapterInterface`                              
+#### Db\AdapterInterface                              
 - Added `fetchColumn`, `insertAsDict`, `updateAsDict`                              
 
-#### `Db\Adapter\Pdo`
+#### Db\Adapter\Pdo
 - Added more column types for the Mysql adapter. The adapters support 
     - `TYPE_BIGINTEGER`
     - `TYPE_BIT`
@@ -209,51 +210,51 @@ Similar to the `Acl` component `Resource` has been renamed to `Asset`. Specifica
     - `TYPE_VARCHAR`
 Some adapters do not support certain types. For instance `JSON` is not supported for `Sqlite`. It will be automatically changed to `VARCHAR.
 
-#### `Db\DialectInterface`                              
+#### Db\DialectInterface                              
 - Added `registerCustomFunction`, `getCustomFunctions`, `getSqlExpression`                              
 
-#### `Db\Dialect\Postgresql`
+#### Db\Dialect\Postgresql
 - Changed `addPrimaryKey` to make primary key constraints names unique by prefixing them with the table name.
 
-#### `Di\ServiceInterface`
+#### Di\ServiceInterface
 - Added `getParameter`, `isResolved`
 
-#### `Di\Service`
+#### Di\Service
 - Changed `Phalcon\Di\Service` constructor to no longer takes the name of the service.
 
-#### `Dispatcher`
+#### Dispatcher
 - Removed `Phalcon\Dispatcher::setModelBinding` in favor of `Phalcon\Dispatcher::setModelBinder`
 
-#### `Dispatcher`
+#### Dispatcher
 - Added `getHandlerSuffix()`, `setHandlerSuffix()`
 
-#### `Events\ManagerInterface`                          
+#### Events\ManagerInterface                          
 - Added `hasListeners`                          
 
-#### `Flash`
+#### Flash
 - Added ability to set a custom template for the Flash Messenger.
 
-#### `Forms\Form`
+#### Forms\Form
 - `Phalcon\Forms\Form::clear` will no longer call `Phalcon\Forms\Element::clear`, instead it will clear/set default value itself, and `Phalcon\Forms\Element::clear` will now call `Phalcon\Forms\Form::clear` if it's assigned to the form, otherwise it will just clear itself.
 - `Phalcon\Forms\Form::getValue` will now also try to get the value by calling `Tag::getValue` or element's `getDefault` method before returning `null`, and `Phalcon\Forms\Element::getValue` calls `Tag::getDefault` only if it's not added to the form. 
 
-#### `Html\Breadcrumbs`
+#### Html\Breadcrumbs
 - Added `Phalcon\Html\Breadcrumbs`, a component that creates HTML code for breadcrumbs.
 
-#### `Html\Tag`
+#### Html\Tag
 - Added `Phalcon\Html\Tag`, a component that creates HTML elements. It will replace `Phalcon\Tag` in a future version. This component does not use static method calls.
 
-#### `Http\RequestInterface`
+#### Http\RequestInterface
 - Removed `isSecureRequest` in favor of `isSecure`
 - Removed `isSoapRequested` in favor of `isSoap`
 
-#### `Http\Response`
+#### Http\Response
 - Added `hasHeader()` method to `Phalcon\Http\Response` to provide the ability to check if a header exists.
 - Added `Phalcon\Http\Response\Cookies::getCookies` 
 - Changed `setHeaders` now merges the headers with any pre-existing ones in the internal collection
 - Added two new events `response::beforeSendHeaders` and `response::afterSendHeaders`
 
-#### `Logger`
+#### Logger
 - Removed `Phalcon\Logger\Multiple`
 - Changed `Phalcon\Logger` to comply with PSR-3. The component has been rewritten to use adapters that allow logging to different areas. The logger now is a single component that is instantiated and can be used with different adapters. The `File` adapter has been renamed to `Stream`. By adding multiple adapters to your logger you can log to multiple places. This is why the `Multiple` adapter has been removed. If you set up multiple adapters to your logger but want to log a specific message only to one or two, you can use the `excludeAdapters([])` method.
 
@@ -283,91 +284,91 @@ $logger
     ->info('This does not go to the "manager" logger);
 ```
 
-#### `Messages`
+#### Messages
 - `Phalcon\Messages\Message` and its collection `Phalcon\Messages\Messages` are new components that handle messages for models and validation. In the past we had two components, one for validation and one for models. We have merged these two, so you should be getting back a `MessageInterface[]` back when calling `save` on a model or when retrieving validation messages.
 	- Changed `Phalcon\Mvc\Model` to use the `Phalcon\Messages\Message` object for its messages
 	- Changed `Phalcon\Validation\*` to use the `Phalcon\Messages\Message` object for its messages
 
-#### `Mvc\Collection`
+#### Mvc\Collection
 - Removed `Phalcon\Mvc\Collection::validationHasFailed`
 - Removed calling `Phalcon\Mvc\Collection::validate` with object of type `Phalcon\Mvc\Model\ValidatorInterface`
 
-#### `Mvc\Micro\Lazyloader`
+#### Mvc\Micro\Lazyloader
 - Removed `__call` in favor of `callMethod`
 
-#### `Mvc\Model`
+#### Mvc\Model
 - Removed `Phalcon\Model::reset`
 - Added `isRelationshipLoaded` to check if relationship is loaded 
 
-#### `Mvc\Model\Criteria`
+#### Mvc\Model\Criteria
 - Removed `addWhere`
 - Removed `order`
 - Removed `order` in favor of `orderBy`
 
-#### `Mvc\Model\CriteriaInterface` 
+#### Mvc\Model\CriteriaInterface
 - Added `distinct`, `leftJoin`, `innerJoin`, `rightJoin`, `groupBy`, `having`, `cache`, `getColumns`, `getGroupBy`, `getHaving`, 
 
 #### `Mvc\Model\Manager`
 - `load` no longer reuses already initialized models
 
-#### `Mvc\Model\ManagerInterface`                       
+#### Mvc\Model\ManagerInterface                       
 - Added `isVisibleModelProperty`, `keepSnapshots`, `isKeepingSnapshots`, `useDynamicUpdate`, `isUsingDynamicUpdate`, `addHasManyToMany`, `existsHasManyToMany`, `getRelationRecords`, `getHasManyToMany`, `registerNamespaceAlias`, `getNamespaceAlias`                       
 
-#### `Mvc\Model\MessageInterface`                       
+#### Mvc\Model\MessageInterface                       
 - Added `setModel`, `getModel`, `setCode`, `getCode`                       
 
-#### `Mvc\Model\QueryInterface`                         
+#### Mvc\Model\QueryInterface
 - Added `getSingleResult`, `setBindParams`, `getBindParams`, `setBindTypes`, `setSharedLock`, `getBindTypes`, `getSql`                         
 
 #### `Mvc\Model\Query\BuilderInterface`
 - Added `offset`
 
-#### `Mvc\Model\Query\Builder`
+#### Mvc\Model\Query\Builder
 - Added bind support. The Query Builder has the same methods as `Phalcon\Mvc\Model\Query`; `getBindParams`, `setBindParams`, `getBindTypes` and `setBindTypes`.
 - Changed `addFrom` to remove third parameter `$with`
 
-#### `Mvc\Model\Query\BuilderInterface`                 
+#### Mvc\Model\Query\BuilderInterface                
 - Added `distinct`, `getDistinct`, `forUpdate`, `offset`, `getOffset`                 
 
-#### `Mvc\Model\RelationInterface`
+#### Mvc\Model\RelationInterface
 - Added `getParams`
 
-#### `Mvc\Model\ResultsetInterface`
+#### Mvc\Model\ResultsetInterface
 - Added `setHydrateMode`, `getHydrateMode`, `getMessages`, `update`, `delete`, `filter`
 
-#### `Mvc\Model\Transaction\ManagerInterface`           
+#### Mvc\Model\Transaction\ManagerInterface           
 - Added `setDbService`, `getDbService`, `setRollbackPendent`, `getRollbackPendent`           
 
-#### `Mvc\Model\Validator\*`
+#### Mvc\Model\Validator\*
 - Removed `Phalcon\Mvc\Model\Validator\*` in favor of `Phalcon\Validation\Validator\*`
 
-#### `Mvc\ModelInterface`
+#### Mvc\ModelInterface
 - Added `getModelsMetaData`
 
-#### `Mvc\RouterInterface`
+#### Mvc\RouterInterface
 - Added `attach`
 
-#### `Mvc\Router\RouteInterface`
+#### Mvc\Router\RouteInterface
 - Added `convert` so that calling `add` will return an instance that has `convert` method
 
-#### `Mvc\Router\RouteInterface`
+#### Mvc\Router\RouteInterface
 - Added response handler to `Phalcon\Mvc\Micro`, `Phalcon\Mvc\Micro::setResponseHandler`, to allow use of a custom response handler.
 
-#### `Mvc\View`
+#### Mvc\View
 - Removed `getParams`
 
-#### `Paginator`
+#### Paginator
 - `getPaginate` not becomes `paginate`
 - `$before` is removed and replaced with `$previous`
 - `$total_pages` is removed since it contained the same information as `$last`
 - Added `Phalcon\Paginator\RepositoryInterface` for repository the current state of `paginator` and also optional sets the aliases for properties repository
 
-#### `Security`
+#### Security
 - Removed `hasLibreSsl`
 - Removed `getSslVersionNumber`
 - Added `setPadding`
 
-#### `Session`
+#### Session
 - `Phalcon\Session` and `Phalcon\Session\Bag` no longer get loaded by default in `Phalcon\DI\FactoryDefault`
 - Refactored `Phalcon\Session`
 - `Phalcon\Session\Manager` is now the single component offering session manipulation by using adapters.
@@ -375,24 +376,24 @@ $logger
 - Available adapters are `Phalcon\Session\Adapter\Files`, `Phalcon\Session\Adapter\Libmemcached`, `Phalcon\Session\Adapter\Noop` and `Phalcon\Session\Adapter\Redis`.
 - Developers can now add any adapter that implements the `SessionHandlerInterface` in the `Phalcon\Session\Manager`
 
-#### `Security`
+#### Security
 - Added a retainer for the current token to be used during the checks, so when `getToken` is called the token used for checks does not change
 
-#### `Tag`
+#### Tag
 - Added `renderTitle()` that renders the title enclosed in `<title>` tags.
 - Changed `getTitle`. It returns only the text. It accepts `prepend`, `append` booleans to prepend or append the relevant text to the title. 
 - Changed `textArea` to use `htmlspecialchars` to prevent XSS injection.
 
-#### `Validation\Message`
+#### Validation\Message
 - Removed `Phalcon\Validation\Message` and `Phalcon\Mvc\Model\Message` in favor of `Phalcon\Messages\Message`
 - Removed `Phalcon\Validation\MessageInterface` and `Phalcon\Mvc\Model\MessageInterface` in favor of `Phalcon\Messages\MessageInterface`
 - Removed `Phalcon\Validation\Message` and `Phalcon\Mvc\Model\Message` in favor of `Phalcon\Messages\Message`
 - Removed `Phalcon\Validation\Message\Group` in favor of `Phalcon\Messages\Messages`
 
-#### `Validation\Validator`
+#### Validation\Validator
 - Removed `isSetOption`
 
-#### `Validation\Validator\Ip`
+#### Validation\Validator\Ip
 - Added `Phalcon\Validation\Validator\Ip`, class used to validate ip address fields. It allows to validate a field selecting IPv4 or IPv6, allowing private or reserved ranges and empty values if necessary.
 
 ### Help
