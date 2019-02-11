@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction Series 2: Phalcon's Events Manager"
-tags: [php, frameworks, phalcon, series, mvc, events manager, "0.5", "0.x"]
+tags: [php, framework, phalcon, series, mvc, events manager, "0.5", "0.x"]
 ---
 
 In addition to the dependency injection component seen in the [previous post](/post/introduction-series-1-phalcons-dependency) of the introduction series, a new component makes its appearance in Phalcon 0.5: the Events Manager. Its purpose is to intercept the execution of most of the components of the framework by creating "hook points". These hook points allow the developer to obtain status information, manipulate data or change the flow of execution during the process of a component.

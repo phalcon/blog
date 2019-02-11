@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introduction Series 4: Phalcon Query Language (PHQL)"
-tags: [php, frameworks, phalcon, series, phql, sql, mysql, hql, "0.5", "0.x"]
+tags: [php, framework, phalcon, series, phql, sql, mysql, hql, "0.5", "0.x"]
 ---
 
 This is the last part of the introduction series regarding our upcoming release of Phalcon 0.5.0.

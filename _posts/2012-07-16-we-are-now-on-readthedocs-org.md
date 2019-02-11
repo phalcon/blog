@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "We are now on readthedocs.org!"
-tags: [php, frameworks, phalcon, docs, documentation, readthedocs]
+tags: [php, framework, phalcon, docs, documentation, readthedocs]
 ---
 
 As we continue to enhance Phalcon with new functionality and features, we have migrated all of our documentation on [Read the Docs](http://readthedocs.org/), a service that hosts documentation for open source projects such as ours.

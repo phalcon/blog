@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon 0.4.3 (stable) and 0.5.0 (alpha)"
-tags: [php, frameworks, phalcon, "0.4", "0.5", release, namespaces, roadmap, "0.x"]
+tags: [php, framework, phalcon, "0.4", "0.5", release, namespaces, roadmap, "0.x"]
 ---
 
 Following up on the 0.4.2 release a few weeks ago, we have a fresh update to address some issues and minor bugs.
