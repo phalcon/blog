@@ -3,31 +3,17 @@
                         Tags
                     </div>
                     <div class="phalcon-blog__tags-items">
-                        {% capture siteTags %}
+                        {% for override in site.tags_override %}
                             {% for tag in site.tags %}
-                                {% if tag[1].size > 0 and tag[1].size < 10 %}
-                                    {{ tag[1].size | prepend: '00' }}#
-                                {% elsif tag[1].size > 9 and tag[1].size < 100 %}
-                                    {{ tag[1].size | prepend: '0' }}#
-                                {% else %}
-                                    {{ tag[1].size }}#
-                                {% endif %}
-                                {{ tag[1].size }}#
-                                {{ tag | first | downcase }}#
-                                {{ tag | first }}{% unless forloop.last %},{% endunless %}
-                            {% endfor %}
-                        {% endcapture %}
-
-                        {% assign tagHashes = siteTags | split:',' | sort %}
-                        {% for hash in tagHashes reversed %}
-                            {% if forloop.index < 13 %}
-                                {% assign keyValue = hash | split: '#' %}
-                        <a href="/tags#{{ keyValue[2] | strip | slugify }}"
+                                {% if tag[0] == override %}
+                        <a href="/tags#{{ tag | first | strip | slugify }}"
                            class="phalcon-blog__tags-item">
-                            <span>{{ keyValue[3] | strip }}</span>
-                            <span>({{ keyValue[1] | strip }})</span>
+                            <span>{{ tag | first | strip }}</span>
+                            <span>({{ tag | last | size | strip }})</span>
                         </a>
-                            {% endif %}
+                                    {% continue %}
+                                {% endif %}
+                            {% endfor %}
                         {% endfor %}
                     </div>
                     <a href="/tags" class="phalcon-blog__item-read-more">Show More</a>
