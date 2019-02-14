@@ -1209,6 +1209,9 @@ a:focus {
   height: 20px; }
 
 .phalcon-blog__sponsors-item {
+  -webkit-flex-basis: -webkit-calc(50% - 15px);
+      -ms-flex-preferred-size: calc(50% - 15px);
+          flex-basis: calc(50% - 15px);
   max-width: -webkit-calc(50% - 15px);
   max-width: calc(50% - 15px);
   display: block;
@@ -1227,6 +1230,10 @@ a:focus {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s; }
@@ -1353,6 +1360,9 @@ a:focus {
   .phalcon-blog__sponsors-item {
     margin-right: 10px;
     margin-bottom: 10px;
+    -webkit-flex-basis: -webkit-calc(50% - 10px);
+        -ms-flex-preferred-size: calc(50% - 10px);
+            flex-basis: calc(50% - 10px);
     max-width: -webkit-calc(50% - 10px);
     max-width: calc(50% - 10px); } }
 
