@@ -1137,6 +1137,7 @@ a:focus {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  overflow: hidden;
   line-height: 20px; }
   .phalcon-blog__item-article p {
     margin: 0;
