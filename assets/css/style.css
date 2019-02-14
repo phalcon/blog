@@ -1474,6 +1474,7 @@ a:focus {
             margin-inline-end: 0px; }
   .phalcon-blog-detail h2 {
     font-size: 28px;
+    color: #273646;
     line-height: normal;
     margin: 0;
     font-family: 'Lato';
@@ -1481,13 +1482,15 @@ a:focus {
     font-style: normal; }
   .phalcon-blog-detail h3 {
     font-size: 25px;
-    margin: 0;
-    margin-top: 35px;
-    margin-bottom: 10px;
+    margin: 12px 0;
     line-height: 36px;
     font-family: 'Lato';
     font-weight: 700;
     font-style: normal; }
+  .phalcon-blog-detail h4 {
+    font-size: 18px;
+    margin: 6px 0;
+    color: #273646; }
   .phalcon-blog-detail iframe {
     max-width: 100%; }
   .phalcon-blog-detail img {
