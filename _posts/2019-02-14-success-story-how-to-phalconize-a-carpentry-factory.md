@@ -49,10 +49,14 @@ class MainTask extends \Phalcon\CLI\Task
         $context = new React\ZMQ\Context($loop);
         
         // ZeroMQ push
-        $pull = $context->getSocket(ZMQ :: SOCKET_PULL, 'DeVries Websocket Pusher');
+        $pull = $context->getSocket(
+            ZMQ :: SOCKET_PULL, 
+            'DeVries Websocket Pusher'
+        );
         $pull->bind('tcp: //127.0.0.1: 5555');
         
-        // Binding to 127.0.0.1 means the only client that can connect is itself
+        // Binding to 127.0.0.1 means the only 
+        // client that can connect is itself
         $devriesWebsocket = DevriesWebsocket();
         $socketServer = new React\Socket\Server($loop);
         $socketServer->listen(8080, '0.0.0.0');
