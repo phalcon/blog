@@ -2,7 +2,8 @@
 /page/*                                                                         /
 /8                                                                              /
 /page/2?route=/page/:page                                                       /
-/post/post/*                                                                    /post/:splat
+/post/                                                                          /
+/post/post/:slug                                                                /post/:slug
 /post/78883849784/3acec916ae9c026594fe0562ef3013be2cf47247                      /post/3acec916ae9c026594fe0562ef3013be2cf47247
 /post/23251010409/dont-like-command-line-and-consoles-no-problem                /post/dont-like-command-line-and-consoles-no-problem
 /post/23849400049/help-test-phalcon-0-4-0/embed                                 /post/help-test-phalcon-0-4-0
@@ -53,3 +54,6 @@
 /post/36646589046/tutorial-your-first-encounter-with-phalcon-part/embed         /post/tutorial-your-first-encounter-with-phalcon-part-1
 /post/18934814488/welcome-to-the-phalcon-blog/embed                             /post/welcome-to-the-phalcon-blog/embed
 /post/57161129440/phalcon-2-0-the-future                                        /post/phalcon-2-0-the-future
+/post/20928554661/invo-a-sample-application                                     /post/invo-a-sample-application
+/post/phosphorum-the-phalcons-forum                                             /post/phosphorum-the-phalcon-forum
+
