@@ -23,7 +23,7 @@ The idea was simple: with a system of TV screens and tablets, displaying the tas
 
 We keep the jobs that have been signed off all day on the screen. It is very motivating to have a green list at the end of the day.
 
-In general, it is assumed that one day is required for each task to complete it. If an order requires 7 steps at the factory, the product will have passed through the factory after 7 working days at the start of the order. All of this can be monitored in the planning part of the application.
+In general, it is assumed that one day is required for each task to be completed. If an order requires seven steps to be completed, in general it will need a week's worth of work. All of this can be monitored in the planning part of the application.
 
 ### Hosting setup
 
