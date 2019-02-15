@@ -96,7 +96,7 @@ The tablet retrieves the interface via Phalcon and then interaction uses ajax ca
 
 ![](/assets/files/devries-tablet-02.jpg)
 
-Tablet interface and complete task by pressing your own face.
+_Tablet interface and complete task by pressing your own face_
 
 ### Planning
 
@@ -105,7 +105,7 @@ One of the things that soon came to mind was that they also needed insight in th
 ### 
 
 ![](/assets/files/devries-planning.png "Planning overview")
-Planning overview
+_Planning overview_
 
 ### Current status
 
@@ -116,5 +116,4 @@ One of the biggest problems I had was supporting the Microsoft SQL database. It 
 Phalcon is a super flexible framework and has certainly proven its strength for me on this project. I look forward to the steps that Phalcon is going to make. If you have any questions about this project, leave a message or contact me at Discord.
 
 ![](/assets/files/devries-floor.jpg "Production floor, with screens in the background")
-
-Production floor, with screens in the background
+_Production floor, with screens in the background_
