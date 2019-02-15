@@ -9,7 +9,7 @@ tags:
   - websocket
   - rachetphp
 ---
-In Oostzaan, a small town next to Amsterdam, De Vries Houtbewerking carpenter factory has been using Phalcon for a few years now. 
+In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](http://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
 
 The idea was simple: with a system of TV screens and tablets, displaying the tasks that come with producing window frames and stairs, the production could be optimized. We list  the order of the tasks to be done per assignment. At every workplace a screen had to come with the tasks of that day, on a tablet employees find the working drawings and they can report tasks ready. 
 
