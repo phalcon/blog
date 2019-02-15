@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon Developer Tools"
-tags: [php, frameworks, screencast, programming, devtools, "0.x"]
+tags: [php, framework, screencast, programming, devtools, "0.x"]
 ---
 
 Phalcon Developer Tools is a set of scripts to help developers in creating application components such as Controllers or Models. 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Moving towards Phalcon 0.5.x"
-tags: [php, frameworks, phalcon, "0.5", roadmap, namespaces, "0.x"]
+tags: [php, framework, phalcon, "0.5", roadmap, namespaces, "0.x"]
 ---
 
 Our main goal is to make Phalcon a great framework that everyone can benefit from.

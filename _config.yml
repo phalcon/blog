@@ -15,7 +15,19 @@ social:
   rss: phalcon
   twitter: phalconphp
 
-meta:
+tags_override:
+  - phalcon4
+  - release
+  - zephir
+  - lts
+  - hangout
+  - github
+  - phalcon
+  - community
+  - update
+  - roadmap
+  - framework
+  - benchmarks
 
 excerpt_separator: <!--more-->
 

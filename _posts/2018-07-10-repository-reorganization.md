@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Repository reorganization"
-tags: [php, phalcon, phalcon3, repositories, github]
+tags: [php, phalcon, phalcon3, repository, github]
 ---
 
 We have started an evaluation of all of our github repositories as part of a cleanup process. Some of our repositories were experimental, just to see if things would work. Some are proofs of concept and some are working examples.

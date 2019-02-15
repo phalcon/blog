@@ -1,7 +1,47 @@
----
----
-
 @charset "UTF-8";
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #F0F0F0; }
+
+.hljs, .hljs-subst {
+  color: #444; }
+
+.hljs-comment {
+  color: #888888; }
+
+.hljs-keyword, .hljs-attribute, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+  font-weight: bold; }
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: #880000; }
+
+.hljs-title, .hljs-section {
+  color: #880000;
+  font-weight: bold; }
+
+.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable, .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo {
+  color: #BC6060; }
+
+.hljs-literal {
+  color: #78A960; }
+
+.hljs-built_in, .hljs-bullet, .hljs-code, .hljs-addition {
+  color: #397300; }
+
+.hljs-meta {
+  color: #1f7199; }
+
+.hljs-meta-string {
+  color: #4d99bf; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
 /*  основные цвета  */
 @font-face {
   font-family: 'Lato';
@@ -571,7 +611,7 @@ a:focus {
     background-repeat: no-repeat;
     -webkit-background-size: contain;
             background-size: contain;
-    background-image: url("https://assets.phalconphp.com/phalcon/logo-white-105x40.svg"); }
+    background-image: url("https://assets.phalconphp.com/phalcon/images/svg/phalcon-logo-white-105x40.svg"); }
 
 .header__sitename {
   height: 18px;
@@ -613,7 +653,7 @@ a:focus {
       .header-nav > li.expand:hover .header-dropdown-wrapper {
         display: block; }
       .header-nav > li.expand > a::after {
-        content: url("https://assets.phalconphp.com/phalcon/arrow.svg");
+        content: url("https://assets.phalconphp.com/phalcon/images/svg/arrow.svg");
         color: #fff;
         position: relative;
         top: -2px;
@@ -795,7 +835,11 @@ a:focus {
   margin-left: auto;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
-          flex-shrink: 0; }
+          flex-shrink: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .header__lang {
   cursor: pointer;
@@ -812,7 +856,7 @@ a:focus {
     .header__lang.expand:hover .header-dropdown-wrapper {
       display: block; }
     .header__lang.expand:after {
-      content: url("../../design/img/arrow.svg");
+      content: url("https://assets.phalconphp.com/phalcon/images/svg/arrow.svg");
       color: #fff;
       position: relative;
       top: -2px;
@@ -857,8 +901,15 @@ a:focus {
             transform: rotate(-45deg);
     bottom: 7px; }
 
-.hidden {
-  overflow: hidden; }
+.header__github {
+  margin-right: 10px; }
+  .header__github a {
+    display: block;
+    height: 20px; }
+
+.header__discord a {
+  display: block;
+  height: 22px; }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .header {
@@ -868,7 +919,7 @@ a:focus {
   .header__logo a {
     width: 34px;
     height: 39px;
-    background-image: url("../../design/img/logo--tablet.svg"); }
+    background-image: url("https://assets.phalconphp.com/phalcon/images/svg/phalcon-logo-35x39.svg"); }
   .header__search {
     width: 110px; }
   .header-nav {
@@ -1080,14 +1131,27 @@ a:focus {
 .phalcon-blog__item-article {
   font-size: 14px;
   color: #68727e;
-  max-height: 81px;
   margin-bottom: 11px;
-  overflow: hidden;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical; }
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 20px; }
+  .phalcon-blog__item-article p {
+    margin: 0;
+    line-height: 20px; }
+  .phalcon-blog__item-article a {
+    color: #385B56;
+    line-height: 23px;
+    font-size: 16px;
+    border-bottom: 1px solid #385B56;
+    -webkit-transition: all .125s;
+    -o-transition: all .125s;
+    transition: all .125s; }
+    .phalcon-blog__item-article a:hover {
+      border-bottom-color: transparent; }
 
 .phalcon-blog__item-read-more {
   font-size: 14px;
@@ -1145,7 +1209,11 @@ a:focus {
   height: 20px; }
 
 .phalcon-blog__sponsors-item {
-  max-width: 50%;
+  -webkit-flex-basis: -webkit-calc(50% - 15px);
+      -ms-flex-preferred-size: calc(50% - 15px);
+          flex-basis: calc(50% - 15px);
+  max-width: -webkit-calc(50% - 15px);
+  max-width: calc(50% - 15px);
   display: block;
   height: 60px;
   padding: 13px 14px;
@@ -1162,6 +1230,10 @@ a:focus {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s; }
@@ -1213,7 +1285,8 @@ a:focus {
     margin-right: 3px;
     -webkit-transition: all .125s;
     -o-transition: all .125s;
-    transition: all .125s; }
+    transition: all .125s;
+    text-transform: capitalize; }
   .phalcon-blog__tags-item span:last-child {
     font-weight: 700; }
   .phalcon-blog__tags-item:hover {
@@ -1287,8 +1360,26 @@ a:focus {
   .phalcon-blog__sponsors-item {
     margin-right: 10px;
     margin-bottom: 10px;
+    -webkit-flex-basis: -webkit-calc(50% - 10px);
+        -ms-flex-preferred-size: calc(50% - 10px);
+            flex-basis: calc(50% - 10px);
     max-width: -webkit-calc(50% - 10px);
     max-width: calc(50% - 10px); } }
+
+.phalcon-blog__projects-text {
+  color: #68727e;
+  font-size: 16px;
+  line-height: 23px; }
+  .phalcon-blog__projects-text a {
+    color: #385B56;
+    line-height: 23px;
+    font-size: 16px;
+    border-bottom: 1px solid #385B56;
+    -webkit-transition: all .125s;
+    -o-transition: all .125s;
+    transition: all .125s; }
+    .phalcon-blog__projects-text a:hover {
+      border-bottom-color: transparent; }
 
 @media (max-width: 1023px) {
   .phalcon-blog .container {
@@ -1340,6 +1431,23 @@ a:focus {
     right: -12px;
     top: 7px; }
 
+.phalcon-blog-detail__author {
+  margin-right: 22px;
+  margin-bottom: 5px;
+  position: relative; }
+  .phalcon-blog-detail__author:nth-child(2):after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 2px;
+    background-color: #68727e;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    right: -12px;
+    top: 7px; }
+  .phalcon-blog-detail__author:last-child:after {
+    display: none; }
+
 .phalcon-blog-detail {
   margin-bottom: 35px; }
   .phalcon-blog-detail table {
@@ -1364,8 +1472,19 @@ a:focus {
       border: 1px solid rgba(39, 54, 70, 0.4);
       padding: 8px 14px;
       min-width: 150px; }
+  .phalcon-blog-detail blockquote {
+    display: block;
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    -webkit-margin-after: 0em;
+            margin-block-end: 0em;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px; }
   .phalcon-blog-detail h2 {
     font-size: 28px;
+    color: #273646;
     line-height: normal;
     margin: 0;
     font-family: 'Lato';
@@ -1373,13 +1492,15 @@ a:focus {
     font-style: normal; }
   .phalcon-blog-detail h3 {
     font-size: 25px;
-    margin: 0;
-    margin-top: 35px;
-    margin-bottom: 10px;
+    margin: 12px 0;
     line-height: 36px;
     font-family: 'Lato';
     font-weight: 700;
     font-style: normal; }
+  .phalcon-blog-detail h4 {
+    font-size: 18px;
+    margin: 6px 0;
+    color: #273646; }
   .phalcon-blog-detail iframe {
     max-width: 100%; }
   .phalcon-blog-detail img {
@@ -1395,6 +1516,7 @@ a:focus {
     margin-bottom: 10px;
     line-height: 23px;
     font-size: 16px;
+    color: #273646;
     font-family: 'Lato';
     font-weight: 400;
     font-style: normal; }
@@ -1437,9 +1559,9 @@ a:focus {
     font-style: normal;
     color: #CB2F2F; }
   .phalcon-blog-detail ul {
-    color: #68727e;
-    margin-top: 10px;
     margin-bottom: 25px;
+    margin-top: 10px;
+    color: #273646;
     display: block;
     max-width: 100%;
     overflow: hidden; }
@@ -1451,6 +1573,27 @@ a:focus {
       max-width: 100%;
       word-break: break-all;
       word-wrap: break-word; }
+  .phalcon-blog-detail ol {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+    -webkit-margin-start: 0;
+            margin-inline-start: 0;
+    -webkit-margin-end: 0;
+            margin-inline-end: 0;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    max-width: 100%;
+    padding-left: 20px;
+    color: #273646; }
+    .phalcon-blog-detail ol li {
+      margin-bottom: 8px;
+      line-height: 23px;
+      font-size: 16px;
+      max-width: 100%; }
   .phalcon-blog-detail .headline {
     margin-bottom: 10px; }
   .phalcon-blog-detail .hljs {
@@ -1569,3 +1712,9 @@ body {
     padding: 6px 12px;
   }
   
+.hidden {
+  overflow: hidden; }
+
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    cursor: pointer; } }

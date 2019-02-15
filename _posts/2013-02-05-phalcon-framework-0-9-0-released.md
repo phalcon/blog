@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Phalcon Framework 0.9.0 released!"
-tags: [php, phalcon, mvc, frameworks, release, "0.9", "0.x"]
+tags: [php, phalcon, mvc, framework, release, "0.9", "0.x"]
 ---
 
 ![image](/assets/files/2013-02-05-phalcon-logo.jpg)

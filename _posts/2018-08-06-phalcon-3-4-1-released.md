@@ -6,7 +6,7 @@ tags:
   - phalcon
   - phalcon3
   - "3.4.x"
-  - repositories
+  - repository
   - github
 ---
 
