@@ -42,6 +42,7 @@ _We all love pi_
 ### WebSocket
 
 In order to stimulate the employees to register the finished task, we have chosen to display this on the screen as quickly as possible. One possibility was to, for example, refresh the screen every 10 seconds by doing an api call. Besides giving us lots of unnecessary lookups, we do not want to burden the Raspberry PIs too much. Websocket has the possibility of bidirectional communication and offers a solution here. At the time of development I had no experience with websocket so I decided to do only the much needed parts in websocket. Mainly 2 functions: reload the entire web page (for example a style update) or retrieve new data via the api.
+
 To set up the websocket, I gratefully used the Phalcon CLI app in combination with Ratchet websocket for PHP. Using the following code, I was able to set up a simple websocket server.
 
 ```php
@@ -79,7 +80,7 @@ class MainTask extends \Phalcon\CLI\Task
 }
 ```
 
-What I did in the DevriesWebsocket class is simple. Clients who register are required to provide a type, for example Screen Spraying. I register these clients in an array and added a few methods to send messages to clients. For example, to all screens with type X, to all screens or to an individual screen.
+What I did in the `DevriesWebsocket` class is simple. Clients who register are required to provide a type, for example Screen Spraying. I register these clients in an array and added a few methods to send messages to clients. For example, to all screens with type X, to all screens or to an individual screen.
 
 In order to send messages to the screens I also connect myself as a client with the type of controller. I have built this functionality not only in the cmd-line Phalcon app, but also in the webapp. A model can therefore send a message to the specific screens to update after a save.
 
@@ -91,7 +92,7 @@ The tablets are used by the carpenters. In general, these craftsmen and woman lo
 
 The tablet retrieves the interface via Phalcon and then interaction uses ajax calls on the api. We store changes such as completing tasks in the database and if necessary we send a update command to screen to mark it complete and display them on the next screen.
 
-![](/assets/files/devries-tablet-01.jpg)
+![](/assets/files/devries-tablet-01.png)
 
 ![](/assets/files/devries-tablet-02.jpg)
 
@@ -103,7 +104,7 @@ One of the things that soon came to mind was that they also needed insight in th
 
 ### 
 
-![](/assets/files/devries-planning.jpg "Planning overview")
+![](/assets/files/devries-planning.png "Planning overview")
 Planning overview
 
 ### Current status
