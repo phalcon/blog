@@ -9,7 +9,7 @@ tags:
   - websocket
   - rachetphp
 ---
-![De Vries Houtbewerking](/assets/files/devries-factory.png)
+![De Vries Houtbewerking](/assets/files/devries-factory.jpg)
 
 In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](http://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
 
