@@ -33,9 +33,11 @@ The first request contains the basic layout, then javascript takes control. Afte
 
 We tried to only give the needed information on the screen and using colors add additional information such as priority (orders that are red running behind according to the planning) 
 
-![](/assets/files/devries-screens.jpg "Test drive few weeks before going to production")
+![Test drive few weeks before going to production](/assets/files/devries-screens.jpg "Test drive few weeks before going to production")
+_Test drive few weeks before going to production_
 
 ![](/assets/files/devries-pi.jpg "We all love pi")
+_We all love pi_
 
 ### WebSocket
 
@@ -89,9 +91,11 @@ The tablets are used by the carpenters. In general, these craftsmen and woman lo
 
 The tablet retrieves the interface via Phalcon and then interaction uses ajax calls on the api. We store changes such as completing tasks in the database and if necessary we send a update command to screen to mark it complete and display them on the next screen.
 
-![](/assets/files/devries-tablet-01.jpg "Tablet interface and complete task by pressing your own face.")
+![](/assets/files/devries-tablet-01.jpg)
 
 ![](/assets/files/devries-tablet-02.jpg)
+
+Tablet interface and complete task by pressing your own face.
 
 ### Planning
 
@@ -100,6 +104,7 @@ One of the things that soon came to mind was that they also needed insight in th
 ### 
 
 ![](/assets/files/devries-planning.jpg "Planning overview")
+Planning overview
 
 ### Current status
 
@@ -109,4 +114,6 @@ One of the biggest problems I had was supporting the Microsoft SQL database. It 
 
 Phalcon is a super flexible framework and has certainly proven its strength for me on this project. I look forward to the steps that Phalcon is going to make. If you have any questions about this project, leave a message or contact me at Discord.
 
-![](/assets/files/devries-floor.jpg "Factory in production with screens in the background")
+![](/assets/files/devries-floor.jpg "Production floor, with screens in the background")
+
+Production floor, with screens in the background
