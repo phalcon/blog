@@ -1071,6 +1071,9 @@ a:focus {
   display: flex;
   margin-bottom: 35px; }
 
+.phalcon-blog__item-content {
+  width: 100%;
+}
 .phalcon-blog__item-img {
   display: block;
   width: 180px;
