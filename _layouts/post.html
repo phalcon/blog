@@ -26,8 +26,12 @@ layout: default
                         <div class="phalcon-blog-detail__date">
                             {{ page.date | date: "%b %d, %Y" }}
                         </div>
-                        <div class="phalcon-blog-detail__author">Phalcon Team</div>
-                        <div class="phalcon-blog-detail__author">Read time: {{ reading_time }}</div>
+                        <div class="phalcon-blog-detail__author">
+                            Phalcon Team (<a href="https://github.com/niden">niden</a>)
+                        </div>
+                        <div class="phalcon-blog-detail__author">
+                            Read time: {{ reading_time }}
+                        </div>
                     </div>
                     {% if post.image %}
                     <img src="{{ page.image }}" alt="{{ page.title }}">
