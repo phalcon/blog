@@ -106,7 +106,7 @@ The tablet retrieves the interface via Phalcon and any interaction uses AJAX cal
 
 ![](/assets/files/devries-tablet-02.jpg)
 
-_Tablet interface and complete task by pressing your own face_
+_Tablet interface; Tasks completed by pressing on your picture_
 
 ### Planning
 
