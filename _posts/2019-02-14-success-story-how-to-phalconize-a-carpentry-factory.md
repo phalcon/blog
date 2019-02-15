@@ -9,17 +9,21 @@ tags:
   - websocket
   - rachetphp
 ---
-![De Vries Houtbewerking](/assets/files/devries-factory.jpg "De Vries Houtbewerking")
+This success story Yet another success story from our community member Michael ([Xpundel](https://github.com/xpundel)).
 
-In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](http://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
+<!--more-->
 
-The idea was simple: with a system of TV screens and tablets, displaying the tasks that come with producing window frames and stairs, the production could be optimized. We list  the order of the tasks to be done per assignment. At every workplace a screen had to come with the tasks of that day, on a tablet employees find the working drawings and they can report tasks ready. 
+> ![De Vries Houtbewerking](/assets/files/devries-factory.jpg "De Vries Houtbewerking")
 
-We keep the jobs that have been signed off all day on the screen. It is very motivating to have a green list at the end of the day.
+> In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](http://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
 
-In general, it is assumed that one day is required for each task to complete it. If an order requires 7 steps at the factory, the product will have passed through the factory after 7 working days at the start of the order. All of this can be monitored in the planning part of the application.
+> The idea was simple: with a system of TV screens and tablets, displaying the tasks that come with producing window frames and stairs, the production could be optimized. We list  the order of the tasks to be done per assignment. At every workplace a screen had to come with the tasks of that day, on a tablet employees find the working drawings and they can report tasks ready. 
 
-### Hosting setup
+> We keep the jobs that have been signed off all day on the screen. It is very motivating to have a green list at the end of the day.
+
+> In general, it is assumed that one day is required for each task to complete it. If an order requires 7 steps at the factory, the product will have passed through the factory after 7 working days at the start of the order. All of this can be monitored in the planning part of the application.
+
+> ### Hosting setup
 
 The first step was to take stock of the current environment. In Microsoft Access there was already a system to register the orders, with a large amount of data.
 
