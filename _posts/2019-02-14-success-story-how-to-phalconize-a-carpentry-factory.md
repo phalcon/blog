@@ -9,7 +9,7 @@ tags:
   - websocket
   - rachetphp
 ---
-![De Vries Houtbewerking](/assets/files/devries-factory.jpg)
+![De Vries Houtbewerking](/assets/files/devries-factory.jpg "De Vries Houtbewerking")
 
 In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](http://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
 
@@ -28,7 +28,9 @@ The first step was therefore to make the Access system use a Microsoft SQL Serve
 ### The screens
 
 The development started with het visualising the required data. To keep the costs low, we have chosen to control the screens (Full HD) with a Raspberry Pi. A headless browser (chromium) automatically starts up and immediately opens the web page in the internal server. Phalcon serves the web page and based on the IP it will be determined which type of screen this is and what information the screen needs to request.
+
 The first request contains the basic layout, then javascript takes control. After initialization, we request data for the screen via an API and set up a web socket connection for receiving push messages. Since the Raspberry PIs can not be operated via a keyboard and we want to prevent accessing the devices, the page will be reloaded immediately if there is an error. If the web socket connection fails, it will be automatically restore the connection and if no connection is possible after 60 seconds, we reload the page. 
+
 We tried to only give the needed information on the screen and using colors add additional information such as priority (orders that are red running behind according to the planning) 
 
 ![](/assets/files/devries-screens.jpg "Test drive few weeks before going to production")
@@ -87,9 +89,9 @@ The tablets are used by the carpenters. In general, these craftsmen and woman lo
 
 The tablet retrieves the interface via Phalcon and then interaction uses ajax calls on the api. We store changes such as completing tasks in the database and if necessary we send a update command to screen to mark it complete and display them on the next screen.
 
-![](/assets/files/devries-tablet-01.png "Tablet interface and complete task by pressing your own face.")
+![](/assets/files/devries-tablet-01.jpg "Tablet interface and complete task by pressing your own face.")
 
-![](/assets/files/devries-tablet-02.png)
+![](/assets/files/devries-tablet-02.jpg)
 
 ### Planning
 
@@ -97,7 +99,7 @@ One of the things that soon came to mind was that they also needed insight in th
 
 ### 
 
-![](/assets/files/devries-planning.png "Planning overview")
+![](/assets/files/devries-planning.jpg "Planning overview")
 
 ### Current status
 
@@ -107,4 +109,4 @@ One of the biggest problems I had was supporting the Microsoft SQL database. It 
 
 Phalcon is a super flexible framework and has certainly proven its strength for me on this project. I look forward to the steps that Phalcon is going to make. If you have any questions about this project, leave a message or contact me at Discord.
 
-![](/assets/files/devries-floor.png "Factory in production with screens in the background")
+![](/assets/files/devries-floor.jpg "Factory in production with screens in the background")
