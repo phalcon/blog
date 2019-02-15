@@ -1450,7 +1450,7 @@ a:focus {
     top: 7px; }
   .phalcon-blog-detail__author:last-child:after {
     display: none; }
-.phalcon-blog-detail__author a {
+.phalcon-blog-detail .phalcon-blog-detail__author a {
     font-size: 12px;
     line-height: 12px;
 }
