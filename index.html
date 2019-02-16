@@ -26,8 +26,9 @@ layout: default
                         {% if post.image %}
                         <meta itemprop="image" content="{{ page.image }}">
                         {% else %}
-                        <meta itemprop="image" content="/assets/files/phalcon-logo-320x180.png">
+                        <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                         {% endif %}
+                        <meta itemprop="publisher" content="Phalcon Team">
 <!--                        <a href="#" class="phalcon-blog__item-img">-->
 <!--                            <img src="img/elephant.jpg" alt="">-->
 <!--                        </a>-->
@@ -48,7 +49,7 @@ layout: default
                                     {{ post.date | date: "%b %d, %Y" }}
                                 </div>
                                 <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                    <span itemprop="publisher name">Phalcon Team</span>
+                                    <span itemprop="name">Phalcon Team</span>
                                 </div>
                             </div>
                             <div class="phalcon-blog__item-article" itemprop="articleSection">
@@ -60,8 +61,9 @@ layout: default
                         {% if post.image %}
                         <meta itemprop="image" content="{{ page.image }}">
                         {% else %}
-                        <meta itemprop="image" content="/assets/files/phalcon-logo-320x180.png">
+                        <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                         {% endif %}
+                        <meta itemprop="publisher" content="Phalcon Team">
 <!--                        <a href="#" class="phalcon-blog__item-img">-->
 <!--                            <img src="img/elephant.jpg" alt="">-->
 <!--                        </a>-->

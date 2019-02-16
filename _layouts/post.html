@@ -27,7 +27,7 @@ layout: default
                             {{ page.date | date: "%b %d, %Y" }}
                         </div>
                         <div class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <span itemprop="publisher name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
+                            <span itemprop="name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
                         </div>
                         <div class="phalcon-blog-detail__author">
                             Read time: {{ reading_time }}
@@ -36,8 +36,9 @@ layout: default
                     {% if post.image %}
                     <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
                     {% else %}
-                    <meta itemprop="image" content="/assets/files/phalcon-logo-320x180.png">
+                    <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                     {% endif %}
+                    <meta itemprop="publisher" content="Phalcon Team">
                     <div itemprop="articleBody">{{ page.content }}</div>
                     <div id="commento"></div>
                 </div>
