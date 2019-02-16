@@ -36,7 +36,7 @@ layout: default
                     {% if post.image %}
                     <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
                     {% else %}
-                    <meta itemprop="image" content="{{ site.url }}/assets/files/phalcon-logo-320x180.png">
+                    <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                     {% endif %}
                     <meta itemprop="publisher" content="Phalcon Team">
                     <div itemprop="articleBody">{{ page.content }}</div>
