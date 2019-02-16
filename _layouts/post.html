@@ -19,15 +19,15 @@ layout: default
     {% assign reading_time = minutes | append: ' minutes' %}
 {% endif %}
                 <div class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article">
-                    <h2 itemprop="name" class="headline">
+                    <h2 itemprop="name headline" class="headline">
                         {{ page.title | escape }}
                     </h2>
                     <div class="phalcon-blog-detail__info">
-                        <div class="phalcon-blog-detail__date" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">
+                        <div class="phalcon-blog-detail__date" itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">
                             {{ page.date | date: "%b %d, %Y" }}
                         </div>
                         <div class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <span itemprop="name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
+                            <span itemprop="publisher name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
                         </div>
                         <div class="phalcon-blog-detail__author">
                             Read time: {{ reading_time }}
@@ -35,6 +35,8 @@ layout: default
                     </div>
                     {% if post.image %}
                     <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
+                    {% else %}
+                    <meta itemprop="image" content="/assets/files/phalcon-logo-320x180.png">
                     {% endif %}
                     <div itemprop="articleBody">{{ page.content }}</div>
                     <div id="commento"></div>
