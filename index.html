@@ -4,24 +4,24 @@ layout: default
 {% for post in paginator.posts %}
 {% if forloop.index == 1 %}
                 <div class="phalcon-blog__last-article">
-                    <div class="phalcon-blog__item">
+                    <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
                         <div class="phalcon-blog__item-content">
-                            <div class="phalcon-blog__item-title">
+                            <div class="phalcon-blog__item-title" itemprop="name">
                                 <a href="{{ post.url }}">{{ post.title }}</a>
                             </div>
                             <div class="phalcon-blog__item-info">
-                                <div class="phalcon-blog__item-date">
+                                <div class="phalcon-blog__item-date" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">
                                     {{ post.date | date: "%b %d, %Y" }}
                                 </div>
-                                <div class="phalcon-blog__item-author">
-                                    Phalcon Team
+                                <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">Phalcon Team</span>
                                 </div>
                             </div>
-                            <div class="phalcon-blog__item-article">
+                            <div class="phalcon-blog__item-article" itemprop="articleSection">
                                 {{ post.excerpt }}
                             </div>
                             <a href="{{ post.url }}"
-                               class="phalcon-blog__item-read-more">Read More</a>
+                               class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
                         </div>
 <!--                        <a href="#" class="phalcon-blog__item-img">-->
 <!--                            <img src="img/elephant.jpg" alt="">-->
@@ -33,24 +33,24 @@ layout: default
                 </div>
                 <div class="phalcon-blog__items">
 {% else %}
-                    <div class="phalcon-blog__item">
+                    <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
                         <div class="phalcon-blog__item-content">
-                            <div class="phalcon-blog__item-title">
+                            <div class="phalcon-blog__item-title" itemprop="name">
                                 <a href="{{ post.url }}">{{ post.title }}</a>
                             </div>
                             <div class="phalcon-blog__item-info">
-                                <div class="phalcon-blog__item-date">
+                                <div class="phalcon-blog__item-date" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">
                                     {{ post.date | date: "%b %d, %Y" }}
                                 </div>
-                                <div class="phalcon-blog__item-author">
-                                    Phalcon Team
+                                <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">Phalcon Team</span>
                                 </div>
                             </div>
-                            <div class="phalcon-blog__item-article">
+                            <div class="phalcon-blog__item-article" itemprop="articleSection">
                                 {{ post.excerpt }}
                             </div>
                             <a href="{{ post.url }}"
-                               class="phalcon-blog__item-read-more">Read More</a>
+                               class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
                         </div>
 <!--                        <a href="#" class="phalcon-blog__item-img">-->
 <!--                            <img src="img/elephant.jpg" alt="">-->
