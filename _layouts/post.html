@@ -33,7 +33,7 @@ layout: default
                             Read time: {{ reading_time }}
                         </div>
                     </div>
-                    {% if post.image %}
+                    {% if page.image %}
                     <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
                     {% else %}
                     <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">

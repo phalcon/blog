@@ -24,14 +24,14 @@ layout: default
                                class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
                         </div>
                         {% if post.image %}
-                        <meta itemprop="image" content="{{ page.image }}">
+                        <meta itemprop="image" content="{{ post.image }}">
+                        <a href="{{ post.url }}" class="phalcon-blog__item-img">
+                            <img src="{{ post.image }}" alt="{{ post.title }}">
+                        </a>
                         {% else %}
                         <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                         {% endif %}
                         <meta itemprop="publisher" content="Phalcon Team">
-<!--                        <a href="#" class="phalcon-blog__item-img">-->
-<!--                            <img src="img/elephant.jpg" alt="">-->
-<!--                        </a>-->
                     </div>
                 </div>
                 <div class="phalcon-blog__main-title">
@@ -59,14 +59,14 @@ layout: default
                                class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
                         </div>
                         {% if post.image %}
-                        <meta itemprop="image" content="{{ page.image }}">
+                        <meta itemprop="image" content="{{ post.image }}">
+                        <a href="{{ post.url }}" class="phalcon-blog__item-img">
+                            <img src="{{ post.image }}" alt="{{ post.title }}">
+                        </a>
                         {% else %}
                         <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                         {% endif %}
                         <meta itemprop="publisher" content="Phalcon Team">
-<!--                        <a href="#" class="phalcon-blog__item-img">-->
-<!--                            <img src="img/elephant.jpg" alt="">-->
-<!--                        </a>-->
                     </div>
 {% endif %}
 {% endfor %}
