@@ -16,7 +16,7 @@ If you have missed the live hangout, you can watch it on YouTube:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IrzbK986f_g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Watch it here](https://www.youtube.com/watch?v=OAN7W2zVRaI)
+[Watch it here](https://www.youtube.com/watch?v=IrzbK986f_g)
 
 The slides of the hangout are [here](https://docs.google.com/presentation/d/1_XOvsCt-_Kmfrz6exAzsRh7UpwpPCy2alDzUkdcDlj4/edit?usp=sharing)
 
