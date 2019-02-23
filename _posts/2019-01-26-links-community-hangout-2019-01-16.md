@@ -5,7 +5,7 @@ date: 2019-01-26T19:46:33.408Z
 tags:
   - hangout
   - community
-  - phalcon
+  - phalcon4
   - chit chat
 ---
 The first community hangout of 2019 was awesome and super fun! We are really happy to interact with the community and offer news, vision and problems we are facing in the Phalcon ecosystem. 
