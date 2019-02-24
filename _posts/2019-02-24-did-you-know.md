@@ -32,7 +32,7 @@ Also any component that has been modified or rewritten, will have a link `Upgrad
 We have added [Algolia](https://algolia.com) Docsearch to our v4 documentation. The search is language aware so whatever you are searching will respect the language of the documents you are viewing.
 
 #### Comments
-Our blog now allows you to comment on blog posts. All comments are moderated of course. You can log in using GitHub, Google, Twitter or Gitlab. You can also use markdown if you have code samples you want to share.
+Our documentation now allows you to comment on articles. All comments are moderated of course. You can log in using GitHub, Google, Twitter or Gitlab. You can also use markdown if you have code samples you want to share.
 
 ### Blog
 This blog has been redesigned as most have noticed. 
