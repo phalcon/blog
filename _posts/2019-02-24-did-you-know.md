@@ -11,7 +11,7 @@ tags:
   - search
 ---
 As with any open source project, developers usually don't have the time to keep up with everything that is going on. As such, some things are missed that could potentially help developers. Phalcon is no different, and despite the fact that we have a very "observant" community, we thought we would outline a few things that you might have missed
-
+<!--more-->
 ### Main Repository
 
 #### NFRs
@@ -49,3 +49,5 @@ Our blog now allows you to comment on blog posts, same as our v4 documentation.
 ### BuiltWith
 We have a website that you can showcase your Phalcon implementations!! [BuiltWith](https://builtwith.phalconphp.com) can showcase your site, with tags, description, authors, repo if open sourced, as well as pictures. You can check the [repository](https://github.com/phalcon/builtwith) for instructions on how to submit your site! BuiltWith also incorporates Algolia search so you can find easily projects based on a tag or other criteria.
 
+
+<3 Phalcon Team
