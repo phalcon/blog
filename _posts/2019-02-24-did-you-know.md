@@ -48,3 +48,5 @@ Our blog now allows you to comment on blog posts, same as our v4 documentation.
 
 ### BuiltWith
 We have a website that you can showcase your Phalcon implementations!! [https://builtwith.phalconphp.com](https://builtwith.phalconphp.com) can showcase your site, with tags, description, authors, repo if open sourced, as well as pictures. You can check the [repository](https://github.com/phalcon/builtwith) for instructions on how to submit your site! BuiltWith also incorporates Algolia search so you can find easily projects based on a tag or other criteria.
+
+<3 The Phalcon Team
