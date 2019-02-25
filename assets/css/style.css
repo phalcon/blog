@@ -1733,8 +1733,14 @@ body {
 
 @media (min-width: 1023px) {
   .aa-dropdown-menu {
-    width: 300px;
+    width: 280px;
     margin-top: 10px;
+  }
+}
+
+@media (min-width: 1439px) {
+  .aa-dropdown-menu {
+    width: 300px;
   }
 }
 
