@@ -668,7 +668,7 @@ a:focus {
     z-index: 20;
     background-color: #273646;
     overflow-y: scroll;
-    -webkit-transitionf: .4s;
+    -webkit-transition: .4s;
     -o-transition: .4s;
     transition: .4s; }
     .header-nav--mobile::-webkit-scrollbar {
