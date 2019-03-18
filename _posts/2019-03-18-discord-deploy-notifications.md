@@ -8,7 +8,7 @@ tags:
   - documentation
 ---
 This blog post is not related to the actual code of Phalcon, but to the process of updating our documentation and notifying our [Discord](https://phalcon.link/discord) server of the build status.
-
+<!--more-->
 We have blogged in the past that we have switched our documentation to a static site, utilizing Jekyll on the Netlify platform. The build process starts automatically whenever we push changes to our repository.
 
 Because of the size of our documentation in terms of files as well as content, the documentation site builds in around 15 minutes, while a full rebuild is created in around 60 minutes.
