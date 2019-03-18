@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Discord deploy notifications
+title: Netlify - Discord deploy notifications
 date: 2019-03-18T22:15:26.884Z
 tags:
   - discord
