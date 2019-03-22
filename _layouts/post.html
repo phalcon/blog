@@ -40,5 +40,13 @@ layout: default
                     {% endif %}
                     <meta itemprop="publisher" content="Phalcon Team">
                     <div itemprop="articleBody">{{ page.content }}</div>
+                    <div class="phalcon-blog__tags-items">
+                        {% for tag in page.tags %}
+                        <a href="/tags#{{ tag | slugify }}" class="phalcon-blog__tags-item">
+                            <span>{{ tag }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
+
                     <div id="commento"></div>
                 </div>
