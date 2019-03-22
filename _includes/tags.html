@@ -8,8 +8,8 @@
                                 {% if tag[0] == override %}
                         <a href="/tags#{{ tag | first | strip | slugify }}"
                            class="phalcon-blog__tags-item">
-                            <span>{{ tag | first | strip }}</span>
-                            <span>({{ tag | last | size | strip }})</span>
+                            <span>{{- tag | first | strip -}}</span>
+                            <span>({{- tag | last | size | strip -}})</span>
                         </a>
                                     {% continue %}
                                 {% endif %}
