@@ -6,6 +6,7 @@ tags:
   - discord
   - phalcon
   - documentation
+  - netlify
 ---
 This blog post is not related to the actual code of Phalcon, but to the process of updating our documentation and notifying our [Discord](https://phalcon.link/discord) server of the build status.
 <!--more-->
