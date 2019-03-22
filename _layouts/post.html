@@ -42,8 +42,8 @@ layout: default
                     <div itemprop="articleBody">{{ page.content }}</div>
                     <div class="phalcon-blog__tags-items">
                         {% for tag in page.tags %}
-                        <a href="/tags#{{ tag | slugify }}" class="phalcon-blog__tags-item">
-                            <span>{{ tag }}</span>
+                        <a href="/tags#{{- tag | slugify -}}" class="phalcon-blog__tags-item">
+                            <span>{{- tag -}}</span>
                         </a>
                         {% endfor %}
                     </div>
