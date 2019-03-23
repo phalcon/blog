@@ -30,11 +30,11 @@ Note that running the installation script will replace any version of Phalcon in
 
 <h5 class="alert alert-danger">
 <strong>NOTE</strong>: Our packaging system not longer supports Ubuntu 15.10 due to difficulties installing dependencies, updates and major security patches. Ubuntu 15.10 reached its end of life in July 28, 2016. We strongly recommend you upgrade your installation. If you cannot, you can always build the latest stable version of Phalcon from the source code. 
-</div>
+</h5>
 
 <h5 class="alert alert-danger">
 <strong>NOTE</strong>: Windows DLLs are now available in our <a href="https://github.com/phalcon/cphalcon/releases/tag/v3.3.2">Github Release</a> page. 
-</div>
+</h5>
 
 We encourage existing Phalcon 3 users to update to this version and as always a big thank you to our contributors!
 
