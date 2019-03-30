@@ -27,7 +27,6 @@ As always we love to hear back from the community so feel free to reach us on:
 * [Forum](https://phalcon.link/forum)
 * [Discord](https://phalcon.link/discord)
 * [Github](https://phalcon.link/github)
-* [Gab](https://phalcon.link/gab)
 * [Telegram](https://phalcon.link/telegram)
 * [Gab](https://phalcon.link/gab)
 * [MeWe](https://phalcon.link/mewe)
