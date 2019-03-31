@@ -8,14 +8,20 @@ tags:
   - release
   - alpha
 ---
-The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 3**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.3)
+The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 4**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.4)
+
+We are releasing today because we don't want people to get confused with tomorrow and think it that this is a joke ;)
+
+We also made a mistake yesterday in our hangout, PSR-7/PSR-17 related components were not released with alpha.3; the PR was actually merged after that release.
                                                                          
-We cannot thank your community enough! By reporting bugs, offering feedback and suggestions, pull requests, being active in discussions about how the framework should move towards the future, you all help us make Phalcon better with every release.
+As always, we cannot thank your community enough! As mentioned in yesterday's [hangout](https://www.youtube.com/watch?v=UHhAhujXr4U), our community rocks! We have more and more people joining our Discord server, contributors are helping with minor and major issues on all repositories. Our community is the drive that makes Phalcon better with every release.
 <!--more-->
 
-We are releasing the third alpha version today, a lot of additions as well as bug fixes. You can see our project [here](https://github.com/phalcon/cphalcon/projects/3)
+We are releasing the fourth alpha version today, a lot of additions as well as bug fixes. You can see our project [here](https://github.com/phalcon/cphalcon/projects/3)
 
-In case you missed it, there are two discussions going on on Github regarding our new [Queue](https://github.com/phalcon/cphalcon/issues/13851) component and the direction to take, as well as voting for [upcoming features](https://github.com/phalcon/cphalcon/issues/13855) priority. We would welcome any input.
+The biggest addition in this release is the PSR-7/PSR-17 compatible components under the `Phalcon\Http\Message` namespace. 
+
+Most likely, this will be the last alpha release, but it will depend primarily on the progress of the PSR-16 (Cache) implementation.
 
 ### Changelog
 #### Added
@@ -61,7 +67,7 @@ The implementation offers PSR-7/PSR-17 compatible components in a different name
 {: .alert .alert-warning }
 
 ### Installation/Upgrade
-The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-alpha3. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.3).
+The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-alpha3. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.4).
 
 You can also clone the repository and checkout the tag, and then run
 
