@@ -698,6 +698,14 @@ a:focus {
   font-size: 13px; }
 .header-nav--mobile li.extended .header-dropdown--mobile {
   display: block; }
+.header-nav--mobile .extendable a::after {
+  content: url(https://assets.phalconphp.com/phalcon/images/svg/arrow.svg);
+  color: #fff;
+  position: relative;
+  top: 0;
+  margin-left: 5px; }
+.header-nav--mobile .extendable .header-dropdown--mobile a::after {
+  display: none; }
 
 .header-dropdown {
   z-index: 10;
