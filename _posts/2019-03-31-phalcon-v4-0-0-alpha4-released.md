@@ -8,11 +8,9 @@ tags:
   - release
   - alpha
 ---
-The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 4**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.4)
+The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 4**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.4). We also made a mistake yesterday in our hangout, PSR-7/PSR-17 related components were not released with alpha.3; the PR was actually merged after that release. Therefore we are releasing alpha.4 today!
 
-We are releasing today because we don't want people to get confused with tomorrow and think it that this is a joke ;)
-
-We also made a mistake yesterday in our hangout, PSR-7/PSR-17 related components were not released with alpha.3; the PR was actually merged after that release.
+The release today is to also avoid confusion with the upcoming jokes for tomorrow...
                                                                          
 As always, we cannot thank your community enough! As mentioned in yesterday's [hangout](https://www.youtube.com/watch?v=UHhAhujXr4U), our community rocks! We have more and more people joining our Discord server, contributors are helping with minor and major issues on all repositories. Our community is the drive that makes Phalcon better with every release.
 <!--more-->
