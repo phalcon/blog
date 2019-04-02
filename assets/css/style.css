@@ -2360,7 +2360,9 @@ input:focus {
   -webkit-border-radius: 2px;
           border-radius: 2px;
   font-size: 14px;
-  overflow: hidden; }
+  max-height: 90vh;
+  overflow: auto;
+  margin-bottom: 0; }
 
 .documentation-nav-item__label {
   color: #273646;
@@ -2403,8 +2405,6 @@ input:focus {
             transform: rotate(90deg);
     fill: #fff;
     fill-opacity: 1; }
-  .documentation-nav-item__label_opened ~ .documentation-nav-item__sublist {
-    max-height: 200px; }
 
 .documentation-nav-item__sublist {
   background-color: rgba(229, 229, 229, 0.7);
@@ -2459,10 +2459,12 @@ input:focus {
   position: sticky;
   top: 25%; }
 
-.doc-article-nav-markers:hover ~ .doc-article-nav-list {
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0); }
+.doc-article-nav-markers:hover {
+  opacity: 0; }
+  .doc-article-nav-markers:hover ~ .doc-article-nav-list {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
 
 .doc-article-nav-markers__item {
   height: 2px;
@@ -2495,7 +2497,10 @@ input:focus {
   transition: 0.2s;
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
-          transform: translateX(-100%); }
+          transform: translateX(-100%);
+  max-height: -webkit-calc(90vh - 20%);
+  max-height: calc(90vh - 20%);
+  overflow: auto; }
   .doc-article-nav-list:hover {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
