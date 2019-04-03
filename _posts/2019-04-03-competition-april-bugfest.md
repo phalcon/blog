@@ -13,7 +13,7 @@ Welcome to Phalcon's April Bugfest!!!
 **April Bugfest** is a month long event, aimed to re-energize the community and squash bugs as fast as possible, that remain for Phalcon v4.
 
 ![](/assets/files/feature.jpg)
-
+<!--more-->
 ### Overview
 During April 2019, anyone can contribute to our repositories. You can visit our [cphalcon](https://github.com/phalcon/cphalcon) repository, start working on a bug or a feature and once done, submit a pull request with your code. You can also visit our [documentation](https://github.com/phalcon/docs) repository to help with the documentation, [devtools](https://github.com/phalcon/devtools) or [incubator](https://github.com/phalcon/incubator) or if you prefer to help with the translating the Phalcon documentation in your native tongue by visiting our project in [Crowdin](https://crowdin.com/project/phalcon-documentation).
 
