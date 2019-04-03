@@ -12,6 +12,7 @@ Welcome to Phalcon's April Bugfest!!!
 
 **April Bugfest** is a month long event, aimed to re-energize the community and squash bugs as fast as possible, that remain for Phalcon v4.
 <!--more-->
+
 ![](/assets/files/feature.jpg)
 
 ### Overview
