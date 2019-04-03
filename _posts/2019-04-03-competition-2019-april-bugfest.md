@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Competition: 2019 April Bugfest'
-date: 2019-04-03T17:12:54.791Z
+date: 2019-04-03T00:00:00.000Z
 tags:
   - competition
   - bugfest
