@@ -1141,7 +1141,7 @@ input:focus {
   .container {
     width: 958px; } }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
   .container {
     width: 1200px;
     padding-left: 10px;
