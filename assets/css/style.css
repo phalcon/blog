@@ -1624,7 +1624,7 @@ input:focus {
 
 @media (max-width: 767px) {
   .phalcon-blog__item-article {
-    -webkit-line-clamp: 6; } }
+    -webkit-line-clamp: 7; } }
 
 .phalcon-blog-detail__info {
   display: -webkit-box;
