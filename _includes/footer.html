@@ -33,6 +33,11 @@
 
 <script src="https://cdn.commento.io/js/commento.js"></script>
 <script>
+    if ($('.commento').length){
+        window.commento.main()
+    }
+</script>
+<script>
     if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
             if (!user) {
