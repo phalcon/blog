@@ -1,7 +1,5 @@
 .header-nav--mobile .extendable a:after{
   content: url(https://assets.phalconphp.com/phalcon/images/svg/arrow.svg);
-  position: relative;
-  top: -2px;
   margin-left: 5px;
 }
 
