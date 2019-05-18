@@ -13,17 +13,19 @@ The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 5**! [Github
 As always, we cannot thank your community enough! We said this before but it is worth repeating: our community rocks! For this release alone we had **605 commits** and **6,244** files were changed! A lot of the changes were formatting but a great number of them was performance based.
 <!--more-->
 
-Phalcon v4 Alpha 5 is the last of our Alpha series. The next release will be a beta one!. With the help of our community, we pushed through and are happy to report that with this release we only have 13 cards left in our [project](https://github.com/phalcon/cphalcon/projects/3) and will soon be able to address all those issues.
+Phalcon v4 Alpha 5 is the last of our Alpha series. The next release will be a beta one! With the help of our community, we pushed through and are happy to report that with this release we only have 13 cards left in our [project](https://github.com/phalcon/cphalcon/projects/3) and will soon address all those remining issues.
 
-Thank you again to everyone that has engaged us through social media, as well as our [Discord](https://phalcon.link/discord) server. Our community is the drive that makes Phalcon better with every release.
+The biggest addition in this release is the [PSR-16](https://www.php-fig.org/psr/psr-16/) Cache implementation. This was a full rewrite for our Cache classes. 
 
-The biggest addition in this release is the PSR-16 Cache implementation. This was a full rewrite for our Cache classes. We first introduced `Phalcon\Storage\Serializer`, a set of classes designed to serialize and unserialize data. `Phalcon\Storage\Adapter` contains now a set of classes that connect to potential storages such as `Redis`, `Memcached` etc.
+We first introduced `Phalcon\Storage\Serializer`, a set of classes designed to serialize and unserialize data. `Phalcon\Storage\Adapter` contains now a set of classes that connect to potential storages such as `Redis`, `Memcached` etc.
 
 `Phalcon\Cache\Adapters` extends those classes and allows for the storage of any information that needs to be cached or is cached. The main component is `Phalcon\Cache\Cache` and accepts the relevant adapter for your cache.
 
 We have also introduced factory classes to allow for an easier instantiation of the component.
 
 Added more methods to `Phalcon\Helper\Arr` as well as `Phalcon\Helper\Str` for those quick checks we all have in our code and much more!
+
+Thank you again to everyone that has engaged us through social media, as well as our [Discord](https://phalcon.link/discord) server. Our community is the drive that makes Phalcon better with every release.
 
 ### Changelog
 #### Added
