@@ -23,6 +23,8 @@ The biggest addition in this release is the PSR-16 Cache implementation. This wa
 
 We have also introduced factory classes to allow for an easier instantiation of the component.
 
+Added more methods to `Phalcon\Helper\Arr` as well as `Phalcon\Helper\Str` for those quick checks we all have in our code.
+
 ### Changelog
 #### Added
 - Added `Phalcon\Cli\Router\Route::setDescription()` to sets the route's description [#13936](https://github.com/phalcon/cphalcon/pull/13936)
