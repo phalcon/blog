@@ -78,6 +78,8 @@ A quick update on where we are thus far on v4 and a summary from our hangout las
 - Serializer - `Base64`, `Igbinary`, `Json`, `Msgpack`, `None`, `Php`
 
 ```php
+<?php
+
 // Adapter options
 $options = $this->config->libmemcached->toArray();
 
@@ -100,6 +102,8 @@ $cache = $factory->newInstance(“libmemcached”, $options);
 Creating objects within objects is never a good idea. It makes testing that much more difficult while it could introduce errors or even architectural blocks, hindering maintenance and extensibility.
 
 ```php
+<?php
+
 class User
 {
     private $perm;
@@ -119,6 +123,8 @@ class User
 Using a factory instead
 
 ```php
+<?php
+
 class User
 {
     private $permFactory;
@@ -159,7 +165,10 @@ The example above shows how Phalcon has been restructured to allow for factory c
     - ValidatorFactory
 
 Example for setting up `modelsMetadata`:
+
 ```php
+<?php
+
 $this->container->set(
     'modelsMetadata',
     function () {
