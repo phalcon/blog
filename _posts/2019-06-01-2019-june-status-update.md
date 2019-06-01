@@ -56,7 +56,7 @@ A quick update on where we are thus far on v4 and a summary from our hangout las
 - View - toString()
 
 #### Fixed
-- A lot of stuff
+A lot of stuff
 
 #### Removed
 - Old Cache classes - `Backend`/`Frontend`
@@ -78,7 +78,7 @@ A quick update on where we are thus far on v4 and a summary from our hangout las
 - Adapter - `Apcu`, `Libmemcached`, `Memory`, `Redis`
 - Serializer - `Base64`, `Igbinary`, `Json`, `Msgpack`, `None`, `Php`
 
-```php
+```pho
 <?php
 
 // Adapter options
@@ -94,8 +94,7 @@ $factory = new CacheFactory(
     new AdapterFactory(
         new SerializerFactory()
     )
-);
-
+)
 // Using the factory
 $cache = $factory->newInstance(“libmemcached”, $options);
 ```
@@ -167,7 +166,6 @@ The example above shows how Phalcon has been restructured to allow for factory c
     - ValidatorFactory
 
 Example for setting up `modelsMetadata`:
-
 ```php
 <?php
 
@@ -189,6 +187,7 @@ $this->container->set(
 - Telegram: [https://phalcon.link/telegram](https://phalcon.link/telegram)
 - Gab: [https://phalcon.link/gab](https://phalcon.link/gab)
 - MeWe: [https://phalcon.link/mewe](https://phalcon.link/mewe)
+- YouTube: [https://phalcon.link/mewe](https://phalcon.link/yt)
 - Stack Overflow: [https://phalcon.link/so](https://phalcon.link/so)
 - Facebook: [https://phalcon.link/fb](https://phalcon.link/fb)
 - Twitter: [https://phalcon.link/t](https://phalcon.link/t)
