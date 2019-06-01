@@ -56,7 +56,7 @@ A quick update on where we are thus far on v4 and a summary from our hangout las
 - View - toString()
 
 #### Fixed
-A lot of stuff
+- A lot of stuff
 
 #### Removed
 - Old Cache classes - `Backend`/`Frontend`
@@ -77,7 +77,7 @@ A lot of stuff
 - Adapter - `Apcu`, `Libmemcached`, `Memory`, `Redis`
 - Serializer - `Base64`, `Igbinary`, `Json`, `Msgpack`, `None`, `Php`
 
-```pho
+```php
 // Adapter options
 $options = $this->config->libmemcached->toArray();
 
@@ -95,6 +95,7 @@ $factory = new CacheFactory(
 // Using the factory
 $cache = $factory->newInstance(“libmemcached”, $options);
 ```
+
 ### Factories
 Creating objects within objects is never a good idea. It makes testing that much more difficult while it could introduce errors or even architectural blocks, hindering maintenance and extensibility.
 
@@ -177,7 +178,6 @@ $this->container->set(
 - Telegram: [https://phalcon.link/telegram](https://phalcon.link/telegram)
 - Gab: [https://phalcon.link/gab](https://phalcon.link/gab)
 - MeWe: [https://phalcon.link/mewe](https://phalcon.link/mewe)
-- YouTube: [https://phalcon.link/mewe](https://phalcon.link/yt)
 - Stack Overflow: [https://phalcon.link/so](https://phalcon.link/so)
 - Facebook: [https://phalcon.link/fb](https://phalcon.link/fb)
 - Twitter: [https://phalcon.link/t](https://phalcon.link/t)
