@@ -10,7 +10,7 @@ tags:
 Cross posted from the [Zephir Blog](https://blog.zephir-lang.com/post/zephir-0-12-0-released)
 
 We are happy to announce the release of Zephir 0.12.0! 
-
+<!--more-->
 This release fixes a good number of bugs and offers more optimizations as well as cleanup. The highlights are:
 - Added initial support for `use` in closures
 - Removed PHP 5.x code (not supported)
