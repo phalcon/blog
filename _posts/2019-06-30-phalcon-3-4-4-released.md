@@ -18,9 +18,9 @@ We are happy to announce that we have released Phalcon [3.4.4](https://github.co
 This is a maintenance release, addressing several issues in particular with PHP 7.
 
 <!--more-->
-#### Changelog
+## Changelog
 
-## Fixed
+### Fixed
 - Generated Dialect Class referring to a PHP class can't be found [#13867](https://github.com/phalcon/cphalcon/pull/13867)
 - Changed default gcc's CFLAGS so that, the extension should be properly generated for most hosts, including Docker [#13143](https://github.com/phalcon/cphalcon/issues/13143)
 - `Phalcon\Forms\Form::clear()` now correctly clears single fields. [#14217](https://github.com/phalcon/cphalcon/issues/14217)
@@ -28,8 +28,10 @@ This is a maintenance release, addressing several issues in particular with PHP 
 
 As always, a huge thank you to our community!!
 
-### Update/Upgrade
-Phalcon 3.4.4 can be installed from the [v3.4.4](https://github.com/phalcon/cphalcon/tree/v3.4.4) branch. If you don't have Zephir installed follow these instructions:
+## Update/Upgrade
+Windows DLLs are available from the Github [3.4.4](https://github.com/phalcon/cphalcon/releases/tag/v3.4.4) tag page. 
+
+Phalcon 3.4.4 can be installed from the [v3.4.4](https://github.com/phalcon/cphalcon/tree/v3.4.4) tag, if you don't have Zephir installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
