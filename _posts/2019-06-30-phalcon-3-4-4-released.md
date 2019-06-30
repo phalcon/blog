@@ -29,9 +29,7 @@ This is a maintenance release, addressing several issues in particular with PHP 
 As always, a huge thank you to our community!!
 
 ### Update/Upgrade
-Windows DLLs are available from the Github [3.4.4](https://github.com/phalcon/cphalcon/releases/tag/v3.4.4) tag page. 
-
-Phalcon 3.4.4 can be installed from the [v3.4.4](https://github.com/phalcon/cphalcon/tree/v3.4.4) tag, if you don't have Zephir installed follow these instructions:
+Phalcon 3.4.4 can be installed from the [v3.4.4](https://github.com/phalcon/cphalcon/tree/v3.4.4) branch. If you don't have Zephir installed follow these instructions:
 
 ```sh
 git clone http://github.com/phalcon/cphalcon
