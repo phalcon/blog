@@ -8,7 +8,7 @@ tags:
   - restructuring
 ---
 Phalcon has always been focused in performance and usability. We strive to offer the fastest, easiest to use framework.
-
+<!--more-->
 One of our efforts led to what developers call a _rabbit hole_ that we had to get out of so to speak.
 
 ### The idea
