@@ -7,12 +7,12 @@ tags:
   - phalcon4
   - restructuring
 ---
-Phalcon has always been focused in performance and usability. We strive to offer the easiest to use and fastest framework.
+Phalcon has always been focused in performance and usability. We strive to offer the fastest, easiest to use framework.
 
 One of our efforts led to what developers call a _rabbit hole_ that we had to get out of so to speak.
 
 ### The idea
-The idea we had was to split Phalcon into smaller extensions. We have discussed this before as well as recently during our [June Community Hangout(https://www.youtube.com/watch?v=YfTzAfC4DKo)
+The idea we had was to split Phalcon into smaller extensions. We have discussed this before as well as recently during our [June Community Hangout](https://www.youtube.com/watch?v=YfTzAfC4DKo)
 
 The way this was going to work was as follows:
 - We generate code and create an extension called `phalcon-config.so` that exposes `Phalcon\Config`
@@ -50,7 +50,7 @@ In the last month we have been _preparing_ for the above, moving certain classes
 
 Now that the decision has been made to backtrack, developers will be happy to hear that no more `Phalcon\Config\Config`. We are going back to the good old `Phalcon\Config`.
 
-One of our [latest pull requests](https://github.com/phalcon/cphalcon/pull/14234) reorganized things back to where they used to be, so now we can still use `Phalcon\Config`, `Phalcon\Escaper` etc. The one thing we did was to move the interfaces from the root namespace to their respective folders. So for instance the `Phalcon\DiInterface` is now `Phalcon\Di\DiInterface`. The root namespace contains only classes not namespaces.
+One of our [latest pull requests](https://github.com/phalcon/cphalcon/pull/14234) reorganized things back to where they used to be, so now we can still use `Phalcon\Config`, `Phalcon\Escaper` etc. The one thing we did was to move the interfaces from the root namespace to their respective folders. So for instance the `Phalcon\DiInterface` is now `Phalcon\Di\DiInterface`. The root namespace contains only classes not interfaces.
 
 And there goes another experiment, another effort to make Phalcon better for our users.
 
