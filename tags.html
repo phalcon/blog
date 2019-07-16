@@ -14,7 +14,7 @@ permalink: /tags
         {% for tag in tags %}
         {% if tag[0] != '' %}
         <a name="{{ tag | first | strip | slugify }}"></a>
-        <button type="button" class="btn btn-info btn-sm">{{ tag[0] }}</button>
+        <div class="tag-button">{{ tag[0] }}</div>
         <p>
 		<ul>
 			{% assign posts = tag[1] %}
