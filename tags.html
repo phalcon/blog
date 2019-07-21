@@ -4,11 +4,9 @@ title: Tags
 permalink: /tags
 ---
 <div id="articles" class="phalcon-blog-detail">
-    <div class="row">
-        <a href="/tags">
-            <h2>{{ page.title }}</h2>
-        </a>
-    </div>
+      <a href="/tags">
+          <h2 itemprop="name headline" class="headline">{{ page.title }}</h2>
+      </a>
     <div>
         {% assign tags = site.tags | sort %}
         {% for tag in tags %}
