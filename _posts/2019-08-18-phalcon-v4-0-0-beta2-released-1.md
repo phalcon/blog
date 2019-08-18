@@ -42,7 +42,7 @@ Thank you again to everyone that has engaged us through social media, as well as
 {: .alert .alert-warning }
 
 ### Installation/Upgrade
-The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-beta1. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-beta.1).
+The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-beta2. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-beta.2).
 
 You can also clone the repository and checkout the tag, and then run
 
