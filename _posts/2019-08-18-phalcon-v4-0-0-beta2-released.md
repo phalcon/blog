@@ -13,6 +13,8 @@ The Phalcon Team is happy to announce the release of **v4.0.0 Beta 2**! [Github 
 We might sound like a broken record with every blog post but we cannot stress enough how thankful we are to our community. The contributions, testing, documentation updates and questions really help push Phalcon forward and make us offer the best possible framework for all to use! Thank you again!
 <!--more-->
 
+We would like to also welcome [Ruud Boon](https://github.com/ruudboon) who is joining the core team today. We thank him for his contributions and advice so far and looking forward to more in the future.
+
 Phalcon v4 Beta 2 addresses several bugs that have been reported from the community, primarily focused on interface changes. As one would expect, through testing we found more issues that we need to address so our cards _to do_ increased from the previous release.
 
 You can see the remaining cards for v4 in our [project](https://github.com/phalcon/cphalcon/projects/3) page. 
