@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Phalcon v4.0.0-beta2 released
+title: Phalcon v4.0.0-beta.2 released
 date: 2019-08-18T18:05:37.616Z
 tags:
   - phalcon
