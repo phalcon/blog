@@ -15,7 +15,7 @@ Last week we have released a new Phalcon version 3.2 as well as our new document
 <!--more-->
 Well, that did not go as planned, since we ended up with a lot of angry developers, because the old documentation was not available (at least temporarily) and also we had a lot of broken links in search engines.
 
-We tried to rectify the issue as fast as possible so we have several redirects that point old links to where they are supposed to. We have also created [https://olddocs.phalconphp.com/](https://olddocs.phalconphp.com/) which contains all the old documents. That site will remain active for quite a long time, so you don't need to worry if you are behind in upgrating to a later version of Phalcon. :)
+We tried to rectify the issue as fast as possible so we have several redirects that point old links to where they are supposed to. We have also created [https://olddocs.phalcon.io/](https://olddocs.phalcon.io/) which contains all the old documents. That site will remain active for quite a long time, so you don't need to worry if you are behind in upgrating to a later version of Phalcon. :)
 
 #### Changes
 The biggest chance that we have been working on the last few months, was to change all of our documents to the markdown format from reStructured Text. Although this was not a huge task, it was time consuming. We also addressed the issue of broken links, image files left over from old documents etc.

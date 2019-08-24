@@ -7,7 +7,7 @@ tags: [php, phalcon, release, beta, "0.8", "0.x"]
 After the introduction of many new and exciting features in our [alpha version](/post/phalcon-0-8-0-alpha-available), we are today releasing the first beta version of 0.8.0.
 
 <!--more-->
-- [Documentation](https://docs.phalconphp.com/latest/en/)
+- [Documentation](https://docs.phalcon.io/latest/en/)
 - Check the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.8.0/CHANGELOG)
 
 **Help with Testing**
@@ -20,7 +20,7 @@ git checkout 0.8.0
 sudo ./install
 ```
 
-Windows users can download a DLL from the [download page](https://phalconphp.com/download).
+Windows users can download a DLL from the [download page](https://phalcon.io/download).
 
 All tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon/builds/3906272), so there should not be any major issues with this version. This version is very close to what will be the final release. 
 

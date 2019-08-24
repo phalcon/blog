@@ -21,7 +21,7 @@ This move required a total rewrite of the documentation, from PHP and HTML, to 
 A new [github repository](https://github.com/phalcon/docs) has been created to manage the documentation. Every time anyone commits a change, [Read the Docs](http://readthedocs.org/) automatically downloads and rebuilds the documentation, ensuring that it is up to date with the latest developments.
 
 **What's next?**
-If you have some extra time, we invite you to take a look at the [new documentation](https://docs.phalconphp.com) and share your thoughts with us. If you find a typo, want to improve a section, wish to see something new that we have not covered, feel free to fork the repository and send us the changes via pull request.
+If you have some extra time, we invite you to take a look at the [new documentation](https://docs.phalcon.io) and share your thoughts with us. If you find a typo, want to improve a section, wish to see something new that we have not covered, feel free to fork the repository and send us the changes via pull request.
 
 Enjoy the new documentation system!
 

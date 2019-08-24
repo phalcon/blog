@@ -4,7 +4,7 @@ title: "Phalcon 1.2.0 Released"
 tags: [php, phalcon, "1.2", release, "1.x"]
 ---
 
-This new release of the Phalcon framework, contains several new features (mostly requested by the community), bug fixes and various performance improvements. The main changes are highlighted in the [beta](https://blog.phalconphp.com/post/phalcon-1-2-beta-1-released) article. You can see the [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.0/CHANGELOG) for a complete list of changes.
+This new release of the Phalcon framework, contains several new features (mostly requested by the community), bug fixes and various performance improvements. The main changes are highlighted in the [beta](https://blog.phalcon.io/post/phalcon-1-2-beta-1-released) article. You can see the [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.0/CHANGELOG) for a complete list of changes.
 
 A summary of the new features introduced follows:
 
@@ -27,7 +27,7 @@ A summary of the new features introduced follows:
 - Support for PHP 5.5
 - Profiled Guided Optimizations
 
-Phalcon 1.2 is now available on the [master](https://github.com/phalcon/cphalcon) branch and [DLLs](https://phalconphp.com/download/windows) are available for download in our [download](https://phalconphp.com/download/windows) area. You can also access the latest documentation [here](https://docs.phalconphp.com/latest/en/index).
+Phalcon 1.2 is now available on the [master](https://github.com/phalcon/cphalcon) branch and [DLLs](https://phalcon.io/download/windows) are available for download in our [download](https://phalcon.io/download/windows) area. You can also access the latest documentation [here](https://docs.phalcon.io/latest/en/index).
 
 **Motto**
 For the longest time, we have been recognized as *the fastest PHP framework*, and we are always try to push the envelope, make Phalcon even faster with every release. However, our work has not only been focused in lowering the processing time, squeezing more requests per second on existing hardware while keeping memory usage low. We also wanted to make Phalcon feature rich, introducing built-in caches, autoloaders, NoSQL databases and much more! All this work allowed us to have one of the fastest frameworks (if not the fastest one) in the open source world for PHP, while offering a wealth of features for developers to use. Despite the number of features that Phalcon offers, which could very well slow a framework, we are still in the top positions (if not first) in the various performance tests in which we participated in.

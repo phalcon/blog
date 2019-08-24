@@ -95,7 +95,7 @@ The frameworks compared were:
 - [Kohana (v3.3.6)](http://kohanaframework.org/index)
 - [Laravel (v5.4)](https://laravel.com/)
 - [Nette (v2.4)](https://nette.org/)
-- [Phalcon (v3.1.2)](https://phalconphp.com/en/)
+- [Phalcon (v3.1.2)](https://phalcon.io/en/)
 - [Symfony (v3.2)](http://symfony.com)
 - [Yii (v2.0.11)](https://www.yiiframework.com)
 - [Zend Framework (v.3.0.1)](https://framework.zend.com/)

@@ -71,7 +71,7 @@ $validation->add(
 $messages = $validation->validate(['amount' => 1]); // will return a message from first validator
 ```
 
-For more information read [our documentation](https://docs.phalconphp.com/latest/en/validation#callback-validator)
+For more information read [our documentation](https://docs.phalcon.io/latest/en/validation#callback-validator)
 
 - #### Added `Phalcon\Mvc\Model\Binder`, class used for binding models to parameters in dispatcher, micro
 - #### Added `Phalcon\Dispatcher::getBoundModels` and `Phalcon\Mvc\Micro::getBoundModels` to getting bound models
@@ -97,7 +97,7 @@ $di->set(
 );
 ```
 
-And you can type-hint your action parameters with class names. For more information read docs: [using in micro](https://docs.phalconphp.com/latest/en/micro#inject-model-instances), [using in dispatcher](https://docs.phalconphp.com/latest/en/dispatching#inject-model-instances)
+And you can type-hint your action parameters with class names. For more information read docs: [using in micro](https://docs.phalcon.io/latest/en/micro#inject-model-instances), [using in dispatcher](https://docs.phalcon.io/latest/en/dispatching#inject-model-instances)
 
 - #### Added `afterBinding` event to `Phalcon\Dispatcher` and `Phalcon\Mvc\Micro`, added `Phalcon\Mvc\Micro::afterBinding` [NEW]
 We added new event to the dispatcher and micro application. `afterBinding` event (or middleware in micro) will trigger after binding model instances done by the `Phalcon\Mvc\Model\Binder` component but before executing an action.
@@ -203,7 +203,7 @@ $robots->name = 'Some Robot';
 $robots->create(); // returns true
 ```
   
-  More information can be found in our documentation: [validating collections](https://docs.phalconphp.com/latest/en/odm#validating-data-integrity), [validation](https://docs.phalconphp.com/latest/en/validation)
+  More information can be found in our documentation: [validating collections](https://docs.phalcon.io/latest/en/odm#validating-data-integrity), [validation](https://docs.phalcon.io/latest/en/validation)
 
 <h5 class="alert alert-danger">
 Please note that Phalcon 3.1 is not compatible with PHP 7.1. If you want to use PHP 7, you will need to compile it with PHP 7.0. Full support for PHP 7.1+ will be introduced in our next version
@@ -226,7 +226,7 @@ Note that running the installation script will replace any version of Phalcon in
 
 [PackageCloud.io](https://packagecloud.io/phalcon/stable) has been updated to allow your package manager (for Linux machines) to upgrade to the new version seamlessly.
 
-Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
 
 We encourage existing Phalcon 3 users to update to this version.

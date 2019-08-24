@@ -9,17 +9,17 @@ We've been really busy this last month working on Phalcon 0.4.0, and for our ple
 Also, this final version is adding some highly requested features to Phalcon:
 
 <!--more-->
-- A better routing system allowing you to define custom routes different than `/:controller/:action/:parameters` [idea] [[more info](https://docs.phalconphp.com/latest/en/routing)]
+- A better routing system allowing you to define custom routes different than `/:controller/:action/:parameters` [idea] [[more info](https://docs.phalcon.io/latest/en/routing)]
 - A component to help you creating multilingual applications [idea]
-- A final implementation of external template engines such as Mustache or Twig [idea] [[more info](https://docs.phalconphp.com/latest/en/views#template-engines)]
+- A final implementation of external template engines such as Mustache or Twig [idea] [[more info](https://docs.phalcon.io/latest/en/views#template-engines)]
 
-This time, an [alpha](/post/introducing-phalcon-0-4-0-alpha) and [beta](https://blog.phalconphp.com/post/help-test-phalcon-0-4-0) version were released before this final version to be sure that most of changes will not affect things that already worked fine in the past. 
+This time, an [alpha](/post/introducing-phalcon-0-4-0-alpha) and [beta](https://blog.phalcon.io/post/help-test-phalcon-0-4-0) version were released before this final version to be sure that most of changes will not affect things that already worked fine in the past. 
 
 Check out the previous articles to get a complete list of changes :)
 
 Little by little, we try to make Phalcon increasingly competitive, but, if you think that Phalcon is missing something, remember that [Github](https://github.com/phalcon/cphalcon/issues) is enabled to receive ideas or suggestions you have, building together a new way to make the web even faster!
 
-As always latest versions are available from the [download page](https://phalconphp.com/download), we hope you're as pleased with these improvements as we are!
+As always latest versions are available from the [download page](https://phalcon.io/download), we hope you're as pleased with these improvements as we are!
 
 <3 Phalcon Team
 

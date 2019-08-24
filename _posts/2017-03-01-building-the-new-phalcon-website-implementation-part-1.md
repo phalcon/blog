@@ -22,7 +22,7 @@ Building the website we used a particular style throughout. Specifically:
  - Single quotes for all strings
 
 ### Implementation
-This implementation of our website showcases the `Phalcon\Mvc\Micro` application with [Middleware](https://docs.phalconphp.com/latest/en/micro#middleware-events). It was built for maximum performance.
+This implementation of our website showcases the `Phalcon\Mvc\Micro` application with [Middleware](https://docs.phalcon.io/latest/en/micro#middleware-events). It was built for maximum performance.
 
 We implemented two applications for the website. One to dispatch the site for web users to see and a CLI application that allows for certain tasks that need to be run from the console, such as fetching the contributors from Github or cleaning the cache folders.
 
@@ -53,8 +53,8 @@ The `index.php` file is the entry point of our application. Apache has been conf
 
 ```apacheconfig
 <VirtualHost *:443>
-    ServerName              phalconphp.com
-    ServerAlias             www.phalconphp.com
+    ServerName              phalcon.io
+    ServerAlias             www.phalcon.io
     DocumentRoot            /path/to/installation/public
     ...
     <Directory "/path/to/installation/public">
@@ -155,7 +155,7 @@ We have looked at the skeleton of our application and also discussed briefly abo
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
 - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
-- [Micro Application](https://docs.phalconphp.com/latest/en/micro)
-- [Middleware](https://docs.phalconphp.com/latest/en/micro#middleware-events)
+- [Micro Application](https://docs.phalcon.io/latest/en/micro)
+- [Middleware](https://docs.phalcon.io/latest/en/micro#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
 - Transifex

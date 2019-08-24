@@ -11,7 +11,7 @@ Success story from our community member [Nikita Vershinin](https://github.com/en
 <!--more-->
 > Hello, Phalcon team. 
 > 
-> I would like to share with you our success story using Phalcon in [kolesa.kz](http://kolesa.kz) and [krisha.kz](http://krisha.kz) projects, [the most visited](http://www.alexa.com/siteinfo/kolesa.kz) and highloaded sites in Kazakhstan, ranked in TOP-10 classified sites in the CIS. Both sites work on single RESTful-like API written on [Phalcon\\Mvc\\Micro](https://docs.phalconphp.com/latest/en/micro).
+> I would like to share with you our success story using Phalcon in [kolesa.kz](http://kolesa.kz) and [krisha.kz](http://krisha.kz) projects, [the most visited](http://www.alexa.com/siteinfo/kolesa.kz) and highloaded sites in Kazakhstan, ranked in TOP-10 classified sites in the CIS. Both sites work on single RESTful-like API written on [Phalcon\\Mvc\\Micro](https://docs.phalcon.io/latest/en/micro).
 > 
 > On peak loads API processes something like 400 req/sec and this is not a limit. 
 > 

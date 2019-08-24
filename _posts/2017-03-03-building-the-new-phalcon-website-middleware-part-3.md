@@ -6,7 +6,7 @@ tags: [php, phalcon, "3.0.x", phalcon3, implementation, website, series]
 
 This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
-In the final part of our series, we are going to investigate [Middleware](https://docs.phalconphp.com/latest/en/micro#middleware-events) and how it helps our application.
+In the final part of our series, we are going to investigate [Middleware](https://docs.phalcon.io/latest/en/micro#middleware-events) and how it helps our application.
 
 <!--more-->
 ### Middleware
@@ -325,8 +325,8 @@ Thank you all
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
 - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
-- [Micro Application](https://docs.phalconphp.com/latest/en/micro)
-- [Middleware](https://docs.phalconphp.com/latest/en/micro#middleware-events)
+- [Micro Application](https://docs.phalcon.io/latest/en/micro)
+- [Middleware](https://docs.phalcon.io/latest/en/micro#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)

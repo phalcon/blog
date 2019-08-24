@@ -4,7 +4,7 @@ title: "Phalcon 2 (beta 1) released!"
 tags: [php, phalcon, zephir, "2.0", beta, release, "2.x"]
 ---
 
-[Eight months ago](https://blog.phalconphp.com/post/phalcon-2-0-the-future) we announced the creation of a new high-level compiled language called [Zephir](https://zephir-lang.com) which we used to completely rewrite Phalcon 2.0.
+[Eight months ago](https://blog.phalcon.io/post/phalcon-2-0-the-future) we announced the creation of a new high-level compiled language called [Zephir](https://zephir-lang.com) which we used to completely rewrite Phalcon 2.0.
 
 Zephir's purpose is to offer a new and easier syntax of writing PHP extensions, translating its PHP/JS inspired syntax to C instructions and thus allowing more and more developers to be involved with the project. In addition, it offers the ability to create new PHP extensions without the need to know C or any of the PHP internals.
 

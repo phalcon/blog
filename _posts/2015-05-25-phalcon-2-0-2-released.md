@@ -68,9 +68,9 @@ zephir build
 
 Note that running the installation script will replace any version of Phalcon installed before.
 
-Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
-See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2) for more information about upgrading to Phalcon 2.0.x from 1.3.x.
+See the [upgrading guide](https://blog.phalcon.io/post/guide-upgrading-to-phalcon-2) for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
 ### Coming soon
 

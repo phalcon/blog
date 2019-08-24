@@ -9,7 +9,7 @@ If you spend a lot of time making software updates, you're probably familiar wit
 So, we are happy to announce database migrations available on Developer Tools! That has been one of the most highly requested features in Phalcon (we know... most frameworks also provide it), anyway, it always feels great when we deliver something we know users have an acute need of.
 
 <!--more-->
-In short [database migrations](https://docs.phalconphp.com/latest/en/migrations) are:
+In short [database migrations](https://docs.phalcon.io/latest/en/migrations) are:
 
 > Migrations are a convenient way for you to alter your database in a
 > structured and organized manner.

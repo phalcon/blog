@@ -4,7 +4,7 @@ title: "Help test Phalcon 0.4.0"
 tags: [php, framework, test, help, "0.4", release, "0.x"]
 ---
 
-Our next release, 0.4.0, is almost ready to rock, but we need your help to get the finish line in the best shape possible. Although [previous alpha](https://blog.phalconphp.com/post/introducing-phalcon-0-4-0-alpha) only included improvements in code structure and overall speed, this version (0.4.0 beta) is introducing several new features, improvements and bug fixes. 
+Our next release, 0.4.0, is almost ready to rock, but we need your help to get the finish line in the best shape possible. Although [previous alpha](https://blog.phalcon.io/post/introducing-phalcon-0-4-0-alpha) only included improvements in code structure and overall speed, this version (0.4.0 beta) is introducing several new features, improvements and bug fixes. 
 
 Below is a comprehensive list of changes:
 
@@ -32,18 +32,18 @@ Below is a comprehensive list of changes:
 
 *New Features*:
 
-- Added virtual foreign keys to Phalcon_Model (ORM) [[More Info](https://docs.phalconphp.com/latest/en/db-models#virtual-foreign-keys)]
+- Added virtual foreign keys to Phalcon_Model (ORM) [[More Info](https://docs.phalcon.io/latest/en/db-models#virtual-foreign-keys)]
 - Implemented the possibility to serialize `Phalcon_Model_Resultset` objects
 - Implemented the possibility to access `Phalcon_Model_Resultset` as an array of objects
-- Added `Phalcon_Cache_Backend_Apc`, `Phalcon_Cache_Backend_Memcache`, `Phalcon_Cache_Frontend_None` and `Phalcon_Cache_Frontend_Data` [[More Info](https://docs.phalconphp.com/latest/en/cache)]
+- Added `Phalcon_Cache_Backend_Apc`, `Phalcon_Cache_Backend_Memcache`, `Phalcon_Cache_Frontend_None` and `Phalcon_Cache_Frontend_Data` [[More Info](https://docs.phalcon.io/latest/en/cache)]
 - Added Phalcon_Request::hasPost and `Phalcon_Request::hasQuery`
 - Added parameter "persistent" to Phalcon_Db allowing to create persistent connections
 - Added alphanum to `Phalcon_Filter` to filter strings allowing filter only alpha-numeric characters
 - Added `Phalcon_Tag::checkField` helper to create `input[type="checkbox"]` tags
 - Added `Phalcon_View::getParams` to recover extra parameters sent in the request
-- `Phalcon_View` was refactored to allow other templating engines like Mustache or Twig [[More info](https://docs.phalconphp.com/latest/en/views#template-engines)]
+- `Phalcon_View` was refactored to allow other templating engines like Mustache or Twig [[More info](https://docs.phalcon.io/latest/en/views#template-engines)]
 - Added `Phalcon_Translate` for multilingual translation messages based on adapters
-- Added calculation functions to Phalcon_Model: count, sum, average, minimum and maximum [[more info](https://docs.phalconphp.com/latest/en/db-models#generating-calculations)]
+- Added calculation functions to Phalcon_Model: count, sum, average, minimum and maximum [[more info](https://docs.phalcon.io/latest/en/db-models#generating-calculations)]
 
 We're pushing out a beta of the 0.4.0 code. Here's how you can help us out:
 

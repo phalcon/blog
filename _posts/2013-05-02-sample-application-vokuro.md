@@ -6,7 +6,7 @@ tags: [php, phalcon, sample, vokuro, "1.x"]
 
 ![Vokuro](/assets/files/2013-05-02-vokuro.png)
 
-[Vökuró](https://vokuro.phalconphp.com/), is our new sample application to showcase the features of Phalcon. ​We implemented several features related to authorization​, authentication ​ and security. Some of the​se features have recently been introduced in the framework. This sample application ​provides a basic frontend and a backend where users/profiles/security can be managed.
+[Vökuró](https://vokuro.phalcon.io/), is our new sample application to showcase the features of Phalcon. ​We implemented several features related to authorization​, authentication ​ and security. Some of the​se features have recently been introduced in the framework. This sample application ​provides a basic frontend and a backend where users/profiles/security can be managed.
 
 The following features are implemented:
 
@@ -33,9 +33,9 @@ Other features/examples:
 - Full use of the Forms builder and Validation components
 - Frontend/Backend without using a multi-module application
 
-​To run/test this sample application you will need [Phalcon 1.1.0 beta 3](https://phalconphp.com/download) or ​higher. You can see an online version [here](https://vokuro.phalconphp.com).
+​To run/test this sample application you will need [Phalcon 1.1.0 beta 3](https://phalcon.io/download) or ​higher. You can see an online version [here](https://vokuro.phalcon.io).
 
-You can clone the code from [Github](http://github.com/phalcon/vokuro). We welcome all the improvements to this sample as pull requests. We hope this application serve as example and help to develop your own applications with Phalcon. Head on over to our [forum](https://forum.phalconphp.com) if you have questions regarding the sample.
+You can clone the code from [Github](http://github.com/phalcon/vokuro). We welcome all the improvements to this sample as pull requests. We hope this application serve as example and help to develop your own applications with Phalcon. Head on over to our [forum](https://forum.phalcon.io) if you have questions regarding the sample.
 
 Enjoy!
 

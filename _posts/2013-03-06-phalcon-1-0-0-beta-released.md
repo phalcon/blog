@@ -319,9 +319,9 @@ git checkout 1.0.0
 sudo ./install
 ```
 
-Windows users can [download](https://phalconphp.com/download) DLLs from the download page.​​
+Windows users can [download](https://phalcon.io/download) DLLs from the download page.​​
 
-We ​welcome your comments regarding this new release in [Phosphorum](https://forum.phalconphp.com/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
+We ​welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
 
 Thanks!
 

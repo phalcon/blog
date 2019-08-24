@@ -67,7 +67,7 @@ Note that running the installation script will replace any version of Phalcon in
 
 [PackageCloud.io](https://packagecloud.io/phalcon/stable) has been updated to allow your package manager (for Linux machines) to upgrade to the new version seamlessly.
 
-Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
 We encourage existing Phalcon 3 users to update to this maintenance version.
 

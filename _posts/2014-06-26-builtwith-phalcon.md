@@ -6,7 +6,7 @@ tags: [php, phalcon, builtwith, "1.x"]
 
 Today we are launching a new site that would help us spread the word about Phalcon and show where Phalcon is used, whether this is production applications, hobby projects or tutorials.
 
-Introducing [builtwith.phalconphp.com](http://builtwith.phalconphp.com)
+Introducing [builtwith.phalcon.io](http://builtwith.phalcon.io)
 
 Taking the example from our friends at [AngularJS](http://www.angularjs.org) we have cloned their [repository](https://github.com/angular/builtwith.angularjs.org) and we have Phalcon-ized it. Special thanks to the [AngularJS](http://en.wikipedia.org/wiki/AngularJS) team as well as [Ole Aass](https://github.com/oaass) ([website](http://oleaass.com)) who is leading the project.
 

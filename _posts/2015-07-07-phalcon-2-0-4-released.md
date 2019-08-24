@@ -12,7 +12,7 @@ The number of improvements and bug fixes are a lot more compared to other releas
 ### Changes
 
 - Fixed bug in `Phalcon\Mvc\Model::update()` that mistakenly throws an exception when the record does exist
-- Now links in `Phalcon\Debug` point to https://api.phalconphp.com instead of https://docs.phalconphp.com
+- Now links in `Phalcon\Debug` point to https://api.phalcon.io instead of https://docs.phalcon.io
 - Implemented a more versatile way to assign variables in Volt allowing to assign properties and array indexes
 - Improved generation of macros in Volt using anonymous functions instead of plain PHP functions, which allows binding the adapter object and injecting services within them
 - Fixed generation and validation of default parameters in Volt's macros
@@ -51,7 +51,7 @@ The number of improvements and bug fixes are a lot more compared to other releas
 ### Highlights
 
 #### Typed Placeholders in the ORM
-Before this version, only standard placeholders (strings and numerical) were supported in [PHQL](https://docs.phalconphp.com/latest/en/phql). Placeholders allowed you to bind parameters to avoid SQL injections:
+Before this version, only standard placeholders (strings and numerical) were supported in [PHQL](https://docs.phalcon.io/latest/en/phql). Placeholders allowed you to bind parameters to avoid SQL injections:
 
 ```php
 $phql = "SELECT * FROM Store\Robots WHERE id > :id:";
@@ -257,11 +257,11 @@ zephir build
 Note that running the installation script will replace any version of Phalcon
 installed before.
 
-Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
-See the [upgrading guide](https://blog.phalconphp.com/post/guide-upgrading-to-phalcon-2) for more information about upgrading to Phalcon 2.0.x from 1.3.x.
+See the [upgrading guide](https://blog.phalcon.io/post/guide-upgrading-to-phalcon-2) for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
-* [Documentation](https://docs.phalconphp.com)
+* [Documentation](https://docs.phalcon.io)
 * [API](https://phalcon.link/api)
 
 

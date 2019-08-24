@@ -75,7 +75,7 @@ In this blog post we outlined one of the main reasons on why Phalcon is signific
 
 Our goal is to push the envelope even further, increasing performance and functionality as much as possible. 
 
-We welcome your comments and contributions in our [Forum](https://forum.phalconphp.com "Forum")  If you need to report a bug, feel free to do so in our [Github Issues](https://github.com/phalcon/cphalcon/issues?state=open) page. Any questions regarding how-to could be either directed in our [Forum](https://forum.phalconphp.com "Forum") or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon).
+We welcome your comments and contributions in our [Forum](https://forum.phalcon.io "Forum")  If you need to report a bug, feel free to do so in our [Github Issues](https://github.com/phalcon/cphalcon/issues?state=open) page. Any questions regarding how-to could be either directed in our [Forum](https://forum.phalcon.io "Forum") or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon).
 
 
 <3 The Phalcon Team

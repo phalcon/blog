@@ -37,7 +37,7 @@ The next site to be revamped will be the `builtwith`.
 ### Survey
 We recently asked the community to take a short survey, so that we can assess why developers use Phalcon, if it is used in production and also asked for any additional input they want to give us. 
  
-If you have not taken the survey yet, feel free to visit [this form](https://docs.google.com/a/phalconphp.com/forms/d/1bf-o_ta6MqsXk2kL9IxiJR8j9SENBD4iWTYz_WwyMks)
+If you have not taken the survey yet, feel free to visit [this form](https://docs.google.com/a/phalcon.io/forms/d/1bf-o_ta6MqsXk2kL9IxiJR8j9SENBD4iWTYz_WwyMks)
 
 We will post the results of the survey in a week or so, when we get more replies. So far we have over 100 replies. Thank you all for your valuable input!!!
 

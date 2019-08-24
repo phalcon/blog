@@ -30,7 +30,7 @@ There are a lot of people that still don't know that Phalcon exist or it really 
 Don't be shy, feel free to share with the community, the ways that Phalcon was useful to you. If Phalcon is a success case for you, let us share that with the community. Also, discuss what components needed extra work, what you could do easier, what benefits you got by using Phalcon. Although not everything can be implemented immediately, your input on new feature requests can greatly help us shape the future of the project. Your feedback helps us all.
 
 **Blog**
-If you like writing, remember that [our blog](https://blog.phalconphp.com/) is open to tutorial submissions, created by you. If you have a blog of your own and have written something about Phalcon, we can publish also in our social network pages so as to achieve maximum visibility. If your blog post is in a language other than English, we want to share it and potentially translate it if possible. If you know about blogs related to PHP that are interested in present the project to their audience please let us know.
+If you like writing, remember that [our blog](https://blog.phalcon.io/) is open to tutorial submissions, created by you. If you have a blog of your own and have written something about Phalcon, we can publish also in our social network pages so as to achieve maximum visibility. If your blog post is in a language other than English, we want to share it and potentially translate it if possible. If you know about blogs related to PHP that are interested in present the project to their audience please let us know.
 
 **Social Networks**
 Phalcon is evolving on a daily basis, through our desire to make it better. Social networks are part of our lives now, and we all interact with others through them. Sharing your Phalcon experience with your social circles will greatly increase the visibility of the project. More and more people will engage in our community, thus making it more powerful, even more feature rich and popular. Like, "+1", share posts that we constantly post on every social network, engage in discussions regarding those posts. People that will discover Phalcon through your interactions will thank you!
@@ -39,7 +39,7 @@ We have a presence in most of the popular social networks. By following us, you 
 
 - [Follow us on Twitter](http://twitter.com/phalconphp)
 - [Facebook Page](http://www.facebook.com/pages/Phalcon/134230726685897)
-- [Official Blog](http://blog.phalconphp.com/)
+- [Official Blog](http://blog.phalcon.io/)
 - [Star the project on Github](http://github.com/phalcon/cphalcon)
 
 **Donations/Sponsoring**

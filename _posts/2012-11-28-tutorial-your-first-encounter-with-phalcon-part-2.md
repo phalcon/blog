@@ -16,7 +16,7 @@ Blog is often used as an introductory example, and there is a very good reason f
 
 In summary do not despair about yet another blog tutorial, it's a great showcase for any framework, and since the concepts involved in a blog are so well known, it's easy to follow. Step by step I will show you how:
 
-* [Download and install Phalcon](http://docs.phalconphp.com/latest/en/reference/install) and phalcon-developer-tools (command line interface - CLI)
+* [Download and install Phalcon](http://docs.phalcon.io/latest/en/reference/install) and phalcon-developer-tools (command line interface - CLI)
 * Configure www server (Apache)
 * Create models containing business logic and validation routines
 * Write controllers with basic authentication and authorization
@@ -191,7 +191,7 @@ Few facts for beginners - in Phalcon:
 * Model is just usual PHP class extending `Phalcon\Mvc\Model`
 * Model name may be plural, if you use plural database table name
 * Model is the place, where you usually store validation rules
-* if you want to have model User and database table users you need to use [getSource method.](http://docs.phalconphp.com/latest/en/reference/models#creating-models)
+* if you want to have model User and database table users you need to use [getSource method.](http://docs.phalcon.io/latest/en/reference/models#creating-models)
 
 We will now use phalcon developer tools to take advantage of the database schema and let our tools generate the code for us.
 
@@ -467,10 +467,10 @@ public function beforeExecuteRoute($dispatcher)
 }
 ```
 
-Phalcon provides Access Control Lists component - [Phalcon\ACL](http://docs.phalconphp.com/latest/en/reference/acl), which you'll probably use when implementing more complex access rules.
+Phalcon provides Access Control Lists component - [Phalcon\ACL](http://docs.phalcon.io/latest/en/reference/acl), which you'll probably use when implementing more complex access rules.
 
 #### Step 10 - Views
-Phalcon does support templating systems like [Mustache](https://github.com/bobthecow/mustache.php/), [Twig](http://twig.sensiolabs.org/) or the one provided by the framework called [Volt](http://docs.phalconphp.com/latest/en/reference/volt), but you are free to use plain PHP, which we will just do. A typical view would incorporate usage of `Phalcon\Tag` component, convenient helper class that aids creation of forms, links and other html elements:
+Phalcon does support templating systems like [Mustache](https://github.com/bobthecow/mustache.php/), [Twig](http://twig.sensiolabs.org/) or the one provided by the framework called [Volt](http://docs.phalcon.io/latest/en/reference/volt), but you are free to use plain PHP, which we will just do. A typical view would incorporate usage of `Phalcon\Tag` component, convenient helper class that aids creation of forms, links and other html elements:
 
 ```php
 <!-- app/views/index.phtml -->
@@ -551,7 +551,7 @@ Your public/index.php file must look like this
 
 That's it, routing should now work as expected. You may now test these settings by entering `http://blog.net/login/`.
 
-That was the last step in creating Phalcon web application, you may want to find out more and check out the [docs](http://docs.phalconphp.com/latest/en/) or download them in [PDF](http://media.readthedocs.org/pdf/phalcon-php-framework-documentation/latest/phalcon-php-framework-documentation.pdf) or check out recent changes on [Phalcon blog](http://blog.phalconphp.com/).
+That was the last step in creating Phalcon web application, you may want to find out more and check out the [docs](http://docs.phalcon.io/latest/en/) or download them in [PDF](http://media.readthedocs.org/pdf/phalcon-php-framework-documentation/latest/phalcon-php-framework-documentation.pdf) or check out recent changes on [Phalcon blog](http://blog.phalcon.io/).
 
 ### Summary
 I explained how to install Phalcon under Windows using WAMP or Ubuntu Linux and configure developer tools.

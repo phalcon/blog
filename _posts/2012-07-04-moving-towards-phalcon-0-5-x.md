@@ -22,6 +22,6 @@ Another important change is to replace the current database adapters with PDO. T
 **HMVC**.
 The last change is to implement Phalcon as a pure [HMVC](http://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller) framework. This change has taken longer than expected but is essential for future developments as well as design.
 
-These are the first few changes we thought of, some of them suggested by the community. At this moment, we would like to hear your comments and recommendations. Tell us what you think either as comments on this blog post or by visiting our [forum](https://forum.phalconphp.com).
+These are the first few changes we thought of, some of them suggested by the community. At this moment, we would like to hear your comments and recommendations. Tell us what you think either as comments on this blog post or by visiting our [forum](https://forum.phalcon.io).
 
 <3 Phalcon Team

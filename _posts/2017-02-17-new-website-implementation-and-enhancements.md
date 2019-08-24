@@ -13,9 +13,9 @@ Apart from some minor changes to the layout and addition of content, the website
 <!--more-->
 ### Implementation
 
-In our previous application serving our website, we had used the [full stack](https://docs.phalconphp.com/latest/en/applications) application that Phalcon offers.
+In our previous application serving our website, we had used the [full stack](https://docs.phalcon.io/latest/en/applications) application that Phalcon offers.
 
-In order to offer a wider variety of implementation to our community, we opted for using the `\Phalcon\Mvc\Micro` [application](https://docs.phalconphp.com/latest/en/micro), as well as [Middleware events](https://docs.phalconphp.com/latest/en/micro#middleware-events) in order to showcase the power of Phalcon, even when not using the full stack application.
+In order to offer a wider variety of implementation to our community, we opted for using the `\Phalcon\Mvc\Micro` [application](https://docs.phalcon.io/latest/en/micro), as well as [Middleware events](https://docs.phalcon.io/latest/en/micro#middleware-events) in order to showcase the power of Phalcon, even when not using the full stack application.
 
 The implementation of our site can be found in our [Github](https://github.com/phalcon/website) repository, where you can clone and investigate the implementation.
 

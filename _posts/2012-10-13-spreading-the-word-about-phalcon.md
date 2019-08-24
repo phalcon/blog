@@ -34,7 +34,7 @@ We have a presence in most of the popular social networks. By following us, you 
 
 - [Follow us on Twitter](http://twitter.com/phalconphp)
 - [Facebook Page](http://www.facebook.com/pages/Phalcon/134230726685897)
-- [Official Blog](http://blog.phalconphp.com)
+- [Official Blog](http://blog.phalcon.io)
 - [Star the project on Github](https://github.com/phalcon/cphalcon)
 
 **Feedback**

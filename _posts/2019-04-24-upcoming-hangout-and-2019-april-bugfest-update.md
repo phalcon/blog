@@ -11,7 +11,7 @@ tags:
 ---
 Happy Wednesday everyone! Half way through the week!
 
-We are pleased to see that our [**April Bugfest**](https://blog.phalconphp.com/post/competition-2019-april-bugfest) competition is moving along nicely. Thank you to all that participate in it!
+We are pleased to see that our [**April Bugfest**](https://blog.phalcon.io/post/competition-2019-april-bugfest) competition is moving along nicely. Thank you to all that participate in it!
 <!--more-->
 
 ![](/assets/files/feature.jpg)

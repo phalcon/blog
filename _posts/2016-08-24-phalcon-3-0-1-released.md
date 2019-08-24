@@ -36,7 +36,7 @@ sudo ./install
 
 Note that running the installation script will replace any version of Phalcon installed before.
 
-Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
 We encourage existing Phalcon 3 users to update to this maintenance version.
 

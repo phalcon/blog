@@ -8,7 +8,7 @@ We are happy to announce the release of Phalcon 0.9.0 Beta. This new release fol
 
 <!--more-->
 **Getting/Saving records with Magic Properties**
-It is now easier to obtain records related to a current model in the [ORM](https://docs.phalconphp.com/latest/en/db-models), by simply accessing a property with the same alias of the relationship (the relationship has to be set up first in the models):
+It is now easier to obtain records related to a current model in the [ORM](https://docs.phalcon.io/latest/en/db-models), by simply accessing a property with the same alias of the relationship (the relationship has to be set up first in the models):
 
 ```php
 <?php
@@ -89,7 +89,7 @@ $album->save();
 ```
 
 **Priorities in the Events component**
-The [Events](https://docs.phalconphp.com/latest/en/events) component is now supporting priorities. With this feature you can attach listeners indicating the order in which they must be called.
+The [Events](https://docs.phalcon.io/latest/en/events) component is now supporting priorities. With this feature you can attach listeners indicating the order in which they must be called.
 
 ```php
 <?php
@@ -267,7 +267,7 @@ git checkout 0.9.0
 sudo ./install
 ```
 
-Windows users can [download](https://phalconphp.com/download) a DLL from the download page.
+Windows users can [download](https://phalcon.io/download) a DLL from the download page.
 
 All tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon), so there should not be any major issues with this version. Please help us test and report any bugs or problems on [Github](https://github.com/phalcon/cphalcon/issues). If you have any questions about functionality, feel free to ask either in [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon) or in our [Google Group](https://groups.google.com/forum/#!forum/phalcon).
 

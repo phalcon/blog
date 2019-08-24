@@ -23,7 +23,7 @@ From 2.1.x onwards we are deprecating support for PHP 5.3. We highly encourage d
 
 `Phalcon\Mvc\Model\Validation` is now deprecated
 ------------------------------------------------
-[Phalcon\Mvc\Model\Validation](https://docs.phalconphp.com/latest/en/db-models#validating-data-integrity) is now deprecated in favor of [Phalcon\Validation](https://docs.phalconphp.com/latest/en/validation). The functionality of both components is merged into one, allowing us to reduce the codebase while offering the same functionality as before.
+[Phalcon\Mvc\Model\Validation](https://docs.phalcon.io/latest/en/db-models#validating-data-integrity) is now deprecated in favor of [Phalcon\Validation](https://docs.phalcon.io/latest/en/validation). The functionality of both components is merged into one, allowing us to reduce the codebase while offering the same functionality as before.
 
 Previously validations were implemented as follows:
 
@@ -62,7 +62,7 @@ class Users extends Model
 }
 ```
 
-Introducing [Phalcon\Validation](https://docs.phalconphp.com/latest/en/validation), you will need to change the above to:
+Introducing [Phalcon\Validation](https://docs.phalcon.io/latest/en/validation), you will need to change the above to:
 
 ```php
 namespace Invo\Models;
@@ -400,6 +400,6 @@ git checkout 2.1.x
 zephir build
 ```
 
-We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalconphp.com/).
+We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalcon.io/).
 
 <3 Phalcon Team

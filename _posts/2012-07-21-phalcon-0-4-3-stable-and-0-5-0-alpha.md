@@ -13,13 +13,13 @@ The biggest change in this first Alpha release of 0.5.0 is that all classes now 
 
 Our initial tests indicate that the 0.5.0 Alpha 1 works great. Our [official site](https://github.com/phalcon/website) and sample applications are running on it and all the unit tests are [passing](http://travis-ci.org/#!/phalcon/cphalcon). This version also has added stability improvements on older versions of PHP (< 5.3.4)
 
-If you are interesting in helping with testing, just download the DLL for Windows from the [download page](https://phalconphp.com/download), or compile the extension from the dev/ folder (when cloning the repository from [Github](https://github.com/phalcon/cphalcon/))
+If you are interesting in helping with testing, just download the DLL for Windows from the [download page](https://phalcon.io/download), or compile the extension from the dev/ folder (when cloning the repository from [Github](https://github.com/phalcon/cphalcon/))
 
 Feel free to explore and experiment with the code in the [sample application](https://github.com/phalcon/invo). For the most part, you should change the `_` with `\` in the class names.
 
 There is still more to come. The next alpha release (0.5.0 Alpha 2) we are planning on migrating all the database adapters to PDO, while continuing on our normal roadmap.
 
-If you have any problems you can send us your comments via the Phalcon's [forum](https://forum.phalconphp.com).
+If you have any problems you can send us your comments via the Phalcon's [forum](https://forum.phalcon.io).
 
 Thanks for your help!
 

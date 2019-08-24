@@ -17,7 +17,7 @@ For the project to move forward, the core team and some contributors, have recen
 
 Our Github page shows **571** closed issues for the year (a small number of those were just questions or duplicates). Additionally we had **912** commits in the main repository. This is a drop from previous years, where we have been averaging more than 1,000 commits, but still close enough
  
-Our [Forum](https://forum.phalconphp.com) has enjoyed 2,484 new posts which generated 7,891 replies in term of discussion, problem solving or general chat. 
+Our [Forum](https://forum.phalcon.io) has enjoyed 2,484 new posts which generated 7,891 replies in term of discussion, problem solving or general chat. 
 
 Finally our [Slack](https://phalconchats.slack.com/messages/general/) channel has seen a flood of new members, engaging in the community, solving problems and forming friendships.
 
@@ -30,9 +30,9 @@ The levels of support we have are:
 * [Bronze Backer](https://www.patreon.com/bePatron?u=4653615&rid=1221352) ($5 or more) - Your name will be put in backers.md in the Phalcon repository.
 * [Silver Backer](https://www.patreon.com/bePatron?u=4653615&rid=1185010) ($10 or more) - Your name will be put in backers.md in the Phalcon repository and we will send you 5 stickers.
 * [Gold Backer](https://www.patreon.com/bePatron?u=4653615&rid=1204241) ($50 or more) - Your name will be put at the top of backers.md in the Phalcon repository. We will also send you 10 stickers.
-* [Bronze Sponsor](https://www.patreon.com/bePatron?u=4653615&rid=1204282) ($100 or more) - Your name or small company logo will be put on a dedicated sponsors page in phalconphp.com and we will send you 10 stickers. 
-* [Silver Sponsor](https://www.patreon.com/bePatron?u=4653615&rid=1204296) - ($250 or more) - Your name or medium company logo will be put on a dedicated sponsors page in phalconphp.com and the top of the project repo's README and we will send you 10 stickers.
-* [Gold Sponsor](https://www.patreon.com/bePatron?u=4653615&rid=1205385) - ($500 or more) - Your name or medium company logo will be put at the top of a dedicated sponsors page in phalconphp.com and the top of the project repo's README and we will send you 10 stickers.
+* [Bronze Sponsor](https://www.patreon.com/bePatron?u=4653615&rid=1204282) ($100 or more) - Your name or small company logo will be put on a dedicated sponsors page in phalcon.io and we will send you 10 stickers. 
+* [Silver Sponsor](https://www.patreon.com/bePatron?u=4653615&rid=1204296) - ($250 or more) - Your name or medium company logo will be put on a dedicated sponsors page in phalcon.io and the top of the project repo's README and we will send you 10 stickers.
+* [Gold Sponsor](https://www.patreon.com/bePatron?u=4653615&rid=1205385) - ($500 or more) - Your name or medium company logo will be put at the top of a dedicated sponsors page in phalcon.io and the top of the project repo's README and we will send you 10 stickers.
 
 The level of financial support that we receive, will allow our lead developer to devote more time on the project, addressing bugs both in Zephir and Phalcon much faster in addition to providing more functionality.
 

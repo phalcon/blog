@@ -97,7 +97,7 @@ The frameworks compared were:
 - [FatFree (v3.6)](https://fatfreeframework.com/3.6/home)
 - [Limonade (v0.5.1)](https://limonade-php.github.io/)
 - [Lumen (v5.4.0)](https://laravel.com/)
-- [Phalcon (v3.1.2)](https://phalconphp.com/en/)
+- [Phalcon (v3.1.2)](https://phalcon.io/en/)
 - [Silex (v.2.0.4)](https://framework.zend.com/)
 
 <h5 class="alert alert-warning">

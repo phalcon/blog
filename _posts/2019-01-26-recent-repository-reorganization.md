@@ -18,9 +18,9 @@ We had a wonderful hangout [today](https://www.youtube.com/watch?v=OAN7W2zVRaI),
 
 In an effort to reduce the workload and support, we started a few months ago, deprecating and deleting repositories that were under the Phalcon organization but were never used or maintained. However even after that "cleanup" effort, we still had close to 20 repositories hosting applications written in Phalcon. Those applications were more or less identical to one another, in terms of implementation, and thus were offering little value to the community as examples of implementing applications with Phalcon.
 
-As mentioned in our hangout, we are a small team and just updating all of our applications would be a lengthy task which will take time from development towards the framework. Those repositories represented some of our sites, such as this blog, the [main website](https://phalconphp.com), the [Zephir blog](https://blog.zephir-lang.com), [Zephir website](https://zephir-lang.com), the [BuiltWith](https://builtwith.phalconphp.com) site etc.
+As mentioned in our hangout, we are a small team and just updating all of our applications would be a lengthy task which will take time from development towards the framework. Those repositories represented some of our sites, such as this blog, the [main website](https://phalcon.io), the [Zephir blog](https://blog.zephir-lang.com), [Zephir website](https://zephir-lang.com), the [BuiltWith](https://builtwith.phalcon.io) site etc.
 
-The biggest site of all is our [documentation](https://docs.phalconphp.com) site, which required quite a bit of love so as to remove broken links, offer a better and more accurate search as well as an archive of older content for developers that are using older versions of Phalcon.
+The biggest site of all is our [documentation](https://docs.phalcon.io) site, which required quite a bit of love so as to remove broken links, offer a better and more accurate search as well as an archive of older content for developers that are using older versions of Phalcon.
 
 ### Jekyll
 
@@ -38,15 +38,15 @@ We cannot thank the [Netlify](https://netlify.com) team enough for offering this
 
 There repositories and subsequent sites that were ported to [Netlify](https://netlify.com) are:
 
-* [Phalcon Blog](https://blog.phalconphp.com)
+* [Phalcon Blog](https://blog.phalcon.io)
 * [Phalcon Link](https://phalcon.link)
 * [Zephir Website](https://zephir-lang.com)
 * [Zephir Documentation](https://docs.zephir-lang.com)
-* [Built With Phalcon](https://builtwith.phalconphp.com)
+* [Built With Phalcon](https://builtwith.phalcon.io)
 * [Zephir Blog](https://blog.zephir-lang.com)
-* [Phalcon License](https://license.phalconphp.com)
-* [Phalcon Old Documentation v2](https://olddocs.phalconphp.com)
-* [Phalcon Documentation](https://docs.phalconphp.com)
+* [Phalcon License](https://license.phalcon.io)
+* [Phalcon Old Documentation v2](https://olddocs.phalcon.io)
+* [Phalcon Documentation](https://docs.phalcon.io)
 
 ### Documentation
 

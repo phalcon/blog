@@ -8,7 +8,7 @@ tags:
   - phalcon
   - phalcon4
 ---
-Since we announced our [**April Bugfest**](https://blog.phalconphp.com/post/competition-2019-april-bugfest) competition, we are happy to see that we have seen a great number of Pull Requests, for our v4 release!!
+Since we announced our [**April Bugfest**](https://blog.phalcon.io/post/competition-2019-april-bugfest) competition, we are happy to see that we have seen a great number of Pull Requests, for our v4 release!!
 <!--more-->
 
 ![](/assets/files/feature.jpg)

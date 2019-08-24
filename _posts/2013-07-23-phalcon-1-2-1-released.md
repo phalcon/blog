@@ -24,7 +24,7 @@ A few key points are
 
 and much more. You can read the full list in our [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.1/CHANGELOG).
 
-Phalcon 1.2.1 is now available on the master branch and DLLs are available for download in our [download](https://www.phalconphp.com/download) area. You can also access the latest [documentation](https://docs.phalconphp.com/) here.
+Phalcon 1.2.1 is now available on the master branch and DLLs are available for download in our [download](https://www.phalcon.io/download) area. You can also access the latest [documentation](https://docs.phalcon.io/) here.
 
 
 <3 The Phalcon Team

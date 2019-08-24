@@ -51,7 +51,7 @@ zephir fullclean
 zephir build
 ```
 
-to install the new extension. Detailed installation instructions can be found in our [documentation page](https://docs.phalconphp.com/4.0/en/installation).
+to install the new extension. Detailed installation instructions can be found in our [documentation page](https://docs.phalcon.io/4.0/en/installation).
 
 > Note: It might take a bit of time for the DEB and RPM packages to be built from when this blog post is published.
 {: .alert .alert-info }

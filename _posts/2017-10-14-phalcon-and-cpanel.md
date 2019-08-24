@@ -24,7 +24,7 @@ The email is below:
 > 
 > We are happy to let you know that we are adding phalcon to our ea4 offering in our next ea4 release! That should be sometime between now and early Sept, watch [release notes](https://documentation.cpanel.net/display/EA4/EasyApache+4+Release+Notes) for the details, I'd be happy to notify you also if you like, just let me know.
 > 
-> You will probably want to update the “cPanel” heading at [https://phalconphp.com/en/download/linux](https://phalconphp.com/en/download/linux) since it is currently about Phalcon in ea3 which is deprecated and scheduled for removal early in 2018.
+> You will probably want to update the “cPanel” heading at [https://phalcon.io/en/download/linux](https://phalcon.io/en/download/linux) since it is currently about Phalcon in ea3 which is deprecated and scheduled for removal early in 2018.
 > 
 > Here are some details for that document and/or to let your users know about (by whatever means you all do that sort of thing).
 > 

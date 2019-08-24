@@ -13,7 +13,7 @@ The purpose of the new domain is:
 * Showcase the ease of use of creating a new Phalcon application.
 
 <!--more-->
-Phalcon Link has been created using one single file, utilizing the `\Phalcon\Mvc\Micro` application ([documentation](https://docs.phalconphp.com/latest/en/micro)).
+Phalcon Link has been created using one single file, utilizing the `\Phalcon\Mvc\Micro` application ([documentation](https://docs.phalcon.io/latest/en/micro)).
 
 ### Links
 
@@ -38,7 +38,7 @@ We are pleased to announce that our funding campaign is moving along nicely. Our
 
 If you wish to become a patron, you can always visit [https://phalcon.link/fund](https://phalcon.link/fund) and pledge your support on a one time or recurring basis. 
 
-Also if you wish to support the project with buying some swag, you can always purchase some stickers from our [store](https://store.phalconphp.com) for you and your team, or you can purchase [T-shirts](https://phalcon.link/store). Please note that the T-shirt campaign will only be available until the beginning of February. 
+Also if you wish to support the project with buying some swag, you can always purchase some stickers from our [store](https://store.phalcon.io) for you and your team, or you can purchase [T-shirts](https://phalcon.link/store). Please note that the T-shirt campaign will only be available until the beginning of February. 
 
 ### Goals for Q1
 
@@ -48,7 +48,7 @@ We have already started refactoring all of our websites, using different impleme
 
 Some might already have noticed the changes in the source code of our [forum](https://phalcon.link).
 
-Also the main website is being refactored, using the `\Phalcon\Mvc\Micro` ([application](https://docs.phalconphp.com/latest/en/micro)) and middleware. This is work in progress, and we will be updating you when we have finished it so that you can have a look and either adapt the implementation to your projects or get some ideas.
+Also the main website is being refactored, using the `\Phalcon\Mvc\Micro` ([application](https://docs.phalcon.io/latest/en/micro)) and middleware. This is work in progress, and we will be updating you when we have finished it so that you can have a look and either adapt the implementation to your projects or get some ideas.
 
 Finally, we have started working on the revamp of the documentation. Very soon a brand new introduction page will be published along with instructions on how to install Phalcon using source, packagecloud.io, docker, vagrant etc.
 				

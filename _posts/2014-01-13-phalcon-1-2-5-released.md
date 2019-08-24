@@ -37,7 +37,7 @@ We are pleased to announce the release of Phalcon 1.2.5, the latest stable versi
 - Fix `phalcon_escape_multi()` to generate valid UTF-8 ([1681](https://github.com/phalcon/cphalcon/issues/1681))
 
 Phalcon 1.2.5 is now available on the 
-[master branch](https://github.com/phalcon/cphalcon) and DLLs are available for download in our [download area](https://phalconphp.com/download). You can also access the latest [documentation](https://docs.phalconphp.com) here.
+[master branch](https://github.com/phalcon/cphalcon) and DLLs are available for download in our [download area](https://phalcon.io/download). You can also access the latest [documentation](https://docs.phalcon.io) here.
 
 Enjoy!
 

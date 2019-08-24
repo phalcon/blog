@@ -8,7 +8,7 @@ After ​our successful 1.0 release, we continue improving Phalcon ​with our l
 
 <!--more-->
 ### QueryBuilder Paginator
-In addition to the [ModelResultset](https://docs.phalconphp.com/latest/en/pagination) and [NativeArray](https://docs.phalconphp.com/latest/en/pagination) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle ​large datasets.
+In addition to the [ModelResultset](https://docs.phalcon.io/latest/en/pagination) and [NativeArray](https://docs.phalcon.io/latest/en/pagination) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle ​large datasets.
 
 ```php
 use Phalcon\Paginator\Adapter\QueryBuilder;
@@ -142,7 +142,7 @@ $router->addGet(
         'controller' => 'robots',
         'action'     => 'index'
     ]
-)->setHostName('api.phalconphp.com');
+)->setHostName('api.phalcon.io');
 ```
 
 Or use a group:
@@ -150,7 +150,7 @@ Or use a group:
 ```php
 $group = new Phalcon\Mvc\Router();
 
-$group->setHostName('api.phalconphp.com');
+$group->setHostName('api.phalcon.io');
 
 $groop->addGet(
     '/api/robots', 
@@ -199,7 +199,7 @@ $collection->delete('/delete/{id}', 'delete');
 $app->mount($collection);
 ```
 
-1.1.0 includes other minor changes, bug fixes, stability and performance improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.1.0/CHANGELOG) here. Check the [documentation](https://docs.phalconphp.com/latest/en/) for this version
+1.1.0 includes other minor changes, bug fixes, stability and performance improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.1.0/CHANGELOG) here. Check the [documentation](https://docs.phalcon.io/latest/en/) for this version
 
 ### Help with Testing
 This version can be installed from the 1.1.0 branch:
@@ -211,9 +211,9 @@ git checkout 1.1.0
 sudo ./install
 ```
 
-Windows users can download a DLL from the [download page](https://phalconphp.com/download).
+Windows users can download a DLL from the [download page](https://phalcon.io/download).
 
-We welcome your comments regarding this new release in [Phosphorum](https://forum.phalconphp.com) and [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](http://github.com/phalcon/cphalcon/).
+We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io) and [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](http://github.com/phalcon/cphalcon/).
 
 Thanks!
 

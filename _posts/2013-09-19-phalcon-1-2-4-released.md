@@ -22,9 +22,9 @@ git checkout 1.2.4
 sudo ./install
 ```
 
-Windows users can download a DLL from the [download page](https://phalconphp.com/download).
+Windows users can download a DLL from the [download page](https://phalcon.io/download).
 
-We welcome your comments regarding this new release in [Phosphorum](https://forum.phalconphp.com). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](https://github.com/phalcon/cphalcon).
+We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](https://github.com/phalcon/cphalcon).
 
 Thanks!
 

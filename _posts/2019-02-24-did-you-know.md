@@ -24,7 +24,7 @@ We had a great number of NFRs that have been sitting in GitHub as issues and nev
 Our docs are constantly being updated with new content for the v4 version.
 
 #### Upgrade
-We have a new [upgrade](https://docs.phalconphp.com/4.0/en/upgrade) page, aimed to help you upgrade your application from v3 to v4. The upgrade page offers examples, gotchas and tips that will help you upgrade your application.
+We have a new [upgrade](https://docs.phalcon.io/4.0/en/upgrade) page, aimed to help you upgrade your application from v3 to v4. The upgrade page offers examples, gotchas and tips that will help you upgrade your application.
 
 Also any component that has been modified or rewritten, will have a link `Upgrade Instructions` that will take you to the relevant section of the upgrade page.
 
@@ -47,7 +47,7 @@ We have incorporated [Algolia](https://algolia.com) for the search in our blog. 
 Our blog now allows you to comment on blog posts, same as our v4 documentation.
 
 ### BuiltWith
-We have a website that you can showcase your Phalcon implementations!! [BuiltWith](https://builtwith.phalconphp.com) can showcase your site, with tags, description, authors, repo if open sourced, as well as pictures. You can check the [repository](https://github.com/phalcon/builtwith) for instructions on how to submit your site! BuiltWith also incorporates Algolia search so you can find easily projects based on a tag or other criteria.
+We have a website that you can showcase your Phalcon implementations!! [BuiltWith](https://builtwith.phalcon.io) can showcase your site, with tags, description, authors, repo if open sourced, as well as pictures. You can check the [repository](https://github.com/phalcon/builtwith) for instructions on how to submit your site! BuiltWith also incorporates Algolia search so you can find easily projects based on a tag or other criteria.
 
 
 <3 Phalcon Team

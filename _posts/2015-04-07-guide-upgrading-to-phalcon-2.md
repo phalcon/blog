@@ -104,7 +104,7 @@ zephir build
 
 Note that running the installation script will replace any version of Phalcon installed before.
 
-Windows DLLs are available in the [download page](https://phalconphp.com/en/download/windows).
+Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
 **Deployment**
 When you are sufficiently confident your application is working with Phalcon 2, you're ready to go ahead and deploy your upgraded Phalcon project.
