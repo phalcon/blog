@@ -8,6 +8,8 @@ app:
   baseurl: "/"
   analytics: 'UA-133802124-2'
 
+url: https://blog.phalcon.io
+
 social:
   email: team@phalcon.io
   facebook:
