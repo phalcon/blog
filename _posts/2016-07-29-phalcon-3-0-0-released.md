@@ -971,7 +971,7 @@ $validator->add(
 Phalcon 3.0 supports PHP7! In subsequent releases we will focus on the development of the framework to improve the compatibility and take advantage of the performance enhancements that PHP7 offers. You can install the framework in php7 using the usual installation instructions.
 
 ### Support
-Phalcon 3.0 Long Term Support (LTS) version is out, and it’s packed with new features to help you better create web applications with PHP. This version of the framework will be maintained for 3 years from now.
+Phalcon 3.0 Long Term Support (LTS) version is out, and it's packed with new features to help you better create web applications with PHP. This version of the framework will be maintained for 3 years from now.
 
 ### Acknowledgments
 We want to greatly thank everyone who has contributed to accomplish and achieve the completion of this release. Special thanks to our friends around the world that have made possible this release:

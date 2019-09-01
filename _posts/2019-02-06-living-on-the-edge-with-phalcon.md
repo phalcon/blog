@@ -72,7 +72,7 @@ Now we need to compile the new version. Simply run the install command
 $ ./install
 ```
 
-That’s it, restart PHP-FPM or Apache. 
+That's it, restart PHP-FPM or Apache. 
 
 ```bash
 $ /etc/init.d/php-fpm restart

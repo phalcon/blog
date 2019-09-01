@@ -20,7 +20,7 @@ Some benchmarks that have been run so far:
 It is only natural that once it came out the PhalconPHP community was dying to know when we would get a chance to work with PhalconPHP and PHP7.
 
 ### The Problem
-We all know that PhalconPHP is written in Zephir starting with version 2.0, and that this language compiles its code into a C PHP Extension. Because of PHP7’s new engine the extension had to be rewritten and adapted to the new specifications.
+We all know that PhalconPHP is written in Zephir starting with version 2.0, and that this language compiles its code into a C PHP Extension. Because of PHP7's new engine the extension had to be rewritten and adapted to the new specifications.
 
 ### The Solution
 Knowing this, the PhalconPHP team started working since last year on an updated version of Zephir to make the compiled code work with PHP7.
@@ -77,7 +77,7 @@ That's it!
 
 You now have PhalconPHP and PHP7 working.
 
-Can you expect PhalconPHP to be even faster? No, but you can expect to see your your app be much faster since your PHP code will run better with the new engine. Plus, you won’t have any overhead since PhalconPHP is a extension. The best part of all this is that you get all the new features that PHP7 brings to the table.
+Can you expect PhalconPHP to be even faster? No, but you can expect to see your your app be much faster since your PHP code will run better with the new engine. Plus, you won't have any overhead since PhalconPHP is a extension. The best part of all this is that you get all the new features that PHP7 brings to the table.
 
 Do take into account that PHP7 is still rather new, and most of the commonly used extensions like memcache, memcached, and redis are available in Dev/Beta branches, so you need to reinstall them.
 

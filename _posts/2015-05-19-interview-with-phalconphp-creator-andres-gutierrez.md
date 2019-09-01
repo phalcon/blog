@@ -86,7 +86,7 @@ I normally work on Sublime to develop in PHP/C/Zephir, MongoDB as a database and
 
 ### Why haven't you promoted Phalcon more extensively?
 
-Phalcon has been promoted as much as it can be. Personally I’ve done many presentations and am constantly sharing our advances on social networks. The promotion of a framework comes mainly from the community's effort, assisting to different conferences around the world and talk with people, sharing accomplishments, tutorials, tips and other useful information through social networks greatly increase Phalcon's presence.
+Phalcon has been promoted as much as it can be. Personally I've done many presentations and am constantly sharing our advances on social networks. The promotion of a framework comes mainly from the community's effort, assisting to different conferences around the world and talk with people, sharing accomplishments, tutorials, tips and other useful information through social networks greatly increase Phalcon's presence.
 
 ### What are your thoughts on PHP 7?
 
