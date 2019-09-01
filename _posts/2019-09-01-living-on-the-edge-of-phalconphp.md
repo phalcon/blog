@@ -17,7 +17,7 @@ To get the latest version of Phalcon go to PhalconPHP’s GIT and get the versio
 Now you have 2 options, the build way or the recompile way. On this article we will focus on the build way.
 
 ### The Build Way
-1. Download the latest version either via GIT or direct download
+Download the latest version either via GIT or direct download
 
 ```bash
  [root@server ~] wget https://github.com/phalcon/cphalcon/archive/2.1.x.zip
