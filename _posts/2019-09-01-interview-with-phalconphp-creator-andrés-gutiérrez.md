@@ -24,7 +24,7 @@ $app->handle();
 
 ### Have you ever thought of writing a framework for another language?
 
-Yes, of course! They were more like hobby projects though. I’ve tried to write frameworks for Go, Rust, C and Clojure, but were all left as prototypes.
+Yes, of course! They were more like hobby projects though. I've tried to write frameworks for Go, Rust, C and Clojure, but were all left as prototypes.
 
 ### Why PHP?
 
@@ -32,7 +32,7 @@ PHP, despite all of its unfounded criticism, has always been my favorite languag
 
 ### What was your inspiration for the development of Phalcon?
 
-Mainly my experience with Ruby on Rails and Seam for Java. I’ve been creating custom open source frameworks in PHP for businesses since 2005, which has contributed in great part to my vision of how a framework for PHP should be, and what developers need.
+Mainly my experience with Ruby on Rails and Seam for Java. I've been creating custom open source frameworks in PHP for businesses since 2005, which has contributed in great part to my vision of how a framework for PHP should be, and what developers need.
 
 ### How hard was it to get started on Phalcon?
 
@@ -40,11 +40,11 @@ We started the idea for Phalcon around 2011, which was called Spark back then. W
 
 ### What do you consider to be Phalcon's weak point?
 
-In general terms, being written in C is both it’s strongest and weakest points. Finding collaborators that had the necessary skills to contribute to the core of the framework wasn’t and still isn’t an easy task. Now with Phalcon 2.0 being written in Zephir the number of collaborators has increased and I am quite happy for it.
+In general terms, being written in C is both it's strongest and weakest points. Finding collaborators that had the necessary skills to contribute to the core of the framework wasn't and still isn't an easy task. Now with Phalcon 2.0 being written in Zephir the number of collaborators has increased and I am quite happy for it.
 
 ### What would you say is the greatest value that Phalcon has brought to the PHP community?
 
-In its conception Phalcon was an out of the box idea, to propose a different way of doing things. Three years ago performance wasn’t such a big deal as it is today. I think Phalcon has contributed and influenced in this sense, in helping the developer to quickly and easily construct web sites and PHP applications, taking into account the performance of the framework.
+In its conception Phalcon was an out of the box idea, to propose a different way of doing things. Three years ago performance wasn't such a big deal as it is today. I think Phalcon has contributed and influenced in this sense, in helping the developer to quickly and easily construct web sites and PHP applications, taking into account the performance of the framework.
 
 ### When do you expect to launch Phalcon 2.0?
 
@@ -60,13 +60,13 @@ I actually work for a video game company and spend a lot of time in the office. 
 
 ### What are your thoughts on other frameworks? In particular Zend, Symphony and Laravel?
 
-The framework market for PHP is colossal, there are dozens of frameworks that have been around for many years and it’s relatively easy to find one that adapts to the needs, experience and knowledge of everyone.
+The framework market for PHP is colossal, there are dozens of frameworks that have been around for many years and it's relatively easy to find one that adapts to the needs, experience and knowledge of everyone.
 
-Personally I haven’t used other PHP frameworks actively any particular development. However I believe that frameworks for PHP (as in other languages) are improved stemmed adaptations from frameworks from other languages like Ruby on Rails or Spring. Therefore most frameworks implement strong similarities in their design patterns and do things in similar ways, which is positive for developers because it reduces the learning curve and helps expand the knowledge of web development in general.
+Personally I haven't used other PHP frameworks actively any particular development. However I believe that frameworks for PHP (as in other languages) are improved stemmed adaptations from frameworks from other languages like Ruby on Rails or Spring. Therefore most frameworks implement strong similarities in their design patterns and do things in similar ways, which is positive for developers because it reduces the learning curve and helps expand the knowledge of web development in general.
 
 ### What are your thoughts on the Zephir's reception?
 
-There are many developers that are interested in the evolution of Zephir and they are contributing so that it keeps getting better. I don’t think that creating an extension for PHP has ever been this easy.
+There are many developers that are interested in the evolution of Zephir and they are contributing so that it keeps getting better. I don't think that creating an extension for PHP has ever been this easy.
 
 ### Where did you get your inspiration for Zephir?
 
@@ -84,9 +84,9 @@ I normally work on Sublime to develop in PHP/C/Zephir, MongoDB as a database and
 
 ![](/assets/files/andres_interview.jpg)
 
-### Why haven’t you promoted Phalcon more extensively?
+### Why haven't you promoted Phalcon more extensively?
 
-Phalcon has been promoted as much as it can be. Personally I’ve done many presentations and am constantly sharing our advances on social networks. The promotion of a framework comes mainly from the community’s effort, assisting to different conferences around the world and talk with people, sharing accomplishments, tutorials, tips and other useful information through social networks greatly increase Phalcon’s presence.
+Phalcon has been promoted as much as it can be. Personally I’ve done many presentations and am constantly sharing our advances on social networks. The promotion of a framework comes mainly from the community's effort, assisting to different conferences around the world and talk with people, sharing accomplishments, tutorials, tips and other useful information through social networks greatly increase Phalcon's presence.
 
 ### What are your thoughts on PHP 7?
 
@@ -96,6 +96,6 @@ PHP 7 is a great leap forward for PHP, which has been steadily and significantly
 
 Progress has been made with experimentation on code generation for PHP 7. We hope to soon have a better integration from which Phalcon and the community may benefit from.
 
-### What's your vision on Phalcon’s and Zephir’s future? What's next?
+### What's your vision on Phalcon's and Zephir's future? What's next?
 
-Phalcon 2 depends entirely on whether Zephir can deliver, so we want Zephir to be as good as it can be so that Phalcon can be too. Subsequent versions of Phalcon 2 will include much needed improvements regarding actual components required by the community. We also have to take into account that we didn’t introduce many elements that could break current compatibility. So our plan is for Phalcon 3 to create a version from scratch exploring other design patterns and other ways of working.
+Phalcon 2 depends entirely on whether Zephir can deliver, so we want Zephir to be as good as it can be so that Phalcon can be too. Subsequent versions of Phalcon 2 will include much needed improvements regarding actual components required by the community. We also have to take into account that we didn't introduce many elements that could break current compatibility. So our plan is for Phalcon 3 to create a version from scratch exploring other design patterns and other ways of working.
