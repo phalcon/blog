@@ -8,9 +8,9 @@ tags:
 ---
 Phalcon is a framework that differs from the rest. We can't update the source code from composer like other frameworks, we have to recompile the extension with each new update. Some can find this as a problem. Others, like us, find it entertaining.
 
-Phalcon recently launched its new version (2.0). With this new version we’ve seen a large number of improvements, but as with every software we’ve also got some new bugs. However some of us can't wait for the new release to get the bug fix, we need the latest and greatest version. This is where we need to either compile Phalcon from Zephir or download the latest build.
+Phalcon recently launched its new version (2.0). With this new version we've seen a large number of improvements, but as with every software we've also got some new bugs. However some of us can't wait for the new release to get the bug fix, we need the latest and greatest version. This is where we need to either compile Phalcon from Zephir or download the latest build.
 
-To get the latest version of Phalcon go to PhalconPHP’s GIT and get the version of the branch you are using.  (For this article let got with 2.1.x.)
+To get the latest version of Phalcon go to PhalconPHP's GIT and get the version of the branch you are using.  (For this article let got with 2.1.x.)
 
 [https://github.com/phalcon/cphalcon/tree/2.1.x][https://web.archive.org/web/20160322143039/https://github.com/phalcon/cphalcon/tree/2.1.x]
 
@@ -46,7 +46,7 @@ Now we need to compile the new version. Simply run the install command
 [root@server cphalcon-2.1.x] ./install
 ```
 
-That’s it, restart PHP-FPM or Apache. Welcome to the edge of Phalcon. ;)
+That's it, restart PHP-FPM or Apache. Welcome to the edge of Phalcon. ;)
 
 ```bash
 [root@server ext] /etc/init.d/php-fpm restart

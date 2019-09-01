@@ -7,7 +7,7 @@ tags:
   - routes
   - redirection
 ---
-After doing some searching around the PhalconPHP documentation, forums, and Google it became apparent that one of two things were happening here: either no one that is using PhalconPHP has had to do rerouting or there is a way and it just hasn’t been shared with the rest.
+After doing some searching around the PhalconPHP documentation, forums, and Google it became apparent that one of two things were happening here: either no one that is using PhalconPHP has had to do rerouting or there is a way and it just hasn't been shared with the rest.
 
 Either way, after digging through the PhalconPHP API we found something that could help us with what we wanted. Therefore we created a solution to what we needed. It might not be the prettiest or best one out there, but it worked and took care of it.
 
@@ -25,7 +25,7 @@ http://domain.com/level2/level3-level4-level5-level6-...
 
 Our solution:
 
-Take this original route definition (ignore how unusual it maybe, it is for example’s sake):
+Take this original route definition (ignore how unusual it maybe, it is for example's sake):
 
 ```php
 $router->add('/level2/level3/([0-9]+)/([0-9]+)', [
@@ -53,11 +53,11 @@ $router->add('/level2/level3/([0-9]+)/([0-9]+)', [
     'param2' => 1,
     'param3' => 2,
 ])->beforeMatch(function(){
-    die(‘Testing beforeMatch’);
+    die(‘Testing beforeMatch');
 })
 ```
 
-Don’t judge. We know you use die() too. And it effectively printed the string when the URL was invoked. Neat! Well, the API doesn’t not specify any parameters, but surely there must be some, right? After all it is a callback, which means something should be sent back to us. Well, by specifying parameters we confirmed that 3 pieces of information are being sent back to the callback function:
+Don't judge. We know you use die() too. And it effectively printed the string when the URL was invoked. Neat! Well, the API doesn't not specify any parameters, but surely there must be some, right? After all it is a callback, which means something should be sent back to us. Well, by specifying parameters we confirmed that 3 pieces of information are being sent back to the callback function:
 
 Param 1: The match URL string.
 Param 2: A `Phalcon\Mvc\Router\Route` object.
@@ -78,7 +78,7 @@ $router->add('/level2/level3/([0-9]+)/([0-9]+)', [
 });
 ```
 
-Furthermore, it came to our attention that we did not need to specify the route’s paths:
+Furthermore, it came to our attention that we did not need to specify the route's paths:
 
 ```php
 $router

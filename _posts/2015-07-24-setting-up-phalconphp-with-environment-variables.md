@@ -13,7 +13,7 @@ This is a small article to show you how to implement environment variables in yo
 
 Some notes before you continue reading: I currently work using PHP 5.6 in my development environment. Therefore expect not to see `array()` when an array is being used or define. Expect to see the new brackets method (`[]`).
 
-We will be using Vance Lucas’ [phpdotenv](https://github.com/vlucas/phpdotenv) library (the link will take you to his GitHub repository). You can follow the instructions for installing the library using Composer.
+We will be using Vance Lucas' [phpdotenv](https://github.com/vlucas/phpdotenv) library (the link will take you to his GitHub repository). You can follow the instructions for installing the library using Composer.
 
 Once you have the library installed you will want to create a `.env` file, which is where you will define all your configuration values. It is a good idea to create this file in the user root directory (for exmaple: `/home/user/`).
 
@@ -63,9 +63,9 @@ $dotenv = new Dotenv\Dotenv(__DIR__ . '/../../');
 $dotenv->load();
 ```
 
-**IMPORTANT** This environment variables loader has to go AFTER you include Composer’s `autoload.php` file. Look at the code above carefully.
+**IMPORTANT** This environment variables loader has to go AFTER you include Composer's `autoload.php` file. Look at the code above carefully.
 
-With this we are ready to load our environment variables into PhalconPHP’s configuration. So go ahead and open the config.php file (in the same folder as the loader.php file), and use the environment variables like this:
+With this we are ready to load our environment variables into PhalconPHP's configuration. So go ahead and open the config.php file (in the same folder as the loader.php file), and use the environment variables like this:
 
 ```php
  [
@@ -88,4 +88,4 @@ With this we are ready to load our environment variables into PhalconPHP’s con
 ]
 ```php
 
-That’s it! Couldn’t have been easier! With this in place you can now commit ALL project files without having to worry for the configurations the different systems need.
+That's it! Couldn't have been easier! With this in place you can now commit ALL project files without having to worry for the configurations the different systems need.
