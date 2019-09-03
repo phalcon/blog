@@ -3,6 +3,7 @@ layout: default
 ---
 {% for post in paginator.posts %}
 {% if forloop.index == 1 %}
+{% if 1 == paginator.page %}
                 <div class="phalcon-blog__last-article">
                     <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
                         <div class="phalcon-blog__item-content">
@@ -37,6 +38,7 @@ layout: default
                 <div class="phalcon-blog__main-title">
                     LATEST POSTS
                 </div>
+{% endif %}
                 <div class="phalcon-blog__items">
 {% else %}
                     <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
