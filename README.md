@@ -22,6 +22,22 @@ Thanks.
 
 The master branch will always contain the latest stable version which is served by Github Pages. If you are looking for the Phalcon based implementation, please click the "Releases" link.
 
+## Sponsors
+
+Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/phalcon#sponsor)]
+
+<a href="https://opencollective.com/phalcon/#contributors">
+<img src="https://opencollective.com/phalcon/tiers/sponsors.svg?avatarHeight=48&width=800">
+</a>
+
+## Backers
+
+Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/phalcon#backer)]
+
+<a href="https://opencollective.com/phalcon/#contributors">
+<img src="https://opencollective.com/phalcon/tiers/backers.svg?avatarHeight=48&width=800&height=200">
+</a>
+
 #### License
 
 Phalcon Blog is open-sourced software licensed under the [New BSD License][6]. © Phalcon Framework Team and contributors
