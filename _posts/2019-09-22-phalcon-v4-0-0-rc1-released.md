@@ -23,11 +23,11 @@ Regarding the documents, you can check our progress in this issue:
 
 Thank you again to everyone that has engaged us through social media, as well as our [Discord](https://phalcon.link/discord) server. Our community is the drive that makes Phalcon better with every release.
 
-### Changelog
-## Added
+## Changelog
+### Added
 - Added optional boolean parameter to `Phalcon\Http\Request::getURI()` (as well as its interface) which indicates whether or not the method should return only the path without the query string
 
-## Changed
+### Changed
 - Changed `Phalcon\Url::get` to use implementation behind `Phalcon\Helper\Str::reduceSlashes` to reduce slashes [#14331](https://github.com/phalcon/cphalcon/issues/14331)
 - Changed `Phalcon\Http\Headers\set()` to return self for a more fluent interface
 - Changed `Phalcon\Assets\Manager`, `Phalcon\Cli\Router`, `Phalcon\Dispatcher\AbstractDispatcher`, `Phalcon\Html\Tag`,  `Phalcon\Http\Cookie`, `Phalcon\Http\Request`, `Phalcon\Http\Response\Cookies`, `Phalcon\Mvc\Model`, `Phalcon\Mvc\Router`, `Phalcon\Security`, `Phalcon\Session\Manager` to use `Phalcon\Di\AbstractDiAware` for container functionality [#14351](https://github.com/phalcon/cphalcon/pull/14351)
@@ -44,7 +44,7 @@ Thank you again to everyone that has engaged us through social media, as well as
 - Changed `Phalcon\Events\EventsAwareInterface::getEventsManager` and `Phalcon\Di\Injectable::getEventsManager` to return also `null` [#14404](https://github.com/phalcon/cphalcon/pull/14404)
 - Changed `Phalcon\Logger\Adapter\AbstractAdapter::add` to now return `this` [#14404](https://github.com/phalcon/cphalcon/pull/14404)
 
-## Fixed
+### Fixed
 - Fixed `Phalcon\Helper\Str::includes` to return correct result [#14301](https://github.com/phalcon/cphalcon/issues/14301)
 - Fixed `Phalcon\Logger` moved to correct namespace [#14263](https://github.com/phalcon/cphalcon/issues/14263)
 - Fixed `Phalcon\Session\Adapter\AbstractAdapter::read()` to return ""(empty string) when `Session/Adapter/*::get()` returns null [#14314](https://github.com/phalcon/cphalcon/issues/14314)
@@ -72,15 +72,15 @@ Thank you again to everyone that has engaged us through social media, as well as
   - `Phalcon\Application\AbstractApplication::setEventsManager`
 - Fixed `Phalcon\Di::remove()` to remove service. [#14396](https://github.com/phalcon/cphalcon/issues/14396)
 
-## Removed
+### Removed
 - Removed `Phalcon\Plugin` - duplicate of `Phalcon\DI\Injectable` [#14359](https://github.com/phalcon/cphalcon/issues/14359)
 - Removed `Phalcon\Mvc\Collection` and all related references. 4.0 will not support mongo as it is being re-implemented to take advantage of the latest Mongo driver (see [#13697](https://github.com/phalcon/cphalcon/issues/13697)) [#14361](https://github.com/phalcon/cphalcon/pull/14361)
 - Removed `Phalcon\Session\Manager::registerHandler` - duplicate functionality [#14381](https://github.com/phalcon/cphalcon/pull/14381)
 - Removed `Phalcon\Html\Tag` - duplicate functionality [#14381](https://github.com/phalcon/cphalcon/pull/14381)
 - Removed `void` return type for all constructors [#14401](https://github.com/phalcon/cphalcon/pull/14401)
 
-### Installation/Upgrade
-The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-beta1. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-beta.1).
+## Installation/Upgrade
+The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-rc1. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-rc.1).
 
 You can also clone the repository and checkout the tag, and then run
 
@@ -96,6 +96,29 @@ to install the new extension. Detailed installation instructions can be found in
 
 ### Thank you
 Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.link/discord) or our [Forum](https://phalcon.link/forum).
+
+Finally, don't forget to star our project on [GitHub](https://phalcon.link/github) and follow us on our social media:
+
+Chat - Q&A
+* [Discord Chat](https://phalcon.link/discord)
+* [Forum](https://phalcon.link/forum)
+
+Support
+* [OpenCollective - Support Us](https://phalcon.link/fund)
+* [Store - Merchandise](https://phalcon.link/store)
+
+Social Media
+* [Telegram](https://phalcon.link/telegram)
+* [Gab](https://phalcon.link/gab)
+* [MeWe](https://phalcon.link/mewe)
+* [Parler](https://phalcon.link/parler)
+* [Facebook](https://phalcon.link/fb)
+* [Twitter](https://phalcon.link/t)
+
+Videos
+* [BitChute](https://phalcon.link/bitchute)
+* [YouTube](https://phalcon.link/youtube)
+
 
 
 <3 Phalcon Team
