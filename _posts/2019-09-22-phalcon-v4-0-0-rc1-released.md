@@ -10,7 +10,7 @@ tags:
 ---
 We are very happy to announce the release of **v4.0.0 Release Candidate (RC) 1**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-rc.1). 
 
-As always, we cannot thank your community enough! We said this before but it is worth repeating: our community is what drives this project forward and makes it better with every release! 
+We cannot thank your community enough! We said this before but it is worth repeating: our community is what drives this project forward and makes it better with every release! 
 <!--more-->
 
 As we are getting closer to the stable version of v4, this release has addressed a good number of outstanding issues, but also bugs found during testing. We only have one actual issue to resolve for v4 and 33 documents to revise.
@@ -20,8 +20,6 @@ You can see the remaining cards for v4 in our [project](https://github.com/phalc
 Regarding the documents, you can check our progress in this issue:
 
 [https://github.com/phalcon/docs/issues/2322](https://github.com/phalcon/docs/issues/2322)
-
-Thank you again to everyone that has engaged us through social media, as well as our [Discord](https://phalcon.link/discord) server. Our community is the drive that makes Phalcon better with every release.
 
 ## Changelog
 ### Added
