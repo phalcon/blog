@@ -21,6 +21,9 @@ Regarding the documents, you can check our progress in this issue:
 
 [https://github.com/phalcon/docs/issues/2322](https://github.com/phalcon/docs/issues/2322)
 
+> In this version we are using Zephir 0.12.4 which offers a lot stricter type checks. As a result we have discovered a lot of interface to class misalignments and have fixed them.
+{: .alert .alert-warning}
+
 ## Changelog
 ### Added
 - Added optional boolean parameter to `Phalcon\Http\Request::getURI()` (as well as its interface) which indicates whether or not the method should return only the path without the query string
