@@ -41,6 +41,16 @@ Regarding the documents, you can check our progress in this issue:
 - Changed `Phalcon\Helper\Arr::arrayToObject` to `toObject` [#14389](https://github.com/phalcon/cphalcon/pull/14389)
 - Changed `Phalcon\Events\EventsAwareInterface::getEventsManager` and `Phalcon\Di\Injectable::getEventsManager` to return also `null` [#14404](https://github.com/phalcon/cphalcon/pull/14404)
 - Changed `Phalcon\Logger\Adapter\AbstractAdapter::add` to now return `this` [#14404](https://github.com/phalcon/cphalcon/pull/14404)
+- Changed `Phalcon\Mvc\RouterInterface` methods signature to return `RouteInterface` instead of `void`:
+  - `Phalcon\Mvc\RouterInterface::setDefaultAction`
+  - `Phalcon\Mvc\RouterInterface::setDefaultAction`
+  - `Phalcon\Mvc\RouterInterface::setDefaultController`
+  - `Phalcon\Mvc\RouterInterface::setDefaultModule`
+  - `Phalcon\Mvc\RouterInterface::setDefaults`
+- Changed return types for following interfaces:
+  - `Phalcon\Mvc\Router\RouteInterface::setName` from `void` to `RouteInterface`
+  - `Phalcon\Mvc\Router\RouteInterface::via` from `void` to `RouteInterface`
+  - `Phalcon\Session\ManagerInterface::__get` from `void` to `var`
 
 ### Fixed
 - Fixed `Phalcon\Helper\Str::includes` to return correct result [#14301](https://github.com/phalcon/cphalcon/issues/14301)
@@ -62,12 +72,21 @@ Regarding the documents, you can check our progress in this issue:
 - Fixed `Phalcon\Mvc\Model::hasChanged()` and `getChangedFields()` returning false values when `castOnHydrate` option is on. [#14376](https://github.com/phalcon/cphalcon/issues/14376)
 - Fixed `Phalcon\Mvc\Model::create()` Using write connection to prevent replica lag [#14256](https://github.com/phalcon/cphalcon/issues/14256)
 - Fixed return types for following methods to satisfy interface declaration:
+  - `Phalcon\Acl\Adapter\AbstractAdapter::setDefaultAction`
+  - `Phalcon\Application\AbstractApplication::setEventsManager`
+  - `Phalcon\Firewall\Adapter\AbstractAdapter::setAlwaysResolvingRole`
+  - `Phalcon\Firewall\Adapter\AbstractAdapter::setEventsManager`
+  - `Phalcon\Mvc\Router::handle`
   - `Phalcon\Storage\Serializer\AbstractSerializer::getData`
   - `Phalcon\Storage\Serializer\AbstractSerializer::setData`
-  - `Phalcon\Firewall\Adapter\AbstractAdapter::setEventsManager`
-  - `Phalcon\Firewall\Adapter\AbstractAdapter::setAlwaysResolvingRole`
-  - `Phalcon\Logger\Adapter\AbstractAdapter::add`
-  - `Phalcon\Application\AbstractApplication::setEventsManager`
+  - `Phalcon\Mvc\Dispatcher::forward`
+  - `Phalcon\Mvc\Model::setConnectionService`
+  - `Phalcon\Mvc\Model::setReadConnectionService`
+  - `Phalcon\Mvc\Model::setWriteConnectionService`
+  - `Phalcon\Mvc\Model\Query\Builder::setDI`
+  - `Phalcon\Mvc\Router\Annotations::handle`
+  - `Phalcon\Session\Bag::set`
+  - `Phalcon\Session\Manager::remove`
 - Fixed `Phalcon\Di::remove()` to remove service. [#14396](https://github.com/phalcon/cphalcon/issues/14396)
 
 ### Removed
