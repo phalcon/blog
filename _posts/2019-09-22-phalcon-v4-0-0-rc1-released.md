@@ -8,10 +8,12 @@ tags:
   - release
   - rc
 ---
-We are very happy to announce the release of **v4.0.0 Release Candidate (RC) 1**! [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-rc.1). 
+We are very happy to announce the release of **v4.0.0 Release Candidate (RC) 1**!. 
 
 We cannot thank your community enough! We said this before but it is worth repeating: our community is what drives this project forward and makes it better with every release! 
 <!--more-->
+
+[Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-rc.1)
 
 As we are getting closer to the stable version of v4, this release has addressed a good number of outstanding issues, but also bugs found during testing. We only have one actual issue to resolve for v4 and 33 documents to revise.
 
