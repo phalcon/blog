@@ -24,6 +24,8 @@ Regarding the documents, you can check our progress in this issue:
 > In this version we are using Zephir 0.12.4 which offers a lot stricter type checks. As a result we have discovered a lot of interface to class misalignments and have fixed them.
 {: .alert .alert-warning}
 
+We are also working to upgrade all of our sample applications to v4. [Vokuro](https://github.com/phalcon/vokuro) is nearly completed (minor enhancements remain such as code coverage) and work is already underway for [phalcon-api](https://github.com/phalcon/phalcon-api).
+
 ## Changelog
 ### Added
 - Added optional boolean parameter to `Phalcon\Http\Request::getURI()` (as well as its interface) which indicates whether or not the method should return only the path without the query string
