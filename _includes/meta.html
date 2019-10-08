@@ -10,28 +10,34 @@
     <meta name="keywords" content="{{ site.app.keywords }}">
     <meta name="description" content="{{ site.app.description }}">
 
-    <meta property="og:url" content="{{ site.app.url }}{{ page.url }}">
+    <!-- Facebook -->
+    <meta property="og:url" content="{{ site.app.url }}">
     <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="object">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="{{ site.app.name }}">
     {% if page.excerpt %}
     <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
     {% else %}
     <meta property="og:description" content="{{ site.app.description }}">
     {% endif %}
-    <meta property="og:site_name" content="Phalcon Blog">
-    <meta property="og:image" content="https://assets.phalcon.io/phalcon/images/phalcon-logo.png">
-
-    <meta name="twitter:image:alt" content="{{ site.app.name }}">
+    <meta property="og:site_name" content="{{ site.app.name }}">
+    <meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+    <meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ site.app.name }}">
     {% if page.excerpt %}
     <meta name="twitter:description" content="{{ page.excerpt| strip_html }}" />
     {% else %}
     <meta name="twitter:description" content="{{ site.app.description }}">
     {% endif %}
-    <meta name="twitter:image" content="https://assets.phalcon.io/phalcon/images/phalcon-logo.png">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+    <meta name="twitter:image:alt" content="{{ site.app.name }}">
     <meta name="twitter:site" content="@{{ site.social.twitter }}">
+    <meta name="twitter:creator" content="Phalcon Team">
 
     <link rel="canonical" href="{{ site.app.url }}{{ page.url }}">
     <link rel="publisher" href="{{ site.app.url }}">
