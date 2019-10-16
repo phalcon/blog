@@ -17,6 +17,7 @@ The competition was a big success. We got a good chunk of issues done and the co
 
 We were supposed to post the results of the competition a few months ago but wanted to wait a bit for contributors to receive their gifts and send us pictures. 
 
+### The Usual Suspects
 So without any more delays, here are _The Usual Suspects_ - members of the community
 
 ![Arhell](/assets/files/arhell.jpg)
