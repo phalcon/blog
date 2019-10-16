@@ -43,7 +43,14 @@ Baby Dreamsxin - future Zephir coder
 
 [@zsilbi](https://github.com/zsilbi)
 
+And finally, [@jeckerson](https://github.com/jeckerson) decided to send a picture of his significant other:
+
+![](/assets/files/jeckerson.jpg)
+
+[@jeckerson](https://github.com/jeckerson)
+
 ### Thank you
+
 A huge thank you to all that contributed. There were a few more contributors that opted not to send a picture. 
 
 We intend on having this competition every year so looking forward to our April Bugfest 2020
