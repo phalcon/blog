@@ -17,38 +17,28 @@ The competition was a big success. We got a good chunk of issues done and the co
 
 We were supposed to post the results of the competition a few months ago but wanted to wait a bit for contributors to receive their gifts and send us pictures. 
 
-### The Usual Suspects
 So without any more delays, here are _The Usual Suspects_ - members of the community
 
+[@arhell](https://github.com/arhell)
 ![Arhell](/assets/files/arhell.jpg)
 
-[@arhell](https://github.com/arhell)
-
+[@dreamsxin](https://github.com/dreamsxin)
 ![Dreamsxin](/assets/files/dream.jpg)
 
-[@dreamsxin](https://github.com/dreamsxin)
-
+Baby Dreamsxin - future Zephir coder
 ![](/assets/files/dream-baby.jpg)
 
-Baby Dreamsxin - future Zephir coder
-
+[@niden](https://github.com/niden) and [@mctekk](https://github.com/mctekk)
 ![](/assets/files/max-nikos.jpg)
 
-[@niden](https://github.com/niden) and [@mctekk](https://github.com/mctekk)
-
+[@sergeyklay](https://github.com/sergeyklay)
 ![](/assets/files/serghei.jpg)
 
-[@sergeyklay](https://github.com/sergeyklay)
-
+[@zsilbi](https://github.com/zsilbi)
 ![](/assets/files/zsilbi.jpg)
 
-[@zsilbi](https://github.com/zsilbi)
-
 And finally, [@jeckerson](https://github.com/jeckerson) decided to send a picture of his significant other:
-
 ![](/assets/files/jeckerson.jpg)
-
-[@jeckerson](https://github.com/jeckerson)
 
 ### Thank you
 
