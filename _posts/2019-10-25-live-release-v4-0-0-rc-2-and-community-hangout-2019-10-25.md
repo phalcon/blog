@@ -26,6 +26,7 @@ Topics to discuss:
 - Thank you to the whole community and contributors
 - Status update since last hangout
 - Live Release v4.0.0.rc.2
+- Videos (Source Code)
 - Documentation
 - Devtools
 - Sample applications (vokuro etc.)
