@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Live Release v4.0.0.RC.2 and Community Hangout - 2019-10-25
+title: Live Release v4.0.0.RC.2 and Community Hangout - 2019-10-26
 date: 2019-10-25T13:26:34.697Z
 tags:
   - hangout
