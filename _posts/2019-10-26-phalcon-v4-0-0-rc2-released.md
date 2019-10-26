@@ -15,6 +15,9 @@ We cannot thank your community enough! We said this before but it is worth repea
 
 [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-rc.2)
 
+> We streamed this release live! [https://www.youtube.com/watch?v=sIuXxCry_fc](https://www.youtube.com/watch?v=sIuXxCry_fc)
+{: .alert .alert-info }
+
 This release has not added any more functionality. We have discovered quite a few issues regarding interfaces and some bugs that our awesome community discovered. All of those have been fixed! 
 
 We are now on the final stretch as they say, ready to fix anything that is found between this release and the stable one and 14 documents to revise.
