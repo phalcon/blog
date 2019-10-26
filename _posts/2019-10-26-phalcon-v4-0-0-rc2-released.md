@@ -88,3 +88,47 @@ As far as our sample applications, [Vokuro](https://github.com/phalcon/vokuro) h
 - Removed `Phalcon\Application\AbstractApplication::handle()` as it does not serve any purpose and causing issues with type hinting. [#14407](https://github.com/phalcon/cphalcon/pull/14407)
 - Removed `getEventsManager` and `setEventsManager` from `Phalcon\Di\Injectable` to the classes that utilise the methods or `eventsManager` property. [#14269](https://github.com/phalcon/cphalcon/issues/14269)
 
+## Installation/Upgrade
+The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-rc2. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-rc.2).
+
+You can also clone the repository and checkout the tag, and then run
+
+```bash
+zephir fullclean
+zephir build
+```
+
+to install the new extension. Detailed installation instructions can be found in our [documentation page](https://docs.phalcon.io/4.0/en/installation).
+
+> Note: It might take a bit of time for the DEB and RPM packages to be built from when this blog post is published.
+{: .alert .alert-info }
+
+### Thank you
+Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.io/discord) or our [Forum](https://phalcon.io/forum).
+
+Finally, don't forget to star our project on [GitHub](https://phalcon.io/github) and follow us on our social media:
+
+Chat - Q&A
+* [Discord Chat](https://phalcon.io/discord)
+* [Forum](https://phalcon.link/forum)
+
+Support
+* [OpenCollective - Support Us](https://phalcon.io/fund)
+* [Store - Merchandise](https://phalcon.io/store)
+
+Social Media
+* [Telegram](https://phalcon.io/telegram)
+* [Gab](https://phalcon.io/gab)
+* [MeWe](https://phalcon.io/mewe)
+* [Parler](https://phalcon.io/parler)
+* [Reddit](https://phalcon.io/reddit)
+* [Facebook](https://phalcon.io/fb)
+* [Twitter](https://phalcon.io/t)
+
+Videos
+* [BitChute](https://phalcon.io/bitchute)
+* [LBRY](https://phalcon.io/lbry)
+* [YouTube](https://phalcon.io/youtube)
+
+<3 Phalcon Team
+
