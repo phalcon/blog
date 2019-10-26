@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon v4.0.0-rc2 released
-date: 2019-10-26T15:09:33.401Z
+date: 2019-10-26T17:41:00.000Z
 tags:
   - phalcon
   - phalcon4
