@@ -53,9 +53,6 @@ Several contributors have jumped in and are helping with all the documents, rewr
 > Please note that we will accept changes to the [docs](https://github.com/phalcon/docs) repository only for the English language (`en` folder). All other languages are handled by [Crowdin](https://crowdin.com).
 {: .alert .alert-info }
 
-> Did you know that you can now add comments to our documentation pages? (same as with our blog).
-{: .alert .alert-warning }
-
 ### Installation/Upgrade
 The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-alpha2. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.2).
 

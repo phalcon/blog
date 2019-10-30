@@ -139,9 +139,6 @@ Thank you again to everyone that has engaged us through social media, as well as
 - Removed `Phalcon\Config::__set_state()` as it does not serve any purpose and skipped the constructor. [#13201](https://github.com/phalcon/cphalcon/issues/13201), [#13768](https://github.com/phalcon/cphalcon/issues/13768)
 - Removed `Phalcon\Annotations\Reflection::__set_state()`, `Phalcon\Db\ColumnInterface::__set_state()`, `Phalcon\Db\Column::__set_state()`, `Phalcon\Db\IndexInterface::__set_state()`, `Phalcon\Db\Index::__set_state()`, `Phalcon\Db\ReferenceInterface::__set_state()`, `Phalcon\Db\Reference::__set_state()`, `Phalcon\Di\ServiceInterface::__set_state()`, `Phalcon\Di\Service::__set_state()`, `Phalcon\Http\Response\HeadersInterface::__set_state()`, `Phalcon\Http\Response\Headers::__set_state()`, `Phalcon\Http\Request::__set_state()`, `Phalcon\Messages\Message::__set_state()` [#14212](https://github.com/phalcon/cphalcon/issues/14212)
 
-> Did you know that you can now add comments to our documentation as well as our blog posts?
-{: .alert .alert-warning }
-
 ### Installation/Upgrade
 The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-beta1. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-beta.1).
 

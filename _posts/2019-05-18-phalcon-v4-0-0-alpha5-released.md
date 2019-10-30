@@ -163,9 +163,6 @@ Thank you again to everyone that has engaged us through social media, as well as
 [#13439](https://github.com/phalcon/cphalcon/issues/13439)
 - Removed model namespace aliases.
 
-> Did you know that you can now add comments to our documentation as well as our blog posts?
-{: .alert .alert-warning }
-
 ### Installation/Upgrade
 The packages in [packagecloud.io](https://packagecloud.io/phalcon) are being updated (at the time of this post) and will be ready soon. You will need to use the `mainline` repository to install v4.0.0-alpha5. You can also download the zip file, as well as DLLs for Windows, from our release page [here](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0-alpha.5).
 
