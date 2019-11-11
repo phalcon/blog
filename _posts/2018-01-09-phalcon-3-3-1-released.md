@@ -1,7 +1,16 @@
 ---
 layout: post
 title: "Phalcon 3.3.1 released"
-tags: [php, phalcon, phalcon3, "3.3.x", release, rfc, lts, php7]
+date: 2018-01-09T16:23:19.160Z
+tags:
+  - php
+  - phalcon
+  - phalcon3
+  - "3.3.x"
+  - release
+  - rfc
+  - lts
+  - php7
 ---
 
 We are happy to announce that Phalcon [3.3.1](https://github.com/phalcon/cphalcon/releases/tag/v3.3.1) has been released, addressing some bugs. 

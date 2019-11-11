@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "Phalcon IDE Stubs Repository"
-tags: [php, phalcon, phalcon3, stubs, ide]
+date: 2017-04-11T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - stubs
+  - ide
 ---
 
 Hey everyone!!

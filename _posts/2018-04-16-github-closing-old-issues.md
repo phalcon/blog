@@ -1,7 +1,17 @@
 ---
 layout: post
 title: "Closing old issues in Github and News"
-tags: [php, phalcon, phalcon3, release, rfc, lts, php7, github, issues]
+date: 2018-04-16T16:23:19.160Z
+tags:
+  - php
+  - phalcon
+  - phalcon3
+  - release
+  - rfc
+  - lts
+  - php7
+  - github
+  - issues
 ---
 
 It has been a while since we last posted an update regarding Phalcon. We apologize for this. As you all know this is an open source project and all of us in the community contribute using our free time and enthusiasm for the project. However sometimes, other tasks need more immediate attention such as work and family.

@@ -1,7 +1,16 @@
 ---
 layout: post
 title: "Phalcon 3.2.2 released"
-tags: [php, phalcon, phalcon3, "3.2.x", release, rfc, lts, php7]
+date: 2017-08-13T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - "3.2.x"
+  - release
+  - rfc
+  - lts
+  - php7
 ---
 
 We are releasing Phalcon 3.2.2 today, addressing several bugs. 

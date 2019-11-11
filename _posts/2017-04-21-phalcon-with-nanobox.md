@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "Creating a New Phalcon App with Nanobox"
-tags: [php, phalcon, nanobox, install, devtools]
+date: 2017-04-21T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - nanobox
+  - install
+  - devtools
 ---
 
 *This is a guest post from [Scott Anderson at Nanobox](https://twitter.com/scott_dsgn).*

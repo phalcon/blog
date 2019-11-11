@@ -1,7 +1,15 @@
 ---
 layout: post
 title: "Translating documentation and our website"
-tags: [php, phalcon, phalcon3, crowdin, documentation, website, translations]
+date: 2017-06-28T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - crowdin
+  - documentation
+  - website
+  - translations
 ---
 
 <h5 class="alert alert-warning">

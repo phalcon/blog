@@ -1,7 +1,14 @@
 ---
 layout: post
 title: "Helping with Documentation"
-tags: [php, phalcon, phalcon3, docs, setup, lts]
+date: 2017-07-29T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - docs
+  - setup
+  - lts
 ---
 
 Often we get queries/requests on how someone can help with the documentation, and how they can set up the docs application on their local machine so as to see changes immediately on their screen before issuing a pull request with their changes.

@@ -1,7 +1,16 @@
 ---
 layout: post
 title: "Phalcon 3.4.0 released"
-tags: [php, phalcon, phalcon3, "3.4.x", release, rfc, lts, php7]
+date: 2018-05-28T16:23:19.160Z
+tags:
+  - php
+  - phalcon
+  - phalcon3
+  - "3.4.x"
+  - release
+  - rfc
+  - lts
+  - php7
 ---
 
 We are happy to announce that we have released Phalcon [3.4.0](https://github.com/phalcon/cphalcon/releases/tag/v3.4.0). 

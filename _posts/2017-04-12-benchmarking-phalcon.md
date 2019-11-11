@@ -1,7 +1,21 @@
 ---
 layout: post
 title: "Benchmarking Phalcon"
-tags: [php, phalcon, phalcon3, benchmarks, performance, fuelphp, kohana, laravel, nette, micro, symfony, yii, zend framework]
+date: 2017-04-12T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - benchmarks
+  - performance
+  - fuelphp
+  - kohana
+  - laravel
+  - nette
+  - micro
+  - symfony
+  - yii
+  - zend framework
 ---
 
 It has been quite a while since we run our benchmarks against other networks. Actually the last time we had the benchmarks in our documentation was for Phalcon 1.3! Yes we know, we have been neglecting this.

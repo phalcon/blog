@@ -1,7 +1,18 @@
 ---
 layout: post
 title: "Benchmarking Phalcon Micro"
-tags: [php, phalcon, phalcon3, benchmarks, performance, fatfree, limonade, lumen, phalcon micro, silex]
+date: 2017-04-14T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - benchmarks
+  - performance
+  - fatfree
+  - limonade
+  - lumen
+  - phalcon micro
+  - silex
 ---
 
 Continuing from our yesterday's [post](/post/benchmarking-phalcon-micro), we are checking the benchmarks for micro PHP frameworks.

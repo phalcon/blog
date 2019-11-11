@@ -1,7 +1,12 @@
 ---
 layout: post
 title: "Testimonial: How Phalcon helped r8em"
-tags: [php, phalcon, r8em, testimonial]
+date: 2017-05-25T16:23:19.160Z
+tags: 
+  - php
+  - phalcon
+  - r8em
+  - testimonial
 ---
 
 We have received the following testimony from Michael Hanekom in our team email. Michael agreed to share his experience in our blog, and we are doing so without any edits:

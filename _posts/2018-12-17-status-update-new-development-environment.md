@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Status update and new development environment"
+date: 2018-12-17T16:23:19.160Z
 tags: 
   - php
   - phalcon
