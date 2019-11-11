@@ -38,6 +38,34 @@ You can watch it live here:
 ## RC Time!!
 We are going to have another live release this Saturday. Join us on Friday 16th of September at 12:00 EST (16:00 UTC) on a live YouTube event to release Phalcon v4 RC 3
 
+### Thank you
+Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.io/discord) or our [Forum](https://phalcon.io/forum).
+
+Finally, don't forget to star our project on [GitHub](https://phalcon.io/github) and follow us on our social media:
+
+Chat - Q&A
+* [Discord Chat](https://phalcon.io/discord)
+* [Forum](https://phalcon.link/forum)
+
+Support
+* [OpenCollective - Support Us](https://phalcon.io/fund)
+* [Store - Merchandise](https://phalcon.io/store)
+
+Social Media
+* [Telegram](https://phalcon.io/telegram)
+* [Gab](https://phalcon.io/gab)
+* [MeWe](https://phalcon.io/mewe)
+* [Parler](https://phalcon.io/parler)
+* [Reddit](https://phalcon.io/reddit)
+* [Facebook](https://phalcon.io/fb)
+* [Twitter](https://phalcon.io/t)
+
+Videos
+* [BitChute](https://phalcon.io/bitchute)
+* [LBRY](https://phalcon.io/lbry)
+* [YouTube](https://phalcon.io/youtube)
+
+<3 Phalcon Team
 
 
 
