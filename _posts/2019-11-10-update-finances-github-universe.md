@@ -35,7 +35,6 @@ tags:
 | 2019-05-05 | Development  | 100.00 | Bug fixes/Feature work                |
 | 2019-03-28 | Development  | 100.00 | Bug fixes/Feature work                |
 | 2019-02-26 | Development  | 100.00 | Bug fixes/Feature work                |
-| 2019-01-31 | Web services | 600.00 | Comment service in documents and blog |
 
 ### Operations
 | Date       | Type         | USD    | Description                           |
@@ -44,6 +43,7 @@ tags:
 | 2019-08-22 | Web services | 200.00 | Phalcon.io                            |
 | 2019-08-21 | Web services |  89.00 | PHPStorm License                      |
 | 2019-05-19 | Competition  | 307.85 | April Bugfest T-shirts                |
+| 2019-01-31 | Web services | 600.00 | Comment service in documents and blog |
 
 ## 2018
 | Date       | Type   | USD    | Description                            |
