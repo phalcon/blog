@@ -21,8 +21,9 @@ You can click the **Sponsor** button at the top of any of our repositories, or s
 
 If you have already decided to sponsor us via [Open Collective](https://opencollective.com/phalcon), the link will still be there. If you want to switch over to [GitHub Sponsors](https://phalcon.io/fund), by all means you can do so!
 
-Our [GitHub Sponsors](https://phalcon.io/fund) additionally has our vision with regards to funding and how we intend on spending those funds to better the framework.
+Our [GitHub Sponsors](https://phalcon.io/fund) page additionally has our vision with regards to funding and how we intend on spending those funds to better the framework.
 
 PS: Sadly our logo was not featured in the presentation, oh well :)
 
-![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) Phalcon Team
+![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) 
+Phalcon Team
