@@ -1,8 +1,8 @@
 run.config:
   engine: ruby
+  engine.config:
+    runtime: ruby-2.4
 
   extra_steps:
+    - gem update --system
     - gem install jekyll bundler
-    - gem install jekyll-paginate
-    - gem install jekyll-sitemap
-    - gem install jekyll-feed
