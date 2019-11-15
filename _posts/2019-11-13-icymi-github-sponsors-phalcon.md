@@ -10,7 +10,6 @@ tags:
 ---
 Today we watched live GitHub Universe, GitHub's main product conference of the year. GitHub Sponsors for Teams was announced and Phalcon is on it!
 <!--more-->
-
 The event took place today around 9:00 PST. Devon Zuegel demonstrated the new GitHub Sponsors for Teams!
 
 [Wach Live Stream](https://youtu.be/9EoNqyxtSRM?t=4098)
@@ -25,5 +24,29 @@ Our [GitHub Sponsors](https://phalcon.io/fund) page additionally has our vision 
 
 PS: Sadly our logo was not featured in the presentation, oh well :)
 
-![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) 
-Phalcon Team
+<hr>
+
+Chat - Q&A
+* [Discord Chat](https://phalcon.io/discord)
+* [Forum](https://phalcon.link/forum)
+
+Support
+* [OpenCollective - Support Us](https://phalcon.io/fund)
+* [Store - Merchandise](https://phalcon.io/store)
+
+Social Media
+* [Telegram](https://phalcon.io/telegram)
+* [Gab](https://phalcon.io/gab)
+* [MeWe](https://phalcon.io/mewe)
+* [Parler](https://phalcon.io/parler)
+* [Reddit](https://phalcon.io/reddit)
+* [Facebook](https://phalcon.io/fb)
+* [Twitter](https://phalcon.io/t)
+
+Videos
+* [BitChute](https://phalcon.io/bitchute)
+* [LBRY](https://phalcon.io/lbry)
+* [YouTube](https://phalcon.io/youtube)
+
+
+![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) Phalcon Team
