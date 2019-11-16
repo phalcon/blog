@@ -27,12 +27,6 @@ Regarding the documents, you can check our progress in this issue:
 
 <https://github.com/phalcon/docs/issues/2322>
 
-## 10,000 GitHub Stars!
-
-![](/assets/files/stars.png)
-
-**THANK YOU** to [everyone](https://github.com/phalcon/cphalcon/stargazers) that has starred our project on GitHub! We have reached 10,000 stars today!
-
 ## Changelog
 
 ### Added
