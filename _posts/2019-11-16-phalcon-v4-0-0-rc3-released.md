@@ -31,7 +31,7 @@ Regarding the documents, you can check our progress in this issue:
 
 ![](/assets/files/stars.png)
 
-**THANK YOU** to everyone that has starred our project on GitHub! We have reached 10,000 stars today!
+**THANK YOU** to [everyone](https://github.com/phalcon/cphalcon/stargazers) that has starred our project on GitHub! We have reached 10,000 stars today!
 
 ## Changelog
 
