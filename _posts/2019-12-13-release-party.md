@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Release Party!!
+title: V4 Release Party!!
 date: 2019-12-13T17:36:45.984Z
 tags:
   - phalcon4
   - release
   - party
 ---
-![](/assets/files/phalcon4-banner.png)
+![](/assets/files/phalcon4-banner2.png "Phalcon V4 release party")
 
 The Phalcon Team would like to invite you to join us on Saturday, December 21st at 12:00 EST (17:00 UTC) for our **v4 Release Party**!
 
@@ -20,6 +20,9 @@ We released [v4.0.0.alpha1](/post/merry-christmas-and-phalcon-4.0.0-alpha1-relea
 Join us for a live release hangout, to celebrate the release of v4 and just hang out. We will not be able to provide drinks but we will have screen sharing, compilation of the extension, release, Travis runs and house music!
 
 Our live stream will be hosted on YouTube:
+
+[![Subscribe on YouTube](/assets/files/youtube-player2.png "YouTube Live stream")](https://youtu.be/dAig_Ll9Txk)
+
 
 <https://youtu.be/dAig_Ll9Txk>
 
