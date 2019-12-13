@@ -11,7 +11,7 @@ The Phalcon Team would like to invite you to join us on Saturday, December 21st 
 
 <!--more-->
 
-![](/assets/files/photo_2019-12-13_12-14-27.jpg)
+![](/assets/files/phalcon4-banner.png)
 
 It has been a long journey. Nearly 3,000 commits and a lot of refactoring and cleaning up!
 
@@ -21,20 +21,22 @@ Join us for a live release hangout, to celebrate the release of v4 and just hang
 
 Our live stream will be hosted on YouTube:
 
-[https://youtu.be/dAig_Ll9Txk](https://youtu.be/dAig_Ll9Txk)
+<https://youtu.be/dAig_Ll9Txk>
 
 As you might have noticed, we made some significant changes with regards to the project. Some highlights:
-- Started closing old issues and reorganizing our GitHub [link](/post/github-closing-old-issues)
-- Reorganized all our repositories [link](/post/repository-reorganization)
-- Created a new environment based on [Nanobox](https://nanobox.io) to help with setting up Phalcon locally and being able to develop on it [link](/post/local-development-environment)
-- Started engaging the community every month with a hangout at the end of each month [link](/post/community-hangout-2019-01-26)
-- Increased our Social Media presence
-- Rolled out brand new websites with a fresh design and easier navigation (Thanks to [O2](https://odva.pro)
-- Revised all the documents to ensure thoroughness, adding as many examples as possible.
-- Increased the core team members
-- and much more!
+
+* Started closing old issues and reorganizing our GitHub [link](/post/github-closing-old-issues)
+* Reorganized all our repositories [link](/post/repository-reorganization)
+* Created a new environment based on [Nanobox](https://nanobox.io) to help with setting up Phalcon locally and being able to develop on it [link](/post/local-development-environment)
+* Started engaging the community every month with a hangout at the end of each month [link](/post/community-hangout-2019-01-26)
+* Increased our Social Media presence
+* Rolled out brand new websites with a fresh design and easier navigation (Thanks to [O2](https://odva.pro)
+* Revised all the documents to ensure thoroughness, adding as many examples as possible.
+* Increased the core team members
+* and much more!
 
 ### Thank you
+
 Special thank you to all those that have been testing v4 and reporting bugs. Without your help we would have not made it this far.
 
 Also thank you to those that have contributed to the testing suite, as well as the documentation either with corrections for typos or translating documents. 
