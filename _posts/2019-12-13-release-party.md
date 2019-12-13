@@ -7,11 +7,11 @@ tags:
   - release
   - party
 ---
+![](/assets/files/phalcon4-banner.png)
+
 The Phalcon Team would like to invite you to join us on Saturday, December 21st at 12:00 EST (16:00 UTC) for our **v4 Release Party**!
 
 <!--more-->
-
-![](/assets/files/phalcon4-banner.png)
 
 It has been a long journey. Nearly 3,000 commits and a lot of refactoring and cleaning up!
 
