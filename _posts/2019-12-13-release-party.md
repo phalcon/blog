@@ -13,7 +13,6 @@ The Phalcon Team would like to invite you to join us on Saturday, December 21st 
 
 <!--more-->
 
-
 It has been a long journey. Nearly 3,000 commits and a lot of refactoring and cleaning up!
 
 We released [v4.0.0.alpha1](/post/merry-christmas-and-phalcon-4.0.0-alpha1-released) last year on Christmas Day. We wanted to release the v4 stable again on Christmas Day as a present to our community, but scheduling conflicts did not allow us to do this, therefore you are getting your Christmas present a few days early!
