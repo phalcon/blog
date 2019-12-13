@@ -1234,7 +1234,9 @@ input:focus {
   transition: all .125s; }
 .phalcon-blog__item-article a:hover {
   border-bottom-color: transparent; }
-
+.phalcon-blog__item-article img {
+  max-width: 100%; 
+}  
 .phalcon-blog__item-read-more {
   font-size: 14px;
   color: #385B56;
