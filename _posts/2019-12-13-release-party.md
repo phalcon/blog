@@ -33,7 +33,7 @@ As you might have noticed, we made some significant changes with regards to the 
 * Created a new environment based on [Nanobox](https://nanobox.io) to help with setting up Phalcon locally and being able to develop on it [link](/post/local-development-environment)
 * Started engaging the community every month with a hangout at the end of each month [link](/post/community-hangout-2019-01-26)
 * Increased our Social Media presence
-* Rolled out brand new websites with a fresh design and easier navigation (Thanks to [O2](https://odva.pro)
+* Rolled out brand new websites with a fresh design and easier navigation (Thanks to [O2](https://odva.pro))
 * Revised all the documents to ensure thoroughness, adding as many examples as possible.
 * Increased the core team members
 * and much more!
