@@ -14,7 +14,7 @@ We are very happy to announce the release of **Phalcon v4.0.0 Stable**!.
 
 [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.0)
 
-> We streamed this release [live](https://youtu.be/iAGWIW9A4Mc)!
+> Live Stream: [https://www.youtube.com/watch?v=dAig_Ll9Txk](https://www.youtube.com/watch?v=dAig_Ll9Txk)!
 {: .alert .alert-info }
 
 ### History
