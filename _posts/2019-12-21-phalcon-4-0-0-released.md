@@ -41,6 +41,7 @@ while for issues we had:
 ### Highlights
 
 - PHP 7.2 minimum version
+- PHP 7.4 support
 - Removed unsupported code
 - PSR extension mandatory
 - PSR-7
