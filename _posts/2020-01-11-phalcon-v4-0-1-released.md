@@ -16,7 +16,8 @@ We are very happy to announce the release of **v4.0.1**, our first release in 20
 
 [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.1)
 
-> We streamed this release live! <https://youtu.be/oRwVx4pwemI> {: .alert .alert-info }
+> We streamed this release live! <https://youtu.be/oRwVx4pwemI> 
+{: .alert .alert-info }
 
 We started getting a bit more organized :) We have split the work in sprints (usually two week long) and we only pick up work that we can complete within the current sprint. 
 
@@ -42,7 +43,8 @@ also for v4.1
 * JWT support (4.1)  (docs needed)
 * `Html\Helpers` support (4.1)  (docs needed)
 
-> **NOTE**: You can always check our roadmap and the status of our active sprint in our project page: <https://github.com/orgs/phalcon/projects/4> {: .alert .alert-info }
+> **NOTE**: You can always check our roadmap and the status of our active sprint in our project page: <https://github.com/orgs/phalcon/projects/4> 
+{: .alert .alert-info }
 
 ## Changelog
 
