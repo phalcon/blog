@@ -8,13 +8,15 @@ tags:
   - phalcon4
   - rc
 ---
-![](/assets/files/gremlins.jpeg)
+![](/assets/files/20200111-phalcon4.0.2.png)
 
 New release! (same as the one before really)!
 
-<--more-->
+<!--more-->
 
 We blame gremlins in the code...
+
+![](/assets/files/gremlins.jpeg)
 
 Earlier today we released [4.0.1](https://blog.phalcon.io/post/phalcon-v4-0-1-released). Unfortunately, the version of the extension was not updated properly and as a result, `echo phpversion("phalcon")` was returning `4.0.0` instead of `4.0.1`.
 
