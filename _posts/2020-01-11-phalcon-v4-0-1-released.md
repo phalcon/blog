@@ -16,6 +16,9 @@ We are very happy to announce the release of **v4.0.1**, our first release in 20
 
 [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.1)
 
+>Due to build related issues we’re decided to re-release a new version which is THE SAME version as 4.0.1 but has the tag 4.0.2
+{: .alert .alert-warning }
+
 > We streamed this release live! <https://youtu.be/oRwVx4pwemI> 
 {: .alert .alert-info }
 
