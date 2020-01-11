@@ -29,14 +29,17 @@ Apologies for the inconvenience caused!
 <hr>
 
 Chat - Q&A
+
 * [Discord Chat](https://phalcon.io/discord)
 * [Forum](https://phalcon.link/forum)
 
 Support
+
 * [OpenCollective - Support Us](https://phalcon.io/fund)
 * [Store - Merchandise](https://phalcon.io/store)
 
 Social Media
+
 * [Telegram](https://phalcon.io/telegram)
 * [Gab](https://phalcon.io/gab)
 * [MeWe](https://phalcon.io/mewe)
@@ -46,6 +49,7 @@ Social Media
 * [Twitter](https://phalcon.io/t)
 
 Videos
+
 * [BitChute](https://phalcon.io/bitchute)
 * [LBRY](https://phalcon.io/lbry)
 * [YouTube](https://phalcon.io/youtube)
