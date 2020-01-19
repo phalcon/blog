@@ -11,7 +11,7 @@ tags:
 
 To upgrade or not to upgrade. This is the question!
 
-<!-more-->
+<!--more-->
 
 Recently, questions were asked by the community on our social media, [Discord](https://phalcon.io/discord) and [Forum](https://phalcon.io/forum) regarding v4. The main question was:
 
