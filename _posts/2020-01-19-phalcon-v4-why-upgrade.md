@@ -15,7 +15,8 @@ To upgrade or not to upgrade. This is the question!
 
 Recently, questions were asked by the community on our social media, [Discord](https://phalcon.io/discord) and [Forum](https://phalcon.io/forum) regarding v4. The main question was:
 
-> why should I upgrade to v4 {: .alert .alert-info }
+> why should I upgrade to v4 
+{: .alert .alert-info }
 
 As enthusiasts ourselves, the clear answer would be *because it is the latest and greatest*!. But that, for sure would not satisfy everyone as a reason. So here are some reasons why you should put the time and upgrade your application to v4.
 
