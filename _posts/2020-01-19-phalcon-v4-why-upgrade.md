@@ -36,6 +36,8 @@ Additionally, several extensions that are internally used by the application (`M
 
 We have also removed (temporarily) `MongoDB` support, because the particular driver had been deprecated. Not to worry though, support for MongoDB will be reintroduced in a future v4 version, using the latest MongoDB driver. The work is almost done and was nearly done before we released v4 but we wanted to test it more thoroughly, and as a result we opted not to release it with v4.0.0.
 
+Also we have (temporarily) removed the `Queue` namespace. [Beanstalkd](https://beanstalkd.github.io) did not see any updates for years. Although there has been recent activity in the project in 2019 and there is active support, we removed it in order to figure out a better and more versatile solution for Phalcon with support for more adapters. At the moment we are working with the [Queue Interop](https://github.com/queue-interop) team to potentially introduce the queue interface in Phalcon so as to offer more flexibility. More on that in the near future.
+
 ### PSR
 
 Full support for PSR would be a question that would appear again and again from the community. With v4 we have added the PSR extension as a requirement. This means that for Phalcon to work, the PSR extension must be present in your system and loaded before Phalcon. 
