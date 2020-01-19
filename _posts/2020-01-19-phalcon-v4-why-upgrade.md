@@ -75,31 +75,41 @@ Factory classes have been introduced in numerous parts of the extension, (for in
 
 ### Stricter Interfaces
 
-PHP 7 offers much stricter interfaces and checks for them. This allows developers to ensure that parameters passed in their methods are of the correct type. This not only makes the code cleaner, it also eliminates endless `if` statements or casting assignments.
+PHP 7 offers much stricter interfaces and checks for them. This allows developers to ensure that parameters passed in their methods are of the correct type. This not only makes the code cleaner, it also eliminates endless `if` statements or casting assignments. 
 
-Phalcon v4 utilizes this technology and introduced strict types to all interfaces. Additionally, all interfaces and implementing classes have been checked to ensure that they align properly. We did have a lot of misalignments in the past.
+Phalcon v4 utilizes this technology and introduced strict types to all interfaces. Additionally, all interfaces and implementing classes have been checked to ensure that they align properly. We did have a lot of misalignments in the past. [Zephir](https://zephir-lang.org) (the language Phalcon is written with) has also been adjusted to use those strict types, ensuring low resource consumption.
 
 We have also renamed a lot of classes to ensure uniformity in the framework. This allows developers to quickly identify components and their locations if need be.
 
 ### Interim Release
 
-We mentioned this before numerous times, that v4 is some sort of an *interim* release. This means that although v4 is a full release with a lot of functionality, it also serves as a building block for future releases. 
+We mentioned this before numerous times, that v4 is some sort of an _interim_ release. This means that although v4 is a full release with a lot of functionality, it also serves as a building block for future releases. 
 
 The introduction of PSR-7 for instance. Although PSR-7 is not currently used within the HTTP stack, it is there for developers to use. However, in future versions, the whole HTTP stack will be rewritten to use PSR-7 and PSR-15, making Phalcon more flexible and versatile. Since we could not do this work in one release, we split it into smaller chunks of work, releasing functionality as we build it.
 
 ### Conclusion
 
-Q: Should I upgrade my application? A: It depends on what your application needs are. If your application has stopped growing with new features, and you are happy with say PHP 5 and v3, then don't. You should never upgrade for the sake of upgrading. Note though, that since v3 has reached its end of life, any bug that could potentially appear will not be addressed so you will be stuck with it.
+Q: Should I upgrade my application? 
+
+A: It depends on what your application needs are. If your application has stopped growing with new features, and you are happy with say PHP 5 and v3, then don't. You should never upgrade for the sake of upgrading. Note though, that since v3 has reached its end of life, any bug that could potentially appear will not be addressed so you will be stuck with it.
 
 If however your application grows, even slowly, you should consider first upgrading to PHP 7 (if you have not done so already) and then Phalcon v4. There are a lot of enhancements that came with PHP 7 including increased performance.
 
-Q: All I read is PSR this PSR that. Who cares? A: Maybe not you but a lot of others will. Introducing PSR as mentioned numerous times allows Phalcon to be more flexible. It also allows components to interchange with no changes in the code. Phalcon PSR compliant components can be easily used in non Phalcon applications as well as the reverse.
+Q: All I read is PSR this PSR that. Who cares? 
 
-Q: So other than a lot of changes that I cannot see, changes in the way things are set up such as the Cache, removing functionality I never used and a bunch of renaming of classes, v4 really doesn't offer much A: This would be a poor representation on the work we put in, but as a developer you can definitely say that. This release did not introduce many bells and whistles, it helped a lot with the foundation we wanted to lay in order to move forward with future releases and component building.
+A: Maybe not you but a lot of others will. Introducing PSR as mentioned numerous times allows Phalcon to be more flexible. It also allows components to interchange with no changes in the code. Phalcon PSR compliant components can be easily used in non Phalcon applications as well as the reverse.
 
-Q: Why didn't you release the *final* components, the ones you want to build as you say, and instead gave us *this*? A: With v4 we moved away from the Waterfall model of releasing and adopted more of a Scrum model. Small releases and very frequent ones. This ensures that bugs are fixed much quicker and new functionality is broken into smaller parts that can be built within a couple of weeks. Using Scrum we ensure that there is incremental releases of what we want to release, without keeping the community waiting for months until something is released. Remember we also have day jobs so our release schedule is impacted by how much free time we have to devote to the project. Moving to smaller stints, we ensure that we address only issues and functionality we can release, without promising more than what we can work on. This also helps the community by keeping everyone informed on a regular basis.
+Q: So other than a lot of changes that I cannot see, changes in the way things are set up such as the Cache, removing functionality I never used and a bunch of renaming of classes, v4 really doesn't offer much 
 
-Finally, we are here to help. Engage with us and the community if you get stuck :)
+A: This would be a poor representation on the work we put in, but as a developer you can definitely say that. This release did not introduce many bells and whistles, it helped a lot with the foundation we wanted to lay in order to move forward with future releases and component building.
+
+Q: Why didn't you release the *final* components, the ones you want to build as you say, and instead gave us *this*? 
+
+A: We have been working on v4 for more than a year. After v4 was released we moved away from the Waterfall model of releasing and adopted more of a Scrum model. Small releases and very frequent ones. This ensures that bugs are fixed much quicker and new functionality is broken into smaller parts that can be built within a couple of weeks. Using Scrum we ensure that there is incremental releases of what we want to release, without keeping the community waiting for months until something is released. 
+
+Remember, we also have day jobs so our release schedule is impacted by how much free time we have to devote to the project. Moving to smaller stints, we ensure that we address only issues and functionality we can release, without promising more than what we can work on. This also helps the community by keeping everyone informed on a regular basis.
+
+Finally, we are here to help. Engage with us and the community in our [Discord](https://phalcon.io/discord) and [Forum](https://phalcon.io/forum) if you get stuck :)
 
 <hr>
 
