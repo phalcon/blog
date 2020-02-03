@@ -40,12 +40,6 @@ layout: default
                             Read time: {{ reading_time }}
                         </div>
                     </div>
-                    {% if page.image %}
-                    <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
-                    {% else %}
-                    <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
-                    {% endif %}
-                    <meta itemprop="publisher" content="Phalcon Team">
                     <div id="phalcon-blog-detail__body" itemprop="articleBody">
                         {% if page.image %}
                         <div id="phalcon-blog-detail__image">
