@@ -46,7 +46,14 @@ layout: default
                     <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                     {% endif %}
                     <meta itemprop="publisher" content="Phalcon Team">
-                    <div id="phalcon-blog-detail__body" itemprop="articleBody">{{ page.content }}</div>
+                    <div id="phalcon-blog-detail__body" itemprop="articleBody">
+                        {% if page.image %}
+                        <div id="phalcon-blog-detail__image">
+                            <img src="{{ page.image }}" alt="{{ page.title }}" itemprop="image">
+                        </div>
+                        {% endif %}
+                        {{ page.content }}
+                    </div>
                     <div class="phalcon-blog__tags-items">
                         {% for tag in page.tags %}
                         <a href="/tags#{{- tag | slugify -}}" class="phalcon-blog__tags-item">
