@@ -18,18 +18,26 @@ layout: default
 {% else %}
     {% assign reading_time = minutes | append: ' minutes' %}
 {% endif %}
-                <div class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article">
-                    <h2 itemprop="name headline" class="headline">
+                <div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article">
+                    <h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">
                         {{ page.title | escape }}
                     </h2>
                     <div class="phalcon-blog-detail__info">
-                        <div class="phalcon-blog-detail__date" itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">
+                        <div id="phalcon-blog-detail__date" 
+                             class="phalcon-blog-detail__date" 
+                             itemprop="datePublished" 
+                             content="{{ page.date | date: '%Y-%m-%d' }}">
                             {{ page.date | date: "%b %d, %Y" }}
                         </div>
-                        <div class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <div id="phalcon-blog-detail__author" 
+                             class="phalcon-blog-detail__author" 
+                             itemprop="author" 
+                             itemscope 
+                             itemtype="http://schema.org/Person">
                             <span itemprop="name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
                         </div>
-                        <div class="phalcon-blog-detail__author">
+                        <div id="phalcon-blog-detail__author"
+                             class="phalcon-blog-detail__author">
                             Read time: {{ reading_time }}
                         </div>
                     </div>
@@ -39,7 +47,7 @@ layout: default
                     <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
                     {% endif %}
                     <meta itemprop="publisher" content="Phalcon Team">
-                    <div itemprop="articleBody">{{ page.content }}</div>
+                    <div id="phalcon-blog-detail__body" itemprop="articleBody">{{ page.content }}</div>
                     <div class="phalcon-blog__tags-items">
                         {% for tag in page.tags %}
                         <a href="/tags#{{- tag | slugify -}}" class="phalcon-blog__tags-item">
