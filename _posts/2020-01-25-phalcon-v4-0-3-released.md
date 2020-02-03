@@ -7,8 +7,8 @@ tags:
   - phalcon4
   - release
   - rc
+image: /assets/files/20200125-phalcon4.0.3-release.png
 ---
-![](/assets/files/20200125-phalcon4.0.3-release.png)
 
 We are very happy to announce the release of Phalcon **v4.0.3**, a maintenance release. 
 
