@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 2.0.4 released!"
 tags: [php, phalcon, "2.0", phalcon2, release, "2.x"]
 ---
-
 As part of our three to five weeks minor release schedule, we are excited to announce that Phalcon 2.0.4 has been released!
 
 The number of improvements and bug fixes are a lot more compared to other releases in the 2.0.x series:

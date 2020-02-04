@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 0.9 beta released"
 tags: [php, phalcon, release, beta, "0.9", "0.x"]
 ---
-
 We are happy to announce the release of Phalcon 0.9.0 Beta. This new release follows our roadmap, introducing features mostly requested by our community. We thank everyone that has been involved by providing input and helping with testing and finding bugs.
 
 <!--more-->

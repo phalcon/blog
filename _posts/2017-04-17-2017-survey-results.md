@@ -9,7 +9,6 @@ tags:
   - survey
   - results
 ---
-
 Hello everyone!
 
 Back in March, we asked our community to fill in a short survey, in order to gauge why people are using Phalcon, what we should be doing better etc.

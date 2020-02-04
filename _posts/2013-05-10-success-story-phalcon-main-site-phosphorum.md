@@ -3,7 +3,6 @@ layout: post
 title: "Success story: Phalcon Main Site/Phosphorum"
 tags: [php, phalcon, analytics, visitors, traffic]
 ---
-
 ![image](/assets/files/2013-05-10-2013-01-stats.png)
 
 Our main [website](https://phalcon.io) and the [forum](https://forum.phalcon.io) are powered by Phalcon Framework, both are open sourced and published on [Github](https://github.com/phalcon/forum), you can use them as example to create your own applications or if you want to see how real websites perform with Phalcon.

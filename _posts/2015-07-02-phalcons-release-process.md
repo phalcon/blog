@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon's release process"
 tags: [php, phalcon, "2.0", phalcon2, release, lts, "2.x"]
 ---
-
 ![Phalcon Process](/assets/files/2015-05-peregrine-falcon-kelly-harris.jpg)
 
 The following post explain our release process:

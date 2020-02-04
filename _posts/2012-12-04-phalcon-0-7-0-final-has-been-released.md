@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 0.7.0 final has been released!"
 tags: [php, phalcon, release, "0.7", "0.x"]
 ---
-
 ![image](/assets/files/2012-12-04-falcon.png)
 
 We are very pleased to announce the immediate availability of Phalcon Framework 0.7.0 stable.

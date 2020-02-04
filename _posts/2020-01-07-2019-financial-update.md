@@ -7,9 +7,8 @@ tags:
   - phalcon
   - finances
   - update
+image: /assets/files/money.jpg
 ---
-![](/assets/files/money.jpg)
-
 Since we have been accepting financial contributions from our community, we would like to present a financial update, so as to showcase where those funds are used and why.
 
 <!--more-->

@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 3.1.1 released"
 tags: [php, phalcon, "3.1.x", phalcon3, release, rfc, lts]
 ---
-
 Hey everyone.
 
 We are releasing a hotfix today 3.1.1 that addresses some urgent issues with the framework. We strongly recommend that you upgrade your Phalcon version to the latest release 3.1.1.

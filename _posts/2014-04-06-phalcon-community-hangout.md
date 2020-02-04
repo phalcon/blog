@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon Community Hangout"
 tags: [php, phalcon, zephir, community, hangout]
 ---
-
 Yesterday (2014-04-05) we had our first Phalcon community hangout. The main purpose of the hangout was to meet the community, discuss about what Phalcon is and what our future steps are, and hear news, concerns, success stories from the community itself.
 
 We are excited to announce that the first Phalcon community hangout was a great success!

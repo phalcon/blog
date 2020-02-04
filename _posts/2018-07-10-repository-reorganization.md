@@ -9,7 +9,6 @@ tags:
   - repository
   - github
 ---
-
 We have started an evaluation of all of our github repositories as part of a cleanup process. Some of our repositories were experimental, just to see if things would work. Some are proofs of concept and some are working examples.
 
 However, as our project moves on, it is very often that those experiments proved good or bad, and no longer serve a purpose. Additionally, example repositories tend to not move forward as the project does, and thus become obsolete, or have deprecated code.

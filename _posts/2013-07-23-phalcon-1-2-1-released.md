@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 1.2.1 Released"
 tags: [php, phalcon, "1.2", release, "1.x"]
 ---
-
 ![image](/assets/files/2013-07-24-phalcon-php-logo.png)
 
 We are happy to announce that Phalcon 1.2.1 is available for download/compile for our users.

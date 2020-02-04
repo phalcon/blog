@@ -6,9 +6,8 @@ tags:
   - phalcon4
   - upgrade
   - features
+image: /assets/files/20200119-upgrade.jpg
 ---
-![](/assets/files/20200119-upgrade.jpg)
-
 To upgrade or not to upgrade. This is the question!
 
 <!--more-->

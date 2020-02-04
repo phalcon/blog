@@ -3,7 +3,6 @@ layout: post
 title: "Funding Campaign Update"
 tags: [php, phalcon, phalcon3, funding, support]
 ---
-
 Good morning everyone!
 
 We would like to update you on our funding campaign. As most know, we started a funding campaign a few months back, in an effort to raise capital which will help us offer a better, faster and more feature rich framework to our community. 

@@ -12,7 +12,6 @@ tags:
   - lts
   - php7
 ---
-
 We are happy to announce that Phalcon [3.3.1](https://github.com/phalcon/cphalcon/releases/tag/v3.3.1) has been released, addressing some bugs. 
 
 The release tag can be found here: [3.3.1](https://github.com/phalcon/cphalcon/releases/tag/v3.3.1)

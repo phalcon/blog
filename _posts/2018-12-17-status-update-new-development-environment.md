@@ -11,7 +11,6 @@ tags:
   - tests
   - development
 ---
-
 We have been working hard to ensure that bugs are fixed and v4 is getting close to a release state. As always we would like to thank all of our [contributors](https://github.com/phalcon/cphalcon/graphs/contributors) who have been helping in this effort, as well as everyone on our community sites ([forum](https://phalcon.link/forum), [discord](https://phalcon.link/discord) etc.) for engaging in conversations, sharing criticism and ideas! We couldn't have made it this far without this input.
 <!--more-->
 ### v4

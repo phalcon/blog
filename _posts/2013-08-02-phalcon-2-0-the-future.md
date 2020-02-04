@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 2.0 - The future"
 tags: [php, phalcon, phalcon2, zephir, roadmap, "2.x"]
 ---
-
 It's time to talk about Phalcon 2 and the future of this project.
 
 Despite being a PHP extension implemented in C and its young age, Phalcon offers the same or better features than other frameworks that have been around a lot longer. Phalcon is a fast, robust, secure, extendable PHP framework for everyone to use.

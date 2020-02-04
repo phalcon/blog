@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 1.1 beta released!"
 tags: [php, phalcon, "1.1", release, "1.x"]
 ---
-
 After ​our successful 1.0 release, we continue improving Phalcon ​with our latest release 1.1.0 (beta). In this article, we're highlighting the most important features introduced:
 
 <!--more-->

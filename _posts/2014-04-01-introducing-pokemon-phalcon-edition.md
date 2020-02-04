@@ -3,7 +3,6 @@ layout: post
 title: 'Introducing "Pokémon: Phalcon Edition"'
 tags: [phalcon]
 ---
-
 Today, we have an important announcement to make. A few weeks ago we received an interesting proposal from an important japanese video-game company. They wanted us to create a game that would help children to become interested in web programming including open source alternatives like Phalcon. We are no way video game experts, but we decided to give it a try and the result is simply amazing.
 
 "Pokémon: Phalcon Edition" is a new member of this saga and it is sure to be one of the favorite of its fans.

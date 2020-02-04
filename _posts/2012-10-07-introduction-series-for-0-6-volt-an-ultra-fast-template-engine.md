@@ -3,7 +3,6 @@ layout: post
 title: "Introduction series for 0.6: Volt: An ultra-fast template engine for Phalcon"
 tags: [php, phalcon, volt, template engine, html, design, "0.6", "0.x"]
 ---
-
 ![image](/assets/files/2012-10-07-volt.jpg)
 
 Following the major refactoring in 0.5.0, we are going to be posting several blog posts introducing the changes in the upcoming version of Phalcon, 0.6.0.

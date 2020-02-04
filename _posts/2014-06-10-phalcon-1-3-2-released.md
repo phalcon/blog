@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 1.3.2 Released"
 tags: [php, phalcon, "1.3", release, "1.x"]
 ---
-
 We are today releasing the much awaited 1.3.2 version. 
 
 This version has a ton of contributions from our community and fixes to the framework. We thank everyone that has worked on this release, especially with their contributions both to 1.3.2 and our work in progress 2.0.0.

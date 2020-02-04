@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 3.1.2 released (with PHP 7.1 support)"
 tags: [php, phalcon, phalcon3, release, rfc, lts, php7]
 ---
-
 Hello everyone!!
 
 We are extremely happy today to announce the release of our newest Phalcon version: 3.1.2.

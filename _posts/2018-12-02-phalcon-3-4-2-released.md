@@ -12,7 +12,6 @@ tags:
   - lts
   - php7
 ---
-
 We are happy to announce that we have released Phalcon [3.4.2](https://github.com/phalcon/cphalcon/releases/tag/v3.4.2). 
 
 This a minor release, focused on bugs mostly.

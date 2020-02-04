@@ -12,7 +12,6 @@ tags:
   - lts
   - php7
 ---
-
 Hello everyone and Happy Father's day!
 
 For our Father's day present, we are extremely happy to announce the release of our newest Phalcon version: 3.2.0.

@@ -3,7 +3,6 @@ layout: post
 title: "Announcing the Phalcon Store!!"
 tags: [php, phalcon, store, "1.x"]
 ---
-
 ![](/assets/files/2013-05-20-phalcon-sticker.png)
 
 Further popular demand by our community, we have opened a modest [store](https://store.phalcon.io/) where we have Phalcon stickers ready for you to purchase!

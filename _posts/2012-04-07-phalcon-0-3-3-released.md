@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 0.3.3 released"
 tags: [framework, php, mvc, "0.3", release, phalcon, "0.x"]
 ---
-
 We're proud to announce the immediate availability of Phalcon 0.3.3. The last version 0.3.2 was a bugfix/maintenance release. 
 
 This is a short list of changes that can be expected in this version:

@@ -9,7 +9,6 @@ tags:
   - stubs
   - ide
 ---
-
 Hey everyone!!
 
 As part of our restructuring and working towards a better more robust framework in terms of features as well as organization, we have removed the IDE stubs from the [Phalcon DevTools](https://github.com/phalcon/phalcon-devtools/) repository and moved to its own repository.

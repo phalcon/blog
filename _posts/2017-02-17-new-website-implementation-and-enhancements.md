@@ -3,7 +3,6 @@ layout: post
 title: "New website implementation and enhancements"
 tags: [php, phalcon, phalcon3, website, implementation]
 ---
-
 Hello everyone
 
 Today we have released a brand new implementation of our website.

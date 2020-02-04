@@ -10,7 +10,6 @@ tags:
   - repository
   - github
 ---
-
 We are happy to announce that we have released Phalcon [3.4.1](https://github.com/phalcon/cphalcon/releases/tag/v3.4.1). 
 
 This a minor release, focused on bugs and performance.

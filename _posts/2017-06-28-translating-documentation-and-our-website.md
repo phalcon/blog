@@ -11,7 +11,6 @@ tags:
   - website
   - translations
 ---
-
 <h5 class="alert alert-warning">
 <strong>TLDR;</strong> We released new docs, messed up, fixed it, enhancing it now, new translation platform.
 </h5>

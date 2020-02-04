@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 2.0.7 released!"
 tags: [php, phalcon, "2.0", phalcon2, release, "2.x"]
 ---
-
 We are excited to announce the release of Phalcon 2.0.7!
 This is our seventh release in the 2.0.x series and it contains bug fixes and new features for your enjoyment!
 

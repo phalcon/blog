@@ -8,7 +8,6 @@ tags:
   - documentation
   - crowdin
 ---
-
 We had some requests in the past to localize our documentation for [Zephir](https://zephir-lang.com). Today we are happy to announce that we now have full localization for our Zephir documentation. 
 
 > For those that do not know, Zephir is the language that Phalcon is written on :) It allows you, the developer, to create PHP extensions using a familiar PHP/Javascript format, without the need to learn C.

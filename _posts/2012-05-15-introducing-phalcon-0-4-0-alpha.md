@@ -3,7 +3,6 @@ layout: post
 title: "Introducing: Phalcon 0.4.0 alpha"
 tags: [php, phalcon, framework, performance, "0.4", release, "0.x"]
 ---
-
 We're happy to announce that after weeks of refactoring and polishing, 0.4.x are now ready to be tested. Although, it's an alpha release, it has many improvements, specially focused on a more maintainable code base and get running applications even faster.
 
 [![image](/assets/files/2012-05-15-real-phalcon.png)](http://browse.deviantart.com/#/d15brzb)

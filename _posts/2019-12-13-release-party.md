@@ -6,9 +6,8 @@ tags:
   - phalcon4
   - release
   - party
+image: /assets/files/phalcon4-banner2.png
 ---
-![](/assets/files/phalcon4-banner2.png "Phalcon V4 release party")
-
 The Phalcon Team would like to invite you to join us on Saturday, December 21st at 12:00 EST (17:00 UTC) for our **v4 Release Party**!
 
 <!--more-->
@@ -74,4 +73,4 @@ Videos
 * [LBRY](https://phalcon.io/lbry)
 * [YouTube](https://phalcon.io/youtube)
 
-![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) Phalcon Team
+<3 Phalcon Team

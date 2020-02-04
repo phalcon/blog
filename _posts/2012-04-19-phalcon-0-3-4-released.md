@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 0.3.4 released"
 tags: [php, phalcon, framework, "0.3", release, "0.x"]
 ---
-
 We're part of the "speed up the web", therefore, we want to have a rapid release schedule releasing continuous improvements and bug fixes to Phalcon.
 
 The C language has not been designed for rapid development; however, we are putting a lot of enthusiasm to get a better and faster framework.

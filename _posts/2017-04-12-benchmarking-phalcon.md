@@ -17,7 +17,6 @@ tags:
   - yii
   - zend framework
 ---
-
 It has been quite a while since we run our benchmarks against other networks. Actually the last time we had the benchmarks in our documentation was for Phalcon 1.3! Yes we know, we have been neglecting this.
 
 Hopefully this post will offer some perspective on what you can expect from Phalcon and your application. It goes without saying that every application needs the best design for its needs, but using Phalcon can also push your application's performance even further.

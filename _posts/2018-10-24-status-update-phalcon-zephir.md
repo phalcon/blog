@@ -10,7 +10,6 @@ tags:
   - zephir
   - documentation
 ---
-
 Just a status update for all of our followers and contributors! As usual, a big thank you to everyone that helps us making Phalcon better!
 
 We always championed transparency, so this blog post is to inform everyone where we are and what decisions we took moving forward - call it a mini roadmap.

@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 2.1 beta 1 released"
 tags: [php, phalcon, "2.1", phalcon2, release, "2.x"]
 ---
-
 We're excited to announce the first beta release of **Phalcon 2.1**!
 
 The 2.1.x series are going to be supported for a much longer period than previous versions, thus it is marked as our first Long Term Support [LTS](https://en.wikipedia.org/wiki/Long-term_support) release!

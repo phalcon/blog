@@ -3,7 +3,6 @@ layout: post
 title: "Making Phalcon even faster. Is that possible? Yes!"
 tags: [php, phalcon, optimization, performance, compilation, "1.x"]
 ---
-
 ![image](/assets/files/2013-06-23-phalcon-php-logo.png)
 
 The Phalcon Team is constantly trying to find ways of making Phalcon even faster while keeping a good balance in terms of features offered and performance.

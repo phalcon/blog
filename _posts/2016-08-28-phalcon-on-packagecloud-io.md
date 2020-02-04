@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon on Packagecloud.io"
 tags: [php, phalcon, "3.0.x", phalcon3, packagecloud.io, installation, lts]
 ---
-
 One of the most requested features by the community, is an easy way to install and upgrade Phalcon.
   
 Admittedly, a lot of us have installed Phalcon so many times that it is second nature to perform the task. However some developers might find the task daunting, especially if this is the first time they are trying to install the framework.

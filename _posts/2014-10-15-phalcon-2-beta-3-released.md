@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 2 (beta 3) released"
 tags: [php, phalcon, "2.0", phalcon2, release, zephir, "2.x"]
 ---
-
 Today we're very excited to announce the release of the third beta (and possibly last one) of Phalcon 2!
 
 Phalcon 2 is almost fully functional and stable as Phalcon 1.x, virtually all tests in 1.x [are now passing](https://travis-ci.org/phalcon/cphalcon/builds/38007986) 2.0. If you haven't tried Phalcon 2 out, it's time to give it a shot!

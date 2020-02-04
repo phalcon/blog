@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 1.2.0 Released"
 tags: [php, phalcon, "1.2", release, "1.x"]
 ---
-
 This new release of the Phalcon framework, contains several new features (mostly requested by the community), bug fixes and various performance improvements. The main changes are highlighted in the [beta](https://blog.phalcon.io/post/phalcon-1-2-beta-1-released) article. You can see the [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.0/CHANGELOG) for a complete list of changes.
 
 A summary of the new features introduced follows:

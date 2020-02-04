@@ -12,7 +12,6 @@ tags:
   - lts
   - php7
 ---
-
 We are releasing Phalcon 3.2.1 today, addressing several bugs. 
 
 <!--more-->

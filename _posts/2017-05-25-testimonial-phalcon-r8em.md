@@ -8,7 +8,6 @@ tags:
   - r8em
   - testimonial
 ---
-
 We have received the following testimony from Michael Hanekom in our team email. Michael agreed to share his experience in our blog, and we are doing so without any edits:
 
 <!--more-->

@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 1.0.0 beta released"
 tags: [php, phalcon, mvc, framework, base, release, "1.0", "1.x"]
 ---
-
 We're ​are releasing today the beta version of Phalcon 1.0.0. Our goal is to get this version out to the community so as to discover bugs and get feedback. This post highlights some of the more important features introduced in this release:
 
 <!--more-->

@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 1.3 beta 1 released!"
 tags: [php, phalcon, "1.3", beta, release, "1.x"]
 ---
-
 We are happy to announce the release of our first beta of Phalcon 1.3​!
 
 In this version we have introduced several new features and performance improvements. The intend of this beta release is get input from the community, test the new functionality making sure everything works fine once production environments are updated to 1.3.
@@ -236,7 +235,6 @@ In this version we have introduced several new features and performance improvem
 
 Help with Testing
 -----------------
-
 This version can be installed from the 1.3.0 branch:
 
 ```sh

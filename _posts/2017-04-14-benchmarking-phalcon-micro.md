@@ -14,7 +14,6 @@ tags:
   - phalcon micro
   - silex
 ---
-
 Continuing from our yesterday's [post](/post/benchmarking-phalcon-micro), we are checking the benchmarks for micro PHP frameworks.
 
 <h5 class="alert alert-info">

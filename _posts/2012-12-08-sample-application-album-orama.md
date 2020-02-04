@@ -3,7 +3,6 @@ layout: post
 title: "Sample Application: Album-O-Rama"
 tags: [php, phalcon, sample, spotify, music, "0.8", "0.x"]
 ---
-
 ![image](/assets/files/2012-12-08-albumorama.jpg)
 
 We are very excited to release our third Phalcon demo after [INVO](/post/invo-a-sample-application) and the [alternative PHP website](/post/sample-application-php-alternative-site) to the community, so as to showcase the power of Phalcon.

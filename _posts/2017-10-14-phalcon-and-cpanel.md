@@ -7,7 +7,6 @@ tags:
   - cPanel
   - installation
 ---
-
 Back in 2013, we began an [effort](/post/help-the-community-to-make-phalcon-available-on-cpanel) to include Phalcon with cPanel as a module, so that users of cPanel can install the module effortlessly. We had a [rocky start](https://niden.net/post/voting-for-phalcon-as-cpanel-feature) but in the end there was a custom module created and users of cPanel could enable it easily.
 
 <!--more-->

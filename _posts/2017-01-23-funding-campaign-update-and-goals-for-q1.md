@@ -3,7 +3,6 @@ layout: post
 title: "2016 Recap, Funding Campaign, Update and Goals for Q1"
 tags: [php, phalcon, phalcon3, update, roadmap, goals]
 ---
-
 Greetings everyone!
 
 As an open source project, Phalcon relies on the contributions of developers throughout the globe, as well as the investment of personal time from the core team. Due to this, it is often that other factors (regular job, other obligations etc.) restrict the amount of time available to devote to the project. 

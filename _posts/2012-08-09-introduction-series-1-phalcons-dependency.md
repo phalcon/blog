@@ -3,7 +3,6 @@ layout: post
 title: "Introduction Series 1: Phalcon's Dependency Injector"
 tags: [php, framework, phalcon, series, mvc, di, "0.5", "0.x"]
 ---
-
 Development in the new version of Phalcon 0.5.0 is well underway. In this new version we are introducing new components for the community to use. In the blog posts to follow, we will explain these new features in length.
 
 With Phalcon 0.5.0 (still under development) we are introducing a new design pattern called [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection). In short, objects should not be instantiated inside a class, rather injected using constructors and/or setter methods. This pattern increases testability in the code, thus making it less prone to errors.

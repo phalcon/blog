@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 2.0.9 released"
 tags: [php, phalcon, phalcon2, release, "2.x"]
 ---
-
 We are excited to announce the immediate availability of Phalcon 2.0.9!
 
 This is the ninth maintenance release in the 2.0.x series, adding more fixes and improvements to make the most of Phalcon.

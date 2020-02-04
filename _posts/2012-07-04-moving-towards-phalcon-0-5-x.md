@@ -3,7 +3,6 @@ layout: post
 title: "Moving towards Phalcon 0.5.x"
 tags: [php, framework, phalcon, "0.5", roadmap, namespaces, "0.x"]
 ---
-
 Our main goal is to make Phalcon a great framework that everyone can benefit from.
 
 With that in mind, the 0.4.x branch was a great step forward and we are preparing for 0.5.x which will be a big redesign. The new branch will require some refactoring which we want to discuss with you. New changes will be introduced, big but necessary, which will affect the functionality of current applications.

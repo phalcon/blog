@@ -3,7 +3,6 @@ layout: post
 title: "Sample Application: PHP Alternative site"
 tags: [php, framework, phalcon, roadmap, sample, application, "0.x"]
 ---
-
 ![Alternate site](/assets/files/2012-06-07-php-site-1.png)
 
 Today, we're launching another sample application for Phalcon. This time, we wanted to create an alternative version of the [PHP site](https://php.net) powered by the C-extension framework. This is the greatest example we have done until now, implementing many of the main framework features, especially the newly added: [Multilingual Support](https://docs.phalcon.io/latest/en/api/Phalcon_Translate_Adapter_NativeArray) and [Complex Routing](https://docs.phalcon.io/latest/en/routing).

@@ -3,7 +3,6 @@ layout: post
 title: "Spreading the word about Phalcon"
 tags: [php, phalcon, community]
 ---
-
 Some of you have asked us on how to help to make the project to be more popular. This post consolidates previously discussed points on how to make Phalcon more popular.
 
 **TL;DR**

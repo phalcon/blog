@@ -3,7 +3,6 @@ layout: post
 title: "Q1 goals update"
 tags: [php, phalcon, "3.0.x", phalcon3, q1, update]
 ---
-
 Hello everyone!
 
 We would like to give you a quick update on the work done so far, trying to meet our Q1 goals.

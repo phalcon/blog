@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 0.5.0 beta1 released!"
 tags: [php, framework, phalcon, release, mvc, phql, events manager, "0.5", beta, "0.x"]
 ---
-
 ![](/assets/files/2012-08-28-working.jpg)
 
 It has been a really busy month and a half. We concentrated all of our efforts in developing Phalcon 0.5.0, which outlines a huge rewrite of core parts of the framework. We increased flexibility, extensibility and added more features while still keeping performance high.

@@ -7,9 +7,8 @@ tags:
   - phalcon4
   - release
   - rc
+image: /assets/files/20200111-phalcon4.0.1-release.png
 ---
-![](/assets/files/20200111-phalcon4.0.1-release.png)
-
 We are very happy to announce the release of **v4.0.1**, our first release in 2020!. 
 
 <!--more-->

@@ -13,7 +13,6 @@ tags:
   - php7
   - new features
 ---
-
 With [Phalcon 3.2.0](https://blog.phalcon.io/post/phalcon-3-2-0-released-and-new-docs) there were many new features and bugs fixed. Today we will write about most important things you need to know and show some code examples of new features.
 
 <!--more-->

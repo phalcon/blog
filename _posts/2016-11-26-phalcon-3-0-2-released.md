@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 3.0.2 released"
 tags: [php, phalcon, "3.0.x", phalcon3, release, rfc, lts]
 ---
-
 We are excited to announce the immediate availability of Phalcon 3.0.2 [LTS].
 
 This release marks another small milestone in the evolution of Phalcon, addressing a number of bugs and making the framework better for all of us :)

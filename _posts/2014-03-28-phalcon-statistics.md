@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon statistics"
 tags: [php, phalcon, clot, zephir, statistics, "1.x"]
 ---
-
 As with any project, statistics are always good to have around. Whether this is personal curiosity or showing off, statistics help us make decisions.
 
 For those that are wondering what languages are used to make Phalcon, below is a table that might prove helpful.

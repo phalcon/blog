@@ -3,7 +3,6 @@ layout: post
 title: "Building the new Phalcon Website - Bootstrap (Part 3)"
 tags: [php, phalcon, "3.0.x", phalcon3, implementation, website, series]
 ---
-
 This post is part of a series. [Part 1](/post/building-the-new-phalcon-website-implementation-part-1) - [Part 2](/post/building-the-new-phalcon-website-bootstrap-part-2) - [Part 3](/post/building-the-new-phalcon-website-middleware-part-3)
 
 In the final part of our series, we are going to investigate [Middleware](https://docs.phalcon.io/latest/en/micro#middleware-events) and how it helps our application.

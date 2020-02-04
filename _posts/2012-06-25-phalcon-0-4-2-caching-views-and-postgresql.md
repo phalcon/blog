@@ -3,7 +3,6 @@ layout: post
 title: "Phalcon 0.4.1: MySQLi, Cache + Models and more"
 tags: [php, framework, phalcon, release, "0.4", postgresql, cache, views, "0.x"]
 ---
-
 We are excited to announce that Phalcon supports the PostgreSQL RDBMS:
 
 <!--more-->
