@@ -9,6 +9,7 @@
     <meta name="application-name" content="{{ site.app.name }}">
     <meta name="keywords" content="{{ site.app.keywords }}">
     <meta name="description" content="{{ site.app.description }}">
+    {% if page.date != "" %}<meta property="article:published_time" content="{{ page.date }}">{% endif %}
 
     <!-- Facebook -->
     <meta property="og:url" content="{{ site.app.url }}">
@@ -26,7 +27,8 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <!-- Twitter -->
+
+<!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ site.app.name }}">
     {% if page.excerpt %}
@@ -39,9 +41,7 @@
     <meta name="twitter:site" content="@{{ site.social.twitter }}">
     <meta name="twitter:creator" content="Phalcon Team">
 
-    {% if page.image %}
-    <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
-    {% endif %}
+    {% if page.image != "" %}<meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">{% endif %}
     <meta itemprop="publisher" content="Phalcon Team">
 
     <meta name="telegram:channel" content="@phalcon_news">
