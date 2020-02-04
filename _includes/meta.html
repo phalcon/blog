@@ -1,3 +1,5 @@
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}</title>
+
     <meta name="viewport" content="width=device-width">
     <meta name="MobileOptimized" content="320"/>
     <meta name="HandheldFriendly" content="true"/>
@@ -15,7 +17,7 @@
     <meta property="og:url" content="{{ site.app.url }}">
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ site.app.name }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
     {% if page.excerpt %}
     <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
     {% else %}
@@ -27,8 +29,9 @@
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="{{ site.app.name }}">
 
-<!-- Twitter -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ site.app.name }}">
     {% if page.excerpt %}
@@ -49,8 +52,6 @@
     <link rel="canonical" href="{{ site.app.url }}{{ page.url }}">
     <link rel="publisher" href="{{ site.app.url }}">
     <link rel="author" href="/humans.txt">
-
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.app.name }} – {{ site.app.description }}</title>
 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-square70x70logo"
