@@ -15,6 +15,8 @@ New release! (same as the one before really)!
 
 We blame gremlins in the code...
 
+<div><img src="https://d33wubrfki0l68.cloudfront.net/d5a25d2803c00c5df700423815b036f1b29ff087/ab566/assets/files/gremlins.jpeg" alt=""></div>
+
 Earlier today we released [4.0.1](https://blog.phalcon.io/post/phalcon-v4-0-1-released). Unfortunately, the version of the extension was not updated properly and as a result, `echo phpversion("phalcon")` was returning `4.0.0` instead of `4.0.1`.
 
 Since we have already published the release and do not wish to mess up all the GitHub hashes, we are releasing exactly the same release with a different (and now correct) version number.
@@ -51,4 +53,4 @@ Videos
 * [LBRY](https://phalcon.io/lbry)
 * [YouTube](https://phalcon.io/youtube)
 
-![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) Phalcon Team
+<3 Phalcon Team

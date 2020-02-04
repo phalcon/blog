@@ -170,5 +170,5 @@ Videos
 * [LBRY](https://phalcon.io/lbry)
 * [YouTube](https://phalcon.io/youtube)
 
-![](https://assets.phalcon.io/phalcon/images/emoji/heart.png) Phalcon Team
+<3 Phalcon Team
 
