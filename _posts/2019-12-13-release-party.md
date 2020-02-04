@@ -20,10 +20,7 @@ Join us for a live release hangout, to celebrate the release of v4 and just hang
 
 Our live stream will be hosted on YouTube:
 
-[![Subscribe on YouTube](/assets/files/youtube-player2.png "YouTube Live stream")](https://youtu.be/dAig_Ll9Txk)
-
-
-<https://youtu.be/dAig_Ll9Txk>
+[https://youtu.be/dAig_Ll9Txk](https://youtu.be/dAig_Ll9Txk)
 
 As you might have noticed, we made some significant changes with regards to the project. Some highlights:
 

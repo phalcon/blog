@@ -12,7 +12,7 @@ Today we watched live GitHub Universe, GitHub's main product conference of the y
 <!--more-->
 The event took place today around 9:00 PST. Devon Zuegel demonstrated the new GitHub Sponsors for Teams!
 
-[Wach Live Stream](https://youtu.be/9EoNqyxtSRM?t=4098)
+[Watch the Live Stream](https://youtu.be/9EoNqyxtSRM?t=4098)
 
 Phalcon has been working with GitHub and entered the alpha version of this product. We are happy to announce that we have been accepted and **now have a sponsor page on GitHub Sponsors**!
 
