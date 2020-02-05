@@ -6,6 +6,7 @@ tags:
   - phalcon
   - php
   - php8
+image: /assets/files/20200204-php-8.png
 ---
 2020 is the year when PHP will change versions. The latest and greatest will no longer be 7 but 8.
 
