@@ -10,7 +10,7 @@ tags:
   - phalcon3
 image: /assets/files/2020-02-10-phalcon-book.jpg
 ---
-We are happy to announce the release of a French book about Phalcon, written by **Jérémy PASTOURET** [@jenovateurs] (https://github.com/jenovateurs)
+We are happy to announce the release of a French book about Phalcon, written by [Jérémy PASTOURET - @jenovateurs](https://github.com/jenovateurs)
 
 <!--more-->
 
@@ -53,7 +53,7 @@ You can find this book here:
 ## Available for everyone
 Jeremy (author) has created a [GitHub project](https://github.com/les-enovateurs/livre-phalcon) with all of the source code for each chapter. Even if you do not understand French, you will be able to inspect the structure and check out the implementations. The code is available in English. Finally, you will also find additional examples of functions and services implemented with Phalcon.
 
-_Article submitted by Jérémy PASTOURET - [@jenovateurs] (https://github.com/jenovateurs)_
+_Article submitted by Jérémy PASTOURET_ [@jenovateurs](https://github.com/jenovateurs)
 
 <hr>
 
