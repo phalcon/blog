@@ -8,7 +8,7 @@ tags:
   - book
   - french
   - phalcon3
-image: /assets/files/2020-02-10-phalcon-book.png
+image: /assets/files/2020-02-10-phalcon-book.jpg
 ---
 We are happy to announce the release of a French book about Phalcon, written by [Jérémy PASTOURET - @jenovateurs] (https://github.com/jenovateurs)
 
