@@ -6,6 +6,7 @@ tags:
   - poedit
   - volt
   - translations
+image: /assets/files/2020-02-12-poedit.svg
 ---
 [Václav Slavík](https://github.com/vslavik), the owner of Poedit has recently released version 2.3.
 
