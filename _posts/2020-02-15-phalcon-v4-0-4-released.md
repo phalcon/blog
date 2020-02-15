@@ -19,7 +19,7 @@ We have started utilizing more [GitHub Actions](https://github.com/phalcon/cphal
 
 With this release we have added the foundation to start running our tests with GitHub actions on Linux, MacOS and Windows, ensuring that the release will be problem free on all platforms.
 
-We have also started refactoring all our database related tests with a goal to run all of them on each RDBMs that we support. At the moment we only have MySQL and Sqlite enabled but Postgresql will soon be added. A new testing suite (`database`) was created just for that.
+We have also started refactoring all our database related tests, with a goal to run all of them on each RDBMs that we support. At the moment we only have MySQL and Sqlite enabled but Postgresql will be added soon. A new testing suite (`database`) was created just for that.
 
 Finally, we worked a bit more on [v4.1](https://github.com/phalcon/cphalcon/blob/4.1.x/CHANGELOG-4.1.md), adding more components as per our roadmap. These components include more HTML helpers under `Phalcon\Html\Helper`, HTTP/2 preload support from Volt as well as a new `Connection` class which is the first step for our Data Mapper implementation coming in later versions of v4.
 
