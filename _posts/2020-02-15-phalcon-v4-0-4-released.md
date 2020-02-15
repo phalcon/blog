@@ -13,7 +13,7 @@ We are very happy to announce the release of Phalcon **v4.0.4**, a maintenance r
 
 [Github Tag](https://github.com/phalcon/cphalcon/releases/tag/v4.0.4)
 
-This release focused mostly on bug fixes reported by the community, as well as some maintenance tasks.
+This release focused mostly on bug fixes reported by the community, as our testing suite and release tasks.
 
 We have started utilizing more [GitHub Actions](https://github.com/phalcon/cphalcon/actions) in order to streamline our release process. At the moment, every release takes between 2-3 hours with a lot of manual checks from the team to ensure that everything is OK. 
 
@@ -21,7 +21,7 @@ With this release we have added the foundation to start running our tests with G
 
 We have also started refactoring all our database related tests, with a goal to run all of them on each RDBMs that we support. At the moment we only have MySQL and Sqlite enabled but Postgresql will be added soon. A new testing suite (`database`) was created just for that.
 
-Finally, we worked a bit more on [v4.1](https://github.com/phalcon/cphalcon/blob/4.1.x/CHANGELOG-4.1.md), adding more components as per our roadmap. These components include more HTML helpers under `Phalcon\Html\Helper`, HTTP/2 preload support from Volt as well as a new `Connection` class which is the first step for our Data Mapper implementation coming in later versions of v4.
+Finally, we worked a bit more on [v4.1](https://github.com/phalcon/cphalcon/blob/4.1.x/CHANGELOG-4.1.md), adding more components as per our roadmap. These components include more HTML helpers under `Phalcon\Html\Helper`, HTTP/2 preload support from Volt as well as a new `Connection` class which is the first step for our Data Mapper implementation coming in later versions of v4. The bulk of the work being done in v4.1 comes from the [NFR list](https://docs.phalcon.io/4.0/en/new-feature-request-list) that the community has voted on.
 
 Huge thanks to our contributors that reported issues, offered input as well as submitted pull requests with additions and corrections!
 
