@@ -93,6 +93,7 @@ Social Media
 Videos
 
 * [BitChute](https://phalcon.io/bitchute)
+* [Brighteon](https://phalcon.io/brighteon)
 * [LBRY](https://phalcon.io/lbry)
 * [YouTube](https://phalcon.io/youtube)
 
