@@ -6,7 +6,7 @@ tags:
   - phalcon
   - phalcon4
   - release
-- /assets/files/2020-02-15-phalcon-4.0.4.png
+  - /assets/files/2020-02-15-phalcon-4.0.4.png
 ---
 We are very happy to announce the release of Phalcon **v4.0.4**, a maintenance release. 
 
