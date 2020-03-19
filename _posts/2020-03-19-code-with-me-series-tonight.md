@@ -20,7 +20,7 @@ In an effort to help everyone with this potential transition, we announced that 
 
 The hangout will be held on YouTube here:
 
-[]()
+[https://youtu.be/eks-XXhymuw](https://youtu.be/eks-XXhymuw)
 
 In this first hangout we will just pick a bug report and try to fix it. The format will not be a strict one so we will be able to deviate based on questions or feedback by those that attend.
 
