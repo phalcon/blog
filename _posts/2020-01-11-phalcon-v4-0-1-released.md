@@ -45,9 +45,6 @@ also for v4.1
 > **NOTE**: You can always check our roadmap and the status of our active sprint in our project page: <https://github.com/orgs/phalcon/projects/4> 
 {: .alert .alert-info }
 
-
-<iframe src='https://www.brighteon.com/embed/80efede3-54d4-47d8-9332-3494d56d2001' width='560' height='315' frameborder='0' allowfullscreen></iframe>
-
 ## Changelog
 
 ## Added
