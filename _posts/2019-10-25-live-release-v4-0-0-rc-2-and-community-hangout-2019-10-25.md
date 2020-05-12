@@ -34,4 +34,6 @@ Topics to discuss:
 
 Looking forward to hearing from all of you and seeing you during the hangout. 
 
+<iframe src='https://www.brighteon.com/embed/25e674bf-6285-4fda-9710-f90582cd4d32' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
 <3 Phalcon Team

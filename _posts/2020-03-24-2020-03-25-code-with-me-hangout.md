@@ -18,7 +18,9 @@ Similar to our _Code with me_ hangout of last week, come join us tomorrow for a 
 
 The hangout will be held on YouTube here:
 
-[https://www.youtube.com/watch?v=ttuRMW7WefI](https://www.youtube.com/watch?v=ttuRMW7WefI)
+[https://youtu.be/ttuRMW7WefI](https://youtu.be/ttuRMW7WefI)
+
+<iframe src='https://www.brighteon.com/embed/cdc2c531-e282-4fc0-a0cb-e9817b24e570' width='560' height='315' frameborder='0' allowfullscreen></iframe>
 
 Free format, just come and have fun, ask questions, bring beer!
 

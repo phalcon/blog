@@ -13,7 +13,7 @@ The first community hangout of 2019 was awesome and super fun! We are really hap
 If you have missed the live hangout, you can watch it on YouTube:
 <!--more-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OAN7W2zVRaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src='https://www.brighteon.com/embed/8ff9411f-c756-42ee-bee0-8a5b94a70c08' width='560' height='315' frameborder='0' allowfullscreen></iframe>
 
 [Watch it here](https://www.youtube.com/watch?v=OAN7W2zVRaI)
 

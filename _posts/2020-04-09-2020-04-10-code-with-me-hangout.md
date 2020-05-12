@@ -19,6 +19,8 @@ The hangout will be held on YouTube here:
 
 [https://youtu.be/I3wXpAq7kdg](https://youtu.be/I3wXpAq7kdg)
 
+<iframe src='https://www.brighteon.com/embed/5157a30c-df70-48d8-a355-e888861f156a' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
 Free format, just come and have fun, ask questions, bring beer, chips and wine!
 
 Stay safe and keep coding!

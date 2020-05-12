@@ -25,6 +25,8 @@ Huge thanks to our contributors that reported issues, offered input as well as s
 > **NOTE**: You can always check our roadmap and the status of our active sprint in our project page: <https://github.com/orgs/phalcon/projects/4>  
 {: .alert .alert-info }
 
+<iframe src='https://www.brighteon.com/embed/8f4a4ff1-233e-472a-84df-b55e5de56838' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
 ## Changelog
 
 Supported PHP Versions: 7.2, 7.3, 7.4

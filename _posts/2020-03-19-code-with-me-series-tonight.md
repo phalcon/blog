@@ -22,6 +22,8 @@ The hangout will be held on YouTube here:
 
 [https://youtu.be/eks-XXhymuw](https://youtu.be/eks-XXhymuw)
 
+<iframe src='https://www.brighteon.com/embed/a7025eed-5041-4a5f-b00e-b42e4bc7b62d' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
 In this first hangout we will just pick a bug report and try to fix it. The format will not be a strict one so we will be able to deviate based on questions or feedback by those that attend.
 
 We will also hold additional hangouts, where we will try and create new applications that mostly match to what the community requests.

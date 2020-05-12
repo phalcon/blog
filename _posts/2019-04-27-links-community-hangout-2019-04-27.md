@@ -14,7 +14,7 @@ If you have missed the live hangout, you can watch it on YouTube:
 
 <!--more-->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u61X82vtWWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src='https://www.brighteon.com/embed/12b3937b-ae94-4638-9424-4707007f67a2' width='560' height='315' frameborder='0' allowfullscreen></iframe>
 
 [Watch it here](https://www.youtube.com/watch?v=u61X82vtWWg)
 

@@ -17,6 +17,8 @@ We are very happy to announce the release of **Phalcon v4.0.0 Stable**!.
 > Live Stream: [https://www.youtube.com/watch?v=dAig_Ll9Txk](https://www.youtube.com/watch?v=dAig_Ll9Txk)!
 {: .alert .alert-info }
 
+<iframe src='https://www.brighteon.com/embed/8dc14397-9e61-494f-8a98-9f0a0e29103f' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
 ### History
 
 It has been a very long journey. We started over a year ago working on v4, putting forward a bold implementation that will act as the foundation of future Phalcon releases.
