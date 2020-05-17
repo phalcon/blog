@@ -25,6 +25,8 @@ Huge thanks to our contributors that reported issues, offered input as well as s
 > **NOTE**: You can always check our roadmap and the status of our active sprint in our project page: <https://github.com/orgs/phalcon/projects/4>  
 {: .alert .alert-info }
 
+<iframe src='https://www.brighteon.com/embed/90c9b9fa-83f1-491c-8f95-c17a7313707a' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
 ## Changed
 - Changed `Volt::convertEncoding` to no longer using `iconv` for a fallback since it causes issues with macOS [#14912](https://github.com/phalcon/cphalcon/issues/14912)
 - Changed schema manipulation in `Phalcon\Db\Dialect\Mysql` - unquote numerical defaults [#14888](https://github.com/phalcon/cphalcon/pull/14888), [#14974](https://github.com/phalcon/cphalcon/pull/14974)
