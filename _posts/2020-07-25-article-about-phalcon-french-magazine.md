@@ -15,13 +15,14 @@ I'm happy to announce the release of my article dedicated to Phalcon in a French
 <!--more-->
 
 ![PROGRAMMEZ - Phalcon - Cover](/assets/files/2020-07-25-cover-phalcon.jpg)
-Even if it is a French article, it's great to see the title : **Phalcon : le nouveau framework PHP à connaître** - **Phalcon : the new PHP framework to know** on the cover of the magazine.
 
-It's eight pages long : I've told the story of Phalcon and Zephir. I've also presented Phalcon's main features.
+Even though the article is in French, it us great to see the title : **Phalcon : le nouveau framework PHP à connaître** - **Phalcon : the new PHP framework to know** on the cover of the magazine.
 
-This edition is available during two months (June-July 2020). You can find it on [the magazine's website.](https://www.programmez.com/magazine/programmez-241-pdf)
+The article is eight pages long, in which I am presenting Phalcon and Zephir, as well as showcasing  Phalcon's main features.
 
-Thanks for your attention, I hope this article will contribute to further increasing the community !
+This edition is available for two months (June-July 2020). You can find it on [the magazine's website.](https://www.programmez.com/magazine/programmez-241-pdf)
+
+Thank you! I hope this article contributes to increasing Phalcon's community !
 
 _Article submitted by Jérémy PASTOURET_ [@jenovateurs](https://github.com/jenovateurs)
 
