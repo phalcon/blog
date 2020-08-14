@@ -15,8 +15,7 @@ We are going to host a community hangout on Friday the 14th of August at 17:00 E
 
 For the most part holidays are over. Join us this Friday for a hangout, where we will provide a status update, discuss what we have to do and outline the future of Phalcon. 
 
-[https://youtu.be/Moe4RSyi7yI](https://youtu.be/Moe4RSyi7yI)
-
+<https://www.youtube.com/watch?v=5nrQHgyeZUw>
 
 Looking forward to seeing everyone there!
 
