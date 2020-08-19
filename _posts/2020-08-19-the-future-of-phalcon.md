@@ -27,13 +27,13 @@ The team remains dedicated for the project as time permits.
 ### Zephir
 Now that Serghei has stepped down, we have an issue with Zephir. We no longer have any active maintainers for the project to assume the lead and help with development/bugs etc.
 
-Zephir was invented to help with contributions for Phalcon - a much simpler language, similar to JS/PHP, that anyone can learn easily and contribute. Unfortunately, the language did not gain popularity, and therefore not many people wanted to contribute. The language became stagnant and difficult to maintain. A lot of bugs were discovered and ended up being very difficult to fix unless the whole language was redesigned.
+[Zephir](https://zephir-lang.com) was invented to help with contributions for Phalcon - a much simpler language, similar to JS/PHP, that anyone can learn easily and contribute. Unfortunately, the language did not gain popularity, and therefore not many people wanted to contribute. The language became stagnant and difficult to maintain. A lot of bugs were discovered and ended up being very difficult to fix unless the whole language was redesigned.
 
 With no other options available, we will put active development of Zephir on hold, and we do not expect it to be compatible with PHP 8. Maintainers are always welcome to step up and help with Zephir.
 
 ### Phalcon
 
-Without Zephirm we are not going to be able to properly maintain and enhance Phalcon. This leaves us with two options:
+Without Zephir we are not going to be able to properly maintain and enhance Phalcon. This leaves us with two options:
 - abandon Phalcon or 
 - take the brave step to move forward by switching to native PHP. 
 
@@ -45,8 +45,8 @@ The team decided to switch to native PHP for Phalcon 5. We will try to support P
 - Backwards compatible as much as possible (it will depend on how easy we can translate the current C parsers for Volt, PHQL and Annotations)
 - Support PHP 7.4 + PHP 8 (Currently in Beta)
 - Phalcon goals and philosophy remain unchanged (performance, low overhead, ease of use)
-- Cardoe (side project by niden) can be used as starting point
-- ADR (Action Domain Responder) pattern as scheduled around v4
+- [Cardoe](https://github.com/niden/cardoe) (side project by [niden](https://github.com/niden) can be used as starting point
+- [ADR](https://github.com/pmjones/adr) (Action Domain Responder) pattern as scheduled around v4
 - Will aim for 100% code coverage and tests
 - Opens up the possibility for async (future)
 
