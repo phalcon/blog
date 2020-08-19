@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Summary  - Community Hangout - 2020-08-14
+title: Future of Phalcon
 image: /assets/files/2020-08-11-phalcon-hangout-update.png
 date: 2020-08-18T22:41:47.393Z
 tags:
@@ -9,52 +9,41 @@ tags:
   - phalcon5
   - update
 ---
-Summer
-Slow progress
-Team focused on work/family mostly
-vacations
-nikos had 2 weeks of vacation, the first vacation he had in the last 5 years. well deserved, and really nice to spend time with the family. Ruud and Serghei also had vacations and Anton is getting ready.
+Unfortunately we're unable to finish the hangout last friday due to technichal issue. So as promised a summary of the hangout including the point we missed.
 
-as last year summer is slow moving and with covid, we have slow progress. some people were not even allowed to go out of the house without a mask. crazy world we live in. everything is thrown upside down
+**Summer Progress**
 
-Team focused mostly on work and family mostly and due to vactions things slowed down.
+Like last year summer is slow moving and with covid, the team had to focus on work/family even more. 
+Nikos had 2 weeks of vacation, the first vacation he had in the last 5 years. well deserved, and really nice to spend time with the family. Ruud and Serghei also had vacations and Anton is getting ready for some time off.
 
-Progress link URL
+\
+Our current progress can be tracked here:
 
-Team changes
-Serghei is stepping down and cannot commit time to the project. He needs to concentrate on work and family of course. He was very nice to tell us that he will no longer be able to help - not fooling anyone Huge thank you to him for all the work he has done. v3 support solo. Team remains dedicated for the project as time permits. 
+**Team changes**
+Serghei is stepping down and cannot commit time to the project. He needs to concentrate on work and family of course. He was very nice to tell us that he will no longer be able to help - not fooling anyone. Huge thank you to him for all the work he has done. v3 support solo. Team remains dedicated for the project as time permits. 
 
-Zephir
-We have an issue. We do not have maintainers
-Zephir invented for contributions
-not many wanted to help with it so the language became stagnant, difficult to maintain with a lot of bugs that cannot be fixed unless Zephir is redesigned
-Development will be put on hold
-Not expecting to be compatible with php 8
-maintainers are moce than welcome
+**Zephir**
 
+Now that Serghei has stepped down we have an issue with Zephir since we don't not have any active maintainers that could take lead. Zephir was invented for contributions, not many wanted to help with it so the language became stagnant, difficult to maintain with a lot of bugs that cannot be fixed unless Zephir is redesigned.
 
-Phalcon
-It cannot be maintained any more without zephir being developed.
-We will switch to pure php implementation in phalcon 5
+With no other options available we will put active development on hold and not expecting to be compatible with php 8. Maintainers are more than welcome the step in.
 
+**Phalcon**
 
-phalcon 4.1 will continue and we will decide what we will release (see project in github). it will support up to php 7.4
+Without Zephir we're are unable to maintain Phalcon. This give us 2 options. Give up on Phalcon or take a brave step to move forward by switching to native PHP. The team decided to switch to native PHP for Phalcon 5. We will try to support Phalcon 4 as much as possible and try to release Phalcon 4.1. We will use our funds to fix some critical Zephir issues that are blocking Phalcon.
 
-phlalcon 5
-pure php
-install with composer
-backwards compatible, as much as possible
-php 7.4/8.0 (alpha)
-keeping with current phalcon goals (performance, low overhead, ease of use)
-parsers need to be rewritten
-cardoe to be used as a starting point. what is cardoe
-
-adr pattern as scheduled around v4
-will aim for 100% code coverage and tests
-opens up the possiblity for async (future)
+**Phalcon 5**
+- Pure PHP implementation\
+- Installable as composer package
+- Trying to be as backwards compatible as much as possible.\
+- Support PHP 7.4 + PHP 8 (Currently in Beta)
+- We will not change our current phalcon goals (performance, low overhead, ease of use)
+- Nidens side project Cardo can be used as starting point\
+- adr pattern as scheduled around v4
+- will aim for 100% code coverage and tests
+- Opens up the possiblity for async (future)
 
 we do not know how easy or difficult the task to rewrite the parsers is. It will be try and see.
-
 
 Timeline
 August:
@@ -67,12 +56,6 @@ November
 v5 alpha
 December
 Devtools, sample apps
-
-
-
-
-
-
 
 - - -
 
