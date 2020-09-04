@@ -14,6 +14,10 @@ Join us this Sunday 6th September at 10:00 EST (14:00 UTC) for a community hango
 
 <!--more-->
 
+### New Blood
+ - [Riu](https://github.com/riu)
+ - [Tacxticx88](https://github.com/tacxticx88)
+
 ### v4
 - What happens with v4
 - Keep 4.0.x branch for bug fixes
@@ -33,7 +37,7 @@ Join us this Sunday 6th September at 10:00 EST (14:00 UTC) for a community hango
     - Migrations
   - Find what will happen with Volt, PHQL Annotations compilers
 
-<https://www.youtube.com/watch?v=5nrQHgyeZUw>
+<https://youtu.be/0LtGupXPv7Y>
 
 Looking forward to seeing everyone there!
 
