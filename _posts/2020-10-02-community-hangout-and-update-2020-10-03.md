@@ -10,7 +10,7 @@ tags:
   - hangout
   - update
 ---
-Join us this Sunday 6th September at 10:00 EST (14:00 UTC) for a community hangout and update.
+Join us this Saturday 3rd October at 10:00 EST (14:00 UTC) for a community hangout and update.
 
 <!--more-->
 
