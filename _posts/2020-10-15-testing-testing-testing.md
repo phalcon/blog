@@ -13,7 +13,7 @@ I have been advocating for testable code for more than a decade now. Admittedly,
 <!--more-->
 
 > This blog post has been cross posted from the [niden.net](https://niden.net/post/testing-testing-testing/) blog
-{: .alert .alert-info }
+{: .alert .alert-info}
 
 Recently, for the [Phalcon](https://phalcon.io) Framework, we decided to move away from [Zephir](https://zephir-lang.com) and rewrite the framework in PHP. [This](https://blog.phalcon.io/post/the-future-of-phalcon) blog post offers more information regarding this decision.
 
