@@ -19,6 +19,7 @@ social:
   twitter: phalconphp
 
 tags_override:
+  - phalcon5
   - phalcon4
   - release
   - zephir
@@ -69,6 +70,7 @@ include:
   
 # Exclude these files from your production _site
 exclude:
+  - boxfile.yml
   - Gemfile
   - Gemfile.lock
   - LICENSE
