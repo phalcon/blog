@@ -17,6 +17,7 @@ A quick status update on v5, PHP 8 and our Forum.!
 It has been a while since we last communicated with the community using our blog, or via a hangout. This was not due to neglect, but more of a busy period before the holidays. Rest assured we have been working behind the scenes :)
 
 ### Forum
+
 The [Phalcon Forum](https://forum.phalcon.io) is a Phalcon application that has been going strong since 2013!. It is hosted in one of our servers and utilizes a lot of techniques that one can find in business applications nowadays. At the moment, it is only compatible with v3 - we have not upgraded it to v4 due to lack of time.
 
 Since Phalcon v4, we have tried to minimize all the side tasks that we need to handle in order to keep this project moving forward. In the past for instance, we had our [website](https://phalcon.io), [blog](https://blog.phalcon.io), our [documents](https://docs.phalcon.io), the [builtwith](https://builtwith.phalcon.io) site and many more running with Phalcon applications. All these sites served as examples also for the community since they were all open sourced. However, we would find ourselves in a position where we needed to correct or migrate those applications to a newer version, which was a time consuming task. In addition, since we used one server for all sites, we had to upgrade all applications/sites in one go.
@@ -24,8 +25,9 @@ Since Phalcon v4, we have tried to minimize all the side tasks that we need to h
 We changed direction, and started utilizing technologies that aid us and do not require a lot of time in maintenance. Moving our sites to [Netlify](https://netlify.com) and using Jekyll to generate our static sites reduced the maintenance of sites tremendously.
 
 Recently, GitHub has introduced a new Discussions feature in repositories. We have decided to take advantage of that feature in two of our repositories:
-- [cphalcon](https://github.com/phalcon/cphalcon/discussions) for v3/v4 and
-- [phalcon](https://github.com/phalcon/phalcon/discussions) for v5
+
+* [cphalcon](https://github.com/phalcon/cphalcon/discussions) for v3/v4 and
+* [phalcon](https://github.com/phalcon/phalcon/discussions) for v5
 
 These two repositories will be used as forum replacements with questions/answers.
 
@@ -34,25 +36,31 @@ We will set the current forum application as read only at the beginning of 2021,
 Until the end of 2020, you can still use the current forum, or if you wish you can come and check out the two new discussion spaces and ask your questions there.
 
 ### Zephir - PHP 8
+
 There has been some good movement in Zephir with regards to PHP 8. [Alexander](https://github.com/AlexNDRmac) has been driving the initiative to make Zephir PHP 8 compatible. The goal is to release a v4 version that works with PHP 8. 
 
 Still early days for this effort but we are optimistic that it will work.
 
 ### Incubator
+
 [Jeckerson](https://github.com/Jeckerson) has been working with the incubator repository. We have split it into smaller sub-repositories, that are easier to monitor and handle. The goal is to introduce all those to packagist so that the community can install them with composer. Work in progress still but we are getting there!
 
 ### v5
-The translation of Zephir to PHP code continues. There are several components that we still need to "translate". The most difficult part is the class property types. Zephir was quite a bit forgiving with regards to types so you could in theory set a boolean to a seemingly string variable. That is no longer allowed in the PHP world, primarily because we are tightening the property/parameter types of each class, removing _mixed_ type parameters as much as possible. 
+
+The translation of Zephir to PHP code continues. There are several components that we still need to "translate". The most difficult part is the class property types. Zephir was quite a bit forgiving with regards to types so you could in theory set a boolean to a seemingly string variable. That is no longer allowed in the PHP world, primarily because we are tightening the property/parameter types of each class, removing *mixed* type parameters as much as possible. 
 
 There are also some hurdles that will come up in the future. These are primarily Zephir methods that have been implemented in pure C (PHQL, Volt, Annotations and others). Those we will need to convert them also in PHP.
 
 ### Benchmarks
+
 With v5 we know we will lose performance. We have slowly started adding benchmarks to the v5 code, in an effort to see how much we are losing when working with an extension vs. pure PHP. A small example is demonstrated below:
+
+![Benchmarks](/assets/files/20201209-benchmarks.png)
 
 Right now we are just translating code from Zephir to PHP. Once v5 is released, we can start working to implement optimizations in the code, so that we can get the framework as fast as possible on the PHP side.
 
-> **NOTE**: You can always check our roadmap and the status of our active sprint for v5 in our project page: <https://github.com/orgs/phalcon/projects/5>  
-{: .alert .alert-info }
+> **NOTE**: You can always check our roadmap and the status of our active sprint for v5 in our project page: <https://github.com/orgs/phalcon/projects/5>\
+> {: .alert .alert-info }
 
 <hr>
 
@@ -85,4 +93,4 @@ Videos
 
 <3 Phalcon Team
 
-_Image by [Markus Winkler](https://twitter.com/markuswinkler)_
+*Image by [Markus Winkler](https://twitter.com/markuswinkler)*
