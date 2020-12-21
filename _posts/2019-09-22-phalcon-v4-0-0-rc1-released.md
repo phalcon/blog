@@ -119,30 +119,6 @@ to install the new extension. Detailed installation instructions can be found in
 {: .alert .alert-info }
 
 ### Thank you
-Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.link/discord) or our [Forum](https://phalcon.link/forum).
+Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.io/discord) or our [Forum](https://phalcon.io/forum).
 
-Finally, don't forget to star our project on [GitHub](https://phalcon.link/github) and follow us on our social media:
-
-Chat - Q&A
-* [Discord Chat](https://phalcon.link/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-* [OpenCollective - Support Us](https://phalcon.link/fund)
-* [Store - Merchandise](https://phalcon.link/store)
-
-Social Media
-* [Telegram](https://phalcon.link/telegram)
-* [Gab](https://phalcon.link/gab)
-* [MeWe](https://phalcon.link/mewe)
-* [Parler](https://phalcon.link/parler)
-* [Facebook](https://phalcon.link/fb)
-* [Twitter](https://phalcon.link/t)
-
-Videos
-* [BitChute](https://phalcon.link/bitchute)
-* [YouTube](https://phalcon.link/youtube)
-
-
-
-<3 Phalcon Team
+Finally, don't forget to star our project on [GitHub](https://phalcon.io/github) and follow us on our social media:

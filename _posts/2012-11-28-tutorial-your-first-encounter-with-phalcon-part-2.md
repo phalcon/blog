@@ -557,5 +557,3 @@ I explained how to install Phalcon under Windows using WAMP or Ubuntu Linux and 
 
 We went through the process of creating a simple blog application with twitter bootstrap, simple authorization and very simple ACL.
 
-
-<3 The Phalcon Team

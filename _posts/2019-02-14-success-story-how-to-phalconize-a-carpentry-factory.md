@@ -131,6 +131,4 @@ If you have any questions about this project, leave a message or contact me at D
 Ruud
 
 ### Submissions
-If you have a success story that you wish to share with the community, we would be happy to post it in our blog. Feel free to contact us at team@phalcon.io or our [Discord](https://phalcon.link/discord) server.
-
-<3 The Phalcon Team
+If you have a success story that you wish to share with the community, we would be happy to post it in our blog. Feel free to contact us at team@phalcon.io or our [Discord](https://phalcon.io/discord) server.

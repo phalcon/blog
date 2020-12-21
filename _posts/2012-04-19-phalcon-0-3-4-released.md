@@ -33,12 +33,10 @@ Returning to the subject of this post, in this release, we're proud to announce 
 - Added [Phalcon\Logger](https://docs.phalcon.io/latest/en/logging) component
 - Added Zend Thread Safety (ZTS) support to Phalcon Memory Manager. We are taking advantage of [thread safety](http://en.wikipedia.org/wiki/Thread_safety). Phalcon is now able to run under [single-process multithreaded web servers](http://httpd.apache.org/docs/2.0/en/mpm.html).
 
-Framework documentation is also quite complete. [Check it out](https://docs.phalcon.io)
+Framework documentation is also quite complete. [Check it out](https://docs.phalcon.io)
 
 This time, we want to give very special thanks to:
 [@jamurko](https://twitter.com/#!/jamurko), [@juliorabadan](https://twitter.com/#!/juliorabadan) and [@mailopl](https://twitter.com/#!/mailopl) for their constant feedback and help.
 
 PS: Only about 3 months ago, we started with this project, many good things have happened. Thanks to all of you folks out there helping us to create something useful and different!
 
-
-<3 Phalcon Team

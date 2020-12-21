@@ -17,5 +17,3 @@ This integration requires the latest version of Phalcon DevTools, PhpStorm is av
 Happy developing!
 
 PS: Brought to you thanks to an idea of [mailopl]
-
-<3 Phalcon Team

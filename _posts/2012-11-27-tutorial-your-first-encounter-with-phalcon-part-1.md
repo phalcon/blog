@@ -116,5 +116,3 @@ Luckily, that's not the case. Code completion is handled the same way as it is f
 ### Summary
 So far you've learned that Phalcon brings performance, convenient migrations and easy to use developer tools. Now let us give it a go, and write some "real" application using Phalcon. In the [second part](/post/tutorial-your-first-encounter-with-phalcon-part-2) I'm going to walk through a process of creating a simple web application – blog.
 
-
-<3 The Phalcon Team

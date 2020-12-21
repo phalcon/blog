@@ -157,4 +157,3 @@ We have looked at the skeleton of our application and also discussed briefly abo
 - [Micro Application](https://docs.phalcon.io/latest/en/micro)
 - [Middleware](https://docs.phalcon.io/latest/en/micro#middleware-events)
 - [Source Code](https://github.com/phalcon/website)
-- Transifex

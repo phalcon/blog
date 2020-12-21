@@ -23,31 +23,3 @@ If you have already decided to sponsor us via [Open Collective](https://opencoll
 Our [GitHub Sponsors](https://phalcon.io/fund) page additionally has our vision with regards to funding and how we intend on spending those funds to better the framework.
 
 PS: Sadly our logo was not featured in the presentation, oh well :)
-
-<hr>
-
-Chat - Q&A
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://brighteon.com/bitchute)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-
-<3 Phalcon Team

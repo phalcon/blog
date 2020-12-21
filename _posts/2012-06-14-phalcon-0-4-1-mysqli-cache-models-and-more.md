@@ -19,5 +19,3 @@ We built Phalcon because we wanted a faster and better way to create web applica
 Check out the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG.md) for this version.
 
 Thanks to all of you who took the time to send us recommendations and ideas. Enjoy!
-
-<3 Phalcon Team

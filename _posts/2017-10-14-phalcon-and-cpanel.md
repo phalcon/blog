@@ -54,6 +54,3 @@ The email is below:
 
 
 **Many thanks to the cPanel::Zer0Cool team!!**
-
-<3 Phalcon Team
-

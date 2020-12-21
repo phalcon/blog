@@ -397,8 +397,4 @@ $logger
 - Added `Phalcon\Validation\Validator\Ip`, class used to validate ip address fields. It allows to validate a field selecting IPv4 or IPv6, allowing private or reserved ranges and empty values if necessary.
 
 ### Help
-If you need help with the above, feel free to reach out in our [forum](https://phalcon.link/forum) or our [Discord](https://phalcon.link/discord) server 
-
-
-
-<3 Phalcon Team
+If you need help with the above, feel free to reach out in our [forum](https://phalcon.io/forum) or our [Discord](https://phalcon.io/discord) server 

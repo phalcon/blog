@@ -10,13 +10,11 @@ Further popular demand by our community, we have opened a modest [store](https:/
 In the near future we will add more swag for your collection so that you can show off Phalcon proudly!
 
 <!--more-->
-The stickers are just 5 USD (for quantity of 5) and you will also pay the delivery charge of 2 USD worldwide. 
+The stickers are just 5 USD (for quantity of 5) and you will also pay the delivery charge of 2 USD worldwide. 
 
 This allows us to get some funds toward our hosting bills and other immediate expenses. We hope you like them!
 
-Don't forget, you can always offer monetary contributions by clicking the [Donate button](https://phalcon.link/donate) locate at the top bar.
+Don't forget, you can always offer monetary contributions by clicking the [Donate button](https://phalcon.io/donate) locate at the top bar.
 
 Thank you for flying with Phalcon!
 
-
-<3 The Phalcon Team

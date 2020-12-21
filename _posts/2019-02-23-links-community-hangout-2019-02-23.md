@@ -25,14 +25,3 @@ As mentioned in the hangout, we would love some feedback on building a Queue com
 Thank you to all that attended live and all those that will watch the live stream later. 
 
 As always we love to hear back from the community so feel free to reach us on:
-
-* [Forum](https://phalcon.link/forum)
-* [Discord](https://phalcon.link/discord)
-* [Github](https://phalcon.link/github)
-* [Facebook](https://phalcon.link/fb)
-* [Twitter](https://phalcon.link/t)
-* [Gab](https://phalcon.link/gab)
-* [MeWe](https://phalcon.link/mewe)
-
-
-<3 Phalcon Team

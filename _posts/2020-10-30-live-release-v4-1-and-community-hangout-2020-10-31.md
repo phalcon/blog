@@ -29,33 +29,3 @@ Looking forward to hearing from all of you and seeing you during the hangout.
 
 Stay safe and keep coding!
 
-<hr>
-
-Chat - Q&A
-
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://phalcon.io/brighteon)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-<3 Phalcon Team

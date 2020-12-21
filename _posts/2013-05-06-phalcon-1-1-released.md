@@ -38,5 +38,3 @@ in our [Forum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverfl
 
 As always, a big thank you!
 
-
-<3 The Phalcon Team

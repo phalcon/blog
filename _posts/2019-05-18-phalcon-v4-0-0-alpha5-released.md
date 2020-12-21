@@ -25,7 +25,7 @@ We have also introduced factory classes to allow for an easier instantiation of 
 
 Added more methods to `Phalcon\Helper\Arr` as well as `Phalcon\Helper\Str` for those quick checks we all have in our code and much more!
 
-Thank you again to everyone that has engaged us through social media, as well as our [Discord](https://phalcon.link/discord) server. Our community is the drive that makes Phalcon better with every release.
+Thank you again to everyone that has engaged us through social media, as well as our [Discord](https://phalcon.io/discord) server. Our community is the drive that makes Phalcon better with every release.
 
 ### Changelog
 #### Added
@@ -176,7 +176,4 @@ zephir build
 to install the new extension. Detailed installation instructions can be found in our [documentation page](https://docs.phalcon.io/4.0/en/installation).
 
 ### Thank you
-Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.link/discord) or our [Forum](https://phalcon.link/forum).
-
-
-<3 Phalcon Team
+Once again a huge thank you to all of our contributors! You guys have helped us a lot. You can help us even more by installing this version and testing it. If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.io/discord) or our [Forum](https://phalcon.io/forum).

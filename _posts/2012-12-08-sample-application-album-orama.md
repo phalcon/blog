@@ -5,9 +5,9 @@ tags: [php, phalcon, sample, spotify, music, "0.8", "0.x"]
 ---
 ![image](/assets/files/2012-12-08-albumorama.jpg)
 
-We are very excited to release our third Phalcon demo after [INVO](/post/invo-a-sample-application) and the [alternative PHP website](/post/sample-application-php-alternative-site) to the community, so as to showcase the power of Phalcon.
+We are very excited to release our third Phalcon demo after [INVO](/post/invo-a-sample-application) and the [alternative PHP website](/post/sample-application-php-alternative-site) to the community, so as to showcase the power of Phalcon.
 
-In this demo, we decided to go big! We created a music album library where one can get information about their favorite artists, discover new music and much more.
+In this demo, we decided to go big! We created a music album library where one can get information about their favorite artists, discover new music and much more.
 
 <!--more-->
 We decided to add volume in this application to showcase how Phalcon behaves with a lot of data. In our database we have:
@@ -38,5 +38,3 @@ In this demo you will find:
 
 We hope that you enjoy it and looking forward to your comments as well as submissions of your implementations in our [Incubator](https://github.com/phalcon/incubator)!
 
-
-<3 The Phalcon Team

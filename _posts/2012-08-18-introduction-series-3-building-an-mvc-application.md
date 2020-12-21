@@ -200,5 +200,3 @@ To complete this example, we have published a series of MVC examples on [Github]
 Once the release is final, Phalcon Developer Tools will be updated to generate each of these file structures.
 
 Conclusion The new MVC components offer greater flexibility and extensibility, giving the developer the ability to organize the application as he/she wishes. Thanks to its implementation with low-level optimizations, Phalcon allows developers to build high performance MVC applications in PHP.
-
-<3 Phalcon Team

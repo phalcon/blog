@@ -12,13 +12,13 @@ The spokesman of this company was very excited about this new project:
 
 > We never doubted that Phalcon Team could get on track with this new project. 
 > We have rescued the art of Pokémon battle in 2D, but we have introduced 
-> elements of the web programming world. 
+> elements of the web programming world.
 >
 > This game will include a new Framework Pokemon type, the 19th type of Pokemon 
-> to be introduced to the franchise. The Framework type is super effective 
+> to be introduced to the franchise. The Framework type is super effective 
 > against bugs and bad programming practices.
 >
-> I can't say more but It will certainly be one of the most exciting games of 
+> I can't say more but. It will certainly be one of the most exciting games of 
 > this year!
 
 A sample of the progress of the game can be seen in the following video:
@@ -29,5 +29,3 @@ Enjoy!
 
 **Update: No Pokemons were harmed in the making of that video, that was our April Fool's Joke LOL :D**
 
-
-<3 Phalcon Team

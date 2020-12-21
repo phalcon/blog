@@ -4,7 +4,9 @@ title: "Status Update: 2020-July"
 image: /assets/files/2020-07-06-status-update.png
 date: 2020-07-06T20:08:18.375Z
 tags:
-  - update. status. phalcon
+  - update 
+  - status
+  - phalcon
 ---
 It has been a while... A quick status update for the community. 
 
@@ -26,35 +28,3 @@ In short, we are here, we have not abandoned the project. Summer is always a slo
 
 As usual, huge thanks to the community for helping out this time with suggestions, patches, document translations and more.
 
-
-
-
-- - -
-Chat - Q&A
-
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://phalcon.io/brighteon)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-<3 Phalcon Team

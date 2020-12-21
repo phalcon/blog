@@ -3,12 +3,12 @@ layout: post
 title: "Phalcon 1.3 beta 1 released!"
 tags: [php, phalcon, "1.3", beta, release, "1.x"]
 ---
-We are happy to announce the release of our first beta of Phalcon 1.3​!
+We are happy to announce the release of our first beta of Phalcon 1.3!
 
 In this version we have introduced several new features and performance improvements. The intend of this beta release is get input from the community, test the new functionality making sure everything works fine once production environments are updated to 1.3.
 
 <!--more-->
-1.3.0 includes several performance improvements, new components like `Phalon\Image`, bug fixes, stability and performance improvements.​
+1.3.0 includes several performance improvements, new components like `Phalon\Image`, bug fixes, stability and performance improvements.
 
 - Code cleanup: get rid of compiler warnings, dead code elimination, code deduplication, use static code analysers to eliminate possible bugs ([801](https://github.com/phalcon/cphalcon/issues/801), [802](https://github.com/phalcon/cphalcon/issues/802), [810](https://github.com/phalcon/cphalcon/issues/810), [825](https://github.com/phalcon/cphalcon/issues/825), [827](https://github.com/phalcon/cphalcon/issues/827), [838](https://github.com/phalcon/cphalcon/issues/838), [849](https://github.com/phalcon/cphalcon/issues/849), [942](https://github.com/phalcon/cphalcon/issues/942), [968](https://github.com/phalcon/cphalcon/issues/968), [1001](https://github.com/phalcon/cphalcon/issues/1001), [1093](https://github.com/phalcon/cphalcon/issues/1093), [1169](https://github.com/phalcon/cphalcon/issues/1169), [1214](https://github.com/phalcon/cphalcon/issues/1214), [1223](https://github.com/phalcon/cphalcon/issues/1223), [1224](https://github.com/phalcon/cphalcon/issues/1224), [1375](https://github.com/phalcon/cphalcon/issues/1375), [1430](https://github.com/phalcon/cphalcon/issues/1430))
 - Fixed various memory leaks ([469](https://github.com/phalcon/cphalcon/issues/469), [860](https://github.com/phalcon/cphalcon/issues/860), [910](https://github.com/phalcon/cphalcon/issues/910), [914](https://github.com/phalcon/cphalcon/issues/914), [916](https://github.com/phalcon/cphalcon/issues/916), [1031](https://github.com/phalcon/cphalcon/issues/1031), [1067](https://github.com/phalcon/cphalcon/issues/1067), [1249](https://github.com/phalcon/cphalcon/issues/1249), [1273](https://github.com/phalcon/cphalcon/issues/1273), [1291](https://github.com/phalcon/cphalcon/issues/1291), [1309](https://github.com/phalcon/cphalcon/issues/1309), [1345](https://github.com/phalcon/cphalcon/issues/1345), [1455](https://github.com/phalcon/cphalcon/issues/1455), [1470](https://github.com/phalcon/cphalcon/issues/1470))
@@ -247,6 +247,3 @@ sudo ./install
 We welcome your comments regarding this new release. If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
 
 Thanks!
-
-
-<3 Phalcon Team

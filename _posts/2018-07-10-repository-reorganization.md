@@ -17,7 +17,7 @@ Our time and resources are very limited. No matter how much we try, we cannot de
 
 As a result, we will be looking at all the repositories we have and add `DEPRECATED` in the project description. If you wish to keep a repository for your own purposes, please fork it and/or download it. Repositories marked as `DEPRECATED` will be completely removed on the 31st of August 2018.
 
-We always appreciate the help of our community in our project. If you feel that a particular project should not be deprecated and can be updated (with your help) for all to use, by all means reach out to us on our discord server [https://phalcon.link/discord](https://phalcon.link/discord).
+We always appreciate the help of our community in our project. If you feel that a particular project should not be deprecated and can be updated (with your help) for all to use, by all means reach out to us on our discord server [https://phalcon.io/discord](https://phalcon.io/discord).
 
 The list of the projects that are marked as deprecated are:
         
@@ -33,5 +33,3 @@ The list of the projects that are marked as deprecated are:
 - skeleton     
 - skeleton-single
 - try-phalcon
-            
-<3 Phalcon Team

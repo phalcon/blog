@@ -180,16 +180,3 @@ $this->container->set(
     }
 );
 ```
-### Community
-- [https://github.com/phalcon/cphalcon/graphs/contributors](https://github.com/phalcon/cphalcon/graphs/contributors)
-- Forum: [https://phalcon.link/forum](https://phalcon.link/forum)
-- Discord: [https://phalcon.link/discord](https://phalcon.link/discord)
-- Telegram: [https://phalcon.link/telegram](https://phalcon.link/telegram)
-- Gab: [https://phalcon.link/gab](https://phalcon.link/gab)
-- MeWe: [https://phalcon.link/mewe](https://phalcon.link/mewe)
-- YouTube: [https://phalcon.link/mewe](https://phalcon.link/yt)
-- Stack Overflow: [https://phalcon.link/so](https://phalcon.link/so)
-- Facebook: [https://phalcon.link/fb](https://phalcon.link/fb)
-- Twitter: [https://phalcon.link/t](https://phalcon.link/t)
-
-<3 Phalcon Team

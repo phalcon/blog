@@ -86,6 +86,6 @@ With this we are ready to load our environment variables into PhalconPHP's confi
         'baseDir'        => getenv('BASE_DIR')
     ]
 ]
-```php
+```
 
 That's it! Couldn't have been easier! With this in place you can now commit ALL project files without having to worry for the configurations the different systems need.

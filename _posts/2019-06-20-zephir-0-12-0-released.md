@@ -35,5 +35,3 @@ This release fixes a good number of bugs and offers more optimizations as well a
 - Incorrect implementation of ArrayAccess methods [#1871](https://github.com/phalcon/zephir/pull/1871)
 
 Big thank you to all of our contributors
-
-<3 Zephir Team

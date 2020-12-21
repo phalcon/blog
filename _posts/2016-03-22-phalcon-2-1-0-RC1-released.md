@@ -137,5 +137,3 @@ Note that running the installation script will replace any version of Phalcon in
 Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
 As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!
-
-<3 Phalcon Team

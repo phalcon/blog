@@ -69,7 +69,7 @@ Our community have contributed 4 amazing proposals for the new design in the Pha
 
 ### Want to contribute?
 
-From the beginning, Phalcon has been a different framework than any other framework out there, providing developers with many components and functionality in a single PHP extension. If you want to contribute in Phalcon 2, being a part of something unique and amazing, the simplest way is to look through the [issue tracker](https://github.com/phalcon/cphalcon) for issues, bugs or features to implement. Help us to make Phalcon the greatest framework for PHP ever! Your contributions are very valuable.
+From the beginning, Phalcon has been a different framework than any other framework out there, providing developers with many components and functionality in a single PHP extension. If you want to contribute in Phalcon 2, being a part of something unique and amazing, the simplest way is to look through the [issue tracker](https://github.com/phalcon/cphalcon) for issues, bugs or features to implement. Help us to make Phalcon the greatest framework for PHP ever! Your contributions are very valuable.
 
 ### Codeception
 
@@ -95,7 +95,5 @@ git checkout 2.0.0
 zephir build
 ```
 
-We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalcon.io/).
+We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalcon.io/).
 
-
-<3 Phalcon Team

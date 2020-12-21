@@ -62,35 +62,4 @@ Right now we are just translating code from Zephir to PHP. Once v5 is released, 
 > **NOTE**: You can always check our roadmap and the status of our active sprint for v5 in our project page: <https://github.com/orgs/phalcon/projects/5>\
 > {: .alert .alert-info }
 
-<hr>
-
-Chat - Q&A
-
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.io/forum)
-
-Support
-
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://phalcon.io/brighteon)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-<3 Phalcon Team
-
 *Image by [Markus Winkler](https://twitter.com/markuswinkler)*

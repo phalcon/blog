@@ -3,7 +3,7 @@ layout: post
 title: "Help test Phalcon 0.4.0"
 tags: [php, framework, test, help, "0.4", release, "0.x"]
 ---
-Our next release, 0.4.0, is almost ready to rock, but we need your help to get the finish line in the best shape possible. Although [previous alpha](https://blog.phalcon.io/post/introducing-phalcon-0-4-0-alpha) only included improvements in code structure and overall speed, this version (0.4.0 beta) is introducing several new features, improvements and bug fixes. 
+Our next release, 0.4.0, is almost ready to rock, but we need your help to get the finish line in the best shape possible. Although [previous alpha](https://blog.phalcon.io/post/introducing-phalcon-0-4-0-alpha) only included improvements in code structure and overall speed, this version (0.4.0 beta) is introducing several new features, improvements and bug fixes. 
 
 Below is a comprehensive list of changes:
 
@@ -55,5 +55,3 @@ Although, the new version is passing all the [760 unit-tests](http://travis-ci.o
 Let's make this release the best yet. 
 
 Thanks in advance for all your help and support — it's appreciated more than you know!
-
-<3 Phalcon Team

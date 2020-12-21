@@ -14,16 +14,12 @@ In order to increase transparency and so that everyone knows how much money we h
 
 Our Patreon campain therefore has been suspended, and replaced with Open Collective. You can find our new funding page here:
 
-[https://opencollective.com/phalcon](https://phalcon.link/fund)
+[https://opencollective.com/phalcon](https://phalcon.io/fund)
 
 With Open Collective, any expense has to be approved by the team and everyone can see who spent how much and on what.
 
 If you have been supporting us through Patreon, we have already sent you an email asking you to cancel your patronage there and continue (if you wish) in Open Collective.
 
-If you are considering in supporting us, feel free to visit [our OpenCollective page](https://phalcon.link/fund) and support us!
+If you are considering in supporting us, feel free to visit [our OpenCollective page](https://phalcon.io/fund) and support us!
 
 A big thank you to our supporters, backers as well as users!! 
-
-
-<3 Phalcon Team
-

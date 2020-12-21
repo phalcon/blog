@@ -59,5 +59,3 @@ zephir build --backend=ZendEngine3
 ```
 
 As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!
-
-<3 Phalcon Team

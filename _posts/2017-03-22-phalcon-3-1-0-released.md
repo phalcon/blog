@@ -38,7 +38,7 @@ Please note that Phalcon 3.1 is not compatible with PHP 7.1. If you want to use 
 </h5>
 
 ### Community 
-Big kudos to our community as always for reporting, suggesting and applying fixes and making our framework better with every release! A big thank you to all our backers and supporters that help us by joining our funding campaign. [https://phalcon.link/fund](https://phalcon.link/fund)
+Big kudos to our community as always for reporting, suggesting and applying fixes and making our framework better with every release! A big thank you to all our backers and supporters that help us by joining our funding campaign. [https://phalcon.io/fund](https://phalcon.io/fund)
 
 ### Team
 We are making some changes to our team, bringing more people in to help with the organization, management as well as structure of the project. Our end goals are to produce timely releases with zero or minimal bugs, and to implement new features regularly. This is still work in progress, so once we have everything settled, we will explain everything with a relevant blog post.
@@ -59,11 +59,8 @@ Note that running the installation script will replace any version of Phalcon in
 
 Windows DLLs are available in the [download page](https://phalcon.io/en/download/windows).
 
-<h5 class="alert alert-danger">
-<strong>NOTE</strong>: Linux packages will be available in a couple of hours after the posting of this blog post
-</h5>
+> **NOTE**: Linux packages will be available in a couple of hours after the posting of this blog post
+{: .alert .alert-danger }
 
 We encourage existing Phalcon 3 users to update to this version.
 
-
-<3 Phalcon Team

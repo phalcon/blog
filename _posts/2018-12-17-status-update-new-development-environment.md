@@ -11,7 +11,7 @@ tags:
   - tests
   - development
 ---
-We have been working hard to ensure that bugs are fixed and v4 is getting close to a release state. As always we would like to thank all of our [contributors](https://github.com/phalcon/cphalcon/graphs/contributors) who have been helping in this effort, as well as everyone on our community sites ([forum](https://phalcon.link/forum), [discord](https://phalcon.link/discord) etc.) for engaging in conversations, sharing criticism and ideas! We couldn't have made it this far without this input.
+We have been working hard to ensure that bugs are fixed and v4 is getting close to a release state. As always we would like to thank all of our [contributors](https://github.com/phalcon/cphalcon/graphs/contributors) who have been helping in this effort, as well as everyone on our community sites ([forum](https://phalcon.io/forum), [discord](https://phalcon.io/discord) etc.) for engaging in conversations, sharing criticism and ideas! We couldn't have made it this far without this input.
 <!--more-->
 ### v4
 Phalcon v4 is moving closer and closer to a release date. We have started using Github Projects to keep track on what needs to be done, what is in progress and what has been done. The project for v4 is located [here](https://github.com/phalcon/cphalcon/projects/3). As you can see there is a bit of work to be completed still prior to the release. The great news though is that more than 100 cards have been `Done` both from the team's work as well as pull requests from you, the community!
@@ -22,7 +22,7 @@ There are some cards that will not make it to the `Done` column for v4, for inst
 We have released a new testing environment for Phalcon. The environment utilizes [docker](https://www.docker.com) and [nanobox.io](https://nanobox.io) to set up the whole environment for Phalcon, allowing you to develop on your local machine as well as run the testing suite, without having to worry about any dependencies. In our next blog post we will explain in detail on how to set up the environment on your machine and run the tests, so stay tuned!
 
 ### Backers - OpenCollective
-As usual, we would like to give a shoutout to all of our backers and supporters who help us financially. We use [OpenCollective](https://opencollective.com/phalcon) to handle the financial support for our project, where anyone can become a backer of our project. [OpenCollective](https://opencollective.com/phalcon) also maintains the list of expenses that have been requested and paid, including receipts. This of course ensures full transparency allowing anyone to see where the funds are spent. Admittedly we have been very 'stingy' in spending these funds and only use it whenever we have items that we cannot deal ourselves. In 2019 there is a discussion of a Phalcon meeting (still in the works) at a conference, so we might be using some of that money for transportation. We will discuss this further in our [discord](https://phalcon.link/discord) server.
+As usual, we would like to give a shoutout to all of our backers and supporters who help us financially. We use [OpenCollective](https://opencollective.com/phalcon) to handle the financial support for our project, where anyone can become a backer of our project. [OpenCollective](https://opencollective.com/phalcon) also maintains the list of expenses that have been requested and paid, including receipts. This of course ensures full transparency allowing anyone to see where the funds are spent. Admittedly we have been very 'stingy' in spending these funds and only use it whenever we have items that we cannot deal ourselves. In 2019 there is a discussion of a Phalcon meeting (still in the works) at a conference, so we might be using some of that money for transportation. We will discuss this further in our [discord](https://phalcon.io/discord) server.
 
 ### Github Pages - Blog - BuiltWith
 We have started utilizing [Github Pages](https://pages.github.com) to host this blog as well as the [BuiltWith](https://builtwith.phalcon.io) site. The reason behind this is really time. As you know we are a small team, and we have day jobs, so there is very little time to work on all of our sites in regards to maintenance and new features for those projects. We want to end up with a small number of projects that are maintained regularly and showcase the power of Phalcon.  Having more than 40 repositories, around half of them being applications does not help :)
@@ -38,9 +38,4 @@ We also ported our blog to [Github Pages](https://pages.github.com). Again the r
 ### Outreach
 As discussed in a previous blog post, we will start having hangouts for an hour or two, once a month. These will start in 2019. We will announce the starting date in a future blog post.
 
-
 As always, a huge thanks to our community!!
-
-
-
-<3 Phalcon Team

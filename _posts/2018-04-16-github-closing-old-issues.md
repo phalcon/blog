@@ -25,12 +25,7 @@ In an effort to clean up our issue list as well as be able to focus on valid iss
 
 This new bot will allow us to shorten the list of issues and focus in fixing and closing valid issues from the list. 
 
-<h5 class="alert alert-danger">
-<strong>NOTE</strong>: The bot is not part of any Artificial Intelligence code, so it is going to close issues that have been inactive the last 90 days. This could very well close valid issues that we have not had the time to address yet. If your issue has been automatically closed and it is valid, please help us by reopening it or creating a new one.  
-</div>
+> **NOTE**: The bot is not part of any Artificial Intelligence code, so it is going to close issues that have been inactive the last 90 days. This could very well close valid issues that we have not had the time to address yet. If your issue has been automatically closed and it is valid, please help us by reopening it or creating a new one.  
+{: .alert .alert-danger }
 
 We would like to once more thank our contributors as well as sponsors for helping us make Phalcon awesome!
-
-
-<3 Phalcon Team
-

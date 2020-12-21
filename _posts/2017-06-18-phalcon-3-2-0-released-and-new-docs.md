@@ -91,13 +91,11 @@ Note that running the installation script will replace any version of Phalcon in
 
 [PackageCloud.io](https://packagecloud.io/phalcon/stable) has been updated to allow your package manager (for Linux machines) to upgrade to the new version seamlessly.
 
-<h5 class="alert alert-danger">
-<strong>NOTE</strong>: Windows DLLs are now available in our <a href="https://github.com/phalcon/cphalcon/releases/tag/v3.2.0">Github Release</a> page.
-</h5>
+> **NOTE**: Windows DLLs are now available in our <a href="https://github.com/phalcon/cphalcon/releases/tag/v3.2.0">Github Release</a> page.
+{: .alert .alert-danger }
 
-<h5 class="alert alert-info">
-PackageCloud will be updated shortly.
-</h5>
+> PackageCloud will be updated shortly.
+{: .alert .alert-info }
 
 We encourage existing Phalcon 3 users to update to this version.
 

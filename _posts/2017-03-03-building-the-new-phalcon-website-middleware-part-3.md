@@ -310,15 +310,13 @@ We have looked at the middleware implementation, what is the purpose of each of 
 
 No implementation is perfect for every application. We have tried to keep this one simple so that the learning curve is much smoother, and also tried to show you different ways of doing things with Phalcon so that we can inspire you to write even better applications!
 
-If you have any comments, suggestions, need to discuss something, please remember that you can find us in our [slack channel](https://phalcon.link/slack) or our [forum](https://phalcon.link/forum).
+If you have any comments, suggestions, need to discuss something, please remember that you can find us in our [slack channel](https://phalcon.io/slack) or our [forum](https://phalcon.io/forum).
  
 We would welcome suggestions for this implementation using the above, or even pull requests for something we have missed or a new enhancement, in our [github repository](https://github.com/phalcon/website).
  
-If Phalcon has helped you with your personal projects, consider supporting us in our [Patreon](https://phalcon.link/fund) page. Contributions do not necessarily need to be monetary. We always welcome pull requests for improvements to Phalcon or documentation, as well as success stories to be showcased in this blog.
+If Phalcon has helped you with your personal projects, consider supporting us in our [Patreon](https://phalcon.io/fund) page. Contributions do not necessarily need to be monetary. We always welcome pull requests for improvements to Phalcon or documentation, as well as success stories to be showcased in this blog.
 
 Thank you all 
-
-<3 Phalcon Team
 
 ### References
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)
@@ -330,5 +328,5 @@ Thank you all
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
 - [Guzzle](http://docs.guzzlephp.org/en/stable/)
-- Transifex
+
 

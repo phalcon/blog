@@ -99,5 +99,3 @@ Thanks again to all!
 
 Enjoy Phalcon 2
 
-
-<3 Phalcon Team

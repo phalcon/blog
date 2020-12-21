@@ -55,5 +55,3 @@ One of our [latest pull requests](https://github.com/phalcon/cphalcon/pull/14234
 And there goes another experiment, another effort to make Phalcon better for our users.
 
 Thank you to all that make this framework better every day!
-
-<3 Phalcon Team

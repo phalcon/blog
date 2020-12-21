@@ -319,11 +319,9 @@ sudo ./install
 
 All tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon/builds/3692718), still being an alpha, you should not have major problems with this version. Help us to test and report any bug/problem on [github](http://github.com/phalcon/cphalcon)
 
-Complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.8.0/CHANGELOG) for this version.
+Complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.8.0/CHANGELOG) for this version.
 
 Check it out and let us know what you think!
 
-PS: Merry christmas, Happy new year, and thanks for this amazing year!
+PS: Merry christmas, Happy new year, and thanks for this amazing year!
 
-
-<3 The Phalcon Team

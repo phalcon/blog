@@ -81,6 +81,3 @@ $ /etc/init.d/php-fpm restart
 Welcome to the living on the edge with Phalcon. ;)
 
 Enjoy! If you find bugs please report them on [GitHub](https://github.com/phalcon/cphalcon/issues).
-
-
-<3 Phalcon Team

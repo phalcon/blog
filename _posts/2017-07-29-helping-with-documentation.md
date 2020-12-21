@@ -155,7 +155,3 @@ For languages other than English, you will need to use Crowdin Project for the d
 The translated strings will be brought into the documentation via pull requests from Crowdin.
 
 Enjoy!!
-
-
-<3 Phalcon Team
-

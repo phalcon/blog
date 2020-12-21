@@ -44,5 +44,3 @@ zephir build
 We rely on the feedback from everyone in the community to flush out bugs and upgrade issues ahead of a big release like this. So please give Phalcon 2 a try on your app, and if you're starting a new app today, you should also probably try the beta2 for that, if you're just the least bit savvy with Phalcon.
 
 
-<3 Phalcon Team
-

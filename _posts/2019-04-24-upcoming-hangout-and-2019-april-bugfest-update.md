@@ -29,6 +29,4 @@ Everyone that helps us during April Bugfest, will receive a T-Shirt and some sti
 This weekend, Saturday 27th of April at 12:00 EST (16:00 UTC) we will have our monthly community hangout. More information on that in a future blog post.
 
 ### Thank you!
-Thank you to all that have contributed so far!! If you have any questions, feel free to visit us on our [Discord](https://phalcon.link/discord) server.
-
-<3 Phalcon Team
+Thank you to all that have contributed so far!! If you have any questions, feel free to visit us on our [Discord](https://phalcon.io/discord) server.

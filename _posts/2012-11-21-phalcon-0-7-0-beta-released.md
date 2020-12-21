@@ -244,5 +244,3 @@ Windows DLLs are available on the [download](https://phalcon.io/download) page.
 
 Thanks for using Phalcon!
 
-
-<3 The Phalcon Team

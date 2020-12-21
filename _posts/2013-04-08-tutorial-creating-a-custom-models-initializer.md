@@ -59,7 +59,7 @@ $di['modelsManager'] = function () {
 ```
 
 ### Model initialization
-AnnotationsInitializer is a plugin that reads the annotations in the model's class performing the appropriate tasks according to the annotations used. A model with annotations is the following:
+AnnotationsInitializer is a plugin that reads the annotations in the model's class performing the appropriate tasks according to the annotations used. A model with annotations is the following:
 
 ```php
 <?php
@@ -322,7 +322,7 @@ $di['modelsMetadata'] = function () {
 ```
 
 ### Caching Annotations/Meta-Data
-Parsing/Reading annotations and processing meta-data could add an important amount of overhead to the application in every request reducing the performance. While the Phalcon's [annotations parser](https://docs.phalcon.io/latest/en/annotations) is very fast, you could improve the speed by aggressively caching the annotations and meta-data using some of the adapters provided by the framework. In our example, we're using files to export the processed data avoiding the permanent processing in each request:
+Parsing/Reading annotations and processing meta-data could add an important amount of overhead to the application in every request reducing the performance. While the Phalcon's [annotations parser](https://docs.phalcon.io/latest/en/annotations) is very fast, you could improve the speed by aggressively caching the annotations and meta-data using some of the adapters provided by the framework. In our example, we're using files to export the processed data avoiding the permanent processing in each request:
 
 ```php
 // Use the memory meta-data adapter in development
@@ -360,5 +360,3 @@ foreach ($robot->robotsParts as $robotPart) {
 ### Conclusion
 This tutorial explains various strategies to extend Phalcon, the use of annotations, some additional information about the inner workings of the [ORM](https://docs.phalcon.io/latest/en/db-models). We hope that this example serve as a guide to create more robust applications with Phalcon.
 
-
-<3 The Phalcon Team

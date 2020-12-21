@@ -38,6 +38,3 @@ If a new version has to have an API change which will change backwards compatibi
 * Phalcon 1.3.x: Supported until 2015-05-08. No longer supported.
 * Phalcon 2.0.x: Supported until 2016-04-17 (1 year from release date)
 * Phalcon 2.1.x: LTS release. Supported until 2017-09-30 (2 years from release date)
-
-
-<3 Phalcon Team

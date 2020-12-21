@@ -25,7 +25,7 @@ Additionally we reached out to some very talented members of the community with 
 ### Documentation
 Admittedly our documentation needs a big revamp, adding more examples, tutorials, proper explanations for each component and keeping consistency throughout.
 
-We have already started the effort with rewriting some of the documentation, which will be in the form of `.md` files using Markdown for the formatting. Everyone is welcome to join our effort in our [Discord](https://phalcon.link/discord) channel, where we discuss and collaborate on the content.
+We have already started the effort with rewriting some of the documentation, which will be in the form of `.md` files using Markdown for the formatting. Everyone is welcome to join our effort in our [Discord](https://phalcon.io/discord) channel, where we discuss and collaborate on the content.
 
 
 ### Sites
@@ -44,13 +44,7 @@ We will post the results of the survey in a week or so, when we get more replies
 
 Once more a big thank you to our amazing community! You guys rock!
 
-
-<3 Phalcon Team
-
 ### References
-- [Forum](https://phalcon.link/forum)
-- [Slack](https://phalcon.link/slack)
-- [Github](https://phalcon.link/github)
 - [Website Implementation #1](/post/building-the-new-phalcon-website-implementation-part-1)
 - [Website Implementation #2](/post/building-the-new-phalcon-website-bootstrap-part-2) 
 - [Website Implementation #3](/post/building-the-new-phalcon-website-middleware-part-3)

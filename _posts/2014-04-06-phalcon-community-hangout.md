@@ -14,12 +14,10 @@ We talked about where we are, where we came from and what the future steps are w
 
 More hangouts will be scheduled in the near future, hopefully making this a regular event for our community. We will also cater for members of the community that are not English speakers, by creating hangouts for Spanish speaking, Russian etc. The goal is to engage as many members as possible!
 
-The love and trust you all have shown to our framework is what drives us to make it better, push performance, introduce more features and make Phalcon the best PHP framework there is. 
+The love and trust you all have shown to our framework is what drives us to make it better, push performance, introduce more features and make Phalcon the best PHP framework there is. 
 
 For those that missed it, the video is below.
 
-
-<3 Phalcon Team
 
 [![image](/assets/files/2014-04-06-youtube.png)](https://www.youtube.com/user/PhalconPHP)
 [![image](/assets/files/2014-04-06-facebook.png)](http://www.facebook.com/pages/Phalcon/134230726685897)

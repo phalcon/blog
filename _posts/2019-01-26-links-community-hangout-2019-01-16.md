@@ -23,14 +23,4 @@ Thank you to all that attended live and all those that will watch the live strea
 
 As always we love to hear back from the community so feel free to reach us on:
 
-* [Forum](https://phalcon.link/forum)
-* [Discord](https://phalcon.link/discord)
-* [Github](https://phalcon.link/github)
-* [Facebook](https://phalcon.link/fb)
-* [Twitter](https://phalcon.link/t)
-* [Gab](https://phalcon.link/gab)
-* [MeWe](https://phalcon.link/mewe)
-
 We will be having more hangouts in the coming weeks, at least one hangout at the last Saturday of every month.
-
-<3 Phalcon Team

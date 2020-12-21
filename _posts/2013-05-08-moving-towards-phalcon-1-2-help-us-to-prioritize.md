@@ -3,7 +3,7 @@ layout: post
 title: "Moving towards Phalcon 1.2: Help us to prioritize our roadmap"
 tags: [php, phalcon, "1.2", roadmap, "1.x"]
 ---
-We are constantly trying to enhance Phalcon, to make it a better framework using a completely new approach towards PHP frameworks. We are continuously adding new features and keeping the core stable and increasing performance as much as possible.
+We are constantly trying to enhance Phalcon, to make it a better framework using a completely new approach towards PHP frameworks. We are continuously adding new features and keeping the core stable and increasing performance as much as possible.
 
 Looking into future development, we would love to create a roadmap together and be clear as to what work is more important to the community so that we can all create awesome and fast applications.
 
@@ -14,5 +14,3 @@ Comment with a "+1" in those which you think are more important than others, or 
 
 A big - thank you for your time and participation making Phalcon even better!
 
-
-<3 The Phalcon Team

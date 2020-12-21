@@ -40,5 +40,3 @@ Phalcon 1.2.5 is now available on the
 
 Enjoy!
 
-
-<3 The Phalcon Team

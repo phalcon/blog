@@ -13,6 +13,3 @@ Kindly visit the link above and upvote this feature. If we get enough votes the 
 Feel free to share the link with your peers and friends :)
 
 Thank you!
-
-
-<3 The Phalcon Team

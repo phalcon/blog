@@ -45,34 +45,3 @@ Special thank you to all those that have been testing v4 and reporting bugs. Wit
 Also thank you to those that have contributed to the testing suite, as well as the documentation either with corrections for typos or translating documents. 
 
 If you find bugs, please report them in our [Github Issues](https://github.com/phalcon/cphalcon/issues) page. Alternatively you can always join us in our [Discord server](https://phalcon.io/discord) or our [Forum](https://phalcon.io/forum).
-
-<hr>
-
-Chat - Q&A
-
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://brighteon.com/bitchute)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-<3 Phalcon Team

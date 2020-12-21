@@ -47,6 +47,7 @@ layout: default
                         </div>
                         {% endif %}
                         {{ page.content }}
+                        {% include post-footer.html %}
                     </div>
                     <div class="phalcon-blog__tags-items">
                         {% for tag in page.tags %}
@@ -55,6 +56,4 @@ layout: default
                         </a>
                         {% endfor %}
                     </div>
-
-                    <div id="commento"></div>
                 </div>

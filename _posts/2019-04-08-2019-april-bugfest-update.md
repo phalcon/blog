@@ -28,6 +28,4 @@ For those that missed it, during April 2019, anyone can contribute to our reposi
 
 Everyone that helps us during April Bugfest, will receive a T-Shirt and some stickers as a thank you from the team!
 
-Thank you to all that have contributed so far!! If you have any questions, feel free to visit us on our [Discord](https://phalcon.link/discord) server.
-
-<3 Phalcon Team
+Thank you to all that have contributed so far!! If you have any questions, feel free to visit us on our [Discord](https://phalcon.io/discord) server.

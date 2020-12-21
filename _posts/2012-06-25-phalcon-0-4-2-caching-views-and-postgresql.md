@@ -22,5 +22,3 @@ Check out the full [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/C
 We are a tiny core team of developers working very hard, so any support the community can offer to the project is more than appreciated!
 
 Thanks again to all your ideas and support making this framework a reality!
-
-<3 Phalcon Team

@@ -90,5 +90,3 @@ Later on, we will be planning the features to include in Phalcon 2.1, for now:
 
 Thanks to everyone involved in making this version as well to the community for their continuous input and feedback!
 
-
-<3 Phalcon Team

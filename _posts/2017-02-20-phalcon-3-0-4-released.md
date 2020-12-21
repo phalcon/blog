@@ -50,7 +50,7 @@ The appropriate branches will be prepared shortly.
 
 We are still working on identifying all the changes that PHP 7.1 has and how it affects Zephir. 
 
-A big thank you to all our backers and supporters that help us by joining our funding campaign. [https://phalcon.link/fund](https://phalcon.link/fund)
+A big thank you to all our backers and supporters that help us by joining our funding campaign. [https://phalcon.io/fund](https://phalcon.io/fund)
 
 ### Update/Upgrade
 
@@ -70,4 +70,3 @@ Windows DLLs are available in the [download page](https://phalcon.io/en/download
 
 We encourage existing Phalcon 3 users to update to this maintenance version.
 
-<3 Phalcon Team

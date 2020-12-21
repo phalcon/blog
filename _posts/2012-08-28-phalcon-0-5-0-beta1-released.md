@@ -38,5 +38,3 @@ Please open an issue in [Github](https://github.com/phalcon/cphalcon/issues?stat
 Use our [forum](https://forum.phalcon.io)
 
 Looking forward to hearing from you! :)
-
-<3 Phalcon Team

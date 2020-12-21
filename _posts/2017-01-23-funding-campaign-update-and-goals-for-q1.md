@@ -37,7 +37,7 @@ The level of financial support that we receive, will allow our lead developer to
 
 We hope that you will consider becoming a [patron](https://www.patreon.com/bePatron?u=4653615) of Phalcon!
 
-<a href="https://phalcon.link/fund">
+<a href="https://phalcon.io/fund">
     <button class="btn button-small btn-danger">
         Become a patron
     </button>
@@ -67,5 +67,3 @@ We will be updating our blog with more posts from now on, even from guests, show
 
 Thank you once more for 2016 and on to greater things for 2017!
 
-
-<3 Phalcon Team

@@ -28,8 +28,6 @@ The application code has been shared on [github](https://github.com/phalcon/invo
 
 We expect to incrementally add inline comments to explain better how the application works.
 
-Feel free to use any part of the code in your applications. Send us your comments if you find an error or have any feedback. 
+Feel free to use any part of the code in your applications. Send us your comments if you find an error or have any feedback. 
 
 Hopefully now, you feel more confident creating your own Phalcon applications :)
-
-<3 Phalcon Team

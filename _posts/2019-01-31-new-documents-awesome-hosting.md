@@ -97,6 +97,3 @@ Finally a great feature offered by [Netlify](https://netlify.com) is the ability
 
 ### Thank you
 Thank you once more to [Netlify](https://netlify.com) for their excellent service and support! If any of our friends are thinking about replicating what we did here for personal projects or to reduce maintenance for their documentation, [Netlify](https://netlify.com) is definitely a service to consider!
-
-
-

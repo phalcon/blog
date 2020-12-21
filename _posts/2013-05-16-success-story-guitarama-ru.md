@@ -16,7 +16,7 @@ Yet another success story from our community member Michael ([Xpundel](https://g
 >
 > The site was re-launched using Phalcon at the beginning of January, 2013 and has since shown steady attendance growth. The Google stats can be found here.
 >
-> The site use Twig as the template engine (historical reasons), but I recently realized that the speed of Twig does not suit the site, in the near future I plan to replace it with Volt. 
+> The site use Twig as the template engine (historical reasons), but I recently realized that the speed of Twig does not suit the site, in the near future I plan to replace it with Volt. 
 >
 > There are still a lot of optimizations to do, and work on the project is constantly in process.
 >
@@ -30,5 +30,3 @@ Yet another success story from our community member Michael ([Xpundel](https://g
 
 If you have success cases with Phalcon, let us know so we can review them and share them with the community on our blog. :)
 
-
-<3 The Phalcon Team

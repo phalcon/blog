@@ -46,5 +46,3 @@ Related links:
 
 In future articles we will explain how to make faster web sites/applications using Phalcon also techniques and best practices to improve performance in applications made with PHP.
 
-
-<3 The Phalcon Team

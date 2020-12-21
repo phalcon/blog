@@ -7,4 +7,4 @@ tags: [php, phalcon, sample, tutorial, "1.x"]
 
 
 <!--more-->
-<3 The Phalcon Team
+

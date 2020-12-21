@@ -13,7 +13,7 @@ With Phalcon 0.5.0 (still under development) we are introducing a new design pat
 
 Services can be registered by the framework itself or the developer. When a component A requires component B (or an instance of its class) to operate, it can request component B from the container, rather than creating a new instance component B.
 
-Services can be registered in several ways:
+Services can be registered in several ways:
 
 ```php
 // Create the Dependency Injector Container
@@ -44,7 +44,7 @@ $di->set(
 
 In the above example, when the framework needs to access the request data, it will ask for the service identified as ‘request' in the container. The container in turn will return an instance of the required service. A developer might eventually replace the `Phalcon\Http\Request` component bundled with one provided by another vendor or created by the developer him/herself.
 
-Each of the methods (demonstrated in the above example) used to set/register a service has advantages and disadvantages. It is up to the developer and the particular requirements that will designate which one is used. 
+Each of the methods (demonstrated in the above example) used to set/register a service has advantages and disadvantages. It is up to the developer and the particular requirements that will designate which one is used. 
 
 Setting a service by a string is simple but lacks flexibility. Setting services using an array offers a lot more flexibility but makes the code more complicated. The lambda function is a good balance between the two but could lead to more maintenance than one would expect.
 
@@ -111,5 +111,3 @@ $request = $di->getShared("request");
 
 **Conclusion**
 This has been one of the most popular requests by the community. `Phalcon\\Di` allows developers to extend and thoroughly test their code (with mock objects etc.) while keeping the same high performance levels and memory consumption low.
-
-<3 Phalcon Team

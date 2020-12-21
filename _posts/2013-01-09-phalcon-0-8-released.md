@@ -21,5 +21,3 @@ We hope you enjoy this release and are looking forward to your comments,
 
 Thanks for using Phalcon!
 
-
-<3 The Phalcon Team

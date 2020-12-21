@@ -178,11 +178,8 @@ Windows DLLs are available in the [download page](https://phalcon.io/en/download
 See the [upgrading guide](https://blog.phalcon.io/post/guide-upgrading-to-phalcon-2) for more information about upgrading to Phalcon 2.0.x from 1.3.x.
 
 * [Documentation](https://docs.phalcon.io)
-* [API](https://phalcon.link/api) (Thanks to [gsouf](https://github.com/gsouf))
 
 ### Thanks
 
 Thanks to everyone involved in making this version: collaborators and as well to the community for their continuous input and feedback!
 
-
-<3 Phalcon Team

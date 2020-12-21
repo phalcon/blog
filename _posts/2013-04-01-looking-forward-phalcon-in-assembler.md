@@ -8,9 +8,9 @@ tags: [php, phalcon, roadmap, aprilsfool, "1.x"]
 Continuing our work of trying to make Phalcon even faster, we have decided to start migrating our code to [assembler](http://en.wikipedia.org/wiki/Assembly_language).
 
 <!--more-->
-After some internal testing we have concluded that this is ​the next step for this project.
+After some internal testing we have concluded that this is the next step for this project.
 
-We have​ estimated ​that the migration to assembler will take approximately two years but by the end Phalcon will be even faster.
+We have estimated that the migration to assembler will take approximately two years but by the end Phalcon will be even faster.
 
 In addition to this, developers can write their own functions in assembler and be executed within PHP:
 
@@ -44,6 +44,6 @@ ret';
 Phalcon\Asm::run($asm);
 ```
 
-We are looking forward to the support of the community to begin this​ new phase. If you work in PHP and also are an expert in assembler, we invite you to join us.
+We are looking forward to the support of the community to begin this new phase. If you work in PHP and also are an expert in assembler, we invite you to join us.
 
 Enjoy!

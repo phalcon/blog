@@ -76,9 +76,4 @@ We have submitted papers for a couple of conferences coming in 2019. If we get a
 
 Additionally, we will start having hangouts for an hour or two online, to meet and talk to all of you. We are thinking of once a month for now, and increase the frequency if we need to. More on that in a future blog post.
 
-
 Enjoy!!
-
-
-
-<3 Phalcon Team

@@ -29,9 +29,9 @@ A summary of the new features introduced follows:
 Phalcon 1.2 is now available on the [master](https://github.com/phalcon/cphalcon) branch and [DLLs](https://phalcon.io/download/windows) are available for download in our [download](https://phalcon.io/download/windows) area. You can also access the latest documentation [here](https://docs.phalcon.io/latest/en/index).
 
 **Motto**
-For the longest time, we have been recognized as *the fastest PHP framework*, and we are always try to push the envelope, make Phalcon even faster with every release. However, our work has not only been focused in lowering the processing time, squeezing more requests per second on existing hardware while keeping memory usage low. We also wanted to make Phalcon feature rich, introducing built-in caches, autoloaders, NoSQL databases and much more! All this work allowed us to have one of the fastest frameworks (if not the fastest one) in the open source world for PHP, while offering a wealth of features for developers to use. Despite the number of features that Phalcon offers, which could very well slow a framework, we are still in the top positions (if not first) in the various performance tests in which we participated in.
+For the longest time, we have been recognized as *the fastest PHP framework*, and we are always try to push the envelope, make Phalcon even faster with every release. However, our work has not only been focused in lowering the processing time, squeezing more requests per second on existing hardware while keeping memory usage low. We also wanted to make Phalcon feature rich, introducing built-in caches, autoloaders, NoSQL databases and much more! All this work allowed us to have one of the fastest frameworks (if not the fastest one) in the open source world for PHP, while offering a wealth of features for developers to use. Despite the number of features that Phalcon offers, which could very well slow a framework, we are still in the top positions (if not first) in the various performance tests in which we participated in.
 
-Moving forward, we have decided to change the framework's main motto to: **"The best balance of speed and functionality"**, because it reflects more accurately what Phalcon really is. While working on performance, we are continually adding functionality to give you everything you need to create amazing applications. This allowed us to gradually become a very robust framework.
+Moving forward, we have decided to change the framework's main motto to: **"The best balance of speed and functionality"**, because it reflects more accurately what Phalcon really is. While working on performance, we are continually adding functionality to give you everything you need to create amazing applications. This allowed us to gradually become a very robust framework.
 
 Our real goal is balance. Maintaining a good balance between speed, features and ease of use. This is our ambitious goal from now on, to keep a good balance and not only being the fastest PHP framework.
 
@@ -47,5 +47,3 @@ Thanks also to those who help spread the framework and who share success stories
 
 Thank you all!
 
-
-<3 The Phalcon Team

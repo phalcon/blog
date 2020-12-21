@@ -49,5 +49,3 @@ And finally, [@jeckerson](https://github.com/jeckerson) decided to send a pictur
 A huge thank you to all that contributed. There were a few more contributors that opted not to send a picture. 
 
 We intend on having this competition every year so looking forward to our April Bugfest 2020
-
-<3 Phalcon Team <3

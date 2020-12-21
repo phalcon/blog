@@ -110,5 +110,3 @@ When you are sufficiently confident your application is working with Phalcon 2, 
 
 Happy Upgrading!
 
-
-<3 Phalcon Team

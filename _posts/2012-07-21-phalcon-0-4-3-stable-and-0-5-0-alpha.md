@@ -21,5 +21,3 @@ There is still more to come. The next alpha release (0.5.0 Alpha 2) we are plann
 If you have any problems you can send us your comments via the Phalcon's [forum](https://forum.phalcon.io).
 
 Thanks for your help!
-
-<3 Phalcon Team

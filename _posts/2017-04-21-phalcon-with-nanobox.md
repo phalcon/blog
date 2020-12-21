@@ -130,8 +130,3 @@ Nanobox has a [Phalcon Quickstart](https://github.com/nanobox-quickstarts/nanobo
 * [Twitter](http://twitter.com/nanobox_io)
 * [Slack](https://nanoboxio.slack.com)
 
-### Phalcon
-* [Slack](https://phalcon.link/slack)
-* [Twitter](https://phalcon.link/t)
-* [Facebook](https://phalcon.link/fb)
-* [Forum](https://phalcon.link/forum)

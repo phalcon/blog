@@ -87,4 +87,3 @@ If you still have any doubts feel free to comment on them and we will answer you
 
 ### Resources
 Zephir - [https://zephir-lang.com][https://zephir-lang.com]
-PhalconPHP - [https://phalcon.io][https://phalcon.io]

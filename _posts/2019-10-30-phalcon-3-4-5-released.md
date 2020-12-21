@@ -50,6 +50,3 @@ Note that running the installation script will replace any version of Phalcon in
 {: .alert .alert-info }
 
 Users of v3 that need/want to port your code to PHP 7.3 you will need to use this version and as always a big thank you to our contributors!
-
-
-<3 Phalcon Team

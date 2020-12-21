@@ -20,5 +20,4 @@ Little by little, we try to make Phalcon increasingly competitive, but, if you t
 
 As always latest versions are available from the [download page](https://phalcon.io/download), we hope you're as pleased with these improvements as we are!
 
-<3 Phalcon Team
 

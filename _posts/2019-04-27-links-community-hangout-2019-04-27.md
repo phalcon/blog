@@ -23,15 +23,3 @@ The slides of the hangout are [here](https://docs.google.com/presentation/d/1mFO
 Thank you to all that attended live and all those that will watch the live stream later. 
 
 As always we love to hear back from the community so feel free to reach us on:
-
-* [Forum](https://phalcon.link/forum)
-* [Discord](https://phalcon.link/discord)
-* [Github](https://phalcon.link/github)
-* [Telegram](https://phalcon.link/telegram)
-* [Gab](https://phalcon.link/gab)
-* [MeWe](https://phalcon.link/mewe)
-* [Facebook](https://phalcon.link/fb)
-* [Twitter](https://phalcon.link/t)
-
-
-<3 Phalcon Team

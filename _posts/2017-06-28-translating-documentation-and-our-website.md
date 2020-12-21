@@ -60,8 +60,6 @@ As always any suggestions for new languages or even corrections in our text are 
 #### Thank you!
 Thank you all for your contributions! You guys rock!  
 
-<3 Phalcon Team
-
 #### References:
 * [Crowdin](https://crowdin.com)
 * [Docs App Repository (Github)](https://github.com/phalcon/docs-app)

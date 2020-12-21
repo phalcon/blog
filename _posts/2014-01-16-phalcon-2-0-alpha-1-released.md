@@ -12,14 +12,14 @@ This release showcases yet another huge step forward in Phalcon releases.
 Unlike previous versions of Phalcon, most of this version is written in [Zephir](https://zephir-lang.com/). Zephir is a new language that we have been developing for several months now, which is specifically intended to ease the creation of extensions for PHP.
 
 <!--more-->
-To demonstrate the progress we have made in this release, we are running our official site with it. You can see this here.
+To demonstrate the progress we have made in this release, we are running our official site with it. You can see this here.
 
 ### What's missing?
 
 As any alpha version you may expect bugs and missing features, however outreach this point is very important to us, since it allows for the community to get involved in with it.
 
 - A large number of components and classes have been migrated to Phalcon 2 from the 1.x branches. You can see the progress [here](https://github.com/phalcon/cphalcon/wiki/Progress-2.0).
-- Phalcon 1.3 has important optimizations and improvements that need to be migrated and integrated into Phalcon 2.
+- Phalcon 1.3 has important optimizations and improvements that need to be migrated and integrated into Phalcon 2.
 - Phalcon 2.0 is passing a large number of unit tests. However, more work is needed to ensure that implemented functionality is compatible with 1.x prior to introducing any major changes.
 
 ### Zephir
@@ -51,5 +51,3 @@ We welcome your comments regarding this new release. If you discover any bugs, p
 
 Thanks!
 
-
-<3 The Phalcon Team

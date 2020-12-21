@@ -58,5 +58,3 @@ See the [upgrading guide](https://blog.phalcon.io/post/guide-upgrading-to-phalco
 
 Thanks to all the collaborators and the community!
 
-
-<3 Phalcon Team

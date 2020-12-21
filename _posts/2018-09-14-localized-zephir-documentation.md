@@ -33,5 +33,3 @@ For other languages, please use the interface in Crowdin. Their integration push
 Enjoy!!
 
 
-<3 Phalcon Team
-

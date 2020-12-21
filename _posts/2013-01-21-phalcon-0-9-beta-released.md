@@ -270,5 +270,3 @@ Windows users can [download](https://phalcon.io/download) a DLL from the downloa
 
 All tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon), so there should not be any major issues with this version. Please help us test and report any bugs or problems on [Github](https://github.com/phalcon/cphalcon/issues). If you have any questions about functionality, feel free to ask either in [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon) or in our [Google Group](https://groups.google.com/forum/#!forum/phalcon).
 
-
-<3 The Phalcon Team

@@ -24,7 +24,7 @@ Some of the [key features](/post/phalcon-0-7-0-beta-released) introduced are:
 - Compile "always" mode in Volt
 - Performance improvements calling internal functions/methods
 
-Another important addition to the framework, is a brand new test suite which will allow us to further test the code in various configurations, specifically when targeting model related tests. Thanks to this we're completing more than [600 tests](https://travis-ci.org/phalcon/cphalcon/builds/3499298) with more than 4500 assertions!
+Another important addition to the framework, is a brand new test suite which will allow us to further test the code in various configurations, specifically when targeting model related tests. Thanks to this we're completing more than [600 tests](https://travis-ci.org/phalcon/cphalcon/builds/3499298) with more than 4500 assertions!
 
 Additionally, in this version the [incubator](https://github.com/phalcon/incubator) has been born, a repository where the community has shared snippets and new adapters for existing components ([Redis](http://redis.io/), [HandlerSocket](http://yoshinorimatsunobu.blogspot.com/search/label/handlersocket), Memcached, Database, etc).
 
@@ -35,5 +35,3 @@ Additionally, in this version the [incubator](https://github.com/phalcon/incubat
 
 A big thank you to the community and contributors!
 
-
-<3 The Phalcon Team

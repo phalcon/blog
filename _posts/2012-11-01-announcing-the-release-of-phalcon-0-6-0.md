@@ -27,5 +27,3 @@ We will begin working in 0.7.0 mid next week. The 0.7.0 version will introduce i
 
 Thank you for making Phalcon better!
 
-
-<3 The Phalcon Team

@@ -577,5 +577,3 @@ We have looked at the boostrap of the application and each service setup for bot
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
 - [Guzzle](http://docs.guzzlephp.org/en/stable/)
-- Transifex
-

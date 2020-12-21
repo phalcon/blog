@@ -10,7 +10,7 @@ In short, your application may be affected if:
 <!--more-->
 - Your page is served with HTTP compression enabled (GZIP / DEFLATE).
 - Your page reflects user data via query string parameters, POST, etc.
-- Your application page serves Personally identifiable information*(*PII), a CSRF token, sensitive data.
+- Your application page serves Personally identifiable information*(*PII), a CSRF token, sensitive data.
 
 According to the [possible solutions](http://breachattack.com/#mitigations) to mitigate this attack as suggested by the authors, you can:
 
@@ -26,5 +26,3 @@ By default, Phalcon randomizes CSRF secrets for every request using pseudo rando
 
 You are also encouraged to disable GZip compression on your web server. For Apache, disable the [mod_deflate](http://httpd.apache.org/docs/2.2/mod/mod_deflate.html) module and for Nginx the [gzip module](http://wiki.nginx.org/HttpGzipModule). If you are using a different web server please check the relevant documentation in order to disable gzip compression if it is currently in use.
 
-
-<3 The Phalcon Team

@@ -295,5 +295,3 @@ Check out the complete source of the behavior on the [Incubator](https://github.
 ### Conclusion
 This example will help you understand how the behaviors in the ORM, as information about the fields that have been changed with respect to the original data and code reuse accessing global services application.
 
-
-<3 The Phalcon Team

@@ -15,12 +15,12 @@ In a recent post, we have highlighted how implementing Phalcon as a DLL/Shared O
 **PGO**
 A new feature as far as optimizations is concerned is now available, taking advantage of the compiled nature of Phalcon!
 
-Profile-guided optimization ([PGO](http://en.wikipedia.org/wiki/Profile-guided_optimization)), is a compiler optimization technique in computer programming that is aimed to improve runtime performance of applications. In contrast to traditional optimization techniques that  solely use the source code, PGO uses the results of test runs of the application to optimize the final generated code.
+Profile-guided optimization ([PGO](http://en.wikipedia.org/wiki/Profile-guided_optimization)), is a compiler optimization technique in computer programming that is aimed to improve runtime performance of applications. In contrast to traditional optimization techniques that  solely use the source code, PGO uses the results of test runs of the application to optimize the final generated code.
 
 **What does this mean?**
-Every environment and application is different and every application requires certain components that other applications do not. This particular optimization *teaches* the compiler which functions are executed more frequently and which functions are not. 
+Every environment and application is different and every application requires certain components that other applications do not. This particular optimization *teaches* the compiler which functions are executed more frequently and which functions are not. 
 
-Starting from 1.2, we are offering a new installation that compiles Phalcon with profiling enabled. 
+Starting from 1.2, we are offering a new installation that compiles Phalcon with profiling enabled. 
 
 The functioning works as follows:
 
@@ -44,6 +44,4 @@ cd cphalcon/build
 
 Restart your web server and enjoy and even-more-optimized version of Phalcon for your specific needs!
 
-
-<3 The Phalcon Team
 

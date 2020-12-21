@@ -37,11 +37,9 @@ _Please note that we only accept top level languages (2 character slug i.e. /en 
 
 Our funding campaign is moving along nicely! A big thank you to all of our sponsors! We are utilizing the currently collected funds to meet our Q1 goals, starting with a thorough investigation of PHP 7.1.x changes and how they affect Zephir and Phalcon. 
 
-If you wish to join our backers, feel free to visit [https://phalcon.link/fund](https://phalcon.link/fund)
+If you wish to join our backers, feel free to visit [https://phalcon.io/fund](https://phalcon.io/fund)
 
 ### Conclusion
 
 A big thank you to our community as well as our generous supporters!
 
-
-<3 Phalcon Team

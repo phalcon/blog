@@ -47,5 +47,3 @@ The page has installation instructions to help you with enabling that channel in
 As always, the Phalcon team wants to thank all of our early adopters that are helping with this new release, and also for the advice and support when problems such as this one arise.
 
 There will be a new alpha version coming up soon, since we have identified and fixed a good number of bugs found in `v4-alpha1`.
-
-<3 Phalcon Team

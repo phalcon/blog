@@ -399,6 +399,4 @@ git checkout 2.1.x
 zephir build
 ```
 
-We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalcon.io/).
-
-<3 Phalcon Team
+We hope that you will enjoy these improvements and additions. We invite you to share your thoughts and questions about this version on [Phosphorum](https://forum.phalcon.io/).

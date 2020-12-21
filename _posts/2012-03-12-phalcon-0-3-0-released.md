@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "Phalcon 0.3.0 released!"
-tags: [phalcon, php, framework, "0.3", release, "0.x"]
+tags:
+  - phalcon
+  - php
+  - framework
+  - "0.3"
+  - release
+  - "0.x"
 ---
 Last week, we were working on a huge refactoring over many aspects of Phalcon. Once all code in the last 0.2.x branch has reached maturity and reasonable stability We are now working on a new exciting branch producing a cleaner code base which let us to add many improvements as possible.
 
@@ -16,5 +22,3 @@ The current list of changes is:
 - A function cache was included to avoid potential function lookups on internal HashTables. This cache stores internal pointers to functions low level code improving performance.
 
 We would like to thank each and every person who has contributed feedback, testing, and more for the last release and invite you to send us your comments on the new branch.
-
-<3 Phalcon Team

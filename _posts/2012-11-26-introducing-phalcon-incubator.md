@@ -18,5 +18,3 @@ Popular contributions will be considered as potential candidates for inclusion i
 
 Enjoy!
 
-
-<3 The Phalcon Team

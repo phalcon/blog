@@ -65,10 +65,5 @@ For PHPStorm users, you can:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UbUx_6Cs6r4" frameborder="0" allowfullscreen></iframe>
 
-<h5 class="alert alert-danger">
-Note: The video above shows how to enable the IDE stubs cloning the DevTools. The installation is the same, all you have to do is locate the <code>Phalcon</code> project 
-</h5>
-
-
-<3 Phalcon Team
-
+> **NOTE**: The video above shows how to enable the IDE stubs cloning the DevTools. The installation is the same, all you have to do is locate the <code>Phalcon</code> project
+{: .alert .alert-danger }

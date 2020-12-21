@@ -12,5 +12,3 @@ This is INVO running there in the free plan.
 
 Check out this [article](http://phpmaster.com/php-as-a-service-fortrabbit/) highlighting some of its great features. If you know other hosting companies supporting Phalcon out of the box share them with the community.
 
-
-<3 The Phalcon Team

@@ -8,7 +8,7 @@ tags:
   - documentation
   - netlify
 ---
-This blog post is not related to the actual code of Phalcon, but to the process of updating our documentation and notifying our [Discord](https://phalcon.link/discord) server of the build status.
+This blog post is not related to the actual code of Phalcon, but to the process of updating our documentation and notifying our [Discord](https://phalcon.io/discord) server of the build status.
 <!--more-->
 We have blogged in the past that we have switched our documentation to a static site, utilizing Jekyll on the Netlify platform. The build process starts automatically whenever we push changes to our repository.
 
@@ -54,6 +54,4 @@ That's it. After that, any successful build will show a message similar to the o
 
 ![Successful build on Discord](/assets/files/discord.png "Successful build on Discord")
 
-If you wish to see the integration in action, you can stop by our [Discord](https://phalcon.link/discord) server and say hi!
-
-<3 Phalcon Team
+If you wish to see the integration in action, you can stop by our [Discord](https://phalcon.io/discord) server and say hi!

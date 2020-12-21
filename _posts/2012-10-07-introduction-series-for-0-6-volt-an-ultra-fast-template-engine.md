@@ -75,5 +75,3 @@ A preliminary documentation is available [here](https://docs.phalcon.io/latest/e
 
 Stay tuned, there's more news on the upcoming version of Phalcon!
 
-
-<3 The Phalcon Team

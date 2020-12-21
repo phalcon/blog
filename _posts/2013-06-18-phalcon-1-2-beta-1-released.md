@@ -3,7 +3,7 @@ layout: post
 title: "Phalcon 1.2 beta Released"
 tags: [php, phalcon, "1.2", beta, release, mvc, sql, framework, "1.x"]
 ---
-We are happy to announce the release of our first beta of Phalcon 1.2​!
+We are happy to announce the release of our first beta of Phalcon 1.2!
 
 In this version we have introduced several new features and performance improvements. The intend of this beta release is get input from the community, test the new functionality making sure everything works fine once production environments are updated to 1.2.
 
@@ -23,7 +23,7 @@ $volt->setOptions(
     ]
 );
 
-// ​ ​Recursively create the same structure in another directory
+//  Recursively create the same structure in another directory
 $volt->setOptions(
     [
         'compiledPath' => function ($templatePath) {
@@ -38,7 +38,7 @@ $volt->setOptions(
 ```
 
 ### Volt extensions
-With extensions the developer has more flexibility to extend the template engine, and override the compilation of a​ specific instruction, change the behavior of an expression or operator, add functions/filters, and more. The class below allows to use any PHP function in [Volt](https://docs.phalcon.io/latest/en/volt):
+With extensions the developer has more flexibility to extend the template engine, and override the compilation of a specific instruction, change the behavior of an expression or operator, add functions/filters, and more. The class below allows to use any PHP function in [Volt](https://docs.phalcon.io/latest/en/volt):
 
 ```php
 class PhpFunctionExtension
@@ -59,16 +59,16 @@ $volt->getCompiler()->addExtension(new PHPFunctionExtension());
 ```
 
 ### `Phalcon\Mvc\Url` static/dynamic paths
-With this separation ​the developer can change the base uri for static resources and define a different one for dynamic resources. This is particularly handy if a CDN or a different domain serving static resources​ are used:
+With this separation the developer can change the base uri for static resources and define a different one for dynamic resources. This is particularly handy if a CDN or a different domain serving static resources are used:
 
 ```php
 $di['url'] = function () {
     $url = new Phalcon\Mvc\Url();
 
-    // ​ ​Dynamic URIs without mod-rewrite
+    //  Dynamic URIs without mod-rewrite
     $url->setBaseUri('/index.php?_url=');
 
-    // ​ ​Static URI for CSS/Javascript/Images
+    //  Static URI for CSS/Javascript/Images
     $url->setStaticUri('/static/');
 
     return $url;
@@ -76,10 +76,10 @@ $di['url'] = function () {
 ```
 
 ### `Phalcon\Mvc\View\Simple`
-This component is an alternative component similar to `Phalcon\Mvc\View` but lacks of a render hierarchy. It is particularly useful for [micro applications](https://docs.phalcon.io/latest/en/micro) or obtaining​ the content of an arbitrary view as an string. Due to the lack of the rendering hierarchy it's more suitable to be used together with the [template inheritance](https://docs.phalcon.io/latest/en/volt#template-inheritance) provided by Volt.
+This component is an alternative component similar to `Phalcon\Mvc\View` but lacks of a render hierarchy. It is particularly useful for [micro applications](https://docs.phalcon.io/latest/en/micro) or obtaining the content of an arbitrary view as an string. Due to the lack of the rendering hierarchy it's more suitable to be used together with the [template inheritance](https://docs.phalcon.io/latest/en/volt#template-inheritance) provided by Volt.
 
 ```php
-//  ​View service
+//  View service
 $di['view'] = function () {
 
     $view = new Phalcon\Mvc\View\Simple();
@@ -105,7 +105,7 @@ $app->map('/login', function () use ($app) {
 It supports multiple render engines and also have automatic caching capabilities.
 
 ### Improved support for JSON
-Now it's easier get input as JSON and return responses in the same format. ​Returned instances of [Phalcon\Http\Response](https://docs.phalcon.io/latest/en/response) in micro applications are automatically sent by the application:
+Now it's easier get input as JSON and return responses in the same format. Returned instances of [Phalcon\Http\Response](https://docs.phalcon.io/latest/en/response) in micro applications are automatically sent by the application:
 
 ```php
 $app->post(
@@ -172,7 +172,7 @@ class Artists extends Phalcon\Mvc\Model
 }
 ```
 
-​The songs from an artist can be retrieved by accessing the relationship alias:
+The songs from an artist can be retrieved by accessing the relationship alias:
 
 ```php
 $artist = Artists::findFirst();
@@ -193,7 +193,7 @@ $phql   = 'SELECT Artists.name, Songs.name '
 $result = $this->modelsManager->query($phql);
 ```
 
-Many-to-Many related instances can be directly added to a model, the intermediate instances are automatically created in the sav​e process:
+Many-to-Many related instances can be directly added to a model, the intermediate instances are automatically created in the save process:
 
 ```php
 $songs = array()
@@ -214,7 +214,7 @@ $artist->save();
 
 ### Cascade/Restrict actions in Virtual Foreign Keys
 
-​[Virtual foreign keys](https://docs.phalcon.io/latest/en/db-models#virtual-foreign-keys) can ​now be set up to delete all the referenced records if the master record is deleted:
+[Virtual foreign keys](https://docs.phalcon.io/latest/en/db-models#virtual-foreign-keys) can now be set up to delete all the referenced records if the master record is deleted:
 
 ```php
 use Phalcon\Mvc\Model;
@@ -251,7 +251,7 @@ $artist->delete(); // Deleting also its songs
 ```
 
 ### Assets Minification
-[Phalcon\Assets](https://docs.phalcon.io/latest/en/assets) provides built-in minification of Javascript and CSS resources. The developer can create a collection of resources instructing the Assets Manager which ones must be filtered and which ones must be​left as they are. In addition to the above, [Jsmin](https://github.com/douglascrockford/JSMin/blob/master/jsmin.c) by Douglas Crockford is now part of the extension offering minification of javascript files for maximum performance. In the CSS land, [CSSMin](https://github.com/soldair/cssmin/blob/master/cssmin.c) by Ryan Day is also available to minify css files.
+[Phalcon\Assets](https://docs.phalcon.io/latest/en/assets) provides built-in minification of Javascript and CSS resources. The developer can create a collection of resources instructing the Assets Manager which ones must be filtered and which ones must beleft as they are. In addition to the above, [Jsmin](https://github.com/douglascrockford/JSMin/blob/master/jsmin.c) by Douglas Crockford is now part of the extension offering minification of javascript files for maximum performance. In the CSS land, [CSSMin](https://github.com/soldair/cssmin/blob/master/cssmin.c) by Ryan Day is also available to minify css files.
 
 ```php
 $manager = new Phalcon\Assets\Manager(
@@ -291,10 +291,10 @@ $manager
 $manager->outputJs();
 ```
 
-This component still needs a bit more of work​,​ adding caching, versioning and detection ​of changes to reduce processing. These changes will be available in the next beta.
+This component still needs a bit more of work, adding caching, versioning and detection of changes to reduce processing. These changes will be available in the next beta.
 
 ### Disallow literals in PHQL
-[PHQL](https://docs.phalcon.io/latest/en/phql) provides a set of features that aids the developer to secure his/her applications. Comparing to straight SQL, PHQL now has a new feature that increases even more security, thus avoiding a large number of potential [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) scenarios. The developer can now disable literals in PHQL. This means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. If by mistake a developer​ writes:
+[PHQL](https://docs.phalcon.io/latest/en/phql) provides a set of features that aids the developer to secure his/her applications. Comparing to straight SQL, PHQL now has a new feature that increases even more security, thus avoiding a large number of potential [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) scenarios. The developer can now disable literals in PHQL. This means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. If by mistake a developer writes:
 
 ```php
 $artist = Artists::findFirst("name = '$name'");
@@ -303,7 +303,7 @@ $artist = Artists::findFirst("name = '$name'");
 An exception will be thrown forcing the developer to use bound parameters.
 
 ### Own Scope for Partials
-​A developer can now pass an array of variables to a [partial](https://docs.phalcon.io/latest/en/views#using-partials) that only exists in the scope of the partial:
+A developer can now pass an array of variables to a [partial](https://docs.phalcon.io/latest/en/views#using-partials) that only exists in the scope of the partial:
 
 ```php
 <?php $this->partial('footer', ['links' => $myLinks]);
@@ -320,19 +320,19 @@ In Volt:
 
 ### Use `Phalcon\Tag` as Service
 
-`Phalcon\Tag` is now a service in `DI\FactoryDefault`​. So instead of doing this:
+`Phalcon\Tag` is now a service in `DI\FactoryDefault`. So instead of doing this:
 
 ```php
 Phalcon\Tag::setDefault('name', $robot->name);
 ```
 
-You can ​do one better and write:
+You can do one better and write:
 
 ```php
 $this->tag->setDefault('name', $robot->name);
 ```
 
-From now both syntax's are supported, but in further releases, the former will be deprecated. ​ There will be ample time for developers to migrate their applications to the new format. Using `Phalcon\Tag` as a service allow​s the developer to extend the component without affecting application stability.
+From now both syntax's are supported, but in further releases, the former will be deprecated.  There will be ample time for developers to migrate their applications to the new format. Using `Phalcon\Tag` as a service allows the developer to extend the component without affecting application stability.
 
 ### Macros in Volt
 Initial support for macros in Volt is implemented in this version:
@@ -352,7 +352,7 @@ Initial support for macros in Volt is implemented in this version:
 ```
 
 ### `BadMethodCallException` instead of warnings
-Before 1.1.0 if a wrong number of parameters was passed to a method a warning was raised. Starting from 1.2.0 `BadMethodCallException` exceptions will be thrown so you can see a complete trace ​ where the problem is generated.
+Before 1.1.0 if a wrong number of parameters was passed to a method a warning was raised. Starting from 1.2.0 `BadMethodCallException` exceptions will be thrown so you can see a complete trace  where the problem is generated.
 
 ```php
 $e = new Phalcon\Escaper();
@@ -370,9 +370,9 @@ Stack trace:
 ```
 
 ### Debug Component
-`Phalcon\Debug` ​offers the call stack to the developer, with a pretty presentation format. This helps with debugging and identifying errors.
+`Phalcon\Debug` offers the call stack to the developer, with a pretty presentation format. This helps with debugging and identifying errors.
 
-To use this component just remove any try/catch from your bootstrap. Add the following at the beginning of ​your script:
+To use this component just remove any try/catch from your bootstrap. Add the following at the beginning of your script:
 
 ```php
 (new Phalcon\Debug)->listen();
@@ -380,7 +380,7 @@ To use this component just remove any try/catch from your bootstrap. Add the fol
 
 A backtrace like this is showed when an exception is generated:
 
-1.2.0 includes other minor changes, bug fixes, stability and performance improvements.​ The complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.0/CHANGELOG)​ is​ here.
+1.2.0 includes other minor changes, bug fixes, stability and performance improvements. The complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.2.0/CHANGELOG) is here.
 
 ### Help with Testing
 This version can be installed from the 1.2.0 branch:
@@ -398,5 +398,3 @@ We welcome your comments regarding this new release in [Phosphorum](https://foru
 
 Thanks!
 
-
-<3 The Phalcon Team

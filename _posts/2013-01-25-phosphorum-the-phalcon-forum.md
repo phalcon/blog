@@ -31,5 +31,3 @@ Phosphorum is open sourced and released under the New BSD License. Feel free to 
 
 Enjoy!
 
-
-<3 The Phalcon Team

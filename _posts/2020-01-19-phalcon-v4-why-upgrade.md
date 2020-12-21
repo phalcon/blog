@@ -109,34 +109,3 @@ A: We have been working on v4 for more than a year. After v4 was released we mov
 Remember, we also have day jobs so our release schedule is impacted by how much free time we have to devote to the project. Moving to smaller stints, we ensure that we address only issues and functionality we can release, without promising more than what we can work on. This also helps the community by keeping everyone informed on a regular basis.
 
 You can use our [Upgrade](https://docs.phalcon.io/4.0/en/upgrade) page for more information and also do not forget to check [RectorPHP](https://getrector.org/), a tool that helps with upgrading legacy code! Finally, we are here to help. Engage with us and the community in our [Discord](https://phalcon.io/discord) and [Forum](https://phalcon.io/forum) if you get stuck :)
-
-<hr>
-
-Chat - Q&A
-
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://brighteon.com/bitchute)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-<3 Phalcon Team

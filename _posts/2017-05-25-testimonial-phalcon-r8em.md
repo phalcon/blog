@@ -32,6 +32,3 @@ We have received the following testimony from Michael Hanekom in our team email.
 Thank you Michael for your kind words! It is really rewarding to read that our work has helped Michael and his company perform their tasks better and faster.
 
 We welcome any other testimonials so that we can spread the word about Phalcon and how it can help your projects/company.
-
-
-<3 Phalcon Team

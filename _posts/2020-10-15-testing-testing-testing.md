@@ -429,34 +429,3 @@ The benchmark above shows as expected, that `str_replace` will be the fastest im
 If the area of your code that you use such proxy methods is not very "busy", then you can afford the few extra microseconds. However, if the area of the code you will use these proxy methods is a main component with numerous executions per request, you might want to run some benchmarks and decide whether you want 100% code coverage or the few extra microseconds.
 
 Personally I lean towards the 100% code coverage.
-
-- - -
-
-Chat - Q&A
-
-* [Discord Chat](https://phalcon.io/discord)
-* [Forum](https://phalcon.link/forum)
-
-Support
-
-* [OpenCollective - Support Us](https://phalcon.io/fund)
-* [Store - Merchandise](https://phalcon.io/store)
-
-Social Media
-
-* [Telegram](https://phalcon.io/telegram)
-* [Gab](https://phalcon.io/gab)
-* [MeWe](https://phalcon.io/mewe)
-* [Parler](https://phalcon.io/parler)
-* [Reddit](https://phalcon.io/reddit)
-* [Facebook](https://phalcon.io/fb)
-* [Twitter](https://phalcon.io/t)
-
-Videos
-
-* [BitChute](https://phalcon.io/bitchute)
-* [Brighteon](https://phalcon.io/brighteon)
-* [LBRY](https://phalcon.io/lbry)
-* [YouTube](https://phalcon.io/youtube)
-
-<3 Phalcon Team

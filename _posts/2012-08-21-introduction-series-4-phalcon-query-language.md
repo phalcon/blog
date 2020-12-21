@@ -184,5 +184,3 @@ We are in the process of rewriting the documentation to reflect all these change
 Phalcon provided the first ORM written purely in C for PHP developers. We are now taking it a step further, offering a high level, object oriented SQL dialect, which can be used in any of the supported RDBMS for an application. The common syntax allows developers to quickly develop ultra fast models and become more productive.
 
 PS: We need vacations :)
-
-<3 Phalcon Team

@@ -10,10 +10,10 @@ The long wait is over, Phalcon 0.5.0 final is here! This version marks a huge st
 The major changes in this version are:
 
 <!--more-->
-- **Namespaces**: Classes are now organized into namespaces. The components have been placed in their respective namespaces, offering better organization within the framework. [API](https://phalcon.link/api)
-- **Dependency Injection**: The framework is equipped with the first service container and dependency injection component written in C for PHP. All components have been adjusted to make the most of this design pattern. Thus your code becomes more extensible, testable and flexible than ever before. [Using Dependency Injection](https://docs.phalcon.io/latest/en/di)
+- **Namespaces**: Classes are now organized into namespaces. The components have been placed in their respective namespaces, offering better organization within the framework. [API](https://phalcon.io/api)
+- **Dependency Injection**: The framework is equipped with the first service container and dependency injection component written in C for PHP. All components have been adjusted to make the most of this design pattern. Thus your code becomes more extensible, testable and flexible than ever before. [Using Dependency Injection](https://docs.phalcon.io/latest/en/di)
 - **Single and Multi-Module applications**: The MVC components are now capable of creating single and multi module applications. This allows for easier resource sharing between modules. [MVC Applications](https://docs.phalcon.io/latest/en/mvc)
-- **Micro Applications**: With a minimal amount of code, it is now possible to create small applications such as  prototypes, apis, RESTFul applications and more. [Micro Applications](https://docs.phalcon.io/latest/en/micro)
+- **Micro Applications**: With a minimal amount of code, it is now possible to create small applications such as  prototypes, apis, RESTFul applications and more. [Micro Applications](https://docs.phalcon.io/latest/en/micro)
 - **PhalconQL (PHQL)**: PHQL is a high level, object oriented SQL dialect that allows to write queries using a standardized SQL-like language. PHQL is implemented as a parser (written in C) that translates syntax in that of the target RDBMS. To achieve the highest performance possible, the parser uses the same technology as [SQLite](http://en.wikipedia.org/wiki/Lemon_Parser_Generator). This technology provides a small in-memory parser with a very low memory footprint that is also thread-safe. [Phalcon Query Language (PHQL)](https://docs.phalcon.io/latest/en/phql)
 - **Events Manager**: With this new component you can add "hook points" and listen for events of the framework's components as well as your own. Listeners could change the normal behavior of a component or simply obtain real-time information about them. [Events Manager](https://docs.phalcon.io/latest/en/events)
 - **CLI Applications**: Now you can create command line applications. These are useful to create cron jobs, scripts, command utilities and more. [Command Line Applications](https://docs.phalcon.io/latest/en/cli)
@@ -49,5 +49,4 @@ Thanks to all the community and the [contributors](https://github.com/phalcon/cp
 
 Thanks for being part of this amazing tool. Phalcon is made with a lot of love for you and the community. Tell everyone about this and enjoy Phalcon!
 
-<3 Phalcon team
 

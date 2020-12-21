@@ -1,7 +1,14 @@
 ---
 layout: post
 title: "Phalcon 3.1.2 released (with PHP 7.1 support)"
-tags: [php, phalcon, phalcon3, release, rfc, lts, php7]
+tags: 
+  - php
+  - phalcon
+  - phalcon3
+  - release
+  - rfc
+  - lts
+  - php7
 ---
 Hello everyone!!
 
@@ -52,7 +59,4 @@ Note that the Windows DLLs are now available in our <a href="https://github.com/
 </h5>
 
 We encourage existing Phalcon 3 users to update to this version.
-
-
-<3 Phalcon Team
 

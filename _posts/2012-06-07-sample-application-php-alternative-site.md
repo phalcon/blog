@@ -22,6 +22,4 @@ If you've been thinking about creating a blog, or news site with Phalcon, it is 
 
 Enjoy!
 
-<3 Phalcon Team
-
 PS: There may be some broken links or bad translations, all intentional :P

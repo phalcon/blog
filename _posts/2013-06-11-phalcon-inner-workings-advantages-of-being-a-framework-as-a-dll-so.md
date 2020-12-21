@@ -3,7 +3,7 @@ layout: post
 title: "Phalcon Inner Workings: Advantages of being a Framework as a DLL/SO"
 tags: [php, phalcon, internals, performance, "1.x"]
 ---
-This post is quite technical, explaining the inner workings of Phalcon. 
+This post is quite technical, explaining the inner workings of Phalcon. 
 
 As a web developer, you don't need to know how it works (most of the times) so long as it works, and works well. However we believe that this article will allow users of the framework to understand some of the inner workings of Phalcon, and allow them to make decisions on the hardware they use, so as to maximize performance for their applications.
 
@@ -17,7 +17,7 @@ Writing code in C reduces large amounts of overhead in several parts of the fram
 Phalcon's speed doesn't only come from the optimization of instructions (due to the compilation process). Another important area where Phalcon shines is the memory reduction.
 
 ### Memory Reduction Overview
-Phalcon is distributed as a [shared library](http://en.wikipedia.org/wiki/Library_(computing)), a [DLL (Dynamic-Link Library)](http://en.wikipedia.org/wiki/Dynamic-link_library) in Windows or as a  shared object in most Unix flavors. These files/structures have been optimized and matured over decades by operating system vendors. Although there are important differences between platforms, we could generalize that Phalcon's DLL/Shared object is composed mainly by these parts:
+Phalcon is distributed as a [shared library](http://en.wikipedia.org/wiki/Library_(computing)), a [DLL (Dynamic-Link Library)](http://en.wikipedia.org/wiki/Dynamic-link_library) in Windows or as a  shared object in most Unix flavors. These files/structures have been optimized and matured over decades by operating system vendors. Although there are important differences between platforms, we could generalize that Phalcon's DLL/Shared object is composed mainly by these parts:
 
 ```sh
 +------------------------+
@@ -35,7 +35,7 @@ Phalcon is distributed as a [shared library](http://en.wikipedia.org/wiki/Librar
 +------------------------+
 ```
 
-Currently Phalcon's compilation produces a binary of about 1.5Mb - which is very small. As seen in the above diagram, the *Code Section* and the Read Only Data Section (which is the largest part of the extension) are shared across requests/processes. This means that if the server runs 1,000 requests the same 1.5Mb is shared by all the requests, reducing dramatically the memory usage compared with any other PHP framework. 
+Currently Phalcon's compilation produces a binary of about 1.5Mb - which is very small. As seen in the above diagram, the *Code Section* and the Read Only Data Section (which is the largest part of the extension) are shared across requests/processes. This means that if the server runs 1,000 requests the same 1.5Mb is shared by all the requests, reducing dramatically the memory usage compared with any other PHP framework. 
 
 Multiple processes can load same DLL/so library at the same base address or a different base address and still share same physical copy of the DLL/so in memory. This reduces memory consumption as well as disc swapping.
 
@@ -47,7 +47,7 @@ When function in Phalcon needs to be executed due to a call from the source code
 
 When PHP is used together with a bytecode cache (like APC) a similar methodology is used. The PHP bytecode is stored in [shared memory segments](http://en.wikipedia.org/wiki/Memory-mapped_file) and it's shared across requests reducing the memory usage and improving the performance. Minor issues with this approach is memory copying, fragmentation, etc. but we won't expand on that at the moment.
 
-However, although the PHP bytecode is a high level language (according to processor execution), it is not literally binary code. Therefore it needs to be fetched from the shared memory segment (APC) to the process that executes the code, it needs to be prepared for execution by the Zend Engine and then executed. Phalcon clearly does not need these steps and thus this overhead is avoided. 
+However, although the PHP bytecode is a high level language (according to processor execution), it is not literally binary code. Therefore it needs to be fetched from the shared memory segment (APC) to the process that executes the code, it needs to be prepared for execution by the Zend Engine and then executed. Phalcon clearly does not need these steps and thus this overhead is avoided. 
 
 ### PHP's performance is fine, why do I need more speed?
 PHP offers great performance and unless an application is very big and complex, one will not consider it being the bottleneck. So why do we need more speed?
@@ -70,11 +70,9 @@ Currently, getting a page in [more than 250ms is perceived as slow by the users]
 With Phalcon responses are usually generated in around 10ms-35ms even if the server load is high, which means the even if the network latency is in the 200-225ms region, pages are generated faster and delivered to the users. With additional planning and tolls such as CDN, the network latency can be significantly reduced.
 
 ### Conclusion
-In this blog post we outlined one of the main reasons on why Phalcon is significantly faster than most PHP frameworks. 
+In this blog post we outlined one of the main reasons on why Phalcon is significantly faster than most PHP frameworks. 
 
-Our goal is to push the envelope even further, increasing performance and functionality as much as possible. 
+Our goal is to push the envelope even further, increasing performance and functionality as much as possible. 
 
-We welcome your comments and contributions in our [Forum](https://forum.phalcon.io "Forum")  If you need to report a bug, feel free to do so in our [Github Issues](https://github.com/phalcon/cphalcon/issues?state=open) page. Any questions regarding how-to could be either directed in our [Forum](https://forum.phalcon.io "Forum") or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon).
+We welcome your comments and contributions in our [Forum](https://forum.phalcon.io "Forum")  If you need to report a bug, feel free to do so in our [Github Issues](https://github.com/phalcon/cphalcon/issues?state=open) page. Any questions regarding how-to could be either directed in our [Forum](https://forum.phalcon.io "Forum") or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon).
 
-
-<3 The Phalcon Team

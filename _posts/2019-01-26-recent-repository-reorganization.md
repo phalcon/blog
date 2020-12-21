@@ -39,7 +39,7 @@ We cannot thank the [Netlify](https://netlify.com) team enough for offering this
 There repositories and subsequent sites that were ported to [Netlify](https://netlify.com) are:
 
 * [Phalcon Blog](https://blog.phalcon.io)
-* [Phalcon Link](https://phalcon.link)
+* [Phalcon Link](https://phalcon.io)
 * [Zephir Website](https://zephir-lang.com)
 * [Zephir Documentation](https://docs.zephir-lang.com)
 * [Built With Phalcon](https://builtwith.phalcon.io)
@@ -65,6 +65,4 @@ We will expand more in future posts on exactly how all this works and what chall
 ### Conclusion
 We ended with roughly 10 sites and applications that we no longer have to maintain (it's actually 9 for now, the main website will be moved in the next week or so). This frees up a bit more time to concentrate on the framework as well as building solid examples/applications/tutorials that demonstrate all the features that Phalcon has to offer.
 
-If you see anything that is not correct, feel free to open a pull request in the respective repository or let us know in our [Discord Server](https://phalcon.link/discord)
-
-<3 Phalcon Team
+If you see anything that is not correct, feel free to open a pull request in the respective repository or let us know in our [Discord Server](https://phalcon.io/discord)

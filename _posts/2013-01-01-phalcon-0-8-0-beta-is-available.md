@@ -27,5 +27,3 @@ Please help us to test and report any bugs or problems on [Github](https://githu
 
 We hope you like these updates! Have a great start of year!
 
-
-<3 The Phalcon Team

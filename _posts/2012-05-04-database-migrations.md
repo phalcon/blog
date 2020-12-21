@@ -19,4 +19,3 @@ While you're here, why not watch a short screencast?
 
 And that's it, Enjoy!
 
-<3 Phalcon Team

@@ -29,6 +29,4 @@ Everyone that helps us during April Bugfest, will receive a T-Shirt and some sti
 
 This is our first year starting this competition and we hope to make this a tradition. The actual idea came from [Digital Ocean](https://digitalocean.com) and their Hactoberfest, so we thought we could try it and see what happens :)
 
-Thank you to all and if you have any questions, feel free to visit us on our [Discord](https://phalcon.link/discord) server.
-
-<3 Phalcon Team
+Thank you to all and if you have any questions, feel free to visit us on our [Discord](https://phalcon.io/discord) server.

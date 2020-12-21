@@ -3,11 +3,11 @@ layout: post
 title: "Phalcon 1.0.0 beta released"
 tags: [php, phalcon, mvc, framework, base, release, "1.0", "1.x"]
 ---
-We're ​are releasing today the beta version of Phalcon 1.0.0. Our goal is to get this version out to the community so as to discover bugs and get feedback. This post highlights some of the more important features introduced in this release:
+We're are releasing today the beta version of Phalcon 1.0.0. Our goal is to get this version out to the community so as to discover bugs and get feedback. This post highlights some of the more important features introduced in this release:
 
 <!--more-->
 ### Multi-Level Cache
-This new feature ​of the cache component, ​allows ​the developer to implement a multi-level cache​. This new feature is very ​ useful because you can save the same data in several cache​ locations​ with different lifetimes ​, reading ​first from the one with the faster adapter and ending with the slowest one until the data expire​s​:
+This new feature of the cache component, allows the developer to implement a multi-level cache. This new feature is very  useful because you can save the same data in several cache locations with different lifetimes , reading first from the one with the faster adapter and ending with the slowest one until the data expires:
 
 ```php
 <?php
@@ -61,10 +61,10 @@ $cache = new \Phalcon\Cache\Multiple(
 $cache->save('my-key', $data);
 ```
 
-We're ​are releasing today the beta version of Phalcon 1.0.0. Our goal is to get this version out to the community so as to discover bugs and get feedback. This post highlights some of the more important features introduced in this release:
+We're are releasing today the beta version of Phalcon 1.0.0. Our goal is to get this version out to the community so as to discover bugs and get feedback. This post highlights some of the more important features introduced in this release:
 
 ### Multi-Level Cache
-This new feature ​of the cache component, ​allows ​the developer to implement a multi-level cache​. This new feature is very  useful because you can save the same data in several cache​ locations​ with different lifetimes, reading ​first from the one with the faster adapter and ending with the slowest one until the data expire​s​:
+This new feature of the cache component, allows the developer to implement a multi-level cache. This new feature is very  useful because you can save the same data in several cache locations with different lifetimes, reading first from the one with the faster adapter and ending with the slowest one until the data expires:
 
 ```php
 <?php
@@ -170,7 +170,7 @@ Several volt improvements are introduced in this version:
 ```
 
 ### Vertical/Horizontal Sharding Improvements
-Now you can define a define a different connection to read from a model and a different one ​ for write​. This is especially beneficial when dealing with master/slave configurations in a RDBMS​:
+Now you can define a define a different connection to read from a model and a different one  for write. This is especially beneficial when dealing with master/slave configurations in a RDBMS:
 
 ```php
 class Robots extends Phalcon\Mvc\Model
@@ -303,10 +303,10 @@ if (count($messages)) {
     foreach ($messages as $message) {
         echo $message;
     }
-} 
+} 
 ```
 
-1.0.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.0.0/CHANGELOG) here.
+1.0.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.0.0/CHANGELOG) here.
 
 ### Help with Testing
 This version can be installed from the 1.0.0 branch:
@@ -318,11 +318,9 @@ git checkout 1.0.0
 sudo ./install
 ```
 
-Windows users can [download](https://phalcon.io/download) DLLs from the download page.​​
+Windows users can [download](https://phalcon.io/download) DLLs from the download page.
 
-We ​welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
+We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
 
 Thanks!
 
-
-<3 The Phalcon Team

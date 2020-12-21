@@ -48,28 +48,72 @@ The comments ranged from praise to some complains about the documentation (we ar
 
 A sample is below:
 
-<h5 class="alert alert-info">Keep up the good work. </h5> 
-<h5 class="alert alert-info">It's my favorite framework </h5>
-<h5 class="alert alert-info">With Phalcon comes great responsibility :) </h5>
-<h5 class="alert alert-info">View's file structure needs a bit more documentation. I had to look up on stackoverflow to get the gist of it's file structure. </h5>
-<h5 class="alert alert-info">Excellent work guys, I love you team </h5>
-<h5 class="alert alert-info">Add full features look like laravel, big project orm important and needed </h5>
-<h5 class="alert alert-info">Keep up the improvement of docs and tutorials </h5>
-<h5 class="alert alert-info">Better documentation </h5>
-<h5 class="alert alert-info">Follow Uncle Bob's clean code rules .. your class and methods are to damn long!  Aside from that though, God bless you and thank you so much for the work you do! :) </h5>
-<h5 class="alert alert-info">They did a great job and I would love to complete what I am learning now and start contributing </h5>
-<h5 class="alert alert-info">Phalcon team is awesome. But i think, developments should be more frequent. </h5>
-<h5 class="alert alert-info">Please, improve documentation... </h5> 
-<h5 class="alert alert-info">Great work guys! Everything works like a charm, with Postgres or MySQL, with Nginx or Apache, and the documentation is awesome! </h5>
-<h5 class="alert alert-info">Maybe you need a bigger team, more communication, less open bugs, shared hostings support, easier way to debug for beginners like me ... </h5>
-<h5 class="alert alert-info">Currently I am using BoltCMS for a new project (mostly because the backend and documentation is easy for me to use/understand) but I would really love to use a similar project if it was done using Phalcon. Another thing missing is a solid e-commerce platform based on Phalcon (I would gladly pay to use/support something like that) </h5>
-<h5 class="alert alert-info">In my mind you should concentrate on examples where are used good practices, maybe CQRS or other architecture solution. Important thing is multimodule architecutre. In my mind its way to make Phalcon more popular for serious projects. Currently are some issues in this architecture, for example dispatching and security check. Make it php 7.1 compatible :) </h5>
-<h5 class="alert alert-info">Maybe a more Laravel kind of documentation. </h5>
-<h5 class="alert alert-info">Documentation needs some work. A lot of the powerful features of phalcon are not well documented (eg the validation class). Some more extensive examples would be nice too... </h5>
-<h5 class="alert alert-info">I really miss a proper tutorial..and there are like 5 ways to bootstrap your application and all look amateurish and messy </h5>
-<h5 class="alert alert-info">Great work! Please continue to expand PHQL, its great but can be quite limiting in its capabilities sometimes. </h5> 
-<h5 class="alert alert-info">Hopefully there's gonna be updated video tutorials. </h5> 
-<h5 class="alert alert-info">Very nice job and a big thank you for your work! </h5>
+> Keep up the good work.
+{: .alert .alert-info }
+
+> It's my favorite framework
+{: .alert .alert-info }
+
+> With Phalcon comes great responsibility :)
+{: .alert .alert-info }
+
+> View's file structure needs a bit more documentation. I had to look up on stackoverflow to get the gist of it's file structure.
+{: .alert .alert-info }
+
+> Excellent work guys, I love you team
+{: .alert .alert-info }
+
+> Add full features look like laravel, big project orm important and needed
+{: .alert .alert-info }
+
+> Keep up the improvement of docs and tutorials
+{: .alert .alert-info }
+
+> Better documentation
+{: .alert .alert-info }
+
+> Follow Uncle Bob's clean code rules .. your class and methods are to damn long!  Aside from that though, God bless you and thank you so much for the work you do! :)
+{: .alert .alert-info }
+
+> They did a great job and I would love to complete what I am learning now and start contributing
+{: .alert .alert-info }
+
+> Phalcon team is awesome. But i think, developments should be more frequent.
+{: .alert .alert-info }
+
+> Please, improve documentation...
+{: .alert .alert-info }
+
+> Great work guys! Everything works like a charm, with Postgres or MySQL, with Nginx or Apache, and the documentation is awesome!
+{: .alert .alert-info }
+
+> Maybe you need a bigger team, more communication, less open bugs, shared hostings support, easier way to debug for beginners like me ...
+{: .alert .alert-info }
+
+> Currently I am using BoltCMS for a new project (mostly because the backend and documentation is easy for me to use/understand) but I would really love to use a similar project if it was done using Phalcon. Another thing missing is a solid e-commerce platform based on Phalcon (I would gladly pay to use/support something like that)
+{: .alert .alert-info }
+
+> In my mind you should concentrate on examples where are used good practices, maybe CQRS or other architecture solution. Important thing is multimodule architecutre. In my mind its way to make Phalcon more popular for serious projects. Currently are some issues in this architecture, for example dispatching and security check. Make it php 7.1 compatible :)
+{: .alert .alert-info }
+
+> Maybe a more Laravel kind of documentation.
+{: .alert .alert-info }
+
+> Documentation needs some work. A lot of the powerful features of phalcon are not well documented (eg the validation class). Some more extensive examples would be nice too...
+{: .alert .alert-info }
+
+> I really miss a proper tutorial..and there are like 5 ways to bootstrap your application and all look amateurish and messy
+{: .alert .alert-info }
+
+> Great work! Please continue to expand PHQL, its great but can be quite limiting in its capabilities sometimes.
+{: .alert .alert-info }
+
+> Hopefully there's gonna be updated video tutorials.
+{: .alert .alert-info }
+
+> Very nice job and a big thank you for your work!
+{: .alert .alert-info }
+
 
 ### Conclusion
 We intend on having these user surveys in regular intervals (say every six months or so) in order to get feedback from our community.

@@ -26,5 +26,3 @@ We're working hard to ensure that the Phalcon 2.0 launch will go smoothly and wi
 
 Can't wait to share more soon!
 
-
-<3 Phalcon Team

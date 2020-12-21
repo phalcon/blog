@@ -28,6 +28,3 @@ Success story from our community member [Nikita Vershinin](https://github.com/en
 
 If you have success cases with Phalcon, let us know so we can review them and share them with the community on our blog. :)
 
-
-<3 The Phalcon Team
-

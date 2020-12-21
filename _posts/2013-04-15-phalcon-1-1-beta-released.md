@@ -3,11 +3,11 @@ layout: post
 title: "Phalcon 1.1 beta released!"
 tags: [php, phalcon, "1.1", release, "1.x"]
 ---
-After ​our successful 1.0 release, we continue improving Phalcon ​with our latest release 1.1.0 (beta). In this article, we're highlighting the most important features introduced:
+After our successful 1.0 release, we continue improving Phalcon with our latest release 1.1.0 (beta). In this article, we're highlighting the most important features introduced:
 
 <!--more-->
 ### QueryBuilder Paginator
-In addition to the [ModelResultset](https://docs.phalcon.io/latest/en/pagination) and [NativeArray](https://docs.phalcon.io/latest/en/pagination) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle ​large datasets.
+In addition to the [ModelResultset](https://docs.phalcon.io/latest/en/pagination) and [NativeArray](https://docs.phalcon.io/latest/en/pagination) paginator, this version introduces the QueryBuilder paginator which uses a SQL `LIMIT`/`OFFSET` clause to obtain the requested results. This paginator is suitable to handle large datasets.
 
 ```php
 use Phalcon\Paginator\Adapter\QueryBuilder;
@@ -112,7 +112,7 @@ Then in the view:
 ```
 
 ### Exception mode in ORM Validations
-By default, when some of the validators in a creating/updating process fails, the methods `save()`/`create()`/`update()` return ​​a boolean value​stating the success ​or failure ​of this operation. Now, you can change this behavior to use exceptions:
+By default, when some of the validators in a creating/updating process fails, the methods `save()`/`create()`/`update()` return a boolean valuestating the success or failure of this operation. Now, you can change this behavior to use exceptions:
 
 ```php
 use Phalcon\Mvc\Model\ValidationFailed;
@@ -216,5 +216,3 @@ We welcome your comments regarding this new release in [Phosphorum](https://foru
 
 Thanks!
 
-
-<3 The Phalcon Team

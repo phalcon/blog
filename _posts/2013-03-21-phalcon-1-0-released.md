@@ -60,5 +60,3 @@ If you have not tried Phalcon yet, we invite you to try it now!
 
 Enjoy & Have fun!
 
-
-<3 The Phalcon Team
