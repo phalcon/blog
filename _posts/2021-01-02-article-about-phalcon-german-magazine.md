@@ -10,7 +10,7 @@ tags:
   - german
   - magazine
 ---
-I'm happy to announce the release of my article dedicated to Phalcon in the December issue of a German magazine called PHP Magazin.
+I'm happy to announce the release of my article dedicated to Phalcon, in the December issue of a German magazine called PHP Magazin.
 
 <!--more-->
 
@@ -23,8 +23,7 @@ Inside, I am presenting Phalcon as well as showcasing its main features.
 
 You can find this issue on [the magazine's website.](https://kiosk.entwickler.de/php-magazin/php-magazin-1-2021/).
 
-
-Thanks for your attention! I hope this article will contribute to increasing Phalcon's community.
+Thanks for your attention! I hope this article will contribute to increase Phalcon's community.
 
 _Article submitted by Jérémy PASTOURET_ [@jenovateurs](https://github.com/jenovateurs)
 
