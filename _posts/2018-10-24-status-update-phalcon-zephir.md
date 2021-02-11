@@ -62,7 +62,6 @@ We have heard numerous times the argument _well I do not know C, so I cannot hel
 
 Some links of interest:
 - Become a backer of the project: [OpenCollective](https://opencollective.com/phalcon)
-- Swag: [Phalcon Store](https://store.phalcon.io/)
 - Help with translating the documentation:
     - [Phalcon Documentation - Crowdin](https://crowdin.com/project/phalcon-documentation)
     - [Phalcon Website - Crowdin](https://crowdin.com/project/phalcon-website)
