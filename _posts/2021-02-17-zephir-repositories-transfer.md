@@ -11,6 +11,8 @@ tags:
 All repositories related to Zephir, which were inside `phalcon` Github organization were transferred to `zephir-lang` organization. 
 This transfer should occur in past, but due Github's limitations at that time was decided to contain them inside `phalcon`.
 
+<!--more-->
+
 List of repositories that were transferred:
 
 * [zephir](https://github.com/zephir-lang/zephir)
