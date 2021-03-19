@@ -58,7 +58,7 @@ The PHP based version, the rewrite that we have been working on, translating Zep
 ### PHP 8
 Work has been continuous with Phalcon v4 and PHP 8. A new version of Zephir has been released - 0.13. This version will support only PHP 7.4 and PHP 8.0.
 
-At the moment, for PHP 8.0, all tests are passing. What is left to do is check the Windows DLL builds. Sadly, we are still using AppVeyor for these builds which is a bit time consuming - we never had the chance to move that process to GitHub Actions, which we will do at some point in the future. One more thing in the _todo_ list
+At the moment, for PHP 8.0, all tests are passing. What is left to do is check the Windows DLL builds. Sadly, we are still using AppVeyor for these builds which is a bit time consuming - we never had the chance to move that process to GitHub Actions, which we will do at some point in the future. One more thing in the _todo_ list.
 
 ### Incubator work
 We have commissioned two members of the community to help with fully _translating_ all the incubator code to v4. [BeMySlaveDarlin](https://github.com/BeMySlaveDarlin) and 
@@ -69,7 +69,7 @@ Since v4 has been a big leap forward for Phalcon with numerous changes, PHP vers
 
 We mentioned in the past that our goal with Phalcon is to have full benchmark tests for every part of the code - similar to our goal to have full code coverage with our testing suite.
 
-Our initial benchmarks revealled that Phalcon v4 with PHP 7.4 is twice as fast as for instance Symfony. The only _slow_ area is a mass update. This will be investigated and adjusted as much as possible.
+Our initial benchmarks revealled that Phalcon v4 with PHP 7.4 is twice as fast as for instance Symfony. The only _slow_ area is a mass update (shown below). This will be investigated and adjusted as much as possible.
 
 **Symfony**
 ```
@@ -107,7 +107,7 @@ Transfer/sec:      1.14MB
 
 Source: [https://github.com/TechEmpower/FrameworkBenchmarks/pull/6443]([https://github.com/TechEmpower/FrameworkBenchmarks/pull/6443])
 
-Also the Fortunes benchmark (]ick row from DB, transform to array, add +1 array to row, pass to view, render from view)
+For the Fortunes benchmark (pick row from DB, transform to array, add +1 array to row, pass to view, render from view), Phalcon shines, out performing Symfony significantly in requests per second.
 
 **Phalcon**
 ```
@@ -213,7 +213,7 @@ Requests/sec:  14762.27
 Transfer/sec:      3.25MB
 ```
 
-Finally, from initial tests, we have not seen a boost - as we expected - between Phalcon with PHP 7.4 vs Phalcon with PHP 8.0. The only thing that we saw was a decrease in latency. More benchmarks will be required to see the actual difference between versions.
+Finally, from initial tests, we have not seen a boost - as we expected - between Phalcon with PHP 7.4 vs. Phalcon with PHP 8.0 and JIT. The only thing that we saw was a decrease in latency. More benchmarks will be required to see the actual difference between versions.
 
 ### Conclusion
 A lot of work, a lot of things to do. Thanks especially to [Jeckerson](https://github.com/Jeckerson) who has been working on PHP 8 and managing the incubator projects along with other tasks.
