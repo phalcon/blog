@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Community Hangout - Status Update: 2021-Marcg"
+title: "Community Hangout - Status Update: 2021-March"
 image: /assets/files/2021-03-21-status-update.png
 date: 2021-03-18T15:07:28.690Z
 tags:
