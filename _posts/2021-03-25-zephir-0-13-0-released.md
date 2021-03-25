@@ -29,11 +29,13 @@ This release aligns with our goals for Phalcon and the upcoming v5 release which
 - Fixed not adding all build directories [#2144](https://github.com/zephir-lang/zephir/pull/2144)
 
 Also in versions 0.12.21 and 0.12.20, the following issues were resolved:
+
 ### Fixed
 - Fixed path separators in generated `config.m4` file on Windows [#2153](https://github.com/zephir-lang/zephir/issues/2153)
 - Fixed missing kernel directory at build time [ice/framework#271](https://github.com/ice/framework/issues/271)
 - Fixed stubs generation for case with array declaration with square brackets in params
 - Fixed parameters positioning for `implode()` php function [#2120](https://github.com/zephir-lang/zephir/issues/2120)
+
 ### Added
 - Added supports void type return value for stubs
   [phalcon/ide-stubs#50](https://github.com/phalcon/ide-stubs/pull/50)
