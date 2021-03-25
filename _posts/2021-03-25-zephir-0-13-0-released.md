@@ -43,4 +43,4 @@ Also in versions 0.12.21 and 0.12.20, the following issues were resolved:
 
 A huge thank you to the community and contributors!
 
-__Cross posted from the [Zephir Blog](https://blog.zephir-lang.com/post/zephir-0-13-0)
+_Cross posted from the [Zephir Blog](https://blog.zephir-lang.com/post/zephir-0-13-0)_
