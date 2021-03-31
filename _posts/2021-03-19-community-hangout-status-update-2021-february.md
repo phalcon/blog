@@ -105,7 +105,7 @@ Requests/sec:   1418.42
 Transfer/sec:      1.14MB
 ```
 
-Source: [https://github.com/TechEmpower/FrameworkBenchmarks/pull/6443]([https://github.com/TechEmpower/FrameworkBenchmarks/pull/6443])
+Source: [https://github.com/TechEmpower/FrameworkBenchmarks/pull/6443](https://github.com/TechEmpower/FrameworkBenchmarks/pull/6443)
 
 For the Fortunes benchmark (pick row from DB, transform to array, add +1 array to row, pass to view, render from view), Phalcon shines, out performing Symfony significantly in requests per second.
 
