@@ -18,6 +18,9 @@ This is the first release in the v5 series. Although there is still a lot of wor
 > This release requires PHP 7.4 or PHP 8.0
 {: .alert .alert-info }
 
+> We are still working on the Windows DLLs. For our friends using Windows, please be a bit patient. They will be introduced in subsequent versions of v5.
+{: .alert .alert-warning }
+
 Huge thanks to our contributors that reported issues, offered input as well as submitted pull requests with additions and corrections!
 
 NOTE: You can always check our roadmap and the status of our active sprint for v5 in our project page: [https://github.com/orgs/phalcon/projects/4](https://github.com/orgs/phalcon/projects/4)
