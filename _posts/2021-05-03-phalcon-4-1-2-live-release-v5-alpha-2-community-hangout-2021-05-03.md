@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Phalcon 4.2.2, Live Release v5-alpha-2, Community Hangout - 2021-05-03
+title: Phalcon 4.1.2, Live Release v5-alpha-2, Community Hangout - 2021-05-03
 image: /assets/files/2021-05-03-phalcon-hangout.png
 date: 2021-05-03T14:25:54.481Z
 tags:
@@ -23,7 +23,7 @@ We will hold this virtual meeting on a live event in YouTube. The URL for the ha
 Agenda:
 - Introduction, welcome to all attendees
 - Thank you to the whole community and contributors
-- Phalcon v4.2.2 Released
+- Phalcon v4.1.2 Released
 - Status Update v5
 - Live Release v5-alpha-2
 - Q/A
