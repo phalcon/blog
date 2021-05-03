@@ -2,7 +2,7 @@
 layout: post
 title: Phalcon 4.2.2, Live Release v5-alpha-2, Community Hangout - 2021-05-03
 image: /assets/files/2021-05-03-phalcon-hangout.png
-date: 2021-05-03T13:16:07.546Z
+date: 2021-05-03T14:25:54.481Z
 tags:
   - hangout
   - community
