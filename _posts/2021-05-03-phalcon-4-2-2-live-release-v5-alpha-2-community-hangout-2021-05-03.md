@@ -9,6 +9,7 @@ tags:
   - hoa
   - phalcon4
   - release
+  - phalcon5
 ---
 Time for an update and a new release and community hangout! v5.0-alpha-2 will be released live this Wednesday at 17:00 EDT (21:00 UTC)!
 <!--more-->
