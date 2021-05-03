@@ -13,8 +13,8 @@ tags:
 ---
 Time for an update and a new release and community hangout! v5.0-alpha-2 will be released live this Wednesday at 17:00 EDT (21:00 UTC)!
 <!--more-->
-Live Release URL: 
-Join us on Saturday the 31st of October 2020, at 10:00:00 EDT (14:00:00 UTC), to release the latest version of Phalcon and have a chit chat. 
+
+Join us on Wednesday the 05th of October 2020, at 17:00:00 EDT (21:00:00 UTC), to release the latest version of Phalcon and have a chit chat. 
 
 We will hold this virtual meeting on a live event in YouTube. The URL for the hangout is: 
 
