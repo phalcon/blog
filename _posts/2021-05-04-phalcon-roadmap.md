@@ -47,12 +47,15 @@ Phalcon v5 is again a PHP extension written in Zephir. We had to increase the ma
 
 Unfortunately we missed some. Zephir does not enjoy static analysis tools such as [psalm](https://psalm.dev/) so we had to rely on the ide stubs generation and then run psalm on that. We were successful in identifying a lot of misalignments and those were indeed fixed in v4. However the stubs generator had a couple of bugs and therefore some areas were missed, primarily in the `Phalcon\Db` namespace.
 
+Due to improvements in Zephir, the misalignments with interfaces are now detected while the code is generated and/or compiled.
+
+
 We have released [v5.0.0-alpha-1](https://github.com/phalcon/cphalcon/releases/tag/v5.0.0-alpha.1) and this week we will be releasing v5.0.0-alpha-2. We are following a rolling release schedule (until stable is out), where we are fixing issues as we go along and ensuring that no new issues are created - or if they do we can fix them before moving forward.
 
 v5 will be around for quite some time, by our modest estimations 2 years and more.
 
 ## v6
-This is the old v5 version. This version will be the native PHP based one, where a developer can just install it with `composer require phalcon/phalcon` (or something similar).
+This is the old v5 version. This version will be the native PHP based one, where a developer can just install it with `composer require phalcon/phalcon` (you can already do this but it will not work since v6 is work in progress currently). Work on this version has been halted in order to push v5 stable out.
 
 There is always the worry that by switching to a native PHP implementation, the framework will lose performance. This is both true and false at the same time. 
 
@@ -84,7 +87,9 @@ We are still a small team and we have been very frugal with our funds to ensure 
 
 If interested, please ping @Jeckerson on our Discord server.
 
-We will expand on the above more in our hangout tomorrow.
+We will expand on the above more in our hangout tomorrow. Hope to see you there!
+
+(https://youtu.be/tZHM9lRmbRI)[https://youtu.be/tZHM9lRmbRI]
 
 
 
