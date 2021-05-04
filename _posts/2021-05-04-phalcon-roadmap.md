@@ -18,9 +18,22 @@ In the post [The Future of Phalcon](/post/the-future-of-phalcon) we outlined the
 ## Team
 A quick reminder: Last year Serghei who was the core maintainer of Zephir, could no longer contribute to the project. Since Phalcon relies on Zephir, we were left with not that many options. As a result we decided to _convert_ Phalcon to a native PHP framework, which has of course advantages and disadvantages.
 
-In the meantime [Anton](https://github.com/jeckerson) started learning C and the inner workings of Zend Engine (as much as possible), and with the help of [Alexander](https://github.com/AlexNDRmac), managed to correct issues in Zephir that have been lingering for years. This is a huge win for the project since we were able to speed up internal processes, get a bit more performance and of course, generate better stubs (more on this below)
+In the meantime [Anton](https://github.com/jeckerson) started learning C and the inner workings of Zend Engine (as much as possible), and with the help of [Alexander](https://github.com/AlexNDRmac), managed to correct issues in Zephir that have been lingering for years. This is a huge win for the project since we were able to speed up internal processes, get a bit more performance and of course, generate better stubs (more on this below).
+
+> Well over 100 issues were reviewed and fixed in Zephir these past 4+ months
+{: .alert .alert-info }
 
 We have also reorganized the team as far as the GitHub organization is concerned. Several members stepped down because, hey life happens so we all get busy, and we also had some new ones step in.
+
+## Support
+
+| Phalcon Version | Supported PHP versions                      | Support status |
+| :-------------: | ------------------------------------------- | :------------: |
+| `v3.4`          | `5.5`, `5.6`, `7.0`, `7.1`, `7.2` and `7.3` | Unsupported    |
+| `v4.0`          | `7.2`, `7.3` and `7.4`                      | Unsupported    |
+| `v4.1`          | `7.2`, `7.3` and `7.4`                      | Supported      |
+| `v5.0`          | `7.4` and `8.0`                             | Supported      |
+| `v6.0`          | `7.4` and `8.0`                             | Supported      |
 
 ## v4
 Phalcon v4 is alive and well. We will continue providing support but somewhat minimal because v5 is currently in alpha (more on that below). 
