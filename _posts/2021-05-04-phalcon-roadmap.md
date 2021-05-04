@@ -89,7 +89,7 @@ If interested, please ping @Jeckerson on our Discord server.
 
 We will expand on the above more in our hangout tomorrow. Hope to see you there!
 
-(https://youtu.be/tZHM9lRmbRI)[https://youtu.be/tZHM9lRmbRI]
+[https://youtu.be/tZHM9lRmbRI](https://youtu.be/tZHM9lRmbRI)
 
 
 
