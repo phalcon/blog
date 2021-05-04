@@ -57,7 +57,7 @@ if more performance needed:
 
 `pecl install phalcon-ext`
 
-Note that this particular technique has been used by our friends at (RubixML](https://github.com/RubixML/Tensor) and it works just fine.
+Note that this particular technique has been used by our friends at [RubixML](https://github.com/RubixML/Tensor) and it works just fine.
 
 ## Support/Help
 As always we welcome all criticism, especially the bad, in order to improve the framework. There have been many members of the community that engaged with us either on [Discord](https://phalcon.io/discord) or by reporting issues and sometimes creating pull requests with fixes. We thank you all and keep it coming!!
