@@ -18,7 +18,7 @@ Join us on Wednesday the 05th of May 2021, at 17:00:00 EDT (21:00:00 UTC), to re
 
 We will hold this virtual meeting on a live event in YouTube. The URL for the hangout is: 
 
-[https://youtu.be/tZHM9lRmbRI](https://youtu.be/tZHM9lRmbRI)
+[https://youtu.be/X3IM8w3vzFI](https://youtu.be/X3IM8w3vzFI)
 
 Agenda:
 - Introduction, welcome to all attendees
