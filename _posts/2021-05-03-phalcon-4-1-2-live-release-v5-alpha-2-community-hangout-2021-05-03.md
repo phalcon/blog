@@ -20,6 +20,9 @@ We will hold this virtual meeting on a live event in YouTube. The URL for the ha
 
 [https://youtu.be/X3IM8w3vzFI](https://youtu.be/X3IM8w3vzFI)
 
+<iframe src='https://www.brighteon.com/embed/14e57cc2-f2e5-4f38-b0a4-9a8bd23e9498' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+
+
 Agenda:
 - Introduction, welcome to all attendees
 - Thank you to the whole community and contributors
