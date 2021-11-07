@@ -19,6 +19,6 @@ Join us this Saturday 06th of November at 10:00 EST (14:00 UTC) for a community 
 
 [https://www.youtube.com/watch?v=Plwp2LLMKfM](https://www.youtube.com/watch?v=Plwp2LLMKfM)
 
-<iframe src='https://www.brighteon.com/2dc9a829-903c-4be9-bc2b-10678f0a6c56' width='560' height='315' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.brighteon.com/embed/2dc9a829-903c-4be9-bc2b-10678f0a6c56' width='560' height='315' frameborder='0' allowfullscreen></iframe>
 
 Looking forward to seeing everyone there!
