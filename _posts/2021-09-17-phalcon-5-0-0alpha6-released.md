@@ -6,6 +6,7 @@ date: 2021-09-17T14:01:17.693Z
 tags:
   - phalcon5
   - release
+  - alpha
 ---
 We are very happy to announce the release of Phalcon v5.0.0 Alpha 6!
 <!--more-->
