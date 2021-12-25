@@ -31,7 +31,7 @@ We also started work on the 5.0 documentation, concentrating for now on the upgr
 If we do have time, we will upgrade the sample applications (invo, vokuro etc.) before the release, alternatively right after that. Of course, if the community wants to contribute to this upgrade process we will not say no :)
 
 > The PECL version as well as Packagist packages will be available later on today or tomorrow.
-{: .alert .alert-note }
+{: .alert .alert-notice }
 
 
 #### Changelog
