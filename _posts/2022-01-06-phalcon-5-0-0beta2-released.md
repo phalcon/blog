@@ -9,7 +9,7 @@ tags:
   - beta
   - release
 ---
-Phalcon v5.0.0beta2 has been released!
+Phalcon v5.0.0beta2 has been released, featuring bug fixes and a few additions!
 <!--more-->
 
 This release has some additions in `Phalcon\Support\Helper` classes and several bug fixes that the community identified.
