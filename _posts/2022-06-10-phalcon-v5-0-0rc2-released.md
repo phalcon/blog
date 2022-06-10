@@ -19,12 +19,10 @@ As always, a huge thank you to our community for testing, reporting bugs, enhanc
 The changelog for this release ([v5.0.0RC2](https://github.com/phalcon/cphalcon/releases/tag/v5.0.0RC2)) is as follows:
 
 ### Changed
-
-## Changed
 - Changed the `StringVal` filter to now use `htmlspecialchars()` [#15978](https://github.com/phalcon/cphalcon/issues/15978) 
 
-## Fixed
+### Fixed
 - Fixed `Phalcon\Http\Response::getQualityHeader()` to check if the server variable is `null` before performing `preg_split` [#15984](https://github.com/phalcon/cphalcon/issues/15984) 
 
-## Added
+### Added
 - Added `StringValLegacy` filter using `filter_var()` for PHP < 8.1 [#15978](https://github.com/phalcon/cphalcon/issues/15978) 
