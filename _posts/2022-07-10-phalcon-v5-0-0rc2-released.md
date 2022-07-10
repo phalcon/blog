@@ -14,6 +14,10 @@ Phalcon v5.0.0RC3 has been released!!
 
 This release addresses a few bugs identified and a few new features. The bugs were mostly focused on the PHP 8+ version.
 
+We are working now full time on the documentation so as to get the stable release out! So far the upgrade guide is done and we are reviewing every document to ensure consistency and accuracy.
+
+In parallel, we are working on the devtools/incubator repositories as well as sample applications.
+
 As always, a huge thank you to our community for testing, reporting bugs, enhancing the framework in any way possible!
 
 The changelog for this release ([v5.0.0RC3](https://github.com/phalcon/cphalcon/releases/tag/v5.0.0RC3)) is as follows:
