@@ -11,7 +11,7 @@ tags:
 ---
 A﻿ long journey has come to an end and looking forward to our new journey ahead. Phalcon v5.0.0 (and v5.0.1) has been released!
 
-<﻿!--more-->
+<!--more-->
 
 W﻿e started v5 at the end of May 2020. Two years and change later, ~2,663 commits and ~760 issues/cards on GitHub, we are happy to announce that v5.0.0 stable is available for our community.
 
