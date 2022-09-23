@@ -11,11 +11,13 @@ tags:
 ---
 A﻿ long journey has come to an end and looking forward to our new journey ahead. Phalcon v5.0.0 (and v5.0.1) has been released!
 
+<﻿!--more-->
+
 W﻿e started v5 at the end of May 2020. Two years and change later, ~2,663 commits and ~760 issues/cards on GitHub, we are happy to announce that v5.0.0 stable is available for our community.
 
 T﻿he changes to the framework are too many to list in a single blog post. We have compiled a thorough upgrade document in our documentation website, that developers can use to upgrade their applications:
 
-h﻿ttps://docs.phalcon.io/5.0/en/upgrade
+[h﻿ttps://docs.phalcon.io/5.0/en/upgrade](h﻿ttps://docs.phalcon.io/5.0/en/upgrade)
 
 P﻿S: We also made the search work for the docs AND it is version and language aware! /win
 
@@ -25,7 +27,7 @@ T﻿he best part was that we released yesterday v5.0.0, this morning a bug was d
 
 O﻿ur full changelog for this release is located here:
 
-https://github.com/phalcon/cphalcon/blob/master/CHANGELOG-5.0.md
+[https://github.com/phalcon/cphalcon/blob/master/CHANGELOG-5.0.md](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG-5.0.md)
 
 T﻿he release is available in PECL and the IDE stubs have been generated. We will make the necessary upgrades to the supporting repositories (Vokuro, devtools etc.) this week.
 
