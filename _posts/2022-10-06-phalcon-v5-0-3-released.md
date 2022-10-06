@@ -8,15 +8,15 @@ tags:
   - phalcon5
   - release
 ---
-W﻿e are happy to announce that Phalcon v5.0.3 has been released!
+We are happy to announce that Phalcon v5.0.3 has been released!
 
-<﻿!--more-->
+<!--more-->
 
-T﻿his release contains a few bug fixes.
+This release contains a few bug fixes.
 
-T﻿hank you to our wonderful community for the help in identifying these issues.
+Thank you to our wonderful community for the help in identifying these issues.
 
-#﻿# Changelog
+## Changelog
 ### Changed
 - Fixed `Phalcon\Filter\Sanitize\StringVal` to accept flags for `htmlspecialchars()` [#16135](https://github.com/phalcon/cphalcon/issues/16135)
 
