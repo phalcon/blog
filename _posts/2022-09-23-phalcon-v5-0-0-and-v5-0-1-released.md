@@ -17,7 +17,7 @@ We started v5 at the end of May 2020. Two years and change later, ~2,663 commits
 
 The changes to the framework are too many to list in a single blog post. We have compiled a thorough upgrade document in our documentation website, that developers can use to upgrade their applications:
 
-[https://docs.phalcon.io/5.0/en/upgrade](h﻿ttps://docs.phalcon.io/5.0/en/upgrade)
+[https://docs.phalcon.io/5.0/en/upgrade](https://docs.phalcon.io/5.0/en/upgrade)
 
 PS: We also made the search work for the docs AND it is version and language aware! /win
 
