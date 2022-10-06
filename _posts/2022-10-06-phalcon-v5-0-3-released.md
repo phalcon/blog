@@ -11,6 +11,7 @@ tags:
 W﻿e are happy to announce that Phalcon v5.0.3 has been released!
 
 <﻿!--more-->
+
 T﻿his release contains a few bug fixes.
 
 T﻿hank you to our wonderful community for the help in identifying these issues.
