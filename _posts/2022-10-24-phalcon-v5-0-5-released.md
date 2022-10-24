@@ -12,7 +12,7 @@ Phalcon v5.0.5 has been released!
 
 <!--more-->
 
-T﻿his release contains bug fixes
+This release contains bug fixes
 
 A big thank you to our community for identifying these issues and helping fixing them.
 
