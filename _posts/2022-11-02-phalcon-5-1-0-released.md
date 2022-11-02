@@ -8,12 +8,12 @@ tags:
   - phalcon5
   - release
 ---
-P﻿halcon 5.1.0 is now available.
+Phalcon 5.1.0 is now available.
 
-<﻿!-- more -->
-T﻿his release contains some bug fixes and new functionality for request PATCH methods.
+<!-- more -->
+This release contains some bug fixes and new functionality for request PATCH methods.
 
-A﻿s always, a huge thank you to our community for identifying these issues and suggesting the new features.
+As always, a huge thank you to our community for identifying these issues and suggesting the new features.
 
 ## Changelog
 
