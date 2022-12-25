@@ -9,6 +9,7 @@ tags:
   - christmas
 ---
 The Phalcon Team wishes all of our friends, contributors, developers and users of the framework a Merry Christmas!. We hope that the new year will bring health and happiness to you and your loved ones!
+
 <﻿!--more-->
 
 A Christmas present for the community, Phalcon 5.1.3 has been released. This release contains a few bug fixes.
