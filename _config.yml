@@ -62,15 +62,14 @@ algolia:
   index_name: 'phalcon-blog'
   search_only_api_key: 'ed266d1fbb836f531f335570585c3c07'
 
-sass:
-  style: :compressed # You might prefer to minify using :compressed
+# sass:
+#   style: :compressed # You might prefer to minify using :compressed
 
 include:
   - _redirects
   
 # Exclude these files from your production _site
 exclude:
-  - boxfile.yml
   - Gemfile
   - Gemfile.lock
   - LICENSE
