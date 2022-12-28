@@ -43,7 +43,7 @@ Huge thanks to our contributors that reported issues, offered input as well as s
 
 ## Fixed
 - Fixed `Phalcon\Mvc\Model\Query\Builder::getPhql` to add single quote between string value on a simple condition [#14874](https://github.com/phalcon/cphalcon/issues/14874)
-- Fixed recognizing language operators inside Volt's echo mode (`{{` `}}`) [#14476](https://github.com/phalcon/cphalcon/issues/14476)
+- Fixed recognizing language operators inside Volt's echo mode ({%raw%}`{{`{%endraw%} {%raw%}`}}`{%endraw%}) [#14476](https://github.com/phalcon/cphalcon/issues/14476)
 - Fixed `Tag::friendlyTitle` to correctly convert titles under MacOS and Windows [#14866](https://github.com/phalcon/cphalcon/issues/14866)
 - Fixed the Volt compiler to no longer parse `cache` fragments and thus searching for the `viewCache` service (deprecated for v4) [#14907](https://github.com/phalcon/cphalcon/issues/14907)
 - Fixed `IN` operator precedence in Volt [#14816](https://github.com/phalcon/cphalcon/issues/14816)
