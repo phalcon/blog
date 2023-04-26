@@ -312,7 +312,7 @@ if (count($messages)) {
 This version can be installed from the 1.0.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd build
 git checkout 1.0.0
 sudo ./install
@@ -320,7 +320,7 @@ sudo ./install
 
 Windows users can [download](https://phalcon.io/download) DLLs from the download page.
 
-We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
+We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) or [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
 
 Thanks!
 

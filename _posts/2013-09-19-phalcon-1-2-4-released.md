@@ -15,7 +15,7 @@ This version does not include any new features. The complete [CHANGELOG](https:/
 Please help us to test this version to ensure everything is OK before the final release. This version can be installed from the 1.2.4 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd build
 git checkout 1.2.4
 sudo ./install

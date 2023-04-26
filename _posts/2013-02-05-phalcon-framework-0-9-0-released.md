@@ -26,7 +26,7 @@ Some of the key features introduced are:
 - [Documentation](https://docs.phalcon.io/latest/en/)
 - [Download](https://phalcon.io/download)
 
-If you have any questions about functionality, feel free to ask either in our [Forum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon).
+If you have any questions about functionality, feel free to ask either in our [Forum](https://forum.phalcon.io/) or [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon).
 
 One more time, a big thank you!
 

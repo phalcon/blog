@@ -105,7 +105,7 @@ calendar, Core, ctype, curl, date, dom, exif, fileinfo, filter, ftp, gettext, ha
 #### Frameworks
 The frameworks compared were:
 - [FuelPHP (v1.8.0)](https://fuelphp.com/)
-- [Kohana (v3.3.6)](http://kohanaframework.org/index)
+- [Kohana (v3.3.6)](https://kohanaframework.org/index)
 - [Laravel (v5.4)](https://laravel.com/)
 - [Nette (v2.4)](https://nette.org/)
 - [Phalcon (v3.1.2)](https://phalcon.io/en/)

@@ -296,7 +296,7 @@ This task class displays the available commands for our CLI application
 This task class checks all the available cache files (in `storage/cache/*/`) and deletes them when invoked. It is used to clear the cache after each deployment.
 
 #### FetchContributors
-For quite some time now, we have introduced a big image map at the bottom of our site, to thank our contributors. This command is responsible for fetching the contributors from Github and constructing the final JSON file. To execute the HTTP request we are using the excellent [Guzzle](http://docs.guzzlephp.org/en/stable/) library.
+For quite some time now, we have introduced a big image map at the bottom of our site, to thank our contributors. This command is responsible for fetching the contributors from Github and constructing the final JSON file. To execute the HTTP request we are using the excellent [Guzzle](https://docs.guzzlephp.org/en/stable/) library.
 
 We first assign some weights in different repositories. The more updates, the "heavier" the repository. We then interrogate the Github API for each of the repositories, and retrieve all the contributors. 
 
@@ -327,6 +327,6 @@ Thank you all
 - [Source Code](https://github.com/phalcon/website)
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
-- [Guzzle](http://docs.guzzlephp.org/en/stable/)
+- [Guzzle](https://docs.guzzlephp.org/en/stable/)
 
 

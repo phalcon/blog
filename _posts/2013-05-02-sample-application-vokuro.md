@@ -34,7 +34,7 @@ Other features/examples:
 
 To run/test this sample application you will need [Phalcon 1.1.0 beta 3](https://phalcon.io/download) or higher. You can see an online version [here](https://vokuro.phalcon.io).
 
-You can clone the code from [Github](http://github.com/phalcon/vokuro). We welcome all the improvements to this sample as pull requests. We hope this application serve as example and help to develop your own applications with Phalcon. Head on over to our [forum](https://forum.phalcon.io) if you have questions regarding the sample.
+You can clone the code from [Github](https://github.com/phalcon/vokuro). We welcome all the improvements to this sample as pull requests. We hope this application serve as example and help to develop your own applications with Phalcon. Head on over to our [forum](https://forum.phalcon.io) if you have questions regarding the sample.
 
 Enjoy!
 

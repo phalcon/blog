@@ -15,7 +15,7 @@ We would encourage you to update to this version to take advantage of all the ne
 - [Documentation](https://docs.phalcon.io/latest/en/)
 - Check the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.8.0/CHANGELOG)
 
-If you have any questions about functionality, feel free to ask either in [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon?sort=newest&pagesize=15) or in our [Google Group](https://groups.google.com/forum/?fromgroups#%21forum/phalcon).
+If you have any questions about functionality, feel free to ask either in [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon?sort=newest&pagesize=15) or in our [Google Group](https://groups.google.com/forum/?fromgroups#%21forum/phalcon).
 
 We hope you enjoy this release and are looking forward to your comments,
 

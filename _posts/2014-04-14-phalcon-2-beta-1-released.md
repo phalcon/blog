@@ -63,13 +63,13 @@ With the contributions of the community and the use case available through Phalc
 This version can be installed from the 2.0.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 git checkout 2.0.0
 cd ext
 sudo ./install
 ```
 
-We welcome your comments regarding this new release. If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](http://github.com/phalcon/cphalcon).
+We welcome your comments regarding this new release. If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](https://github.com/phalcon/cphalcon).
 
 ### Want to contribute?
 
@@ -87,7 +87,7 @@ Zephir Runtime is still in its infancy and right now only supports a minimal sub
 
 The following video shows how it works:
 
-As you can see, there is no need to invoke the Zephir compiler so as to recompile your extension after changes were made. Just by refreshing the page, the Zephir code is compiled on-the-fly using [LLVM](http://llvm.org/) as backend.
+As you can see, there is no need to invoke the Zephir compiler so as to recompile your extension after changes were made. Just by refreshing the page, the Zephir code is compiled on-the-fly using [LLVM](https://llvm.org/) as backend.
 
 Zephir Runtime is still in the earliest stages and we're hopeful that by announcing it early in its lifecycle and open-sourcing the code, we can collaborate with the community throughout its development.
 
