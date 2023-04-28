@@ -15,7 +15,7 @@ Blog is often used as an introductory example, and there is a very good reason f
 
 In summary do not despair about yet another blog tutorial, it's a great showcase for any framework, and since the concepts involved in a blog are so well known, it's easy to follow. Step by step I will show you how:
 
-* [Download and install Phalcon](http://docs.phalcon.io/latest/en/reference/install) and phalcon-developer-tools (command line interface - CLI)
+* [Download and install Phalcon](https://docs.phalcon.io/latest/en/reference/install) and phalcon-developer-tools (command line interface - CLI)
 * Configure www server (Apache)
 * Create models containing business logic and validation routines
 * Write controllers with basic authentication and authorization
@@ -23,7 +23,7 @@ In summary do not despair about yet another blog tutorial, it's a great showcase
 * Use routing mechanisms for pretty URLs
 
 #### Step 1 – Installing Phalcon
-Writing any PHP application requires quite a lot software. Luckily it comes prepackaged for popular platforms [LAMP](https://help.ubuntu.com/community/ApacheMySQLPHP) (for Linux - Ubuntu), [WAMP](http://www.wampserver.com/en/) (for Windows), [MAMP](http://www.mamp.info/en/index.html) (for Mac OS X).
+Writing any PHP application requires quite a lot software. Luckily it comes prepackaged for popular platforms [LAMP](https://help.ubuntu.com/community/ApacheMySQLPHP) (for Linux - Ubuntu), [WAMP](https://www.wampserver.com/en/) (for Windows), [MAMP](http://www.mamp.info/en/index.html) (for Mac OS X).
 
 For this tutorial I will be using Apache2, MySQL 5.5 and PHP 5.4 on Windows 7. Granted you are running fairly recent version of PHP (>=5.3, any of the above mentioned provides one) you will be fine.
 

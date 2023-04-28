@@ -27,7 +27,7 @@ $page = $paginator->getPaginate();
 ```
 
 ### Beanstalkd Queuing client
-A simple client for the [Beanstalkd](http://kr.github.io/beanstalkd/) queuing server is now available as part of Phalcon:
+A simple client for the [Beanstalkd](https://kr.github.io/beanstalkd/) queuing server is now available as part of Phalcon:
 
 ```php
 <?php
@@ -65,7 +65,7 @@ while (($job = $queue->peekReady()) !== false) {
 ```
 
 ### Encryption
-This version includes a simple class to encrypt/decrypt data based on the PHP's [mcrypt](http://php.net/manual/en/book.mcrypt.php) library.
+This version includes a simple class to encrypt/decrypt data based on the PHP's [mcrypt](https://php.net/manual/en/book.mcrypt.php) library.
 
 ```php
 // Create an instance
@@ -204,7 +204,7 @@ $app->mount($collection);
 This version can be installed from the 1.1.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd build
 git checkout 1.1.0
 sudo ./install
@@ -212,7 +212,7 @@ sudo ./install
 
 Windows users can download a DLL from the [download page](https://phalcon.io/download).
 
-We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io) and [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](http://github.com/phalcon/cphalcon/).
+We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io) and [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on [Github](http://github.com/phalcon/cphalcon/).
 
 Thanks!
 

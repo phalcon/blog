@@ -10,7 +10,7 @@ On top of that we have been working in making Zephir PHP7 compatible so that you
 
 <!--more-->
 ### Versioning
-For any future Phalcon releases we are adopting SemVer (http://semver.org). In short:
+For any future Phalcon releases we are adopting SemVer (https://semver.org). In short:
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
 > * MAJOR version when you make incompatible API changes,
@@ -18,13 +18,13 @@ For any future Phalcon releases we are adopting SemVer (http://semver.org). In s
 > * PATCH version when you make backwards-compatible bug fixes.
 > * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-Since 2.1 has many API changes, we decided that it would be best to not release it as is and start using [SemVer](http://semver.org) to better communicate with the community and keep track of our releases.
+Since 2.1 has many API changes, we decided that it would be best to not release it as is and start using [SemVer](https://semver.org) to better communicate with the community and keep track of our releases.
 
 ### 2.1 is dead, all hail 3.0
 As mentioned above, 2.1 will not be fully backwards compatible. As a result, we are changing the version number to 3.0.
 
 ### PHP version support
-The Phalcon team takes security very seriously and thus have decided to provide support to PHP versions that are [supported](http://php.net/supported-versions.php). As of 3.0, PHP 5.3 and 5.4 will be deprecated. We are making a small exception to this rule and will continue to support 5.5 for a little while, but since its support has expired a few days ago, it will too be deprecated in a future release.
+The Phalcon team takes security very seriously and thus have decided to provide support to PHP versions that are [supported](https://php.net/supported-versions.php). As of 3.0, PHP 5.3 and 5.4 will be deprecated. We are making a small exception to this rule and will continue to support 5.5 for a little while, but since its support has expired a few days ago, it will too be deprecated in a future release.
 
 ### The goodie bag
 So what does 3.0 offer? The [changelog](https://github.com/phalcon/cphalcon/blob/3.0.x/CHANGELOG.md) is extensive as you can see. Below are highlights of the changes as well as areas you need to concentrate.

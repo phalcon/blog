@@ -16,7 +16,7 @@ Using the translation component recently added to Phalcon, the site offers conte
 ![Alternate site](/assets/files/2012-06-07-php-site-2.png)
 
 **Complex Routing**
-Helping to improve the website [SEO](http://en.wikipedia.org/wiki/Search_engine_optimization), we added some routes like https://php.phalcon.io/news/2012/05/php-543-and-php-5313-released, this kind of URLs are now possible thanks to the new routing system present in most frameworks.
+Helping to improve the website [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization), we added some routes like https://php.phalcon.io/news/2012/05/php-543-and-php-5313-released, this kind of URLs are now possible thanks to the new routing system present in most frameworks.
 
 If you've been thinking about creating a blog, or news site with Phalcon, it is possible that this application will help you so much. 
 

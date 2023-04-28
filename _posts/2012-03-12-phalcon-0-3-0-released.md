@@ -16,7 +16,7 @@ The current list of changes is:
 <!--more-->
 - Refactoring many code patterns as C macros, the total base code was reduced by about 8000 lines of code less.
 - Most function calls were rewritten to avoid any string length counting by avoiding potential use of strlen. Functions and method names have fixed string lengths improving general performance. This improvement was also implemented for static string concatenation.
-- We have implemented some kind of [Register Allocation](http://en.wikipedia.org/wiki/Register_allocation) to take advantage of processor registers. However, the compiler will choose best register allocations when it compiles the extension.
+- We have implemented some kind of [Register Allocation](https://en.wikipedia.org/wiki/Register_allocation) to take advantage of processor registers. However, the compiler will choose best register allocations when it compiles the extension.
 - Support for PHP 5.4. A number of issues when running Phalcon under PHP 5.4 were identified and corrected.
 - In some cases memory was copied without need when updating internal arrays, they were fixed.
 - A function cache was included to avoid potential function lookups on internal HashTables. This cache stores internal pointers to functions low level code improving performance.

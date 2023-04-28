@@ -229,8 +229,8 @@ $app->run();
 #### FatFree
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -275,8 +275,8 @@ Percentage of the requests served within a certain time (ms)
 #### Limonade
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -321,8 +321,8 @@ Percentage of the requests served within a certain time (ms)
 #### Lumen
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -367,8 +367,8 @@ Percentage of the requests served within a certain time (ms)
 #### Phalcon Micro
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -413,8 +413,8 @@ Percentage of the requests served within a certain time (ms)
 #### Silex
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 

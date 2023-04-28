@@ -238,7 +238,7 @@ Help with Testing
 This version can be installed from the 1.3.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd build
 git checkout 1.3.0
 sudo ./install

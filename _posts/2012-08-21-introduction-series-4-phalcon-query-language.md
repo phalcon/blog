@@ -5,10 +5,10 @@ tags: [php, framework, phalcon, series, phql, sql, mysql, hql, "0.5", "0.x"]
 ---
 This is the last part of the introduction series regarding our upcoming release of Phalcon 0.5.0.
 
-With the 0.5x release, we have made changes in the architecture, introducing more components the framework while still keeping performance very high. We felt that the ORM could use some additional optimization as well as functionality, so that was the last area we concentrated on. We have made many improvements in the database and ORM components, such as the use of [PDO](http://php.net/manual/en/book.pdo.php), improved security with automatically binding parameters and much more.
+With the 0.5x release, we have made changes in the architecture, introducing more components the framework while still keeping performance very high. We felt that the ORM could use some additional optimization as well as functionality, so that was the last area we concentrated on. We have made many improvements in the database and ORM components, such as the use of [PDO](https://php.net/manual/en/book.pdo.php), improved security with automatically binding parameters and much more.
 
 <!--more-->
-A few weeks ago, our focus shifted briefly towards a more ambitious project: PhalconQL (PHQL). Following in line with other frameworks, we have created a hybrid SQL language to aid the developers when interacting with databases. PHQL allows the use of models, instead of just tables, that can encapsulate a lot more model logic in them. A similar idea exists in other projects such as Hibernate with its [HQL](http://en.wikipedia.org/wiki/Hibernate_Query_Language), Doctrine with [DQL](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/dql-doctrine-query-language.html).
+A few weeks ago, our focus shifted briefly towards a more ambitious project: PhalconQL (PHQL). Following in line with other frameworks, we have created a hybrid SQL language to aid the developers when interacting with databases. PHQL allows the use of models, instead of just tables, that can encapsulate a lot more model logic in them. A similar idea exists in other projects such as Hibernate with its [HQL](https://en.wikipedia.org/wiki/Hibernate_Query_Language), Doctrine with [DQL](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/dql-doctrine-query-language.html).
 
 PHQL is implemented as a parser (written in C) that translates syntax in that of the target RDBMS. The parser is the most interesting, yet challenging, part of this component. It allows Phalcon to offer a unified SQL language to the developer, while internally doing all the work of translating PHQL instructions to the most optimal SQL instructions depending on the RDBMS type associated with a model.
 
@@ -174,7 +174,7 @@ $query = $manager->createQuery($sql);
 ```
 
 **General Operation**
-To achieve the highest performance possible, we wrote a parser that uses the same technology as [SQLite](http://en.wikipedia.org/wiki/Lemon_Parser_Generator). This technology provides a small in-memory parser with a very low memory footprint that is also thread-safe.
+To achieve the highest performance possible, we wrote a parser that uses the same technology as [SQLite](https://en.wikipedia.org/wiki/Lemon_Parser_Generator). This technology provides a small in-memory parser with a very low memory footprint that is also thread-safe.
 
 The parser first checks the syntax of the passed PHQL statement, then builds an intermediate representation of the statement and finally it converts it to the respective SQL dialect of the target RDBMS.
 

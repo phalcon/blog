@@ -149,7 +149,7 @@ $cars = $this->modelsManager->executeQuery($phql);
 This version can be installed from the master branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
-    git clone http://github.com/phalcon/cphalcon
+    git clone https://github.com/phalcon/cphalcon
     git checkout master
     cd ext
     sudo ./install
@@ -158,7 +158,7 @@ This version can be installed from the master branch, if you don't have Zephir i
 The standard installation method also works:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```
@@ -166,7 +166,7 @@ sudo ./install
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 zephir build
 ```
