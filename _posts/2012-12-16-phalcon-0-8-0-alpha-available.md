@@ -17,17 +17,17 @@ One of the main advantages of a C-extension framework like Phalcon over a tradit
 Starting from 0.8.0, Phalcon performs a quick pre-compilation check which seeks the best available optimizations according to the processor where it is currently compiling. This means faster and better use of resources.
 
 #### Cache for Function/Method calls
-Phalcon executes functions/methods in the PHP userland, due to this developers can use tools like [xdebug](http://xdebug.org/) or [xhprof](http://php.net/manual/fr/book.xhprof.php) to debug or profile your code including the one executed by the framework.
+Phalcon executes functions/methods in the PHP userland, due to this developers can use tools like [xdebug](https://xdebug.org/) or [xhprof](https://php.net/manual/fr/book.xhprof.php) to debug or profile your code including the one executed by the framework.
 
 Every time a method needs to be executed it is first "located" and then PHP does enters a validation stage where it checks if a class can be called or the method has modifiers like protected/private, the method is not abstract, valid calling scopes, etc. All these validations are good because we want our code to run according to the requirements of PHP. If the same method is executed again, PHP performs the same validation checks again. To combat that, a new cache has been implemented internally which allows the whole process to skip the rediscovery and re-validation process thus improving the performance.
 
 #### Security Component
-We are introducing a brand new component called Security. This component aids the developer in common security tasks such as password hashing an and Cross-Site Request Forgery protection ([CSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery)).
+We are introducing a brand new component called Security. This component aids the developer in common security tasks such as password hashing an and Cross-Site Request Forgery protection ([CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)).
 
 #### Password Hashing
-Storing passwords in plain text is a bad security practice. Anyone with access to the database will immediately have access to all user accounts thus being able to engage in unauthorized activities. To combat that, many applications use the familiar one way hashing methods "[md5](http://php.net/manual/en/function.md5.php)" and "[sha1](http://php.net/manual/en/function.md5.php)". However, hardware evolves each day, and becomes faster, these algorithms are becoming vulnerable to brute force attacks. These attacks are also known as [rainbow tables](http://en.wikipedia.org/wiki/Rainbow_table).
+Storing passwords in plain text is a bad security practice. Anyone with access to the database will immediately have access to all user accounts thus being able to engage in unauthorized activities. To combat that, many applications use the familiar one way hashing methods "[md5](https://php.net/manual/en/function.md5.php)" and "[sha1](http://php.net/manual/en/function.md5.php)". However, hardware evolves each day, and becomes faster, these algorithms are becoming vulnerable to brute force attacks. These attacks are also known as [rainbow tables](http://en.wikipedia.org/wiki/Rainbow_table).
 
-To solve this problem we can use hash algorithms as [bcrypt](http://en.wikipedia.org/wiki/Bcrypt). Why bcrypt? Thanks to its "[Eksblowfish](http://en.wikipedia.org/wiki/Crypt_(Unix))" key setup algorithm we could make the password encryption as "slow" as we want. Slow algorithms make the process to calculate the real password behind a hash extremely difficult if not impossible. This will protect your for a long time from a possible attack with rainbow tables.
+To solve this problem we can use hash algorithms as [bcrypt](https://en.wikipedia.org/wiki/Bcrypt). Why bcrypt? Thanks to its "[Eksblowfish](http://en.wikipedia.org/wiki/Crypt_(Unix))" key setup algorithm we could make the password encryption as "slow" as we want. Slow algorithms make the process to calculate the real password behind a hash extremely difficult if not impossible. This will protect your for a long time from a possible attack with rainbow tables.
 
 Phalcon gives you the ability to use this algorithm in a simple way:
 
@@ -80,7 +80,7 @@ class SessionController extends Phalcon\Mvc\Controller
 #### Cross-Site Request Forgery (CSRF) protection
 This is another common attack against web sites and applications. Forms designed to perform tasks such as user registration or adding comments are vulnerable to this attack.
 
-The idea is to prevent the form values from being sent outside our application. To fix this we generate a random [nonce](http://en.wikipedia.org/wiki/Cryptographic_nonce) (token) in each form, add the token in the session and then validate the token once the form posts data back to our application by comparing the stored token in the session to the one submitted by the form:
+The idea is to prevent the form values from being sent outside our application. To fix this we generate a random [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) (token) in each form, add the token in the session and then validate the token once the form posts data back to our application by comparing the stored token in the session to the one submitted by the form:
 
 ```php
 <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
@@ -311,13 +311,13 @@ $profile = Users::findFirst()->getProfile();
 This version can be installed from the 0.8.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd build
 git checkout 0.8.0
 sudo ./install
 ```
 
-All tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon/builds/3692718), still being an alpha, you should not have major problems with this version. Help us to test and report any bug/problem on [github](http://github.com/phalcon/cphalcon)
+All tests are passing on [Travis](https://travis-ci.org/phalcon/cphalcon/builds/3692718), still being an alpha, you should not have major problems with this version. Help us to test and report any bug/problem on [github](https://github.com/phalcon/cphalcon)
 
 Complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v0.8.0/CHANGELOG) for this version.
 

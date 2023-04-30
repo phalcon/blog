@@ -23,7 +23,7 @@ In summary do not despair about yet another blog tutorial, it's a great showcase
 * Use routing mechanisms for pretty URLs
 
 #### Step 1 – Installing Phalcon
-Writing any PHP application requires quite a lot software. Luckily it comes prepackaged for popular platforms [LAMP](https://help.ubuntu.com/community/ApacheMySQLPHP) (for Linux - Ubuntu), [WAMP](https://www.wampserver.com/en/) (for Windows), [MAMP](http://www.mamp.info/en/index.html) (for Mac OS X).
+Writing any PHP application requires quite a lot software. Luckily it comes prepackaged for popular platforms [LAMP](https://help.ubuntu.com/community/ApacheMySQLPHP) (for Linux - Ubuntu), [WAMP](https://www.wampserver.com/en/) (for Windows), [MAMP](https://www.mamp.info/en/index.html) (for Mac OS X).
 
 For this tutorial I will be using Apache2, MySQL 5.5 and PHP 5.4 on Windows 7. Granted you are running fairly recent version of PHP (>=5.3, any of the above mentioned provides one) you will be fine.
 
@@ -137,7 +137,7 @@ For simplicity we're going to create just three essential tables containing blog
 * and also to one Category
 * (thus) Category can have multiple posts
 
-Or if you prefer visual explanations, the same schema expressed as [EER](http://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model) diagram:
+Or if you prefer visual explanations, the same schema expressed as [EER](https://en.wikipedia.org/wiki/Enhanced_entity%E2%80%93relationship_model) diagram:
 
 ![image](/assets/files/2012-11-26-tutorial-part-2-7.png)
 
@@ -182,7 +182,7 @@ insert into users (login, password)
 values('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997'); 
 ```
 
-I assume you are familiar with MySQL command line interface, [PHPMyAdmin](http://www.phpmyadmin.net/home_page/index.php) or [HeidiSQL](http://www.heidisql.com/), so I leave out the details how to create a database. Do it with your favorite tool (but remember that it has to match Phalcon's configuration) and execute the above code against MySQL database you created.
+I assume you are familiar with MySQL command line interface, [PHPMyAdmin](https://www.phpmyadmin.net/home_page/index.php) or [HeidiSQL](http://www.heidisql.com/), so I leave out the details how to create a database. Do it with your favorite tool (but remember that it has to match Phalcon's configuration) and execute the above code against MySQL database you created.
 
 #### Step 7 - Models and validation
 Few facts for beginners - in Phalcon:
@@ -190,7 +190,7 @@ Few facts for beginners - in Phalcon:
 * Model is just usual PHP class extending `Phalcon\Mvc\Model`
 * Model name may be plural, if you use plural database table name
 * Model is the place, where you usually store validation rules
-* if you want to have model User and database table users you need to use [getSource method.](http://docs.phalcon.io/latest/en/reference/models#creating-models)
+* if you want to have model User and database table users you need to use [getSource method.](https://docs.phalcon.io/latest/en/reference/models#creating-models)
 
 We will now use phalcon developer tools to take advantage of the database schema and let our tools generate the code for us.
 
@@ -287,12 +287,12 @@ Keep in mind that when using scaffolding with bootstrap option, Phalcon will onl
       href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css"/>
 ```
 
-We make use here of [http://www.bootstrapcdn.com/](http://www.bootstrapcdn.com/) which is a great and straightforward way to simply get Twitter bootstrap files.
+We make use here of [https://www.bootstrapcdn.com/](http://www.bootstrapcdn.com/) which is a great and straightforward way to simply get Twitter bootstrap files.
 
-That's actually all we need to use twitter bootstrap. Additionally you could include bootstrap javascript file, to enjoy additional [benefits](http://twitter.github.com/bootstrap/javascript.html) (modals, tooltips and many more!):
+That's actually all we need to use twitter bootstrap. Additionally you could include bootstrap javascript file, to enjoy additional [benefits](https://twitter.github.com/bootstrap/javascript.html) (modals, tooltips and many more!):
 
 ```html
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
 ```
 
 Alternatively, if you don't want to use third party CDN you can use above files provided by Phalcon and copied to appropriate directories. You need to adjust the paths in link and script tags accordingly.
@@ -313,7 +313,7 @@ Some facts for beginners - in Phalcon:
 * controller is just an usual PHP class suffixed with a word “Controller”,
 * action is just an usual PHP class method suffixed with a word “Action”
 
-So you will want to be familiar with [PHP5 OOP](http://php.net/manual/en/language.oop5.php) although you should be alright with knowing the [basics](http://www.php.net/manual/en/language.oop5.basic.php).
+So you will want to be familiar with [PHP5 OOP](https://php.net/manual/en/language.oop5.php) although you should be alright with knowing the [basics](http://www.php.net/manual/en/language.oop5.basic.php).
 
 Following code presents a very simple Controller skeleton and I'll explain how view() and create() actions should look like, the rest of the code is available in the source.
 

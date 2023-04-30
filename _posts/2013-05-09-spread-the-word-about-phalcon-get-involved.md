@@ -11,7 +11,7 @@ Here at Phalcon, we're building a new generation framework for PHP, we want to g
 We hope that you enjoy Phalcon as much as we do. Our doors are always open to receive your collaboration with the many things a project like this requires:
 
 **Documentation**
-The repository of this website is available on [github](http://github.com/phalcon/docs). Feel free to improve it, fix typos, add examples, add articles, etc. Also, if you can translate some of the content to another language, it will be very much appreciated!
+The repository of this website is available on [github](https://github.com/phalcon/docs). Feel free to improve it, fix typos, add examples, add articles, etc. Also, if you can translate some of the content to another language, it will be very much appreciated!
 
 **Screencasts**
 We all love screencasts, if you have some extra time and want to support the community with some nice videos teaching any framework's feature, it's very welcome. Check out our [Vimeo Channel](https://vimeo.com/user10964377) as a guide.
@@ -36,10 +36,10 @@ Phalcon is evolving on a daily basis, through our desire to make it better. Soci
 
 We have a presence in most of the popular social networks. By following us, you are helping increase the project visibility:
 
-- [Follow us on Twitter](http://twitter.com/phalconphp)
-- [Facebook Page](http://www.facebook.com/pages/Phalcon/134230726685897)
-- [Official Blog](http://blog.phalcon.io/)
-- [Star the project on Github](http://github.com/phalcon/cphalcon)
+- [Follow us on Twitter](https://twitter.com/phalconphp)
+- [Facebook Page](https://www.facebook.com/pages/Phalcon/134230726685897)
+- [Official Blog](https://blog.phalcon.io/)
+- [Star the project on Github](https://github.com/phalcon/cphalcon)
 
 **Donations/Sponsoring**
 We're a tiny but effective core team of developers working our tails off, we try to spend as much time as possible to the project. All our passion for this project makes us want to be better every day. Phalcon is open-sourced software and volunteer efforts are needed for its constant evolution. You can help us keep the active development by donating to the project or sponsoring the development. More time and resources dedicated to the project means more activity, more improvement, better support, more amazing features, etc.

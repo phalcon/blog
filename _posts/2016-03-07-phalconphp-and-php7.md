@@ -6,7 +6,7 @@ tags:
   - phalcon
   - php7
 ---
-PHP7 was released on the 3rd of December, 2015. This new version brought forward a large number of new and exiting features ([https://php.net/manual/en/migration70.new-features.php](http://php.net/manual/en/migration70.new-features.php)) to PHP. Perhaps one of the biggest of the new features is a new Zend Engine (the engine that powers PHP).
+PHP7 was released on the 3rd of December, 2015. This new version brought forward a large number of new and exiting features ([https://php.net/manual/en/migration70.new-features.php](https://php.net/manual/en/migration70.new-features.php)) to PHP. Perhaps one of the biggest of the new features is a new Zend Engine (the engine that powers PHP).
 
 This new engine, code named PHPNG, will give some of your applications double the performance speed.
 

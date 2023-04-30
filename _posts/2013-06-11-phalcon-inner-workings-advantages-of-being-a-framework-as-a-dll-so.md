@@ -17,7 +17,7 @@ Writing code in C reduces large amounts of overhead in several parts of the fram
 Phalcon's speed doesn't only come from the optimization of instructions (due to the compilation process). Another important area where Phalcon shines is the memory reduction.
 
 ### Memory Reduction Overview
-Phalcon is distributed as a [shared library](https://en.wikipedia.org/wiki/Library_(computing)), a [DLL (Dynamic-Link Library)](http://en.wikipedia.org/wiki/Dynamic-link_library) in Windows or as a  shared object in most Unix flavors. These files/structures have been optimized and matured over decades by operating system vendors. Although there are important differences between platforms, we could generalize that Phalcon's DLL/Shared object is composed mainly by these parts:
+Phalcon is distributed as a [shared library](https://en.wikipedia.org/wiki/Library_(computing)), a [DLL (Dynamic-Link Library)](https://en.wikipedia.org/wiki/Dynamic-link_library) in Windows or as a  shared object in most Unix flavors. These files/structures have been optimized and matured over decades by operating system vendors. Although there are important differences between platforms, we could generalize that Phalcon's DLL/Shared object is composed mainly by these parts:
 
 ```sh
 +------------------------+

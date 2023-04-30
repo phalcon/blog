@@ -10,5 +10,5 @@ This is a short post to remind you that [Phalcon 0.9.0](https://blog.phalcon.io/
 <!--more-->
 This is INVO running there in the free plan.
 
-Check out this [article](http://phpmaster.com/php-as-a-service-fortrabbit/) highlighting some of its great features. If you know other hosting companies supporting Phalcon out of the box share them with the community.
+Check out this [article](https://phpmaster.com/php-as-a-service-fortrabbit/) highlighting some of its great features. If you know other hosting companies supporting Phalcon out of the box share them with the community.
 

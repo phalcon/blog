@@ -7,7 +7,7 @@ As with any project, statistics are always good to have around. Whether this is 
 
 For those that are wondering what languages are used to make Phalcon, below is a table that might prove helpful.
 
-The output has been created with [cloc](http://cloc.sourceforge.net/).
+The output has been created with [cloc](https://cloc.sourceforge.net/).
 
 <!--more-->
 ```sh
