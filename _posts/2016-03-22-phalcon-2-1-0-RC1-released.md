@@ -76,7 +76,7 @@ Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon 
 Phalcon 2.1.x has beta PHP7 support, we expect to fix any blocking bug in the next two weeks before the final release. You can try Phalcon running on PHP7 by compiling from the 2.1.x branch using Zephir:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 git checkout 2.1.x
 zephir build --backend=ZendEngine3
@@ -117,7 +117,7 @@ We will announce in our blog when this change will happen, so for the time being
 Phalcon 2.1 RC1 can be installed from the 2.1.x branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 git checkout 2.1.x
 sudo ./install
@@ -126,7 +126,7 @@ sudo ./install
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 git checkout 2.1.x
 zephir build

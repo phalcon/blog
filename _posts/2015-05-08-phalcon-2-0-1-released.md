@@ -29,7 +29,7 @@ Today we're releasing Phalcon 2.0.1, this version fixes bugs and adds new featur
 This version can be installed from the master branch. If you don't have [Zephir](https://zephir-lang.com) installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/ext
 sudo ./install
 ```
@@ -37,7 +37,7 @@ sudo ./install
 The standard installation method also works:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```
@@ -45,7 +45,7 @@ sudo ./install
 If you have [Zephir](https://zephir-lang.com) installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 zephir build
 ```

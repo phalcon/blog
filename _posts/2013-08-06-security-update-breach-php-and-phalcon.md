@@ -3,7 +3,7 @@ layout: post
 title: "Security Update: BREACH, PHP and Phalcon"
 tags: [php, phalcon, security, breach, "1.x"]
 ---
-Last week, security researchers announced that a new attack towards websites has been discovered called [BREACH](https://breachattack.com/). This attack allows the attacker to obtain data even if connections are secured with SSL connections. Several web sites and applications could be compromised. Note that this attack could affect any web application no matter the technology (language, os, frameworks, etc) that powers it. Their [paper](http://breachattack.com/resources/BREACH%20-%20SSL,%20gone%20in%2030%20seconds.pdf) explains the attack and provides full details on how it works.
+Last week, security researchers announced that a new attack towards websites has been discovered called [BREACH](https://breachattack.com/). This attack allows the attacker to obtain data even if connections are secured with SSL connections. Several web sites and applications could be compromised. Note that this attack could affect any web application no matter the technology (language, os, frameworks, etc) that powers it. Their [paper](https://breachattack.com/resources/BREACH%20-%20SSL,%20gone%20in%2030%20seconds.pdf) explains the attack and provides full details on how it works.
 
 In short, your application may be affected if:
 
@@ -24,5 +24,5 @@ According to the [possible solutions](https://breachattack.com/#mitigations) to 
 
 By default, Phalcon randomizes CSRF secrets for every request using pseudo random string of bytes. If you have altered this behavior we strongly suggest that you restore it to the default one.
 
-You are also encouraged to disable GZip compression on your web server. For Apache, disable the [mod_deflate](https://httpd.apache.org/docs/2.2/mod/mod_deflate.html) module and for Nginx the [gzip module](http://wiki.nginx.org/HttpGzipModule). If you are using a different web server please check the relevant documentation in order to disable gzip compression if it is currently in use.
+You are also encouraged to disable GZip compression on your web server. For Apache, disable the [mod_deflate](https://httpd.apache.org/docs/2.2/mod/mod_deflate.html) module and for Nginx the [gzip module](https://wiki.nginx.org/HttpGzipModule). If you are using a different web server please check the relevant documentation in order to disable gzip compression if it is currently in use.
 

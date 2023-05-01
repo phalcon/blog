@@ -109,7 +109,7 @@ The frameworks compared were:
 - [Laravel (v5.4)](https://laravel.com/)
 - [Nette (v2.4)](https://nette.org/)
 - [Phalcon (v3.1.2)](https://phalcon.io/en/)
-- [Symfony (v3.2)](http://symfony.com)
+- [Symfony (v3.2)](https://symfony.com)
 - [Yii (v2.0.11)](https://www.yiiframework.com)
 - [Zend Framework (v.3.0.1)](https://framework.zend.com/)
 
@@ -290,8 +290,8 @@ $appConfig = require __DIR__ . '/../config/application.config.php';
 #### FuelPHP
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -338,8 +338,8 @@ Percentage of the requests served within a certain time (ms)
 #### Kohana
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -384,8 +384,8 @@ Percentage of the requests served within a certain time (ms)
 #### Laravel
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -430,8 +430,8 @@ Percentage of the requests served within a certain time (ms)
 #### Nette
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -478,8 +478,8 @@ Percentage of the requests served within a certain time (ms)
 #### Phalcon
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -524,8 +524,8 @@ Percentage of the requests served within a certain time (ms)
 #### Symfony 
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -570,8 +570,8 @@ Percentage of the requests served within a certain time (ms)
 #### Yii
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 
@@ -616,8 +616,8 @@ Percentage of the requests served within a certain time (ms)
 #### Zend Framework
 ```bash
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, https://www.zeustech.net/
+Licensed to The Apache Software Foundation, https://www.apache.org/
 
 Benchmarking 10.4.6.123 (be patient)
 

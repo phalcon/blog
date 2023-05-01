@@ -88,7 +88,7 @@ $result = $backendCache->save('my_key', $content);
 ```
 
 &bull; Added  `Phalcon\Cache\Frontend\Msgpack`. 
-[MsgPack](http://msgpack.org) is a new frontend cache. It is an efficient binary serialization format, which allows exchanging data among multiple languages like JSON. 
+[MsgPack](https://msgpack.org) is a new frontend cache. It is an efficient binary serialization format, which allows exchanging data among multiple languages like JSON. 
 
 ```php
 use Phalcon\Cache\Backend\File;
@@ -984,7 +984,7 @@ We want to greatly thank everyone who has contributed to accomplish and achieve 
 * [Dmitry Patsura](https://github.com/ovr)
 * [Rian Orie](https://github.com/rianorie)
 * [Mark Johnson](https://github.com/virgofx)
-* [Clay Garland](http://www.agencymatrix.com/)
+* [Clay Garland](https://www.agencymatrix.com/)
 * [Radek Crlík](https://github.com/CrNix)
 * [Rudi Servo](https://github.com/rudiservo)
 * [Bas Stottelaar](https://github.com/basilfx)

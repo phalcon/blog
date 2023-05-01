@@ -26,7 +26,7 @@ Thanks to all the community (enthusiasts/contributors/testers) for their amazing
 
 You guys rock!
 
-This time we also want to give thanks to our donors. Thank you for helping us maintain a very active development! Special thanks to [NetBear Software](http://netbear.com.au/) for its continued support to the project.
+This time we also want to give thanks to our donors. Thank you for helping us maintain a very active development! Special thanks to [NetBear Software](https://netbear.com.au/) for its continued support to the project.
 
 1.1.0 includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/master/CHANGELOG.md#L1) here.
 
@@ -34,7 +34,7 @@ This time we also want to give thanks to our donors. Thank you for helping us ma
 - [Download](https://phalcon.io/download)
 
 If you have any questions about functionality, feel free to ask either
-in our [Forum](https://forum.phalcon.io/) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon).
+in our [Forum](https://forum.phalcon.io/) or [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon).
 
 As always, a big thank you!
 
