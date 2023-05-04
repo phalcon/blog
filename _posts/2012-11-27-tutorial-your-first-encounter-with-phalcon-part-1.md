@@ -7,7 +7,7 @@ Our friend [Marcin @mailopl](https://twitter.com/mailopl) from Poland sent us th
 
 <!--more-->
 ### Foreword
-This tutorial was going to be published on [net.tutsplus.com](http://net.tutsplus.com/) but that process took more than 2 months and finally due to no response I decided to publish it on Phalcon's blog.
+This tutorial was going to be published on [net.tutsplus.com](https://net.tutsplus.com/) but that process took more than 2 months and finally due to no response I decided to publish it on Phalcon's blog.
 
 In this tutorial I'll explain what Phalcon framework is, how to install, configure and use it. I will also walk you through a process of creating very simple blog system.
 
@@ -33,7 +33,7 @@ Phalcon is a very recent framework on the market developed by the group of enthu
 
 Phalcon is also a full stack framework, which means you just need a minimal amount of code to take advantage of available components, which cover many typical use cases. There is nothing stopping you from using only certain Phalcon's components (classes) on their own, for example if you just need [Phalcon's Cache component](https://docs.phalcon.io/latest/en/cache), you can use it in any application written in either pure PHP or using a framework.
 
-Following image demonstrates message flow during typical request when employing [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern, which is the preferred way to develop Phalcon applications. I won't go into details describing this scheme.
+Following image demonstrates message flow during typical request when employing [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern, which is the preferred way to develop Phalcon applications. I won't go into details describing this scheme.
 
 ![image](/assets/files/2012-11-26-mvc-c.png)
 

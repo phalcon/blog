@@ -20,14 +20,14 @@ The simplest way is to look through the [issue tracker](https://github.com/phalc
 
 ### Codeception
 
-With 2.0 we are moving our whole test suite to [Codeception](http://codeception.com/). Initial work has been done and we will start pushing the base structure upstream while "moving" existing tests to the new Codeception powered suite. We will need a lot of help to get that task completed so if you want to contribute, keep an eye out in our forum in the very near future for the relevant announcement.
+With 2.0 we are moving our whole test suite to [Codeception](https://codeception.com/). Initial work has been done and we will start pushing the base structure upstream while "moving" existing tests to the new Codeception powered suite. We will need a lot of help to get that task completed so if you want to contribute, keep an eye out in our forum in the very near future for the relevant announcement.
 
 ### Help with Testing
 
 This version can be installed from the 2.0.0 branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 git checkout 2.0.0
 cd ext
 sudo ./install
@@ -36,7 +36,7 @@ sudo ./install
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 git checkout 2.0.0
 zephir build
 ```

@@ -30,7 +30,7 @@ This maintenance release number of bug fixes (outlined below). We had 2 more min
 Phalcon 2.0.13 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```
@@ -38,7 +38,7 @@ sudo ./install
 If you have Zephir installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 zephir build
 ```
@@ -52,7 +52,7 @@ Windows DLLs are available in the [download page](https://phalcon.io/en/download
 As you know, we had plans to release 2.1.0 some weeks ago but we faced some blocking bugs running Phalcon in PHP7 that delayed the launch. Most of these bugs have been fixed and the tests are passing in Travis. We have a few more bugs to address, so we expect to release it soon. If you want to try it out install it from the 2.1.x branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 git checkout 2.1.x
 zephir build --backend=ZendEngine3

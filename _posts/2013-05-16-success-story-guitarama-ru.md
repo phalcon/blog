@@ -12,7 +12,7 @@ Yet another success story from our community member Michael ([Xpundel](https://g
 >
 > As I wrote in comments to your post, I have a project, built on Phalcon framework.
 >
-> It's a Guitarama ([http://guitarama.ru](http://guitarama.ru)) - guitars tabs and chords catalog. The site is aimed towards Russian audience, and uses the Russian language, but I hope, there will be no problem to understand most of pages.
+> It's a Guitarama ([https://guitarama.ru](https://guitarama.ru)) - guitars tabs and chords catalog. The site is aimed towards Russian audience, and uses the Russian language, but I hope, there will be no problem to understand most of pages.
 >
 > The site was re-launched using Phalcon at the beginning of January, 2013 and has since shown steady attendance growth. The Google stats can be found here.
 >

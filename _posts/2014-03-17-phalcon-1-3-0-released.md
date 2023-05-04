@@ -98,7 +98,7 @@ phalcon.db.escape_identifiers = On
 
 ### PSR-3 Logger Implementation
 
-Phalcon\\Logger now implements the [PSR-3](http://www.php-fig.org/psr/psr-3/) standard for loggers which allows this component interpolate with other frameworks that also implement this standard.
+Phalcon\\Logger now implements the [PSR-3](https://www.php-fig.org/psr/psr-3/) standard for loggers which allows this component interpolate with other frameworks that also implement this standard.
 
 In addition to this, Phalcon optionally provides C implementations of the interfaces and traits required by this standard as part of the extension:
 

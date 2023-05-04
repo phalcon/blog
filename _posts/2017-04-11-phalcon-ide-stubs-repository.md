@@ -28,7 +28,7 @@ The installation is extremely simple.
 Install Composer in a common location or in your project:
 
 ```bash
-curl -s http://getcomposer.org/installer | php
+curl -s https://getcomposer.org/installer | php
 ```
 
 Create the composer.json file as follows:

@@ -9,7 +9,7 @@ Some of the most important features introduced in this version are highlighted b
 
 <!--more-->
 **Interfaces**
-We have added over 40 interfaces to the framework. Most of the components/classes now have [interfaces](http://php.net/manual/en/language.oop5.interfaces.php) that allow the framework to be extended as much as possible. The developers can now simply implement the relevant interface and replace specific (or all) parts of the framework with custom classes. In addition to this, developers can create new adapters for existing components thus expanding the framework according to their needs.
+We have added over 40 interfaces to the framework. Most of the components/classes now have [interfaces](https://php.net/manual/en/language.oop5.interfaces.php) that allow the framework to be extended as much as possible. The developers can now simply implement the relevant interface and replace specific (or all) parts of the framework with custom classes. In addition to this, developers can create new adapters for existing components thus expanding the framework according to their needs.
 
 For example:
 
@@ -111,9 +111,9 @@ From 0.7.0, all the queries made by the ORM are now made through [PHQL](https://
 In PHQL, we've implemented a set of features to make your access to databases more secure:
 
 - PHQL implements a high level abstraction allowing you handling models as tables and class attributes as fields
-- [Bound parameters](http://www.php.net/manual/en/pdo.prepared-statements.php) are part of the PHQL language helping you to secure your code
+- [Bound parameters](https://www.php.net/manual/en/pdo.prepared-statements.php) are part of the PHQL language helping you to secure your code
 - PHQL only allows one SQL statement to be executed per call preventing injections
-- PHQL ignores all SQL comments which are often used in [SQL injections](http://en.wikipedia.org/wiki/SQL_injection)
+- PHQL ignores all SQL comments which are often used in [SQL injections](https://en.wikipedia.org/wiki/SQL_injection)
 - PHQL only allows data manipulation statements, avoiding altering or dropping tables/databases by mistake or externally without authorization
 
 **Object/Oriented Builder for PHQL**

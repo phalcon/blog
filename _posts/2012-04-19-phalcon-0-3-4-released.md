@@ -8,7 +8,7 @@ We're part of the "speed up the web", therefore, we want to have a rapid release
 The C language has not been designed for rapid development; however, we are putting a lot of enthusiasm to get a better and faster framework.
 
 <!--more-->
-Unit-tests and the [continuous integration](http://travis-ci.org/#!/phalcon/cphalcon) server helped us a lot to discover bugs and maintain our repositories stable (during development).
+Unit-tests and the [continuous integration](https://travis-ci.org/#!/phalcon/cphalcon) server helped us a lot to discover bugs and maintain our repositories stable (during development).
 
 As you know, Phalcon is the fastest framework for PHP out there, so but more importantly than that, we want to get a balance between functionality and performance.
 
@@ -31,7 +31,7 @@ Returning to the subject of this post, in this release, we're proud to announce 
 - Fixed segmentation fault in `Phalcon\Db::tableExists`
 - Fixed memory leak in `Phalcon\Paginator`
 - Added [Phalcon\Logger](https://docs.phalcon.io/latest/en/logging) component
-- Added Zend Thread Safety (ZTS) support to Phalcon Memory Manager. We are taking advantage of [thread safety](http://en.wikipedia.org/wiki/Thread_safety). Phalcon is now able to run under [single-process multithreaded web servers](http://httpd.apache.org/docs/2.0/en/mpm.html).
+- Added Zend Thread Safety (ZTS) support to Phalcon Memory Manager. We are taking advantage of [thread safety](https://en.wikipedia.org/wiki/Thread_safety). Phalcon is now able to run under [single-process multithreaded web servers](http://httpd.apache.org/docs/2.0/en/mpm.html).
 
 Framework documentation is also quite complete. [Check it out](https://docs.phalcon.io)
 

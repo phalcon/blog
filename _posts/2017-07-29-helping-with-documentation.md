@@ -136,7 +136,7 @@ $ nanobox run php-server
 ```
 
 #### Launch the app in your browser
-Open the `http://docs.phalcon.ld` URL in your browser and voila!!!
+Open the `https://docs.phalcon.ld` URL in your browser and voila!!!
 
 ### Modifications
 If you wish to make changes to the application (`docs-app`), stylesheets or layout, feel free to do so and issue a pull request in the `docs-app` Phalcon repository.

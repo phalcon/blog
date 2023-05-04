@@ -216,7 +216,7 @@ Again big kudos to our community for finding the bugs addressed in this hotfix a
 Phalcon 3.1.1 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```

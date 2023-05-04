@@ -73,7 +73,7 @@ From the beginning, Phalcon has been a different framework than any other framew
 
 ### Codeception
 
-An important work has been done migrating and simplifying tests for Phalcon 2 into a single test-suite powered by [CodeCeption](http://codeception.com/). See the migrated tests [here](https://github.com/phalcon/cphalcon/tree/phalcon-v2.0.0/tests).
+An important work has been done migrating and simplifying tests for Phalcon 2 into a single test-suite powered by [CodeCeption](https://codeception.com/). See the migrated tests [here](https://github.com/phalcon/cphalcon/tree/phalcon-v2.0.0/tests).
 
 ### Help with Testing
 

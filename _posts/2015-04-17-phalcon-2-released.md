@@ -25,7 +25,7 @@ The results are something that we are very proud of:
 This version can be installed from the master branch, if you don't have [Zephir](https://zephir-lang.com) installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/ext
 sudo ./install
 ```
@@ -33,7 +33,7 @@ sudo ./install
 The standard installation method also works:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```
@@ -41,7 +41,7 @@ sudo ./install
 If you have [Zephir](https://zephir-lang.com) installed:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon
 zephir build
 ```

@@ -24,7 +24,7 @@ As any alpha version you may expect bugs and missing features, however outreach 
 
 ### Zephir
 
-Zephir is a high-level compiled language that we're creating to replace development with C in most parts of Phalcon. It's fully open sourced under the [MIT license](http://opensource.org/licenses/MIT).
+Zephir is a high-level compiled language that we're creating to replace development with C in most parts of Phalcon. It's fully open sourced under the [MIT license](https://opensource.org/licenses/MIT).
 
 Thanks to the help and contributions from the community, we have made huge progress in the development of this new language. To all of you thanks!. There is still a lot of room for improvement and that is what we hope to do in the coming months.
 
@@ -41,7 +41,7 @@ Here are some links that may interest you if want to learn more:
 This version can be installed from the 2.0.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 git checkout 2.0.0
 cd ext
 sudo ./install-test

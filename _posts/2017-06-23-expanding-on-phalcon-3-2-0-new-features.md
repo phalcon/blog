@@ -64,7 +64,7 @@ $filter     = new Filter();
 $wrongUrl   = 'http://juhara��.co�m';
 $correctUrl = $filter->sanitize($wrongUrl, 'url');
 
-echo $correctUrl; // displays 'http://juhara.com'
+echo $correctUrl; // displays 'https://juhara.com'
 ```
 
 #### Added `Phalcon\Mvc\Model::hasUpdated` and `Phalcon\Mvc\Model:getUpdatedFields`, way to check if fields were updated after create/save/update, Added option to disable snapshot update on create/save using `Phalcon\Mvc\Model::setup(['updateSnapshotOnSave' => false])` or `phalcon.orm.update_snapshot_on_save = 0` in `php.ini`
