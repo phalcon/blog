@@ -12,14 +12,14 @@ After more than one year of hard work and several releases, we are happy to brin
 <!--more-->
 We would like to extend our thanks to all in the community, contributors and enthusiasts that have been helping us materialize our dream, a new approach in PHP frameworks: creating a robust tool for building web applications while keeping the performance to a maximum.
 
-Main features introduced in this release were highlighted in the [beta article](http://blog.phalcon.io/post/phalcon-1-0-0-beta-released).
+Main features introduced in this release were highlighted in the [beta article](https://blog.phalcon.io/post/phalcon-1-0-0-beta-released).
 
 1.0.0 also includes other minor changes, bug fixes and stability improvements. You can see the complete [CHANGELOG](https://github.com/phalcon/cphalcon/blob/phalcon-v1.0.0/CHANGELOG) here.
 
 - [Documentation](https://docs.phalcon.io/latest/en/)
 - [Download](https://phalcon.io/download)
 
-If you have any questions about functionality, feel free to ask either in our [Forum](https://forum.phalcon.io) or [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon)
+If you have any questions about functionality, feel free to ask either in our [Forum](https://forum.phalcon.io) or [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon)
 
 ### The Highlights
 To this day, the main features that Phalcon offers are:

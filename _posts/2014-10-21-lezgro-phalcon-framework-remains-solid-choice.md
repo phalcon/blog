@@ -9,7 +9,7 @@ tags:
   - implementation
 image: '/assets/files/2014-10-21-phalcon-lezgro.png'
 ---
-This post has been cross posted from [Lezgro's](http://lezgro.com/phalcon-framework-for-superior-development/) blog, written by [Pavlo Pastushenko](http://lezgro.com/author/ppas/ "Posts by Pavlo Pastushenko")
+This post has been cross posted from [Lezgro's](https://lezgro.com/phalcon-framework-for-superior-development/) blog, written by [Pavlo Pastushenko](http://lezgro.com/author/ppas/ "Posts by Pavlo Pastushenko")
 
 <!--more-->
 > We established partnership with Phalcon Team – people who stand behind the fastest and robust PHP Framework that offers high performance and lower resource consumption. We provide advising to everyone who interested and glad to keep strong relationship with the company. Phalcon is always discussed as a framework to work with in terms of our Development Team as we always see lots of different ideas where its implementation would be a way to go.

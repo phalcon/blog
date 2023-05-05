@@ -45,7 +45,7 @@ A huge thank you and kudos to our community for the patience and support all thi
 Phalcon 3.1.2 can be installed from the `master` branch, if you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```

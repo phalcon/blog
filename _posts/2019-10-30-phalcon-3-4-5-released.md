@@ -34,7 +34,7 @@ Windows DLLs are available from the Github [3.4.5](https://github.com/phalcon/cp
 Phalcon 3.4.5 can be installed from the [v3.4.5](https://github.com/phalcon/cphalcon/tree/v3.4.5) tag, if you don't have Zephir installed follow these instructions:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd cphalcon/build
 sudo ./install
 ```

@@ -23,7 +23,7 @@ To make things even more interesting we introduced a custom layout generator whi
 
 ![image](/assets/files/2012-12-08-album.jpg)
 
-If you have [Spotify](http://spotify.com/) installed you may listen most popular songs.
+If you have [Spotify](https://spotify.com/) installed you may listen most popular songs.
 
 In this demo you will find:
 

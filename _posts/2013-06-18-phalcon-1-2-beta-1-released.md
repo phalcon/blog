@@ -294,7 +294,7 @@ $manager->outputJs();
 This component still needs a bit more of work, adding caching, versioning and detection of changes to reduce processing. These changes will be available in the next beta.
 
 ### Disallow literals in PHQL
-[PHQL](https://docs.phalcon.io/latest/en/phql) provides a set of features that aids the developer to secure his/her applications. Comparing to straight SQL, PHQL now has a new feature that increases even more security, thus avoiding a large number of potential [SQL injection](http://en.wikipedia.org/wiki/SQL_injection) scenarios. The developer can now disable literals in PHQL. This means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. If by mistake a developer writes:
+[PHQL](https://docs.phalcon.io/latest/en/phql) provides a set of features that aids the developer to secure his/her applications. Comparing to straight SQL, PHQL now has a new feature that increases even more security, thus avoiding a large number of potential [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) scenarios. The developer can now disable literals in PHQL. This means that directly using strings, numbers and boolean values in PHQL strings will be disallowed. If by mistake a developer writes:
 
 ```php
 $artist = Artists::findFirst("name = '$name'");
@@ -386,7 +386,7 @@ A backtrace like this is showed when an exception is generated:
 This version can be installed from the 1.2.0 branch:
 
 ```sh
-git clone http://github.com/phalcon/cphalcon
+git clone https://github.com/phalcon/cphalcon
 cd build
 git checkout 1.2.0
 sudo ./install
@@ -394,7 +394,7 @@ sudo ./install
 
 Windows users can download a DLL from the [download page](https://phalcon.io/download).
 
-We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) and [Stack Overflow](http://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
+We welcome your comments regarding this new release in [Phosphorum](https://forum.phalcon.io/) and [Stack Overflow](https://stackoverflow.com/questions/tagged/phalcon). If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.
 
 Thanks!
 

@@ -11,7 +11,7 @@ Help to make Phalcon more popular.
 
 <!--more-->
 **Increase visibility**
-We love that you communicate with us via email, chat or internal messaging. However, if you do so, we may be very busy and thus your message might fall through the cracks. Despite the fact that our community is small, there is always someone willing to help. We would appreciate if you use [StackOverflow](http://stackoverflow.com/questions/tagged/phalcon) with your queries. StackOverflow is a social network visited by thousands of developers every day, helping greatly to increase the visibility of the project. It also contains answers to frequently asked questions regarding Phalcon, resource which is invaluable for people that just got introduced to our project**.**Additionally you can post questions/concerns/feedback in our [Google Group](https://groups.google.com/forum/#!forum/phalcon).
+We love that you communicate with us via email, chat or internal messaging. However, if you do so, we may be very busy and thus your message might fall through the cracks. Despite the fact that our community is small, there is always someone willing to help. We would appreciate if you use [StackOverflow](https://stackoverflow.com/questions/tagged/phalcon) with your queries. StackOverflow is a social network visited by thousands of developers every day, helping greatly to increase the visibility of the project. It also contains answers to frequently asked questions regarding Phalcon, resource which is invaluable for people that just got introduced to our project**.**Additionally you can post questions/concerns/feedback in our [Google Group](https://groups.google.com/forum/#!forum/phalcon).
 
 **Evangelism**
 Presenting Phalcon in every event about PHP, is something we would love to do but logistically is impossible. We are certain that many developers will benefit from hearing what Phalcon is all about and how it can help them. If you know of any PHP events and you wish to give a talk about the project, you have our full support. Who does not want to know a tool that helps him/her make his/her applications faster?
@@ -31,9 +31,9 @@ Many people will not be initially convinced that Phalcon can really work. Some p
 
 We have a presence in most of the popular social networks. By following us, you are helping increase the project visibility:
 
-- [Follow us on Twitter](http://twitter.com/phalconphp)
-- [Facebook Page](http://www.facebook.com/pages/Phalcon/134230726685897)
-- [Official Blog](http://blog.phalcon.io)
+- [Follow us on Twitter](https://twitter.com/phalconphp)
+- [Facebook Page](https://www.facebook.com/pages/Phalcon/134230726685897)
+- [Official Blog](https://blog.phalcon.io)
 - [Star the project on Github](https://github.com/phalcon/cphalcon)
 
 **Feedback**

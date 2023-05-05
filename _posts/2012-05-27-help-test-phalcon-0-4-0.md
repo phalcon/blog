@@ -50,7 +50,7 @@ We're pushing out a beta of the 0.4.0 code. Here's how you can help us out:
 - Running the unit-test suite in your own machine and send us feedback on the results. Find instructions on how doing that [here](https://github.com/phalcon/cphalcon/tree/master/tests)
 - Giving us suggestions on the implementation of features before the definitive release
 
-Although, the new version is passing all the [760 unit-tests](http://travis-ci.org/#!/phalcon/cphalcon/builds/1445961) on Travis-CI, there might be some odd bug pending to be fixed.
+Although, the new version is passing all the [760 unit-tests](https://travis-ci.org/#!/phalcon/cphalcon/builds/1445961) on Travis-CI, there might be some odd bug pending to be fixed.
 
 Let's make this release the best yet. 
 

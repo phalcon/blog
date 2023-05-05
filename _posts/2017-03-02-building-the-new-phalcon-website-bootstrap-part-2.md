@@ -64,7 +64,7 @@ We are using the `$_SERVER` array to access the passed variables. We could have 
 We initialize the DI container and set it as a default. It is also stored in a private variable so that it can be passed in the application later on, but also to access relevant services if necessary.
 
 #### `initLoader()`
-Our application uses several packages such as [Dotenv](https://github.com/vlucas/phpdotenv), [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar) and [Guzzle](http://docs.guzzlephp.org/en/stable/). To ensure that those packages are available in our application, we use the composer autoloader. 
+Our application uses several packages such as [Dotenv](https://github.com/vlucas/phpdotenv), [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar) and [Guzzle](https://docs.guzzlephp.org/en/stable/). To ensure that those packages are available in our application, we use the composer autoloader. 
 
 ```php
 protected function initLoader()
@@ -576,4 +576,4 @@ We have looked at the boostrap of the application and each service setup for bot
 - [Source Code](https://github.com/phalcon/website)
 - [Dotenv](https://github.com/vlucas/phpdotenv)
 - [CLI Progress Bar](https://github.com/dariuszp/cli-progress-bar)
-- [Guzzle](http://docs.guzzlephp.org/en/stable/)
+- [Guzzle](https://docs.guzzlephp.org/en/stable/)

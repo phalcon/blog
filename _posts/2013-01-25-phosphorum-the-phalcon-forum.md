@@ -12,7 +12,7 @@ While there are plenty of choices on the Internet, when in need of installing di
 Phosphorum is lightweight and simple in its design, thus it does not implement many sophisticated features, Currently it supports
 
 <!--more-->
-- Registration using Github (via [OAuth](http://developer.github.com/v3/oauth/))
+- Registration using Github (via [OAuth](https://developer.github.com/v3/oauth/))
 - Create/Edit posts
 - Reply posts
 - Edit/Delete replies
@@ -21,9 +21,9 @@ Phosphorum is lightweight and simple in its design, thus it does not implement m
 - User profiles
 - User Timezones
 - User avatars via [Gravatar](https://en.gravatar.com/)
-- Email Notifications via [AmazonSES](http://aws.amazon.com/ses/)
+- Email Notifications via [AmazonSES](https://aws.amazon.com/ses/)
 
-Phosphorum showcases some of the features that have been recently introduced in Phalcon, specifically in version [0.9.0](http://blog.phalcon.io/post/phalcon-0-9-beta-released).
+Phosphorum showcases some of the features that have been recently introduced in Phalcon, specifically in version [0.9.0](https://blog.phalcon.io/post/phalcon-0-9-beta-released).
 
 You can find the source code on [Github](https://github.com/phalcon/forum).
 
