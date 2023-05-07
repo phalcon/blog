@@ -31,7 +31,7 @@ Returning to the subject of this post, in this release, we're proud to announce 
 - Fixed segmentation fault in `Phalcon\Db::tableExists`
 - Fixed memory leak in `Phalcon\Paginator`
 - Added [Phalcon\Logger](https://docs.phalcon.io/latest/en/logging) component
-- Added Zend Thread Safety (ZTS) support to Phalcon Memory Manager. We are taking advantage of [thread safety](https://en.wikipedia.org/wiki/Thread_safety). Phalcon is now able to run under [single-process multithreaded web servers](http://httpd.apache.org/docs/2.0/en/mpm.html).
+- Added Zend Thread Safety (ZTS) support to Phalcon Memory Manager. We are taking advantage of [thread safety](https://en.wikipedia.org/wiki/Thread_safety). Phalcon is now able to run under [single-process multithreaded web servers](https://httpd.apache.org/docs/2.0/en/mpm.html).
 
 Framework documentation is also quite complete. [Check it out](https://docs.phalcon.io)
 

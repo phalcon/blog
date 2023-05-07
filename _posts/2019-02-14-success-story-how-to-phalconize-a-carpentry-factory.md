@@ -15,7 +15,7 @@ This success story has been submitted by our community member Ruud ([ruudboon](h
 
 ![De Vries Houtbewerking](/assets/files/devries-factory.jpg "De Vries Houtbewerking")
 
-In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](http://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
+In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](https://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
 
 The company wanted to increase productivity and streamline the production line by ensuring that at any given point, all workers are aware of the tasks of the day.
 
