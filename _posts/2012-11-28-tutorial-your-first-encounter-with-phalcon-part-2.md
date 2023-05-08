@@ -182,7 +182,7 @@ insert into users (login, password)
 values('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997'); 
 ```
 
-I assume you are familiar with MySQL command line interface, [PHPMyAdmin](https://www.phpmyadmin.net/home_page/index.php) or [HeidiSQL](http://www.heidisql.com/), so I leave out the details how to create a database. Do it with your favorite tool (but remember that it has to match Phalcon's configuration) and execute the above code against MySQL database you created.
+I assume you are familiar with MySQL command line interface, [PHPMyAdmin](https://www.phpmyadmin.net/home_page/index.php) or [HeidiSQL](https://www.heidisql.com/), so I leave out the details how to create a database. Do it with your favorite tool (but remember that it has to match Phalcon's configuration) and execute the above code against MySQL database you created.
 
 #### Step 7 - Models and validation
 Few facts for beginners - in Phalcon:
@@ -287,7 +287,7 @@ Keep in mind that when using scaffolding with bootstrap option, Phalcon will onl
       href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css"/>
 ```
 
-We make use here of [https://www.bootstrapcdn.com/](http://www.bootstrapcdn.com/) which is a great and straightforward way to simply get Twitter bootstrap files.
+We make use here of [https://www.bootstrapcdn.com/](https://www.bootstrapcdn.com/) which is a great and straightforward way to simply get Twitter bootstrap files.
 
 That's actually all we need to use twitter bootstrap. Additionally you could include bootstrap javascript file, to enjoy additional [benefits](https://twitter.github.com/bootstrap/javascript.html) (modals, tooltips and many more!):
 
@@ -313,7 +313,7 @@ Some facts for beginners - in Phalcon:
 * controller is just an usual PHP class suffixed with a word “Controller”,
 * action is just an usual PHP class method suffixed with a word “Action”
 
-So you will want to be familiar with [PHP5 OOP](https://php.net/manual/en/language.oop5.php) although you should be alright with knowing the [basics](http://www.php.net/manual/en/language.oop5.basic.php).
+So you will want to be familiar with [PHP5 OOP](https://php.net/manual/en/language.oop5.php) although you should be alright with knowing the [basics](https://www.php.net/manual/en/language.oop5.basic.php).
 
 Following code presents a very simple Controller skeleton and I'll explain how view() and create() actions should look like, the rest of the code is available in the source.
 
@@ -466,10 +466,10 @@ public function beforeExecuteRoute($dispatcher)
 }
 ```
 
-Phalcon provides Access Control Lists component - [Phalcon\ACL](http://docs.phalcon.io/latest/en/reference/acl), which you'll probably use when implementing more complex access rules.
+Phalcon provides Access Control Lists component - [Phalcon\ACL](https://docs.phalcon.io/latest/en/reference/acl), which you'll probably use when implementing more complex access rules.
 
 #### Step 10 - Views
-Phalcon does support templating systems like [Mustache](https://github.com/bobthecow/mustache.php/), [Twig](http://twig.sensiolabs.org/) or the one provided by the framework called [Volt](http://docs.phalcon.io/latest/en/reference/volt), but you are free to use plain PHP, which we will just do. A typical view would incorporate usage of `Phalcon\Tag` component, convenient helper class that aids creation of forms, links and other html elements:
+Phalcon does support templating systems like [Mustache](https://github.com/bobthecow/mustache.php/), [Twig](https://twig.sensiolabs.org/) or the one provided by the framework called [Volt](https://docs.phalcon.io/latest/en/reference/volt), but you are free to use plain PHP, which we will just do. A typical view would incorporate usage of `Phalcon\Tag` component, convenient helper class that aids creation of forms, links and other html elements:
 
 ```php
 <!-- app/views/index.phtml -->
@@ -550,7 +550,7 @@ Your public/index.php file must look like this
 
 That's it, routing should now work as expected. You may now test these settings by entering `http://blog.net/login/`.
 
-That was the last step in creating Phalcon web application, you may want to find out more and check out the [docs](http://docs.phalcon.io/latest/en/) or download them in [PDF](http://media.readthedocs.org/pdf/phalcon-php-framework-documentation/latest/phalcon-php-framework-documentation.pdf) or check out recent changes on [Phalcon blog](http://blog.phalcon.io/).
+That was the last step in creating Phalcon web application, you may want to find out more and check out the [docs](https://docs.phalcon.io/latest/en/) or download them in [PDF](https://media.readthedocs.org/pdf/phalcon-php-framework-documentation/latest/phalcon-php-framework-documentation.pdf) or check out recent changes on [Phalcon blog](https://blog.phalcon.io/).
 
 ### Summary
 I explained how to install Phalcon under Windows using WAMP or Ubuntu Linux and configure developer tools.

@@ -21,7 +21,7 @@ Using analysis tools like [Valgrind](https://www.valgrind.org/), we identified s
 Another common action that PHP makes is looking up classes in the internal class table. We are also avoiding this look up by pointing object constructors directly to class entry pointers that are created when Phalcon module is initialized.
 
 **Speed Improvement**
-Version 0.4.x is 60% faster than its 0.3.x counterpart. Digging up into Travis CI historic builds you can check out the speed running unit-tests. From 1 min 29 secs on the build [54](https://travis-ci.org/#!/phalcon/cphalcon/builds/1286939) to 51 seconds with 0.4.0 on the [last build](http://travis-ci.org/#!/phalcon/cphalcon/builds/1332575).
+Version 0.4.x is 60% faster than its 0.3.x counterpart. Digging up into Travis CI historic builds you can check out the speed running unit-tests. From 1 min 29 secs on the build [54](https://travis-ci.org/#!/phalcon/cphalcon/builds/1286939) to 51 seconds with 0.4.0 on the [last build](https://travis-ci.org/#!/phalcon/cphalcon/builds/1332575).
 
 Although, speed improvement is relative, not all components will run faster than before. If we would make Apache benchmarks again, the difference will not be noticeable.
 

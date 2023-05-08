@@ -15,7 +15,7 @@ The following changes can be expected in this version:
 - Fixed bug in `Phalcon\Db::close`
 - Added logging capabilities to `Phalcon\Db` [more info](https://docs.phalcon.io/latest/en/db-models#logging-low-level-sql-statements)
 - Added `Phalcon\Model\Metadata::getIdentityField` returning the identity (auto_increment) field
-- Added [DDL](https://en.wikipedia.org/wiki/Data_Definition_Language) and [DML](http://en.wikipedia.org/wiki/Data_Manipulation_Language) methods to `Phalcon\Db` 
+- Added [DDL](https://en.wikipedia.org/wiki/Data_Definition_Language) and [DML](https://en.wikipedia.org/wiki/Data_Manipulation_Language) methods to `Phalcon\Db` 
   [more info](https://docs.phalcon.io/latest/en/db#creating-altering-dropping-tables)
 - Added `Phalcon\Db\Column` to define table columns
 - Added `Phalcon\Db\Index` to define table indexes

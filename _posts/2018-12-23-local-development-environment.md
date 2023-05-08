@@ -84,7 +84,7 @@ How would you like to run nanobox?
   b) Via Docker Native
 
   Note : Mac users, we strongly recommend choosing (a) until Docker Native
-         resolves an issue causing slow speeds : http://bit.ly/2jYFfWQ
+         resolves an issue causing slow speeds : https://bit.ly/2jYFfWQ
 
 Answer: 
 ```
@@ -210,7 +210,7 @@ Note that Phalcon v4+ requires the [PSR](https://github.com/jbboehr/php-psr) ext
 
 ### Running tests
 #### Unit
-Now that the environment is set up, we need to run the tests. The testing framework Phalcon uses is [Codeception](https://codeception.com). For a basic introduction you can check [this](http://codeception.com/docs/01-Introduction) page. Also for the list of the commands, you can check [here](http://codeception.com/docs/reference/Commands).
+Now that the environment is set up, we need to run the tests. The testing framework Phalcon uses is [Codeception](https://codeception.com). For a basic introduction you can check [this](https://codeception.com/docs/01-Introduction) page. Also for the list of the commands, you can check [here](https://codeception.com/docs/reference/Commands).
 
 We need to first build the Codeception base classes. This needs to happen every time new functionality is introduced in Codeception's helpers.
 
