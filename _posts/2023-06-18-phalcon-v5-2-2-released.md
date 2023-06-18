@@ -12,9 +12,9 @@ We are happy to announce that Phalcon v5.2.2 has been released!
 
 <!--more-->
 
-L﻿ife, summer and other factors prevented us from releasing earlier, but better late than never :)
+Life, summer and other factors prevented us from releasing earlier, but better late than never :)
 
-T﻿his release fixes a few bugs.
+This release fixes a few bugs.
 
 Thank you as always to our community!
 
