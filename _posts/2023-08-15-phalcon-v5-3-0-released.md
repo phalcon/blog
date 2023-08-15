@@ -14,6 +14,9 @@ We are happy to announce that Phalcon v5.3.0 has been released!
 
 This release fixes form-data handling for PUT requests, changes the dynamic update by default in the ORM, and fixes a memory leak in the Micro application, especially when one is using Swoole. 
 
+> The biggest change comes in the `Phalcon\Mvc\Micro`, where the class is no longer automatically registered in the `Phalcon\Di\Di` container with the name `application`. This registration was responsible for numerous memory leaks, when using Swoole with Micro.
+{: .alert .alert-warning }
+
 Along with those, some optimizations have been introduced as well as new methods in the Model, Metdata and Loader. 
 
 Once again, a huge thanks to our community for helping out with bug fixing and more importantly bug reporting!
