@@ -1,79 +1,84 @@
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}</title>
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}</title>
 
-    {% assign page_description = page.excerpt | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip_html | strip |  truncatewords: 30 %}
+{% assign page_description = page.excerpt | newline_to_br | strip_newlines | replace: '
+<br/>', ' ' | strip_html | strip |  truncatewords: 30 %}
 
-    <meta name="viewport" content="width=device-width">
-    <meta name="MobileOptimized" content="320"/>
-    <meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width">
+<meta name="MobileOptimized" content="320"/>
+<meta name="HandheldFriendly" content="true"/>
 
-    <meta charset="utf-8">
-    <meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0" />
-    <meta name="author" content="{{ site.app.author }}">
-    <meta name="generator" content="{{ site.app.generator }}">
-    <meta name="application-name" content="{{ site.app.name }}">
-    <meta name="keywords" content="{{ site.app.keywords }}">
-    <meta name="description" content="{{ site.app.description }}">
-    {% if page.date != "" %}<meta property="article:published_time" content="{{ page.date }}">{% endif %}
+<meta charset="utf-8">
+<meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0"/>
+<meta name="author" content="{{ site.app.author }}">
+<meta name="generator" content="{{ site.app.generator }}">
+<meta name="application-name" content="{{ site.app.name }}">
+<meta name="keywords" content="{{ site.app.keywords }}">
+<meta name="description" content="{{ site.app.description }}">
+{% if page.date != "" %}
+<meta property="article:published_time" content="{{ page.date }}">{% endif %}
 
-    <!-- Facebook -->
-    <meta property="og:url" content="{{ site.app.url }}">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
-    {% if page.excerpt %}
-    <meta property="og:description" content="{{ page_description }}" />
-    {% else %}
-    <meta property="og:description" content="{{ site.app.description }}">
-    {% endif %}
-    <meta property="og:site_name" content="{{ site.app.name }}">
-    <meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
-    <meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+<!-- Facebook -->
+<meta property="og:url" content="{{ site.app.url }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title"
+      content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
+{% if page.excerpt %}
+<meta property="og:description" content="{{ page_description }}"/>
+{% else %}
+<meta property="og:description" content="{{ site.app.description }}">
+{% endif %}
+<meta property="og:site_name" content="{{ site.app.name }}">
+<meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+<meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
-    {% if page.excerpt %}
-    <meta name="twitter:description" content="{{ page_description }}" />
-    {% else %}
-    <meta name="twitter:description" content="{{ site.app.description }}">
-    {% endif %}
-    <meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
-    <meta name="twitter:image:alt" content="{{ site.app.name }}">
-    <meta name="twitter:site" content="@{{ site.social.twitter }}">
-    <meta name="twitter:creator" content="Phalcon Team">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+      content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
+{% if page.excerpt %}
+<meta name="twitter:description" content="{{ page_description }}"/>
+{% else %}
+<meta name="twitter:description" content="{{ site.app.description }}">
+{% endif %}
+<meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+<meta name="twitter:image:alt" content="{{ site.app.name }}">
+<meta name="twitter:site" content="@{{ site.social.twitter }}">
+<meta name="twitter:creator" content="Phalcon Team">
 
-    {% if page.image != "" %}<meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">{% endif %}
-    <meta itemprop="publisher" content="Phalcon Team">
+{% if page.image != "" %}
+<meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">{% endif %}
+<meta itemprop="publisher" content="Phalcon Team">
 
-    <meta name="telegram:channel" content="@phalcon_news">
+<meta name="telegram:channel" content="@phalcon_news">
 
-    <link rel="canonical" href="{{ site.app.url }}{{ page.url }}">
-    <link rel="publisher" href="{{ site.app.url }}">
-    <link rel="author" href="/humans.txt">
+<link rel="canonical" href="{{ site.app.url }}{{ page.url }}">
+<link rel="publisher" href="{{ site.app.url }}">
+<link rel="author" href="/humans.txt">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"/>
-    <link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"/>
-    <link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"/>
-    <link rel="manifest" href="/assets/favicons/site.webmanifest">
-    <link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a">
-    <meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#273646">
-    <meta name="theme-color" content="#273646">
+<link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"/>
+<link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"/>
+<link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"/>
+<link rel="manifest" href="/assets/favicons/site.webmanifest">
+<link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a">
+<meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml"/>
+<meta name="msapplication-TileColor" content="#273646">
+<meta name="theme-color" content="#273646">
 
-    <link rel="alternate"
-          type="application/rss+xml"
-          title="{{ site.app.name }} - {{ site.app.description }}"
-          href="/feed.xml">
+<link rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.app.name }} - {{ site.app.description }}"
+      href="/feed.xml">
 
-    <link rel="stylesheet"
-          type="text/css"
-          href="https://assets.phalcon.io/phalcon/css/main.min.css">
-    <link rel="stylesheet"
-          type="text/css"
-          href="https://assets.phalcon.io/phalcon/css/core-custom.css">
+<link rel="stylesheet"
+      type="text/css"
+      href="https://assets.phalcon.io/phalcon/css/main.min.css">
+<link rel="stylesheet"
+      type="text/css"
+      href="https://assets.phalcon.io/phalcon/css/core-custom.css">
