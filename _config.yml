@@ -8,6 +8,8 @@ app:
   baseurl: "/"
   analytics: 'G-9JGM81GDBF'
   comments: false
+  cloudflare:
+    analytics: 'c9452282874345468a2bdac6c76ee684'
 
 url: https://blog.phalcon.io
 
