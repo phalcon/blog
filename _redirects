@@ -45,16 +45,16 @@
 /post/20928554661/invo-a-sample-application                                          /post/invo-a-sample-application                                                      301
 /post/phosphorum-the-phalcons-forum                                                  /post/phosphorum-the-phalcon-forum                                                   301
 /post/2021-05-03-phalcon-4-2-2-live-release-v5-alpha-2-community-hangout-2021-05-03  /post/2021-05-03-phalcon-4-1-2-live-release-v5-alpha-2-community-hangout-2021-05-03  301
+/post/29703992127/introduction-series-3-building-an-mvc-application-with?*           /post/introduction-series-3-building-an-mvc-application-with                         301
+/page/2?route=/page/:page                                                            /                                                                                    301
 /page/*                                                                              /                                                                                    301
 /post/48284679009/help-the-community-to-make-phalcon-available-*                     /post/help-the-community-to-make-phalcon-available-on                                301
 /post/24476683703/integrating-phalcon-with-phpstorm-*                                /post/integrating-phalcon-with-phpstorm-ide                                          301
-/post/29703992127/introduction-series-3-building-an-mvc-application-with?*           /post/introduction-series-3-building-an-mvc-application-with                         301
 /post/19178864207/phalcon-0-3-0-released*                                            /post/phalcon-0-3-0-released                                                         301
 /post/27734788888/phalcon-0-4-3-stable-and-0-5-0-alpha*                              /post/phalcon-0-4-3-stable-and-0-5-0-alpha                                           301
 /post/44715359754/phalcon-1-0-0-beta-released*                                       /post/phalcon-1-0-0-beta-released                                                    301
 /post/24253047034/phalcon-0-4-0-is-finally-here*                                     /post/phalcon-0-4-0-is-finally-here                                                  301
 /post/53287669607/phalcon-1-2-beta-1-released*                                       /post/phalcon-1-2-beta-1-released                                                    301
 /post/82684625141/phalcon-2-beta-1-released*                                         /post/phalcon-2-beta-1-released                                                      301
-/page/2?route=/page/:page                                                            /                                                                                    301
 /post/post/:slug                                                                     /post/:slug                                                                          301
 
