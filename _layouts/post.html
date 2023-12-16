@@ -23,16 +23,16 @@ layout: default
                         {{ page.title | escape }}
                     </h2>
                     <div class="phalcon-blog-detail__info">
-                        <div id="phalcon-blog-detail__date" 
-                             class="phalcon-blog-detail__date" 
-                             itemprop="datePublished" 
+                        <div id="phalcon-blog-detail__date"
+                             class="phalcon-blog-detail__date"
+                             itemprop="datePublished"
                              content="{{ page.date | date: '%Y-%m-%d' }}">
                             {{ page.date | date: "%b %d, %Y" }}
                         </div>
-                        <div id="phalcon-blog-detail__author" 
-                             class="phalcon-blog-detail__author" 
-                             itemprop="author" 
-                             itemscope 
+                        <div id="phalcon-blog-detail__author"
+                             class="phalcon-blog-detail__author"
+                             itemprop="author"
+                             itemscope
                              itemtype="http://schema.org/Person">
                             <span itemprop="name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
                         </div>
