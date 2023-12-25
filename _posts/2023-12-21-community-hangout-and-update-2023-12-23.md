@@ -18,6 +18,6 @@ Join us this Saturday 23rd of December at 10:00 EST (15:00 UTC) for a community 
 * v6
 * Issues/what is left
 
-[https://youtube.com/live/hMfiGJsbbEE](https://youtube.com/live/hMfiGJsbbEE)
+[https://youtu.be/qV6OxeW1e_Q](https://youtu.be/qV6OxeW1e_Q)
 
 Looking forward to seeing everyone there!
