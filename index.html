@@ -4,75 +4,77 @@ layout: default
 {% for post in paginator.posts %}
 {% if forloop.index == 1 %}
 {% if 1 == paginator.page %}
-                <div class="phalcon-blog__last-article">
-                    <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
-                        <div class="phalcon-blog__item-content">
-                            <div class="phalcon-blog__item-title" itemprop="name headline">
-                                <a href="{{ post.url }}">{{ post.title }}</a>
-                            </div>
-                            <div class="phalcon-blog__item-info">
-                                <div class="phalcon-blog__item-date" itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">
-                                    {{ post.date | date: "%b %d, %Y" }}
-                                </div>
-                                <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                    <span itemprop="name">Phalcon Team (<a href="https://github.com/niden" >niden</a>)</span>
-                                </div>
-                            </div>
-                            <div class="phalcon-blog__item-article" itemprop="articleSection">
-                                {{ post.excerpt }}
-                            </div>
-                            <a href="{{ post.url }}"
-                               class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
-                        </div>
-                        {% if post.image %}
-                        <meta itemprop="image" content="{{ post.image }}">
-                        <a href="{{ post.url }}" class="phalcon-blog__item-img">
-                            <img src="{{ post.image }}" alt="{{ post.title }}">
-                        </a>
-                        {% else %}
-                        <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
-                        {% endif %}
-                        <meta itemprop="publisher" content="Phalcon Team">
-                    </div>
+<div class="phalcon-blog__last-article">
+    <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
+        <div class="phalcon-blog__item-content">
+            <div class="phalcon-blog__item-title" itemprop="name headline">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+            <div class="phalcon-blog__item-info">
+                <div class="phalcon-blog__item-date" itemprop="datePublished"
+                     content="{{ page.date | date: '%Y-%m-%d' }}">
+                    {{ post.date | date: "%b %d, %Y" }}
                 </div>
-                <div class="phalcon-blog__main-title">
-                    LATEST POSTS
+                <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span>
                 </div>
+            </div>
+            <div class="phalcon-blog__item-article" itemprop="articleSection">
+                {{ post.excerpt }}
+            </div>
+            <a href="{{ post.url }}"
+               class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
+        </div>
+        {% if post.image %}
+        <meta itemprop="image" content="{{ post.image }}">
+        <a href="{{ post.url }}" class="phalcon-blog__item-img">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </a>
+        {% else %}
+        <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
+        {% endif %}
+        <meta itemprop="publisher" content="Phalcon Team">
+    </div>
+</div>
+<div class="phalcon-blog__main-title">
+    LATEST POSTS
+</div>
 {% endif %}
-                <div class="phalcon-blog__items">
-{% else %}
-                    <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
-                        <div class="phalcon-blog__item-content">
-                            <div class="phalcon-blog__item-title" itemprop="name headline">
-                                <a href="{{ post.url }}">{{ post.title }}</a>
-                            </div>
-                            <div class="phalcon-blog__item-info">
-                                <div class="phalcon-blog__item-date" itemprop="datePublished" content="{{ page.date | date: "%Y-%m-%d" }}">
-                                    {{ post.date | date: "%b %d, %Y" }}
-                                </div>
-                                <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                    <span itemprop="name">Phalcon Team</span>
-                                </div>
-                            </div>
-                            <div class="phalcon-blog__item-article" itemprop="articleSection">
-                                {{ post.excerpt }}
-                            </div>
-                            <a href="{{ post.url }}"
-                               class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
-                        </div>
-                        {% if post.image %}
-                        <meta itemprop="image" content="{{ post.image }}">
-                        <a href="{{ post.url }}" class="phalcon-blog__item-img">
-                            <img src="{{ post.image }}" alt="{{ post.title }}">
-                        </a>
-                        {% else %}
-                        <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
-                        {% endif %}
-                        <meta itemprop="publisher" content="Phalcon Team">
-                    </div>
+<div class="phalcon-blog__items">
+    {% else %}
+    <div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
+        <div class="phalcon-blog__item-content">
+            <div class="phalcon-blog__item-title" itemprop="name headline">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </div>
+            <div class="phalcon-blog__item-info">
+                <div class="phalcon-blog__item-date" itemprop="datePublished" content="{{ page.date | date: " %Y-%m-%d
+                " }}">
+                {{ post.date | date: "%b %d, %Y" }}
+            </div>
+            <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span itemprop="name">Phalcon Team</span>
+            </div>
+        </div>
+        <div class="phalcon-blog__item-article" itemprop="articleSection">
+            {{ post.excerpt }}
+        </div>
+        <a href="{{ post.url }}"
+           class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
+    </div>
+    {% if post.image %}
+    <meta itemprop="image" content="{{ post.image }}">
+    <a href="{{ post.url }}" class="phalcon-blog__item-img">
+        <img src="{{ post.image }}" alt="{{ post.title }}">
+    </a>
+    {% else %}
+    <meta itemprop="image" content="{{ site.app.url }}/assets/files/phalcon-logo-320x180.png">
+    {% endif %}
+    <meta itemprop="publisher" content="Phalcon Team">
+</div>
 {% endif %}
 {% endfor %}
-                </div>
+</div>
 <!-- Pagination links -->
 <div class="pagination">
     {% if paginator.previous_page %}
