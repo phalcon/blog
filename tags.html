@@ -4,9 +4,9 @@ title: Tags
 permalink: /tags
 ---
 <div id="articles" class="phalcon-blog-detail">
-      <a href="/tags">
-          <h2 itemprop="name headline" class="headline">{{ page.title }}</h2>
-      </a>
+    <a href="/tags">
+        <h2 itemprop="name headline" class="headline">{{ page.title }}</h2>
+    </a>
     <div>
         {% assign tags = site.tags | sort %}
         {% for tag in tags %}
@@ -14,16 +14,16 @@ permalink: /tags
         <a name="{{ tag | first | strip | slugify }}"></a>
         <div class="tag-button">{{ tag[0] }}</div>
         <p>
-		<ul>
-			{% assign posts = tag[1] %}
-			{% for post in posts %}
-			<li><a href="{{ post.url }}">{{ post.title }} - [{{ post.date | date: "%Y-%m-%d" }}]</a></li>
-			{% endfor %}
-		</ul>
-		</p>
-		{% endif %}
-		{% endfor %}
-	</div>
+        <ul>
+            {% assign posts = tag[1] %}
+            {% for post in posts %}
+            <li><a href="{{ post.url }}">{{ post.title }} - [{{ post.date | date: "%Y-%m-%d" }}]</a></li>
+            {% endfor %}
+        </ul>
+        </p>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
 
 
