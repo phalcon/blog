@@ -8,7 +8,7 @@ tags:
   - phalcon5
   - release
 ---
-We are happy to announce that Phalcon v5.5.1 has been released!
+We are happy to announce that Phalcon v5.6.0 has been released!
 
 <!--more-->
 
