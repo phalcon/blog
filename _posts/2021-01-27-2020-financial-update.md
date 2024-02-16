@@ -13,8 +13,8 @@ As discussed in the past, we are posting financial updates for each year, so tha
 
 <!--more-->
 
-!!! info "INFO"
-    You can always check the status of our finances in our [Open Collective](https://opencollective.com/phalcon) or [GitHub Sponsors](https://phalcon.io/fund) pages at any time.
+> You can always check the status of our finances in our [Open Collective](https://opencollective.com/phalcon) or [GitHub Sponsors](https://phalcon.io/fund) pages at any time.
+{: .alert .alert-info }
 
 ## Overview
 We have a good amount of funds available to us. Right now our account has 8,847.84 USD. As you can see in Open Collective we have been very frugal with the funds, and only used it for certain services or sponsoring certain activities.
