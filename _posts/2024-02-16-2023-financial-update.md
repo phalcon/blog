@@ -20,6 +20,9 @@ We promised to be as transparent as possible with our community and contributors
 > You can always check the status of our finances in our [Open Collective](https://opencollective.com/phalcon) or [GitHub Sponsors](https://phalcon.io/fund) pages at any time.
 {: .alert .alert-info }
 
+> NOTE: If you support the project using OpenCollective, there is a processing fee for every transaction. For example, if you support the project with $10.00 a month, OpenCollective charges $1 and the payment processor $0.74 to the project. This is why you see those expenses in the tables below. GitHub Sponsors does not charge fees.
+{: .alert .alert-warning }
+
 ## 2023 Financial Summary
 
 ### Overview
