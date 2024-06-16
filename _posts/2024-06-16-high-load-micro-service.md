@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon + Swoole in High Load Micro Service
-image: /assets/files/2024-05-17-phalcon-5.7.0-release.png
+image: /assets/files/2024-06-16-phalcon-swoole-high-load-microservices.png
 date: 2024-06-16T16:00:00.000Z
 tags:
   - phalcon
