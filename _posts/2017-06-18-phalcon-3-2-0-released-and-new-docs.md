@@ -63,7 +63,7 @@ The release tag can be found here: [3.2.0](https://github.com/phalcon/cphalcon/r
 - Added autopadding feature for `Phalcon\Crypt::encryptBase64` and `Phalcon\Crypt::decryptBase64` [#12490](https://github.com/phalcon/cphalcon/issues/12490)
 - Fixed Dispatcher forwarding when handling exception [#11819](https://github.com/phalcon/cphalcon/issues/11819), [#12154](https://github.com/phalcon/cphalcon/issues/12154)
 - Fixed params view scope for PHP 7 [#12648](https://github.com/phalcon/cphalcon/issues/12648)
-- Fixed `Phalcon\Mvc\Micro::handle` to prevent attemps to send response twice [#12668](https://github.com/phalcon/cphalcon/pull/12668)
+- Fixed `Phalcon\Mvc\Micro::handle` to prevent attempts to send response twice [#12668](https://github.com/phalcon/cphalcon/pull/12668)
 - Fixed `Di::set`, `Di::setShared` to allow pass more than 10 arguments [#12299](https://github.com/phalcon/cphalcon/issues/12299)
 - Fixed `Phalcon\Mvc\Model\MetaData\Strategy\Annotations::getColumnMaps` where only renamed columns where returned if there was one
 - Fixed `Phalcon\Mvc\Micro:handle` to correctly handle `before` handlers [#10931](https://github.com/phalcon/cphalcon/pull/10931)

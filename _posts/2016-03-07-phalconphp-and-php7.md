@@ -12,7 +12,7 @@ This new engine, code named PHPNG, will give some of your applications double th
 
 Some benchmarks that have been run so far:
 
-- Wordpress 3.6 – 20.0% gain (253 vs 211 req/sec)
+- WordPress 3.6 – 20.0% gain (253 vs 211 req/sec)
 - Drupal 6.1 – 11.7% gain (1770 vs 1585 req/sec)
 - Qdig – 15.3% gain (555 vs 482 req/sec)
 - ZF test app – 30.5% gain (217 vs 166 req/sec)

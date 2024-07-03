@@ -22,7 +22,7 @@ than `Mvc\Model\Query\Builder` to avoid collisions
 - `afterCreate`/`afterUpdate` are only called if saving related records was successful
 - Added an optional parameter removeData to `Session\Adapter::remove()` to remove any data in `$_SESSION` that belongs to the uniqueId or the whole session data
 - Now session variables making use of unique prefixes use `#` as internal separator
-- Added parameter that changes the default operator for conditions in method `Mvc\Model\Criteria::fromImput()` [10749](https://github.com/phalcon/cphalcon/issues/10749)
+- Added parameter that changes the default operator for conditions in method `Mvc\Model\Criteria::fromInput()` [10749](https://github.com/phalcon/cphalcon/issues/10749)
 - Added `\Phalcon\Queue\Beanstalk::listTubes()` to get list of a tubes
 - Added a fix to avoid that a table present in many sub-queries causes invalid SQL generation
 - Add `CookieInterface`, update `Cookie` and `Cookies` to use this interface - Decoupling `Cookies` and `Cookie` - Check `Session` state before using it in `Cookie`. [10789](https://github.com/phalcon/cphalcon/issues/10789)

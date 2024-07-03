@@ -368,7 +368,7 @@ protected function initErrorHandler()
 #### `initRoutes()`
 The routes configuration is located in our `config.php` file (located at `app/config`). This method sets up the routes (including 404) as well as the middleware stack.
 
-Note that this method is overriden and replaced by an empty one for our CLI application, since CLI applications do not use routes.
+Note that this method is overridden and replaced by an empty one for our CLI application, since CLI applications do not use routes.
 
 The configuration array looks something like this:
 
@@ -451,7 +451,7 @@ $collection->setHandler($route['class'], true);
 #### `initView()`
 A micro application does not render views automatically, nor does it have a view object. For our views we use the `Phalcon\Mvc\View\Simple` component. Setting it up is very easy, it resembles any other view setup. 
 
-Note that this method is overriden and replaced by an empty one for our CLI application, since CLI applications do not use views.
+Note that this method is overridden and replaced by an empty one for our CLI application, since CLI applications do not use views.
 
 ```php
 protected function initView()
@@ -509,7 +509,7 @@ The code for the extension is located in `library/View/Engine/Volt/Extensions/Ph
 #### `initAssets()`
 Trying to keep ourselves DRY, we initialize our Asset service with the assets that are common to all pages of the application. 
 
-Again this method is overriden in our CLI application because CLI tasks do not need assets.
+Again this method is overridden in our CLI application because CLI tasks do not need assets.
 
 ```php
 protected function initAssets()
@@ -565,7 +565,7 @@ protected function runApplication()
 
 ### Conclusion
 
-We have looked at the boostrap of the application and each service setup for both the CLI and the main application. In the next part of these series we will discuss the middleware. 
+We have looked at the bootstrap of the application and each service setup for both the CLI and the main application. In the next part of these series we will discuss the middleware. 
 
 ### References
 - [Part 1](/post/building-the-new-phalcon-website-implementation-part-1)

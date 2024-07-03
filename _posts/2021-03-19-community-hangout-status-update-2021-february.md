@@ -19,7 +19,7 @@ What we will discuss is as follows:
 ### Method types - Interfaces
 Zephir and subsequently Phalcon do not enjoy the ease of use and early detection of errors that pure PHP applications do, by using tools such as Psalm, PhpStan etc. 
 
-As a result, and especially for version 3, we had a lot of interface mis-alignments. Sadly, Zephir could not pick that up, and unless a developer wrote a custom component using the interface, these bugs remained undetected and of course not fixed.
+As a result, and especially for version 3, we had a lot of interface misalignments. Sadly, Zephir could not pick that up, and unless a developer wrote a custom component using the interface, these bugs remained undetected and of course not fixed.
 
 Example:
 

@@ -107,7 +107,7 @@ class IndexController extends ControllerBase
             'message' => 'something'
         ];
 
-        // Return reponse
+        // Return response
         return $this->jsonResponse($content);
     }
 }

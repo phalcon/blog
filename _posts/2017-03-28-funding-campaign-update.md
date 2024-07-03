@@ -12,7 +12,7 @@ The funds would be used to hire specialists in C, sponsor bug fixes and features
 <!--more-->
 In order to increase transparency and so that everyone knows how much money we have, who the backers are and where we spent it, it was suggested that we switch our funding vendor to [Open Collective](https://opencollective.com).
 
-Our Patreon campain therefore has been suspended, and replaced with Open Collective. You can find our new funding page here:
+Our Patreon campaign therefore has been suspended, and replaced with Open Collective. You can find our new funding page here:
 
 [https://opencollective.com/phalcon](https://phalcon.io/fund)
 

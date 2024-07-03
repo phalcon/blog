@@ -157,7 +157,7 @@ $cache = new Phalcon\Cache\Backend\Mongo(
 );
 
 // Trying to get latest products cached
-$cacheKey = 'lastest.products';
+$cacheKey = 'latest.products';
 $products = $products->get($cacheKey);
 if ($products === null) {
 

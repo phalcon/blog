@@ -110,7 +110,7 @@ The main goals of Zephir's are:
 - Hide unnecessary complexity to developers
 - Make the code more debugable
 - Produce exceptions in runtime instead of notices/warnings when possible
-- Detect potentially slow or unrechable code and notify the developer about it
+- Detect potentially slow or unreachable code and notify the developer about it
 - Produce faster and better code that can be compiled by most important C-compilers: (gcc, vc++, clang)
 - Provide a very low learning curve without creating a new PHP/C implementation
 

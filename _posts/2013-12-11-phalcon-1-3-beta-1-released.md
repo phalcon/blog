@@ -172,7 +172,7 @@ In this version we have introduced several new features and performance improvem
   - `Phalcon\Mvc\Url::get()` can append query params ([723](https://github.com/phalcon/cphalcon/issues/723), [877](https://github.com/phalcon/cphalcon/issues/877))
   - Regular Expression Optimization for `Phalcon\Mvc\Router` ([977](https://github.com/phalcon/cphalcon/issues/977))
   - PHQL: added placeholders support to `LIMIT` ([1023](https://github.com/phalcon/cphalcon/issues/1023))
-  - Added `Phalcon\Mvc\Router::getDefautXXX()` methods ([1087](https://github.com/phalcon/cphalcon/issues/1087))
+  - Added `Phalcon\Mvc\Router::getDefaultXXX()` methods ([1087](https://github.com/phalcon/cphalcon/issues/1087))
   - Allow `HAVING` without `GROUP BY` in query builder ([1115](https://github.com/phalcon/cphalcon/issues/1115))
   - mvc/model/query.c optimizations ([1129](https://github.com/phalcon/cphalcon/issues/1129), [1132](https://github.com/phalcon/cphalcon/issues/1132))
   - Added support for array(limit, offset]) as a 'limit' constructor key in Query Builder ([1208](https://github.com/phalcon/cphalcon/issues/1208))

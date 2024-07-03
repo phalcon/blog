@@ -100,7 +100,7 @@ var o2 =
 
 		addScreenshots: function()
 		{
-			var sreenshotsPreview = function(input, placeToInsertImagePreview)
+			var screenshotsPreview = function(input, placeToInsertImagePreview)
 			{
 
 				if (input.files)
@@ -124,7 +124,7 @@ var o2 =
 
 			$('#upload-screenshots').on('change', function()
 			{
-				sreenshotsPreview(this, 'div._uploadScreens');
+				screenshotsPreview(this, 'div._uploadScreens');
 			});
 		}
 	},

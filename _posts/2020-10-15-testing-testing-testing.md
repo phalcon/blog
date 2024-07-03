@@ -159,7 +159,7 @@ trait PhpFileTrait
 }
 ```
 
-These proxy methods have been added in a trait, so that I can easily attach it to the part of the code required. The code snippent above becomes:
+These proxy methods have been added in a trait, so that I can easily attach it to the part of the code required. The code snippet above becomes:
 
 ```php
 <?php

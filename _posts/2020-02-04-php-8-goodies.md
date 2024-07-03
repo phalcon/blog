@@ -19,7 +19,7 @@ PHP 8 is expected to be released at the end of 2020. For those that have been fo
 PHP 7 has been a great change towards a direction that could _separate the men from the boys_. The strict types was the best thing that could happen for PHP, since not only it helps us write better and more robust applications, it forces us - as developers - to evolve and grow, by thoroughly thinking our code and how the data flow needs to be performed in our applications. PHP 8 builds on that and expands with new features.
 
 ## Backwards compatibility
-It will not be as bad as one might think. Usually PHP is very thorough in documenting the breaking changes and as such, upgrading will not be that difficult. There is always the [upgrading document](https://github.com/php/php-src/blob/master/UPGRADING#L20) that can serve as a good guide for that task. I am sure that [PHPStorm](https://phpstorm.jetbrains.com) will also offer upgrade tips and hints (when it starts supporting PHP 8) allowing for a smooter upgrade.
+It will not be as bad as one might think. Usually PHP is very thorough in documenting the breaking changes and as such, upgrading will not be that difficult. There is always the [upgrading document](https://github.com/php/php-src/blob/master/UPGRADING#L20) that can serve as a good guide for that task. I am sure that [PHPStorm](https://phpstorm.jetbrains.com) will also offer upgrade tips and hints (when it starts supporting PHP 8) allowing for a smoother upgrade.
 
 ## New features
 ### JIT

@@ -53,7 +53,7 @@ public function beforeNotFound()
 }
 ```
 
-Returning `false` stops the execution of the application. As we can see above, since the `beforeNotFound` event has been triggerred, we need to first pick up the `$language` from the registry, set up the 404 route and then redirect the caller to the relevant handler/action. 
+Returning `false` stops the execution of the application. As we can see above, since the `beforeNotFound` event has been triggered, we need to first pick up the `$language` from the registry, set up the 404 route and then redirect the caller to the relevant handler/action. 
 
 #### `EnvironmentMiddleware`
 This middleware has been attached to the `before` event, so it will be executed before a handler starts processing

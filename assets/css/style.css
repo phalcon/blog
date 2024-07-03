@@ -1827,7 +1827,7 @@ input:focus {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-.buildwith__devider {
+.buildwith__divider {
   padding: 0;
   margin: 0;
   margin-bottom: 27px;
@@ -2006,7 +2006,7 @@ input:focus {
     max-width: 100%; }
   .buildwith-item__img {
     height: 184px; }
-  .buildwith__devider {
+  .buildwith__divider {
     margin-bottom: 10px; }
   .buildwith-nav {
     -webkit-box-orient: vertical;
@@ -2181,72 +2181,72 @@ input:focus {
 .phalcon-blog_documentation {
   position: relative; }
 
-.phalcon-blog-detail_documetation {
+.phalcon-blog-detail_documentation {
   position: relative; }
-.phalcon-blog-detail_documetation p {
+.phalcon-blog-detail_documentation p {
   color: rgba(39, 54, 70, 0.7);
   margin-bottom: 15px; }
-.phalcon-blog-detail_documetation h2,
-.phalcon-blog-detail_documetation h3,
-.phalcon-blog-detail_documetation h4 {
+.phalcon-blog-detail_documentation h2,
+.phalcon-blog-detail_documentation h3,
+.phalcon-blog-detail_documentation h4 {
   color: #273646;
   font-weight: 700;
   line-height: normal;
   position: relative;
   margin: 0;
   margin-bottom: 3px; }
-.phalcon-blog-detail_documetation h2:before,
-.phalcon-blog-detail_documetation h3:before,
-.phalcon-blog-detail_documetation h4:before {
+.phalcon-blog-detail_documentation h2:before,
+.phalcon-blog-detail_documentation h3:before,
+.phalcon-blog-detail_documentation h4:before {
   position: relative;
   content: '# ';
   font-size: 1em;
   color: #8FC19A; }
-.phalcon-blog-detail_documetation h1,
-.phalcon-blog-detail_documetation h2 {
+.phalcon-blog-detail_documentation h1,
+.phalcon-blog-detail_documentation h2 {
   font-size: 20px;
   margin-bottom: 12px; }
-.phalcon-blog-detail_documetation h3 {
+.phalcon-blog-detail_documentation h3 {
   font-size: 18px;
   margin-bottom: 10px; }
-.phalcon-blog-detail_documetation h4 {
+.phalcon-blog-detail_documentation h4 {
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 8px; }
-.phalcon-blog-detail_documetation div.highlighter-rouge {
+.phalcon-blog-detail_documentation div.highlighter-rouge {
   margin-top: 19px;
   margin-bottom: 19px; }
-.phalcon-blog-detail_documetation code {
+.phalcon-blog-detail_documentation code {
   background-color: #F5F5F5;
   color: #385B56;
   padding: 2px 5px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-.phalcon-blog-detail_documetation table {
+.phalcon-blog-detail_documentation table {
   margin-top: 29px;
   margin-bottom: 26px; }
-.phalcon-blog-detail_documetation table th {
+.phalcon-blog-detail_documentation table th {
   background-color: rgba(39, 54, 70, 0.1);
   padding-top: 14px;
   padding-bottom: 16px;
   text-align: left;
   padding-left: 14px; }
-.phalcon-blog-detail_documetation table td {
+.phalcon-blog-detail_documentation table td {
   border: none;
   border-bottom: 1px solid rgba(39, 54, 70, 0.1);
   background-color: rgba(229, 229, 229, 0.1);
   font-size: 14px;
   padding-top: 12px;
   padding-bottom: 12px; }
-.phalcon-blog-detail_documetation table td,
-.phalcon-blog-detail_documetation table th {
+.phalcon-blog-detail_documentation table td,
+.phalcon-blog-detail_documentation table th {
   border-right: 1px solid rgba(39, 54, 70, 0.1); }
-.phalcon-blog-detail_documetation table td:last-child,
-.phalcon-blog-detail_documetation table th:last-child {
+.phalcon-blog-detail_documentation table td:last-child,
+.phalcon-blog-detail_documentation table th:last-child {
   border-right: none; }
-.phalcon-blog-detail_documetation table tr:last-child td {
+.phalcon-blog-detail_documentation table tr:last-child td {
   border-bottom: none; }
-.phalcon-blog-detail_documetation table code {
+.phalcon-blog-detail_documentation table code {
   font-size: 14px; }
 
 .documentation-nav-wr {
