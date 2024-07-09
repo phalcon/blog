@@ -13,7 +13,7 @@ The Phalcon Team is happy to announce the release of **v4.0.0 Alpha 5**! [Github
 As always, we cannot thank your community enough! We said this before but it is worth repeating: our community rocks! For this release alone we had **605 commits** and **6,244** files were changed! A lot of the changes were formatting but a great number of them was performance based.
 <!--more-->
 
-Phalcon v4 Alpha 5 is the last of our Alpha series. The next release will be a beta one! With the help of our community, we pushed through and are happy to report that with this release we only have 13 cards left in our [project](https://github.com/phalcon/cphalcon/projects/3) and will soon address all those remining issues.
+Phalcon v4 Alpha 5 is the last of our Alpha series. The next release will be a beta one! With the help of our community, we pushed through and are happy to report that with this release we only have 13 cards left in our [project](https://github.com/phalcon/cphalcon/projects/3) and will soon address all those remaining issues.
 
 The biggest addition in this release is the [PSR-16](https://www.php-fig.org/psr/psr-16/) Cache implementation. This was a full rewrite for our Cache classes. 
 

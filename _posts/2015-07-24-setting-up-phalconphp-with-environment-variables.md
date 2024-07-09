@@ -15,10 +15,10 @@ Some notes before you continue reading: I currently work using PHP 5.6 in my dev
 
 We will be using Vance Lucas' [phpdotenv](https://github.com/vlucas/phpdotenv) library (the link will take you to his GitHub repository). You can follow the instructions for installing the library using Composer.
 
-Once you have the library installed you will want to create a `.env` file, which is where you will define all your configuration values. It is a good idea to create this file in the user root directory (for exmaple: `/home/user/`).
+Once you have the library installed you will want to create a `.env` file, which is where you will define all your configuration values. It is a good idea to create this file in the user root directory (for example: `/home/user/`).
 
 ```ini
-//This is an exmaple of a `.env` file:
+//This is an example of a `.env` file:
 DOMAIN=yourdomain.com
 BASE_DIR=/home/user/
 PRODUCTION=1

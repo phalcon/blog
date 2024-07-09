@@ -137,7 +137,7 @@ Since `resource` is a reserved word in PHP, it has been causing serious issues w
 
 #### Acl\Adapter\Memory
 - Added `getActiveKey`, `activeFunctionCustomArgumentsCount` and `getActiveFunction` to get latest key, number of custom arguments, and function used to acquire access
-- Added `addOpertion` support multiple inherited
+- Added `addOperation` support multiple inherited
 
 #### Assets
 Similar to the `Acl` component `Resource` has been renamed to `Asset`. Specifically:

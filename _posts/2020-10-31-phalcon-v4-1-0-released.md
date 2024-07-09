@@ -84,7 +84,7 @@ This component can be used to create SQL statements using a fluent interface. Op
 - Fixed `Phalcon\Crypt` performance issues. [#15118](https://github.com/phalcon/cphalcon/issues/15118)
 - Fixed `Phalcon\Mvc\Router\Route` unicode support in patterns [#15102](https://github.com/phalcon/cphalcon/issues/15102)
 - Fixed fatal error in `Phalcon\Mvc\Model::cloneResultMap()` when column map is used with `orm.cast_on_hydrate` turned on. [#14617](https://github.com/phalcon/cphalcon/issues/14617)
-- Fixed `Phalcon\Mvc\Model::sum()`, `average()`, `minimum()`, `maxmium()`, `count()` to utilize the transaction parameter. [#15113](https://github.com/phalcon/cphalcon/issues/15113)
+- Fixed `Phalcon\Mvc\Model::sum()`, `average()`, `minimum()`, `maximum()`, `count()` to utilize the transaction parameter. [#15113](https://github.com/phalcon/cphalcon/issues/15113)
 - Fixed `Phalcon\Mvc\Model::__set()` to clear `dirtyRelated` when empty array is set. [#14822](https://github.com/phalcon/cphalcon/issues/14822)
 - Fixed `Phalcon\Mvc\Model` to skip columns with default values when the `DEFAULT` keyword is not supported by the database adapter (SQLite) [#15180](https://github.com/phalcon/cphalcon/issues/15180)
 - Fixed `Phalcon\Mvc\Router` to handle numeric routes properly [#14926](https://github.com/phalcon/cphalcon/issues/14926)

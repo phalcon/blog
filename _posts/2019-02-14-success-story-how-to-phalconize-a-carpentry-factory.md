@@ -49,7 +49,7 @@ _We all love pi_
 
 ### WebSocket
 
-In order to stimulate the employees to register the finished task, we have chosen to display the status of the task on screen as quickly as possible. One option for instance, was to refresh the screen every 10 seconds by doing an API call. This approach was feasible but it was increasing the traffic by a lot, and we had to consider the burden on the Rasberry PIs. 
+In order to stimulate the employees to register the finished task, we have chosen to display the status of the task on screen as quickly as possible. One option for instance, was to refresh the screen every 10 seconds by doing an API call. This approach was feasible but it was increasing the traffic by a lot, and we had to consider the burden on the Raspberry PIs. 
 
 The other option was to use Websockets, which offer bidirectional communication. At the time of development I had no experience with websocket, so I decided to use only what was needed for my task. Mainly those are two functions: reload the entire web page (for example a style update) or retrieve new data via the API.
 

@@ -307,15 +307,15 @@ public function cancelAction()
 }
 ```
 
-&bull; Removed `Phalcon\Events\Manager::dettachAll` in favor of `Phalcon\Events\Manager::detachAll`
-> **BACKWARDS INCOMPATIBLE**: Any references to `dettachAll` will stop working. You will need to rename the function to `detachAll`
+&bull; Removed `Phalcon\Events\Manager::detachAll` in favor of `Phalcon\Events\Manager::detachAll`
+> **BACKWARDS INCOMPATIBLE**: Any references to `detachAll` will stop working. You will need to rename the function to `detachAll`
 
 **Old way**:
 
 ```php
 public function destroyAction()
 {
-    $this->eventsManager->dettachAll()
+    $this->eventsManager->detachAll()
 }
 ```
 
@@ -522,7 +522,7 @@ returns the files currently registered in the autoloader
 ```php
 $loader->registerFiles(
     [
-        'fuctions.php',
+        'functions.php',
         'arrayFunctions.php',
     ]
 );

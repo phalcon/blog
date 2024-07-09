@@ -93,7 +93,7 @@ A sample is below:
 > Currently I am using BoltCMS for a new project (mostly because the backend and documentation is easy for me to use/understand) but I would really love to use a similar project if it was done using Phalcon. Another thing missing is a solid e-commerce platform based on Phalcon (I would gladly pay to use/support something like that)
 {: .alert .alert-info }
 
-> In my mind you should concentrate on examples where are used good practices, maybe CQRS or other architecture solution. Important thing is multimodule architecutre. In my mind its way to make Phalcon more popular for serious projects. Currently are some issues in this architecture, for example dispatching and security check. Make it php 7.1 compatible :)
+> In my mind you should concentrate on examples where are used good practices, maybe CQRS or other architecture solution. Important thing is multimodule architecture. In my mind its way to make Phalcon more popular for serious projects. Currently are some issues in this architecture, for example dispatching and security check. Make it php 7.1 compatible :)
 {: .alert .alert-info }
 
 > Maybe a more Laravel kind of documentation.

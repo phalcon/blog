@@ -40,7 +40,7 @@ Phalcon 2.1 introduces a great number of improvements, striving to make Phalcon 
 - Added default header: `Content-Type: "application/json; charset=UTF-8"` in method `Phalcon\Http\Response::setJsonContent`
 - `Phalcon\Events\Event` now implements `Phalcon\Events\EventInterface`
 - `Phalcon\Events\Event::getCancelable` renamed to `Phalcon\Events\Event::isCancelable`
-- Removed `Phalcon\Events\Manager::dettachAll` in favor of `Phalcon\Events\Manager::detachAll`
+- Removed `Phalcon\Events\Manager::detachAll` in favor of `Phalcon\Events\Manager::detachAll`
 - `Phalcon\Mvc\Model\Criteria::getOrder` is renamed to `Phalcon\Mvc\Model\Criteria::getOrderBy`
 - Added method `getOption()` in `Phalcon\Mvc\Model\RelationInterface`
 - Added ability to spoof the HTTP request method
