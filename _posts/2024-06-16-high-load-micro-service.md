@@ -13,6 +13,8 @@ tags:
 
 This journey took me four years in total. Four years of meticulous planning, incremental steps, and countless hours of coding and debugging to migrate everything related to this service.
 
+<!--more-->
+
 In this post, I will share our experience of rewriting a high-load microservice using Phalcon with Swoole, why we decided to make this shift, the obstacles we encountered, and how we overcame them. Whether you’re a PHP enthusiast or someone who has dismissed it as a language suited only for small-time projects, our story will provide insights and maybe offer even a few laughs.
 
 Let’s dive into how we turned PHP into a high-performance powerhouse!
