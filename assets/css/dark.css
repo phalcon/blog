@@ -101,7 +101,9 @@
 [color-scheme="dark"] .phalcon-blog__projects-text,
 [color-scheme="dark"] .phalcon-blog__main-title,
 [color-scheme="dark"] .header-dropdown li a,
-[color-scheme="dark"] .tag-button {
+[color-scheme="dark"] .tag-button,
+[color-scheme="dark"] .phalcon-blog-detail table th,
+[color-scheme="dark"] .phalcon-blog-detail table td {
     color: #e2e4e9d1;
 }
 
@@ -174,4 +176,8 @@
 
 [color-scheme="dark"] .phalcon-blog__right .phalcon-blog__tags-items .phalcon-blog__tags-item {
     border-color: #385b56;
+}
+
+[color-scheme="dark"] .phalcon-blog-detail table td {
+    border-color: #e2e4e9d1;
 }
