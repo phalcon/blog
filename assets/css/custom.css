@@ -6,4 +6,8 @@
   .algolia-autocomplete {
     display: none;
   }
+
+  .header-nav__burger {
+    display: flex;
+  }
 }
