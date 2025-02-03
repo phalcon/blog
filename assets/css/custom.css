@@ -11,4 +11,10 @@
   .header-nav--mobile .light-dark-auto-switcher {
     display: flex;
   }
+
+  .header-nav--mobile .light-dark-auto-switcher {
+    margin-left: 0;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
 }
