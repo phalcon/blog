@@ -18,3 +18,9 @@
     margin-top: 5px;
   }
 }
+
+@media screen and (max-width: 1023px) {
+  .phalcon-blog__item-img img {
+    object-fit: contain;
+  }
+}
