@@ -171,3 +171,7 @@
 [color-scheme="dark"] .phalcon-blog__tags-item span:first-child {
     color: #e2e4e98f;
 }
+
+[color-scheme="dark"] .phalcon-blog__right .phalcon-blog__tags-items .phalcon-blog__tags-item {
+    border-color: #385b56;
+}
