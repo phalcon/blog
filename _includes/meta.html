@@ -76,15 +76,17 @@
       title="{{ site.app.name }} - {{ site.app.description }}"
       href="/feed.xml">
 
+<script>document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
+<script type="module" src="/assets/js/theme.js"></script>
+<link rel="stylesheet"
+      href="/assets/css/dark.css">
+
 <link rel="stylesheet"
       type="text/css"
       href="https://assets.phalcon.io/phalcon/css/main.min.css">
 <link rel="stylesheet"
       type="text/css"
       href="https://assets.phalcon.io/phalcon/css/core-custom.css">
-<link rel="stylesheet"
-      type="text/css"
-      href="./../assets/css/dark.css">
 <link rel="stylesheet"
       type="text/css"
       href="./../assets/css/custom.css">
