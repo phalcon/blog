@@ -2,21 +2,14 @@
   .header-nav,
   .header__lang,
   .header__search,
-  .light-dark-auto-switcher,
   .algolia-autocomplete {
     display: none;
   }
 
-  .header-nav__burger,
-  .header-nav--mobile .light-dark-auto-switcher {
+  .header-nav__burger {
     display: flex;
   }
 
-  .header-nav--mobile .light-dark-auto-switcher {
-    margin-left: 0;
-    margin-bottom: 25px;
-    margin-top: 5px;
-  }
 }
 
 @media screen and (max-width: 1023px) {
