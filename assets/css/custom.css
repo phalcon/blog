@@ -17,3 +17,8 @@
     object-fit: contain;
   }
 }
+
+.phalcon-blog__item-img img {
+  max-width: 100%;
+  height: auto;
+}
