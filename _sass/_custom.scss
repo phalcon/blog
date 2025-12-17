@@ -1,0 +1,20 @@
+@media screen and (max-width: 1200px) {
+  .header-nav, .header__lang, .header__search, .algolia-autocomplete {
+    display: none;
+  }
+
+  .header-nav__burger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .phalcon-blog__item-img img {
+    object-fit: contain;
+  }
+}
+
+.phalcon-blog__item-img img {
+  max-width: 100%;
+  height: auto;
+}
