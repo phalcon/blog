@@ -100,20 +100,6 @@ A huge thanks to our community for helping out with bug fixing and more importan
 
 ## Changelog
 
-## [5.12.1](https://github.com/phalcon/cphalcon/releases/tag/v5.12.1) (xxxx-xx-xx)
-
-### Added
-
-- Added `Phalcon\Db\Column::TYPE_UUID` constant (value `29`) and added support for PostgreSQL native `uuid` column type in `Phalcon\Db\Adapter\Pdo\Postgresql` and `Phalcon\Db\Dialect\Postgresql` [#16840](https://github.com/phalcon/cphalcon/issues/16840)
-- Added support for `Phalcon\Mvc\Url` static base URI in `Phalcon\Assets\Manager`; when a DI container is set and a `url` service is available, local asset paths are now resolved via `getStatic()` instead of a bare `/` prefix [#16570](https://github.com/phalcon/cphalcon/issues/16570)
-
-### Fixed
-
-- Fixed `Phalcon\Mvc\Model\Manager` retaining a model instance in `lastInitialized` after initialization and `Phalcon\Mvc\Model` not clearing the reusable-records cache after `save()`, causing memory to grow unboundedly in long-running processes [#16566](https://github.com/phalcon/cphalcon/issues/16566)
-- Fixed `Phalcon\Paginator\Adapter\QueryBuilder::paginate()` returning wrong total item count when the query uses `DISTINCT` columns; the count now uses `COUNT(DISTINCT ...)` for a single column and a subquery for multiple columns [#16581](https://github.com/phalcon/cphalcon/issues/16581)
-- Fixed `Phalcon\Mvc\Model\Query\Builder::autoescape()` incorrectly wrapping function expressions (e.g. `DATE_PART(...)`) in brackets when used in `groupBy()`, causing a `"Column does not belong to any of the selected models"` exception [#16599](https://github.com/phalcon/cphalcon/issues/16599)
-- Fixed `Phalcon\Mvc\Model` - saving a model with multiple fields relations threw `"Not implemented"` [#16029](https://github.com/phalcon/cphalcon/issues/16029)
-
 ## 5.12.0 (2026-04-29)
 
 ### Changed
