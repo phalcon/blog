@@ -39,7 +39,7 @@ The biggest hurdle for getting v6 out, even as an Alpha release, has been the PH
 
 We keep doing what's working. LLMs stay in the loop, doing the grunt work and the deep digging. More bug fixes, faster turnaround on feature requests, continued modernization.
 
-*We're not handing the framework over to a machine*. Every change still gets reviewed, tested, and argued about by humans before it lands. What's changed is how fast we can investigate, prototype, and verify - and how deep we can dig into problems that used to be too expensive to chase.
+To make it abundantly clear: **We're not handing the framework over to a machine**. Every change still gets reviewed, tested, and argued about by humans before it lands. What's changed is how fast we can investigate, prototype, and verify - and how deep we can dig into problems that used to be too expensive to chase.
 
 For a team this size, working on a framework this old and this big, that shift is the whole game. It's the difference between "we'll get to it eventually" and "we got to it last week."
 
