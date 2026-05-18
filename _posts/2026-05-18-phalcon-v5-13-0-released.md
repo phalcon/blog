@@ -155,7 +155,7 @@ Single-quoted Volt string literals containing an escaped single quote (`{{ 'Let'
 
 - `Di::hasShared($name): bool` reports whether `getShared()` has materialized an instance yet (in contrast to has(), which reports on the definition registry).
 - `Di::removeShared($name): void` drops the cached instance from both `Di::$sharedInstances` and the underlying Service object's internal field, without removing the service definition. Next `getShared()` rebuilds.
-- `Phalcon\Di\Di::setAlias()` was widened to accept array|string.
+- `Phalcon\Di\Di::setAlias()` was widened to accept `array|string`.
 
 ### Phalcon\Encryption\Security - opt-out CSRF rotation
 
