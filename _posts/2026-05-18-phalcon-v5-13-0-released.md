@@ -15,7 +15,8 @@ We are happy to announce that Phalcon [v5.13.0][5_13_0] has been released, the l
 > TLDR: Most of the bugs fixed, new functionality and performance enhancements
 {: .alert .alert-info }
 
-Phalcon 5.13.0 is the largest 5.x release since the 5.0 line opened. It ships a deeper Phalcon\Db layer with seven SQL-feature expansions, a rewritten event manager, a new clock namespace, a forms loader/schema pipeline, an HTML escaper façade with per-context escapers, cursor-based pagination, and a long-awaited cleanup of return-type contracts across the framework.
+
+Phalcon 5.13.0 is the largest 5.x release since the 5.0 line opened. It ships a deeper `Phalcon\Db` layer with seven SQL-feature expansions, a rewritten event manager, a new clock namespace, a forms loader/schema pipeline, an HTML escaper façade with per-context escapers, cursor-based pagination, and a long-awaited cleanup of return-type contracts across the framework.
 
 Before we expand on v5:
 
