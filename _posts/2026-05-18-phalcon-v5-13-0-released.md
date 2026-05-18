@@ -97,8 +97,7 @@ The Forms component now reads forms from data sources instead of requiring you t
 - `Phalcon\Forms\FormsLocator` is a closure-based registry for both named forms and element-type factories.
 - `Phalcon\Forms\Manager::loadForm($name, $schema, $entity = null)` is the one-call hook that builds a form from a Schema, registers it in the manager, and
   registers a factory in the locator so entity-aware retrievals rebuild fresh instances.
-- New `CheckGroup` and `RadioGroup` elements render multiple inputs from a single registered entry; `CheckGroup` auto-suffixes the name with [] so PHP collects values
-  into an array.
+- New `CheckGroup` and `RadioGroup` elements render multiple inputs from a single registered entry; `CheckGroup` auto-suffixes the name with [] so PHP collects values into an array.
 
 Bug fixes in this area also resolve two long-standing data-loss issues: Check elements can now register an "unchecked" value via setUncheckedValue() so a
 checkbox going from true → false in the browser actually resets the entity property, and Radio elements with shared HTML name but distinct form-element keys no
@@ -109,22 +108,19 @@ longer silently drop their submitted value.
 Two structural rewrites worth knowing about.
 
 - `Phalcon\Html\Escaper` is now a façade over five per-context escapers: `HtmlEscaper`, `AttributeEscaper`, `CssEscaper`, `JsEscaper`, `UrlEscaper`.
-- `Phalcon\Html\TagFactory` no longer extends `AbstractFactory`. The registration pipeline now accepts class-strings, closures/callables, or [className, [depKeys…]]
-  / [className, [depKeys…], [extraArgs…]] tuples.
+- `Phalcon\Html\TagFactory` no longer extends `AbstractFactory`. The registration pipeline now accepts class-strings, closures/callables, or [className, [depKeys...]] / [className, [depKeys…], [extraArgs…]] tuples.
 - `Phalcon\Html\Helper\Tag` and `VoidTag`.
 - `Phalcon\Html\Helper\Input\Generic` + per-recipe type strings replaces the 20-odd per-type input helpers (`Color`, `Date`, `Email`, ...).
-- `Checkbox`/`Radio` share a new `AbstractChecked` base and recognize two opt-in paths for the checked attribute: ["checked" => "checked"] / ["checked" => true], plus
-  a value-match
+- `Checkbox`/`Radio` share a new `AbstractChecked` base and recognize two opt-in paths for the checked attribute: ["checked" => "checked"] / ["checked" => true], plus a value-match
 - `CheckboxGroup` / `RadioGroup` helpers emit <input> + <label> pairs sharing one HTML name, with id="{name}_{value}" per item.
-- The Select data-provider path can now attach per-option HTML attributes through `SelectDataInterface::getAttributes()`, ArrayData's second argument, or
-  ResultsetData's third attributesMap argument (closures receive the current row).
+- The Select data-provider path can now attach per-option HTML attributes through `SelectDataInterface::getAttributes()`, ArrayData's second argument, or ResultsetData's third attributesMap argument (closures receive the current row).
 - `Style::add()` and `Script::add()` accept an optional `int $position = -1` to control insertion order
 - `Script::beginInternal()` / `endInternal()` capture inline JS via output buffering.
 - New *Raw factory variants: `aRaw`, `buttonRaw`, `elementRaw`, etc.
 - `AbstractSeries::__toString()` now ksort()s its store so entries render in position order, not registration order.
 
 **Security fix**: Phalcon\Tag\Select::optionsFromArray() was not escaping option label text (XSS vector). Labels and values now go through the escaper service,
-consistent with optionsFromResultset().
+consistent with `optionsFromResultset()`.
 
 ### Phalcon\Mvc\Router - config-driven and faster
 
@@ -134,37 +130,27 @@ consistent with optionsFromResultset().
 
 ### Phalcon\Mvc\Url - query merge and hostname-aware URLs
 
-- New fifth parameter `bool $replaceArgs = false` on `Url::get()`. When true and the supplied URI already has a query string, the existing query is parsed and merged
-  so user-supplied keys override colliding onesr.
-- Hostname-aware generation: when a named route carries a `setHostname()` restriction, `Url::get()` now returns a protocol-relative URL (//hostname/path) so it works
-  transparently under both HTTP and HTTPS.
+- New fifth parameter `bool $replaceArgs = false` on `Url::get()`. When true and the supplied URI already has a query string, the existing query is parsed and merged so user-supplied keys override colliding onesr.
+- Hostname-aware generation: when a named route carries a `setHostname()` restriction, `Url::get()` now returns a protocol-relative URL (//hostname/path) so it works transparently under both HTTP and HTTPS.
 - The `UrlInterface::get()` signature now matches the implementation.
 
 ### Phalcon\Mvc\Model - ORM correctness fixes
 
 5.13 leans into ORM correctness rather than new API surface, but two pieces are worth calling out:
 
-- `Phalcon\Contracts\Mvc\Model\Relation\CacheKeyProvider` with a single `getUniqueKey(): string`. When a model implements this and a relation is marked reusable =>
-  true, the Model Manager uses the returned string as the cache key instead of the object-identity-based default, so different PHP object instances representing
-  the same row share the reusable record cache.
-- `orm.resultset_empty_left_join_model` ini setting (default `true`) controls LEFT-JOIN hydration in `Resultset\Complex::current()`. Default behavior matches pre-5.13
-  - a non-matching LEFT JOIN hydrates an empty model instance whose every column is null.
+- `Phalcon\Contracts\Mvc\Model\Relation\CacheKeyProvider` with a single `getUniqueKey(): string`. When a model implements this and a relation is marked `reusable => true`, the Model Manager uses the returned string as the cache key instead of the object-identity-based default, so different PHP object instances representing the same row share the reusable record cache.
+- `orm.resultset_empty_left_join_model` ini setting (default `true`) controls LEFT-JOIN hydration in `Resultset\Complex::current()`. Default behavior matches pre-5.13 - a non-matching LEFT JOIN hydrates an empty model instance whose every column is null.
 
-Bug fixes worth a paragraph: `assign()` / `writeAttribute()` no longer silently drop values for columns whose names collide with reserved internal setters (source,
-schema, dirtyState, ...); `belongsTo` parents loaded via `findFirst()` and re-attached are no longer skipped during save; auto-increment-only inserts on MySQL/SQLite
-no longer throw Unable to insert into <table> without data; PHQL parse cache now refreshes tables entries from the live model schema so runtime `setSchema()` works
-correctly; 
+Bug fixes worth a paragraph: `assign()` / `writeAttribute()` no longer silently drop values for columns whose names collide with reserved internal setters (source, schema, dirtyState, ...); `belongsTo` parents loaded via `findFirst()` and re-attached are no longer skipped during save; auto-increment-only inserts on MySQL/SQLite no longer throw Unable to insert into <table> without data; PHQL parse cache now refreshes tables entries from the live model schema so runtime `setSchema()` works correctly; 
 
 ### Phalcon\Mvc\Model\Query - PHQL fixes
 
-- Nested sub-SELECTs with `{name:array}` placeholders no longer raise "Invalid parameter number" on the second execute (the cached intermediate's bindCounts is now
-  seeded from the outer scope per-call).
+- Nested sub-SELECTs with `{name:array}` placeholders no longer raise "Invalid parameter number" on the second execute (the cached intermediate's bindCounts is now seeded from the outer scope per-call).
 - `UPDATE ... SET col = col + :inc:` resolves placeholders before producing `RawValue` so PDO stops complaining about mixed parameter styles. Dynamic-update comparisons also treat RawValue assignments as always-changed, so updates aren't skipped when the current numeric value happens to be 0.
 
 ### Phalcon\Mvc\View\Engine\Volt - string-literal fix
 
-Single-quoted Volt string literals containing an escaped single quote (`{{ 'Let\'s Encrypt' }}`) no longer blow up with a `T_STRING` parse error downstream - the
-compiler's double-escape pass was dropped (the scanner already returns valid PHP string content).
+Single-quoted Volt string literals containing an escaped single quote (`{{ 'Let\'s Encrypt' }}`) no longer blow up with a `T_STRING` parse error downstream - the compiler's double-escape pass was dropped (the scanner already returns valid PHP string content).
 
 ### Phalcon\Paginator - keyset pagination
 
@@ -173,8 +159,7 @@ compiler's double-escape pass was dropped (the scanner already returns valid PHP
 ### Phalcon\Di - discard-and-rebuild for shared instances
 
 - `Di::hasShared($name): bool` reports whether `getShared()` has materialized an instance yet (in contrast to has(), which reports on the definition registry).
-- `Di::removeShared($name): void` drops the cached instance from both `Di::$sharedInstances` and the underlying Service object's internal field, without removing the
-  service definition. Next `getShared()` rebuilds.
+- `Di::removeShared($name): void` drops the cached instance from both `Di::$sharedInstances` and the underlying Service object's internal field, without removing the service definition. Next `getShared()` rebuilds.
 - `Phalcon\Di\Di::setAlias()` was widened to accept array|string.
 
 ### Phalcon\Encryption\Security - opt-out CSRF rotation
