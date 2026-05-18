@@ -115,19 +115,18 @@ Two structural rewrites worth knowing about.
 - New *Raw factory variants: `aRaw`, `buttonRaw`, `elementRaw`, etc.
 - `AbstractSeries::__toString()` now ksort()s its store so entries render in position order, not registration order.
 
-**Security fix**: Phalcon\Tag\Select::optionsFromArray() was not escaping option label text (XSS vector). Labels and values now go through the escaper service,
-consistent with `optionsFromResultset()`.
+**Security fix**: `Phalcon\Tag\Select::optionsFromArray()` was not escaping option label text (XSS vector). Labels and values now go through the escaper service, consistent with `optionsFromResultset()`.
 
 ### Phalcon\Mvc\Router - config-driven and faster
 
 - New `Phalcon\Mvc\Router\RouterFactory::load($config)` honors an optional top-level defaultRoutes key and delegates to `Router::loadFromConfig()`.
 - `Router::loadFromConfig(array|ConfigInterface)` initializes the router from a data structure.
-- `Router::getMethodRoutes()` exposes the new internal HTTP-method index. `handle()` now iterates only the matching-method bucket plus the unconstrained bucket.
+- `Router::getMethodRoutes()` exposes the new internal HTTP-method index. `handle()` now iterates only the matching - method bucket plus the unconstrained bucket.
 
 ### Phalcon\Mvc\Url - query merge and hostname-aware URLs
 
 - New fifth parameter `bool $replaceArgs = false` on `Url::get()`. When true and the supplied URI already has a query string, the existing query is parsed and merged so user-supplied keys override colliding onesr.
-- Hostname-aware generation: when a named route carries a `setHostname()` restriction, `Url::get()` now returns a protocol-relative URL (//hostname/path) so it works transparently under both HTTP and HTTPS.
+- Hostname-aware generation: when a named route carries a `setHostname()` restriction, `Url::get()` now returns a protocol - relative URL (//hostname/path) so it works transparently under both HTTP and HTTPS.
 - The `UrlInterface::get()` signature now matches the implementation.
 
 ### Phalcon\Mvc\Model - ORM correctness fixes
@@ -146,7 +145,7 @@ Bug fixes worth a paragraph: `assign()` / `writeAttribute()` no longer silently 
 
 ### Phalcon\Mvc\View\Engine\Volt - string-literal fix
 
-Single-quoted Volt string literals containing an escaped single quote (`{{ 'Let\'s Encrypt' }}`) no longer blow up with a `T_STRING` parse error downstream - the compiler's double-escape pass was dropped (the scanner already returns valid PHP string content).
+Single-quoted Volt string literals containing an escaped single quote (`{{ 'Let's Encrypt' }}`) no longer blow up with a `T_STRING` parse error downstream - the compiler's double-escape pass was dropped (the scanner already returns valid PHP string content).
 
 ### Phalcon\Paginator - keyset pagination
 
