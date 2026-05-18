@@ -108,7 +108,7 @@ Two structural rewrites worth knowing about.
 - `Phalcon\Html\Helper\Tag` and `VoidTag`.
 - `Phalcon\Html\Helper\Input\Generic` + per-recipe type strings replaces the 20-odd per-type input helpers (`Color`, `Date`, `Email`, ...).
 - `Checkbox`/`Radio` share a new `AbstractChecked` base and recognize two opt-in paths for the checked attribute: ["checked" => "checked"] / ["checked" => true], plus a value-match
-- `CheckboxGroup` / `RadioGroup` helpers emit <input> + <label> pairs sharing one HTML name, with id="{name}_{value}" per item.
+- `CheckboxGroup` / `RadioGroup` helpers emit `<input>` + `<label>` pairs sharing one HTML name, with `id="{name}_{value}"` per item.
 - The Select data-provider path can now attach per-option HTML attributes through `SelectDataInterface::getAttributes()`, ArrayData's second argument, or ResultsetData's third attributesMap argument (closures receive the current row).
 - `Style::add()` and `Script::add()` accept an optional `int $position = -1` to control insertion order
 - `Script::beginInternal()` / `endInternal()` capture inline JS via output buffering.
