@@ -38,8 +38,7 @@ New canonical contracts under `Phalcon\Contracts` have been created and hold the
 
 ### Phalcon\Db - DDL and SQL features that finally made it into the dialect layer
 
-The Db layer received the bulk of the new functionality this cycle. Everything below works through the standard Adapter + Dialect pair you already use, so there
-are no new connection wiring steps.
+The Db layer received the bulk of the new functionality this cycle. Everything below works through the standard Adapter + Dialect pair you already use, so there are no new connection wiring steps.
 
 - `RETURNING` clause on `INSERT` / `UPDATE` / `DELETE` (PostgreSQL/SQLite)
 - `ON CONFLICT ... DO UPDATE SET ...` upsert (PostgreSQL/SQLite)
@@ -58,8 +57,7 @@ are no new connection wiring steps.
 - `RawValue` defaults in DDL: `DEFAULT (UUID())`, `DEFAULT gen_random_uuid()`, `DEFAULT strftime('%s','now')`, etc.
 - `dropColumn()` is no longer pre-empted (SQLite)
 
-Bug fixes worth knowing about: nested PHQL sub-SELECTs with `{name:array}` placeholders no longer raise "Invalid parameter number" on a second execute, and `UPDATE
-... SET col = col + :inc:` expressions now resolve placeholders before producing RawValue so PDO stops complaining about mixed parameter styles.
+Bug fixes worth knowing about: nested PHQL sub-SELECTs with `{name:array}` placeholders no longer raise "Invalid parameter number" on a second execute, and `UPDATE ... SET col = col + :inc:` expressions now resolve placeholders before producing RawValue so PDO stops complaining about mixed parameter styles.
 
 ### Phalcon\Events - rewritten dispatcher and a real subscriber model
 
