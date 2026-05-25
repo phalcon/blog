@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Community Hangout and Update - 2021-11-06
-image: /assets/files/2021-11-06-phalcon-hangout.png
+image: /assets/files/2021-11-06-phalcon-hangout.svg
 date: 2021-11-04T19:20:11.711Z
 tags:
   - phalcon4

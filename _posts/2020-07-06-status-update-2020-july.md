@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Status Update: 2020-July"
-image: /assets/files/2020-07-06-status-update.png
+image: /assets/files/2020-07-06-status-update.svg
 date: 2020-07-06T20:08:18.375Z
 tags:
   - update 

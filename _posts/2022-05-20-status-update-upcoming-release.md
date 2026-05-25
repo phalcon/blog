@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Status Update - Upcoming Release
-image: /assets/files/2022-05-20-status-update.png
+image: /assets/files/2022-05-20-status-update.svg
 date: 2022-05-20T15:12:39.244Z
 tags:
   - phalcon5

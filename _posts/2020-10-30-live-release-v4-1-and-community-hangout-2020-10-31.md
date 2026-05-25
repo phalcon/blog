@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live Release v4.1 and Community Hangout - 2020-10-31
-image: /assets/files/2020-10-31-phalcon-hangout.png
+image: /assets/files/2020-10-31-phalcon-hangout.svg
 date: 2020-10-30T14:53:53.814Z
 tags:
   - hangout

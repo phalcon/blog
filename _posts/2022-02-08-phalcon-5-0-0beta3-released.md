@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon 5.0.0beta3 Released
-image: /assets/files/2022-02-08-phalcon-5.0.0-beta.3.png
+image: /assets/files/2022-02-08-phalcon-5.0.0-beta.3.svg
 date: 2022-02-08T14:50:35.077Z
 tags:
   - phalcon

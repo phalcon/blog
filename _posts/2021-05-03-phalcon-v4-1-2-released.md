@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon v4.1.2 Released
-image: /assets/files/2021-05-01-phalcon-4.1.2.png
+image: /assets/files/2021-05-01-phalcon-4.1.2.svg
 date: 2021-05-03T13:52:33.188Z
 tags:
   - phalcon4

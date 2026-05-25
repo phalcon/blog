@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2020-04-23 - Code with me - hangout
-image: /assets/files/2020-04-23-phalcon-hangout.png
+image: /assets/files/2020-04-23-phalcon-hangout.svg
 date: 2020-04-22T22:24:07.126Z
 tags:
   - phalcon

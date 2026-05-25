@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon v4.0.6 released
-image: /assets/files/2020-05-16-phalcon-4.0.6.png
+image: /assets/files/2020-05-16-phalcon-4.0.6.svg
 date: 2020-05-16T18:24:26.868Z
 tags:
   - phalcon

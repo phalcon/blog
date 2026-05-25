@@ -7,7 +7,7 @@ tags:
   - phalcon
   - phalcon4
   - rc
-image: /assets/files/20200111-phalcon4.0.2.png
+image: /assets/files/2020-01-11-phalcon-4.0.2.svg
 ---
 New release! (same as the one before really)!
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Code with me Series tonight
-image: /assets/files/2020-03-19-phalcon-hangout.jpg
+image: /assets/files/2020-03-19-phalcon-hangout.svg
 date: 2020-03-19T15:33:09.462Z
 tags:
   - phalcon

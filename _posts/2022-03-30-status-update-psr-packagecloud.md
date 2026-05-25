@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Status Update - PSR - Packagecloud
-image: /assets/files/2022-03-30-status-update.png
+image: /assets/files/2022-03-30-status-update.svg
 date: 2022-03-30T13:01:30.425Z
 tags:
   - phalcon5

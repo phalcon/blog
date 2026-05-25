@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Future of Phalcon
-image: /assets/files/2020-08-11-phalcon-hangout-update.png
+image: /assets/files/2020-08-11-phalcon-hangout-update.svg
 date: 2020-08-19T17:01:19.865Z
 tags:
   - phalcon

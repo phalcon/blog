@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon v5.12.0 Released
-image: /assets/files/2026-04-30-phalcon-5.12.0-release.png
+image: /assets/files/2026-05-18-phalcon-5.12.0-release.svg
 date: 2026-04-30T00:01:02.699Z
 tags:
   - phalcon

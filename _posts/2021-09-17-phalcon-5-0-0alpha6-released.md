@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon 5.0.0alpha6 Released!
-image: /assets/files/2021-09-09-phalcon-5.0.0-alpha.6.png
+image: /assets/files/2021-09-09-phalcon-5.0.0-alpha.6.svg
 date: 2021-09-17T14:01:17.693Z
 tags:
   - phalcon5

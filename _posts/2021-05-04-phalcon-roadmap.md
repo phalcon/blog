@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phalcon Roadmap
-image: /assets/files/2021-05-04-phalcon-roadmap.png
+image: /assets/files/2021-05-04-phalcon-roadmap.svg
 date: 2021-05-04T14:12:37.166Z
 tags:
   - phalcon4

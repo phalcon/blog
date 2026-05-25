@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Community Hangout and Update - 2020-08-14
-image: /assets/files/2020-08-11-phalcon-hangout-update.png
+image: /assets/files/2020-08-11-phalcon-hangout-update.svg
 date: 2020-08-10T22:09:50.842Z
 tags:
   - phalcon4

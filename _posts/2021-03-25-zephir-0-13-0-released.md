@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Zephir 0.13.0 Released
-image: /assets/files/2021-03-25-zephir-release.png
+image: /assets/files/2021-03-25-zephir-release.svg
 date: 2021-03-25T15:20:11.764Z
 tags:
   - phalcon5

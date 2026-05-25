@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Community Hangout and Update - 2023-12-23
-image: /assets/files/2023-12-23-phalcon-hangout.png
+image: /assets/files/2023-12-23-phalcon-hangout.svg
 date: 2023-12-21T19:20:11.711Z
 tags:
   - phalcon5
