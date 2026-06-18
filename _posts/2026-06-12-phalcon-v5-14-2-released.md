@@ -99,6 +99,6 @@ pie install phalcon/cphalcon-5.14.2
 To compile from source, follow our [installation document][installation_document]
 
 [installation_document]: https://docs.phalcon.io/5.14/installation
-[5_14_2]: https://github.com/phalcon/cphalcon/releases/tag/5.13.2
+[5_14_2]: https://github.com/phalcon/cphalcon/releases/tag/5.14.2
 [auth]: https://docs.phalcon.io/5.14/auth
 [container]: https://docs.phalcon.io/5.14/container
