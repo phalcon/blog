@@ -58,8 +58,8 @@ Jeckerson has been a rock here, doing all of it by hand and spending endless hou
 
 The result is two standalone PHP projects that now feed the framework:
 
-- **Volt** → **13 files, ~11,150 lines** of PHP (work started 2022-10-24).
-- **PHQL** → **8 files, ~8,230 lines** of PHP (work started 2024-12-14).
+- **Volt** -> **13 files, ~11,150 lines** of PHP (work started 2022-10-24).
+- **PHQL** -> **8 files, ~8,230 lines** of PHP (work started 2024-12-14).
 
 So: ~19k lines of generated C, reborn as ~19k lines of hand-written PHP that has to behave *identically*. Getting a query to parse took an afternoon. Getting it to parse into the exact same structure as the C version, with the exact same weird corners, took months.
 
