@@ -31,7 +31,7 @@
   <text class="title" x="57" y="110">PHALCON DEBUGBAR</text>
 
   <!-- Subtitle / date line -->
-  <text class="subtitle" x="57" y="176">v6.0.0alpha4 RELEASED</text>
+  <text class="subtitle" x="57" y="176"></text>
 
   <!-- Optional bottom line (delete this element if not needed) -->
   <text class="timeline" x="234" y="400"></text>
