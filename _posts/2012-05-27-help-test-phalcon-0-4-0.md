@@ -54,4 +54,4 @@ Although, the new version is passing all the [760 unit-tests](https://travis-ci.
 
 Let's make this release the best yet. 
 
-Thanks in advance for all your help and support — it's appreciated more than you know!
+Thanks in advance for all your help and support - it's appreciated more than you know!

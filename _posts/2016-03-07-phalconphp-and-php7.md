@@ -34,7 +34,7 @@ Installation example:
 
 ```
 root@localhost:~$ cd cphalcon-2.1.x/
-root@localhost:~/cphalcon-2.1.x$ zephir build —backend=ZendEngine3
+root@localhost:~/cphalcon-2.1.x$ zephir build -backend=ZendEngine3
 ```
 
 If you get these warnings ignore them:

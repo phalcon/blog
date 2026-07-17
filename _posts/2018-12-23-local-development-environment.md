@@ -154,7 +154,7 @@ Options:
       --ansi            Force ANSI output
       --no-ansi         Disable ANSI output
   -n, --no-interaction  Do not ask any interactive question
-      --dumpversion     Print the Zephir version — and don't do anything else
+      --dumpversion     Print the Zephir version - and don't do anything else
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 Help:
