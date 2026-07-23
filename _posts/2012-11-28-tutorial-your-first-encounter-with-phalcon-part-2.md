@@ -9,7 +9,7 @@ Our friend [Marcin @mailopl](https://twitter.com/mailopl) from Poland sent us th
 ### Let's create a blog from scratch
 
 #### Introduction
-We are going to walk through the process of creating a simple web application – blog.
+We are going to walk through the process of creating a simple web application - blog.
 
 Blog is often used as an introductory example, and there is a very good reason for that: it contains Create, Read, Update and Delete operations (CRUD for short), uses SQL database (NoSQL proponents move along please) as persistent storage - all of which are the basic building blocks of a web app.
 
@@ -22,7 +22,7 @@ In summary do not despair about yet another blog tutorial, it's a great showcase
 * Implement views, where your HTML lives
 * Use routing mechanisms for pretty URLs
 
-#### Step 1 – Installing Phalcon
+#### Step 1 - Installing Phalcon
 Writing any PHP application requires quite a lot software. Luckily it comes prepackaged for popular platforms [LAMP](https://help.ubuntu.com/community/ApacheMySQLPHP) (for Linux - Ubuntu), [WAMP](https://www.wampserver.com/en/) (for Windows), [MAMP](https://www.mamp.info/en/index.html) (for Mac OS X).
 
 For this tutorial I will be using Apache2, MySQL 5.5 and PHP 5.4 on Windows 7. Granted you are running fairly recent version of PHP (>=5.3, any of the above mentioned provides one) you will be fine.
@@ -130,7 +130,7 @@ All configurations are stored in .php file `/app/config/config.php` (relative to
 Since you've used developer tools to generate project skeleton, there is no need to use custom directories: just copy and paste above definitions. we leave baseUri empty, because our application will run under `blog.net` and not `blog.net/somepath`. Only required change is the 'database' entry in Phalcon config, which should match you MySQL configuration.
 
 #### Step 6 - Database schema and configuration
-For simplicity we're going to create just three essential tables containing blog posts, users (in our case only one user – administrator) and post categories. Additionally we specify relationships between our entities as follows:
+For simplicity we're going to create just three essential tables containing blog posts, users (in our case only one user - administrator) and post categories. Additionally we specify relationships between our entities as follows:
 
 * User can have many Posts,
 * (thus) Post belongs to one User
@@ -279,7 +279,7 @@ When developing web applications, it usually means that scaffolding is a tempora
 
 If you want, you can use scaffolding based on Twitter Bootstrap library. Even though scaffolding is a temporary solution it doesn't mean it can't look nice!
 
-Keep in mind that when using scaffolding with bootstrap option, Phalcon will only generate HTML tags with appropriate HTML classes – it is up to you you need to include Twitter Bootstrap library on your own, so navigate to your project root and edit the file app\views\index.html by adding the line in section:
+Keep in mind that when using scaffolding with bootstrap option, Phalcon will only generate HTML tags with appropriate HTML classes - it is up to you you need to include Twitter Bootstrap library on your own, so navigate to your project root and edit the file app\views\index.html by adding the line in section:
 
 ```html
 <link rel="stylesheet" 
@@ -419,7 +419,7 @@ Now we are querying the database table users for certain row with matching login
     }
 ```
 
-If there's no user – redirect and show the message.
+If there's no user - redirect and show the message.
 
 ```php
     $this->session->set('auth', $user->id);

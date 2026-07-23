@@ -45,12 +45,12 @@ The email is below:
 > 
 > For users migrating from ea3 to ea4 that have the custom opt mod for Phalcon installed:
 > 
-> It will be included in ea3-to-ea4 profile mapping via internal case EA-6697. Until then they will need to migrate to ea4 and then install the phalcon packages they need (`yum install ea-php55-php-phalcon ea-php56-php-phalcon`– ea3 does not have PHP 7.x). After EA-6697 is in place that will happen automatically. If you would like to be kept up to date as to the progress of EA-6697 please let me know what email address to contact.
+> It will be included in ea3-to-ea4 profile mapping via internal case EA-6697. Until then they will need to migrate to ea4 and then install the phalcon packages they need (`yum install ea-php55-php-phalcon ea-php56-php-phalcon`- ea3 does not have PHP 7.x). After EA-6697 is in place that will happen automatically. If you would like to be kept up to date as to the progress of EA-6697 please let me know what email address to contact.
 > 
 > If you have any questions, let us know!
 
 > Thanks,
-> Dan Muey – cPanel::ZerØCool::EA4
+> Dan Muey - cPanel::ZerØCool::EA4
 
 
 **Many thanks to the cPanel::Zer0Cool team!!**

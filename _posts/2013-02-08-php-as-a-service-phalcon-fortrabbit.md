@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PHP as a Service + Phalcon – Fortrabbit"
+title: "PHP as a Service + Phalcon - Fortrabbit"
 tags: [php, phalcon, hosting, fortrabbit]
 ---
 [![Fortrabbit](/assets/files/2013-02-08-fortrabbit.jpg)](https://fortrabbit.com/)

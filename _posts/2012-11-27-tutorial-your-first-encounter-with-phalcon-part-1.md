@@ -104,7 +104,7 @@ It is not uncommon (and quite convenient) to directly query your models inside v
 #### Developer tools
 [Phalcon developer tools](https://docs.phalcon.io/latest/en/tools) allow you to generate boilerplate code and jump straight to implementation of your application's logic.
 
-They can generate any element of MVC triad separately – model, view or controller, or create scaffolding (complete code for managing records in the database) which is very efficient way to have running prototype.
+They can generate any element of MVC triad separately - model, view or controller, or create scaffolding (complete code for managing records in the database) which is very efficient way to have running prototype.
 
 They can also generate skeleton of your project, or even employ [twitter bootstrap](https://docs.phalcon.io/latest/en/tools#scaffold-with-twitter-bootstrap) for nice looking prototypes. If you are not a command line ninja, you can use web interface (both console tools and their web counterparts are provided).
 
@@ -114,5 +114,5 @@ You may think that since Phalcon is a C framework, it's not possible to provide 
 Luckily, that's not the case. Code completion is handled the same way as it is for PHP functions, using [stub files](https://github.com/phalcon/phalcon-devtools/tree/master/ide/phpstorm).
 
 ### Summary
-So far you've learned that Phalcon brings performance, convenient migrations and easy to use developer tools. Now let us give it a go, and write some "real" application using Phalcon. In the [second part](/post/tutorial-your-first-encounter-with-phalcon-part-2) I'm going to walk through a process of creating a simple web application – blog.
+So far you've learned that Phalcon brings performance, convenient migrations and easy to use developer tools. Now let us give it a go, and write some "real" application using Phalcon. In the [second part](/post/tutorial-your-first-encounter-with-phalcon-part-2) I'm going to walk through a process of creating a simple web application - blog.
 

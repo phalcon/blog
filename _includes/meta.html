@@ -1,4 +1,4 @@
-<title>{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}</title>
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} - {{ site.app.description }}{% endif %}</title>
 
 {% assign page_description = page.excerpt | newline_to_br | strip_newlines | replace: '
 <br/>', ' ' | strip_html | strip |  truncatewords: 30 %}
@@ -22,7 +22,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:title"
-      content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
+      content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} - {{ site.app.description }}{% endif %}">
 {% if page.excerpt %}
 <meta property="og:description" content="{{ page_description }}"/>
 {% else %}
@@ -38,7 +38,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title"
-      content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} – {{ site.app.description }}{% endif %}">
+      content="{% if page.title %}{{ page.title }}{% else %}{{ site.app.name }} - {{ site.app.description }}{% endif %}">
 {% if page.excerpt %}
 <meta name="twitter:description" content="{{ page_description }}"/>
 {% else %}
