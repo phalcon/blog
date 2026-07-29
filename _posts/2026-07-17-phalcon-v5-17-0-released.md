@@ -42,9 +42,9 @@ In addition - and in anticipation for v7/v8, the `Phalcon\Support\Debug` has bee
 
 Three new bridge packages connect Phalcon to the PSR standards, and each of them works in *both* directions:
 
-- **[`phalcon/bridge-psr3`](https://github.com/phalcon/bridge-psr3)** — use Phalcon's logger as a PSR-3 logger, or feed a PSR-3 logger such as Monolog into Phalcon.
-- **[`phalcon/bridge-psr11`](https://github.com/phalcon/bridge-psr11)** — wrap the Phalcon container as a PSR-11 container, or use any PSR-11 container inside Phalcon.
-- **[`phalcon/bridge-psr16`](https://github.com/phalcon/bridge-psr16)** — expose Phalcon cache as a PSR-16 cache, or plug a PSR-16 cache into Phalcon's storage.
+- **[`phalcon/bridge-psr3`](https://github.com/phalcon/bridge-psr3)** - use Phalcon's logger as a PSR-3 logger, or feed a PSR-3 logger such as Monolog into Phalcon.
+- **[`phalcon/bridge-psr11`](https://github.com/phalcon/bridge-psr11)** - wrap the Phalcon container as a PSR-11 container, or use any PSR-11 container inside Phalcon.
+- **[`phalcon/bridge-psr16`](https://github.com/phalcon/bridge-psr16)** - expose Phalcon cache as a PSR-16 cache, or plug a PSR-16 cache into Phalcon's storage.
 
 We do have planned more bridge packages (especially for PSR-7) and those will come in due time.
 
