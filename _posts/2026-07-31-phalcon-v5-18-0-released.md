@@ -12,7 +12,7 @@ tags:
 
 Phalcon [v5.18.0][5_18_0] is out, and it brings a second way to build an application. Alongside it, the ecosystem grew two new repositories and the v6 PHP implementation crossed from alpha into beta.
 
-`<!--more-->`
+<!--more-->
 
 ## A different shape for an application
 
