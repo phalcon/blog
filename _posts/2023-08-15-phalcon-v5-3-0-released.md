@@ -34,7 +34,7 @@ Once again, a huge thanks to our community for helping out with bug fixing and m
 
 ### Changed
 
-- Refactored `Phalcon\Mvc\Model::doLowUpdate` and `Phalcon\Mvc\Model::postSaveRelatedRecords` for better code logic and a clearer separation of behaviour, although it lead to partially repeated code. [#16391](https://github.com/phalcon/cphalcon/issues/16391)
+- Refactored `Phalcon\Mvc\Model::doLowUpdate` and `Phalcon\Mvc\Model::postSaveRelatedRecords` for better code logic and a clearer separation of behavior, although it lead to partially repeated code. [#16391](https://github.com/phalcon/cphalcon/issues/16391)
 - Cleaned `Phalcon\Mvc\Model\Metadata::initialize` [#16393](https://github.com/phalcon/cphalcon/issues/16393)
 
 ### Fixed
