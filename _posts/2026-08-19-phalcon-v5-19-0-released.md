@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Phalcon v5.19.0 Released
+title: Phalcon v5.19.0 / v6.0.0beta7 Released
 image: /assets/files/2026-08-19-phalcon-5.19.0-release.svg
 date: 2026-08-19T00:01:02.699Z
 tags:
@@ -10,7 +10,7 @@ tags:
   - release
 ---
 
-Phalcon [v5.19.0][5_19_0] has been released!
+Phalcon [v5.19.0][5_19_0] has been released! v6.0.0beta7 also released.
 
 <!--more-->
 
