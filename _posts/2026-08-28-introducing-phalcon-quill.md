@@ -79,24 +79,24 @@ The Markdown formatter emits no markup of its own. Every fragment it writes come
 The templates are small. This is the whole of `method.tpl`:
 
 ````
-#### `{{name}}()` { #{{anchor}} }
+#### `{% raw %}{{name}}{% endraw %}()` { #{% raw %}{{anchor}}{% endraw %} }
 
 ```php
-{{signature}}
+{% raw %}{{signature}}{% endraw %}
 ```
-{{description}}
+{% raw %}{{description}}{% endraw %}
 ````
 
 And `summary-row.tpl`:
 
 ```html
-<a class="api-item" href="#{{anchor}}">
-<code class="vis vis-{{visibility}}">{{visibility}}</code>
-{{returnType}}<code class="sig">{{signature}}</code>
-{{description}}</a>
+<a class="api-item" href="#{% raw %}{{anchor}}{% endraw %}">
+<code class="vis vis-{% raw %}{{visibility}}{% endraw %}">{% raw %}{{visibility}}{% endraw %}</code>
+{% raw %}{{returnType}}{% endraw %}<code class="sig">{% raw %}{{signature}}{% endraw %}</code>
+{% raw %}{{description}}{% endraw %}</a>
 ```
 
-Slots are `{{name}}` and are substituted in a single pass, so a value that happens to contain `{{title}}` is text, not an instruction. A placeholder your template does not use is ignored, so a template may take fewer slots than it is handed. One it invents is fatal, and the error names every unsupplied token at once rather than the first.
+Slots are `{% raw %}{{name}}{% endraw %}` and are substituted in a single pass, so a value that happens to contain `{% raw %}{{title}}{% endraw %}` is text, not an instruction. A placeholder your template does not use is ignored, so a template may take fewer slots than it is handed. One it invents is fatal, and the error names every unsupplied token at once rather than the first.
 
 Loops, ordering and conditionals stay in PHP. A section that renders nothing is handed an empty string rather than asked to decide, which keeps the templates readable by someone who is not a PHP developer.
 
