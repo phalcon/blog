@@ -138,6 +138,7 @@ Names in the model are resolved as they are read. Both languages spell a parent 
 
 ## Links
 
+- [Documentation](https://docs.phalcon.io/latest/quill)
 - Repository: [github.com/phalcon/quill](https://github.com/phalcon/quill)
 - Package: [packagist.org/packages/phalcon/quill](https://packagist.org/packages/phalcon/quill)
 - Alignment tracking issue: [cphalcon#17428](https://github.com/phalcon/cphalcon/issues/17428)
