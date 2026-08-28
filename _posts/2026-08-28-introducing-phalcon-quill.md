@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Introducing Phalcon Quill
-image: /assets/files/2026-08-25-phalcon-quill.svg
-date: 2026-08-25T12:00:00.000Z
+image: /assets/files/2026-08-28-phalcon-quill.svg
+date: 2026-08-28T12:00:00.000Z
 tags:
   - phalcon
   - quill
