@@ -144,3 +144,5 @@ Names in the model are resolved as they are read. Both languages spell a parent 
 - Alignment tracking issue: [cphalcon#17428](https://github.com/phalcon/cphalcon/issues/17428)
 
 Feedback and bug reports are welcome on the issue tracker.
+
+Enjoy!
