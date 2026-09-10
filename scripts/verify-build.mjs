@@ -2,7 +2,7 @@
  * Asserts that the build produced the URL map the migration promised.
  * Run after `npm run build`.
  */
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 
 const checks = [];
 
@@ -20,6 +20,63 @@ const measure = (fn) => {
         return `error: ${error.code ?? error.message}`;
     }
 };
+
+/** Lists files under `root`, skipping dist, node_modules and any dotfile directory. */
+const listFiles = (root) => {
+    const files = [];
+
+    for (const entry of readdirSync(root, { withFileTypes: true })) {
+        if (entry.name === 'dist' || entry.name === 'node_modules' || entry.name.startsWith('.')) {
+            continue;
+        }
+
+        const path = `${root}/${entry.name}`;
+
+        if (entry.isDirectory()) {
+            files.push(...listFiles(path));
+        } else if (entry.isFile()) {
+            files.push(path);
+        }
+    }
+
+    return files;
+};
+
+/** The file with the newest mtime among the given paths (files or directory trees). */
+const newestOf = (paths) => {
+    const files = paths.flatMap((path) => (statSync(path).isDirectory() ? listFiles(path) : path));
+
+    let newest = { mtimeMs: -Infinity, path: 'none' };
+
+    for (const file of files) {
+        const mtimeMs = statSync(file).mtimeMs;
+
+        if (mtimeMs > newest.mtimeMs) {
+            newest = { mtimeMs, path: file };
+        }
+    }
+
+    return newest;
+};
+
+/*
+ * `dist/` carries no memory of the source it was built from, so a failed
+ * rebuild that leaves an old `dist/` in place looks identical to a good one.
+ * This must run before any count below, or a stale `dist/` can still report
+ * a full pass.
+ */
+count(
+    'dist is current',
+    measure(() => {
+        const source = newestOf(['src', 'astro.config.mjs', 'package.json', 'scripts']);
+        const dist = newestOf(['dist']);
+
+        return source.mtimeMs > dist.mtimeMs
+            ? `${source.path} (${new Date(source.mtimeMs).toISOString()}) is newer than dist (${new Date(dist.mtimeMs).toISOString()})`
+            : 'ok';
+    }),
+    'ok'
+);
 
 count(
     'post pages',
@@ -44,7 +101,7 @@ count(
 );
 /* Counts .html-agnostic asset files. Update this when assets are added or removed;
    a silent drift here is how a broken image reaches production unnoticed. */
-count('asset files', measure(() => readdirSync('dist/assets/files').length), 215);
+count('asset files', measure(() => readdirSync('dist/assets/files').length), 213);
 /* 59 rule lines, comments excluded. `wc -l` reports 60 because the file ends with a blank line. */
 count(
     'redirect rules',

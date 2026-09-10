@@ -90,7 +90,32 @@ When you create a form, you can add fields to edit a table’s field. For exampl
 
 Let’s consider this structure:
 
-![KikCMS example db structure](/assets/files/kikcms-db-structure.png "KikCMS example db structure")
+```mermaid
+erDiagram
+    test_company  ||--o{ test_person : company_id
+    test_person   ||--o{ test_person_interest : person_id
+    test_interest ||--o{ test_person_interest : interest_id
+
+    test_person {
+        int id
+        varchar name
+        int company_id
+        int display_order
+    }
+    test_company {
+        int id
+        varchar name
+    }
+    test_person_interest {
+        int id
+        int person_id
+        int interest_id
+    }
+    test_interest {
+        int id
+        varchar name
+    }
+```
 
 So you have a person, which has a name, a company, and several interests. To put this all in a single form, you must first define the relations, just like you are used to when using the Phalcon framework:
 

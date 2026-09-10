@@ -4,6 +4,7 @@
  * was never set in Jekyll, so the `generator` meta tag rendered empty; it is
  * dropped here rather than ported.
  */
+import { servedPath } from '../lib/text.mjs';
 import { site } from '../site';
 
 interface Props {
@@ -18,12 +19,7 @@ const { canonical, description, image, publishedAt, title } = Astro.props;
 
 const pageTitle = title ?? `${site.name} - ${site.description}`;
 
-/*
- * `build.format: 'file'` makes Astro.url.pathname the output file path, so
- * it ends in `.html`. The canonical URL must be the address the site
- * serves, which never has that suffix.
- */
-const path = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+const path = servedPath(Astro.url.pathname);
 const canonicalHref = canonical ?? new URL(path, site.url).href;
 ---
 

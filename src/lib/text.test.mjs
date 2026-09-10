@@ -1,7 +1,7 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
 
-import { excerpt, formatDate, formatIsoDate, readingMinutes, tagSlug } from './text.mjs';
+import { excerpt, formatDate, formatIsoDate, readingMinutes, servedPath, tagSlug } from './text.mjs';
 
 test('tagSlug lowercases and joins words with a hyphen', () => {
     assert.equal(tagSlug('chit chat'), 'chit-chat');
@@ -88,4 +88,22 @@ test('excerpt caps at the limit and appends an ellipsis', () => {
 
 test('excerpt collapses newlines inside a paragraph', () => {
     assert.equal(excerpt('one\ntwo'), 'one two');
+});
+
+test('servedPath strips the html extension', () => {
+    assert.equal(servedPath('/page-2.html'), '/page-2');
+    assert.equal(servedPath('/tag/release.html'), '/tag/release');
+});
+
+test('servedPath turns an index file into its directory', () => {
+    assert.equal(servedPath('/index.html'), '/');
+    assert.equal(servedPath('/tag/index.html'), '/tag/');
+});
+
+test('servedPath does not truncate a slug ending in index', () => {
+    assert.equal(servedPath('/post/phalcon-db-index.html'), '/post/phalcon-db-index');
+});
+
+test('servedPath leaves a slug ending in -html alone', () => {
+    assert.equal(servedPath('/post/learn-html.html'), '/post/learn-html');
 });

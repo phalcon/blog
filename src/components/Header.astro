@@ -190,6 +190,8 @@ import { site } from '../site';
 </style>
 
 <script>
+    import { servedPath } from '../lib/text.mjs';
+
     /*
      * Pagefind writes dist/pagefind/pagefind.js at build time, so this import
      * cannot resolve during `astro dev`. Loading it on first use keeps the dev
@@ -225,7 +227,7 @@ import { site } from '../site';
         let debounce: ReturnType<typeof setTimeout> | undefined;
 
         const renderRow = (data: PagefindResultData): string => {
-            const href = data.url.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+            const href = servedPath(data.url);
 
             return `
             <div class="phalcon-blog__item">

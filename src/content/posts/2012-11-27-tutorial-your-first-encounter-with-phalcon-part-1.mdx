@@ -34,7 +34,36 @@ Phalcon is also a full stack framework, which means you just need a minimal amou
 
 Following image demonstrates message flow during typical request when employing [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) pattern, which is the preferred way to develop Phalcon applications. I won't go into details describing this scheme.
 
-![image](/assets/files/2012-11-26-mvc-c.png)
+```mermaid
+flowchart BT
+    Browser
+    Server
+
+    subgraph php["PHP Code"]
+        direction BT
+        Controller
+        Model
+        View
+    end
+
+    Browser <--> Server
+    Server <--> Controller
+    Controller --> Model
+    Controller <--> View
+    Model <--> View
+
+    classDef model      fill:#4bacc6,stroke:#3d8ba1,color:#ffffff
+    classDef view       fill:#9bbb59,stroke:#7d9847,color:#ffffff
+    classDef controller fill:#f79646,stroke:#c67735,color:#ffffff
+    classDef server     fill:#bfbfbf,stroke:#9a9a9a,color:#333333
+    classDef browser    fill:#a5a5a5,stroke:#858585,color:#ffffff
+
+    class Model model
+    class View view
+    class Controller controller
+    class Server server
+    class Browser browser
+```
 
 ### What makes Phalcon special
 

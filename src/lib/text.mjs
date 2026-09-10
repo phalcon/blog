@@ -36,6 +36,16 @@ export function readingMinutes(body) {
 }
 
 /**
+ * Turns an output file path into the URL the site serves. `build.format:
+ * 'file'` means paths arrive ending in `.html`, and the site is configured
+ * `trailingSlash: 'never'`. The separator before `index.html` is required:
+ * without it a slug ending in `-index` would be truncated.
+ */
+export function servedPath(path) {
+    return path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+}
+
+/**
  * The first real paragraph, stripped of markdown and capped at `limit`.
  *
  * Leading headings, images and HTML-only lines are skipped, so a post that
