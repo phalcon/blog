@@ -15,22 +15,3 @@ export const site = {
     },
 };
 
-/**
- * The tags the sidebar shows, in this order. Copied from `tags_override` in
- * `_config.yml`. A tag listed here that no post uses is skipped.
- */
-export const tagsOverride = [
-    'phalcon5',
-    'phalcon4',
-    'release',
-    'zephir',
-    'lts',
-    'hangout',
-    'github',
-    'phalcon',
-    'community',
-    'update',
-    'roadmap',
-    'framework',
-    'benchmarks',
-];

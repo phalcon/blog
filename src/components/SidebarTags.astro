@@ -1,13 +1,27 @@
 ---
 /*
- * Ported from Jekyll's `_includes/tags.html`. The Liquid walks
- * `tags_override` in order and prints each tag that exists, with its post
- * count, linking to `/tags#<slug>`. A name in `tags_override` that no post
- * uses is skipped.
+ * Ported from Jekyll's `_includes/tags.html`, which walked a hand-maintained
+ * `tags_override` list in `_config.yml` — the counts there were tallied by
+ * hand and the order was whatever someone last decided.
+ *
+ * The list is now derived. `tagCounts()` already sorts by post count, then by
+ * name, so the sidebar takes the head of it and the ordering maintains itself
+ * as posts are written.
  */
-import { tagsOverride } from '../site';
 import { tagSlug } from '../lib/text.mjs';
 import type { TagCount } from '../lib/posts';
+
+/** How many tags the sidebar shows. The rest live on /tags. */
+const LIMIT = 20;
+
+/*
+ * Version-series tags are excluded. The corpus carries 23 of them — 0.x, 1.x,
+ * 2.x, 2.0, 3.0.x and so on down to single-post entries — and by raw count
+ * four of them outrank `phalcon6`, so an unfiltered list spends a fifth of the
+ * sidebar on releases nobody runs any more. A rule rather than a list, because
+ * a list would need an edit at every release.
+ */
+const isVersionSeries = (tag: string): boolean => /^\d/.test(tag);
 
 interface Props {
     tags: TagCount[];
@@ -15,10 +29,7 @@ interface Props {
 
 const { tags } = Astro.props;
 
-/* `tags_override` sets the order. A listed tag that no post uses is skipped. */
-const shown = tagsOverride
-    .map((name) => tags.find((item) => item.tag === name))
-    .filter((item): item is TagCount => item !== undefined);
+const shown = tags.filter((item) => !isVersionSeries(item.tag)).slice(0, LIMIT);
 ---
 
 <div class="phalcon-blog__right-item phalcon-blog__tags">

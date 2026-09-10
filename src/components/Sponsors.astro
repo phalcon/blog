@@ -11,9 +11,11 @@
  * renders nothing, which is visible and can be alerted on, rather than
  * quietly serving a roster that is months out of date.
  *
- * Groups that pay for logo placement render as logos; the rest render as
- * names. Nothing here states an amount: `group` is the only signal the
- * data carries, and the labels below are the only place it is named.
+ * Only the logo groups render here. The roster also carries `supporter` and
+ * `backer` entries; those are deliberately not shown, because the sidebar is
+ * a narrow column and the name list ran to twenty-two entries. Nothing here
+ * states an amount: `group` is the only signal the data carries, and the
+ * labels below are the only place it is named.
  */
 import data from '../sponsors.json';
 
@@ -32,22 +34,17 @@ const logoSections: { group: string; title: string }[] = [
     { group: 'partner', title: 'Partners' },
 ];
 
-const nameSections: { group: string; title: string }[] = [
-    { group: 'supporter', title: 'Supporters' },
-    { group: 'backer', title: 'Backers' },
-];
-
 const sponsors = data.sponsors as Sponsor[];
 
-/** Logo rows need an image; name rows do not. */
-const inGroup = (group: string, needsLogo: boolean): Sponsor[] =>
+/** An entry without a logo cannot be shown here, so it is dropped. */
+const inGroup = (group: string): Sponsor[] =>
     sponsors
-        .filter((sponsor) => sponsor.group === group && (!needsLogo || null !== sponsor.logo))
+        .filter((sponsor) => sponsor.group === group && null !== sponsor.logo)
         .sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 {logoSections.map(({ group, title }) => {
-    const entries = inGroup(group, true);
+    const entries = inGroup(group);
 
     return entries.length > 0 && (
         <div class="phalcon-blog__sponsors-section">
@@ -67,30 +64,6 @@ const inGroup = (group: string, needsLogo: boolean): Sponsor[] =>
                                 loading="lazy"
                                 class="phalcon-blog__sponsors-logo-img"
                             />
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-})}
-
-{nameSections.map(({ group, title }) => {
-    const entries = inGroup(group, false);
-
-    return entries.length > 0 && (
-        <div class="phalcon-blog__sponsors-section">
-            <div class="phalcon-blog__sponsors-heading">{title}</div>
-            <ul class="phalcon-blog__sponsors-names">
-                {entries.map((sponsor) => (
-                    <li class="phalcon-blog__sponsors-name">
-                        <a
-                            href={sponsor.url}
-                            rel="noopener sponsored"
-                            target="_blank"
-                            class="phalcon-blog__sponsors-name-link"
-                        >
-                            {sponsor.name}
                         </a>
                     </li>
                 ))}
