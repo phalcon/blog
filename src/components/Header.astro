@@ -1,9 +1,7 @@
 ---
 /*
- * Ported from Jekyll's `_includes/header.html`. The burger button and the
- * dropdowns are driven by the external assets.phalcon.io theme script. The
- * search box below is new: it is wired to Pagefind, which replaces the old
- * Algolia widget.
+ * Ported from Jekyll's `_includes/header.html`. The search box below is new:
+ * it is wired to Pagefind, which replaces the old Algolia widget.
  */
 import { site } from '../site';
 ---
@@ -188,6 +186,108 @@ import { site } from '../site';
         z-index: 20;
     }
 </style>
+
+<script>
+    /*
+     * The theme switcher, ported from the `theme.min.js` that
+     * `assets.phalcon.io` serves, so that the site carries no remote script of
+     * its own. The behavior is the one that file has, including the shape of
+     * the cycle: from `auto` a click selects the tone the system is not on, and
+     * the click after that returns to `auto`.
+     *
+     * That file also marks `[data-mode]` buttons as active. This markup has no
+     * such button, so that part is not ported.
+     *
+     * `Meta.astro` keeps a separate inline copy of the class switch. It has to
+     * run before the first paint, which a bundled module cannot do.
+     */
+    type Mode = 'auto' | 'dark' | 'light';
+    type Tone = 'dark' | 'light';
+
+    const root = document.documentElement;
+    const darkQuery = matchMedia('(prefers-color-scheme: dark)');
+
+    const systemTone = (): Tone => (darkQuery.matches ? 'dark' : 'light');
+    const storedMode = (): Mode => (localStorage.getItem('mode') as Mode | null) ?? 'auto';
+
+    const apply = (mode: Mode): void => {
+        const tone = mode === 'auto' ? systemTone() : mode;
+
+        root.style.colorScheme = mode === 'auto' ? 'light dark' : tone;
+        root.classList.remove('light', 'dark');
+        root.classList.add(tone);
+        localStorage.setItem('mode', mode);
+
+        /* The external sheet draws the moon and the sun on `.switcher-light`
+           and `.switcher-dark` with `::before`. */
+        document.querySelectorAll('.switcher').forEach((switcher) => {
+            switcher.classList.remove('switcher-light', 'switcher-dark');
+            switcher.classList.add(`switcher-${tone}`);
+        });
+    };
+
+    document.querySelectorAll('.switcher').forEach((switcher) => {
+        switcher.addEventListener('click', () => {
+            apply(storedMode() === 'auto'
+                ? (systemTone() === 'light' ? 'dark' : 'light')
+                : 'auto');
+        });
+    });
+
+    darkQuery.addEventListener('change', () => {
+        if (storedMode() === 'auto') {
+            apply('auto');
+        }
+    });
+
+    apply(storedMode());
+</script>
+
+<script>
+    /*
+     * The mobile nav panel. phalcon.io opens it from the shared `core.min.js`,
+     * which this site does not load: it is 276 KB of jQuery, highlight.js and
+     * carousel code, and it calls `hljs.initHighlightingOnLoad()`, which would
+     * repaint every Shiki code block on the site. Below are the two class
+     * toggles that bundle performs on the header, which is all of it that this
+     * markup uses.
+     *
+     * The class names are the contract of the external sheet:
+     * `.header-nav--mobile.active` slides the panel in, `.header-nav__burger
+     * .active` turns the three bars into a cross, and `body.hidden` stops the
+     * page behind the panel from scrolling.
+     */
+    const burger = document.querySelector<HTMLElement>('.header-nav__burger');
+    const panel = document.querySelector<HTMLElement>('._navToggle');
+
+    if (burger !== null && panel !== null) {
+        const setOpen = (open: boolean): void => {
+            burger.classList.toggle('active', open);
+            panel.classList.toggle('active', open);
+            document.body.classList.toggle('hidden', open);
+        };
+
+        /* The bars become a cross when the panel is open, so the button closes
+           it as well. The shared bundle only opens. */
+        burger.addEventListener('click', () => {
+            setOpen(burger.classList.contains('active') === false);
+        });
+
+        /* A click anywhere else closes it. This runs for the button click too,
+           and must leave that one to the handler above. */
+        document.addEventListener('click', (event) => {
+            const target = event.target;
+
+            if (!(target instanceof Node)) {
+                return;
+            }
+
+            if (!panel.contains(target) && !burger.contains(target)) {
+                setOpen(false);
+            }
+        });
+    }
+</script>
 
 <script>
     import { servedPath } from '../lib/text.mjs';

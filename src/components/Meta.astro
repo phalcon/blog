@@ -99,8 +99,11 @@ const canonicalHref = canonical ?? new URL(path, site.url).href;
       title={`${site.name} - ${site.description}`}
       href="/feed.xml">
 
-<script is:inline>document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script>
-<script is:inline type="module" src="https://assets.phalcon.io/phalcon/js/theme.min.js"></script>
+{/* The tone, set before the first paint so the page does not flash the wrong
+    one. The switcher in `Header.astro` runs as a module, which is deferred and
+    therefore too late for this. An unset `mode` reads as `auto`, the way it
+    does there; without that the class becomes the string `null`. */}
+<script is:inline>(function () { var mode = localStorage.getItem('mode') || 'auto'; document.documentElement.classList.add(mode === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : mode); })()</script>
 <link rel="stylesheet"
       href="https://assets.phalcon.io/css/style.css">
 {/* Relative on purpose. The absolute form served the deployed copy of this

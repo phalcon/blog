@@ -11,7 +11,8 @@ import Callout from '../../components/Callout.astro';
 import PostFooter from '../../components/PostFooter.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import { allPosts, postUrl, tagCounts, type Post } from '../../lib/posts';
-import { formatDate, formatIsoDate, readingMinutes, tagSlug } from '../../lib/text.mjs';
+import { readingMinutes } from '../../lib/reading.mjs';
+import { formatDate, formatIsoDate, tagSlug } from '../../lib/text.mjs';
 import { site } from '../../site';
 
 interface Props {

@@ -3,8 +3,12 @@
  *
  * Plain `.mjs` with no Astro import, so `node --test` can load it directly.
  * Anything that needs `astro:content` belongs in `posts.ts` instead.
+ *
+ * This file must import nothing. The search script in the header takes
+ * `servedPath` from here, which puts the whole module in the browser bundle,
+ * and a package written for Node breaks there. `readingMinutes` moved to
+ * `reading.mjs` for that reason.
  */
-import getReadingTime from 'reading-time';
 
 /** "chit chat" -> "chit-chat". Matches the Jekyll `slugify` filter. */
 export function tagSlug(tag) {
@@ -28,11 +32,6 @@ export function formatDate(date) {
 /** "2026-08-28". Used by the `content` attribute on the date elements. */
 export function formatIsoDate(date) {
     return date.toISOString().slice(0, 10);
-}
-
-/** Whole minutes, at least one. Jekyll divided the word count by 200. */
-export function readingMinutes(body) {
-    return Math.max(1, Math.round(getReadingTime(body ?? '').minutes));
 }
 
 /**

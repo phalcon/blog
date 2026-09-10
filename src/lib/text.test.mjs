@@ -1,7 +1,7 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
 
-import { excerpt, formatDate, formatIsoDate, readingMinutes, servedPath, tagSlug } from './text.mjs';
+import { excerpt, formatDate, formatIsoDate, servedPath, tagSlug } from './text.mjs';
 
 test('tagSlug lowercases and joins words with a hyphen', () => {
     assert.equal(tagSlug('chit chat'), 'chit-chat');
@@ -19,11 +19,6 @@ test('formatDate matches the Jekyll "%b %d, %Y" output', () => {
 
 test('formatIsoDate returns the date part only', () => {
     assert.equal(formatIsoDate(new Date('2026-08-28T01:02:00.000Z')), '2026-08-28');
-});
-
-test('readingMinutes never returns less than one', () => {
-    assert.equal(readingMinutes('one word'), 1);
-    assert.equal(readingMinutes(''), 1);
 });
 
 test('excerpt takes the first paragraph only', () => {
