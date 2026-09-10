@@ -5,6 +5,7 @@ date: 2026-07-17T00:01:02.699Z
 tags:
   - phalcon
   - phalcon5
+  - phalcon6
   - release
 ---
 Phalcon [v5.17.0][5_17_0] is here, and for once the release notes do not fit inside a single repository. Along with the framework itself, this cycle brought new packages, a from-scratch testing tool, and a wave of modernized sample applications.
@@ -25,7 +26,7 @@ Of course every change is mirrored in the v6 repo!
 
 ### Attack of the Clones
 
-[Talon](https://github.com/phalcon/talon) is a PHPUnit-based testing toolkit built specifically for Phalcon. We used to have a few classes in `incubator-test` but they were outdated. We decided to make our own, that will fit the needs of any Phalcon application 
+[Talon](https://github.com/phalcon/talon) is a PHPUnit-based testing toolkit built specifically for Phalcon. We used to have a few classes in `incubator-test` but they were outdated. We decided to make our own, that will fit the needs of any Phalcon application
 
 Talon can drive an application in-process with no web server for browser-style tests, ships a `talon` command-line runner, and runs your suite against both the v5 C extension and the v6 PHP package. We have already converted our top packages to use Talon, so we use it too!!
 
@@ -62,7 +63,7 @@ A huge thanks to everyone who reported bugs, opened pull requests, and tested al
 ### Tools
 
 - Zephir 1.1.0 (80d17e6a0)
- 
+
 ### Changed
 
 - Changed `Phalcon\Acl\Adapter\Memory` so a freshly constructed adapter returns an empty array instead of `null` from `getRoles()`, `getComponents()` and `getInheritedRoles()`. [#17220](https://github.com/phalcon/cphalcon/issues/17220) [[doc]](https://docs.phalcon.io/5.17/acl/)

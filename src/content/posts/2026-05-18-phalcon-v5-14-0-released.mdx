@@ -5,6 +5,7 @@ date: 2026-06-04T00:01:02.699Z
 tags:
   - phalcon
   - phalcon5
+  - phalcon6
   - release
 ---
 We are happy to announce that Phalcon [v5.14.0][5_14_0] has been released!
@@ -28,10 +29,10 @@ There are several implementations that are available for each of the building bl
 
 A modern dependency injection container built alongside the existing `Phalcon\Di\Di`. It supports autowiring, service lifetimes, lazy value resolution, service tags, and decorator extension. It is designed for both standard PHP shared-nothing requests and long-running environments (Octane, Swoole, RoadRunner).
 
-Container is the recommended choice for new projects. `Phalcon\Di\Di` remains fully supported and is not being removed. [docs][container] 
+Container is the recommended choice for new projects. `Phalcon\Di\Di` remains fully supported and is not being removed. [docs][container]
 
 <Callout type="warning">
-    Container cannot be used with components that use the "Inversion of Control" methodology in Phalcon. That is, the container is available in the component, and it is used to retrive a different service to be used in that component. An example is the Response object which internally retrieves the Filter service for filtering. For this to happen, we need to widen the `getDI()` and `setDI()` which will affect backwards compatibiity. As such, `Container` cannot be used out of the box for this version. In the next major version we will change the interfaces to offer this functionality. 
+    Container cannot be used with components that use the "Inversion of Control" methodology in Phalcon. That is, the container is available in the component, and it is used to retrive a different service to be used in that component. An example is the Response object which internally retrieves the Filter service for filtering. For this to happen, we need to widen the `getDI()` and `setDI()` which will affect backwards compatibiity. As such, `Container` cannot be used out of the box for this version. In the next major version we will change the interfaces to offer this functionality.
 </Callout>
 
 "_So why introduce it now if I cannot use it with some of the components_"?
@@ -40,7 +41,7 @@ To make Container available throughtout Phalcon, we need to change interfaces in
 
 ### AbstractLocator
 
-A new abstract class is available in `Support\AbstractLocator`. It allows you to create locators that resolve the "located" instances through the DI container. The object works with both the `Di` as well as the new `Container`. For an example of the implementation you can look at the `Auth` namespace. 
+A new abstract class is available in `Support\AbstractLocator`. It allows you to create locators that resolve the "located" instances through the DI container. The object works with both the `Di` as well as the new `Container`. For an example of the implementation you can look at the `Auth` namespace.
 
 ### Exceptions
 
