@@ -1,48 +1,111 @@
 ---
 /*
- * The post footer, ported from Jekyll's `_includes/post-footer.html`. It is
- * static on purpose: the fragment has no templating. `&lt;3 Phalcon Team` at
- * the end is already escaped in the source and stays escaped here.
+ * The post footer, ported from Jekyll's `_includes/post-footer.html`.
+ *
+ * The ported shape stacked the same 17 links as four bulleted lists, roughly
+ * 25 lines at the end of every post. Only the grouping changed: a row per
+ * group instead of a list per group. The links, their order and their labels
+ * are the ones the Jekyll fragment carried.
+ *
+ * `&lt;3 Phalcon Team` is already escaped in the source and stays escaped.
  */
+const groups = [
+    {
+        label: 'Chat',
+        links: [
+            { href: 'https://phalcon.io/discord', label: 'Discord Chat' },
+            { href: 'https://github.com/phalcon/cphalcon/discussions', label: 'Discussions (v4,v5)' },
+            { href: 'https://github.com/phalcon/phalcon/discussions', label: 'Discussions (v6+)' },
+            { href: 'https://phalcon.io/forum', label: 'Forum (archive)' },
+        ],
+    },
+    {
+        label: 'Support',
+        links: [
+            { href: 'https://phalcon.io/fund', label: 'GitHub Sponsors' },
+        ],
+    },
+    {
+        label: 'Social',
+        links: [
+            { href: 'https://phalcon.io/telegram', label: 'Telegram' },
+            { href: 'https://phalcon.io/gab', label: 'Gab' },
+            { href: 'https://phalcon.io/mewe', label: 'MeWe' },
+            { href: 'https://dev.to/phalcon', label: 'DevTo' },
+            { href: 'https://phalcon.io/reddit', label: 'Reddit' },
+            { href: 'https://phalcon.io/linkedin', label: 'LinkedIn' },
+            { href: 'https://phalcon.io/fb', label: 'Facebook' },
+            { href: 'https://phalcon.io/t', label: 'X (twitter)' },
+        ],
+    },
+    {
+        label: 'Videos',
+        links: [
+            { href: 'https://phalcon.io/bitchute', label: 'BitChute' },
+            { href: 'https://phalcon.io/brighteon', label: 'Brighteon' },
+            { href: 'https://phalcon.io/lbry', label: 'LBRY' },
+            { href: 'https://phalcon.io/youtube', label: 'YouTube' },
+        ],
+    },
+];
 ---
 
 <hr/>
 
-<p>Chat - Q&amp;A</p>
+<div class="post-footer">
+    {groups.map((group) => (
+        <div class="post-footer__row">
+            <span class="post-footer__label">{group.label}</span>
+            <span class="post-footer__links">
+                {group.links.map((item, index) => (
+                    <Fragment>
+                        {index > 0 && <span class="post-footer__dot">·</span>}
+                        <a href={item.href}>{item.label}</a>
+                    </Fragment>
+                ))}
+            </span>
+        </div>
+    ))}
+</div>
 
-<ul>
-    <li><a href="https://phalcon.io/discord">Discord Chat</a></li>
-    <li><a href="https://github.com/phalcon/cphalcon/discussions">Discussions (v4,v5)</a></li>
-    <li><a href="https://github.com/phalcon/phalcon/discussions">Discussions (v6+)</a></li>
-    <li><a href="https://phalcon.io/forum">Forum (archive)</a></li>
-</ul>
+<p class="post-footer__sign">&lt;3 Phalcon Team</p>
 
-<p>Support</p>
+<style>
+    /*
+     * The label and the separator take their color from the text around them,
+     * so the footer follows whichever theme is active without naming a color
+     * of its own.
+     */
+    .post-footer__row {
+        align-items: baseline;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        margin-bottom: 8px;
+    }
 
-<ul>
-    <li><a href="https://phalcon.io/fund">OpenCollective - Support Us</a></li>
-</ul>
+    .post-footer__label {
+        flex: 0 0 74px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        opacity: 0.65;
+        text-transform: uppercase;
+    }
 
-<p>Social Media</p>
+    .post-footer__links {
+        flex: 1 1 260px;
+        line-height: 1.9;
+    }
 
-<ul>
-    <li><a href="https://phalcon.io/telegram">Telegram</a></li>
-    <li><a href="https://phalcon.io/gab">Gab</a></li>
-    <li><a href="https://phalcon.io/mewe">MeWe</a></li>
-    <li><a href="https://dev.to/phalcon">DevTo</a></li>
-    <li><a href="https://phalcon.io/reddit">Reddit</a></li>
-    <li><a href="https://phalcon.io/linkedin">LinkedIn</a></li>
-    <li><a href="https://phalcon.io/fb">Facebook</a></li>
-    <li><a href="https://phalcon.io/t">X (twitter)</a></li>
-</ul>
+    .post-footer__dot {
+        margin: 0 7px;
+        opacity: 0.5;
+    }
 
-<p>Videos</p>
-
-<ul>
-    <li><a href="https://phalcon.io/bitchute">BitChute</a></li>
-    <li><a href="https://phalcon.io/brighteon">Brighteon</a></li>
-    <li><a href="https://phalcon.io/lbry">LBRY</a></li>
-    <li><a href="https://phalcon.io/youtube">YouTube</a></li>
-</ul>
-
-<p>&lt;3 Phalcon Team</p>
+    .post-footer__sign {
+        margin-top: 14px;
+        opacity: 0.7;
+    }
+</style>

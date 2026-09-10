@@ -27,7 +27,10 @@ export default defineConfig({
         },
         shikiConfig: {
             /* Replaced in task 9 after a side-by-side check against Rouge. */
-            theme: 'nord',
+            themes: {
+                dark: 'github-dark-default',
+                light: 'github-light-default',
+            },
             wrap: false,
         },
     },

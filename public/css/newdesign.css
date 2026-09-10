@@ -1,0 +1,499 @@
+/*
+ * EXPERIMENT — not part of the migration. Discard when done.
+ *
+ * This sheet re-skins the blog with the palette and the surface treatment of
+ * the phalcon.io `new-design` branch. The markup does not change: every rule
+ * here overrides the external Phalcon stylesheet, which hardcodes its colors
+ * and carries no custom properties of its own.
+ *
+ * The tone tokens copy `src/styles/global.css` on that branch. The blog keeps
+ * its light/dark switch, so the design's `light` tone answers to the default
+ * and its `dark` tone answers to `html.dark`. Header and footer stay on the
+ * dark chrome in both, the way the redesign's nav does.
+ */
+
+:root {
+    --nd-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --nd-font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    /* light tone */
+    --nd-accent: #0f9e86;
+    --nd-accent-hover: #0b7d6a;
+    --nd-bg: #f7faf8;
+    --nd-border: #e4ede8;
+    --nd-border-strong: #d3e2d9;
+    --nd-faint: #7d938a;
+    --nd-heading: #0f1a17;
+    --nd-kicker: #5c7a6e;
+    --nd-muted: #4b6157;
+    --nd-surface: #ffffff;
+    --nd-text: #0f1a17;
+
+    /* chrome — fixed in both tones */
+    --nd-chrome: #070d0c;
+    --nd-chrome-border: #17221f;
+    --nd-chrome-muted: #9db3aa;
+    --nd-chrome-text: #e6f2ec;
+
+    /* code surface */
+    --nd-code-bg: #f2f7f4;
+    --nd-code-border: #d3e2d9;
+}
+
+html.dark {
+    --nd-accent: #74ccb2;
+    --nd-accent-hover: #57b49b;
+    --nd-bg: #070d0c;
+    --nd-border: #17221f;
+    --nd-border-strong: #2f3a3c;
+    --nd-code-bg: #0d1614;
+    --nd-code-border: #17221f;
+    --nd-faint: #5e7269;
+    --nd-heading: #e6f2ec;
+    --nd-kicker: #8fa39b;
+    --nd-muted: #9db3aa;
+    --nd-surface: #0d1614;
+    --nd-text: #e6f2ec;
+}
+
+/* ---------------------------------------------------------------- page */
+
+body,
+.header,
+.footer,
+.phalcon-blog,
+.phalcon-blog-detail,
+.phalcon-blog-detail p,
+.phalcon-blog-detail h1,
+.phalcon-blog-detail h2,
+.phalcon-blog-detail h3,
+.phalcon-blog-detail h4,
+.phalcon-blog__item-title,
+.phalcon-blog__main-title,
+.alert,
+.tag-button {
+    font-family: var(--nd-font-sans);
+}
+
+html.dark body,
+html.dark .phalcon-blog,
+body,
+.phalcon-blog {
+    background-color: var(--nd-bg);
+    color: var(--nd-text);
+}
+
+html.dark .phalcon-blog a,
+.phalcon-blog a {
+    color: var(--nd-accent);
+}
+
+html.dark .phalcon-blog a:hover,
+.phalcon-blog a:hover {
+    color: var(--nd-accent-hover);
+}
+
+/* -------------------------------------------------------------- chrome */
+
+html.dark .header,
+.header {
+    background-color: var(--nd-chrome);
+    border-bottom: 1px solid var(--nd-chrome-border);
+    color: var(--nd-chrome-text);
+    height: auto;
+    padding: 18px 0;
+}
+
+html.dark .header a,
+.header a,
+.header-nav > li a {
+    color: var(--nd-chrome-muted);
+}
+
+html.dark .header a:hover,
+.header a:hover,
+.header-nav > li.active > a,
+.header-nav > li:hover > a {
+    color: var(--nd-chrome-text);
+}
+
+.header__sitename {
+    background-color: transparent;
+    border: 1px solid #2f4a42;
+    border-radius: 3px;
+    color: var(--nd-accent);
+    font-family: var(--nd-font-mono);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+}
+
+.header-nav--mobile {
+    background-color: var(--nd-chrome);
+}
+
+html.dark .footer,
+.footer {
+    background: var(--nd-chrome);
+    border-top: 1px solid var(--nd-chrome-border);
+}
+
+html.dark .footer-nav li a,
+.footer-nav li a,
+.footer-nav {
+    color: var(--nd-chrome-muted);
+}
+
+.footer-nav li:hover {
+    border-bottom-color: var(--nd-accent);
+}
+
+html.dark .footer__license,
+.footer__license,
+.footer__supported {
+    color: #3f5950;
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+}
+
+/* --------------------------------------------------------- post cards */
+
+html.dark .phalcon-blog__main-title,
+.phalcon-blog__main-title {
+    color: var(--nd-kicker);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+}
+
+.phalcon-blog__item {
+    background: var(--nd-surface);
+    border: 1px solid var(--nd-border);
+    border-radius: 5px;
+    margin-bottom: 18px;
+    padding: 22px;
+}
+
+.phalcon-blog__last-article .phalcon-blog__item {
+    border-left: 3px solid var(--nd-accent);
+}
+
+.phalcon-blog__item-title {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+html.dark .phalcon-blog__item-title a,
+.phalcon-blog__item-title a {
+    color: var(--nd-heading);
+}
+
+html.dark .phalcon-blog__item-title a:hover,
+.phalcon-blog__item-title a:hover {
+    color: var(--nd-accent);
+}
+
+html.dark .phalcon-blog__item-date,
+html.dark .phalcon-blog__item-author,
+.phalcon-blog__item-info,
+.phalcon-blog__item-date,
+.phalcon-blog__item-author {
+    color: var(--nd-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.phalcon-blog__item-date:after {
+    background-color: var(--nd-faint);
+}
+
+.phalcon-blog__item-article {
+    color: var(--nd-muted);
+}
+
+.phalcon-blog__item-read-more {
+    border-bottom: 0;
+    color: var(--nd-accent);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.phalcon-blog__item-read-more:after {
+    content: " \2192";
+}
+
+.phalcon-blog__item-read-more:hover {
+    color: var(--nd-accent-hover);
+}
+
+/* The old sheet lays a gray veil over every card image. The design has none. */
+.phalcon-blog__item-img:after {
+    background: transparent;
+}
+
+.phalcon-blog__item-img img {
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------ sidebar */
+
+.phalcon-blog__right-item {
+    background: var(--nd-surface);
+    border: 1px solid var(--nd-border);
+    border-radius: 5px;
+    padding: 14px;
+}
+
+html.dark .phalcon-blog__title,
+.phalcon-blog__title {
+    color: var(--nd-kicker);
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+/*
+ * The mono face is wider per character than the Titillium it replaces, so the
+ * live sizes — 14px name, 10px count — wrap the 350px sidebar list to one tag
+ * per row. Smaller type and tighter gaps bring the pill width back to about
+ * what the live blog shows.
+ */
+html.dark .phalcon-blog__right .phalcon-blog__tags-items .phalcon-blog__tags-item,
+.phalcon-blog__tags-item {
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 3px;
+    color: var(--nd-muted);
+    font-family: var(--nd-font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    padding: 4px 9px;
+}
+
+.phalcon-blog__tags-item:hover {
+    border-color: var(--nd-accent);
+    color: var(--nd-accent);
+}
+
+html.dark .phalcon-blog__tags-item span:first-child,
+.phalcon-blog__tags-item span:first-child {
+    color: inherit;
+    font-size: 11px;
+    margin-right: 4px;
+}
+
+html.dark .phalcon-blog__projects-text,
+.phalcon-blog__projects-text {
+    color: var(--nd-muted);
+}
+
+/* --------------------------------------------------------- post body */
+
+html.dark .phalcon-blog-detail h1,
+html.dark .phalcon-blog-detail h2,
+html.dark .phalcon-blog-detail h3,
+html.dark .phalcon-blog-detail h4,
+.phalcon-blog-detail h1,
+.phalcon-blog-detail h2,
+.phalcon-blog-detail h3,
+.phalcon-blog-detail h4 {
+    color: var(--nd-heading);
+    letter-spacing: -0.02em;
+}
+
+.phalcon-blog-detail h2.headline {
+    font-size: 40px;
+    line-height: 1.06;
+}
+
+html.dark .phalcon-blog-detail__info,
+.phalcon-blog-detail__info {
+    color: var(--nd-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.phalcon-blog-detail__date:after,
+.phalcon-blog-detail__author:nth-child(2):after {
+    background-color: var(--nd-faint);
+}
+
+html.dark .phalcon-blog-detail p,
+html.dark .phalcon-blog-detail ul li,
+html.dark .phalcon-blog-detail ol li,
+.phalcon-blog-detail p,
+.phalcon-blog-detail ul,
+.phalcon-blog-detail ol,
+.phalcon-blog-detail ul li,
+.phalcon-blog-detail ol li {
+    color: var(--nd-text);
+}
+
+.phalcon-blog-detail a {
+    border-bottom-color: var(--nd-accent);
+    color: var(--nd-accent);
+}
+
+/*
+ * Inline code only. `pre > code` must not match. `code` is an inline element,
+ * so a border and side padding draw a box around each wrapped line inside a
+ * Shiki block and indent the first line of it.
+ */
+.phalcon-blog-detail *:not(pre) > code {
+    background-color: var(--nd-surface);
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 3px;
+    color: var(--nd-accent);
+    font-family: var(--nd-font-mono);
+    padding: 1px 5px;
+}
+
+html.dark .phalcon-blog-detail table th,
+html.dark .phalcon-blog-detail table td,
+.phalcon-blog-detail table thead,
+.phalcon-blog-detail table tbody {
+    color: var(--nd-text);
+}
+
+html.dark .phalcon-blog-detail table td,
+.phalcon-blog-detail table td {
+    border-color: var(--nd-border-strong);
+}
+
+.tag-button {
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 3px;
+    color: var(--nd-heading);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.tag-button:hover {
+    background-color: var(--nd-accent);
+    color: #06120e;
+}
+
+html.dark .previous,
+html.dark .page_number,
+html.dark .next,
+.previous,
+.page_number,
+.next {
+    color: var(--nd-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+/* ------------------------------------------------------ code blocks */
+
+/*
+ * `astro.config.mjs` moves Shiki off the `nord` placeholder to a pair:
+ * `github-dark-default`, which the redesign uses, and its light twin. Astro
+ * writes the light colors inline and the dark ones as `--shiki-dark*` custom
+ * properties, so the dark tone reads them back below. The background comes
+ * from the design tokens in both tones, not from either theme.
+ */
+.astro-code {
+    background-color: var(--nd-code-bg) !important;
+    border: 1px solid var(--nd-code-border);
+    border-radius: 6px;
+    font-family: var(--nd-font-mono);
+    font-size: 13.5px;
+    line-height: 1.85;
+    padding: 18px 20px;
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+    color: var(--shiki-dark) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* --------------------------------------------------------- callouts */
+
+/*
+ * The 107 alert callouts, redrawn as the redesign's admonition card:
+ * a 3px left bar, a mono uppercase label, and a plain surface. The label is
+ * not in the markup, so it comes from the class.
+ */
+.alert {
+    background: var(--nd-surface);
+    border: 1px solid var(--nd-border-strong);
+    border-left-width: 3px;
+    border-radius: 0 4px 4px 0;
+    padding: 16px 22px;
+}
+
+.alert:before {
+    display: block;
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.alert p {
+    margin-bottom: 0;
+}
+
+/*
+ * `.phalcon-blog-detail blockquote` zeroes both block margins and beats
+ * `.alert` on specificity, so a callout sits against the text above and below
+ * it. That went unnoticed while the callout had no visible border.
+ */
+.phalcon-blog-detail blockquote.alert {
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.alert-info {
+    border-left-color: #74ccb2;
+}
+
+.alert-info:before {
+    color: #74ccb2;
+    content: "Note";
+}
+
+/* The old sheet has no rule for `.alert-notice`, so it renders unstyled. */
+.alert-notice {
+    border-left-color: #8fc19a;
+}
+
+.alert-notice:before {
+    color: #8fc19a;
+    content: "Notice";
+}
+
+.alert-warning {
+    border-left-color: #e2c37a;
+}
+
+.alert-warning:before {
+    color: #e2c37a;
+    content: "Warning";
+}
+
+.alert-danger {
+    border-left-color: #e08f8f;
+    color: var(--nd-text);
+}
+
+.alert-danger:before {
+    color: #e08f8f;
+    content: "Important";
+}
