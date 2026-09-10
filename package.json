@@ -1,0 +1,31 @@
+{
+    "name": "phalcon-blog",
+    "type": "module",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "postbuild": "pagefind --site dist",
+        "preview": "astro preview",
+        "check": "astro check",
+        "lint:mdx": "node mdx-lint.mjs",
+        "test": "node --test \"src/lib/*.test.mjs\" \"scripts/*.test.mjs\"",
+        "verify": "node scripts/verify-build.mjs"
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^8.0.0",
+        "@astrojs/rss": "^4.0.19",
+        "@astrojs/sitemap": "^3.7.4",
+        "astro": "^7.3.1",
+        "reading-time": "^1.5.0"
+    },
+    "devDependencies": {
+        "@astrojs/check": "^0.9.10",
+        "@mdx-js/mdx": "^3.1.0",
+        "pagefind": "^1.5.2",
+        "remark-frontmatter": "^5.0.0",
+        "remark-gfm": "^4.0.1",
+        "typescript": "^6.0.3"
+    }
+}

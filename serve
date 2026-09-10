@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Start the development server at http://localhost:4321
+#
+#   ./serve        # foreground, Ctrl+C to stop
+#   ./serve -d     # detached
+#
+# If the content ever looks stale, clear the Astro and Vite caches:
+#   docker compose down
+#   docker run --rm -v "$PWD:/app" -w /app node:22-alpine rm -rf .astro node_modules/.vite
+#   ./serve
+
+set -e
+
+cd "$(dirname "$0")"
+
+docker compose up "$@"

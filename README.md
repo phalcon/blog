@@ -10,9 +10,25 @@ This is the official Phalcon Blog. You are more than welcome to download the blo
 
 Thanks.
 
-#### NOTE
+#### Development
 
-The master branch will always contain the latest stable version which is served by Github Pages. If you are looking for the Phalcon based implementation, please click the "Releases" link.
+This site is built with Astro. To run it locally, start the container:
+
+```bash
+./serve -d
+```
+
+The site is then available at `http://localhost:4321`.
+
+To build the static site:
+
+```bash
+npm run build
+```
+
+The master branch holds the site source. Cloudflare Pages serves the built
+site from the `production` branch, which the CI workflow publishes on every
+push to master.
 
 ## Sponsors
 
