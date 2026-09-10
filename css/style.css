@@ -21,8 +21,7 @@
     margin-bottom: 0.5rem;
 }
 
-.phalcon-blog__sponsors-logos,
-.phalcon-blog__sponsors-names {
+.phalcon-blog__sponsors-logos {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -50,14 +49,6 @@
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-}
-
-.phalcon-blog__sponsors-name-link {
-    border: 1px solid rgba(128, 128, 128, 0.35);
-    border-radius: 999px;
-    display: inline-block;
-    font-size: 0.8125rem;
-    padding: 0.25rem 0.75rem;
 }
 
 /*
