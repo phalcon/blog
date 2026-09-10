@@ -26,7 +26,6 @@ export default defineConfig({
             excludeLangs: ['mermaid'],
         },
         shikiConfig: {
-            /* Replaced in task 9 after a side-by-side check against Rouge. */
             themes: {
                 dark: 'github-dark-default',
                 light: 'github-light-default',
