@@ -1,0 +1,25 @@
+---
+/*
+ * Ported from Jekyll's `_includes/analytics.html`. The Liquid `{% if %}` guard
+ * becomes a JavaScript `&&`, since `site.analytics` is set at build time.
+ */
+import { site } from '../site';
+---
+
+{site.analytics && (
+    <Fragment>
+        <!-- Google Analytics -->
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.analytics}`}></script>
+        <script is:inline define:vars={{ analyticsId: site.analytics }}>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+        </script>
+        <!-- End Google Analytics -->
+    </Fragment>
+)}

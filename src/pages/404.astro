@@ -1,0 +1,22 @@
+---
+/*
+ * Ported from Jekyll's `404.md`. Same text; `{{ site.url }}` becomes
+ * `{site.url}`.
+ */
+import Base from '../layouts/Base.astro';
+import { site } from '../site';
+---
+
+<Base title="404 - Page not found">
+    <h2>404</h2>
+
+    <p>
+        Ooops! Something went wrong.
+    </p>
+
+    <p>
+        <a href={site.url} class="green-button">Back To Home</a>
+    </p>
+
+    <p>&lt;3 Phalcon Team</p>
+</Base>

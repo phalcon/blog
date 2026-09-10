@@ -1,0 +1,53 @@
+---
+/**
+ * Renders ```mermaid fences. The library is imported only when the page has
+ * a diagram, so pages without one download nothing. With JS off the fence
+ * stays on screen as readable diagram source.
+ */
+---
+
+<script>
+    const blocks = [
+        ...document.querySelectorAll<HTMLElement>('pre.mermaid'),
+    ];
+
+    if (blocks.length > 0) {
+        /* Hide the source while the diagram is on its way. */
+        blocks.forEach((block) => {
+            block.dataset.source = block.textContent ?? '';
+            block.style.visibility = 'hidden';
+        });
+
+        /* Whatever happens, every block must end up visible. */
+        const reveal = (): void => {
+            blocks.forEach((block) => {
+                block.style.visibility = 'visible';
+            });
+        };
+
+        try {
+            const mermaid = (await import('mermaid')).default;
+
+            mermaid.initialize({ startOnLoad: false, theme: 'default' });
+
+            for (const [position, block] of blocks.entries()) {
+                try {
+                    const { svg } = await mermaid.render(
+                        `mermaid-${position}`,
+                        block.dataset.source ?? ''
+                    );
+
+                    block.innerHTML = svg;
+                } catch (error) {
+                    /* Leave the source readable when it does not parse. */
+                    block.textContent = block.dataset.source ?? '';
+                }
+            }
+
+            reveal();
+        } catch (error) {
+            /* Mermaid could not load at all; show the source instead. */
+            reveal();
+        }
+    }
+</script>

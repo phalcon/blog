@@ -1,0 +1,14 @@
+---
+import { tagUrl } from '../lib/posts';
+
+interface Props {
+    count?: number;
+    tag: string;
+}
+
+const { count, tag } = Astro.props;
+---
+
+<a class="phalcon-blog__tags-item" href={tagUrl(tag)}>
+    <span>{tag}</span>{count === undefined ? null : <span>({count})</span>}
+</a>

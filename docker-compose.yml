@@ -1,0 +1,18 @@
+# For local development only.
+
+services:
+    phalcon-blog-astro:
+        container_name: phalcon-blog-astro
+        hostname: phalcon-blog-astro
+        image: node:22-alpine
+        working_dir: /app
+        volumes:
+            - .:/app
+        ports:
+            - "4321:4321"
+        # `.astro/dev.json` records the PID of a running dev server. It lives in
+        # the bind mount, so it outlives the container. Any PID it names is stale
+        # the moment a fresh container boots, and Astro would otherwise either
+        # refuse to start or, with --force, terminate that PID — which in the new
+        # container is its own process tree.
+        command: sh -c "npm install && rm -f .astro/dev.json && npm run dev -- --host 0.0.0.0"

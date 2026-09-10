@@ -1,0 +1,100 @@
+---
+/**
+ * Sponsors — the roster shown inside the sidebar "Supporters" block.
+ *
+ * The data comes from src/sponsors.json, refreshed from phalcon/assets by
+ * the deploy workflow the way the fan art is. Imported rather than injected
+ * with `set:html`: malformed JSON fails the build with a parse error, where
+ * malformed HTML would render broken markup on every page.
+ *
+ * The committed copy is an empty roster on purpose. A failed download then
+ * renders nothing, which is visible and can be alerted on, rather than
+ * quietly serving a roster that is months out of date.
+ *
+ * Groups that pay for logo placement render as logos; the rest render as
+ * names. Nothing here states an amount: `group` is the only signal the
+ * data carries, and the labels below are the only place it is named.
+ */
+import data from '../sponsors.json';
+
+interface Sponsor {
+    group: string;
+    id: string;
+    kind: string;
+    logo: string | null;
+    name: string;
+    source: string[];
+    url: string;
+}
+
+const logoSections: { group: string; title: string }[] = [
+    { group: 'sponsor', title: 'Sponsors' },
+    { group: 'partner', title: 'Partners' },
+];
+
+const nameSections: { group: string; title: string }[] = [
+    { group: 'supporter', title: 'Supporters' },
+    { group: 'backer', title: 'Backers' },
+];
+
+const sponsors = data.sponsors as Sponsor[];
+
+/** Logo rows need an image; name rows do not. */
+const inGroup = (group: string, needsLogo: boolean): Sponsor[] =>
+    sponsors
+        .filter((sponsor) => sponsor.group === group && (!needsLogo || null !== sponsor.logo))
+        .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+{logoSections.map(({ group, title }) => {
+    const entries = inGroup(group, true);
+
+    return entries.length > 0 && (
+        <div class="phalcon-blog__sponsors-section">
+            <div class="phalcon-blog__sponsors-heading">{title}</div>
+            <ul class="phalcon-blog__sponsors-logos">
+                {entries.map((sponsor) => (
+                    <li class="phalcon-blog__sponsors-logo">
+                        <a
+                            href={sponsor.url}
+                            rel="noopener sponsored"
+                            target="_blank"
+                            class="phalcon-blog__sponsors-logo-link"
+                        >
+                            <img
+                                src={sponsor.logo}
+                                alt={sponsor.name}
+                                loading="lazy"
+                                class="phalcon-blog__sponsors-logo-img"
+                            />
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+})}
+
+{nameSections.map(({ group, title }) => {
+    const entries = inGroup(group, false);
+
+    return entries.length > 0 && (
+        <div class="phalcon-blog__sponsors-section">
+            <div class="phalcon-blog__sponsors-heading">{title}</div>
+            <ul class="phalcon-blog__sponsors-names">
+                {entries.map((sponsor) => (
+                    <li class="phalcon-blog__sponsors-name">
+                        <a
+                            href={sponsor.url}
+                            rel="noopener sponsored"
+                            target="_blank"
+                            class="phalcon-blog__sponsors-name-link"
+                        >
+                            {sponsor.name}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+})}

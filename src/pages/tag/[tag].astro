@@ -1,0 +1,51 @@
+---
+/*
+ * The per-tag page. New in this migration: Jekyll only ever showed a tag's
+ * posts inside the shared `/tags` listing.
+ */
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import TagPill from '../../components/TagPill.astro';
+import { allPosts, postsByTag, tagCounts, type Post, type TagCount } from '../../lib/posts';
+
+interface Props {
+    allTags: TagCount[];
+    matched: Post[];
+    tag: string;
+}
+
+export const getStaticPaths = (async () => {
+    const posts = await allPosts();
+    const tags = tagCounts(posts);
+
+    return tags.map((item) => ({
+        params: { tag: item.slug },
+        props: {
+            allTags: tags,
+            matched: postsByTag(posts, item.slug),
+            tag: item.tag,
+        },
+    }));
+}) satisfies GetStaticPaths;
+
+const { allTags, matched, tag }: Props = Astro.props;
+---
+
+<Base title={tag}>
+    <div id="articles" class="phalcon-blog-detail">
+        <h2 itemprop="name headline" class="headline">{tag}</h2>
+        <p>{matched.length} post(s)</p>
+        <div class="phalcon-blog__items">
+            {matched.map((post) => <PostCard post={post} />)}
+        </div>
+        <div class="phalcon-blog__tags-items">
+            {allTags.map((item) => (
+                <TagPill count={item.count} tag={item.tag} />
+            ))}
+        </div>
+    </div>
+
+    <Sidebar slot="sidebar" tags={allTags} />
+</Base>

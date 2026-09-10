@@ -1,0 +1,46 @@
+---
+/*
+ * Ported from Jekyll's `tags.html`. Tags are sorted alphabetically and each
+ * one gets an anchor named after its slug, since 317 post footers and the
+ * sidebar link to `/tags#<slug>`. The anchor name must equal `tagSlug(tag)`
+ * exactly, or those links land at the top of the page instead of the tag.
+ */
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { allPosts, postsByTag, postUrl, tagCounts } from '../lib/posts';
+import { formatIsoDate, tagSlug } from '../lib/text.mjs';
+
+const posts = await allPosts();
+const tags = tagCounts(posts);
+const sorted = [...tags].sort((a, b) => a.tag.localeCompare(b.tag));
+---
+
+<Base title="Tags">
+    <div id="articles" class="phalcon-blog-detail">
+        <a href="/tags">
+            <h2 itemprop="name headline" class="headline">Tags</h2>
+        </a>
+        <div>
+            {sorted.map((item) => (
+                <Fragment>
+                    <a name={tagSlug(item.tag)}></a>
+                    <div class="tag-button">{item.tag}</div>
+                    <p>
+                        <ul>
+                            {postsByTag(posts, item.slug).map((post) => (
+                                <li>
+                                    <a href={postUrl(post)}>
+                                        {post.data.title} - [{formatIsoDate(post.data.date)}]
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </p>
+                </Fragment>
+            ))}
+        </div>
+        <a href="/tag" class="phalcon-blog__item-read-more">Browse Tags by Post Count</a>
+    </div>
+
+    <Sidebar slot="sidebar" tags={tags} />
+</Base>

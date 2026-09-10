@@ -1,0 +1,24 @@
+---
+/**
+ * The alert boxes the posts used to mark with a kramdown attribute list, for
+ * example:
+ *
+ *   > **NOTE**: Linux packages will be available in a couple of hours
+ *   {: .alert .alert-danger }
+ *
+ * Kramdown turned that into `<blockquote class="alert alert-danger">`. This
+ * component renders the same element and the same classes, so the
+ * stylesheet already loaded by every page styles it with no change. Used
+ * from MDX as <Callout type="danger">, and supplied through the
+ * `components` prop of <Content />, so no post has to import it.
+ */
+interface Props {
+    type?: 'danger' | 'info' | 'notice' | 'warning';
+}
+
+const { type = 'info' } = Astro.props;
+---
+
+<blockquote class:list={['alert', `alert-${type}`]}>
+    <slot />
+</blockquote>

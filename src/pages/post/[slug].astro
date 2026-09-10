@@ -1,0 +1,92 @@
+---
+/*
+ * Ported from Jekyll's `_layouts/post.html`. The eight lines of Liquid
+ * arithmetic that rounded the reading time collapse to `readingMinutes`,
+ * which already rounds and floors at one.
+ */
+import { render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Callout from '../../components/Callout.astro';
+import PostFooter from '../../components/PostFooter.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { allPosts, postUrl, tagCounts, type Post } from '../../lib/posts';
+import { formatDate, formatIsoDate, readingMinutes, tagSlug } from '../../lib/text.mjs';
+import { site } from '../../site';
+
+interface Props {
+    post: Post;
+}
+
+export const getStaticPaths = (async () => {
+    const posts = await allPosts();
+
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: { post },
+    }));
+}) satisfies GetStaticPaths;
+
+const { post }: Props = Astro.props;
+const { Content } = await render(post);
+
+const tags = tagCounts(await allPosts());
+const canonical = new URL(postUrl(post), site.url).href;
+const minutes = readingMinutes(post.body);
+const readTime = minutes === 1 ? '1 minute' : `${minutes} minutes`;
+
+/* `content` is valid microdata, but not a typed HTML attribute for a `div`. */
+const dateAttrs = { content: formatIsoDate(post.data.date) };
+---
+
+<Base
+    canonical={canonical}
+    image={post.data.image}
+    publishedAt={post.data.date}
+    title={post.data.title}
+>
+    <div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article">
+        <h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">
+            {post.data.title}
+        </h2>
+        <div class="phalcon-blog-detail__info">
+            <div id="phalcon-blog-detail__date"
+                 class="phalcon-blog-detail__date"
+                 itemprop="datePublished"
+                 data-pagefind-meta="date"
+                 {...dateAttrs}>
+                {formatDate(post.data.date)}
+            </div>
+            <div id="phalcon-blog-detail__author"
+                 class="phalcon-blog-detail__author"
+                 itemprop="author"
+                 itemscope
+                 itemtype="http://schema.org/Person">
+                <span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span>
+            </div>
+            <div class="phalcon-blog-detail__author">
+                Read time: {readTime}
+            </div>
+        </div>
+        <div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body>
+            {post.data.image && (
+                <div id="phalcon-blog-detail__image">
+                    <img src={post.data.image} alt={post.data.title} itemprop="image" />
+                </div>
+            )}
+            <Content components={{ Callout }} />
+            <div data-pagefind-ignore>
+                <PostFooter />
+            </div>
+        </div>
+        <div class="phalcon-blog__tags-items">
+            {post.data.tags.map((tag) => (
+                <a href={`/tags#${tagSlug(tag)}`} class="phalcon-blog__tags-item">
+                    <span>{tag}</span>
+                </a>
+            ))}
+        </div>
+    </div>
+
+    <Sidebar slot="sidebar" tags={tags} />
+</Base>

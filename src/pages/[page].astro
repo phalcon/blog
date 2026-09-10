@@ -1,0 +1,67 @@
+---
+/*
+ * Ported from Jekyll's `index.html` combined with `paginate_path`. Page 1 is
+ * the site root (see `index.astro`); this route covers pages 2 and up, so
+ * `/page-2` through `/page-32` exist and `/page-1` does not.
+ */
+import type { GetStaticPaths } from 'astro';
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { allPosts, tagCounts, type Post } from '../lib/posts';
+
+interface Props {
+    items: Post[];
+    page: number;
+    total: number;
+}
+
+export const getStaticPaths = (async () => {
+    const posts = await allPosts();
+    const perPage = 10;
+    const total = Math.ceil(posts.length / perPage);
+    const pages = [];
+
+    /* Page 1 is `/`, the way Jekyll's paginate_path works. Start at 2. */
+    for (let page = 2; page <= total; page += 1) {
+        pages.push({
+            params: { page: `page-${page}` },
+            props: {
+                items: posts.slice((page - 1) * perPage, page * perPage),
+                page,
+                total,
+            },
+        });
+    }
+
+    return pages;
+}) satisfies GetStaticPaths;
+
+const { items, page, total }: Props = Astro.props;
+const tags = tagCounts(await allPosts());
+const previousHref = page === 2 ? '/' : `/page-${page - 1}`;
+const nextHref = `/page-${page + 1}`;
+---
+
+<Base>
+    <div class="phalcon-blog__items">
+        {items.map((post) => <PostCard post={post} />)}
+    </div>
+
+    <!-- Pagination links -->
+    <div class="pagination">
+        <a href={previousHref} class="previous">
+            Previous
+        </a>
+        <span class="page_number">
+            Page: {page} of {total}
+        </span>
+        {page < total ? (
+            <a href={nextHref} class="next">Next</a>
+        ) : (
+            <span class="next">Next</span>
+        )}
+    </div>
+
+    <Sidebar slot="sidebar" tags={tags} />
+</Base>
