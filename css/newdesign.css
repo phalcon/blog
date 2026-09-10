@@ -495,3 +495,24 @@ html.dark .astro-code span {
     color: #e08f8f;
     content: "Important";
 }
+
+/* ------------------------------------------------------- long words */
+
+/*
+ * A word with no space in it — a class name, a URL, a hash — is as wide as
+ * it is long, and the article body and the post cards sit in flex items that
+ * cannot go below the width of their content. One such word therefore makes
+ * the whole page wider than a phone screen, which mobile Safari answers by
+ * shrinking the page to fit.
+ *
+ * `anywhere` counts in that minimum width, which `break-word` does not, so it
+ * is the value that lets the column shrink. It breaks a word only when the
+ * word does not fit, so text that fits is unchanged. Code blocks are not
+ * touched: `.phalcon-blog-detail pre` in the shared sheet sets its own
+ * `word-break` and `word-wrap`, and a value set on the element beats the one
+ * it would inherit.
+ */
+.phalcon-blog-detail,
+.phalcon-blog__item-title {
+    overflow-wrap: anywhere;
+}
