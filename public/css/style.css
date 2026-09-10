@@ -1,0 +1,96 @@
+/*
+ * Rules for the sidebar sponsors block (Sponsors.astro).
+ *
+ * The Jekyll build injected a ready-made sponsors fragment here, so the
+ * external Phalcon stylesheet carries no rules for this markup. These rules
+ * cover only the logo grid and the name list; the rest of the sidebar keeps
+ * its existing look.
+ */
+
+.phalcon-blog__sponsors-section {
+    margin-top: 1.25rem;
+}
+
+.phalcon-blog__sponsors-section:first-child {
+    margin-top: 0;
+}
+
+.phalcon-blog__sponsors-heading {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.phalcon-blog__sponsors-logos,
+.phalcon-blog__sponsors-names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.phalcon-blog__sponsors-logo {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 5.5rem;
+}
+
+.phalcon-blog__sponsors-logo-link {
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 6px;
+    display: flex;
+    height: 3.25rem;
+    justify-content: center;
+    padding: 0.4rem;
+}
+
+.phalcon-blog__sponsors-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.phalcon-blog__sponsors-name-link {
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.75rem;
+}
+
+/*
+ * Rules ported from Jekyll's `_sass/_custom.scss`. The nested
+ * `.phalcon-blog__last-article` block is flattened to plain CSS.
+ */
+
+@media screen and (max-width: 1200px) {
+    .header-nav, .header__lang, .header__search, .algolia-autocomplete {
+        display: none;
+    }
+
+    .header-nav__burger {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .phalcon-blog__item-img img {
+        object-fit: contain;
+    }
+}
+
+.phalcon-blog__item-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.phalcon-blog__last-article .phalcon-blog__item-img {
+    height: auto;
+}
+
+.phalcon-blog__items .phalcon-blog__item-img img {
+    height: 100%;
+    object-position: left;
+}
