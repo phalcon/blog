@@ -1,0 +1,26 @@
+---
+/*
+ * Ported from the sidebar block in Jekyll's `_layouts/default.html`: the
+ * Supporters block wrapping `sponsors.html`, then `widget.html`, then
+ * `tags.html`, in that order.
+ */
+import Sponsors from './Sponsors.astro';
+import SidebarProjects from './SidebarProjects.astro';
+import SidebarTags from './SidebarTags.astro';
+import type { TagCount } from '../lib/posts';
+
+interface Props {
+    tags: TagCount[];
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="phalcon-blog__right-item phalcon-blog__sponsors">
+    <div class="phalcon-blog__title">
+        Supporters
+    </div>
+    <Sponsors />
+</div>
+<SidebarProjects />
+<SidebarTags tags={tags} />

@@ -1,0 +1,58 @@
+---
+/*
+ * Ported from Jekyll's `_layouts/default.html`. `_includes/js.html` is not
+ * ported: it loads `/assets/js/main.min.js`, which is not in this repository
+ * and 404s on the live site, plus a Netlify Identity widget for an `/admin/`
+ * route that does not exist.
+ */
+import Analytics from '../components/Analytics.astro';
+import FanArt from '../components/FanArt.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Meta from '../components/Meta.astro';
+
+interface Props {
+    canonical?: string;
+    description?: string;
+    image?: string;
+    publishedAt?: Date;
+    title?: string;
+}
+
+const { canonical, description, image, publishedAt, title } = Astro.props;
+---
+
+<!doctype html>
+<FanArt />
+
+<html lang="en">
+<head>
+    <Meta
+        canonical={canonical}
+        description={description}
+        image={image}
+        publishedAt={publishedAt}
+        title={title}
+    />
+    <Analytics />
+</head>
+<body>
+<div data-pagefind-ignore>
+    <Header />
+</div>
+
+<div class="phalcon-blog">
+    <div class="container">
+        <div class="phalcon-blog__main">
+            <slot />
+        </div>
+        <div class="phalcon-blog__right" data-pagefind-ignore>
+            <slot name="sidebar" />
+        </div>
+    </div>
+</div>
+<div data-pagefind-ignore>
+    <Footer />
+</div>
+</body>
+</html>

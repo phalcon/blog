@@ -1,0 +1,28 @@
+---
+/*
+ * The tag index. New in this migration: Jekyll had no page listing every tag
+ * as its own pill, only the `/tags` page with its per-tag post lists.
+ */
+import Base from '../../layouts/Base.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import TagPill from '../../components/TagPill.astro';
+import { allPosts, tagCounts } from '../../lib/posts';
+
+const posts = await allPosts();
+const tags = tagCounts(posts);
+const sorted = [...tags].sort((a, b) => a.tag.localeCompare(b.tag));
+---
+
+<Base title="Tags">
+    <div id="articles" class="phalcon-blog-detail">
+        <h2 itemprop="name headline" class="headline">Tags</h2>
+        <p>{tags.length} tags &middot; {posts.length} posts</p>
+        <div class="phalcon-blog__tags-items">
+            {sorted.map((item) => (
+                <TagPill count={item.count} tag={item.tag} />
+            ))}
+        </div>
+    </div>
+
+    <Sidebar slot="sidebar" tags={tags} />
+</Base>

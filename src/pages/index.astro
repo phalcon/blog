@@ -1,0 +1,47 @@
+---
+/*
+ * Ported from Jekyll's `index.html`. Page 1 of the pagination is the site
+ * root, not `/page-1`; pages 2 and up live in `[page].astro`.
+ */
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { allPosts, tagCounts } from '../lib/posts';
+
+const perPage = 10;
+const posts = await allPosts();
+const totalPages = Math.ceil(posts.length / perPage);
+const tags = tagCounts(posts);
+
+const [featuredPost, ...rest] = posts;
+const items = rest.slice(0, perPage - 1);
+---
+
+<Base>
+    <div class="phalcon-blog__last-article">
+        <PostCard post={featuredPost} featured />
+    </div>
+
+    <div class="phalcon-blog__main-title">
+        LATEST POSTS
+    </div>
+
+    <div class="phalcon-blog__items">
+        {items.map((post) => <PostCard post={post} />)}
+    </div>
+
+    <!-- Pagination links -->
+    <div class="pagination">
+        <span class="previous">Previous</span>
+        <span class="page_number">
+            Page: 1 of {totalPages}
+        </span>
+        {totalPages > 1 ? (
+            <a href="/page-2" class="next">Next</a>
+        ) : (
+            <span class="next">Next</span>
+        )}
+    </div>
+
+    <Sidebar slot="sidebar" tags={tags} />
+</Base>

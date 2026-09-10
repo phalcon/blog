@@ -1,0 +1,68 @@
+---
+/*
+ * Ported from the two near-identical card blocks in Jekyll's `index.html`:
+ * one for the featured post, one for the rest. The outer wrapper div that
+ * only the featured card carries is the caller's job (see `index.astro`);
+ * this component covers everything the two blocks share, branching on the
+ * `featured` prop only where they differ: the author line.
+ *
+ * The Jekyll source has a bug in the non-featured branch: the `content` date
+ * attribute is written across a line break and renders as the literal string
+ * `" %Y-%m-%d "`. This port emits the real ISO date in both branches instead.
+ */
+import { postUrl, type Post } from '../lib/posts';
+import { excerpt, formatDate, formatIsoDate } from '../lib/text.mjs';
+import { site } from '../site';
+
+interface Props {
+    featured?: boolean;
+    post: Post;
+}
+
+const { featured = false, post } = Astro.props;
+
+const url = postUrl(post);
+const fallbackImage = `${site.url}/assets/files/phalcon-logo-320x180.png`;
+
+/*
+ * `content` is valid microdata here, but it is not a typed HTML attribute
+ * for a `div`, so it is spread in rather than written as a literal
+ * attribute.
+ */
+const dateAttrs = { content: formatIsoDate(post.data.date) };
+---
+
+<div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
+    <div class="phalcon-blog__item-content">
+        <div class="phalcon-blog__item-title" itemprop="name headline">
+            <a href={url}>{post.data.title}</a>
+        </div>
+        <div class="phalcon-blog__item-info">
+            <div class="phalcon-blog__item-date" itemprop="datePublished" {...dateAttrs}>
+                {formatDate(post.data.date)}
+            </div>
+            <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                {featured ? (
+                    <span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span>
+                ) : (
+                    <span itemprop="name">Phalcon Team</span>
+                )}
+            </div>
+        </div>
+        <div class="phalcon-blog__item-article" itemprop="articleSection">
+            {excerpt(post.body)}
+        </div>
+        <a href={url} class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
+    </div>
+    {post.data.image ? (
+        <Fragment>
+            <meta itemprop="image" content={post.data.image} />
+            <a href={url} class="phalcon-blog__item-img">
+                <img src={post.data.image} alt={post.data.title} />
+            </a>
+        </Fragment>
+    ) : (
+        <meta itemprop="image" content={fallbackImage} />
+    )}
+    <meta itemprop="publisher" content="Phalcon Team">
+</div>

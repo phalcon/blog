@@ -1,0 +1,35 @@
+---
+/*
+ * Ported from Jekyll's `_includes/tags.html`. The Liquid walks
+ * `tags_override` in order and prints each tag that exists, with its post
+ * count, linking to `/tags#<slug>`. A name in `tags_override` that no post
+ * uses is skipped.
+ */
+import { tagsOverride } from '../site';
+import { tagSlug } from '../lib/text.mjs';
+import type { TagCount } from '../lib/posts';
+
+interface Props {
+    tags: TagCount[];
+}
+
+const { tags } = Astro.props;
+
+/* `tags_override` sets the order. A listed tag that no post uses is skipped. */
+const shown = tagsOverride
+    .map((name) => tags.find((item) => item.tag === name))
+    .filter((item): item is TagCount => item !== undefined);
+---
+
+<div class="phalcon-blog__right-item phalcon-blog__tags">
+    <div class="phalcon-blog__title">Tags</div>
+    <div class="phalcon-blog__tags-items">
+        {shown.map((item) => (
+            <a href={`/tags#${tagSlug(item.tag)}`} class="phalcon-blog__tags-item">
+                <span>{item.tag}</span>
+                <span>({item.count})</span>
+            </a>
+        ))}
+    </div>
+    <a href="/tags" class="phalcon-blog__item-read-more">Show More</a>
+</div>
