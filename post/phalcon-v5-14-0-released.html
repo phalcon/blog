@@ -1,0 +1,768 @@
+<!DOCTYPE html><html lang="en"><head><title>Phalcon v5.14.0 Released</title><meta name="viewport" content="width=device-width"><meta name="MobileOptimized" content="320"><meta name="HandheldFriendly" content="true"><meta charset="utf-8"><meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0"><meta name="author" content="Phalcon Team"><meta name="application-name" content="Phalcon Blog"><meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="article:published_time" content="2026-06-04T00:01:02.699Z"><!-- Facebook --><meta property="og:url" content="https://blog.phalcon.io"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="Phalcon v5.14.0 Released"><meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="og:site_name" content="Phalcon Blog"><meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Phalcon v5.14.0 Released"><meta name="twitter:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta name="twitter:image:alt" content="Phalcon Blog"><meta name="twitter:site" content="@phalconphp"><meta name="twitter:creator" content="Phalcon Team"><meta itemprop="image" content="https://blog.phalcon.io/assets/files/2026-06-04-phalcon-5.14.0-release.svg"><meta itemprop="publisher" content="Phalcon Team"><meta name="telegram:channel" content="@phalcon_news"><link rel="canonical" href="https://blog.phalcon.io/post/phalcon-v5-14-0-released"><link rel="publisher" href="https://blog.phalcon.io"><link rel="author" href="/humans.txt"><link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png"><link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"><link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"><link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a"><meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml"><meta name="msapplication-TileColor" content="#273646"><meta name="theme-color" content="#273646"><link rel="alternate" type="application/rss+xml" title="Phalcon Blog - We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" href="/feed.xml"><script>document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script><script type="module" src="https://assets.phalcon.io/phalcon/js/theme.min.js"></script><link rel="stylesheet" href="https://assets.phalcon.io/css/style.css"><link rel="stylesheet" type="text/css" href="https://blog.phalcon.io/css/style.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JGM81GDBF"></script><script>(function(){const analyticsId = "G-9JGM81GDBF";
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+        })();</script><style>.header__search-wrapper[data-astro-cid-nen7h5rs]{position:relative}#header-search-results[data-astro-cid-nen7h5rs]{background:var(--color-bg,#fff);z-index:20;border-radius:8px;width:24rem;max-height:70vh;margin-top:.5rem;position:absolute;top:100%;left:0;overflow-y:auto;box-shadow:0 8px 24px #00000026}
+</style></head><body><div data-pagefind-ignore><header class="header" data-astro-cid-nen7h5rs><div class="container" data-astro-cid-nen7h5rs><div class="header__left" data-astro-cid-nen7h5rs><button class="header-nav__burger" aria-label="burger button" data-astro-cid-nen7h5rs><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span></button><div class="header__logo" data-astro-cid-nen7h5rs><a href="/" aria-label="logo" data-astro-cid-nen7h5rs></a><div class="header__sitename" data-astro-cid-nen7h5rs>Blog</div></div><ul class="header-nav" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="expand" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><div class="header-dropdown-wrapper" data-astro-cid-nen7h5rs><ul class="header-dropdown header-dropdown--eco" data-astro-cid-nen7h5rs><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></div></li></ul><nav class="header-nav--mobile _navToggle" data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="extendable extended" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><ul class="header-dropdown--mobile" data-astro-cid-nen7h5rs><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></li></ul></nav><div class="header__search-wrapper" data-astro-cid-nen7h5rs><input type="text" id="header-search-input" class="header__search" placeholder="Search..." aria-label="Search" autocomplete="off" data-astro-cid-nen7h5rs><div id="header-search-results" class="phalcon-blog-detail" hidden data-astro-cid-nen7h5rs><div id="articles" data-astro-cid-nen7h5rs></div></div></div></div><div class="header__right" data-astro-cid-nen7h5rs><div class="header__github" data-astro-cid-nen7h5rs><a href="https://phalcon.io/github" aria-label="github" data-astro-cid-nen7h5rs><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-nen7h5rs><path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white" data-astro-cid-nen7h5rs></path></svg></a></div><div class="header__discord" data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" aria-label="discord" data-astro-cid-nen7h5rs><svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240" data-astro-cid-nen7h5rs><style>.st0 {
+                            fill: #FFFFFF;
+                        }</style><path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" data-astro-cid-nen7h5rs></path><path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" data-astro-cid-nen7h5rs></path></svg></a></div><div class="switcher" data-astro-cid-nen7h5rs><button aria-label="Theme switcher" data-astro-cid-nen7h5rs></button></div></div></div></header><script type="module" src="/_astro/Header.astro_astro_type_script_index_0_lang.CbfoULXM.js"></script></div><div class="phalcon-blog"><div class="container"><div class="phalcon-blog__main"><div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article"><h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">Phalcon v5.14.0 Released</h2><div class="phalcon-blog-detail__info"><div id="phalcon-blog-detail__date" class="phalcon-blog-detail__date" itemprop="datePublished" data-pagefind-meta="date" content="2026-06-04">Jun 04, 2026</div><div id="phalcon-blog-detail__author" class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span></div><div class="phalcon-blog-detail__author">Read time: 12 minutes</div></div><div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body><div id="phalcon-blog-detail__image"><img src="/assets/files/2026-06-04-phalcon-5.14.0-release.svg" alt="Phalcon v5.14.0 Released" itemprop="image"></div><p>We are happy to announce that Phalcon <a href="https://github.com/phalcon/cphalcon/releases/tag/5.13.0">v5.14.0</a> has been released!</p>
+<p>Phalcon 5.14.0 introduces three new components and changes the way we deal with exceptions, as well as fixing several bugs.</p>
+<h2 id="v5">v5</h2>
+<h3 id="auth">Auth</h3>
+<p><code>Phalcon\Auth</code> provides authentication (who the user is) and authorization (what the user may do) behind a single facade, <code>Phalcon\Auth\Manager</code>. There are four building blocks available:</p>
+<ul>
+<li>Guards - “is there an authenticated user, and who is it?”</li>
+<li>Adapters - user providers</li>
+<li>Access gates - “is this action allowed?”</li>
+<li>AuthUser - the authenticated user value object returned by guards.</li>
+</ul>
+<p>There are several implementations that are available for each of the building blocks. The documentation is <a href="https://docs.phalcon.io/5.14/auth">here</a></p>
+<h3 id="container">Container</h3>
+<p>A modern dependency injection container built alongside the existing <code>Phalcon\Di\Di</code>. It supports autowiring, service lifetimes, lazy value resolution, service tags, and decorator extension. It is designed for both standard PHP shared-nothing requests and long-running environments (Octane, Swoole, RoadRunner).</p>
+<p>Container is the recommended choice for new projects. <code>Phalcon\Di\Di</code> remains fully supported and is not being removed. <a href="https://docs.phalcon.io/5.14/container">docs</a></p>
+<blockquote class="alert alert-warning"><p>Container cannot be used with components that use the “Inversion of Control” methodology in Phalcon. That is, the container is available in the component, and it is used to retrive a different service to be used in that component. An example is the Response object which internally retrieves the Filter service for filtering. For this to happen, we need to widen the <code>getDI()</code> and <code>setDI()</code> which will affect backwards compatibiity. As such, <code>Container</code> cannot be used out of the box for this version. In the next major version we will change the interfaces to offer this functionality.</p></blockquote>
+<p>“<em>So why introduce it now if I cannot use it with some of the components</em>”?</p>
+<p>To make Container available throughtout Phalcon, we need to change interfaces in components that require the <code>DiInterface</code>. In short, widen the interface to accept <code>object</code> or at least the union of <code>Collection</code> and <code>DiInterface</code>. We cannot change interfaces unless this is a major version. As such, we are introducing the container now, and in the next major version of cphalcon we will make the necessary changes so that developers can choose which container they want to use.</p>
+<h3 id="abstractlocator">AbstractLocator</h3>
+<p>A new abstract class is available in <code>Support\AbstractLocator</code>. It allows you to create locators that resolve the “located” instances through the DI container. The object works with both the <code>Di</code> as well as the new <code>Container</code>. For an example of the implementation you can look at the <code>Auth</code> namespace.</p>
+<h3 id="exceptions">Exceptions</h3>
+<p>Every namespace now has dedicated exceptions for every exception message raised. They all extend the base extension of the namespace so this change is fully backwards compatible. This change offers greater control towards exception messages thrown by the framework. The documentation has a full list of the granular exceptions of each component. Additionally for a quick look you can check the changelog below.</p>
+<h2 id="v6">v6</h2>
+<p>I know we promised v6 to be out last time around but we found a few areas where the code was not fully aligned. The tests are now pass fully and both projects are aligned. v6 alpha is coming out this weekend.</p>
+<h2 id="community">Community</h2>
+<p>A huge thanks to our community for helping out with bug fixing and more importantly bug reporting! We also thank you for your patience since some of these bugs and pull requests have been open for a few years (yes, years :/).</p>
+<h2 id="changelog">Changelog</h2>
+<h2 id="5140-2026-06-04"><a href="https://github.com/phalcon/cphalcon/releases/tag/v5.14.0">5.14.0</a> (2026-06-04)</h2>
+<h3 id="tools">Tools</h3>
+<ul>
+<li>Zephir Parser v2.0.2</li>
+<li>Zephir 0.22.0 (development - 9d2def774)</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Alignment with v6; docblocks; sorting; return types; minor fixes (image watermark opacity calc, serializer/helpers, readonly-becoming-mutable, ACL local access). <a href="https://github.com/phalcon/cphalcon/issues/17055">#17055</a></li>
+<li>Changed return types to <code>-&gt; &lt;static&gt;</code> or <code>-&gt; &lt;self&gt;</code> in various components. The change is a covariant narrowing on implementation methods and does not touch any interface contracts, so userland classes that implement Phalcon interfaces and return the interface type continue to work unchanged. <a href="https://github.com/phalcon/cphalcon/issues/17035">#17035</a></li>
+<li>Internal performance work across <code>Autoload</code>, <code>Dispatcher</code>, <code>Annotations</code>, <code>Db</code>, <code>Mvc\Model</code>, <code>Mvc\Model\Query</code>, <code>Tag</code>, <code>Assets</code>, <code>Acl\Adapter\Memory</code>, <code>Http\Request</code>, <code>Encryption\Crypt</code>. Behavior preserved. <a href="https://github.com/phalcon/cphalcon/issues/17049">#17049</a></li>
+<li>Moved CI tools/scripts in <code>resources/</code> removed unused ones <a href="https://github.com/phalcon/cphalcon/pull/17066">#17066</a></li>
+<li>Moved docker in <code>resources/</code> <a href="https://github.com/phalcon/cphalcon/pull/17066">#17066</a></li>
+<li>Refactored docker images (more flexible less cruft) <a href="https://github.com/phalcon/cphalcon/pull/17066">#17066</a></li>
+<li>Reorganization of quality tool config files (in <code>resources/</code>) <a href="https://github.com/phalcon/cphalcon/pull/17066">#17066</a></li>
+<li><code>Phalcon\Autoload\Loader</code> getters (<code>getDirectories</code>, <code>getExtensions</code>, <code>getFiles</code>) return arrays keyed by the value string instead of by a SHA256 hash of it; iteration order and contents are unchanged. <a href="https://github.com/phalcon/cphalcon/issues/17049">#17049</a> <a href="https://docs.phalcon.io/5.14/autoload/">[doc]</a></li>
+<li><code>Phalcon\Mvc\Router::handle()</code> internal optimizations: O(1) hash lookup for literal-URI routes; per-HTTP-method buckets; hot-loop reads; PCRE patterns chunked; per-route metadata cache deduplicated by route id. <a href="https://github.com/phalcon/cphalcon/issues/17012">#17012</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+<li><code>Phalcon\Mvc\Router\Route::getCompiledHostName()</code> now uses cache for hostname/converters. <a href="https://github.com/phalcon/cphalcon/issues/17012">#17012</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+</ul>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added a new dependency-injection container under <code>Phalcon\Container</code>, with its contracts under <code>Phalcon\Contracts\Container</code>. It adds:
+<ul>
+<li><code>Phalcon\Container\Container</code> / <code>Phalcon\Container\ContainerFactory</code> - the container and its factory, configured through <code>Phalcon\Contracts\Container\Service\Provider</code> providers (<code>Phalcon\Container\Provider\Web</code>, <code>Phalcon\Container\Provider\Cli</code>).</li>
+<li><code>Phalcon\Container\Definition\ServiceDefinition</code> - fluent service definitions with autowiring, factories, extenders, tags, aliases, and configurable service lifetimes (<code>Phalcon\Container\Definition\ServiceLifetime</code>).</li>
+<li><code>Phalcon\Container\Resolver\Resolver</code> - reflection-based constructor / method / parameter autowiring, plus the <code>Phalcon\Container\Resolver\Lazy\*</code> family for lazy resolution (<code>Get</code>, <code>GetCall</code>, <code>NewInstance</code>, <code>Call</code>, <code>Env</code>, <code>CsEnv</code>, <code>ArrayValues</code>, etc.).</li>
+<li><code>Phalcon\Container\Exceptions\*</code> - granular, per-cause exceptions (<code>ServiceNotFound</code>, <code>CircularAliasFound</code>, <code>FrozenDefinition</code>, <code>CannotResolveParameter</code>, <code>NoProcessorFound</code>, etc.). <a href="https://github.com/phalcon/cphalcon/issues/16897">#16897</a> <a href="https://docs.phalcon.io/5.14/container/">[doc]</a></li>
+</ul>
+</li>
+<li>Added a new authentication and authorization layer under <code>Phalcon\Auth</code>, with its contracts under <code>Phalcon\Contracts\Auth</code>. Built on top of <code>Phalcon\Container</code>, it adds:
+<ul>
+<li><code>Phalcon\Auth\Manager</code> / <code>Phalcon\Auth\ManagerFactory</code> - the central manager that wires guards and access gates together, and its factory.</li>
+<li><code>Phalcon\Auth\AuthUser</code> - a lightweight user value object returned by array-backed adapters when no application model class is configured.</li>
+<li>Guards under <code>Phalcon\Auth\Guard</code> - <code>Session</code> and <code>Token</code> (with <code>AbstractGuard</code> and <code>UserRemember</code>), resolved via <code>Phalcon\Auth\Guard\GuardLocator</code> and configured through <code>Phalcon\Auth\Guard\Config\*</code> (<code>AbstractGuardConfig</code>, <code>SessionGuardConfig</code>, <code>TokenGuardConfig</code>).</li>
+<li>Adapters under <code>Phalcon\Auth\Adapter</code> - <code>Memory</code>, <code>Model</code>, and <code>Stream</code> user providers (with <code>AbstractAdapter</code> and <code>AbstractArrayAdapter</code>), resolved via <code>Phalcon\Auth\Adapter\AdapterLocator</code> and configured through <code>Phalcon\Auth\Adapter\Config\*</code> (<code>AbstractAdapterConfig</code>, <code>MemoryAdapterConfig</code>, <code>ModelAdapterConfig</code>, <code>StreamAdapterConfig</code>).</li>
+<li>Access gates under <code>Phalcon\Auth\Access</code> - <code>Auth</code> and <code>Guest</code> (with <code>AbstractAccess</code>), resolved via <code>Phalcon\Auth\Access\AccessLocator</code>.</li>
+<li>Dispatcher listeners <code>Phalcon\Auth\Mvc\AuthDispatcherListener</code> and <code>Phalcon\Auth\Cli\AuthDispatcherListener</code> (with <code>Phalcon\Auth\AbstractAuthDispatcherListener</code>) to guard MVC and CLI dispatch.</li>
+<li><code>Phalcon\Auth\Exception</code> plus granular <code>Phalcon\Auth\Exceptions\*</code> (<code>AccessDenied</code>, <code>ConfigRequiresNonEmptyValue</code>, <code>DataMustContainIdKey</code>, <code>DoesNotImplement</code>, <code>FileCannotRead</code>, <code>FileDoesNotContainJson</code>, <code>FileDoesNotExist</code>, <code>FileNotValidJson</code>).</li>
+<li>Contracts under <code>Phalcon\Contracts\Auth</code> - <code>Manager</code>, <code>AuthUser</code>, <code>AuthRemember</code>, <code>RememberToken</code>, <code>Access\Access</code>, <code>Adapter\Adapter</code>, <code>Adapter\AdapterConfig</code>, <code>Adapter\RememberAdapter</code>, <code>Guard\Guard</code>, <code>Guard\GuardConfig</code>, <code>Guard\GuardStateful</code>, <code>Guard\BasicAuth</code>.</li>
+<li><code>Phalcon\Support\AbstractLocator</code> - the shared service-locator base extended by the guard, adapter, and access locators. <a href="https://github.com/phalcon/cphalcon/issues/16273">#16273</a> <a href="https://docs.phalcon.io/5.14/auth/">[doc]</a></li>
+</ul>
+</li>
+<li>Added granular exception classes across the framework. Every namespace that previously surfaced failures through a single umbrella <code>Phalcon\&lt;Namespace&gt;\Exception</code> (or its sub-namespace counterpart) now ships per-cause classes under a sibling <code>Exceptions/</code> folder. Each new class extends the existing per-namespace parent so <code>catch (Phalcon\&lt;Namespace&gt;\Exception $e)</code> continues to work unchanged. New classes:
+<ul>
+<li><code>Phalcon\Acl\Exceptions</code>
+<ul>
+<li><code>AccessRuleNotFound</code></li>
+<li><code>CircularInheritanceError</code></li>
+<li><code>ElementNotFound</code></li>
+<li><code>ForbiddenWildcard</code></li>
+<li><code>InvalidAccessList</code></li>
+<li><code>InvalidComponentImplementation</code></li>
+<li><code>InvalidRoleImplementation</code></li>
+<li><code>InvalidRoleType</code></li>
+<li><code>MissingFunctionParameters</code></li>
+<li><code>ParameterTypeMismatch</code></li>
+<li><code>RoleNotFoundException</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Annotations\Exceptions</code>
+<ul>
+<li><code>AnnotationNotFound</code></li>
+<li><code>AnnotationsDirectoryNotWritable</code></li>
+<li><code>CannotReadAnnotationData</code></li>
+<li><code>UnknownAnnotationExpression</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Application\Exceptions</code>
+<ul>
+<li><code>ModuleNotRegistered</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Assets\Exceptions</code>
+<ul>
+<li><code>AssetSourceTargetCollision</code></li>
+<li><code>CannotReadAsset</code></li>
+<li><code>CollectionNotFound</code></li>
+<li><code>InvalidAssetSourcePath</code></li>
+<li><code>InvalidAssetTargetPath</code></li>
+<li><code>InvalidFilter</code></li>
+<li><code>InvalidTargetPath</code></li>
+<li><code>TargetPathIsDirectory</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Autoload\Exceptions</code>
+<ul>
+<li><code>LoaderDirectoriesNotArray</code></li>
+<li><code>LoaderMethodNotCallable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Cache\Exception</code>
+<ul>
+<li><code>CacheKeysNotIterable</code></li>
+<li><code>InvalidCacheKey</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Cli\Console\Exceptions</code>
+<ul>
+<li><code>ConsoleModuleNotRegistered</code></li>
+<li><code>ContainerRequired</code></li>
+<li><code>InvalidModuleDefinitionPath</code></li>
+<li><code>ModuleDefinitionPathNotFound</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Cli\Router\Exceptions</code>
+<ul>
+<li><code>BeforeMatchNotCallable</code></li>
+<li><code>InvalidRoutePaths</code></li>
+<li><code>RouterArgumentsInvalidType</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Config\Exceptions</code>
+<ul>
+<li><code>CannotLoadConfigFile</code></li>
+<li><code>ConfigNotArrayOrObject</code></li>
+<li><code>GroupedAdapterRequiresArray</code></li>
+<li><code>InvalidMergeData</code></li>
+<li><code>MissingConfigOption</code></li>
+<li><code>MissingFileExtension</code></li>
+<li><code>MissingYamlExtension</code></li>
+</ul>
+</li>
+<li><code>Phalcon\DataMapper\Pdo\Exception</code>
+<ul>
+<li><code>DriverNotSupported</code></li>
+<li><code>UnknownDriverMethod</code></li>
+<li><code>UnknownQueryMethod</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Db\Exceptions</code>
+<ul>
+<li><code>CannotInsertWithoutData</code></li>
+<li><code>CannotPrepareStatement</code></li>
+<li><code>CheckExpressionRequired</code></li>
+<li><code>ColumnTypeRejectsAutoIncrement</code></li>
+<li><code>ColumnTypeRejectsScale</code></li>
+<li><code>ColumnTypeRequired</code></li>
+<li><code>ConflictTargetColumnRequired</code></li>
+<li><code>ConflictUpdateColumnRequired</code></li>
+<li><code>ForeignKeyColumnsRequired</code></li>
+<li><code>GeneratedAutoIncrementConflict</code></li>
+<li><code>GeneratedDefaultConflict</code></li>
+<li><code>IncompleteBindTypes</code></li>
+<li><code>InvalidBindParameter</code></li>
+<li><code>InvalidCheckExpression</code></li>
+<li><code>InvalidGenerationExpression</code></li>
+<li><code>InvalidGroupByExpression</code></li>
+<li><code>InvalidIndexColumns</code></li>
+<li><code>InvalidIndexDirections</code></li>
+<li><code>InvalidIndexWhere</code></li>
+<li><code>InvalidListExpression</code></li>
+<li><code>InvalidOrderByExpression</code></li>
+<li><code>InvalidSqlExpression</code></li>
+<li><code>InvalidSqlExpressionType</code></li>
+<li><code>InvalidUnaryExpression</code></li>
+<li><code>InvalidWhereConditions</code></li>
+<li><code>MatchedParameterNotFound</code></li>
+<li><code>MaterializedViewsNotSupported</code></li>
+<li><code>MissingDefinitionKey</code></li>
+<li><code>MissingForeignKeyChecks</code></li>
+<li><code>MissingSqliteDatabase</code></li>
+<li><code>MysqlOnConflictNotSupported</code></li>
+<li><code>NestedTransactionChangeBlocked</code></li>
+<li><code>NoActiveTransaction</code></li>
+<li><code>ReferencedColumnCountMismatch</code></li>
+<li><code>ReferencedColumnsRequired</code></li>
+<li><code>ReferencedTableRequired</code></li>
+<li><code>ReturningNotSupported</code></li>
+<li><code>ReturningRequiresColumn</code></li>
+<li><code>SavepointsNotSupported</code></li>
+<li><code>SqliteAlterCheckNotSupported</code></li>
+<li><code>SqliteAlterColumnNotSupported</code></li>
+<li><code>SqliteAlterForeignKeyNotSupported</code></li>
+<li><code>SqliteAlterPrimaryKeyNotSupported</code></li>
+<li><code>SqliteDropCheckNotSupported</code></li>
+<li><code>SqliteDropForeignKeyNotSupported</code></li>
+<li><code>SqliteDropPrimaryKeyNotSupported</code></li>
+<li><code>TableMustHaveColumn</code></li>
+<li><code>UnrecognizedDataType</code></li>
+<li><code>UpdateFieldCountMismatch</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Di\Exceptions</code>
+<ul>
+<li><code>AliasAlreadyInUse</code></li>
+<li><code>AliasNameMustBeString</code></li>
+<li><code>ArgumentTypeRequired</code></li>
+<li><code>CallArgumentsMustBeArray</code></li>
+<li><code>CircularAliasReference</code></li>
+<li><code>ContainerRequired</code></li>
+<li><code>DefinitionMustBeArrayForRead</code></li>
+<li><code>DefinitionMustBeArrayForUpdate</code></li>
+<li><code>MethodCallMustBeArray</code></li>
+<li><code>MethodNameRequired</code></li>
+<li><code>MissingClassNameParameter</code></li>
+<li><code>MissingParameterKey</code></li>
+<li><code>PropertyInjectionRequiresInstance</code></li>
+<li><code>PropertyMustBeArray</code></li>
+<li><code>PropertyNameRequired</code></li>
+<li><code>PropertyValueRequired</code></li>
+<li><code>ServiceCannotBeResolved</code></li>
+<li><code>SetterInjectionRequiresInstance</code></li>
+<li><code>SetterParametersMustBeArray</code></li>
+<li><code>UnknownServiceType</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Dispatcher\Exceptions</code>
+<ul>
+<li><code>ForwardInInitializeForbidden</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Encryption\Crypt\Exception</code>
+<ul>
+<li><code>DecryptionFailed</code></li>
+<li><code>EmptyDecryptionKey</code></li>
+<li><code>EmptyEncryptionKey</code></li>
+<li><code>EncryptionFailed</code></li>
+<li><code>InvalidPaddingSize</code></li>
+<li><code>IvLengthCalculationFailed</code></li>
+<li><code>MissingAuthData</code></li>
+<li><code>MissingOpensslExtension</code></li>
+<li><code>RandomBytesGenerationFailed</code></li>
+<li><code>UnsupportedAlgorithm</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Encryption\Security\Exceptions</code>
+<ul>
+<li><code>InvalidRandomInput</code></li>
+<li><code>UnknownHashAlgorithm</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Encryption\Security\JWT\Exceptions</code>
+<ul>
+<li><code>EmptyPassphrase</code></li>
+<li><code>InvalidAudience</code></li>
+<li><code>InvalidAudienceType</code></li>
+<li><code>InvalidClaims</code></li>
+<li><code>InvalidExpirationTime</code></li>
+<li><code>InvalidHeader</code></li>
+<li><code>InvalidNotBefore</code></li>
+<li><code>MalformedJwtString</code></li>
+<li><code>MissingJwtTypHeader</code></li>
+<li><code>UnsupportedHmacAlgorithm</code></li>
+<li><code>WeakPassphrase</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Events\Exceptions</code>
+<ul>
+<li><code>EventNotCancelable</code></li>
+<li><code>InvalidEventHandler</code></li>
+<li><code>InvalidEventSource</code></li>
+<li><code>InvalidEventType</code></li>
+<li><code>InvalidSubscriberConfiguration</code></li>
+<li><code>NoListenersForEvent</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Filter\Exceptions</code>
+<ul>
+<li><code>FilterNotRegistered</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Filter\Validation\Exceptions</code>
+<ul>
+<li><code>FieldNotPrintable</code></li>
+<li><code>FilterServiceUnavailable</code></li>
+<li><code>InvalidAllowedTypes</code></li>
+<li><code>InvalidCallbackReturn</code></li>
+<li><code>InvalidDomainOption</code></li>
+<li><code>InvalidFieldType</code></li>
+<li><code>InvalidFilterService</code></li>
+<li><code>InvalidStrictOption</code></li>
+<li><code>InvalidValidationData</code></li>
+<li><code>InvalidValidator</code></li>
+<li><code>InvalidValidatorScope</code></li>
+<li><code>MissingMbstring</code></li>
+<li><code>NoDataToValidate</code></li>
+<li><code>NoValidators</code></li>
+<li><code>NoValidatorsInComposite</code></li>
+<li><code>UniquenessConversionMustBeArray</code></li>
+<li><code>UniquenessModelRequired</code></li>
+<li><code>UniquenessOnlyForPhalconModel</code></li>
+<li><code>ValidationEntityNotObject</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Flash\Exceptions</code>
+<ul>
+<li><code>EscaperServiceUnavailable</code></li>
+<li><code>FlashMessageNotStringOrArray</code></li>
+<li><code>SessionServiceUnavailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Forms\Exceptions</code>
+<ul>
+<li><code>ElementNotInForm</code></li>
+<li><code>FormElementNameRequired</code></li>
+<li><code>FormNotInLocator</code></li>
+<li><code>FormNotRegistered</code></li>
+<li><code>InvalidEntity</code></li>
+<li><code>InvalidFilterType</code></li>
+<li><code>InvalidJsonSchema</code></li>
+<li><code>JsonSchemaNotArray</code></li>
+<li><code>NoFormElements</code></li>
+<li><code>SchemaEntryMissingKey</code></li>
+<li><code>SchemaEntryNotArray</code></li>
+<li><code>UnknownFormElementType</code></li>
+<li><code>YamlExtensionRequired</code></li>
+<li><code>YamlSchemaNotArray</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Html\Exceptions</code>
+<ul>
+<li><code>AttributeNotRenderable</code></li>
+<li><code>FriendlyTitleConversionFailed</code></li>
+<li><code>InvalidResultsetValue</code></li>
+<li><code>ServiceNotRegistered</code></li>
+<li><code>UsingRequiresTwoValues</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Http\Cookie\Exceptions</code>
+<ul>
+<li><code>CookieKeyTooShort</code></li>
+<li><code>CryptInterfaceRequired</code></li>
+<li><code>CryptServiceUnavailable</code></li>
+<li><code>FilterServiceUnavailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Http\Request\Exceptions</code>
+<ul>
+<li><code>FilterServiceUnavailable</code></li>
+<li><code>InvalidHost</code></li>
+<li><code>InvalidHttpMethod</code></li>
+<li><code>MissingFilters</code></li>
+<li><code>SanitizerNotFound</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Http\Response\Exceptions</code>
+<ul>
+<li><code>NonStandardStatusCodeRequiresMessage</code></li>
+<li><code>ResponseAlreadySent</code></li>
+<li><code>ResponseServiceUnavailable</code></li>
+<li><code>UrlServiceUnavailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Image\Exceptions</code>
+<ul>
+<li><code>CompositeFailed</code></li>
+<li><code>ExtensionNotLoaded</code></li>
+<li><code>ImageLoadFailed</code></li>
+<li><code>MissingDimensions</code></li>
+<li><code>MissingHeight</code></li>
+<li><code>MissingWidth</code></li>
+<li><code>ResizeFailed</code></li>
+<li><code>ResourceTypeError</code></li>
+<li><code>TextRenderingFailed</code></li>
+<li><code>UnsupportedImageType</code></li>
+<li><code>VersionMismatch</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Logger\Adapter\Exceptions</code>
+<ul>
+<li><code>FileOpenFailed</code></li>
+<li><code>InvalidStreamMode</code></li>
+<li><code>SyslogOpenFailed</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Logger\Exceptions</code>
+<ul>
+<li><code>AdapterNotFound</code></li>
+<li><code>DeserializationFailed</code></li>
+<li><code>NoAdaptersConfigured</code></li>
+<li><code>SerializationFailed</code></li>
+<li><code>TransactionAlreadyActive</code></li>
+<li><code>TransactionNotActive</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Messages\Exceptions</code>
+<ul>
+<li><code>MessageNotObject</code></li>
+<li><code>MessagesNotIterable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Application\Exceptions</code>
+<ul>
+<li><code>ContainerRequired</code></li>
+<li><code>InvalidModuleDefinition</code></li>
+<li><code>ModuleDefinitionPathNotFound</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Dispatcher\Exceptions</code>
+<ul>
+<li><code>ResponseServiceUnavailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Micro\Exceptions</code>
+<ul>
+<li><code>ContainerRequired</code></li>
+<li><code>ErrorHandlerNotCallable</code></li>
+<li><code>HandlerNotCallable</code></li>
+<li><code>InvalidRegisteredHandler</code></li>
+<li><code>LazyHandlerNotFound</code></li>
+<li><code>MissingCollectionMainHandler</code></li>
+<li><code>NoHandlersToMount</code></li>
+<li><code>NoMatchedRouteHandler</code></li>
+<li><code>NotFoundHandlerNotCallable</code></li>
+<li><code>ResponseHandlerNotCallable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Model\Behavior\Exceptions</code>
+<ul>
+<li><code>MissingRequiredOption</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Model\Exceptions</code>
+<ul>
+<li><code>BelongsToRequiresObject</code></li>
+<li><code>BindTypeNotDefined</code></li>
+<li><code>CannotResolveAttribute</code></li>
+<li><code>ColumnNotInMap</code></li>
+<li><code>ColumnNotInTableColumns</code></li>
+<li><code>ColumnNotInTableMap</code></li>
+<li><code>CorruptColumnType</code></li>
+<li><code>CursorIsImmutable</code></li>
+<li><code>DataTypeNotDefined</code></li>
+<li><code>HandlerMustImplementBindable</code></li>
+<li><code>IdentityNotInColumnMap</code></li>
+<li><code>IdentityNotInTableColumns</code></li>
+<li><code>IndexNotInCursor</code></li>
+<li><code>IndexNotInRow</code></li>
+<li><code>InvalidConnectionService</code></li>
+<li><code>InvalidContainer</code></li>
+<li><code>InvalidDumpResultKey</code></li>
+<li><code>InvalidFindParameters</code></li>
+<li><code>InvalidGetModelNameReturn</code></li>
+<li><code>InvalidModelName</code></li>
+<li><code>InvalidModelsManagerService</code></li>
+<li><code>InvalidModelsMetadataService</code></li>
+<li><code>InvalidResultsetCacheService</code></li>
+<li><code>InvalidReturnedRecord</code></li>
+<li><code>InvalidSerializationData</code></li>
+<li><code>ManagerOrmServicesUnavailable</code></li>
+<li><code>MethodNotFound</code></li>
+<li><code>MissingMethodName</code></li>
+<li><code>MissingModelClassName</code></li>
+<li><code>ModelCouldNotLoad</code></li>
+<li><code>ModelOrmServicesUnavailable</code></li>
+<li><code>PrimaryKeyAttributeNotSet</code></li>
+<li><code>PrimaryKeyRequired</code></li>
+<li><code>PropertyNotAccessible</code></li>
+<li><code>RecordCannotRefresh</code></li>
+<li><code>RecordNotPersisted</code></li>
+<li><code>ReferencedFieldsMismatch</code></li>
+<li><code>RelationAliasMustBeString</code></li>
+<li><code>RelationNotDefined</code></li>
+<li><code>RelationRequiresObjectOrArray</code></li>
+<li><code>ResultsetColumnNotInMap</code></li>
+<li><code>RowIsImmutable</code></li>
+<li><code>SnapshotsDisabled</code></li>
+<li><code>StaticMethodRequiresOneArgument</code></li>
+<li><code>UnknownRelationType</code></li>
+<li><code>UpdateSnapshotDisabled</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Model\MetaData\Exceptions</code>
+<ul>
+<li><code>CannotObtainTableColumns</code></li>
+<li><code>ColumnMapNotArray</code></li>
+<li><code>ContainerRequired</code></li>
+<li><code>CorruptedMetaData</code></li>
+<li><code>InvalidContainer</code></li>
+<li><code>InvalidMetaDataForModel</code></li>
+<li><code>MetaDataDirectoryNotWritable</code></li>
+<li><code>MetaDataStrategyFailed</code></li>
+<li><code>NoAnnotationsForClass</code></li>
+<li><code>NoPropertyAnnotationsForClass</code></li>
+<li><code>TableNotInDatabase</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Model\Query\Exceptions</code>
+<ul>
+<li><code>AmbiguousColumn</code></li>
+<li><code>AmbiguousJoinRelation</code></li>
+<li><code>BindParameterNotInPlaceholders</code></li>
+<li><code>BindTypeRequiresArray</code></li>
+<li><code>BindValueRequired</code></li>
+<li><code>ColumnNotInDomain</code></li>
+<li><code>ColumnNotInSelectedModels</code></li>
+<li><code>CorruptedAst</code></li>
+<li><code>CorruptedDeleteAst</code></li>
+<li><code>CorruptedInsertAst</code></li>
+<li><code>CorruptedSelectAst</code></li>
+<li><code>CorruptedUpdateAst</code></li>
+<li><code>DeleteMultipleNotSupported</code></li>
+<li><code>DuplicateAlias</code></li>
+<li><code>EmptyArrayPlaceholderValue</code></li>
+<li><code>InsertColumnCountMismatch</code></li>
+<li><code>InvalidCachedResultset</code></li>
+<li><code>InvalidCachingOptions</code></li>
+<li><code>InvalidColumnDefinition</code></li>
+<li><code>InvalidInjectedManager</code></li>
+<li><code>InvalidInjectedMetadata</code></li>
+<li><code>InvalidQueryCacheService</code></li>
+<li><code>InvalidResultsetClass</code></li>
+<li><code>JoinAliasAlreadyUsed</code></li>
+<li><code>JoinFieldCountMismatch</code></li>
+<li><code>MissingCacheKey</code></li>
+<li><code>MissingMetaData</code></li>
+<li><code>MissingModelAttribute</code></li>
+<li><code>MissingModelsManager</code></li>
+<li><code>MixedDatabaseSystems</code></li>
+<li><code>ModelSourceNotFound</code></li>
+<li><code>ModelsListNotLoaded</code></li>
+<li><code>MultipleSqlStatementsNotSupported</code></li>
+<li><code>NoModelForAlias</code></li>
+<li><code>PhqlColumnNotInMap</code></li>
+<li><code>ReadConnectionMissing</code></li>
+<li><code>RelationshipNotFound</code></li>
+<li><code>ResultsetClassNotFound</code></li>
+<li><code>ResultsetNonCacheable</code></li>
+<li><code>UnknownBindType</code></li>
+<li><code>UnknownColumnType</code></li>
+<li><code>UnknownJoinType</code></li>
+<li><code>UnknownModelOrAlias</code></li>
+<li><code>UnknownPhqlExpression</code></li>
+<li><code>UnknownPhqlExpressionType</code></li>
+<li><code>UnknownPhqlStatement</code></li>
+<li><code>UpdateMultipleNotSupported</code></li>
+<li><code>WriteConnectionMissing</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Model\Query\Exceptions\Builder</code>
+<ul>
+<li><code>BuilderColumnNotInMap</code></li>
+<li><code>BuilderConditionInvalid</code></li>
+<li><code>ModelRequired</code></li>
+<li><code>NoPrimaryKey</code></li>
+<li><code>OperatorNotAvailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Router\Exceptions</code>
+<ul>
+<li><code>AnnotationsServiceUnavailable</code></li>
+<li><code>BeforeMatchNotCallable</code></li>
+<li><code>ConfigKeyMustBeArray</code></li>
+<li><code>EmptyGroupOfRoutes</code></li>
+<li><code>GroupRoutesMustBeArray</code></li>
+<li><code>InvalidCallbackParameter</code></li>
+<li><code>InvalidConfigSource</code></li>
+<li><code>InvalidNotFoundPaths</code></li>
+<li><code>InvalidRoutePaths</code></li>
+<li><code>InvalidRoutePosition</code></li>
+<li><code>InvalidRouterFactoryConfig</code></li>
+<li><code>MissingGroupRouteKey</code></li>
+<li><code>MissingRouteConfigKey</code></li>
+<li><code>RequestServiceUnavailable</code></li>
+<li><code>UnknownHttpMethod</code></li>
+<li><code>WrongPathsKey</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\Url\Exceptions</code>
+<ul>
+<li><code>MissingRouteName</code></li>
+<li><code>RouteNotFound</code></li>
+<li><code>RouterServiceUnavailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\View\Engine\Volt\Exceptions</code>
+<ul>
+<li><code>CannotOpenCompiledFile</code></li>
+<li><code>CorruptedStatement</code></li>
+<li><code>CorruptedStatementWithData</code></li>
+<li><code>InvalidCompilationPrefix</code></li>
+<li><code>InvalidExtension</code></li>
+<li><code>InvalidHaystack</code></li>
+<li><code>InvalidIntermediateRepresentation</code></li>
+<li><code>InvalidOptionType</code></li>
+<li><code>InvalidPathClosureReturn</code></li>
+<li><code>InvalidPathType</code></li>
+<li><code>InvalidStatement</code></li>
+<li><code>InvalidUserFilterDefinition</code></li>
+<li><code>InvalidUserFunctionDefinition</code></li>
+<li><code>MacroAlreadyDefined</code></li>
+<li><code>MacroNotFound</code></li>
+<li><code>MbstringRequired</code></li>
+<li><code>TemplateFileNotFound</code></li>
+<li><code>TemplateFileNotOpenable</code></li>
+<li><code>TemplatePathCollision</code></li>
+<li><code>UnknownVoltExpression</code></li>
+<li><code>UnknownVoltFilter</code></li>
+<li><code>UnknownVoltFilterType</code></li>
+<li><code>UnknownVoltStatement</code></li>
+<li><code>VoltDirectoryNotWritable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc\View\Exceptions</code>
+<ul>
+<li><code>InvalidEngineRegistration</code></li>
+<li><code>InvalidViewsDirType</code></li>
+<li><code>SimpleViewNotFound</code></li>
+<li><code>SimpleViewServicesUnavailable</code></li>
+<li><code>ViewNotFound</code></li>
+<li><code>ViewServicesUnavailable</code></li>
+<li><code>ViewsDirItemMustBeString</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Paginator\Exceptions</code>
+<ul>
+<li><code>BuilderModelNotDefined</code></li>
+<li><code>InvalidBuilderInstance</code></li>
+<li><code>InvalidCursorColumn</code></li>
+<li><code>InvalidLimit</code></li>
+<li><code>MissingColumnsForHaving</code></li>
+<li><code>MissingRequiredParameter</code></li>
+<li><code>PaginatorDataNotArray</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Session\Adapter\Exceptions</code>
+<ul>
+<li><code>AdapterRuntimeError</code></li>
+<li><code>InvalidSavePath</code></li>
+<li><code>SavePathUnavailable</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Session\Exceptions</code>
+<ul>
+<li><code>InvalidSessionAdapter</code></li>
+<li><code>InvalidSessionName</code></li>
+<li><code>SessionAlreadyStarted</code></li>
+<li><code>SessionModificationDenied</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Storage\Exceptions</code>
+<ul>
+<li><code>AuthenticationFailed</code></li>
+<li><code>ClusterConnectionFailed</code></li>
+<li><code>ConnectionFailed</code></li>
+<li><code>DatabaseSelectionFailed</code></li>
+<li><code>InvalidConfiguration</code></li>
+<li><code>StorageError</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Storage\Serializer\Exceptions</code>
+<ul>
+<li><code>InvalidSerializationInput</code></li>
+<li><code>InvalidUnserializationInput</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Support\Collection\Exceptions</code>
+<ul>
+<li><code>InvalidValueType</code></li>
+<li><code>ReadOnlyViolation</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Support\Debug\Exceptions</code>
+<ul>
+<li><code>RequestHalted</code></li>
+<li><code>RuntimeWarning</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Support\Helper\Json\Exceptions</code>
+<ul>
+<li><code>JsonDecodeError</code></li>
+<li><code>JsonEncodeError</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Support\Helper\Str\Exceptions</code>
+<ul>
+<li><code>InsufficientArguments</code></li>
+<li><code>InvalidReplaceFormat</code></li>
+<li><code>SyntaxError</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Time\Clock\Exceptions</code>
+<ul>
+<li><code>InvalidModifier</code></li>
+</ul>
+</li>
+<li><code>Phalcon\Translate\Exceptions</code>
+<ul>
+<li><code>FileOpenError</code></li>
+<li><code>ImmutableObject</code></li>
+<li><code>InterpolatorNotRegistered</code></li>
+<li><code>InvalidDataType</code></li>
+<li><code>KeyNotFound</code></li>
+<li><code>MissingContent</code></li>
+<li><code>MissingGettextExtension</code></li>
+<li><code>MissingRequiredParameter</code></li>
+<li><code>TranslatorNotRegistered</code> <a href="https://github.com/phalcon/cphalcon/issues/17019">#17019</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added <code>Phalcon\Events\Manager::fire()</code> <code>beforeFire()</code> / <code>afterFire()</code> extension seams to <code>Manager::fire()</code>. <a href="https://github.com/phalcon/cphalcon/issues/17065">#17065</a> <a href="https://docs.phalcon.io/5.14/events/">[doc]</a></li>
+<li>Added opt-in memory caps for long-running workers (Swoole / RoadRunner / queue consumers). Default <code>0</code> preserves the original unbounded behavior: <a href="https://github.com/phalcon/cphalcon/issues/17049">#17049</a>
+<ul>
+<li><code>Phalcon\Db\Profiler::setMaxProfiles(int)</code> / <code>getMaxProfiles()</code> <a href="https://docs.phalcon.io/5.14/db-layer/">[doc]</a></li>
+<li><code>Phalcon\Logger\Adapter\AbstractAdapter::setQueueLimit(int)</code> / <code>getQueueLimit()</code> <a href="https://docs.phalcon.io/5.14/logger/">[doc]</a></li>
+<li><code>Phalcon\Events\Manager::setMethodExistsCacheLimit(int)</code> / <code>getMethodExistsCacheLimit()</code> <a href="https://docs.phalcon.io/5.14/events/">[doc]</a></li>
+<li><code>Phalcon\Annotations\Adapter\AbstractAdapter::setAnnotationsLimit(int)</code> / <code>getAnnotationsLimit()</code> <a href="https://docs.phalcon.io/5.14/annotations/">[doc]</a></li>
+<li><code>Phalcon\Storage\Adapter\Memory::setMaxItems(int)</code> / <code>getMaxItems()</code> <a href="https://docs.phalcon.io/5.14/storage/">[doc]</a></li>
+</ul>
+</li>
+<li>Added <code>Phalcon\Mvc\Router\Route::setRouteId(string $routeId)</code> - setter intended for restoring cached routes <a href="https://github.com/phalcon/cphalcon/issues/17012">#17012</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+<li>Added <code>Phalcon\Mvc\Router::buildDispatcherDump()</code> / <code>Phalcon\Mvc\Router::loadDispatcherFromArray(array $dump)</code> - used to build/load the routes <a href="https://github.com/phalcon/cphalcon/issues/17012">#17012</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+<li>Added <code>Phalcon\Mvc\Router::dumpDispatcher(string $path)</code> / <code>Phalcon\Mvc\Router::loadDispatcher(string $path)</code> - file-shaped helpers that write/read routes <a href="https://github.com/phalcon/cphalcon/issues/17012">#17012</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+<li>Added <code>Phalcon\Mvc\Router::useCache()</code> - to use a <code>Phalcon\Cache</code> adapter to store routes <a href="https://github.com/phalcon/cphalcon/issues/17012">#17012</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fixed <code>$this-&gt;eventsManager</code> resolving to <code>null</code> inside <code>Phalcon\Mvc\Controller</code> methods <a href="https://github.com/phalcon/cphalcon/issues/17060">#17060</a> <a href="https://docs.phalcon.io/5.14/controllers/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Events\Event</code> and <code>Phalcon\Events\Manager::fire()</code> being declared <code>final</code> in 5.13.0 (<a href="https://github.com/phalcon/cphalcon/issues/17006">#17006</a>), which prevented subclassing the events manager. <a href="https://github.com/phalcon/cphalcon/issues/17065">#17065</a> <a href="https://docs.phalcon.io/5.14/events/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Forms\Form::clear()</code> leaving a previously-bound <code>null</code> field value in the data array instead of unsetting it before reassigning the element default <a href="https://github.com/phalcon/cphalcon/issues/17042">#17042</a> <a href="https://docs.phalcon.io/5.14/forms/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Mvc\Model::getChangedFields()</code> / <code>hasChanged()</code> flagging every null-valued column of a freshly-loaded row as changed <a href="https://github.com/phalcon/cphalcon/issues/17042">#17042</a> <a href="https://docs.phalcon.io/5.14/db-models/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Mvc\Model::getUpdatedFields()</code> flagging unchanged null-valued columns as updated <a href="https://github.com/phalcon/cphalcon/issues/17042">#17042</a> <a href="https://docs.phalcon.io/5.14/db-models/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Mvc\Model\Row::offsetGet()</code> / <code>offsetExists()</code> throwing <code>The index does not exist in the row</code> when accessing a column whose value is <code>null</code> <a href="https://github.com/phalcon/cphalcon/issues/17041">#17041</a> <a href="https://docs.phalcon.io/5.14/db-models/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Mvc\Router::handle()</code> falling back to a default catch-all route instead of matching an HTTP-method-constrained route attached afterward. <a href="https://github.com/phalcon/cphalcon/issues/17062">#17062</a> <a href="https://docs.phalcon.io/5.14/routing/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Mvc\View::getContent()</code> throwing <code>TypeError</code> after <code>View::start()</code>. <code>start()</code> was assigning <code>$this-&gt;content = null</code> <a href="https://github.com/phalcon/cphalcon/issues/17041">#17041</a> <a href="https://docs.phalcon.io/5.14/views/">[doc]</a></li>
+<li>Fixed <code>Phalcon\Mvc\View\Engine\Volt\Compiler</code> emitting invalid PHP when a double-quoted Volt string contained literal single quotes (e.g. <code>&quot;send_ga(&#39;Link&#39;, ...)&quot;</code>). Only un-escaped single quotes are now escaped, so the <code>&#39;Let\&#39;s Encrypt&#39;</code> case from <a href="https://github.com/phalcon/cphalcon/issues/17002">#17002</a> is preserved <a href="https://github.com/phalcon/cphalcon/issues/17046">#17046</a> <a href="https://docs.phalcon.io/5.14/volt/">[doc]</a></li>
+<li>Fixed warning in <code>Phalcon\Auth\ManagerFactory</code> emitted in tests (random commit but had to be fixed) <a href="https://github.com/phalcon/cphalcon/pull/17066">#17066</a></li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Removed unused <code>Phalcon\Contracts\Container\Service\Lifetime</code> <a href="https://github.com/phalcon/cphalcon/pull/17066">#17066</a></li>
+<li>Reverted the <code>Phalcon\Mvc\Model\Query::executeUpdate()</code> named-placeholder substitution introduced for <a href="https://github.com/phalcon/cphalcon/issues/16976">#16976</a>. The substitution path was triggering a use-after-free in the model update flow under PostgreSQL (<a href="https://github.com/phalcon/cphalcon/issues/17042">#17042</a>). Issue <a href="https://github.com/phalcon/cphalcon/issues/16976">#16976</a> is reopened and will be addressed with a different approach. <a href="https://docs.phalcon.io/5.14/db-phql/">[doc]</a></li>
+</ul>
+<h2 id="upgrade">Upgrade</h2>
+<p>Developers can upgrade using PIE</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#88C0D0">pie</span><span style="color:#A3BE8C"> install</span><span style="color:#A3BE8C"> phalcon/cphalcon-5.14.0</span></span></code></pre>
+<p>To compile from source, follow our <a href="https://docs.phalcon.io/5.14/installation">installation document</a></p><div data-pagefind-ignore><hr><p>Chat - Q&amp;A</p><ul><li><a href="https://phalcon.io/discord">Discord Chat</a></li><li><a href="https://github.com/phalcon/cphalcon/discussions">Discussions (v4,v5)</a></li><li><a href="https://github.com/phalcon/phalcon/discussions">Discussions (v6+)</a></li><li><a href="https://phalcon.io/forum">Forum (archive)</a></li></ul><p>Support</p><ul><li><a href="https://phalcon.io/fund">OpenCollective - Support Us</a></li></ul><p>Social Media</p><ul><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://dev.to/phalcon">DevTo</a></li><li><a href="https://phalcon.io/reddit">Reddit</a></li><li><a href="https://phalcon.io/linkedin">LinkedIn</a></li><li><a href="https://phalcon.io/fb">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li></ul><p>Videos</p><ul><li><a href="https://phalcon.io/bitchute">BitChute</a></li><li><a href="https://phalcon.io/brighteon">Brighteon</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><p>&lt;3 Phalcon Team</p></div></div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span></a><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span></a></div></div></div><div class="phalcon-blog__right" data-pagefind-ignore><div class="phalcon-blog__right-item phalcon-blog__sponsors"><div class="phalcon-blog__title">Supporters</div></div><div class="phalcon-blog__right-item phalcon-blog__projects"><div class="phalcon-blog__title">Projects</div><div class="phalcon-blog__projects-text">We're a nonprofit organization that creates&nbsp; solutions for web developers. Our products are&nbsp;<a href="https://phalcon.io">Phalcon</a>,&nbsp;<a href="https://zephir-lang.com">Zephir</a> and&nbsp;<a href="https://github.com/phalcon?type=source">others</a>.&nbsp; If you would like to help us stay free and open,&nbsp; please consider <a href="https://phalcon.io/fund">supporting us</a>.</div></div><div class="phalcon-blog__right-item phalcon-blog__tags"><div class="phalcon-blog__title">Tags</div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span><span>(72)</span></a><a href="/tags#phalcon4" class="phalcon-blog__tags-item"><span>phalcon4</span><span>(74)</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span><span>(154)</span></a><a href="/tags#zephir" class="phalcon-blog__tags-item"><span>zephir</span><span>(19)</span></a><a href="/tags#lts" class="phalcon-blog__tags-item"><span>lts</span><span>(25)</span></a><a href="/tags#hangout" class="phalcon-blog__tags-item"><span>hangout</span><span>(27)</span></a><a href="/tags#github" class="phalcon-blog__tags-item"><span>github</span><span>(6)</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span><span>(255)</span></a><a href="/tags#community" class="phalcon-blog__tags-item"><span>community</span><span>(27)</span></a><a href="/tags#update" class="phalcon-blog__tags-item"><span>update</span><span>(39)</span></a><a href="/tags#roadmap" class="phalcon-blog__tags-item"><span>roadmap</span><span>(12)</span></a><a href="/tags#framework" class="phalcon-blog__tags-item"><span>framework</span><span>(26)</span></a><a href="/tags#benchmarks" class="phalcon-blog__tags-item"><span>benchmarks</span><span>(3)</span></a></div><a href="/tags" class="phalcon-blog__item-read-more">Show More</a></div></div></div></div><div data-pagefind-ignore><footer class="footer"><div class="container"><ul class="footer-nav"><li><a href="https://phalcon.io/blog">Blog</a></li><li><a href="https://phalcon.io/discord">Discord</a></li><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://phalcon.io/f">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li><li><a href="https://phalcon.io/bitchute">Bitchute</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><div class="footer__license">Phalcon is an open-source PHP framework built as a C-extension.<br>It is available under the  new BSD License.</div><div class="footer__supported"><span>Supported By</span><a href="https://odva.pro/" target="_blank" class="footer__supported-logo" aria-label="odva.pro"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="31" fill="none" viewBox="0 0 38 31"><path stroke="#273646" stroke-opacity=".7" stroke-width="3" d="M15.375 29.353c7.553 0 13.676-6.123 13.676-13.677C29.051 8.123 22.928 2 15.375 2S1.698 8.123 1.698 15.677c0 7.553 6.124 13.676 13.677 13.676Z"></path><path fill="#273646" fill-opacity=".7" d="M33.904 23.618H32.14v7.059h1.764v-7.06ZM37.434 23.618h-1.765v7.059h1.765v-7.06Z"></path></svg></a></div></div></footer></div><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.Cikc9LE_.js"></script></body></html>

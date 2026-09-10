@@ -1,0 +1,887 @@
+<!DOCTYPE html><html lang="en"><head><title>Phalcon 3.0.0 released</title><meta name="viewport" content="width=device-width"><meta name="MobileOptimized" content="320"><meta name="HandheldFriendly" content="true"><meta charset="utf-8"><meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0"><meta name="author" content="Phalcon Team"><meta name="application-name" content="Phalcon Blog"><meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="article:published_time" content="2016-07-29T00:00:00.000Z"><!-- Facebook --><meta property="og:url" content="https://blog.phalcon.io"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="Phalcon 3.0.0 released"><meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="og:site_name" content="Phalcon Blog"><meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Phalcon 3.0.0 released"><meta name="twitter:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta name="twitter:image:alt" content="Phalcon Blog"><meta name="twitter:site" content="@phalconphp"><meta name="twitter:creator" content="Phalcon Team"><meta itemprop="image" content="https://blog.phalcon.io/assets/files/phalcon-logo-320x180.png"><meta itemprop="publisher" content="Phalcon Team"><meta name="telegram:channel" content="@phalcon_news"><link rel="canonical" href="https://blog.phalcon.io/post/phalcon-3-0-0-released"><link rel="publisher" href="https://blog.phalcon.io"><link rel="author" href="/humans.txt"><link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png"><link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"><link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"><link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a"><meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml"><meta name="msapplication-TileColor" content="#273646"><meta name="theme-color" content="#273646"><link rel="alternate" type="application/rss+xml" title="Phalcon Blog - We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" href="/feed.xml"><script>document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script><script type="module" src="https://assets.phalcon.io/phalcon/js/theme.min.js"></script><link rel="stylesheet" href="https://assets.phalcon.io/css/style.css"><link rel="stylesheet" type="text/css" href="https://blog.phalcon.io/css/style.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JGM81GDBF"></script><script>(function(){const analyticsId = "G-9JGM81GDBF";
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+        })();</script><style>.header__search-wrapper[data-astro-cid-nen7h5rs]{position:relative}#header-search-results[data-astro-cid-nen7h5rs]{background:var(--color-bg,#fff);z-index:20;border-radius:8px;width:24rem;max-height:70vh;margin-top:.5rem;position:absolute;top:100%;left:0;overflow-y:auto;box-shadow:0 8px 24px #00000026}
+</style></head><body><div data-pagefind-ignore><header class="header" data-astro-cid-nen7h5rs><div class="container" data-astro-cid-nen7h5rs><div class="header__left" data-astro-cid-nen7h5rs><button class="header-nav__burger" aria-label="burger button" data-astro-cid-nen7h5rs><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span></button><div class="header__logo" data-astro-cid-nen7h5rs><a href="/" aria-label="logo" data-astro-cid-nen7h5rs></a><div class="header__sitename" data-astro-cid-nen7h5rs>Blog</div></div><ul class="header-nav" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="expand" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><div class="header-dropdown-wrapper" data-astro-cid-nen7h5rs><ul class="header-dropdown header-dropdown--eco" data-astro-cid-nen7h5rs><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></div></li></ul><nav class="header-nav--mobile _navToggle" data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="extendable extended" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><ul class="header-dropdown--mobile" data-astro-cid-nen7h5rs><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></li></ul></nav><div class="header__search-wrapper" data-astro-cid-nen7h5rs><input type="text" id="header-search-input" class="header__search" placeholder="Search..." aria-label="Search" autocomplete="off" data-astro-cid-nen7h5rs><div id="header-search-results" class="phalcon-blog-detail" hidden data-astro-cid-nen7h5rs><div id="articles" data-astro-cid-nen7h5rs></div></div></div></div><div class="header__right" data-astro-cid-nen7h5rs><div class="header__github" data-astro-cid-nen7h5rs><a href="https://phalcon.io/github" aria-label="github" data-astro-cid-nen7h5rs><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-nen7h5rs><path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white" data-astro-cid-nen7h5rs></path></svg></a></div><div class="header__discord" data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" aria-label="discord" data-astro-cid-nen7h5rs><svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240" data-astro-cid-nen7h5rs><style>.st0 {
+                            fill: #FFFFFF;
+                        }</style><path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" data-astro-cid-nen7h5rs></path><path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" data-astro-cid-nen7h5rs></path></svg></a></div><div class="switcher" data-astro-cid-nen7h5rs><button aria-label="Theme switcher" data-astro-cid-nen7h5rs></button></div></div></div></header><script type="module" src="/_astro/Header.astro_astro_type_script_index_0_lang.CbfoULXM.js"></script></div><div class="phalcon-blog"><div class="container"><div class="phalcon-blog__main"><div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article"><h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">Phalcon 3.0.0 released</h2><div class="phalcon-blog-detail__info"><div id="phalcon-blog-detail__date" class="phalcon-blog-detail__date" itemprop="datePublished" data-pagefind-meta="date" content="2016-07-29">Jul 29, 2016</div><div id="phalcon-blog-detail__author" class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span></div><div class="phalcon-blog-detail__author">Read time: 22 minutes</div></div><div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body><p>The Phalcon team is <strong>very excited</strong> to share some news with our community!</p>
+<p>The last few months, we have been working hard to push 2.1 out, which contains significant enhancements as well as some API changes  that require attention so as not to break compatibility with your application.
+On top of that we have been working in making Zephir PHP7 compatible so that you can enjoy  Phalcon in your PHP7 application. Some news first though:</p>
+<h3 id="versioning">Versioning</h3>
+<p>For any future Phalcon releases we are adopting SemVer (<a href="https://semver.org">https://semver.org</a>). In short:</p>
+<blockquote>
+<p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
+<ul>
+<li>MAJOR version when you make incompatible API changes,</li>
+<li>MINOR version when you add functionality in a backwards-compatible manner, and</li>
+<li>PATCH version when you make backwards-compatible bug fixes.</li>
+<li>Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.</li>
+</ul>
+</blockquote>
+<p>Since 2.1 has many API changes, we decided that it would be best to not release it as is and start using <a href="https://semver.org">SemVer</a> to better communicate with the community and keep track of our releases.</p>
+<h3 id="21-is-dead-all-hail-30">2.1 is dead, all hail 3.0</h3>
+<p>As mentioned above, 2.1 will not be fully backwards compatible. As a result, we are changing the version number to 3.0.</p>
+<h3 id="php-version-support">PHP version support</h3>
+<p>The Phalcon team takes security very seriously and thus have decided to provide support to PHP versions that are <a href="https://php.net/supported-versions.php">supported</a>. As of 3.0, PHP 5.3 and 5.4 will be deprecated. We are making a small exception to this rule and will continue to support 5.5 for a little while, but since its support has expired a few days ago, it will too be deprecated in a future release.</p>
+<h3 id="the-goodie-bag">The goodie bag</h3>
+<p>So what does 3.0 offer? The <a href="https://github.com/phalcon/cphalcon/blob/3.0.x/CHANGELOG.md">changelog</a> is extensive as you can see. Below are highlights of the changes as well as areas you need to concentrate.</p>
+<p>• PHP 5.3 and 5.4 are fully deprecated.
+You can compile the code on your own, but we will not be able to support it nor can we guarantee that it will work as you expect it to. PHP 5.3 support expired mid 2014 and 5.4 expired mid 2015. We need to ensure our applications have all known vulnerabilities on the PHP side fixed and patched, thus we will not support any unsupported PHP version. This excludes PHP 5.5, whose support expired a few days ago. We will deprecate 5.5 in a future release but will make sure that you all know beforehand so that you can prepare.</p>
+<blockquote>
+<p><strong>INCOMPATIBLE</strong>: You will need to upgrade your PHP installation to 5.6. You can always continue to use the Phalcon version you are using, but in 3.0 support for PHP 5.4 has been deprecated and we cannot guarantee that PHP 5.5 will be fully functional.</p>
+</blockquote>
+<h4 id="application">APPLICATION</h4>
+<p>• <code>Phalcon\Cli\Console</code> and <code>Phalcon\Mvc\Application</code> now inherits <code>Phalcon\Application</code>.
+This change makes the interfaces more uniformed and offers additional functionality to the respective applications (cli/mvc)</p>
+<h4 id="beanstalk">BEANSTALK</h4>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::ignore()</code>.
+Removes the named tube from the watch list for the current connection.</p>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::pauseTube()</code>.
+Can delay any new job being reserved for a given time.</p>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::kick()</code>.
+It moves jobs into the ready queue. If there are any buried jobs, it will only kick buried jobs. Otherwise it will kick delayed jobs.</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#616E88">// Kick the job, it should move to the ready queue again</span></span>
+<span class="line"><span style="color:#81A1C1">if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">false</span><span style="color:#81A1C1"> !==</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">job</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">kick</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">job</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">client</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">peekReady</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::listTubeUsed()</code>.
+Returns the tube currently being used by the client.</p>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::listTubesWatched()</code>.
+Returns a list tubes currently being watched by the client.</p>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::peekDelayed()</code>.
+Return the delayed job with the shortest delay left.</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$this-&gt;</span><span style="color:#D8DEE9">client</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">put</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">testPutInTube</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> [</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">delay</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#B48EAD"> 2</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">job</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">client</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">peekDelayed</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>• Added <code>\Phalcon\Queue\Beanstalk::jobPeek()</code>.
+Returns the next available job.</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$this-&gt;</span><span style="color:#D8DEE9">client</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">choose</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">self::</span><span style="color:#D8DEE9FF">TUBE_NAME_1</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">jobId</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">client</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">put</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">testPutInTube</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">job</span><span style="color:#81A1C1">   =</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">client</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">jobPeek</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">jobId</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$this-&gt;</span><span style="color:#88C0D0">assertEquals</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">jobId</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">job</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getId</span><span style="color:#ECEFF4">())</span><span style="color:#81A1C1">;</span></span></code></pre>
+<h4 id="cache">CACHE</h4>
+<p>• The cache backend adapters now return boolean when calling <code>Phalcon\Cache\BackendInterface::save</code></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#616E88">// Returns true/false</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">result</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">backendCache</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">save</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">my_key</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">content</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>• Added  <code>Phalcon\Cache\Frontend\Msgpack</code>.
+<a href="https://msgpack.org">MsgPack</a> is a new frontend cache. It is an efficient binary serialization format, which allows exchanging data among multiple languages like JSON.</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Cache</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Backend</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">File</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Cache</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Frontend</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Msgpack</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Cache the files for 2 days using Msgpack frontend</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">frontCache</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Msgpack</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">lifetime</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#B48EAD"> 172800</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ]</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Create the component that will cache &#39;Msgpack&#39; to a &#39;File&#39; backend</span></span>
+<span class="line"><span style="color:#616E88">// Set the cache file directory - important to keep the &#39;/&#39; at the end of</span></span>
+<span class="line"><span style="color:#616E88">// of the value for the folder</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">cache</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> File</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">frontCache</span><span style="color:#ECEFF4">,</span><span style="color:#88C0D0"> </span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">cacheDir</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">../app/cache/</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ]</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Try to get cached records</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">cacheKey</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">robots_order_id.cache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">robots</span><span style="color:#81A1C1">   =</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">cache</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">cacheKey</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">robots</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> null</span><span style="color:#ECEFF4">)</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">    // $robots is null due to cache expiration or data do not exist</span></span>
+<span class="line"><span style="color:#616E88">    // Make the database call and populate the variable</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robots</span><span style="color:#81A1C1"> =</span><span style="color:#8FBCBB"> Robots</span><span style="color:#81A1C1">::</span><span style="color:#88C0D0">find</span><span style="color:#ECEFF4">([</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">order</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">id</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">    // Store it in the cache</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">cache</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">save</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">cacheKey</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">robots</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Use $robots</span></span>
+<span class="line"><span style="color:#81A1C1">foreach</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">robots</span><span style="color:#81A1C1"> as</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">robot</span><span style="color:#ECEFF4">)</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">    echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">name</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#EBCB8B">\n</span><span style="color:#ECEFF4">&quot;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Fixed bug of <code>destroy</code> method of <code>Phalcon\Session\Adapter\Libmemcached</code></p>
+<p>• Added <code>Phalcon\Cache\Backend\Memcache::addServers</code> to enable pool of servers for memcache</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">memcache</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addServers</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">10.4.6.10</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 11000</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> true</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">memcache</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addServers</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">10.4.6.11</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 11000</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> true</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">memcache</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addServers</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">10.4.6.12</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 11000</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> true</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<h4 id="crypt">CRYPT</h4>
+<p>• Mcrypt is replaced with <code>openssl</code> in <code>Phalcon\Crypt</code> <a href="https://github.com/phalcon/cphalcon/pull/11530">11530</a><a href="https://github.com/phalcon/cphalcon/issues/11486">11486</a>
+Due to the lack of updates for mcrypt for a number of years, its slow performance and the fact that the PHP core team decided to deprecate mcrypt <a href="https://wiki.php.net/rfc/mcrypt-viking-funeral">as soon as possible</a> (version 7.1 onward), we have replaced it with the much faster and supported openssl.</p>
+<p>• Default encrypt algorithm in <code>Phalcon\Crypt</code> is now changed to <code>AES-256-CFB</code></p>
+<p>• Removed methods <code>setMode()</code>, <code>getMode()</code>, <code>getAvailableModes()</code> in <code>Phalcon\CryptInterface</code> (no longer apply with openssl)</p>
+<blockquote>
+<p><strong>BACKWARDS INCOMPATIBLE</strong>: Backwards compatibility from openssl to mcrypt is problematic if not impossible. We had to remove several methods that are no longer applicable. Additionally the rijndael-256 from mcrypt is no longer valid in openssl. The default encryption algorithm is AES-256-CFB</p>
+<p>If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore <code>openssl</code>. <strong>Failure to do so will result in loss of data</strong>. A port is available in the incubator. Please see the code <a href="https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy">here</a></p>
+</blockquote>
+<h4 id="database">DATABASE</h4>
+<p>• Dropped support of Oracle <a href="https://github.com/phalcon/cphalcon/issues/12008">12008</a><a href="https://github.com/phalcon/cphalcon/pull/12009">12009</a>
+Support of Oracle has been dropped from the Phalcon Core for the following reasons:
+•• The lack of Oracle maintainer
+•• The lack of relevant experience among the Phalcon Core Team
+•• Weak support or interest from the community
+•• Incomplete implementation that creates only the illusion of support for Oracle
+•• Some issues hampering for the support of PHP 7 in Phalcon</p>
+<p>Oracle components will be ported to the Phalcon Incubator. If the adapter receives support and enhancements from the community, we will consider making it part of the core again.</p>
+<h4 id="di">DI</h4>
+<p>• <code>Phalcon\Di</code> is now bound to services closures allowing use <code>Phalcon\Di</code> as <code>$this</code> to access services within them. Additionally, closures used as handlers in<code> Mvc\Micro</code> are now bound to the <code>$app</code> instance</p>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">diContainer</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setShared</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#81A1C1">    function</span><span style="color:#ECEFF4"> ()</span><span style="color:#81A1C1"> use</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">config</span><span style="color:#ECEFF4">)</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">frontend</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">\Phalcon\Cache\Frontend</span><span style="color:#EBCB8B">\\</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> .</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">frontend</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">frontend</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">frontend</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">            [</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">lifetime</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">lifetime</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            ]</span></span>
+<span class="line"><span style="color:#ECEFF4">        )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">   =</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">toArray</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">backend</span><span style="color:#81A1C1">  =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">\Phalcon\Cache\Backend</span><span style="color:#EBCB8B">\\</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> .</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">backend</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        return</span><span style="color:#81A1C1"> new</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">backend</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">frontend</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">diContainer</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setShared</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#81A1C1">    function</span><span style="color:#ECEFF4"> ()</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">frontend</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">\Phalcon\Cache\Frontend</span><span style="color:#EBCB8B">\\</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> .</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">frontend</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">frontend</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">frontend</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">            [</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">lifetime</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">lifetime</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            ]</span></span>
+<span class="line"><span style="color:#ECEFF4">        )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">   =</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">config</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">get</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">modelsCache</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">toArray</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">backend</span><span style="color:#81A1C1">  =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">\Phalcon\Cache\Backend</span><span style="color:#EBCB8B">\\</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> .</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">backend</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        return</span><span style="color:#81A1C1"> new</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">backend</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">frontend</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">config</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>Also note the nested DI behavior:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">foo</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> function</span><span style="color:#ECEFF4">()</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#88C0D0">    get_class</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$this</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // DI</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">bar</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> function</span><span style="color:#ECEFF4"> ()</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#88C0D0">        get_class</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$this</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // DI</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">baz</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> function</span><span style="color:#ECEFF4"> ()</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">            // etc</span></span>
+<span class="line"><span style="color:#ECEFF4">        }</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• If an object is returned after firing the event <code>beforeServiceResolve</code> in <code>Phalcon\Di</code> it overrides the default service localization process</p>
+<h4 id="dispatcher">DISPATCHER</h4>
+<p>• Added <code>Phalcon\Dispatcher::hasParam()</code>.</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> testAction</span><span style="color:#ECEFF4">()</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">{</span><span style="color:#D8DEE9FF">    </span></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">dispatcher</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">hasParam</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">foo</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">))</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        // Parameter exists</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Added method <code>getActionSuffix()</code> in <code>Phalcon\DispatcherInterface</code>. This allows you change the ‘Action’ suffix in controller actions.</p>
+<p>• Corrected behavior to fire the <code>dispatch:beforeException</code> event when there is any exception during dispatching <a href="https://github.com/phalcon/cphalcon/issues/11458">11458</a></p>
+<p>• CLI parameters are now handled consistently.</p>
+<p>• Added <code>Phalcon\Mvc\Controller\BindModelInterface</code> and associated model type hint loading through dispatcher.</p>
+<p>• Added <code>Phalcon\Mvc\Collection::update</code>, <code>Phalcon\Mvc\Collection::create</code> and <code>Phalcon\Mvc\Collection::createIfNotExist</code></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> createAction</span><span style="color:#ECEFF4">()</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#616E88">    /**</span></span>
+<span class="line"><span style="color:#616E88">     * Creates a document based on the values in the attributes, if not found by criteria</span></span>
+<span class="line"><span style="color:#616E88">     */</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Robot</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">name</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">MyRobot</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">type</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Droid</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">create</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> createOverrideAction</span><span style="color:#ECEFF4">()</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#616E88">    /**</span></span>
+<span class="line"><span style="color:#616E88">     * Create a document</span></span>
+<span class="line"><span style="color:#616E88">     */</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Robot</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">name</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">MyRobot</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">type</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Droid</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#616E88">    //create only if robot with same name and type does not exist</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">createIfNotExist</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1"> array</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">name</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">type</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4"> )</span><span style="color:#ECEFF4"> )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> updateAction</span><span style="color:#ECEFF4">()</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#616E88">    /**</span></span>
+<span class="line"><span style="color:#616E88">     * Update a document</span></span>
+<span class="line"><span style="color:#616E88">     */</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1"> =</span><span style="color:#8FBCBB"> Robots</span><span style="color:#81A1C1">::</span><span style="color:#88C0D0">findFirst</span><span style="color:#ECEFF4">([</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">id</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#B48EAD"> 1</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">name</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">MyRobot</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#D8DEE9">type</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Droid</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    $</span><span style="color:#D8DEE9">robot</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">update</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<h4 id="events">EVENTS</h4>
+<p>• Now <code>Phalcon\Events\Event</code> implements <code>Phalcon\Events\EventInterface</code></p>
+<p>• <code>Phalcon\Events\Event::getCancelable</code> renamed to <code>Phalcon\Events\Event::isCancelable</code></p>
+<blockquote>
+<p><strong>BACKWARDS INCOMPATIBLE</strong>: Any references to <code>getCancelable</code> will stop working. You will need to rename the function to <code>isCancelable</code></p>
+</blockquote>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> cancelAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">eventsManager</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getCancelable</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        // do something here</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> cancelAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">eventsManager</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isCancelable</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        // do something here</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Removed <code>Phalcon\Events\Manager::detachAll</code> in favor of <code>Phalcon\Events\Manager::detachAll</code></p>
+<blockquote>
+<p><strong>BACKWARDS INCOMPATIBLE</strong>: Any references to <code>detachAll</code> will stop working. You will need to rename the function to <code>detachAll</code></p>
+</blockquote>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> destroyAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    $this-&gt;</span><span style="color:#D8DEE9">eventsManager</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">detachAll</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> destroyAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    $this-&gt;</span><span style="color:#D8DEE9">eventsManager</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">detachAll</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<h4 id="flash">FLASH</h4>
+<p>• Added ability to autoescape Flash messages <a href="https://github.com/phalcon/cphalcon/issues/11448">11448</a></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Flash</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Session</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setEscaperService</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">new</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Escaper</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">success</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">&lt;script&gt;alert(&#39;This will execute as JavaScript!&#39;)&lt;/script&gt;</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">output</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#616E88">// &lt;div class=&quot;successMessage&quot;&gt;&amp;lt;script&amp;gt;alert(&amp;#039;This will execute as JavaScript!&amp;#039;)&amp;lt;/script&amp;gt;&lt;/div&gt;</span></span></code></pre>
+<p>• Fixed <code>Phalcon\Session\Flash::getMessages</code>.
+Now it returns an empty array in case of non existent message type request <a href="https://github.com/phalcon/cphalcon/issues/11941">11941</a></p>
+<p><strong>Old result</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Session</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Flash</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> FlashSession</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> FlashSession</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">error</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Error Message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#88C0D0">var_dump</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getMessages</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">success</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> false</span><span style="color:#ECEFF4">))</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">array</span><span style="color:#ECEFF4"> (</span><span style="color:#D8DEE9FF">size</span><span style="color:#81A1C1">=</span><span style="color:#B48EAD">1</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#ECEFF4">  &#39;</span><span style="color:#A3BE8C">error</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#81A1C1">    array</span><span style="color:#ECEFF4"> (</span><span style="color:#D8DEE9FF">size</span><span style="color:#81A1C1">=</span><span style="color:#B48EAD">1</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#B48EAD">      0</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> string</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Error Message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4"> (</span><span style="color:#D8DEE9FF">length</span><span style="color:#81A1C1">=</span><span style="color:#B48EAD">13</span><span style="color:#ECEFF4">)</span></span></code></pre>
+<p><strong>New result</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Session</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Flash</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> FlashSession</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> FlashSession</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">error</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Error Message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#88C0D0">var_dump</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">flash</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getMessages</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">success</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> false</span><span style="color:#ECEFF4">))</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">array</span><span style="color:#ECEFF4"> (</span><span style="color:#D8DEE9FF">size</span><span style="color:#81A1C1">=</span><span style="color:#B48EAD">0</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#D8DEE9FF">  empty</span></span></code></pre>
+<h4 id="http-requestresponse">HTTP REQUEST/RESPONSE</h4>
+<p>• Added default header: <code>Content-Type: &quot;application/json; charset=UTF-8&quot;</code> in method <code>Phalcon\Http\Response::setJsonContent</code></p>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Http</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Response</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">data</span><span style="color:#81A1C1">     =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Phlying with Phalcon</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Response</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setContentType</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">application/json;</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setJsonContent</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">data</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">send</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">data</span><span style="color:#81A1C1">     =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Phlying with Phalcon</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Response</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setJsonContent</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">data</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">send</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>• Added ability to spoof the HTTP request method.
+Most browsers do not support sending <code>PUT</code> and <code>DELETE</code> requests via the method attribute in an HTML form. If the <code>X-HTTP-Method-Override</code> header is set, and if the method is a <code>POST</code>, then it is used to determine the ‘real’ intended HTTP method. The <code>_method</code> request parameter can also be used to determine the HTTP method, but only if <code>setHttpMethodParameterOverride(true)</code> has been called. By including a <code>_method</code> parameter in the query string or parameters of an HTTP request, Phalcon will use this as the method when matching routes. Forms automatically include a hidden field for this parameter if their submission method is not GET or POST.</p>
+<p>• Added support of <code>CONNECT</code>, <code>TRACE</code> and <code>PURGE</code>  HTTP methods.</p>
+<ul>
+<li><code>CONNECT</code>: A variation of HTTP tunneling when the originating request is behind a HTTP proxy server. With this mechanism, the client first requests the HTTP proxy server to forward the TCP connection to the final endpoint. The HTTP proxy server then establishes the connection on behalf of the client.</li>
+<li><code>TRACE</code>: A method used for debugging which echoes input back to the user. Note that this method is dangerous, since it introduces a risk whereby an attacker could steal information such as cookies and possibly server credentials.</li>
+<li><code>PURGE</code>: Although not defined in the HTTP RFCs, some HTTP servers and caching systems implement this method and use it to purge cached data.</li>
+</ul>
+<p>• Refactored <code>Phalcon\Http\Request::getHttpHost</code>.
+Now it always returns the hostname or empty an string. Optionally validates and cleans host name <a href="https://github.com/phalcon/cphalcon/issues/2573">2573</a><a href="https://github.com/phalcon/cphalcon/pull/11921">11921</a></p>
+<p>• Renamed <code>Phalcon\Http\Request::isSoapRequest</code> to <code>Phalcon\Http\Request::isSoap</code> and <code>Phalcon\Http\Request::isSecureRequest</code> to <code>Phalcon\Http\Request::isSecure</code>.
+Left the originals functions as aliases and marked them deprecated.</p>
+<blockquote>
+<p><strong>CAUTION</strong>: Any references to <code>isSoapRequest</code> need to be renamed to <code>isSoap</code>. Any references to <code>isSecureRequest</code> need to be renamed to <code>isSecure</code>.</p>
+</blockquote>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> testAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isSoapRequest</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        //</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isSecureRequest</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        //</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> testAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isSoap</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        //</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">    if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isSecure</span><span style="color:#ECEFF4">())</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">        //</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Added <code>Phalcon\Http\Request::setStrictHostCheck</code> and <code>Phalcon\Http\Request::isStrictHostCheck</code> to manage strict validation of the host name.</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Http</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Request</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Request</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">_SERVER</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">HTTP_HOST</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">example.com</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getHttpHost</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // example.com</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">_SERVER</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">HTTP_HOST</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">example.com:8080</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getHttpHost</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // example.com:8080</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setStrictHostCheck</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">true</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">_SERVER</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">HTTP_HOST</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">ex=am~ple.com</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getHttpHost</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // UnexpectedValueException</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">_SERVER</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">HTTP_HOST</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1"> =</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">ExAmPlE.com</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">request</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getHttpHost</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // example.com</span></span></code></pre>
+<p>• Added <code>Phalcon\Http\Request::getPort</code>.
+Returns the port on which the request is made i.e. 80, 8080, 443 etc.</p>
+<p>• Added <code>setLastModified</code> method to <code>Phalcon\Http\Response</code>
+Sets the <code>Last-Modified</code> header</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> headerAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    $this-&gt;</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setLastModified</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">new</span><span style="color:#8FBCBB"> DateTime</span><span style="color:#ECEFF4">())</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Add <code>setContentLength</code> method to <code>Phalcon\Http\Response</code>
+Sets the response content-length</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> headerAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    $this-&gt;</span><span style="color:#D8DEE9">response</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setContentLength</span><span style="color:#ECEFF4">(</span><span style="color:#B48EAD">2048</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<h4 id="loader">LOADER</h4>
+<p>• Removed support for prefixes strategy in <code>Phalcon\Loader</code></p>
+<blockquote>
+<p><strong>BACKWARDS INCOMPATIBLE</strong>: In Phalcon 2, you could load classes using a specific prefix. This method was very popular before namespaces were introduced. For instance:</p>
+</blockquote>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">&lt;?</span><span style="color:#D8DEE9FF">php</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Loader</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Creates the autoloader</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">loader</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Loader</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Register some prefixes</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">loader</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">registerPrefixes</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#81A1C1">    array</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">        &quot;</span><span style="color:#A3BE8C">Example_Base</span><span style="color:#ECEFF4">&quot;</span><span style="color:#81A1C1">    =&gt;</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">vendor/example/base/</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &quot;</span><span style="color:#A3BE8C">Example_Adapter</span><span style="color:#ECEFF4">&quot;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">vendor/example/adapter/</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &quot;</span><span style="color:#A3BE8C">Example_</span><span style="color:#ECEFF4">&quot;</span><span style="color:#81A1C1">        =&gt;</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">vendor/example/</span><span style="color:#ECEFF4">&quot;</span></span>
+<span class="line"><span style="color:#ECEFF4">    )</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Register autoloader</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">loader</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">register</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// The required class will automatically include the</span></span>
+<span class="line"><span style="color:#616E88">// file vendor/example/adapter/Some.php</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">some</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Example_Adapter_Some</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span></code></pre>
+<blockquote>
+<p>This functionality is no longer supported</p>
+</blockquote>
+<p>• Added <code>\Phalcon\Loader::registerFiles</code> and <code>\Phalcon\Loader::getFiles</code>.
+<code>registerFiles</code> registers files that are “non-classes” hence need a “require”. This is very useful for including files that only have functions. <code>getFiles</code>
+returns the files currently registered in the autoloader</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">loader</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">registerFiles</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">functions.php</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">arrayFunctions.php</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ]</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<h4 id="models">MODELS</h4>
+<p>• Changed constructor of <code>Phalcon\Mvc\Model</code> to allow pass an array of initialization data</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">customer</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Customer</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">Name</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">   =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Peter</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">Status</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">active</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ]</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">customer</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">save</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>• <code>Phalcon\Mvc\Model</code> now implements <code>JsonSerializable</code> making easy serialize model instances</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">customers</span><span style="color:#81A1C1"> =</span><span style="color:#8FBCBB"> Customers</span><span style="color:#81A1C1">::</span><span style="color:#88C0D0">find</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">echo</span><span style="color:#88C0D0"> json_encode</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">customers</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // {[&#39;id&#39;:1,...],[&#39;id&#39;:2,...], ...}</span></span></code></pre>
+<p>• <code>Phalcon\Mvc\Model\Criteria::getOrder</code> renamed to <code>Phalcon\Mvc\Model\Criteria::getOrderBy</code></p>
+<blockquote>
+<p><strong>BACKWARDS INCOMPATIBLE</strong>: Any references to <code>getOrder</code> will stop working. You will need to rename the function to <code>getOrderBy</code></p>
+</blockquote>
+<p>• Added method <code>getOption()</code> in <code>Phalcon\Mvc\Model\RelationInterface</code>
+Returns an option by the specified name. If the option does not exist null is returned</p>
+<p>• Added <code>OR</code> operator for <code>Phalcon\Mvc\Model\Query\Builder</code> methods: <code>betweenWhere</code>, <code>notBetweenWhere</code>, <code>inWhere</code> and <code>notInWhere</code></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">builder</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">betweenWhere</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">price</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 100</span><span style="color:#ECEFF4">.</span><span style="color:#B48EAD">25</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 200</span><span style="color:#ECEFF4">.</span><span style="color:#B48EAD">50</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88">     // Appends a BETWEEN condition</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">builder</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">notBetweenWhere</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">price</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 100</span><span style="color:#ECEFF4">.</span><span style="color:#B48EAD">25</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 200</span><span style="color:#ECEFF4">.</span><span style="color:#B48EAD">50</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88">  // Appends a NOT BETWEEN condition</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">builder</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">inWhere</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">id</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> [</span><span style="color:#B48EAD">1</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 2</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 3</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span><span style="color:#616E88">                  // Appends an IN condition</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">builder</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">notInWhere</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">id</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> [</span><span style="color:#B48EAD">1</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 2</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 3</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span><span style="color:#616E88">               // Appends an NOT IN condition</span></span></code></pre>
+<p>• Added new getter <code>Phalcon\Mvc\Model\Query\Builder::getJoins()</code>
+Returns the join parts from query builder</p>
+<p>• When destructing a <code>Mvc\Model\Manager</code> PHQL cache is cleaned</p>
+<p>• Added FULLTEXT index type to <code>Phalcon\Db\Adapter\Pdo\Mysql</code></p>
+<p>• Fixed <code>afterFetch</code> event not being sent to behaviors</p>
+<p>• Fixed issue with <code>Model::__set</code> that was bypassing setters <a href="https://github.com/phalcon/cphalcon/issues/11286">11286</a></p>
+<p>• Fixed issue with <code>Model::__set</code> setting hidden attributes directly when setters are not declared <a href="https://github.com/phalcon/cphalcon/issues/11286">11286</a></p>
+<p>• <code>Phalcon\Mvc\Model\Manager::load()</code> now can load models from aliased namespaces</p>
+<p>• <code>Phalcon\Mvc\Model\Transaction\Manager</code> now correctly keeps account of transactions <a href="https://github.com/phalcon/cphalcon/issues/11554">11554</a></p>
+<p>• <code>Phalcon\Db\Dialect\Sqlite</code> now maps additional column types to SQLite columns equivalents.</p>
+<p>• Fixed <code>Phalcon\Mvc\Model\Resultset::update()</code> - Removed endless loop queries</p>
+<p>• Fixed <code>Phalcon\Mvc\Model\Manager::_mergeFindParameters</code> - Merging conditions fix</p>
+<h4 id="roles">ROLES</h4>
+<p>• Added <code>Phalcon\Acl\RoleAware</code> and <code>Phalcon\Acl\ResourceAware</code> Interfaces. Now you can pass objects to <code>Phalcon\Acl\AdapterInterface::isAllowed</code> as <code>roleName</code> and <code>resourceName</code>, also they will be automatically passed to function defined in <code>Phalcon\Acl\AdapterInterface::allow</code> or <code>Phalcon\Acl\AdapterInterface::deny</code> by type</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#8FBCBB"> UserRole</span><span style="color:#81A1C1">;</span><span style="color:#616E88">       // Class implementing RoleAware interface</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#8FBCBB"> ModelResource</span><span style="color:#81A1C1">;</span><span style="color:#616E88">  // Class implementing ResourceAware interface</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Set access level for role into resources</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">allow</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">allow</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">create</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">deny</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">update</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Create our objects providing roleName and resourceName</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">customer</span><span style="color:#81A1C1">     =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> ModelResource</span><span style="color:#ECEFF4">(</span><span style="color:#B48EAD">1</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#B48EAD"> 2</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">designer</span><span style="color:#81A1C1">     =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> UserRole</span><span style="color:#ECEFF4">(</span><span style="color:#B48EAD">1</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Designers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">guest</span><span style="color:#81A1C1">        =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> UserRole</span><span style="color:#ECEFF4">(</span><span style="color:#B48EAD">2</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">anotherGuest</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> UserRole</span><span style="color:#ECEFF4">(</span><span style="color:#B48EAD">3</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Check whether our user objects have access to the operation on model object</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">designer</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">customer</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#616E88">     // Returns false</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">guest</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">customer</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#616E88">        // Returns true</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">anotherGuest</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">customer</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#616E88"> // Returns true</span></span></code></pre>
+<p>• <code>Phalcon\Acl\AdapterInterface::allow</code> and <code>Phalcon\Acl\AdapterInterface::deny</code> have 4th argument - function. It will be called when using <code>Phalcon\Acl\AdapterInterface::isAllowed</code></p>
+<p>• <code>Phalcon\Acl\AdapterInterface::isAllowed</code> have 4th argument - parameters. You can pass arguments for a function defined in <code>Phalcon\Acl\AdapterInterface:allow</code> or <code>Phalcon\Acl\AdapterInterface::deny</code> as associative array where key is argument name</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#616E88">// Set access level for role into resources with custom function</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">allow</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#81A1C1">    function</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">a</span><span style="color:#ECEFF4">)</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">        return</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">a</span><span style="color:#81A1C1"> %</span><span style="color:#B48EAD"> 2</span><span style="color:#81A1C1"> ==</span><span style="color:#B48EAD"> 0</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Check whether role has access to the operation with custom function</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> [</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">a</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#B48EAD"> 4</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // Returns true</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Guests</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Customers</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">search</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> [</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">a</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#B48EAD"> 3</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // Returns false</span></span></code></pre>
+<p>• Fixed wildcard inheritance in <code>Phalcon\Acl\Adapter\Memory</code> <a href="https://github.com/phalcon/cphalcon/issues/12004">12004</a><a href="https://github.com/phalcon/cphalcon/pull/12006">12006</a></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Acl</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Acl</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Adapter</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Memory</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> MemoryAcl</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> MemoryAcl</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">setDefaultAction</span><span style="color:#ECEFF4">(</span><span style="color:#8FBCBB">Acl</span><span style="color:#81A1C1">::</span><span style="color:#D8DEE9FF">DENY</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleGuest</span><span style="color:#81A1C1">      =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Role</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">guest</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleUser</span><span style="color:#81A1C1">       =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Role</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">user</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleAdmin</span><span style="color:#81A1C1">      =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Role</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">admin</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleSuperAdmin</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Role</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">superadmin</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addRole</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleGuest</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addRole</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleUser</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">roleGuest</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addRole</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleAdmin</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">roleUser</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addRole</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleSuperAdmin</span><span style="color:#ECEFF4">,</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">roleAdmin</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">addResource</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> [</span><span style="color:#ECEFF4">&quot;</span><span style="color:#A3BE8C">paypal</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">facebook</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,])</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">allow</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleGuest</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">paypal</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">allow</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleGuest</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">facebook</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">allow</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleUser</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">*</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleUser</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">notSet</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88">  // true</span></span>
+<span class="line"><span style="color:#81A1C1">echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleUser</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">*</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88">       // true</span></span>
+<span class="line"><span style="color:#81A1C1">echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleAdmin</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">notSet</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // true</span></span>
+<span class="line"><span style="color:#81A1C1">echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">acl</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isAllowed</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">roleAdmin</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">getName</span><span style="color:#ECEFF4">(),</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">payment</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &quot;</span><span style="color:#A3BE8C">*</span><span style="color:#ECEFF4">&quot;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88">      // true</span></span></code></pre>
+<h4 id="routes">ROUTES</h4>
+<p>• Routes now can have an associated callback that can override the default dispatcher + view behavior</p>
+<p>• Amended <code>Phalcon\Mvc\RouterInterface</code> and <code>Phalcon\Mvc\Router</code>. Added missed <code>addPurge</code>, <code>addTrace</code> and <code>addConnect</code> methods.
+Added <code>addConnect</code> for the <code>CONNECT</code> HTTP method, <code>addPurge</code> for the <code>PURGE</code> HTTP method and <code>addTrace</code> for the <code>TRACE</code> HTTP method</p>
+<p>• Placeholders <code>:controller</code> and <code>:action</code> in <code>Mvc\Router</code> now defaults to <code>/([\\w0-9\\_\\-]+)</code> instead of <code>/([\\a-zA-Z0-9\\_\\-]+)</code></p>
+<p>• Modifier <code>#u</code> (PCRE_UTF8) is now default in regex based routes in <code>Mvc\Router</code></p>
+<p>• <code>Mvc\Router\Route</code> now escapes characters such as <code>.</code> or <code>+</code> to avoid unexpected behaviors</p>
+<p>• Fixed the use of the annotation router with namespaced controllers</p>
+<p>• Fixed matching host name by <code>Phalcon\Mvc\Route::handle</code> when using port on current host name <a href="https://github.com/phalcon/cphalcon/issues/2573">2573</a></p>
+<h4 id="security">SECURITY</h4>
+<p>• Added <code>Phalcon\Security::hasLibreSsl</code> and <code>Phalcon\Security::getSslVersionNumber</code>
+Mostly these are used internally but can be used to get information about <code>libreSsl</code>.</p>
+<p>• Changed default hash algorithm in <code>Phalcon\Security</code> to <code>CRYPT_BLOWFISH_Y</code></p>
+<p>• <code>Phalcon\Security</code> is using now <code>Phalcon\Security\Random</code></p>
+<p>• Enforced that <code>Phalcon\Security::getToken()</code> and <code>Phalcon\Security::getTokenKey()</code> return a random value per request not per call</p>
+<p>• <code>Phalcon\Security::getToken()</code> and <code>Phalcon\Security::getTokenKey()</code> are using now
+<code>Phalcon\Security::_numberBytes</code> instead of passed as argument or hard coded value</p>
+<p>• <code>Phalcon\Security::hash()</code> corrected not working CRYPT_STD_DES, CRYPT_EXT_DES, MD5, CRYPT_SHA256</p>
+<p>• <code>Phalcon\Security::hash()</code> CRYPT_SHA512 fixed wrong salt length</p>
+<p>• Added missing unit-tests for <code>Phalcon\Security</code></p>
+<h4 id="session">SESSION</h4>
+<p>• Removed <code>Phalcon\Session</code> <a href="https://github.com/phalcon/cphalcon/issues/11340">11340</a></p>
+<blockquote>
+<p><strong>BACKWARDS INCOMPATIBLE</strong>: Any references to <code>Phalcon\Session</code> have to be removed and replaced with the relevant adapter class</p>
+</blockquote>
+<p>• Fixed the Session write callback <a href="https://github.com/phalcon/cphalcon/issues/11733">11733</a></p>
+<h4 id="text">TEXT</h4>
+<p>• Added ability to use custom delimiter for <code>Phalcon\Text::camelize</code> and <code>Phalcon\Text::uncamelize</code> <a href="https://github.com/phalcon/cphalcon/issues/10396">10396</a></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Text</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#D8DEE9FF">        </span></span>
+<span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> displayAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    echo</span><span style="color:#8FBCBB"> Text</span><span style="color:#81A1C1">::</span><span style="color:#88C0D0">camelize</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">c+a+m+e+l+i+z+e</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">+</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span><span style="color:#616E88"> // CAMELIZE</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Fixed <code>Phalcon\Text:dynamic()</code> to allow custom separator <a href="https://github.com/phalcon/cphalcon/issues/11215">11215</a></p>
+<h4 id="view">VIEW</h4>
+<p>• An absolute path can now be used to <code>Mvc\View::setLayoutsDir</code>
+You can now use one layout path for all the landing pages of your application for instance, even from separate projects</p>
+<p>• Now <code>Phalcon\Mvc\View</code> supports many views directories at the same time</p>
+<p>• Return <code>false</code> from an action disables the view component (same as <code>$this-&gt;view-&gt;disable()</code>)</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> displayAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#616E88">    // Do some stuff here</span></span>
+<span class="line"><span style="color:#D8DEE9FF">    </span></span>
+<span class="line"><span style="color:#81A1C1">    return</span><span style="color:#81A1C1"> false;</span><span style="color:#616E88"> // Same as $this-&gt;view-&gt;disable();</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Return a string from an action takes it as the body of the response</p>
+<p>• Return a string from an <code>Mvc\Micro</code> handler takes it as the body of the response</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> displayAction</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#616E88">    // Do some stuff here</span></span>
+<span class="line"><span style="color:#D8DEE9FF">    </span></span>
+<span class="line"><span style="color:#616E88">    // $this-&gt;response-&gt;setContent(&#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;);</span></span>
+<span class="line"><span style="color:#81A1C1">    return</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">&lt;h1&gt;Hello World&lt;/h1&gt;</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Fixed odd view behavior <a href="https://github.com/phalcon/cphalcon/issues/1933">1933</a> related to <code>setLayout()</code> and <code>pick()</code></p>
+<h4 id="validation">VALIDATION</h4>
+<p>• <code>Phalcon\Mvc\Model\Validation</code> is now deprecated in favor of <code>Phalcon\Validation</code>
+The functionality of both components is merged into one, allowing us to reduce the codebase while offering the same functionality as before.</p>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">namespace</span><span style="color:#D8DEE9FF"> Invo</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Models</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Mvc</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Model</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Mvc</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Model</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Email</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> EmailValidator</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Mvc</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Model</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Uniqueness</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> UniquenessValidator</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">class</span><span style="color:#8FBCBB"> Users</span><span style="color:#81A1C1"> extends</span><span style="color:#8FBCBB;font-weight:bold"> Model</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> validation</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">    {</span></span>
+<span class="line"><span style="color:#81A1C1">        $this-&gt;</span><span style="color:#88C0D0">validate</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#81A1C1">            new</span><span style="color:#8FBCBB"> EmailValidator</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">                [</span></span>
+<span class="line"><span style="color:#ECEFF4">                    &#39;</span><span style="color:#A3BE8C">field</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">email</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                ]</span></span>
+<span class="line"><span style="color:#ECEFF4">            )</span></span>
+<span class="line"><span style="color:#ECEFF4">        )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        $this-&gt;</span><span style="color:#88C0D0">validate</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#81A1C1">            new</span><span style="color:#8FBCBB"> UniquenessValidator</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">                [</span></span>
+<span class="line"><span style="color:#ECEFF4">                    &#39;</span><span style="color:#A3BE8C">field</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">   =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">username</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                    &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Sorry, That username is already taken</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                ]</span></span>
+<span class="line"><span style="color:#ECEFF4">            )</span></span>
+<span class="line"><span style="color:#ECEFF4">        )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">$this-&gt;</span><span style="color:#88C0D0">validationHasFailed</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1"> ==</span><span style="color:#81A1C1"> true</span><span style="color:#ECEFF4">)</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">            return</span><span style="color:#81A1C1"> false;</span></span>
+<span class="line"><span style="color:#ECEFF4">        }</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">namespace</span><span style="color:#D8DEE9FF"> Invo</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Models</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Mvc</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Model</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Validation</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validation</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Email</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> EmailValidator</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validation</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Uniqueness</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> UniquenessValidator</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">class</span><span style="color:#8FBCBB"> Users</span><span style="color:#81A1C1"> extends</span><span style="color:#8FBCBB;font-weight:bold"> Model</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    public</span><span style="color:#81A1C1"> function</span><span style="color:#88C0D0"> validation</span><span style="color:#ECEFF4">()</span></span>
+<span class="line"><span style="color:#ECEFF4">    {</span></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Validation</span><span style="color:#ECEFF4">()</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">email</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#616E88"> //your field name</span></span>
+<span class="line"><span style="color:#81A1C1">            new</span><span style="color:#8FBCBB"> EmailValidator</span><span style="color:#ECEFF4">([</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">model</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> $this</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Please enter a correct email address</span><span style="color:#ECEFF4">&#39;</span></span>
+<span class="line"><span style="color:#ECEFF4">            ])</span></span>
+<span class="line"><span style="color:#ECEFF4">        )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        $</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">username</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#81A1C1">            new</span><span style="color:#8FBCBB"> UniquenessValidator</span><span style="color:#ECEFF4">([</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">model</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> $this</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Sorry, That username is already taken</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            ])</span></span>
+<span class="line"><span style="color:#ECEFF4">        )</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">        return</span><span style="color:#81A1C1"> $this-&gt;</span><span style="color:#88C0D0">validate</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">validator</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">    }</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Method <code>isSetOption</code> in <code>Phalcon\Validation\ValidatorInterface</code> marked as deprecated, please use <code>hasOption</code></p>
+<blockquote>
+<p><strong>CAUTION</strong>: Any references to <code>isSetOption</code> need to be renamed to <code>hasOption</code></p>
+</blockquote>
+<p><strong>Old way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">validation</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">isSetOption</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">my-option</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">))</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">    //</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p><strong>New way</strong>:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">if</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">true</span><span style="color:#81A1C1"> ===</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">validation</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">hasOption</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">my-option</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">))</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#616E88">    //</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span></span></code></pre>
+<p>• Added internal check <code>allowEmpty</code> before calling a validator. If it option is true and the value of empty, the validator is skipped</p>
+<p>• Added option to validate multiple fields with one validator (fix uniqueness validator as well), also removes unnecessary <code>model =&gt; $this</code> in <code>Phalcon\Validation\Validator\Uniqueness</code>.</p>
+<p>• <code>Phalcon\Validation\Validator\Alpha</code> now correctly validates non-ASCII characters <a href="https://github.com/phalcon/cphalcon/issues/11386">11386</a></p>
+<p>• Added <code>Phalcon\Validation\CombinedFieldsValidator</code>, validation will pass array of fields to this validator if needed</p>
+<p>• <code>Phalcon\Validation\Validator\Digit</code> now correctly validates digits <a href="https://github.com/phalcon/cphalcon/issues/11374">11374</a></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validation</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Digit</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> DigitValidator</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">height</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#81A1C1">    new</span><span style="color:#8FBCBB"> DigitValidator</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">        [</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">:field must be numeric</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        ]</span></span>
+<span class="line"><span style="color:#ECEFF4">    )</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">height</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">width</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ],</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#81A1C1">    new</span><span style="color:#8FBCBB"> DigitValidator</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">        [</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> [</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">height</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">height must be numeric</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">width</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">  =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">width must be numeric</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            ]</span></span>
+<span class="line"><span style="color:#ECEFF4">        ]</span></span>
+<span class="line"><span style="color:#ECEFF4">    )</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>• Added <code>Phalcon\Validation\Validator\Date</code></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validation</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Date</span><span style="color:#81A1C1"> as</span><span style="color:#D8DEE9FF"> DateValidator</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">date</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#81A1C1">    new</span><span style="color:#8FBCBB"> DateValidator</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">        [</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">format</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">  =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">d-m-Y</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">The date is not valid</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        ]</span></span>
+<span class="line"><span style="color:#ECEFF4">    )</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">date</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">anotherDate</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ],</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#81A1C1">    new</span><span style="color:#8FBCBB"> DateValidator</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">        [</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">format</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">  =&gt;</span><span style="color:#ECEFF4"> [</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">date</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">        =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">d-m-Y</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">anotherDate</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">Y-m-d</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            ],</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">message</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> [</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">date</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">        =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">The date is invalid</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">                &#39;</span><span style="color:#A3BE8C">anotherDate</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#ECEFF4"> &#39;</span><span style="color:#A3BE8C">The another date is invalid</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">            ]</span></span>
+<span class="line"><span style="color:#ECEFF4">        ]</span></span>
+<span class="line"><span style="color:#ECEFF4">    )</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<p>• Fixed <code>Phalcon\Validation::appendMessage</code> to allow append message to the empty stack <a href="https://github.com/phalcon/cphalcon/issues/10405">10405</a></p>
+<p>• Added <code>convert</code> option to the <code>Phalcon\Validation\Validator\Uniqueness</code> to convert values to the database lookup <a href="https://github.com/phalcon/cphalcon/issues/12005">12005</a><a href="https://github.com/phalcon/cphalcon/pull/12030">12030</a></p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validation</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Validator</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Uniqueness</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">validator</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">add</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">username</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> </span></span>
+<span class="line"><span style="color:#81A1C1">    new</span><span style="color:#8FBCBB"> Uniqueness</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">        [</span></span>
+<span class="line"><span style="color:#ECEFF4">            &#39;</span><span style="color:#A3BE8C">convert</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> function</span><span style="color:#ECEFF4"> (</span><span style="color:#81A1C1">array</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">values</span><span style="color:#ECEFF4">)</span><span style="color:#ECEFF4"> {</span></span>
+<span class="line"><span style="color:#81A1C1">                $</span><span style="color:#D8DEE9">values</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">username</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">]</span><span style="color:#81A1C1"> =</span><span style="color:#88C0D0"> strtolower</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">values</span><span style="color:#ECEFF4">[</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">username</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">])</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#88C0D0">                </span></span>
+<span class="line"><span style="color:#81A1C1">                return</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">values</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">            }</span></span>
+<span class="line"><span style="color:#ECEFF4">        ]</span></span>
+<span class="line"><span style="color:#ECEFF4">    )</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span></code></pre>
+<h4 id="interfaces">INTERFACES</h4>
+<p>• Removed <code>__construct</code> from all interfaces <a href="https://github.com/phalcon/cphalcon/issues/11410">11410</a><a href="https://github.com/phalcon/cphalcon/pull/11411">11441</a></p>
+<p>• Added <code>Phalcon\Cli\DispatcherInterface</code>, <code>Phalcon\Cli\TaskInterface</code>, <code>Phalcon\Cli\RouterInterface</code> and <code>Phalcon\Cli\Router\RouteInterface</code>.</p>
+<h4 id="documentation">DOCUMENTATION</h4>
+<p>• Added Indonesian translation <a href="https://github.com/phalcon/docs/pull/840">840</a></p>
+<h4 id="various">VARIOUS</h4>
+<p>• Added <code>Phalcon\Assets\Manager::exists()</code> to check if collection exists</p>
+<p>• Fixed <code>Filter::add</code> method handler <a href="https://github.com/phalcon/cphalcon/issues/11581">11581</a></p>
+<p>• Fixed issue with radio not being checked when default value is 0 <a href="https://github.com/phalcon/cphalcon/issues/11358">11358</a></p>
+<p>• Phalcon\Tag::getTitle() shows a title depending on <code>prependTitle</code> and <code>appendTitle</code></p>
+<p>• Using a <code>settable</code> variable for the Mongo Connection Service name instead of a hard coded string <a href="https://github.com/phalcon/cphalcon/issues/11725">11725</a></p>
+<p>• <code>Phalcon\Debug\Dump</code> skip debugging di, fix detecting private/protected properties</p>
+<p>• Added new setter <code>Phalcon\Escaper::setDoubleEncode()</code> - to allow setting/disabling double encoding</p>
+<p>• Fixed <code>Phalcon\Config::merge</code> for working with php7</p>
+<h3 id="php7">PHP7</h3>
+<p>Phalcon 3.0 supports PHP7! In subsequent releases we will focus on the development of the framework to improve the compatibility and take advantage of the performance enhancements that PHP7 offers. You can install the framework in php7 using the usual installation instructions.</p>
+<h3 id="support">Support</h3>
+<p>Phalcon 3.0 Long Term Support (LTS) version is out, and it’s packed with new features to help you better create web applications with PHP. This version of the framework will be maintained for 3 years from now.</p>
+<h3 id="acknowledgments">Acknowledgments</h3>
+<p>We want to greatly thank everyone who has contributed to accomplish and achieve the completion of this release. Special thanks to our friends around the world that have made possible this release:</p>
+<ul>
+<li><a href="https://github.com/andresgutierrez">Andres Gutierrez</a></li>
+<li><a href="https://github.com/sergeyklay">Serghei Iakovlev</a></li>
+<li><a href="https://github.com/niden">Nikolaos Dimopoulos</a></li>
+<li><a href="https://github.com/SidRoberts">Sid Roberts</a></li>
+<li><a href="https://github.com/Jurigag">Wojciech Ślawski</a></li>
+<li><a href="https://github.com/steffengy">Steffen Butzer</a></li>
+<li><a href="https://github.com/ovr">Dmitry Patsura</a></li>
+<li><a href="https://github.com/rianorie">Rian Orie</a></li>
+<li><a href="https://github.com/virgofx">Mark Johnson</a></li>
+<li><a href="https://www.agencymatrix.com/">Clay Garland</a></li>
+<li><a href="https://github.com/CrNix">Radek Crlík</a></li>
+<li><a href="https://github.com/rudiservo">Rudi Servo</a></li>
+<li><a href="https://github.com/basilfx">Bas Stottelaar</a></li>
+<li><a href="https://github.com/dred86">Renzo Peralta</a></li>
+<li><a href="https://github.com/phalcon/cphalcon/commit/5dd068d03fbe8cbea9f5f244672b93de1421c4f5">Mitchell Macpherson</a></li>
+<li><a href="https://github.com/hinablue">Hina Chen</a></li>
+<li><a href="https://github.com/tembem">JIM</a></li>
+<li><a href="https://github.com/mruz">Mariusz Łączak</a></li>
+<li><a href="https://github.com/quasipickle">Dylan Anderson</a></li>
+<li>Jj</li>
+<li><a href="https://github.com/rahuldroy">Rahul Datta Roy</a></li>
+<li><a href="https://github.com/CameronHall">Cameron Hall</a></li>
+<li><a href="https://github.com/challet">Clément Hallet</a></li>
+<li><a href="https://github.com/alexprowars">Alexey Bobkov</a></li>
+<li><a href="https://github.com/Green-Cat">Vladimir Metelitsa</a></li>
+<li><a href="https://github.com/phalcon/cphalcon/commit/4d79fdd63e2229311f8cafdbcedf5b64bb96e71c">Aleksandr Besedin</a></li>
+<li><a href="https://github.com/Skydev0h">Skydev0h</a></li>
+<li><a href="https://github.com/Newbas">Newbas</a></li>
+<li><a href="https://github.com/Fishdrowned">Christopher CHEN</a></li>
+<li><a href="https://github.com/AlexKomrakov">Alex Komrakov</a></li>
+<li><a href="https://github.com/googlle">Dan</a></li>
+<li><a href="https://github.com/makerlabs">Marcin Butlak</a></li>
+<li>Aaron Imming</li>
+<li><a href="https://github.com/Ragnis">Ragnis Armus</a></li>
+<li><a href="https://github.com/Studentsov">Studentsov</a></li>
+<li><a href="https://github.com/Bellardia">Bellardia</a></li>
+<li><a href="https://github.com/phalcondroid">Julian Molina</a></li>
+<li><a href="https://github.com/Chameleon-m">Dmitry Korolev</a></li>
+<li><a href="https://github.com/certainlysylvia">certainlysylvia</a></li>
+<li><a href="https://github.com/jaskaransingh156">Jaskaran Singh</a></li>
+<li><a href="https://github.com/verzola">Gustavo Verzola</a></li>
+<li><a href="https://github.com/Surt">Erik Wiesenthal</a></li>
+<li><a href="https://github.com/DestinyMKas">Karolis Mačiulskis</a></li>
+<li><a href="https://github.com/tmihalik">tmihalik</a></li>
+<li><a href="https://github.com/rkeplin">Rob</a></li>
+<li><a href="https://github.com/dzubchik">dzubchik</a></li>
+<li><a href="https://github.com/bmoore">Brian Moore</a></li>
+<li><a href="https://github.com/Daredzik">Przemysław Lazarek</a></li>
+<li><a href="https://github.com/acwtools">acwtools</a></li>
+<li><a href="https://github.com/nsossonko">nsossonko</a></li>
+<li><a href="https://github.com/ariarijp">Takuya Arita</a></li>
+<li><a href="https://github.com/mattvb91">Matthias von Bargen</a></li>
+<li><a href="https://github.com/renatomjr">Renato Montagna Junior</a></li>
+<li><a href="https://github.com/ryomo">Ryo Moriwaki</a></li>
+<li><a href="https://github.com/ifsnow">ifsnow</a></li>
+<li><a href="https://github.com/zhao5908">Zhao Yi</a></li>
+<li><a href="https://github.com/phecho">phecho</a></li>
+<li><a href="https://github.com/mr5">Decent Woo</a></li>
+<li><a href="https://github.com/dreamsxin">Dreamszhu</a></li>
+<li><a href="https://github.com/ashpumpkin">Eugene Smirnov</a></li>
+<li><a href="https://github.com/mich-grodno">mich-grodno</a></li>
+<li><a href="https://github.com/AlexDRiVER">Alex Barinov</a></li>
+<li><a href="https://github.com/yankos">Kostya Kufta</a></li>
+<li><a href="https://github.com/phalcon/cphalcon/commit/cd1152a6ac1f827d0109003e38104a96896c26e2">Nochum Sossonko</a></li>
+<li><a href="https://github.com/zeopix">Ivan Guillen</a></li>
+<li><a href="https://github.com/KorsaR-ZN">Stanislav Kiryukhin</a></li>
+<li><a href="https://github.com/patrick-zippenfenig">Patrick Zippenfenig</a></li>
+<li><a href="https://github.com/temuri416">temuri416</a></li>
+<li><a href="https://github.com/snowair">Yajie Zhu</a></li>
+<li><a href="https://github.com/michanismus">michanismus</a></li>
+<li><a href="https://github.com/caiofralmeida">Caio Almeida</a></li>
+<li><a href="https://github.com/jimjim2a">jimjim2a</a></li>
+<li><a href="https://github.com/olivier-monaco">Olivier Monaco</a></li>
+<li><a href="https://github.com/ph55">Alex Kalmikov</a></li>
+<li><a href="https://github.com/ogarbe">Olivier.Garbé</a></li>
+<li>Agency Matrix</li>
+<li>Cazamba Serviços de Internet Ltda</li>
+<li>AUMIX Networks</li>
+<li>Tecno Soft Consultoría Informática, SL</li>
+<li>Layer Seven Solutions INC</li>
+<li>PHP Wisdom Ltd</li>
+<li>Brainz</li>
+<li>Dmitri Bazilski</li>
+<li>Kamil Podkowka</li>
+<li>Chen Shih Wei</li>
+<li>Thomas Noack</li>
+<li>Jeroen Evers</li>
+<li>Vladimir Merkushev</li>
+<li>Oscar Candela Vera</li>
+<li>Sebastian Machuca Arias</li>
+<li>Rene Bravo</li>
+<li>Ilya Slabukarau</li>
+<li>Kamol Trade</li>
+<li>Loris Luise</li>
+<li>Karolis Mačiulskis</li>
+<li>Julian Claus</li>
+<li>Nikola Tesic</li>
+<li>Daniel Martín</li>
+<li>Matej Bádal</li>
+<li>Daniel Martín Spiridione</li>
+<li>Matej Bádal</li>
+<li>Arturo Bernal Mayordomo</li>
+<li>Christopher Söllinger</li>
+<li>Giorgio Balestrieri</li>
+<li>Oleg Lemeshenko</li>
+<li>Hristomir Kotzev</li>
+<li>Boris Delev</li>
+<li>Takahashi Kotaro</li>
+<li>Dave Turcotte</li>
+<li>Khanh Tran</li>
+<li>Martin Jentzsch</li>
+<li>Frank Vlatten</li>
+<li>Vicki Dahl Algot</li>
+<li>川合 亮</li>
+<li>Larry Dennison</li>
+<li>Adrian Bobowicz</li>
+<li>Jegor Levkovskiy</li>
+<li>Eugene Tsura</li>
+<li>Yaroslava Krutskikh</li>
+<li>Hugo Casanova</li>
+<li>Gustavo Miranda</li>
+<li>Radoslav Kirilov</li>
+<li>Callum Hopkins</li>
+<li>Anthony Clarke</li>
+<li>Michael Bergman</li>
+<li>Hesam Bahrami Chahardah Cheriki</li>
+<li>Ernesto Cánovas Conesa</li>
+<li>Daniel Lusignan</li>
+<li>Stadnik Vasili</li>
+<li>Mekan Bashimov</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>Phalcon 3.0 takes a step forward towards a modern framework for PHP. We’ll continue working making it more useful and performant for developers. Thank you once more to our  wonderful community and users!</p>
+<h3 id="installation">Installation</h3>
+<p>You can install Phalcon 3.0 for either PHP 5.5/5.6/7.0 using the following instructions:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#88C0D0">git</span><span style="color:#A3BE8C"> clone</span><span style="color:#A3BE8C"> --depth=5</span><span style="color:#A3BE8C"> https://github.com/phalcon/cphalcon</span></span>
+<span class="line"><span style="color:#88C0D0">cd</span><span style="color:#A3BE8C"> cphalcon/build</span></span>
+<span class="line"><span style="color:#88C0D0">sudo</span><span style="color:#A3BE8C"> ./install</span></span></code></pre>
+<p>Windows DLLs are available in the <a href="https://phalcon.io/en/download/windows">download page</a>.</p>
+<ul>
+<li><a href="https://docs.phalcon.io">Documentation</a></li>
+</ul>
+<p>As always, many thanks to everyone involved in this release and thanks for choosing Phalcon!</p><div data-pagefind-ignore><hr><p>Chat - Q&amp;A</p><ul><li><a href="https://phalcon.io/discord">Discord Chat</a></li><li><a href="https://github.com/phalcon/cphalcon/discussions">Discussions (v4,v5)</a></li><li><a href="https://github.com/phalcon/phalcon/discussions">Discussions (v6+)</a></li><li><a href="https://phalcon.io/forum">Forum (archive)</a></li></ul><p>Support</p><ul><li><a href="https://phalcon.io/fund">OpenCollective - Support Us</a></li></ul><p>Social Media</p><ul><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://dev.to/phalcon">DevTo</a></li><li><a href="https://phalcon.io/reddit">Reddit</a></li><li><a href="https://phalcon.io/linkedin">LinkedIn</a></li><li><a href="https://phalcon.io/fb">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li></ul><p>Videos</p><ul><li><a href="https://phalcon.io/bitchute">BitChute</a></li><li><a href="https://phalcon.io/brighteon">Brighteon</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><p>&lt;3 Phalcon Team</p></div></div><div class="phalcon-blog__tags-items"><a href="/tags#php" class="phalcon-blog__tags-item"><span>php</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span></a><a href="/tags#3-0-x" class="phalcon-blog__tags-item"><span>3.0.x</span></a><a href="/tags#phalcon3" class="phalcon-blog__tags-item"><span>phalcon3</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span></a><a href="/tags#rfc" class="phalcon-blog__tags-item"><span>rfc</span></a><a href="/tags#lts" class="phalcon-blog__tags-item"><span>lts</span></a></div></div></div><div class="phalcon-blog__right" data-pagefind-ignore><div class="phalcon-blog__right-item phalcon-blog__sponsors"><div class="phalcon-blog__title">Supporters</div></div><div class="phalcon-blog__right-item phalcon-blog__projects"><div class="phalcon-blog__title">Projects</div><div class="phalcon-blog__projects-text">We're a nonprofit organization that creates&nbsp; solutions for web developers. Our products are&nbsp;<a href="https://phalcon.io">Phalcon</a>,&nbsp;<a href="https://zephir-lang.com">Zephir</a> and&nbsp;<a href="https://github.com/phalcon?type=source">others</a>.&nbsp; If you would like to help us stay free and open,&nbsp; please consider <a href="https://phalcon.io/fund">supporting us</a>.</div></div><div class="phalcon-blog__right-item phalcon-blog__tags"><div class="phalcon-blog__title">Tags</div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span><span>(72)</span></a><a href="/tags#phalcon4" class="phalcon-blog__tags-item"><span>phalcon4</span><span>(74)</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span><span>(154)</span></a><a href="/tags#zephir" class="phalcon-blog__tags-item"><span>zephir</span><span>(19)</span></a><a href="/tags#lts" class="phalcon-blog__tags-item"><span>lts</span><span>(25)</span></a><a href="/tags#hangout" class="phalcon-blog__tags-item"><span>hangout</span><span>(27)</span></a><a href="/tags#github" class="phalcon-blog__tags-item"><span>github</span><span>(6)</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span><span>(255)</span></a><a href="/tags#community" class="phalcon-blog__tags-item"><span>community</span><span>(27)</span></a><a href="/tags#update" class="phalcon-blog__tags-item"><span>update</span><span>(39)</span></a><a href="/tags#roadmap" class="phalcon-blog__tags-item"><span>roadmap</span><span>(12)</span></a><a href="/tags#framework" class="phalcon-blog__tags-item"><span>framework</span><span>(26)</span></a><a href="/tags#benchmarks" class="phalcon-blog__tags-item"><span>benchmarks</span><span>(3)</span></a></div><a href="/tags" class="phalcon-blog__item-read-more">Show More</a></div></div></div></div><div data-pagefind-ignore><footer class="footer"><div class="container"><ul class="footer-nav"><li><a href="https://phalcon.io/blog">Blog</a></li><li><a href="https://phalcon.io/discord">Discord</a></li><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://phalcon.io/f">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li><li><a href="https://phalcon.io/bitchute">Bitchute</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><div class="footer__license">Phalcon is an open-source PHP framework built as a C-extension.<br>It is available under the  new BSD License.</div><div class="footer__supported"><span>Supported By</span><a href="https://odva.pro/" target="_blank" class="footer__supported-logo" aria-label="odva.pro"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="31" fill="none" viewBox="0 0 38 31"><path stroke="#273646" stroke-opacity=".7" stroke-width="3" d="M15.375 29.353c7.553 0 13.676-6.123 13.676-13.677C29.051 8.123 22.928 2 15.375 2S1.698 8.123 1.698 15.677c0 7.553 6.124 13.676 13.677 13.676Z"></path><path fill="#273646" fill-opacity=".7" d="M33.904 23.618H32.14v7.059h1.764v-7.06ZM37.434 23.618h-1.765v7.059h1.765v-7.06Z"></path></svg></a></div></div></footer></div><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.Cikc9LE_.js"></script></body></html>

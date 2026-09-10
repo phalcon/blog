@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en"><head><title>Phalcon 1.3 beta 1 released!</title><meta name="viewport" content="width=device-width"><meta name="MobileOptimized" content="320"><meta name="HandheldFriendly" content="true"><meta charset="utf-8"><meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0"><meta name="author" content="Phalcon Team"><meta name="application-name" content="Phalcon Blog"><meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="article:published_time" content="2013-12-11T00:00:00.000Z"><!-- Facebook --><meta property="og:url" content="https://blog.phalcon.io"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="Phalcon 1.3 beta 1 released!"><meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="og:site_name" content="Phalcon Blog"><meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Phalcon 1.3 beta 1 released!"><meta name="twitter:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta name="twitter:image:alt" content="Phalcon Blog"><meta name="twitter:site" content="@phalconphp"><meta name="twitter:creator" content="Phalcon Team"><meta itemprop="image" content="https://blog.phalcon.io/assets/files/phalcon-logo-320x180.png"><meta itemprop="publisher" content="Phalcon Team"><meta name="telegram:channel" content="@phalcon_news"><link rel="canonical" href="https://blog.phalcon.io/post/phalcon-1-3-beta-1-released"><link rel="publisher" href="https://blog.phalcon.io"><link rel="author" href="/humans.txt"><link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png"><link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"><link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"><link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a"><meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml"><meta name="msapplication-TileColor" content="#273646"><meta name="theme-color" content="#273646"><link rel="alternate" type="application/rss+xml" title="Phalcon Blog - We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" href="/feed.xml"><script>document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script><script type="module" src="https://assets.phalcon.io/phalcon/js/theme.min.js"></script><link rel="stylesheet" href="https://assets.phalcon.io/css/style.css"><link rel="stylesheet" type="text/css" href="https://blog.phalcon.io/css/style.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JGM81GDBF"></script><script>(function(){const analyticsId = "G-9JGM81GDBF";
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+        })();</script><style>.header__search-wrapper[data-astro-cid-nen7h5rs]{position:relative}#header-search-results[data-astro-cid-nen7h5rs]{background:var(--color-bg,#fff);z-index:20;border-radius:8px;width:24rem;max-height:70vh;margin-top:.5rem;position:absolute;top:100%;left:0;overflow-y:auto;box-shadow:0 8px 24px #00000026}
+</style></head><body><div data-pagefind-ignore><header class="header" data-astro-cid-nen7h5rs><div class="container" data-astro-cid-nen7h5rs><div class="header__left" data-astro-cid-nen7h5rs><button class="header-nav__burger" aria-label="burger button" data-astro-cid-nen7h5rs><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span></button><div class="header__logo" data-astro-cid-nen7h5rs><a href="/" aria-label="logo" data-astro-cid-nen7h5rs></a><div class="header__sitename" data-astro-cid-nen7h5rs>Blog</div></div><ul class="header-nav" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="expand" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><div class="header-dropdown-wrapper" data-astro-cid-nen7h5rs><ul class="header-dropdown header-dropdown--eco" data-astro-cid-nen7h5rs><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></div></li></ul><nav class="header-nav--mobile _navToggle" data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="extendable extended" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><ul class="header-dropdown--mobile" data-astro-cid-nen7h5rs><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></li></ul></nav><div class="header__search-wrapper" data-astro-cid-nen7h5rs><input type="text" id="header-search-input" class="header__search" placeholder="Search..." aria-label="Search" autocomplete="off" data-astro-cid-nen7h5rs><div id="header-search-results" class="phalcon-blog-detail" hidden data-astro-cid-nen7h5rs><div id="articles" data-astro-cid-nen7h5rs></div></div></div></div><div class="header__right" data-astro-cid-nen7h5rs><div class="header__github" data-astro-cid-nen7h5rs><a href="https://phalcon.io/github" aria-label="github" data-astro-cid-nen7h5rs><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-nen7h5rs><path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white" data-astro-cid-nen7h5rs></path></svg></a></div><div class="header__discord" data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" aria-label="discord" data-astro-cid-nen7h5rs><svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240" data-astro-cid-nen7h5rs><style>.st0 {
+                            fill: #FFFFFF;
+                        }</style><path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" data-astro-cid-nen7h5rs></path><path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" data-astro-cid-nen7h5rs></path></svg></a></div><div class="switcher" data-astro-cid-nen7h5rs><button aria-label="Theme switcher" data-astro-cid-nen7h5rs></button></div></div></div></header><script type="module" src="/_astro/Header.astro_astro_type_script_index_0_lang.CbfoULXM.js"></script></div><div class="phalcon-blog"><div class="container"><div class="phalcon-blog__main"><div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article"><h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">Phalcon 1.3 beta 1 released!</h2><div class="phalcon-blog-detail__info"><div id="phalcon-blog-detail__date" class="phalcon-blog-detail__date" itemprop="datePublished" data-pagefind-meta="date" content="2013-12-11">Dec 11, 2013</div><div id="phalcon-blog-detail__author" class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span></div><div class="phalcon-blog-detail__author">Read time: 9 minutes</div></div><div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body><p>We are happy to announce the release of our first beta of Phalcon 1.3!</p>
+<p>In this version we have introduced several new features and performance improvements. The intend of this beta release is get input from the community, test the new functionality making sure everything works fine once production environments are updated to 1.3.</p>
+<p>1.3.0 includes several performance improvements, new components like <code>Phalon\Image</code>, bug fixes, stability and performance improvements.</p>
+<ul>
+<li>Code cleanup: get rid of compiler warnings, dead code elimination, code deduplication, use static code analyzers to eliminate possible bugs (<a href="https://github.com/phalcon/cphalcon/issues/801">801</a>, <a href="https://github.com/phalcon/cphalcon/issues/802">802</a>, <a href="https://github.com/phalcon/cphalcon/issues/810">810</a>, <a href="https://github.com/phalcon/cphalcon/issues/825">825</a>, <a href="https://github.com/phalcon/cphalcon/issues/827">827</a>, <a href="https://github.com/phalcon/cphalcon/issues/838">838</a>, <a href="https://github.com/phalcon/cphalcon/issues/849">849</a>, <a href="https://github.com/phalcon/cphalcon/issues/942">942</a>, <a href="https://github.com/phalcon/cphalcon/issues/968">968</a>, <a href="https://github.com/phalcon/cphalcon/issues/1001">1001</a>, <a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>, <a href="https://github.com/phalcon/cphalcon/issues/1169">1169</a>, <a href="https://github.com/phalcon/cphalcon/issues/1214">1214</a>, <a href="https://github.com/phalcon/cphalcon/issues/1223">1223</a>, <a href="https://github.com/phalcon/cphalcon/issues/1224">1224</a>, <a href="https://github.com/phalcon/cphalcon/issues/1375">1375</a>, <a href="https://github.com/phalcon/cphalcon/issues/1430">1430</a>)</li>
+<li>Fixed various memory leaks (<a href="https://github.com/phalcon/cphalcon/issues/469">469</a>, <a href="https://github.com/phalcon/cphalcon/issues/860">860</a>, <a href="https://github.com/phalcon/cphalcon/issues/910">910</a>, <a href="https://github.com/phalcon/cphalcon/issues/914">914</a>, <a href="https://github.com/phalcon/cphalcon/issues/916">916</a>, <a href="https://github.com/phalcon/cphalcon/issues/1031">1031</a>, <a href="https://github.com/phalcon/cphalcon/issues/1067">1067</a>, <a href="https://github.com/phalcon/cphalcon/issues/1249">1249</a>, <a href="https://github.com/phalcon/cphalcon/issues/1273">1273</a>, <a href="https://github.com/phalcon/cphalcon/issues/1291">1291</a>, <a href="https://github.com/phalcon/cphalcon/issues/1309">1309</a>, <a href="https://github.com/phalcon/cphalcon/issues/1345">1345</a>, <a href="https://github.com/phalcon/cphalcon/issues/1455">1455</a>, <a href="https://github.com/phalcon/cphalcon/issues/1470">1470</a>)</li>
+<li>Fixed memory access violations / segmentation faults / etc. (<a href="https://github.com/phalcon/cphalcon/issues/469">469</a>, <a href="https://github.com/phalcon/cphalcon/issues/849">849</a>, <a href="https://github.com/phalcon/cphalcon/issues/851">851</a>, <a href="https://github.com/phalcon/cphalcon/issues/852">852</a>, <a href="https://github.com/phalcon/cphalcon/issues/858">858</a>, <a href="https://github.com/phalcon/cphalcon/issues/860">860</a>, <a href="https://github.com/phalcon/cphalcon/issues/861">861</a>, <a href="https://github.com/phalcon/cphalcon/issues/895">895</a>, <a href="https://github.com/phalcon/cphalcon/issues/911">911</a>, <a href="https://github.com/phalcon/cphalcon/issues/918">918</a>, <a href="https://github.com/phalcon/cphalcon/issues/927">927</a>, <a href="https://github.com/phalcon/cphalcon/issues/928">928</a>, <a href="https://github.com/phalcon/cphalcon/issues/1000">1000</a>, <a href="https://github.com/phalcon/cphalcon/issues/1077">1077</a>, <a href="https://github.com/phalcon/cphalcon/issues/1112">1112</a>, <a href="https://github.com/phalcon/cphalcon/issues/1113">1113</a>, <a href="https://github.com/phalcon/cphalcon/issues/1131">1131</a>, <a href="https://github.com/phalcon/cphalcon/issues/1149">1149</a>, <a href="https://github.com/phalcon/cphalcon/issues/1173">1173</a>, <a href="https://github.com/phalcon/cphalcon/issues/1272">1272</a>, <a href="https://github.com/phalcon/cphalcon/issues/1284">1284</a>, <a href="https://github.com/phalcon/cphalcon/issues/1302">1302</a>, <a href="https://github.com/phalcon/cphalcon/issues/1340">1340</a>, <a href="https://github.com/phalcon/cphalcon/issues/1343">1343</a>, <a href="https://github.com/phalcon/cphalcon/issues/1368">1368</a>, <a href="https://github.com/phalcon/cphalcon/issues/1369">1369</a>, <a href="https://github.com/phalcon/cphalcon/issues/1371">1371</a>, <a href="https://github.com/phalcon/cphalcon/issues/1376">1376</a>, <a href="https://github.com/phalcon/cphalcon/issues/1379">1379</a>, <a href="https://github.com/phalcon/cphalcon/issues/1392">1392</a>, <a href="https://github.com/phalcon/cphalcon/issues/1451">1451</a>, <a href="https://github.com/phalcon/cphalcon/issues/1466">1466</a>, <a href="https://github.com/phalcon/cphalcon/issues/1485">1485</a>, <a href="https://github.com/phalcon/cphalcon/issues/1494">1494</a>, <a href="https://github.com/phalcon/cphalcon/issues/1501">1501</a>, <a href="https://github.com/phalcon/cphalcon/issues/1504">1504</a>, <a href="https://github.com/phalcon/cphalcon/issues/1509">1509</a>, <a href="https://github.com/phalcon/cphalcon/issues/1567">1567</a>, <a href="https://github.com/phalcon/cphalcon/issues/1607">1607</a>)</li>
+<li>Fixed PHP notices, warnings and other incompatibilities (<a href="https://github.com/phalcon/cphalcon/issues/894">894</a>, <a href="https://github.com/phalcon/cphalcon/issues/1222">1222</a>, <a href="https://github.com/phalcon/cphalcon/issues/1315">1315</a>, <a href="https://github.com/phalcon/cphalcon/issues/1413">1413</a>, <a href="https://github.com/phalcon/cphalcon/issues/1427">1427</a>, <a href="https://github.com/phalcon/cphalcon/issues/1428">1428</a>, <a href="https://github.com/phalcon/cphalcon/issues/1529">1529</a>)</li>
+<li>Security fixes:
+<ul>
+<li>Hardening fixes (<a href="https://github.com/phalcon/cphalcon/issues/1044">1044</a>)</li>
+<li>Interface validation (<a href="https://github.com/phalcon/cphalcon/issues/1043">1043</a>, <a href="https://github.com/phalcon/cphalcon/issues/1048">1048</a>)</li>
+<li>Thorough data validation in <code>__wakeup()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1043">1043</a>, <a href="https://github.com/phalcon/cphalcon/issues/1634">1634</a>, <a href="https://github.com/phalcon/cphalcon/issues/1635">1635</a>)</li>
+<li>Fixed XSS vulnerabilities (<a href="https://github.com/phalcon/cphalcon/issues/1216">1216</a>, <a href="https://github.com/phalcon/cphalcon/issues/1190">1190</a>)</li>
+<li><code>Phalcon\Security::checkHash()</code> allows to restrict the length of the password to avoid attacks like <a href="https://www.djangoproject.com/weblog/2013/sep/15/security/">https://www.djangoproject.com/weblog/2013/sep/15/security/</a> (<a href="https://github.com/phalcon/cphalcon/issues/1261">1261</a>)</li>
+<li>Fixed crash while rendering element’s label (<a href="https://github.com/phalcon/cphalcon/issues/1210">1210</a>)</li>
+<li>Prevent MongoDB Request Injection Attacks (<a href="https://github.com/phalcon/cphalcon/issues/1265">1265</a>)</li>
+<li>Do not allow to override superglobals in views (<a href="https://github.com/phalcon/cphalcon/issues/1617">1617</a>)</li>
+</ul>
+</li>
+<li>Phalcon Kernel:
+<ul>
+<li>32 and 64 bit hashes can be computed on the same CPU architecture (<a href="https://github.com/phalcon/cphalcon/issues/817">817</a>)</li>
+<li>Reduced overall memory usage (<a href="https://github.com/phalcon/cphalcon/issues/834">834</a>, <a href="https://github.com/phalcon/cphalcon/issues/891">891</a>, <a href="https://github.com/phalcon/cphalcon/issues/893">893</a>)</li>
+<li>Memory allocation optimizations (<a href="https://github.com/phalcon/cphalcon/issues/912">912</a>, <a href="https://github.com/phalcon/cphalcon/issues/1220">1220</a>)</li>
+<li>Faster internal array and string manipulation (<a href="https://github.com/phalcon/cphalcon/issues/822">822</a>, <a href="https://github.com/phalcon/cphalcon/issues/823">823</a>, <a href="https://github.com/phalcon/cphalcon/issues/830">830</a>, <a href="https://github.com/phalcon/cphalcon/issues/833">833</a>, <a href="https://github.com/phalcon/cphalcon/issues/837">837</a>, <a href="https://github.com/phalcon/cphalcon/issues/890">890</a>)</li>
+<li>Camelize does not ignore the last character of a string anymore (<a href="https://github.com/phalcon/cphalcon/issues/1436">1436</a>)</li>
+<li>Fixed bug in <code>phalcon_fix_path()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1601">1601</a>)</li>
+<li>Use native counterparts for <code>memory_get_usage()</code>, <code>gettype()</code>, <code>json_encode()</code>, <code>json_decode()</code>, <code>session_XXX()</code>, <code>header()</code>, <code>headers_sent()</code>, <code>debug_backtrace()</code>, <code>lcfirst()</code>, <code>ob_XXX()</code>, <code>array_unshift()</code>, <code>array_values()</code>, <code>array_keys()</code>, <code>htmlentities()</code> (<a href="https://github.com/phalcon/cphalcon/issues/836">836</a>, <a href="https://github.com/phalcon/cphalcon/issues/847">847</a>, <a href="https://github.com/phalcon/cphalcon/issues/936">936</a>, <a href="https://github.com/phalcon/cphalcon/issues/945">945</a>, <a href="https://github.com/phalcon/cphalcon/issues/1099">1099</a>)</li>
+<li>Hash functions tailored for object handlers (<a href="https://github.com/phalcon/cphalcon/issues/842">842</a>)</li>
+<li>Optimization of calls to userland functions and methods (<a href="https://github.com/phalcon/cphalcon/issues/843">843</a>, <a href="https://github.com/phalcon/cphalcon/issues/954">954</a>)</li>
+<li>Read/modify/update optimization on properties (<a href="https://github.com/phalcon/cphalcon/issues/848">848</a>)</li>
+<li>Added support for self/parent/static scopes in static properties (<a href="https://github.com/phalcon/cphalcon/issues/943">943</a>)</li>
+<li>Scope lookup optimizations (<a href="https://github.com/phalcon/cphalcon/issues/948">948</a>)</li>
+<li>Do not restore memory frames from kernel functions (<a href="https://github.com/phalcon/cphalcon/issues/960">960</a>, <a href="https://github.com/phalcon/cphalcon/issues/976">976</a>)</li>
+<li>Diagnostic messages when Phalcon is compiled in dev mode (<a href="https://github.com/phalcon/cphalcon/issues/1009">1009</a>, <a href="https://github.com/phalcon/cphalcon/issues/1054">1054</a>, <a href="https://github.com/phalcon/cphalcon/issues/1097">1097</a>)</li>
+<li>Return Value Optimization (<a href="https://github.com/phalcon/cphalcon/issues/1046">1046</a>, <a href="https://github.com/phalcon/cphalcon/issues/1047">1047</a>, <a href="https://github.com/phalcon/cphalcon/issues/1075">1075</a>)</li>
+<li>Fixed locale issue (<a href="https://github.com/phalcon/cphalcon/issues/1095">1095</a>)</li>
+<li>Added support for interned strings (PHP 5.4+)</li>
+<li>Static property fetch/update optimization (<a href="https://github.com/phalcon/cphalcon/issues/1293">1293</a>)</li>
+<li>Fix misleading diagnostics on exception (<a href="https://github.com/phalcon/cphalcon/issues/1297">1297</a>)</li>
+<li>Use preallocated permanent zvals instead of null, true, false, 0 and 1 (<a href="https://github.com/phalcon/cphalcon/issues/1302">1302</a>)</li>
+<li>Bug fix in <code>phalcon_fix_path()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1591">1591</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Acl</code>:
+<ul>
+<li>Fixed broken ACL inheritance (<a href="https://github.com/phalcon/cphalcon/issues/905">905</a>)</li>
+<li>Bug fix when ACL allowed access to forbidden resources (<a href="https://github.com/phalcon/cphalcon/issues/1303">1303</a>)</li>
+<li>Fixed bug with ACL * wildcard (<a href="https://github.com/phalcon/cphalcon/issues/1409">1409</a>)</li>
+<li>Fixed bug with numeric resources (<a href="https://github.com/phalcon/cphalcon/issues/1513">1513</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Annotations</code>:
+<ul>
+<li>Fixed <code>getProperty()</code> bug in AnnotationsAdapter (<a href="https://github.com/phalcon/cphalcon/issues/996">996</a>)</li>
+<li><code>Phalcon\Annotations</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1141">1141</a>)</li>
+<li>Fixed parsing of annotations containing / (<a href="https://github.com/phalcon/cphalcon/issues/1480">1480</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Assets</code>:
+<ul>
+<li>Fixed bugs when minifier produced no output at all (<a href="https://github.com/phalcon/cphalcon/issues/811">811</a>, <a href="https://github.com/phalcon/cphalcon/issues/821">821</a>)</li>
+<li>Fixed joining issue (<a href="https://github.com/phalcon/cphalcon/issues/951">951</a>)</li>
+<li>Added support for UTF-8 characters in jsmin</li>
+<li>Fixed chaining of CSS/JS filters (<a href="https://github.com/phalcon/cphalcon/issues/1198">1198</a>)</li>
+<li><code>Phalcon\Assets\Filters\CssMin</code> and <code>Phalcon\Assets\Filters\JsMin</code> implement <code>Phalcon\Assets\FilterInterface</code> (<a href="https://github.com/phalcon/cphalcon/issues/1539">1539</a>)</li>
+<li>Added <code>Phalcon\Assets\Collection::setTargetLocal()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1532">1532</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Cache</code>:
+<ul>
+<li>Added Libmemcached cache backend (<a href="https://github.com/phalcon/cphalcon/issues/913">913</a>)</li>
+<li>Added support for APCu 4.0.2+ (<a href="https://github.com/phalcon/cphalcon/issues/1234">1234</a>)</li>
+<li>Implemented <code>Phalcon\Cache\Backend\Memory::queryKeys()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li>Bug fixes in <code>Phalcon\Cache\Backend\Xcache</code> (<a href="https://github.com/phalcon/cphalcon/issues/1406">1406</a>)</li>
+<li><code>Phalcon\Cache\Frontend\Data</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Frontend\None</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Frontend\Base64</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Frontend\Igbinary</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Frontend\Output</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Frontend\Json</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\Memory</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\File</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\Apc</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\Xcache</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\Memcache</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\Mongo</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li><code>Phalcon\Cache\Backend\Libmemcached</code> optimizations and bug fixes (<a href="https://github.com/phalcon/cphalcon/issues/1093">1093</a>)</li>
+<li>Added <code>increment()</code> and <code>decrement()</code> methods (<a href="https://github.com/phalcon/cphalcon/issues/1374">1374</a>)</li>
+<li>Added <code>flush()</code> method (<a href="https://github.com/phalcon/cphalcon/issues/1352">1352</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Config</code>:
+<ul>
+<li>Faster <code>Phalcon\Config</code> implementation using object handlers (<a href="https://github.com/phalcon/cphalcon/issues/837">837</a>, <a href="https://github.com/phalcon/cphalcon/issues/1277">1277</a>)</li>
+<li><code>Phalcon\Config</code> now support numeric properties as well (<a href="https://github.com/phalcon/cphalcon/issues/837">837</a>)</li>
+</ul>
+</li>
+<li>Implemented <code>Phalcon\Config::offsetUnset()</code> (<a href="https://github.com/phalcon/cphalcon/issues/732">732</a>)
+<ul>
+<li><code>Phalcon\Config\Adapter\Ini</code> correctly handles empty sections and INI files without any sections (<a href="https://github.com/phalcon/cphalcon/issues/829">829</a>, <a href="https://github.com/phalcon/cphalcon/issues/837">837</a>)</li>
+<li>Added <code>Phalcon\Adapter\Config\Json</code> class to read JSON configs (<a href="https://github.com/phalcon/cphalcon/issues/844">844</a>)</li>
+<li><code>Phalcon\Config::merge</code> now works with derived classes (<a href="https://github.com/phalcon/cphalcon/issues/1024">1024</a>)</li>
+<li>Dot-delimited directives in INI-files are now parsed correctly (<a href="https://github.com/phalcon/cphalcon/issues/872">872</a>)</li>
+<li>Support for PHP arrays as config files (<a href="https://github.com/phalcon/cphalcon/issues/1439">1439</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Crypt</code>:
+<ul>
+<li>Added support for various padding schemes (PKCS7, ANSI X.923, ISO 10126, ISO/IEC 7816-4, zero padding, space padding) to <code>Phalcon\Crypt</code> (<a href="https://github.com/phalcon/cphalcon/issues/864">864</a>, <a href="https://github.com/phalcon/cphalcon/issues/887">887</a>)</li>
+<li>Reduced peak memory usage (<a href="https://github.com/phalcon/cphalcon/issues/1237">1237</a>)</li>
+<li><code>encryptBase64()</code> and <code>decryptBase64()</code> can optionally use RFC 4648 flavor of BASE64 (<a href="https://github.com/phalcon/cphalcon/issues/1353">1353</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Db</code>:
+<ul>
+<li>Added support for <code>DECIMAL</code> scale (<a href="https://github.com/phalcon/cphalcon/issues/940">940</a>)</li>
+<li>Fixed invalid sequence names for PostgreSQL (<a href="https://github.com/phalcon/cphalcon/issues/1022">1022</a>)</li>
+<li>Added support for MySQL <code>DOUBLE</code> type (<a href="https://github.com/phalcon/cphalcon/issues/1128">1128</a>)</li>
+<li>Database dialects now support <code>BOOLEAN</code> data type (<a href="https://github.com/phalcon/cphalcon/issues/816">816</a>)</li>
+<li>Added support for <code>POINT</code> type in MySQL (<a href="https://github.com/phalcon/cphalcon/issues/1536">1536</a>)</li>
+<li>Fixed issue with <code>RawValue(&#39;default&#39;)</code> on composite primary key (<a href="https://github.com/phalcon/cphalcon/issues/1534">1534</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Debug</code>:
+<ul>
+<li>Added support for UTF-8 to <code>\Phalcon\Debug</code> (<a href="https://github.com/phalcon/cphalcon/issues/1099">1099</a>)</li>
+<li><code>Phalcon\Debug::uri</code> now supports both http and https (<a href="https://github.com/phalcon/cphalcon/issues/987">987</a>)</li>
+<li>Fixed array to string conversion notice (<a href="https://github.com/phalcon/cphalcon/issues/1534">1534</a>)</li>
+<li>Add support for <code>xdebug.file_link_format</code> (<a href="https://github.com/phalcon/cphalcon/issues/1401">1401</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\DI</code>:
+<ul>
+<li><code>Phalcon\Di</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1014">1014</a>)</li>
+<li>Added <code>Phalcon\Di\Service::isResolved()</code> method (<a href="https://github.com/phalcon/cphalcon/issues/1242">1242</a>)</li>
+<li>Make sure that ‘persistent’ is resolved only when accessed for the first time (<a href="https://github.com/phalcon/cphalcon/issues/1637">1637</a>)</li>
+<li>Faster DI implementation by using object handlers (<a href="https://github.com/phalcon/cphalcon/issues/1473">1473</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Dispatcher</code>:
+<ul>
+<li>Dispatching parameters now can be modified in <code>beforeExecuteRoute</code> events</li>
+<li><code>beforeException</code> events can now handle exceptions occurred when executing actions (<a href="https://github.com/phalcon/cphalcon/issues/140">140</a>)</li>
+<li>Added <code>Phalcon\Dispatcher::getHandlerClass</code> and <code>Phalcon\Dispatcher::getActionMethod</code></li>
+<li>Implemented <code>afterInitialize</code> event (<a href="https://github.com/phalcon/cphalcon/issues/782">782</a>)</li>
+<li><code>Phalcon\Dispatcher</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/782">782</a>)</li>
+<li>Added <code>getPreviousControllerName()</code>, <code>getPreviousActionName()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1462">1462</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Element</code>:
+<ul>
+<li><code>Phalcon\Element::addFilter()</code> incorrectly prepends NULL as the first element (<a href="https://github.com/phalcon/cphalcon/issues/1019">1019</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Escaper</code>:
+<ul>
+<li>Fixed bugs in <code>Phalcon\Escaper</code> (<a href="https://github.com/phalcon/cphalcon/issues/917">917</a>)</li>
+<li><code>Phalcon\Escaper</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1015">1015</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Events</code>:
+<ul>
+<li>Added support for weak references (<a href="https://github.com/phalcon/cphalcon/issues/663">663</a>)</li>
+<li>Bug fix in <code>Phalcon\Events\manager::attach()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1331">1331</a>, <a href="https://github.com/phalcon/cphalcon/issues/1337">1337</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Forms</code>:
+<ul>
+<li><code>Phalcon\Forms\Element\*</code> classes now implement <code>Phalcon\Form\ElementInterface</code></li>
+<li>Added support for HTML attributes to <code>Phalcon\Forms\Form::label()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1029">1029</a>)</li>
+<li><code>Phalcon\Forms\Form::getMessages()</code> does not generate a fatal error if the form is valid (<a href="https://github.com/phalcon/cphalcon/issues/1349">1349</a>)</li>
+<li>Improvements to <code>Phalcon\Forms\Form::add()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1386">1386</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Http</code>:
+<ul>
+<li><code>Phalcon\Http\Cookie</code> can be used without sessions (<a href="https://github.com/phalcon/cphalcon/issues/875">875</a>)</li>
+<li><code>Phalcon\Http\Cookie</code> does not ignore expire time (<a href="https://github.com/phalcon/cphalcon/issues/897">897</a>)</li>
+<li><code>Phalcon\Http\Request</code> fully supports file arrays (<a href="https://github.com/phalcon/cphalcon/issues/884">884</a>, <a href="https://github.com/phalcon/cphalcon/issues/888">888</a>)</li>
+<li><code>Phalcon\Http\Request</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/889">889</a>)</li>
+<li>Added <code>getKey()</code>, <code>getError()</code>, <code>isUploadedFile()</code> methods to <code>Phalcon\Http\Request\File</code> (<a href="https://github.com/phalcon/cphalcon/issues/878">878</a>, <a href="https://github.com/phalcon/cphalcon/issues/888">888</a>)</li>
+<li>Fixed regression in <code>\Phalcon\Http\Request::getRawBody()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1091">1091</a>)</li>
+<li>Bug fix in <code>Phalcon\Http\Request::getQuery()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1226">1226</a>)</li>
+<li>Fixed broken <code>Phalcon\Http\Response::setFileToSend()</code> method (<a href="https://github.com/phalcon/cphalcon/issues/831">831</a>, <a href="https://github.com/phalcon/cphalcon/issues/832">832</a>)</li>
+<li>Redirects use status descriptions from RFC 2616 (<a href="https://github.com/phalcon/cphalcon/issues/1175">1175</a>)</li>
+<li><code>Phalcon\Http\Response::setFileToSend()</code> can now show the file in the browser instead of offering to download it (<a href="https://github.com/phalcon/cphalcon/issues/853">853</a>)</li>
+<li>Added <code>Phalcon\Http\Response\Headers::toArray()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1008">1008</a>)</li>
+<li><code>getJsonRawBody()</code> may return an associative array (<a href="https://github.com/phalcon/cphalcon/issues/1241">1241</a>)</li>
+<li>Added <code>getURI()</code>, <code>getBasicAuth()</code>, <code>getDigestAuth()</code> methods to <code>Phalcon\Http\Request</code> (<a href="https://github.com/phalcon/cphalcon/issues/1250">1250</a>)</li>
+<li>Added <code>getPut()</code>/<code>hasPut()</code> methods to <code>Phalcon\Http\Request</code> (<a href="https://github.com/phalcon/cphalcon/issues/680">680</a>, <a href="https://github.com/phalcon/cphalcon/issues/1403">1403</a>)</li>
+<li>Implemented <code>Phalcon\Http\Request\File::getRealType</code> (<a href="https://github.com/phalcon/cphalcon/issues/1442">1442</a>, <a href="https://github.com/phalcon/cphalcon/issues/1444">1444</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Image</code>:
+<ul>
+<li>Added <code>Phalcon\Image\Adapter</code>, <code>Phalcon\Image\Adapter\Gd</code>, <code>Phalcon\Image\Adapter\Imagick</code> (<a href="https://github.com/phalcon/cphalcon/issues/902">902</a>, <a href="https://github.com/phalcon/cphalcon/issues/1025">1025</a>, <a href="https://github.com/phalcon/cphalcon/issues/1030">1030</a>, <a href="https://github.com/phalcon/cphalcon/issues/1041">1041</a>, <a href="https://github.com/phalcon/cphalcon/issues/1050">1050</a>, <a href="https://github.com/phalcon/cphalcon/issues/1063">1063</a>, <a href="https://github.com/phalcon/cphalcon/issues/1076">1076</a>, <a href="https://github.com/phalcon/cphalcon/issues/1081">1081</a>, <a href="https://github.com/phalcon/cphalcon/issues/1114">1114</a>, <a href="https://github.com/phalcon/cphalcon/issues/1120">1120</a>, <a href="https://github.com/phalcon/cphalcon/issues/1158">1158</a>, <a href="https://github.com/phalcon/cphalcon/issues/1195">1195</a>, <a href="https://github.com/phalcon/cphalcon/issues/1206">1206</a>, <a href="https://github.com/phalcon/cphalcon/issues/1214">1214</a>, <a href="https://github.com/phalcon/cphalcon/issues/1370">1370</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Logger</code>:
+<ul>
+<li>Added FirePHP Log Adapter and Formatter (<a href="https://github.com/phalcon/cphalcon/issues/845">845</a>, <a href="https://github.com/phalcon/cphalcon/issues/1333">1333</a>)</li>
+<li>Implemented <code>Phalcon\Logger\Adapter::isTransaction()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1238">1238</a>)</li>
+<li>Fixed a bug preventing the <code>EMERGENCY</code> log type from being displayed correctly (<a href="https://github.com/phalcon/cphalcon/issues/1498">1498</a>)</li>
+<li>Added <code>Phalcon\Logger\Adapter\File::getPath()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1495">1495</a>, <a href="https://github.com/phalcon/cphalcon/issues/1508">1508</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Mvc</code>:
+<ul>
+<li><code>Phalcon\Mvc\Application::handle()</code> now checks whether the class exists before include()‘ing its file (<a href="https://github.com/phalcon/cphalcon/issues/812">812</a>, <a href="https://github.com/phalcon/cphalcon/issues/818">818</a>)</li>
+<li><code>Phalcon\Mvc\Model\Criteria::fromInput()</code> now sets<code> _modelName</code> (<a href="https://github.com/phalcon/cphalcon/issues/816">866</a>, <a href="https://github.com/phalcon/cphalcon/issues/873">873</a>)</li>
+<li><code>Phalcon\Mvc\Model\Query\Builder</code> may now use both integer and string placeholders (<a href="https://github.com/phalcon/cphalcon/issues/701">701</a>)</li>
+<li><code>Mvc\Model\getMessages()</code> is filterable now (<a href="https://github.com/phalcon/cphalcon/issues/885">885</a>)</li>
+<li>Fixed hasManyToMany relation implementation (<a href="https://github.com/phalcon/cphalcon/issues/938">938</a>)</li>
+<li>Fixed regular expression in <code>\Phalcon\Mvc\Model\Validator\Email</code> (<a href="https://github.com/phalcon/cphalcon/issues/1243">1243</a>)</li>
+<li><code>Phalcon\Mvc\Model::hasOne</code>/<code>hasMany</code>/<code>belongsTo</code>/<code>hasManyToMany</code>/<code>addBehavior()</code> are now public methods (<a href="https://github.com/phalcon/cphalcon/issues/1166">1166</a>)</li>
+<li>Added <code>Phalcon\Mvc\Model\Row::toArray()</code> method (<a href="https://github.com/phalcon/cphalcon/issues/1506">1506</a>)</li>
+<li><code>Phalcon\Mvc\Model\Validator::getOption()</code> returns <code>NULL</code> if the option does not exist (<a href="https://github.com/phalcon/cphalcon/issues/1530">1530</a>)</li>
+<li>Bug with a custom Events Manager in <code>Phalcon\Mvc\Models</code> (<a href="https://github.com/phalcon/cphalcon/issues/1314">1314</a>)</li>
+<li><code>Phalcon\Mvc\Model\Query\Builder::__construct()</code> does not ignore joins anymore (<a href="https://github.com/phalcon/cphalcon/issues/1327">1327</a>)</li>
+<li>Fixed <code>HAVING</code> handling in <code>Phalcon\Mvc\Model\Query\Builder</code> (<a href="https://github.com/phalcon/cphalcon/issues/1396">1396</a>)</li>
+<li>Micro Collections return <code>Phalcon\Mvc\Micro\CollectionInterface</code> (<a href="https://github.com/phalcon/cphalcon/issues/1130">1130</a>)</li>
+<li><code>Phalcon\Mvc\Url::get()</code> can append query params (<a href="https://github.com/phalcon/cphalcon/issues/723">723</a>, <a href="https://github.com/phalcon/cphalcon/issues/877">877</a>)</li>
+<li>Regular Expression Optimization for <code>Phalcon\Mvc\Router</code> (<a href="https://github.com/phalcon/cphalcon/issues/977">977</a>)</li>
+<li>PHQL: added placeholders support to <code>LIMIT</code> (<a href="https://github.com/phalcon/cphalcon/issues/1023">1023</a>)</li>
+<li>Added <code>Phalcon\Mvc\Router::getDefaultXXX()</code> methods (<a href="https://github.com/phalcon/cphalcon/issues/1087">1087</a>)</li>
+<li>Allow <code>HAVING</code> without <code>GROUP BY</code> in query builder (<a href="https://github.com/phalcon/cphalcon/issues/1115">1115</a>)</li>
+<li>mvc/model/query.c optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1129">1129</a>, <a href="https://github.com/phalcon/cphalcon/issues/1132">1132</a>)</li>
+<li>Added support for array(limit, offset]) as a ‘limit’ constructor key in Query Builder (<a href="https://github.com/phalcon/cphalcon/issues/1208">1208</a>)</li>
+<li>Added support for ‘conditions’ in <code>Phalcon\Mvc\Model\Query\Builder::__construct()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1236">1236</a>)</li>
+<li>Added <code>Phalcon\Mvc\View::isDisabled()</code>, <code>Phalcon\Mvc\View::getRenderLevel()</code>, <code>Phalcon\Mvc\View::getDisabledLevels()</code> (<a href="https://github.com/phalcon/cphalcon/issues/907">907</a>, <a href="https://github.com/phalcon/cphalcon/issues/1320">1320</a>)</li>
+<li>Added <code>Phalcon\Mvc\View::getCurrentRenderLevel()</code> (<a href="https://github.com/phalcon/cphalcon/issues/907">907</a>, <a href="https://github.com/phalcon/cphalcon/issues/1326">1326</a>)</li>
+<li>Bug fix in <code>Phalcon\Mvc\Model\Resultset\Simple::toArray()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1377">1377</a>)</li>
+<li>Bug fixes in Volt compiler (<a href="https://github.com/phalcon/cphalcon/issues/1387">1387</a>)</li>
+<li><code>Phalcon\Mvc\Model\Query\Builder</code> optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1414">1414</a>)</li>
+<li>Allow to set dirs without trailing slashes in <code>Phalcon\Mvc\View</code> (<a href="https://github.com/phalcon/cphalcon/issues/406">406</a>, <a href="https://github.com/phalcon/cphalcon/issues/1440">1440</a>)</li>
+<li><code>Phalcon\Mvc\Model\Validator::getOption()</code> returns null if option does not exists (<a href="https://github.com/phalcon/cphalcon/issues/1531">1531</a>)</li>
+<li>Added <code>Phalcon\Mvc\Model::selectWriteConnection()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1519">1519</a>)</li>
+<li>Added <code>Phalcon\Mvc\Router\Group::convert()</code>/<code>getConverters()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1555">1555</a>, <a href="https://github.com/phalcon/cphalcon/issues/1572">1572</a>)</li>
+<li>Faster <code>Phalcon\Mvc\Model\Row</code> (<a href="https://github.com/phalcon/cphalcon/issues/1606">1606</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Flash</code>:
+<ul>
+<li><code>Phalcon\Flash\Session::getMessage(&#39;key&#39;)</code> returns now an empty array if the key is not found (<a href="https://github.com/phalcon/cphalcon/issues/908">908</a>, <a href="https://github.com/phalcon/cphalcon/issues/920">920</a>)</li>
+<li><code>Phalcon\Flash\Session::getMessages()</code> incorrectly removed all messages (<a href="https://github.com/phalcon/cphalcon/issues/1575">1575</a>)</li>
+<li>Implemented <code>Phalcon\Flash\Session::isset()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1342">1342</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Paginator</code>:
+<ul>
+<li><code>Phalcon\Paginator\Adapter\Model</code> returns correct results even when page number is incorrect (<a href="https://github.com/phalcon/cphalcon/issues/1654">1654</a>)</li>
+<li>Optimized <code>Phalcon\Paginator\Adapter\QueryBuilder</code> (<a href="https://github.com/phalcon/cphalcon/issues/1632">1632</a>)</li>
+<li><code>setCurrentPage()</code> returns $this for all adapters (<a href="https://github.com/phalcon/cphalcon/issues/1633">1633</a>)</li>
+<li>Optimized <code>Phalcon\Paginator\Adapter\NativeArray</code> (<a href="https://github.com/phalcon/cphalcon/issues/1653">1653</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Queue</code>:
+<ul>
+<li>Fixed bug in <code>Phalcon\Queue\Beanstalk::read()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1348">1348</a>, <a href="https://github.com/phalcon/cphalcon/issues/1612">1612</a>)</li>
+<li>Bug fixes in beanstalkd protocol implementation</li>
+<li>Optimizations (<a href="https://github.com/phalcon/cphalcon/issues/1621">1621</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Security</code>:
+<ul>
+<li><code>Phalcon\Security\Exception</code> inherits from <code>Phalcon\Exception</code>, not from <code>\Phalcon\DI\Exception</code></li>
+<li>Added <code>Phalcon\Security::computeHmac()</code> (
+<a href="https://github.com/phalcon/cphalcon/issues/1347">1347</a>)</li>
+<li>Bug fixes (<a href="https://github.com/phalcon/cphalcon/issues/1347">1347</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Session</code>:
+<ul>
+<li>Fix <code>Phalcon\Session\Bag::remove()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1637">1637</a>)</li>
+<li><code>Phalcon\Session\Adapter::get()</code> may optionally remove the data from session (<a href="https://github.com/phalcon/cphalcon/issues/1358">1358</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Tag</code>:
+<ul>
+<li>Fixed bugs (<a href="https://github.com/phalcon/cphalcon/issues/903">903</a>)</li>
+<li>Fixed radio button generation (<a href="https://github.com/phalcon/cphalcon/issues/947">947</a>)</li>
+<li>Fixed inconsistent behavior of <code>setAutoescape()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1263">1263</a>)</li>
+<li>Added missing HTML5 input types (<a href="https://github.com/phalcon/cphalcon/issues/824">824</a>, <a href="https://github.com/phalcon/cphalcon/issues/1323">1323</a>)</li>
+<li>Added <code>Phalcon\Tag::setTitleSeparator()</code> (<a href="https://github.com/phalcon/cphalcon/issues/1365">1365</a>)</li>
+<li>Added support for  (<a href="https://github.com/phalcon/cphalcon/issues/1422">1422</a>)</li>
+<li>Fixed inconsistency in <code>Tag::stylesheetLink</code>/<code>javascriptInclude</code> w.r.t. local URLs (<a href="https://github.com/phalcon/cphalcon/issues/1486">1486</a>)</li>
+</ul>
+</li>
+<li><code>Phalcon\Validation</code>:
+<ul>
+<li>Added support for error codes (<a href="https://github.com/phalcon/cphalcon/issues/1171">1171</a>)</li>
+<li>Bug fixes (<a href="https://github.com/phalcon/cphalcon/issues/1399">1399</a>)</li>
+<li>Optimized <code>Phalcon\Validation\Message\Group</code> by using native iterators (<a href="https://github.com/phalcon/cphalcon/issues/1657">1657</a>)</li>
+</ul>
+</li>
+<li>Unit tests:
+<ul>
+<li>Travis CI improvements (<a href="https://github.com/phalcon/cphalcon/issues/819">819</a>, <a href="https://github.com/phalcon/cphalcon/issues/846">846</a>, <a href="https://github.com/phalcon/cphalcon/issues/949">949</a>)</li>
+<li>Use markTestSkipped(]) instead of echo (<a href="https://github.com/phalcon/cphalcon/issues/862">862</a>)</li>
+<li>Do not run APC tests under CLI when apc.enable_cli is 0</li>
+<li>Added new tests (<a href="https://github.com/phalcon/cphalcon/issues/865">865</a>, <a href="https://github.com/phalcon/cphalcon/issues/1256">1256</a>, <a href="https://github.com/phalcon/cphalcon/issues/1260">1260</a>, <a href="https://github.com/phalcon/cphalcon/issues/1339">1339</a>, <a href="https://github.com/phalcon/cphalcon/issues/1560">1560</a>, <a href="https://github.com/phalcon/cphalcon/issues/1563">1563</a>)</li>
+<li>Skip database tests when the DBMS is not available (<a href="https://github.com/phalcon/cphalcon/issues/970">970</a>)</li>
+<li>Support for optional RVO (<a href="https://github.com/phalcon/cphalcon/issues/1147">1147</a>)</li>
+<li>Added support for test coverage visualization (<a href="https://github.com/phalcon/cphalcon/issues/1307">1307</a>, <a href="https://github.com/phalcon/cphalcon/issues/1361">1361</a>)</li>
+<li>Bug fixes in tests (<a href="https://github.com/phalcon/cphalcon/issues/1313">1313</a>, <a href="https://github.com/phalcon/cphalcon/issues/1334">1334</a>, <a href="https://github.com/phalcon/cphalcon/issues/1335">1335</a>, 1449, <a href="https://github.com/phalcon/cphalcon/issues/1467">1467</a>)</li>
+</ul>
+</li>
+<li>Documentation bug fixes (<a href="https://github.com/phalcon/cphalcon/issues/1069">1069</a>, <a href="https://github.com/phalcon/cphalcon/issues/1070">1070</a>, <a href="https://github.com/phalcon/cphalcon/issues/1072">1072</a>, <a href="https://github.com/phalcon/cphalcon/issues/1145">1145</a>, <a href="https://github.com/phalcon/cphalcon/issues/1146">1146</a>, <a href="https://github.com/phalcon/cphalcon/issues/1205">1205</a>, <a href="https://github.com/phalcon/cphalcon/issues/1372">1372</a>, <a href="https://github.com/phalcon/cphalcon/issues/1397">1397</a>, <a href="https://github.com/phalcon/cphalcon/issues/1521">1521</a>, <a href="https://github.com/phalcon/cphalcon/issues/1523">1523</a>, <a href="https://github.com/phalcon/cphalcon/issues/1586">1586</a>, lots of them])</li>
+<li>Refactored, improved and optimized build script (<a href="https://github.com/phalcon/cphalcon/issues/1218">1218</a>)</li>
+<li>Other bug fixes (<a href="https://github.com/phalcon/cphalcon/issues/1051">1051</a>, <a href="https://github.com/phalcon/cphalcon/issues/1131">1131</a>, <a href="https://github.com/phalcon/cphalcon/issues/1040">1040</a>, <a href="https://github.com/phalcon/cphalcon/issues/1275">1275</a>, <a href="https://github.com/phalcon/cphalcon/issues/1392">1392</a>, <a href="https://github.com/phalcon/cphalcon/issues/1396">1396</a>, <a href="https://github.com/phalcon/cphalcon/issues/1399">1399</a>, 1425, 1426…)</li>
+</ul>
+<h2 id="help-with-testing">Help with Testing</h2>
+<p>This version can be installed from the 1.3.0 branch:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#88C0D0">git</span><span style="color:#A3BE8C"> clone</span><span style="color:#A3BE8C"> https://github.com/phalcon/cphalcon</span></span>
+<span class="line"><span style="color:#88C0D0">cd</span><span style="color:#A3BE8C"> build</span></span>
+<span class="line"><span style="color:#88C0D0">git</span><span style="color:#A3BE8C"> checkout</span><span style="color:#B48EAD"> 1.3.0</span></span>
+<span class="line"><span style="color:#88C0D0">sudo</span><span style="color:#A3BE8C"> ./install</span></span></code></pre>
+<p>We welcome your comments regarding this new release. If you discover any bugs, please (if possible) create a failing test and submit a pull request, alongside with an issue on Github.</p>
+<p>Thanks!</p><div data-pagefind-ignore><hr><p>Chat - Q&amp;A</p><ul><li><a href="https://phalcon.io/discord">Discord Chat</a></li><li><a href="https://github.com/phalcon/cphalcon/discussions">Discussions (v4,v5)</a></li><li><a href="https://github.com/phalcon/phalcon/discussions">Discussions (v6+)</a></li><li><a href="https://phalcon.io/forum">Forum (archive)</a></li></ul><p>Support</p><ul><li><a href="https://phalcon.io/fund">OpenCollective - Support Us</a></li></ul><p>Social Media</p><ul><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://dev.to/phalcon">DevTo</a></li><li><a href="https://phalcon.io/reddit">Reddit</a></li><li><a href="https://phalcon.io/linkedin">LinkedIn</a></li><li><a href="https://phalcon.io/fb">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li></ul><p>Videos</p><ul><li><a href="https://phalcon.io/bitchute">BitChute</a></li><li><a href="https://phalcon.io/brighteon">Brighteon</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><p>&lt;3 Phalcon Team</p></div></div><div class="phalcon-blog__tags-items"><a href="/tags#php" class="phalcon-blog__tags-item"><span>php</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span></a><a href="/tags#1-3" class="phalcon-blog__tags-item"><span>1.3</span></a><a href="/tags#beta" class="phalcon-blog__tags-item"><span>beta</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span></a><a href="/tags#1-x" class="phalcon-blog__tags-item"><span>1.x</span></a></div></div></div><div class="phalcon-blog__right" data-pagefind-ignore><div class="phalcon-blog__right-item phalcon-blog__sponsors"><div class="phalcon-blog__title">Supporters</div></div><div class="phalcon-blog__right-item phalcon-blog__projects"><div class="phalcon-blog__title">Projects</div><div class="phalcon-blog__projects-text">We're a nonprofit organization that creates&nbsp; solutions for web developers. Our products are&nbsp;<a href="https://phalcon.io">Phalcon</a>,&nbsp;<a href="https://zephir-lang.com">Zephir</a> and&nbsp;<a href="https://github.com/phalcon?type=source">others</a>.&nbsp; If you would like to help us stay free and open,&nbsp; please consider <a href="https://phalcon.io/fund">supporting us</a>.</div></div><div class="phalcon-blog__right-item phalcon-blog__tags"><div class="phalcon-blog__title">Tags</div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span><span>(72)</span></a><a href="/tags#phalcon4" class="phalcon-blog__tags-item"><span>phalcon4</span><span>(74)</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span><span>(154)</span></a><a href="/tags#zephir" class="phalcon-blog__tags-item"><span>zephir</span><span>(19)</span></a><a href="/tags#lts" class="phalcon-blog__tags-item"><span>lts</span><span>(25)</span></a><a href="/tags#hangout" class="phalcon-blog__tags-item"><span>hangout</span><span>(27)</span></a><a href="/tags#github" class="phalcon-blog__tags-item"><span>github</span><span>(6)</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span><span>(255)</span></a><a href="/tags#community" class="phalcon-blog__tags-item"><span>community</span><span>(27)</span></a><a href="/tags#update" class="phalcon-blog__tags-item"><span>update</span><span>(39)</span></a><a href="/tags#roadmap" class="phalcon-blog__tags-item"><span>roadmap</span><span>(12)</span></a><a href="/tags#framework" class="phalcon-blog__tags-item"><span>framework</span><span>(26)</span></a><a href="/tags#benchmarks" class="phalcon-blog__tags-item"><span>benchmarks</span><span>(3)</span></a></div><a href="/tags" class="phalcon-blog__item-read-more">Show More</a></div></div></div></div><div data-pagefind-ignore><footer class="footer"><div class="container"><ul class="footer-nav"><li><a href="https://phalcon.io/blog">Blog</a></li><li><a href="https://phalcon.io/discord">Discord</a></li><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://phalcon.io/f">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li><li><a href="https://phalcon.io/bitchute">Bitchute</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><div class="footer__license">Phalcon is an open-source PHP framework built as a C-extension.<br>It is available under the  new BSD License.</div><div class="footer__supported"><span>Supported By</span><a href="https://odva.pro/" target="_blank" class="footer__supported-logo" aria-label="odva.pro"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="31" fill="none" viewBox="0 0 38 31"><path stroke="#273646" stroke-opacity=".7" stroke-width="3" d="M15.375 29.353c7.553 0 13.676-6.123 13.676-13.677C29.051 8.123 22.928 2 15.375 2S1.698 8.123 1.698 15.677c0 7.553 6.124 13.676 13.677 13.676Z"></path><path fill="#273646" fill-opacity=".7" d="M33.904 23.618H32.14v7.059h1.764v-7.06ZM37.434 23.618h-1.765v7.059h1.765v-7.06Z"></path></svg></a></div></div></footer></div><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.Cikc9LE_.js"></script></body></html>

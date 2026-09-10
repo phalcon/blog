@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en"><head><title>Upgrading to Phalcon v4.0.0-alpha1</title><meta name="viewport" content="width=device-width"><meta name="MobileOptimized" content="320"><meta name="HandheldFriendly" content="true"><meta charset="utf-8"><meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0"><meta name="author" content="Phalcon Team"><meta name="application-name" content="Phalcon Blog"><meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="article:published_time" content="2018-12-27T16:41:03.192Z"><!-- Facebook --><meta property="og:url" content="https://blog.phalcon.io"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="Upgrading to Phalcon v4.0.0-alpha1"><meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="og:site_name" content="Phalcon Blog"><meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Upgrading to Phalcon v4.0.0-alpha1"><meta name="twitter:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta name="twitter:image:alt" content="Phalcon Blog"><meta name="twitter:site" content="@phalconphp"><meta name="twitter:creator" content="Phalcon Team"><meta itemprop="image" content="https://blog.phalcon.io/assets/files/phalcon-logo-320x180.png"><meta itemprop="publisher" content="Phalcon Team"><meta name="telegram:channel" content="@phalcon_news"><link rel="canonical" href="https://blog.phalcon.io/post/upgrading-to-v4-alpha-1"><link rel="publisher" href="https://blog.phalcon.io"><link rel="author" href="/humans.txt"><link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png"><link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"><link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"><link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a"><meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml"><meta name="msapplication-TileColor" content="#273646"><meta name="theme-color" content="#273646"><link rel="alternate" type="application/rss+xml" title="Phalcon Blog - We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" href="/feed.xml"><script>document.documentElement.classList.add(localStorage.getItem('mode') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('mode'))</script><script type="module" src="https://assets.phalcon.io/phalcon/js/theme.min.js"></script><link rel="stylesheet" href="https://assets.phalcon.io/css/style.css"><link rel="stylesheet" type="text/css" href="https://blog.phalcon.io/css/style.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JGM81GDBF"></script><script>(function(){const analyticsId = "G-9JGM81GDBF";
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+        })();</script><style>.header__search-wrapper[data-astro-cid-nen7h5rs]{position:relative}#header-search-results[data-astro-cid-nen7h5rs]{background:var(--color-bg,#fff);z-index:20;border-radius:8px;width:24rem;max-height:70vh;margin-top:.5rem;position:absolute;top:100%;left:0;overflow-y:auto;box-shadow:0 8px 24px #00000026}
+</style></head><body><div data-pagefind-ignore><header class="header" data-astro-cid-nen7h5rs><div class="container" data-astro-cid-nen7h5rs><div class="header__left" data-astro-cid-nen7h5rs><button class="header-nav__burger" aria-label="burger button" data-astro-cid-nen7h5rs><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span><span data-astro-cid-nen7h5rs></span></button><div class="header__logo" data-astro-cid-nen7h5rs><a href="/" aria-label="logo" data-astro-cid-nen7h5rs></a><div class="header__sitename" data-astro-cid-nen7h5rs>Blog</div></div><ul class="header-nav" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="expand" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><div class="header-dropdown-wrapper" data-astro-cid-nen7h5rs><ul class="header-dropdown header-dropdown--eco" data-astro-cid-nen7h5rs><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></div></li></ul><nav class="header-nav--mobile _navToggle" data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/docs" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/about" data-astro-cid-nen7h5rs>Contribute</a></li><li class="extendable extended" data-astro-cid-nen7h5rs><a href="#" data-astro-cid-nen7h5rs>Community</a><ul class="header-dropdown--mobile" data-astro-cid-nen7h5rs><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Social</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/telegram" data-astro-cid-nen7h5rs>Telegram</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/gab" data-astro-cid-nen7h5rs>Gab</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/mewe" data-astro-cid-nen7h5rs>MeWe</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/fb" data-astro-cid-nen7h5rs>Facebook</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/t" data-astro-cid-nen7h5rs>X (twitter)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/bitchute" data-astro-cid-nen7h5rs>Bitchute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/lbry" data-astro-cid-nen7h5rs>LBRY</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/youtube" data-astro-cid-nen7h5rs>YouTube</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/linkedin" data-astro-cid-nen7h5rs>LinkedIn</a></li></ul></li><li class="header-dropdown--mobile__title" data-astro-cid-nen7h5rs>Help</li><li data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io/" data-astro-cid-nen7h5rs>Documentation</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v3/v4/v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-nen7h5rs>Github discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" data-astro-cid-nen7h5rs>Stack Overflow</a></li></ul></li></ul></li></ul></nav><div class="header__search-wrapper" data-astro-cid-nen7h5rs><input type="text" id="header-search-input" class="header__search" placeholder="Search..." aria-label="Search" autocomplete="off" data-astro-cid-nen7h5rs><div id="header-search-results" class="phalcon-blog-detail" hidden data-astro-cid-nen7h5rs><div id="articles" data-astro-cid-nen7h5rs></div></div></div></div><div class="header__right" data-astro-cid-nen7h5rs><div class="header__github" data-astro-cid-nen7h5rs><a href="https://phalcon.io/github" aria-label="github" data-astro-cid-nen7h5rs><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-nen7h5rs><path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white" data-astro-cid-nen7h5rs></path></svg></a></div><div class="header__discord" data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" aria-label="discord" data-astro-cid-nen7h5rs><svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240" data-astro-cid-nen7h5rs><style>.st0 {
+                            fill: #FFFFFF;
+                        }</style><path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" data-astro-cid-nen7h5rs></path><path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" data-astro-cid-nen7h5rs></path></svg></a></div><div class="switcher" data-astro-cid-nen7h5rs><button aria-label="Theme switcher" data-astro-cid-nen7h5rs></button></div></div></div></header><script type="module" src="/_astro/Header.astro_astro_type_script_index_0_lang.CbfoULXM.js"></script></div><div class="phalcon-blog"><div class="container"><div class="phalcon-blog__main"><div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article"><h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">Upgrading to Phalcon v4.0.0-alpha1</h2><div class="phalcon-blog-detail__info"><div id="phalcon-blog-detail__date" class="phalcon-blog-detail__date" itemprop="datePublished" data-pagefind-meta="date" content="2018-12-27">Dec 27, 2018</div><div id="phalcon-blog-detail__author" class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span></div><div class="phalcon-blog-detail__author">Read time: 11 minutes</div></div><div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body><p>This blog post will help you upgrade your existing Phalcon application to v4-alpha1. We will outline the areas that you need to pay attention to and make necessary alterations so that your code can run as smooth as it has been with v3. Although the changes are significant, it is more of a methodical task than a daunting one.</p>
+<h3 id="php-72">PHP 7.2</h3>
+<p>Phalcon v4-alpha1 supports only PHP 7.2 and above. PHP 7.1 has been released 2 years ago and its active support will end in roughly a month from the time of this blog post, so we decided to only support active PHP versions.</p>
+<h3 id="psr">PSR</h3>
+<p>Phalcon requires the PSR extension. The extension can be downloaded and compiled from <a href="https://github.com/jbboehr/php-psr.git">this</a> GitHub repository. Installation instructions are available on the README of the repository. Once the extension has been compiled and is available in your system, you will need to load it to your <code>php.ini</code>. In order to load this extension before phalcon you can either add</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D8DEE9">extension</span><span style="color:#81A1C1">=</span><span style="color:#A3BE8C">psr.so</span></span></code></pre>
+<p>before</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D8DEE9">extension</span><span style="color:#81A1C1">=</span><span style="color:#A3BE8C">phalcon.so</span></span></code></pre>
+<p>Alternatively some distributions number prefix their <code>ini</code> files. If that is the case, choose a high number for Phalcon (e.g. <code>50-phalcon.ini</code>).</p>
+<h3 id="installation">Installation</h3>
+<p>Download <code>zephir.phar</code> from <a href="https://github.com/phalcon/zephir/releases/tag/0.11.8">here</a>. Add it to a folder that can be accessed by your system.</p>
+<p>Clone the repository</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#88C0D0">git</span><span style="color:#A3BE8C"> clone</span><span style="color:#A3BE8C"> https://github.com/phalcon/cphalcon</span></span></code></pre>
+<p>Compile Phalcon</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#88C0D0">cd</span><span style="color:#A3BE8C"> cphalcon/</span></span>
+<span class="line"><span style="color:#88C0D0">git</span><span style="color:#A3BE8C"> checkout</span><span style="color:#A3BE8C"> tags/v4.0.0-alpha1</span><span style="color:#A3BE8C"> ./</span></span>
+<span class="line"><span style="color:#88C0D0">zephir</span><span style="color:#A3BE8C"> fullclean</span></span>
+<span class="line"><span style="color:#88C0D0">zephir</span><span style="color:#A3BE8C"> build</span></span></code></pre>
+<p>Check the module</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#88C0D0">php</span><span style="color:#A3BE8C"> -m</span><span style="color:#81A1C1"> |</span><span style="color:#88C0D0"> grep</span><span style="color:#A3BE8C"> phalcon</span></span></code></pre>
+<h3 id="changes">Changes</h3>
+<p>Now that you have the v4-alpha1 installed, you can start using it with your application. Unless your application is extremely simple and uses only components that somehow were not changed (highly unlikely), your application will work out of the box.</p>
+<h4 id="interfaces">Interfaces</h4>
+<p>For those that have not worked with PHP 7+, there is support for typed parameters. For instance this code works both on PHP 5 and 7</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">function</span><span style="color:#88C0D0"> hello</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">name</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">name</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span><span style="color:#D8DEE9FF"> </span></span></code></pre>
+<p>However with PHP 7+ you can do this:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">function</span><span style="color:#88C0D0"> hello</span><span style="color:#ECEFF4">(</span><span style="color:#81A1C1">string</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">name</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#ECEFF4">{</span></span>
+<span class="line"><span style="color:#81A1C1">    echo</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">name</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#ECEFF4">}</span><span style="color:#D8DEE9FF"> </span></span></code></pre>
+<p>If <code>$name</code> is not a string, you will get an error from PHP. Phalcon utilizes this functionality to ensure that whatever you pass in the methods of components is of the correct type. As a result we have removed a lot of code that was only checking passed parameters, thus making the framework much faster with this change alone. You will definitely need to check the parameters that you pass to relevant methods and perhaps do some sanitization before calling methods in your application.</p>
+<p>This particular step could very well be taxing depending on how your input is processed and passed to the relevant Phalcon components.</p>
+<p>We went through pretty much all interfaces and classes that implement them and corrected inconsistencies. There have been times where an interface would define a method with a <code>string</code> variable, only to see in the actual class that implements it using a <code>var</code> (any type) as the parameter for the same method. We have aligned all these interfaces and also enriched the interfaces with additional methods for several components. More on that below.</p>
+<h3 id="applications">Applications</h3>
+<ul>
+<li>The <code>Phalcon\Mvc\Application</code>, <code>Phalcon\Mvc\Micro</code> and <code>Phalcon\Mvc\Router</code> now must have a URI to process</li>
+</ul>
+<h4 id="cache">Cache</h4>
+<p><code>xcache</code>, <code>apc</code> and <code>memcache</code> adapters have been deprecated and removed. The first two are not supported for PHP 7.2+. <code>apc</code> has been replaced with <code>apcu</code> and <code>memcache</code> can be replaced with the <code>libmemcached</code> one.</p>
+<ul>
+<li>Removed <code>Phalcon\Annotations\Adapter\Apc</code></li>
+<li>Removed <code>Phalcon\Annotations\Adapter\Xcache</code></li>
+<li>Removed <code>Phalcon\Cache\Backend\Apc</code></li>
+<li>Removed <code>Phalcon\Cache\Backend\Memcache</code></li>
+<li>Removed <code>Phalcon\Cache\Backend\Xcache</code></li>
+<li>Removed <code>Phalcon\Mvc\Model\Metadata\Apc</code></li>
+<li>Removed <code>Phalcon\Mvc\Model\Metadata\Memcache</code></li>
+<li>Removed <code>Phalcon\Mvc\Model\Metadata\Xcache</code></li>
+</ul>
+<h3 id="cli">CLI</h3>
+<ul>
+<li>CLI parameters now work like MVC parameters</li>
+</ul>
+<h3 id="exceptions">Exceptions</h3>
+<ul>
+<li>Changed catch <code>Exception</code> to <code>Throwable</code></li>
+</ul>
+<h3 id="models">Models</h3>
+<ul>
+<li>You can no longer assign data to models while saving them</li>
+</ul>
+<h4 id="components">Components</h4>
+<h4 id="acl">Acl</h4>
+<p>Since <code>resource</code> is a reserved word in PHP, it has been causing serious issues with Phalcon. As a result we had to rename components that use the word <code>resource</code> as their class name or method name. We have renamed the <code>Acl</code> sub classes as follows:</p>
+<ul>
+<li><code>Resource</code> is now <code>Subject</code>. This is the focus of your ACL. What are you allowing, what is the subject of your application? : <code>/users/</code>, <code>/login</code> etc.
+<ul>
+<li>Renamed <code>Phalcon\Acl\Resource</code> to <code>Phalcon\Acl\Subject</code></li>
+<li>Renamed <code>Phalcon\Acl\ResourceInterface</code> to <code>Phalcon\Acl\SubjectInterface</code></li>
+<li>Renamed <code>Phalcon\Acl\ResourceAware</code> to <code>Phalcon\Acl\SubjectAware</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::isResource</code> to <code>Phalcon\Acl\AdapterInterface::isSubject</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::addResource</code> to <code>Phalcon\Acl\AdapterInterface::addSubject</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::addResourceAccess</code> to <code>Phalcon\Acl\AdapterInterface::addSubjectAccess</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::dropResourceAccess</code> to <code>Phalcon\Acl\AdapterInterface::dropSubjectAccess</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::getActiveResource</code> to <code>Phalcon\Acl\AdapterInterface::getActiveSubject</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::getResources</code> to <code>Phalcon\Acl\AdapterInterface::getSubjects</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter::getActiveResource</code> to <code>Phalcon\Acl\AdapterInterface::getActiveSubject</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::isResource</code> to <code>Phalcon\Acl\Adapter\Memory::isSubject</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::addResource</code> to <code>Phalcon\Acl\Adapter\Memory::addSubject</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::addResourceAccess</code> to <code>Phalcon\Acl\Adapter\Memory::addSubjectAccess</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::dropResourceAccess</code> to <code>Phalcon\Acl\Adapter\Memory::dropSubjectAccess</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::getResources</code> to <code>Phalcon\Acl\Adapter\Memory::getSubjects</code></li>
+</ul>
+</li>
+<li><code>Role</code> is now called <code>Operation</code>. This is the group that you wish to bind to <code>subjects</code>. <code>Subjects</code> perform one or more <code>Operations</code>
+<ul>
+<li>Renamed <code>Phalcon\Acl\Role</code> to <code>Phalcon\Acl\Operation</code></li>
+<li>Renamed <code>Phalcon\Acl\RoleInterface</code> to <code>Phalcon\Acl\OperationInterface</code></li>
+<li>Renamed <code>Phalcon\Acl\RoleAware</code> to <code>Phalcon\Acl\OperationAware</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::getRoless</code> to <code>Phalcon\Acl\AdapterInterface::getOperations</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::addRole</code> to <code>Phalcon\Acl\AdapterInterface::addOperation</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::isRole</code> to <code>Phalcon\Acl\AdapterInterface::isOperation</code></li>
+<li>Renamed <code>Phalcon\Acl\AdapterInterface::getActiveRole</code> to <code>Phalcon\Acl\AdapterInterface::getActiveOperation</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter::getActiveRole</code> to <code>Phalcon\Acl\AdapterInterface::getActiveOperation</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::addRole</code> to <code>Phalcon\Acl\Adapter\Memory::addOperation</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::isRole</code> to <code>Phalcon\Acl\Adapter\Memory::isOperation</code></li>
+<li>Renamed <code>Phalcon\Acl\Adapter\Memory::getRoless</code> to <code>Phalcon\Acl\Adapter\Memory::getOperations</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="acladaptermemory">Acl\Adapter\Memory</h4>
+<ul>
+<li>Added <code>getActiveKey</code>, <code>activeFunctionCustomArgumentsCount</code> and <code>getActiveFunction</code> to get latest key, number of custom arguments, and function used to acquire access</li>
+<li>Added <code>addOperation</code> support multiple inherited</li>
+</ul>
+<h4 id="assets">Assets</h4>
+<p>Similar to the <code>Acl</code> component <code>Resource</code> has been renamed to <code>Asset</code>. Specifically:</p>
+<ul>
+<li><code>Assets\Resource</code> is now <code>Assets\Asset</code>
+<ul>
+<li>Renamed <code>Phalcon\Assets\Resource</code> to <code>Phalcon\Assets\Asset</code></li>
+<li>Renamed <code>Phalcon\Assets\ResourceInterface</code> to <code>Phalcon\Assets\AssetInterface</code></li>
+<li>Renamed <code>Phalcon\Assets\Manager::addResource</code> to <code>Phalcon\Assets\Manager::addAsset</code></li>
+<li>Renamed <code>Phalcon\Assets\Manager::addResourceByType</code> to <code>Phalcon\Assets\Manager::addAssetByType</code></li>
+<li>Renamed <code>Phalcon\Assets\Manager::collectionResourcesByType</code> to <code>Phalcon\Assets\Manager::collectionAssetsByType</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="cachebackend">Cache\Backend*</h4>
+<ul>
+<li>Changed <code>get</code> to use only positive numbers for <code>lifetime</code></li>
+</ul>
+<h4 id="cachebackendredis">Cache\Backend\Redis</h4>
+<ul>
+<li>Made the <code>specialKey</code> (<code>_PHCR</code>) optional</li>
+<li>By configuring <code>prefix</code> and <code>statsKey</code> the <code>queryKeys</code> no longer returns prefixed keys, now it returns original keys without prefix.</li>
+</ul>
+<h4 id="db">Db</h4>
+<ul>
+<li>Added global setting <code>orm.case_insensitive_column_map</code> to attempt to find value in the column map case-insensitively. Can be also enabled by setting <code>caseInsensitiveColumnMap</code> key in <code>\Phalcon\Mvc\Model::setup()</code>.</li>
+</ul>
+<h4 id="cliconsole">Cli\Console</h4>
+<ul>
+<li>Removed <code>Phalcon\Cli\Console::addModules</code> in favor of <code>Phalcon\Cli\Console::registerModules</code></li>
+</ul>
+<h4 id="clirouterrouteinterface">Cli\Router\RouteInterface</h4>
+<ul>
+<li>Added <code>delimiter</code>, <code>getDelimiter</code></li>
+</ul>
+<h4 id="clidispatcher">Cli\Dispatcher</h4>
+<ul>
+<li>Added <code>getTaskSuffix()</code>, <code>setTaskSuffix()</code></li>
+</ul>
+<h4 id="clidispatcherinterface">Cli\DispatcherInterface</h4>
+<ul>
+<li>Added <code>setOptions</code>, <code>getOptions</code></li>
+</ul>
+<h4 id="container">Container</h4>
+<ul>
+<li>Added <code>Phalcon\Container</code>, a proxy container class to the <code>Phalcon\DI</code> implementing PSR-11</li>
+</ul>
+<h4 id="debug">Debug</h4>
+<ul>
+<li>Removed <code>Phalcon\Debug::getMajorVersion</code></li>
+</ul>
+<h4 id="dbadapterinterface">Db\AdapterInterface</h4>
+<ul>
+<li>Added <code>fetchColumn</code>, <code>insertAsDict</code>, <code>updateAsDict</code></li>
+</ul>
+<h4 id="dbadapterpdo">Db\Adapter\Pdo</h4>
+<ul>
+<li>Added more column types for the Mysql adapter. The adapters support
+<ul>
+<li><code>TYPE_BIGINTEGER</code></li>
+<li><code>TYPE_BIT</code></li>
+<li><code>TYPE_BLOB</code></li>
+<li><code>TYPE_BOOLEAN</code></li>
+<li><code>TYPE_CHAR</code></li>
+<li><code>TYPE_DATE</code></li>
+<li><code>TYPE_DATETIME</code></li>
+<li><code>TYPE_DECIMAL</code></li>
+<li><code>TYPE_DOUBLE</code></li>
+<li><code>TYPE_ENUM</code></li>
+<li><code>TYPE_FLOAT</code></li>
+<li><code>TYPE_INTEGER</code></li>
+<li><code>TYPE_JSON</code></li>
+<li><code>TYPE_JSONB</code></li>
+<li><code>TYPE_LONGBLOB</code></li>
+<li><code>TYPE_LONGTEXT</code></li>
+<li><code>TYPE_MEDIUMBLOB</code></li>
+<li><code>TYPE_MEDIUMINTEGER</code></li>
+<li><code>TYPE_MEDIUMTEXT</code></li>
+<li><code>TYPE_SMALLINTEGER</code></li>
+<li><code>TYPE_TEXT</code></li>
+<li><code>TYPE_TIME</code></li>
+<li><code>TYPE_TIMESTAMP</code></li>
+<li><code>TYPE_TINYBLOB</code></li>
+<li><code>TYPE_TINYINTEGER</code></li>
+<li><code>TYPE_TINYTEXT</code></li>
+<li><code>TYPE_VARCHAR</code>
+Some adapters do not support certain types. For instance <code>JSON</code> is not supported for <code>Sqlite</code>. It will be automatically changed to `VARCHAR.</li>
+</ul>
+</li>
+</ul>
+<h4 id="dbdialectinterface">Db\DialectInterface</h4>
+<ul>
+<li>Added <code>registerCustomFunction</code>, <code>getCustomFunctions</code>, <code>getSqlExpression</code></li>
+</ul>
+<h4 id="dbdialectpostgresql">Db\Dialect\Postgresql</h4>
+<ul>
+<li>Changed <code>addPrimaryKey</code> to make primary key constraints names unique by prefixing them with the table name.</li>
+</ul>
+<h4 id="diserviceinterface">Di\ServiceInterface</h4>
+<ul>
+<li>Added <code>getParameter</code>, <code>isResolved</code></li>
+</ul>
+<h4 id="diservice">Di\Service</h4>
+<ul>
+<li>Changed <code>Phalcon\Di\Service</code> constructor to no longer takes the name of the service.</li>
+</ul>
+<h4 id="dispatcher">Dispatcher</h4>
+<ul>
+<li>Removed <code>Phalcon\Dispatcher::setModelBinding</code> in favor of <code>Phalcon\Dispatcher::setModelBinder</code></li>
+</ul>
+<h4 id="dispatcher-1">Dispatcher</h4>
+<ul>
+<li>Added <code>getHandlerSuffix()</code>, <code>setHandlerSuffix()</code></li>
+</ul>
+<h4 id="eventsmanagerinterface">Events\ManagerInterface</h4>
+<ul>
+<li>Added <code>hasListeners</code></li>
+</ul>
+<h4 id="flash">Flash</h4>
+<ul>
+<li>Added ability to set a custom template for the Flash Messenger.</li>
+</ul>
+<h4 id="formsform">Forms\Form</h4>
+<ul>
+<li><code>Phalcon\Forms\Form::clear</code> will no longer call <code>Phalcon\Forms\Element::clear</code>, instead it will clear/set default value itself, and <code>Phalcon\Forms\Element::clear</code> will now call <code>Phalcon\Forms\Form::clear</code> if it’s assigned to the form, otherwise it will just clear itself.</li>
+<li><code>Phalcon\Forms\Form::getValue</code> will now also try to get the value by calling <code>Tag::getValue</code> or element’s <code>getDefault</code> method before returning <code>null</code>, and <code>Phalcon\Forms\Element::getValue</code> calls <code>Tag::getDefault</code> only if it’s not added to the form.</li>
+</ul>
+<h4 id="htmlbreadcrumbs">Html\Breadcrumbs</h4>
+<ul>
+<li>Added <code>Phalcon\Html\Breadcrumbs</code>, a component that creates HTML code for breadcrumbs.</li>
+</ul>
+<h4 id="htmltag">Html\Tag</h4>
+<ul>
+<li>Added <code>Phalcon\Html\Tag</code>, a component that creates HTML elements. It will replace <code>Phalcon\Tag</code> in a future version. This component does not use static method calls.</li>
+</ul>
+<h4 id="httprequestinterface">Http\RequestInterface</h4>
+<ul>
+<li>Removed <code>isSecureRequest</code> in favor of <code>isSecure</code></li>
+<li>Removed <code>isSoapRequested</code> in favor of <code>isSoap</code></li>
+</ul>
+<h4 id="httpresponse">Http\Response</h4>
+<ul>
+<li>Added <code>hasHeader()</code> method to <code>Phalcon\Http\Response</code> to provide the ability to check if a header exists.</li>
+<li>Added <code>Phalcon\Http\Response\Cookies::getCookies</code></li>
+<li>Changed <code>setHeaders</code> now merges the headers with any pre-existing ones in the internal collection</li>
+<li>Added two new events <code>response::beforeSendHeaders</code> and <code>response::afterSendHeaders</code></li>
+</ul>
+<h4 id="logger">Logger</h4>
+<ul>
+<li>Removed <code>Phalcon\Logger\Multiple</code></li>
+<li>Changed <code>Phalcon\Logger</code> to comply with PSR-3. The component has been rewritten to use adapters that allow logging to different areas. The logger now is a single component that is instantiated and can be used with different adapters. The <code>File</code> adapter has been renamed to <code>Stream</code>. By adding multiple adapters to your logger you can log to multiple places. This is why the <code>Multiple</code> adapter has been removed. If you set up multiple adapters to your logger but want to log a specific message only to one or two, you can use the <code>excludeAdapters([])</code> method.</li>
+</ul>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff;overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Logger</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">use</span><span style="color:#D8DEE9FF"> Phalcon</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Logger</span><span style="color:#ECEFF4">\</span><span style="color:#D8DEE9FF">Adapter</span><span style="color:#ECEFF4">\</span><span style="color:#8FBCBB">Stream</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">adapter1</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Stream</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">/logs/first-log.log</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">adapter2</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Stream</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">/remote/second-log.log</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">adapter3</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Stream</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">/manager/third-log.log</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">logger</span><span style="color:#81A1C1"> =</span><span style="color:#81A1C1"> new</span><span style="color:#8FBCBB"> Logger</span><span style="color:#ECEFF4">(</span></span>
+<span class="line"><span style="color:#ECEFF4">    &#39;</span><span style="color:#A3BE8C">messages</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    [</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">local</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">   =&gt;</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">adapter1</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">remote</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1">  =&gt;</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">adapter2</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">        &#39;</span><span style="color:#A3BE8C">manager</span><span style="color:#ECEFF4">&#39;</span><span style="color:#81A1C1"> =&gt;</span><span style="color:#81A1C1"> $</span><span style="color:#D8DEE9">adapter3</span><span style="color:#ECEFF4">,</span></span>
+<span class="line"><span style="color:#ECEFF4">    ]</span></span>
+<span class="line"><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Log to all adapters</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">logger</span><span style="color:#81A1C1">-&gt;</span><span style="color:#88C0D0">error</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">Something went wrong</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#616E88">// Log to specific adapters</span></span>
+<span class="line"><span style="color:#81A1C1">$</span><span style="color:#D8DEE9">logger</span></span>
+<span class="line"><span style="color:#81A1C1">    -&gt;</span><span style="color:#88C0D0">excludeAdapters</span><span style="color:#ECEFF4">([</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">manager</span><span style="color:#ECEFF4">&#39;</span><span style="color:#ECEFF4">])</span></span>
+<span class="line"><span style="color:#81A1C1">    -&gt;</span><span style="color:#88C0D0">info</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">&#39;</span><span style="color:#A3BE8C">This does not go to the &quot;manager&quot; logger);</span></span></code></pre>
+<h4 id="messages">Messages</h4>
+<ul>
+<li><code>Phalcon\Messages\Message</code> and its collection <code>Phalcon\Messages\Messages</code> are new components that handle messages for models and validation. In the past we had two components, one for validation and one for models. We have merged these two, so you should be getting back a <code>MessageInterface[]</code> back when calling <code>save</code> on a model or when retrieving validation messages.
+<ul>
+<li>Changed <code>Phalcon\Mvc\Model</code> to use the <code>Phalcon\Messages\Message</code> object for its messages</li>
+<li>Changed <code>Phalcon\Validation\*</code> to use the <code>Phalcon\Messages\Message</code> object for its messages</li>
+</ul>
+</li>
+</ul>
+<h4 id="mvccollection">Mvc\Collection</h4>
+<ul>
+<li>Removed <code>Phalcon\Mvc\Collection::validationHasFailed</code></li>
+<li>Removed calling <code>Phalcon\Mvc\Collection::validate</code> with object of type <code>Phalcon\Mvc\Model\ValidatorInterface</code></li>
+</ul>
+<h4 id="mvcmicrolazyloader">Mvc\Micro\Lazyloader</h4>
+<ul>
+<li>Removed <code>__call</code> in favor of <code>callMethod</code></li>
+</ul>
+<h4 id="mvcmodel">Mvc\Model</h4>
+<ul>
+<li>Removed <code>Phalcon\Model::reset</code></li>
+<li>Added <code>isRelationshipLoaded</code> to check if relationship is loaded</li>
+</ul>
+<h4 id="mvcmodelcriteria">Mvc\Model\Criteria</h4>
+<ul>
+<li>Removed <code>addWhere</code></li>
+<li>Removed <code>order</code></li>
+<li>Removed <code>order</code> in favor of <code>orderBy</code></li>
+</ul>
+<h4 id="mvcmodelcriteriainterface">Mvc\Model\CriteriaInterface</h4>
+<ul>
+<li>Added <code>distinct</code>, <code>leftJoin</code>, <code>innerJoin</code>, <code>rightJoin</code>, <code>groupBy</code>, <code>having</code>, <code>cache</code>, <code>getColumns</code>, <code>getGroupBy</code>, <code>getHaving</code>,</li>
+</ul>
+<h4 id="mvcmodelmanager"><code>Mvc\Model\Manager</code></h4>
+<ul>
+<li><code>load</code> no longer reuses already initialized models</li>
+</ul>
+<h4 id="mvcmodelmanagerinterface">Mvc\Model\ManagerInterface</h4>
+<ul>
+<li>Added <code>isVisibleModelProperty</code>, <code>keepSnapshots</code>, <code>isKeepingSnapshots</code>, <code>useDynamicUpdate</code>, <code>isUsingDynamicUpdate</code>, <code>addHasManyToMany</code>, <code>existsHasManyToMany</code>, <code>getRelationRecords</code>, <code>getHasManyToMany</code>, <code>registerNamespaceAlias</code>, <code>getNamespaceAlias</code></li>
+</ul>
+<h4 id="mvcmodelmessageinterface">Mvc\Model\MessageInterface</h4>
+<ul>
+<li>Added <code>setModel</code>, <code>getModel</code>, <code>setCode</code>, <code>getCode</code></li>
+</ul>
+<h4 id="mvcmodelqueryinterface">Mvc\Model\QueryInterface</h4>
+<ul>
+<li>Added <code>getSingleResult</code>, <code>setBindParams</code>, <code>getBindParams</code>, <code>setBindTypes</code>, <code>setSharedLock</code>, <code>getBindTypes</code>, <code>getSql</code></li>
+</ul>
+<h4 id="mvcmodelquerybuilderinterface"><code>Mvc\Model\Query\BuilderInterface</code></h4>
+<ul>
+<li>Added <code>offset</code></li>
+</ul>
+<h4 id="mvcmodelquerybuilder">Mvc\Model\Query\Builder</h4>
+<ul>
+<li>Added bind support. The Query Builder has the same methods as <code>Phalcon\Mvc\Model\Query</code>; <code>getBindParams</code>, <code>setBindParams</code>, <code>getBindTypes</code> and <code>setBindTypes</code>.</li>
+<li>Changed <code>addFrom</code> to remove third parameter <code>$with</code></li>
+</ul>
+<h4 id="mvcmodelquerybuilderinterface-1">Mvc\Model\Query\BuilderInterface</h4>
+<ul>
+<li>Added <code>distinct</code>, <code>getDistinct</code>, <code>forUpdate</code>, <code>offset</code>, <code>getOffset</code></li>
+</ul>
+<h4 id="mvcmodelrelationinterface">Mvc\Model\RelationInterface</h4>
+<ul>
+<li>Added <code>getParams</code></li>
+</ul>
+<h4 id="mvcmodelresultsetinterface">Mvc\Model\ResultsetInterface</h4>
+<ul>
+<li>Added <code>setHydrateMode</code>, <code>getHydrateMode</code>, <code>getMessages</code>, <code>update</code>, <code>delete</code>, <code>filter</code></li>
+</ul>
+<h4 id="mvcmodeltransactionmanagerinterface">Mvc\Model\Transaction\ManagerInterface</h4>
+<ul>
+<li>Added <code>setDbService</code>, <code>getDbService</code>, <code>setRollbackPendent</code>, <code>getRollbackPendent</code></li>
+</ul>
+<h4 id="mvcmodelvalidator">Mvc\Model\Validator*</h4>
+<ul>
+<li>Removed <code>Phalcon\Mvc\Model\Validator\*</code> in favor of <code>Phalcon\Validation\Validator\*</code></li>
+</ul>
+<h4 id="mvcmodelinterface">Mvc\ModelInterface</h4>
+<ul>
+<li>Added <code>getModelsMetaData</code></li>
+</ul>
+<h4 id="mvcrouterinterface">Mvc\RouterInterface</h4>
+<ul>
+<li>Added <code>attach</code></li>
+</ul>
+<h4 id="mvcrouterrouteinterface">Mvc\Router\RouteInterface</h4>
+<ul>
+<li>Added <code>convert</code> so that calling <code>add</code> will return an instance that has <code>convert</code> method</li>
+</ul>
+<h4 id="mvcrouterrouteinterface-1">Mvc\Router\RouteInterface</h4>
+<ul>
+<li>Added response handler to <code>Phalcon\Mvc\Micro</code>, <code>Phalcon\Mvc\Micro::setResponseHandler</code>, to allow use of a custom response handler.</li>
+</ul>
+<h4 id="mvcview">Mvc\View</h4>
+<ul>
+<li>Removed <code>getParams</code></li>
+</ul>
+<h4 id="paginator">Paginator</h4>
+<ul>
+<li><code>getPaginate</code> not becomes <code>paginate</code></li>
+<li><code>$before</code> is removed and replaced with <code>$previous</code></li>
+<li><code>$total_pages</code> is removed since it contained the same information as <code>$last</code></li>
+<li>Added <code>Phalcon\Paginator\RepositoryInterface</code> for repository the current state of <code>paginator</code> and also optional sets the aliases for properties repository</li>
+</ul>
+<h4 id="security">Security</h4>
+<ul>
+<li>Removed <code>hasLibreSsl</code></li>
+<li>Removed <code>getSslVersionNumber</code></li>
+<li>Added <code>setPadding</code></li>
+</ul>
+<h4 id="session">Session</h4>
+<ul>
+<li><code>Phalcon\Session</code> and <code>Phalcon\Session\Bag</code> no longer get loaded by default in <code>Phalcon\DI\FactoryDefault</code></li>
+<li>Refactored <code>Phalcon\Session</code></li>
+<li><code>Phalcon\Session\Manager</code> is now the single component offering session manipulation by using adapters.</li>
+<li>Each adapter implements PHP’s <code>SessionHandlerInterface</code>.</li>
+<li>Available adapters are <code>Phalcon\Session\Adapter\Files</code>, <code>Phalcon\Session\Adapter\Libmemcached</code>, <code>Phalcon\Session\Adapter\Noop</code> and <code>Phalcon\Session\Adapter\Redis</code>.</li>
+<li>Developers can now add any adapter that implements the <code>SessionHandlerInterface</code> in the <code>Phalcon\Session\Manager</code></li>
+</ul>
+<h4 id="security-1">Security</h4>
+<ul>
+<li>Added a retainer for the current token to be used during the checks, so when <code>getToken</code> is called the token used for checks does not change</li>
+</ul>
+<h4 id="tag">Tag</h4>
+<ul>
+<li>Added <code>renderTitle()</code> that renders the title enclosed in <code>&lt;title&gt;</code> tags.</li>
+<li>Changed <code>getTitle</code>. It returns only the text. It accepts <code>prepend</code>, <code>append</code> booleans to prepend or append the relevant text to the title.</li>
+<li>Changed <code>textArea</code> to use <code>htmlspecialchars</code> to prevent XSS injection.</li>
+</ul>
+<h4 id="validationmessage">Validation\Message</h4>
+<ul>
+<li>Removed <code>Phalcon\Validation\Message</code> and <code>Phalcon\Mvc\Model\Message</code> in favor of <code>Phalcon\Messages\Message</code></li>
+<li>Removed <code>Phalcon\Validation\MessageInterface</code> and <code>Phalcon\Mvc\Model\MessageInterface</code> in favor of <code>Phalcon\Messages\MessageInterface</code></li>
+<li>Removed <code>Phalcon\Validation\Message</code> and <code>Phalcon\Mvc\Model\Message</code> in favor of <code>Phalcon\Messages\Message</code></li>
+<li>Removed <code>Phalcon\Validation\Message\Group</code> in favor of <code>Phalcon\Messages\Messages</code></li>
+</ul>
+<h4 id="validationvalidator">Validation\Validator</h4>
+<ul>
+<li>Removed <code>isSetOption</code></li>
+</ul>
+<h4 id="validationvalidatorip">Validation\Validator\Ip</h4>
+<ul>
+<li>Added <code>Phalcon\Validation\Validator\Ip</code>, class used to validate ip address fields. It allows to validate a field selecting IPv4 or IPv6, allowing private or reserved ranges and empty values if necessary.</li>
+</ul>
+<h3 id="help">Help</h3>
+<p>If you need help with the above, feel free to reach out in our <a href="https://phalcon.io/forum">forum</a> or our <a href="https://phalcon.io/discord">Discord</a> server</p><div data-pagefind-ignore><hr><p>Chat - Q&amp;A</p><ul><li><a href="https://phalcon.io/discord">Discord Chat</a></li><li><a href="https://github.com/phalcon/cphalcon/discussions">Discussions (v4,v5)</a></li><li><a href="https://github.com/phalcon/phalcon/discussions">Discussions (v6+)</a></li><li><a href="https://phalcon.io/forum">Forum (archive)</a></li></ul><p>Support</p><ul><li><a href="https://phalcon.io/fund">OpenCollective - Support Us</a></li></ul><p>Social Media</p><ul><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://dev.to/phalcon">DevTo</a></li><li><a href="https://phalcon.io/reddit">Reddit</a></li><li><a href="https://phalcon.io/linkedin">LinkedIn</a></li><li><a href="https://phalcon.io/fb">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li></ul><p>Videos</p><ul><li><a href="https://phalcon.io/bitchute">BitChute</a></li><li><a href="https://phalcon.io/brighteon">Brighteon</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><p>&lt;3 Phalcon Team</p></div></div><div class="phalcon-blog__tags-items"><a href="/tags#php" class="phalcon-blog__tags-item"><span>php</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span></a><a href="/tags#phalcon4" class="phalcon-blog__tags-item"><span>phalcon4</span></a><a href="/tags#upgrade" class="phalcon-blog__tags-item"><span>upgrade</span></a><a href="/tags#v4" class="phalcon-blog__tags-item"><span>v4</span></a></div></div></div><div class="phalcon-blog__right" data-pagefind-ignore><div class="phalcon-blog__right-item phalcon-blog__sponsors"><div class="phalcon-blog__title">Supporters</div></div><div class="phalcon-blog__right-item phalcon-blog__projects"><div class="phalcon-blog__title">Projects</div><div class="phalcon-blog__projects-text">We're a nonprofit organization that creates&nbsp; solutions for web developers. Our products are&nbsp;<a href="https://phalcon.io">Phalcon</a>,&nbsp;<a href="https://zephir-lang.com">Zephir</a> and&nbsp;<a href="https://github.com/phalcon?type=source">others</a>.&nbsp; If you would like to help us stay free and open,&nbsp; please consider <a href="https://phalcon.io/fund">supporting us</a>.</div></div><div class="phalcon-blog__right-item phalcon-blog__tags"><div class="phalcon-blog__title">Tags</div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span><span>(72)</span></a><a href="/tags#phalcon4" class="phalcon-blog__tags-item"><span>phalcon4</span><span>(74)</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span><span>(154)</span></a><a href="/tags#zephir" class="phalcon-blog__tags-item"><span>zephir</span><span>(19)</span></a><a href="/tags#lts" class="phalcon-blog__tags-item"><span>lts</span><span>(25)</span></a><a href="/tags#hangout" class="phalcon-blog__tags-item"><span>hangout</span><span>(27)</span></a><a href="/tags#github" class="phalcon-blog__tags-item"><span>github</span><span>(6)</span></a><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span><span>(255)</span></a><a href="/tags#community" class="phalcon-blog__tags-item"><span>community</span><span>(27)</span></a><a href="/tags#update" class="phalcon-blog__tags-item"><span>update</span><span>(39)</span></a><a href="/tags#roadmap" class="phalcon-blog__tags-item"><span>roadmap</span><span>(12)</span></a><a href="/tags#framework" class="phalcon-blog__tags-item"><span>framework</span><span>(26)</span></a><a href="/tags#benchmarks" class="phalcon-blog__tags-item"><span>benchmarks</span><span>(3)</span></a></div><a href="/tags" class="phalcon-blog__item-read-more">Show More</a></div></div></div></div><div data-pagefind-ignore><footer class="footer"><div class="container"><ul class="footer-nav"><li><a href="https://phalcon.io/blog">Blog</a></li><li><a href="https://phalcon.io/discord">Discord</a></li><li><a href="https://phalcon.io/telegram">Telegram</a></li><li><a href="https://phalcon.io/gab">Gab</a></li><li><a href="https://phalcon.io/mewe">MeWe</a></li><li><a href="https://phalcon.io/f">Facebook</a></li><li><a href="https://phalcon.io/t">X (twitter)</a></li><li><a href="https://phalcon.io/bitchute">Bitchute</a></li><li><a href="https://phalcon.io/lbry">LBRY</a></li><li><a href="https://phalcon.io/youtube">YouTube</a></li></ul><div class="footer__license">Phalcon is an open-source PHP framework built as a C-extension.<br>It is available under the  new BSD License.</div><div class="footer__supported"><span>Supported By</span><a href="https://odva.pro/" target="_blank" class="footer__supported-logo" aria-label="odva.pro"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="31" fill="none" viewBox="0 0 38 31"><path stroke="#273646" stroke-opacity=".7" stroke-width="3" d="M15.375 29.353c7.553 0 13.676-6.123 13.676-13.677C29.051 8.123 22.928 2 15.375 2S1.698 8.123 1.698 15.677c0 7.553 6.124 13.676 13.677 13.676Z"></path><path fill="#273646" fill-opacity=".7" d="M33.904 23.618H32.14v7.059h1.764v-7.06ZM37.434 23.618h-1.765v7.059h1.765v-7.06Z"></path></svg></a></div></div></footer></div><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.Cikc9LE_.js"></script></body></html>
