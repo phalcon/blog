@@ -3,6 +3,12 @@
  * The head tags, ported from Jekyll's `_includes/meta.html`. `site.app.generator`
  * was never set in Jekyll, so the `generator` meta tag rendered empty; it is
  * dropped here rather than ported.
+ *
+ * That file also carried a second viewport tag, named `viewport min-width=320px`.
+ * No browser reads a name of that shape, so the tag did nothing and is dropped
+ * as well. Its `initial-scale` belongs on the real viewport tag, which is where
+ * it now is: without it, mobile Safari answers a page that is wider than the
+ * screen by shrinking the whole page to fit.
  */
 import { servedPath } from '../lib/text.mjs';
 import { site } from '../site';
@@ -25,12 +31,11 @@ const canonicalHref = canonical ?? new URL(path, site.url).href;
 
 <title>{pageTitle}</title>
 
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="MobileOptimized" content="320">
 <meta name="HandheldFriendly" content="true">
 
 <meta charset="utf-8">
-<meta name="viewport min-width=320px" content="min-width=320, initial-scale=1.0">
 <meta name="author" content={site.author}>
 <meta name="application-name" content={site.name}>
 <meta name="keywords" content={site.keywords}>

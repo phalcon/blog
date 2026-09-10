@@ -59,7 +59,17 @@ const groups = [
             <span class="post-footer__links">
                 {group.links.map((item, index) => (
                     <Fragment>
-                        {index > 0 && <span class="post-footer__dot">·</span>}
+                        {index > 0 && (
+                            <Fragment>
+                                <span class="post-footer__dot">·</span>
+                                {/* The separator and the labels carry no space
+                                    between them, so a group whose labels have
+                                    no space of their own is one unbreakable
+                                    word. `wbr` gives the row a place to break
+                                    and adds no width of its own. */}
+                                <wbr />
+                            </Fragment>
+                        )}
                         <a href={item.href}>{item.label}</a>
                     </Fragment>
                 ))}
