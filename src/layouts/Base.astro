@@ -9,6 +9,7 @@ import Analytics from '../components/Analytics.astro';
 import FanArt from '../components/FanArt.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Mermaid from '../components/Mermaid.astro';
 import Meta from '../components/Meta.astro';
 
 interface Props {
@@ -54,5 +55,6 @@ const { canonical, description, image, publishedAt, title } = Astro.props;
 <div data-pagefind-ignore>
     <Footer />
 </div>
+<Mermaid />
 </body>
 </html>

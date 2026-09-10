@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import { rehypeMermaid } from './src/lib/rehype-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +18,13 @@ export default defineConfig({
     trailingSlash: 'never',
     integrations: [mdx(), sitemap()],
     markdown: {
+        rehypePlugins: [rehypeMermaid],
+        /* Mermaid fences are rendered by the Mermaid component, not Shiki.
+           `excludeLangs` lives under `syntaxHighlight`, not `shikiConfig`. */
+        syntaxHighlight: {
+            type: 'shiki',
+            excludeLangs: ['mermaid'],
+        },
         shikiConfig: {
             /* Replaced in task 9 after a side-by-side check against Rouge. */
             theme: 'nord',
@@ -26,5 +34,14 @@ export default defineConfig({
     server: {
         host: true,
         port: 4321,
+    },
+    vite: {
+        optimizeDeps: {
+            /*
+             * Without this, Vite re-optimizes mermaid mid dev session and the
+             * page holds a stale import hash, so the request answers 504.
+             */
+            include: ['mermaid'],
+        },
     },
 });

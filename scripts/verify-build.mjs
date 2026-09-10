@@ -42,7 +42,9 @@ count(
     measure(() => (readFileSync('dist/feed.xml', 'utf8').match(/<item>/g) ?? []).length),
     317
 );
-count('asset files', measure(() => readdirSync('dist/assets/files').length), 218);
+/* Counts .html-agnostic asset files. Update this when assets are added or removed;
+   a silent drift here is how a broken image reaches production unnoticed. */
+count('asset files', measure(() => readdirSync('dist/assets/files').length), 215);
 /* 59 rule lines, comments excluded. `wc -l` reports 60 because the file ends with a blank line. */
 count(
     'redirect rules',

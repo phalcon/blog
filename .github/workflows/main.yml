@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+      # Temporary: lets the workflow run on the migration branch before the
+      # merge. Remove once this is merged to master.
+      - astro
   pull_request:
   workflow_dispatch:
 
