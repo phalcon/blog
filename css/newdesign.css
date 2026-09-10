@@ -1,6 +1,4 @@
 /*
- * EXPERIMENT — not part of the migration. Discard when done.
- *
  * This sheet re-skins the blog with the palette and the surface treatment of
  * the phalcon.io `new-design` branch. The markup does not change: every rule
  * here overrides the external Phalcon stylesheet, which hardcodes its colors
