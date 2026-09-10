@@ -85,3 +85,48 @@
     height: 100%;
     object-position: left;
 }
+
+/*
+ * Typography, aligned with the other two properties.
+ *
+ * `documentation` (src/styles/globals.css) and phalcon.io on `new-design`
+ * (src/styles/global.css) both declare this exact pair and load no webfont.
+ * The blog was the only one left on Titillium Web and Source Code Pro.
+ *
+ * The shared sheet at assets.phalcon.io names those two faces on 31
+ * selectors. The ones below are the ones the blog renders; the rest belong to
+ * pages this site does not have.
+ *
+ * One thing this cannot do: the shared sheet pulls both faces with an
+ * `@import` of fonts.googleapis.com. A local sheet cannot suppress an import
+ * that another sheet makes, so the browser still downloads two fonts that
+ * nothing uses. Dropping that request means dropping the shared sheet, which
+ * is the theme work.
+ */
+
+:root {
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body,
+.alert,
+.footer,
+.header,
+.header-dropdown__count,
+.header-dropdown__title,
+.input,
+.phalcon-blog,
+.phalcon-blog__item-title,
+.phalcon-blog__main-title,
+.phalcon-blog-detail h1,
+.phalcon-blog-detail h2,
+.phalcon-blog-detail h3,
+.phalcon-blog-detail p,
+.phalcon-blog-detail table thead {
+    font-family: var(--font-sans);
+}
+
+.phalcon-blog-detail code {
+    font-family: var(--font-mono);
+}

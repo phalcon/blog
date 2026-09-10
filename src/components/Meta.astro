@@ -98,9 +98,12 @@ const canonicalHref = canonical ?? new URL(path, site.url).href;
 <script is:inline type="module" src="https://assets.phalcon.io/phalcon/js/theme.min.js"></script>
 <link rel="stylesheet"
       href="https://assets.phalcon.io/css/style.css">
+{/* Relative on purpose. The absolute form served the deployed copy of this
+    file even when running locally, so a local edit to it changed nothing in
+    the dev server. Both forms resolve to the same file in production. */}
 <link rel="stylesheet"
       type="text/css"
-      href="https://blog.phalcon.io/css/style.css">
+      href="/css/style.css">
 
 <!-- EXPERIMENT: phalcon.io new-design re-skin. Remove with public/css/newdesign.css. -->
 <link rel="stylesheet" href="/css/newdesign.css">
