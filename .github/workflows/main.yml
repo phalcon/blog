@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+# The deploy step pushes the built site to another branch.
+permissions:
+  contents: write
+
+env:
+  # The branch Cloudflare Pages serves. It holds the built site only.
+  DEPLOY_BRANCH: production
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true
+
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Check the content parses as MDX
+        run: node mdx-lint.mjs
+
+      - name: Check types
+        run: npx astro check
+
+      - name: Get the fan art
+        run: |
+          curl -fsSL -o src/fanart.html \
+            https://raw.githubusercontent.com/phalcon/assets/master/phalcon/fanart-fragment.html \
+            || echo "Download failed, the committed fan art is used"
+
+      - name: Get the sponsors
+        # Generated into phalcon/assets by its own scheduled workflow. The
+        # committed src/sponsors.json is the fallback when the download fails.
+        run: |
+          curl -fsSL -o src/sponsors.json \
+            https://raw.githubusercontent.com/phalcon/assets/master/phalcon/sponsors.json \
+            || echo "Download failed, the committed roster is used"
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify the build
+        run: npm run verify
+
+      - name: Publish to the deploy branch
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        # dist/_redirects (copied from public/) carries the archive, pagination
+        # and legacy redirects, so the deployment is self-contained.
+        run: |
+          git config user.name niden
+          git config user.email nikos@niden.net
+
+          # Absolute, and outside the checkout: a relative ../deploy would land
+          # inside the repository and rsync --delete would be operating in the
+          # checkout.
+          DEPLOY_DIR="${{ runner.temp }}/deploy"
+
+          if git ls-remote --exit-code --heads origin "${DEPLOY_BRANCH}" > /dev/null 2>&1; then
+              git fetch --no-tags --prune --depth=1 \
+                  origin "+refs/heads/${DEPLOY_BRANCH}:refs/remotes/origin/${DEPLOY_BRANCH}"
+              git worktree add "${DEPLOY_DIR}" "origin/${DEPLOY_BRANCH}"
+          else
+              echo "${DEPLOY_BRANCH} does not exist yet; starting it"
+              git worktree add --detach "${DEPLOY_DIR}"
+              git -C "${DEPLOY_DIR}" checkout --orphan "${DEPLOY_BRANCH}"
+              git -C "${DEPLOY_DIR}" rm -rf --quiet . || true
+          fi
+
+          rsync -a --delete --exclude .git dist/ "${DEPLOY_DIR}/"
+          touch "${DEPLOY_DIR}/.nojekyll"
+          git -C "${DEPLOY_DIR}" add -A
+          git -C "${DEPLOY_DIR}" commit -m "Deployed ${GITHUB_SHA::7}" || echo "No changes to deploy"
+          git -C "${DEPLOY_DIR}" push origin "HEAD:${DEPLOY_BRANCH}"
