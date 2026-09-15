@@ -10,7 +10,7 @@ tags:
 ---
 This success story has been submitted by our community member Ruud ([ruudboon](https://github.com/ruudboon)).
 
-![De Vries Houtbewerking](/assets/files/devries-factory.jpg "De Vries Houtbewerking")
+![De Vries Houtbewerking](/assets/posts/2019/2019-02-14-devries-factory.jpg "De Vries Houtbewerking")
 
 In Oostzaan, a small town next to Amsterdam, [De Vries Houtbewerking](https://www.devrieshoutbewerking.nl) carpenter factory has been using Phalcon for a few years now. 
 
@@ -38,10 +38,10 @@ The initial request contains the basic layout and then JavaScript takes over. Af
 
 After discussions with the client, we refined the presentation of the information on screens, to only what is needed and presenting additional information where needed. We also introduced specific color coding on screen, to define the priority and status of the task being worked on, so as to offer _status at a glance_ (on time, running behind etc.).
 
-![Test drive few weeks before going to production](/assets/files/devries-screens.jpg "Test drive few weeks before going to production")
+![Test drive few weeks before going to production](/assets/posts/2019/2019-02-14-devries-screens.jpg "Test drive few weeks before going to production")
 _Test drive few weeks before going to production_
 
-![](/assets/files/devries-pi.jpg "We all love pi")
+![](/assets/posts/2019/2019-02-14-devries-pi.jpg "We all love pi")
 _We all love pi_
 
 ### WebSocket
@@ -99,9 +99,9 @@ The tablets are used by the carpenters. In general, these craftsmen and women lo
 
 The tablet retrieves the interface via Phalcon and any interaction uses AJAX calls to the API. We store changes, such as completing tasks in the database, and, if necessary, we send a update command to the screen to mark the task complete, update any relevant screens with this change and load the next task.
 
-![](/assets/files/devries-tablet-01.png)
+![](/assets/posts/2019/2019-02-14-devries-tablet-01.png)
 
-![](/assets/files/devries-tablet-02.jpg)
+![](/assets/posts/2019/2019-02-14-devries-tablet-02.jpg)
 
 _Tablet interface; Tasks completed by pressing on your picture_
 
@@ -109,12 +109,12 @@ _Tablet interface; Tasks completed by pressing on your picture_
 
 One of the things that immediately became obvious is that there was a need for information regarding the tasks that went to the floor. The current planning system on a whiteboard was therefore quickly replaced by an additional web page with an excel-like overview, where anyone can see real time, what the status of each task/order is.
 
-![](/assets/files/devries-planning.png "Planning overview")
+![](/assets/posts/2019/2019-02-14-devries-planning.png "Planning overview")
 _Planning overview_
 
 ### Current status
 
-![](/assets/files/devries-floor.jpg "Production floor, with screens in the background")
+![](/assets/posts/2019/2019-02-14-devries-floor.jpg "Production floor, with screens in the background")
 _Production floor, with screens in the background_
 
 The system has been running for over 2.5 years, without any major problems. From time to time, we needed to reboot one or more of the Raspberry Pis, one tablet was sawn through and one screen had to have a plastic protective shield because TV screens do not have a lot of tolerance to flying wood when milling. The factory has indicated that they have made an efficiency improvement between 10 and 15 percent after the introduction of this system. But above all it has brought peace and quiet to the factory. Every month, I do add some small features but always with the same approach as we started. Keep it simple.

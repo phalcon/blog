@@ -1,6 +1,6 @@
 ---
 title: Phalcon + Swoole in High Load Micro Service
-image: /assets/files/2024-06-16-phalcon-swoole-high-load-microservices.svg
+image: /assets/banners/2024/2024-06-16-phalcon-swoole-high-load-microservices.svg
 date: 2024-06-16T16:00:00.000Z
 tags:
   - phalcon
@@ -27,7 +27,7 @@ When our team embarked on the journey to rewrite our high-load microservice, we 
 
 Our project began as a legacy codebase, originally written in PHP 5.6 and later upgraded to PHP 7.0. This monolithic application was running in a private datacenter, deployed across multiple Proxmox virtual machines. The infrastructure was substantial, boasting 50-100 CPUs and hundreds of gigabytes of RAM. Despite this considerable hardware, the classic stack of nginx and PHP-FPM wasn't delivering the performance and scalability we needed.
 
-![htop](/assets/files/2024-06-16-phalcon-swoole-htop.png)
+![htop](/assets/posts/2024/2024-06-16-phalcon-swoole-htop.png)
 
 The application served a critical role in our operations, but as traffic and data volumes grew, the limitations of our setup became increasingly apparent. The traditional PHP-FPM model, which spawns a separate process for each request, was struggling under the load, leading to high latency and inefficient resource utilization.
 
@@ -43,7 +43,7 @@ Phalcon, combined with Swoole, offered a compelling path forward. However, Phalc
 
 During this implementation, we encountered several technical challenges, the most significant being memory management issues. Since the service is started once and everything stays in memory, our logic needed to manage memory efficiently to ensure stability and prevent memory leaks. These leaks started to appear frequently, which is a common issue in such setups but required meticulous attention to resolve.
 
-![infra-history](/assets/files/2024-06-16-phalcon-swoole-infra-history.jpg)
+![infra-history](/assets/posts/2024/2024-06-16-phalcon-swoole-infra-history.jpg)
 
 Our application functions as a data input validator, processing incoming data and asynchronously sending it to Kafka. In the new version we implemented an internal hot cache using `Swoole\Table`, which updates data from S3 every hour via `Swoole\Tick`. It stores data inside memory so there is minimal latency to fetch data and parameters.
 
@@ -61,30 +61,30 @@ After adapting Swoole's Kafka client and implementing missing features such as [
 
 The journey was challenging, but the results have been highly rewarding...
 
-![ingress](/assets/files/2024-06-16-phalcon-swoole-ingress.png)
+![ingress](/assets/posts/2024/2024-06-16-phalcon-swoole-ingress.png)
 <small>Daily ingress of one of geos</small>
 
 ### Stability and Performance
 
-![cpu](/assets/files/2024-06-16-phalcon-swoole-cpu.png)
+![cpu](/assets/posts/2024/2024-06-16-phalcon-swoole-cpu.png)
 
 One of the primary goals of our migration was to achieve stability and improve performance. This was a significant accomplishment given the previous issues we faced with memory management.
 
 ### Efficient Memory Usage
 
-![cpu](/assets/files/2024-06-16-phalcon-swoole-ram.png)
+![cpu](/assets/posts/2024/2024-06-16-phalcon-swoole-ram.png)
 
 Through rigorous debugging and optimization, we managed to eliminate memory leaks that had previously plagued our application. The continuous running nature of the service, with everything in memory, required careful handling of memory allocation and deallocation. Our efforts paid off, resulting in a highly stable system that can handle sustained high loads without degradation in performance.
 
 ### Improved Response Times
 
-![cpu](/assets/files/2024-06-16-phalcon-swoole-response-time.png)
+![cpu](/assets/posts/2024/2024-06-16-phalcon-swoole-response-time.png)
 
 The combination of Phalcon’s efficiency and Swoole’s asynchronous capabilities has led to significant improvements in response times. Our average response time is now consistently stable, even under heavy loads. This has greatly enhanced the user experience, providing faster and more reliable service.
 
 ### Enhanced Scalability
 
-![cpu](/assets/files/2024-06-16-phalcon-swoole-pods.png)
+![cpu](/assets/posts/2024/2024-06-16-phalcon-swoole-pods.png)
 
 The new architecture has dramatically improved the scalability of our microservice. We can now handle a much larger volume of requests with the same hardware resources, thanks to the efficient handling of concurrent connections and resource management provided by Swoole.
 
