@@ -2,8 +2,10 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
+    # Every branch runs the checks. `production` carries the built site only,
+    # with no package.json, so the deploy push must not start a run.
+    branches-ignore:
+      - production
   pull_request:
   workflow_dispatch:
 
