@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+# Create a post from a template.
+#
+#   ./new-post "Merry Christmas 2026"               # today's date
+#   ./new-post "Merry Christmas 2026" 2026-12-25    # a date you choose
+#
+# The file goes to src/content/posts/<year>/<date>-<slug>.mdx. The year folder
+# is for organization only: the post is served at /post/<slug>.
+#
+# A slug must be unique across all years, because two posts with the same slug
+# stop the build. This script refuses a slug that a post already uses.
+
+set -e
+
+cd "$(dirname "$0")"
+
+title=$1
+date=${2:-$(date +%F)}
+
+if [ -z "$title" ]; then
+    echo "usage: ./new-post \"Post title\" [YYYY-MM-DD]" >&2
+    exit 2
+fi
+
+if ! printf '%s' "$date" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$'; then
+    echo "the date must have the shape YYYY-MM-DD: $date" >&2
+    exit 2
+fi
+
+slug=$(printf '%s' "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
+
+if [ -z "$slug" ]; then
+    echo "the title gives an empty slug: $title" >&2
+    exit 2
+fi
+
+existing=$(find src/content/posts -name "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-$slug.mdx" | head -1)
+
+if [ -n "$existing" ]; then
+    echo "a post with the slug \"$slug\" exists: $existing" >&2
+    exit 1
+fi
+
+year=${date:0:4}
+file="src/content/posts/$year/$date-$slug.mdx"
+
+mkdir -p "src/content/posts/$year"
+
+cat > "$file" <<POST
+---
+title: "$title"
+date: ${date}T00:00:00.000Z
+tags:
+  - phalcon
+# Remove the # below when the banner file exists.
+# image: /assets/banners/$year/$date-$slug.svg
+---
+
+Write the post here.
+POST
+
+echo "$file"

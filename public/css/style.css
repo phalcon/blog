@@ -81,9 +81,23 @@
     height: auto;
 }
 
+/* The list card image box uses the banner ratio (1200 x 444), so the full banner shows. */
+.phalcon-blog__items .phalcon-blog__item-img {
+    align-self: flex-start;
+    aspect-ratio: 1200 / 444;
+    height: auto;
+}
+
 .phalcon-blog__items .phalcon-blog__item-img img {
     height: 100%;
-    object-position: left;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .phalcon-blog__items .phalcon-blog__item-img {
+        width: 320px;
+    }
 }
 
 /*

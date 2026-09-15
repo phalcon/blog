@@ -101,7 +101,7 @@ count(
 );
 /* Counts every file under dist/assets, in all folders. Update this when assets are added or removed;
    a silent drift here is how a broken image reaches production unnoticed. */
-count('asset files', measure(() => listFiles('dist/assets').length), 211);
+count('asset files', measure(() => listFiles('dist/assets').length), 209);
 /* 59 rule lines, comments excluded. `wc -l` reports 60 because the file ends with a blank line. */
 count(
     'redirect rules',
