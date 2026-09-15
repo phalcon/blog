@@ -5,7 +5,10 @@ import remarkFrontmatter from 'remark-frontmatter';
 import { readFileSync, readdirSync } from 'node:fs';
 
 const dir = process.argv[2] ?? 'src/content/posts';
-const files = readdirSync(dir).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
+/* Posts sit in a folder per year, so this reads the year folders as well. */
+const files = readdirSync(dir, { recursive: true }).filter(
+    (f) => f.endsWith('.md') || f.endsWith('.mdx')
+);
 const failures = [];
 
 for (const file of files) {

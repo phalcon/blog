@@ -16,6 +16,12 @@ export default defineConfig({
         format: 'file',
     },
     trailingSlash: 'never',
+    /*
+     * Two posts with the same slug (the file name without its date prefix)
+     * must stop the build. The default only logs a warning, and one post
+     * silently replaces the other.
+     */
+    prerenderConflictBehavior: 'error',
     integrations: [mdx(), sitemap()],
     markdown: {
         rehypePlugins: [rehypeMermaid],
