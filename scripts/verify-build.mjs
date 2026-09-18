@@ -4,6 +4,20 @@
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 
+/* Expected counts for the build. Update these when content is added or removed. */
+const EXPECTED = {
+    /* Every file under dist/assets, in all folders. A silent drift here is how
+       a broken image reaches production unnoticed. */
+    assets: 210,
+    feedItems: 318,
+    paginationPages: 31,
+    postPages: 318,
+    /* Rule lines, comments excluded. `wc -l` reports one more, because the
+       file ends with a blank line. */
+    redirectRules: 59,
+    tagPages: 215,
+};
+
 const checks = [];
 
 const count = (label, actual, expected) =>
@@ -81,28 +95,29 @@ count(
 count(
     'post pages',
     measure(() => readdirSync('dist/post').filter((f) => f.endsWith('.html')).length),
-    317
+    EXPECTED.postPages
 );
 /* The tag index may land inside this folder; it is not a tag page. */
 count(
     'tag pages',
     measure(() => readdirSync('dist/tag').filter((f) => f.endsWith('.html') && f !== 'index.html').length),
-    215
+    EXPECTED.tagPages
 );
 count(
     'pagination pages',
     measure(() => readdirSync('dist').filter((f) => /^page-\d+\.html$/.test(f)).length),
-    31
+    EXPECTED.paginationPages
 );
 count(
     'feed items',
     measure(() => (readFileSync('dist/feed.xml', 'utf8').match(/<item>/g) ?? []).length),
-    317
+    EXPECTED.feedItems
 );
-/* Counts every file under dist/assets, in all folders. Update this when assets are added or removed;
-   a silent drift here is how a broken image reaches production unnoticed. */
-count('asset files', measure(() => listFiles('dist/assets').length), 209);
-/* 59 rule lines, comments excluded. `wc -l` reports 60 because the file ends with a blank line. */
+count(
+    'asset files',
+    measure(() => listFiles('dist/assets').length),
+    EXPECTED.assets
+);
 count(
     'redirect rules',
     measure(
@@ -111,7 +126,7 @@ count(
                 .split('\n')
                 .filter((line) => line.trim() !== '' && !line.trim().startsWith('#')).length
     ),
-    59
+    EXPECTED.redirectRules
 );
 
 /*
