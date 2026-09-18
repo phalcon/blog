@@ -1,0 +1,166 @@
+---
+title: Phalcon v5.21.0 / v6.0.0RC1 Released
+date: 2026-09-18T00:01:02.699Z
+image: /assets/banners/2026/2026-09-18-phalcon-5.21.0-release.svg
+tags:
+  - phalcon
+  - phalcon5
+  - phalcon6
+  - release
+---
+
+Phalcon [v5.21.0][5_21_0] and [v6.0.0RC1][v6_0_0_RC_1] have been released. A few bugs and interface/types alignment between the versions.
+
+## Zephir
+
+Zephir has been bumped to [1.5.0][zephir], offering more functionality and fixing several memory leaks that make Phalcon more efficient.
+
+## Bugs you reported
+
+Five of the fixes in this release started as reports from the community.
+
+- `findFirst()` ignored the `eager` parameter, so a nested relation such as `Books.Publisher` was loaded with one query for each record. `findFirst()` now accepts `eager`, the same as `find()`. ([#17534][17534] - [@Alistar84][alistar84]).
+- A `delete()` on a resultset inside your own transaction was committed at once. The investigation showed that the PDO adapter could lose track of its transaction level. The adapter now keeps the level in step with the connection. Also, `commit()` and `rollback()` now throw `NoActiveTransaction` when no transaction is open, instead of sending a statement to the server. ([#17546][17546] - [@ryinner][ryinner]).
+- The `Stream` storage and queue adapters logged a `mkdir(): File exists` warning at random. When two processes made the same directory at the same time, the slower one reported the warning. ([#17561][17561] - [@kgrammer][kgrammer]).
+- `toArray()` on a cached query result returned an empty array. A complex resultset restored from the cache holds rows that are already hydrated, and `valid()` did not recognize them as rows. ([#17574][17574] - [@ALameLlama][alamellama]).
+- A `\n` in a PHQL string literal reached the database as a backslash and an `n`. PHQL now resolves `\n`, `\r`, `\t`, `\\`, `\'` and `\"` in string literals. ([#17585][17585] - [@wmamrak][wmamrak]).
+
+Thank you for the reports.
+
+## One API, two codebases
+
+Phalcon ships in two forms. `cphalcon` is written in Zephir and compiled into a PHP extension. `phalcon` is the same framework written in plain PHP. The two must be the same to your code: the same classes, the same methods, the same signatures and the same types. A test written for one must pass on the other.
+
+Over the years, small differences crept in. A parameter had a different name on each side. A docblock said one thing in Zephir and a different thing in PHP. In some places, the return types did not agree. The test suites did not catch these, because each suite tests only its own codebase.
+
+For this release, we set out to remove every difference. We tracked the work in [cphalcon#17428][alignment], with one sub-issue for each namespace: 38 in total, from `Acl` to `Translate`. It took seven weeks.
+
+### Step 1: Quill
+
+[Quill][quill] reads Zephir and PHP sources into the same model, so the two trees can be compared. For each namespace, we exported the model from both codebases and compared them with `quill parity`. The report lists every class that exists on one side only. For the classes on both sides, it lists every member that is different: a missing method, a renamed parameter, a different default value, a different return type. `quill docblocks` wrote each documentation difference to a spreadsheet row, and we decided which text was correct, row by row.
+
+We repeated this until the report for each namespace was empty.
+
+### Step 2: A manual diff of every namespace
+
+Quill compares the API surface. It cannot tell you that two methods with the same signature behave differently. So when a namespace passed the parity check, we read the two implementations side by side: every method body, every guard, every default value and every exception. That is 1,488 Zephir files on one side and 1,478 PHP files on the other.
+
+When the two disagreed, we found out which one was correct and fixed the other. Sometimes the extension was wrong. Sometimes the PHP implementation was wrong.
+
+There were times though that even though the extension was wrong, we did not make changes because that means that we were changing the interface and such changes need to end up in a major version, which will be v7. Those were a few instances thankfully and we have to live with it until v7 comes out. We have documented them in our internal docs and they will be addressed in due time.
+
+### What we found
+
+This was slow work, and it was worth it. The review found bugs in code that the tests had never reached.
+
+In the extension, fixed in v5.21.0:
+
+- `CheckGroup` and `RadioGroup` kept their choices in the property meant for user options, so `setUserOption()` added a choice and `setOptions()` removed every user option.
+- The file validators reported success for a value that was not an uploaded file, and the resolution validators never checked whether `getimagesize()` failed.
+- `Validator\Ip` ignored per-field `allowPrivate` and `allowReserved` arrays.
+- PHQL `WITH` with a model name always threw `RelationshipNotFound`.
+- The model manager raised `TypeError` on string field lists, composite foreign keys and composite through-relations.
+- `Resultset\Simple::current()` could return `false`, which its declared return type does not allow.
+- Two Volt methods declared return types that the code could not always satisfy.
+
+In the PHP implementation, fixed across the v6 betas and RC1:
+
+- The MySQL dialect rendered `ENUM` and `SET` columns as `ENUMVARCHAR`.
+- `Tag::getEscaper()` treated `1` and `"1"` as "escaping off".
+- `Model::__construct()`, `MetaData::getColumnMap()`, `Router::loadFromConfig()`, `Volt::isIncluded()` and `FilePathTrait::prepareVirtualPath()` raised a `TypeError` or did nothing, where cphalcon throws a specific exception.
+
+Each fix has a test. The test suites are shared, so every one of these tests now runs on both codebases.
+
+### PHPStan at max
+
+The PHP implementation ran PHPStan at level 1. As part of this work, we raised it to `max`.
+
+At `max`, every parameter, property and return value needs a precise type, and every array needs a shape. We did not want two sources of truth for those shapes. Each namespace now has a type registry, for example `Phalcon\Contracts\Db\DbTypes`, that defines its array shapes once. The registries exist in both codebases, and the Zephir sources import the same aliases in their docblocks.
+
+A small number of checks conflict with the alignment. Zephir declares many parameters as `var`, so a type guard in Zephir does real work at run time. The PHP mirror declares the narrow native type, and PHPStan reports the same guard as dead code. We kept those guards, so the two codebases stay identical. Each exception is listed in the PHPStan configuration, with a comment that explains it.
+
+### What this means for you
+
+- Code that runs on the extension runs the same way on the PHP package, and the reverse.
+- The API reference comes from the source, so it shows what ships.
+- If you use `phalcon/phalcon` with PHPStan, your analysis now reads precise types from Phalcon.
+
+### Are the codebases "really" identical
+
+Without sugar coating it, No.
+
+There are differences and they are subtle. An property type declared `var` with subsequent checks in the code for `array`/`string` could be changed to `array|string` in phalcon. Some of those we did leave in because keeping it `mixed` and putting the type checking in the method caused more problems than it solved. Those should be what you should be looking for when using v6 and it only matters if you extend the classes or use those interfaces. For the majority of users this will not be a problem.
+
+## Ecosystem
+
+Zephir has been improving continuously. several long standing bugs have been addressed, we now have Attribute support (which will be used in the Annotations namespace), optimizations and memory leaks fixed... the work continues!
+
+We are working on a brand new design for our website. That will materialize when we release v6 stable.
+
+Our blog is now running on Astro, which makes it much easier for us to post and handle the repo.
+
+Our documentation has changed also to nimbus-docs (based on Astro). This move offered a much easier way to handle versions and redirects, which were sore points in our deployment process. A lot of the versioning and redirections are now parameter based, which helps us with new deployments.
+
+
+## Next steps
+
+One major task remains and that is the Annotations Parser. This is another parser written in C that has to be "converted" to PHP, the same way we converted PHQL and Volt. The repository is there and we are working on it. Once it is done, hopefully in the next week or two, we will have also full Annotation support, and we will also introduce attribute based Annotations in cphalcon (which phalcon already has).
+
+That will be the final step for a v6 stable and we are extremely excited about it.
+
+
+## Thanks
+
+As always, thank you to everyone who reported an issue, opened a pull request, or tested a build before it shipped!
+
+---
+
+## [5.21.0](https://github.com/phalcon/cphalcon/releases/tag/v5.21.0) (2026-09-18)
+
+### Tools
+
+- Zephir 1.5.0
+
+### Changed
+
+- `Phalcon\Db\Adapter\Pdo\AbstractPdo::commit()` and `rollback()` now throw `Phalcon\Db\Exceptions\NoActiveTransaction` when the connection has no active transaction, instead of sending a commit, rollback or savepoint statement to the server. [#17546](https://github.com/phalcon/cphalcon/issues/17546) [[doc]](https://docs.phalcon.io/5.21/db-layer/)
+
+### Added
+
+- `Phalcon\Mvc\Model::findFirst()` now recognizes the `eager` parameter, so relations can be eagerly loaded. [#17534](https://github.com/phalcon/cphalcon/issues/17534) [[doc]](https://docs.phalcon.io/5.21/db-models/)
+
+### Fixed
+
+- PHQL `WITH` naming a model instead of a relation alias always throwing `RelationshipNotFound`; the fallback checked `Phalcon\Mvc\Model\Manager::getRelationsBetween()` for an object, but it returns an array. Ambiguous pairs now throw `AmbiguousJoinRelation`. [#17554](https://github.com/phalcon/cphalcon/issues/17554) [[doc]](https://docs.phalcon.io/5.21/db-models/)
+- PHQL string literals not resolving their escape sequences, so `\n` reached the database as a backslash and an `n`. [#17585](https://github.com/phalcon/cphalcon/issues/17585) [[doc]](https://docs.phalcon.io/5.21/db-phql/)
+- `Phalcon\Db\Adapter\Pdo\AbstractPdo` leaving the transaction nesting level wrong when `begin()`, `commit()` or `rollback()` fails. [#17546](https://github.com/phalcon/cphalcon/issues/17546) [[doc]](https://docs.phalcon.io/5.21/db-layer/)
+- `Phalcon\Filter\Validation\Validator\File\AbstractFile::checkUpload()` reporting success when the field value is not an uploaded file array; a missing file or a plain string now fails validation. [#17541](https://github.com/phalcon/cphalcon/issues/17541) [[doc]](https://docs.phalcon.io/5.21/filter-validation/)
+- `Phalcon\Filter\Validation\Validator\File\Resolution\Equal`, `Max`, `Min` and `AspectRatio` not checking the `false` returned by `getimagesize()`; a file that is not a readable image is now rejected. [#17542](https://github.com/phalcon/cphalcon/issues/17542) [[doc]](https://docs.phalcon.io/5.21/filter-validation/)
+- `Phalcon\Filter\Validation\Validator\Ip` ignoring per-field `allowPrivate` and `allowReserved` arrays; the option is now resolved for the field before it becomes a filter flag. [#17548](https://github.com/phalcon/cphalcon/issues/17548) [[doc]](https://docs.phalcon.io/5.21/filter-validation/)
+- `Phalcon\Forms\Element\CheckGroup` and `RadioGroup` storing their choices in the property `Phalcon\Forms\Element\AbstractElement` uses for user options, so `setUserOption()` added a choice and `setOptions()` removed every user option. [#17536](https://github.com/phalcon/cphalcon/issues/17536) [[doc]](https://docs.phalcon.io/5.21/forms/)
+- `Phalcon\Forms\Element\Select::addOption()` writing with an offset into an object or `null` options value; the write now happens only when the options value is an array (`null` becomes an empty array). [#17536](https://github.com/phalcon/cphalcon/issues/17536) [[doc]](https://docs.phalcon.io/5.21/forms/)
+- `Phalcon\Mvc\Model\Manager::getRelationRecords()` raising `TypeError` on a compound through-relation marked `reusable`, and reusing one key for every record. The key is now built from every field the relation covers. [#17560](https://github.com/phalcon/cphalcon/issues/17560) [[doc]](https://docs.phalcon.io/5.21/db-models-relationships/)
+- `Phalcon\Mvc\Model\Manager` relation guards throwing `TypeError` on a string field list, and the second check in `addHasManyToMany()` / `addHasOneThrough()` comparing the same pair twice. [#17556](https://github.com/phalcon/cphalcon/issues/17556) [[doc]](https://docs.phalcon.io/5.21/db-models/)
+- `Phalcon\Mvc\Model\Resultset::valid()` reporting no row for a resultset restored from cache; `Phalcon\Mvc\Model\Resultset\Complex` stores rows that are already hydrated, so they are objects and not arrays. [#17574](https://github.com/phalcon/cphalcon/issues/17574) [[doc]](https://docs.phalcon.io/5.21/db-models/)
+- `Phalcon\Mvc\Model\Resultset\Simple::current()` giving back `false` on a second call at a position with no row; the `false` it caches is a sentinel, and `null` is returned as the declared type says. [#17568](https://github.com/phalcon/cphalcon/issues/17568) [[doc]](https://docs.phalcon.io/5.21/db-models/)
+- `Phalcon\Mvc\Model` raising `TypeError` on a composite virtual foreign key violation, and when the case-insensitive column-map lookup ran without a column map. [#17558](https://github.com/phalcon/cphalcon/issues/17558) [[doc]](https://docs.phalcon.io/5.21/db-models/)
+- `Phalcon\Mvc\View\Engine\Volt::preload()` raising an error when the engine has no container; the href is given back unchanged. `Phalcon\Mvc\View\Engine\Volt\Compiler::compileSource()` returning `null` in extends mode when the template contributes no blocks. [#17565](https://github.com/phalcon/cphalcon/issues/17565) [[doc]](https://docs.phalcon.io/5.21/volt/)
+- `Phalcon\Storage\Adapter\Stream` and `Phalcon\Queue\Adapter\Stream\StreamContext` reporting a `mkdir(): File exists` warning when a different process makes the directory first. [#17561](https://github.com/phalcon/cphalcon/issues/17561) [[doc]](https://docs.phalcon.io/5.21/storage/)
+
+
+
+[17534]: https://github.com/phalcon/cphalcon/issues/17534
+[17546]: https://github.com/phalcon/cphalcon/issues/17546
+[17561]: https://github.com/phalcon/cphalcon/issues/17561
+[17574]: https://github.com/phalcon/cphalcon/issues/17574
+[17585]: https://github.com/phalcon/cphalcon/issues/17585
+[5_21_0]: https://github.com/phalcon/cphalcon/releases/tag/v5.21.0
+[alamellama]: https://github.com/ALameLlama
+[alignment]: https://github.com/phalcon/cphalcon/issues/17428
+[alistar84]: https://github.com/Alistar84
+[kgrammer]: https://github.com/kgrammer
+[quill]: https://docs.phalcon.io/latest/quill
+[ryinner]: https://github.com/ryinner
+[v6_0_0_RC_1]: https://github.com/phalcon/phalcon/releases/tag/v6.0.0RC1
+[wmamrak]: https://github.com/wmamrak
+[zephir]: https://github.com/zephir-lang/zephir/releases/tag/1.5.0
