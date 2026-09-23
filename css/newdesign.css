@@ -93,6 +93,22 @@ html.dark .phalcon-blog a:hover,
 
 /* -------------------------------------------------------------- chrome */
 
+/*
+ * Keep the header at the top of the viewport. A sticky element stays inside
+ * its parent. The external sheet sets `height: 100%` on body, so the header
+ * would scroll away after the first screen. Body grows with its content here.
+ */
+body {
+    height: auto;
+    min-height: 100%;
+}
+
+.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 html.dark .header,
 .header {
     background-color: var(--nd-chrome);
