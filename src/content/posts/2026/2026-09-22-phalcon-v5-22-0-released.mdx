@@ -1,0 +1,44 @@
+---
+title: Phalcon v5.22.0 / v6.0.0RC2 Released
+date: 2026-09-22T00:01:02.699Z
+image: /assets/banners/2026/2026-09-22-phalcon-5.22.0-release.svg
+tags:
+  - phalcon
+  - phalcon5
+  - phalcon6
+  - release
+---
+
+Phalcon [v5.22.0][5_22_0] and [v6.0.0RC2][v6_0_0_RC_2] have been released. Annotations and Attributes!
+
+A smaller release this time, focusing on adding the phalcon annotations router in v6, but also introducing PHP Attributes as an annotations reader. More information in [our documentation][annotations].
+
+We have also corrected our documentation ([upgrade][upgrade] page), to highlight the changes between 5.20 and beyond.
+
+## Thanks
+
+As always, thank you to everyone who reported an issue, opened a pull request, or tested a build before it shipped!
+
+---
+
+## [5.22.0](https://github.com/phalcon/cphalcon/releases/tag/v5.22.0) (2026-09-22)
+
+### Tools
+
+- Zephir 1.5.0
+
+### Changed
+
+- `Phalcon\Annotations\ReaderInterface` no longer declares the static `parseDocBlock()`; it stays a public static method of `Phalcon\Annotations\Reader`. [#17601](https://github.com/phalcon/cphalcon/issues/17601) [[doc]](https://docs.phalcon.io/5.22/annotations/)
+- `Phalcon\Mvc\Model\MetaData\Strategy\Annotations` reads `skipOnInsert`, `skipOnUpdate`, `allowEmptyString` and `defaultValue` next to the `skip_on_insert`, `skip_on_update`, `allow_empty_string` and `default` it already read. [#17601](https://github.com/phalcon/cphalcon/issues/17601) [[doc]](https://docs.phalcon.io/5.22/db-models-metadata/)
+
+### Added
+
+- `Phalcon\Annotations\AttributesReader` reads PHP attributes instead of docblocks; `setReader()` on the annotations adapter selects it and `Phalcon\Annotations\Reader` stays the default. [#17601](https://github.com/phalcon/cphalcon/issues/17601) [[doc]](https://docs.phalcon.io/5.22/annotations/)
+- `Phalcon\Annotations\Router\Route`, `Connect`, `Delete`, `Get`, `Head`, `Options`, `Patch`, `Post`, `Purge`, `Put`, `Trace`, `RoutePrefix` and `Phalcon\Annotations\Models\MetaData\Column`, `Identity`, `Primary`, `Source` give the attribute form of the router and model metadata annotations. [#17601](https://github.com/phalcon/cphalcon/issues/17601) [[doc]](https://docs.phalcon.io/5.22/annotations/)
+
+
+[5_22_0]: https://github.com/phalcon/cphalcon/releases/tag/v5.22.0
+[annotations]: https://docs.phalcon.io/5.22/annotations
+[upgrade]: https://docs.phalcon.io/5.22/upgrade
+[v6_0_0_RC_2]: https://github.com/phalcon/phalcon/releases/tag/v6.0.0RC2
