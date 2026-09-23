@@ -8,10 +8,10 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 const EXPECTED = {
     /* Every file under dist/assets, in all folders. A silent drift here is how
        a broken image reaches production unnoticed. */
-    assets: 210,
-    feedItems: 318,
+    assets: 211,
+    feedItems: 319,
     paginationPages: 31,
-    postPages: 318,
+    postPages: 319,
     /* Rule lines, comments excluded. `wc -l` reports one more, because the
        file ends with a blank line. */
     redirectRules: 59,
