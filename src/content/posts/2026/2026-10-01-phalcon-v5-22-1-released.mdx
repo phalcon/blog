@@ -1,0 +1,103 @@
+---
+title: Phalcon v5.22.1 / v6.0.0RC3 Released
+date: 2026-10-01T00:01:02.699Z
+image: /assets/banners/2026/2026-10-01-phalcon-5.22.1-release.svg
+tags:
+  - phalcon
+  - phalcon5
+  - phalcon6
+  - release
+  - performance
+---
+
+Phalcon [v5.22.1][5_22_1] and [v6.0.0RC3][v6_0_0_RC_3] have been released. This is a performance release: the same API, the same behavior, less work for each request.
+
+## Faster requests
+
+For this release, we built a benchmark suite for the extension, used it to find where a request spends its time, and then changed one component at a time. Each change had to show a gain in the numbers and keep all the tests green. A change that did not pay for itself was dropped.
+
+We measured four small reference applications, which run the same code paths as real applications:
+
+- **Micro**: a "hello world" route with `Phalcon\Mvc\Micro`.
+- **MVC**: a page with the router, the dispatcher, a controller and a Volt view.
+- **REST**: list, show and create endpoints with models on SQLite.
+- **ADR**: a "hello world" action with the new ADR application and `Phalcon\Container`.
+
+The results, for each request, v5.22.0 against v5.22.1:
+
+| Application   | Instructions | Memory allocations | Wall time |
+|---------------|-------------:|-------------------:|----------:|
+| Micro         |      -20.7%  |             -13.8% |    -16.4% |
+| MVC           |      -10.1%  |             -12.2% |     -2.8% |
+| REST (create) |       -9.5%  |              -9.5% |     -3.7% |
+| REST (show)   |       -9.0%  |              -8.6% |     -0.7% |
+| REST (list)   |       -8.3%  |              -8.5% |     -2.3% |
+| ADR           |       -4.7%  |              -2.6% |     -1.2% |
+
+Some parts of the framework improved even more (instructions):
+
+- Creating `Phalcon\Di\FactoryDefault`: **-44.7%**. The `filter` service is now created only when you use it, and `Phalcon\Filter\Filter` sets up its helper map in one step.
+- Defining 50 routes and matching a request: **-13.1%**, and **-22.9%** when the routes use HTTP methods.
+- Model `find()`: -5.9%, `findFirst()`: -5.6%, `save()`: -8.3%; parsing a PHQL query: -7.3%.
+- Shared service lookups in `Phalcon\Di\Di`: -4.7%; service lookups in `Phalcon\Container\Container`: -2.5%.
+
+How we measured: PHP 8.4 on the command line, with OPcache on and JIT off. We counted instructions with valgrind, which gives the same number on each run, so even a small change is visible. We measured wall time on one pinned CPU core. Wall time improves less than the instruction count, because much of the work we removed was short and cheap work (method lookups by name, string hashing, temporary arrays). Your numbers will be different, and they depend on your application.
+
+A few changes use a small amount of extra memory for a short time to save work. For example, the router builds its indexes in local arrays before it stores them. We accepted these trades one by one, and we will show them in the next post.
+
+## The benchmark suite
+
+The suite is now part of the repository, in [`tests/benchmarks`][benchmarks], with a `bench` Docker service. It counts instructions, memory allocations, peak and retained memory, and wall time for each subject, and it compares two builds of the extension. If you want to test a change to the extension, you can now measure it before you send it.
+
+In a few days, we will publish a second post about the method: how we made the measurements reliable, how we found the hot spots, how we decided what to keep, and what did not work.
+
+## v6.0.0RC3
+
+The PHP implementation received the same changes where they apply, so that the two codebases stay in sync. Some changes are only for the extension, because PHP does not have the same cost there.
+
+## Bug fixes
+
+- `View::partial()` and `View\Simple::render()` now resolve a `..` path segment, and `View::partial()` detects a Windows absolute path ([#17606][17606]).
+- The `Stream` model meta-data adapter no longer lets another process read a cache file that is not complete, and the meta-data cache no longer accepts a value that is not an array ([#17608][17608]).
+- `Filter::sanitize()` now calls array callables that you register with `set()` ([#17610][17610]).
+
+## Thanks
+
+As always, thank you to everyone who reported an issue, opened a pull request, or tested a build before it shipped!
+
+---
+
+## [5.22.1](https://github.com/phalcon/cphalcon/releases/tag/v5.22.1) (2026-10-01)
+
+### Tools
+
+- Zephir 1.5.0
+
+### Changed
+
+- Faster creation of `Phalcon\Di\FactoryDefault` and faster shared service lookups in `Phalcon\Di\Di`. [#17617](https://github.com/phalcon/cphalcon/issues/17617)
+- Faster creation of `Phalcon\Filter\Filter`. [#17617](https://github.com/phalcon/cphalcon/issues/17617)
+- Faster route definition and route index build in `Phalcon\Mvc\Router`. [#17618](https://github.com/phalcon/cphalcon/issues/17618)
+- Faster service definition and alias lookups in `Phalcon\Container\Container`. [#17619](https://github.com/phalcon/cphalcon/issues/17619)
+- Faster `Phalcon\Support\Settings::get()`. [#17620](https://github.com/phalcon/cphalcon/issues/17620)
+
+### Added
+
+- Benchmark suite in `tests/benchmarks` (PHPBench, instruction counts, memory, reference apps) and a `bench` Docker service to compare builds of the extension. [#17613](https://github.com/phalcon/cphalcon/issues/17613)
+- Own-cost attribution and static scan tools for the benchmark suite (`tests/benchmarks/bin`). [#17615](https://github.com/phalcon/cphalcon/issues/17615)
+
+### Fixed
+
+- `Phalcon\Mvc\View::partial()` and `Phalcon\Mvc\View\Simple::render()` dropping a `..` path segment instead of resolving it. [#17606](https://github.com/phalcon/cphalcon/issues/17606) [[doc]](https://docs.phalcon.io/5.22/views/)
+- `Phalcon\Mvc\View::partial()` not detecting a Windows absolute path (`C:\...`) as absolute. [#17606](https://github.com/phalcon/cphalcon/issues/17606) [[doc]](https://docs.phalcon.io/5.22/views/)
+- `Phalcon\Mvc\Model\MetaData\Stream` letting other processes read a partially written cache file. [#17608](https://github.com/phalcon/cphalcon/issues/17608) [[doc]](https://docs.phalcon.io/5.22/db-models-metadata/)
+- `Phalcon\Mvc\Model\MetaData` storing a cached value that is not an array as the model meta-data. [#17608](https://github.com/phalcon/cphalcon/issues/17608) [[doc]](https://docs.phalcon.io/5.22/db-models-metadata/)
+- `Phalcon\Filter\Filter::sanitize()` not calling array callables registered with `set()`. [#17610](https://github.com/phalcon/cphalcon/issues/17610) [[doc]](https://docs.phalcon.io/5.22/filter-filter/)
+
+
+[17606]: https://github.com/phalcon/cphalcon/issues/17606
+[17608]: https://github.com/phalcon/cphalcon/issues/17608
+[17610]: https://github.com/phalcon/cphalcon/issues/17610
+[5_22_1]: https://github.com/phalcon/cphalcon/releases/tag/v5.22.1
+[benchmarks]: https://github.com/phalcon/cphalcon/tree/5.0.x/tests/benchmarks
+[v6_0_0_RC_3]: https://github.com/phalcon/phalcon/releases/tag/v6.0.0RC3
