@@ -1,58 +1,1220 @@
 /*
- * This sheet re-skins the blog with the palette and the surface treatment of
- * the phalcon.io `new-design` branch. The markup does not change: every rule
- * here overrides the external Phalcon stylesheet, which hardcodes its colors
- * and carries no custom properties of its own.
+ * The blog stylesheet. The blog loads no other stylesheet, except
+ * tokens.css before this one.
  *
- * The tone tokens copy `src/styles/global.css` on that branch. The blog keeps
- * its light/dark switch, so the design's `light` tone answers to the default
- * and its `dark` tone answers to `html.dark`. Header and footer stay on the
- * dark chrome in both, the way the redesign's nav does.
+ * The colors and the fonts come from tokens.css, a copy of
+ * phalcon/css/tokens.css in phalcon/assets. The CI workflow gets the file
+ * again before every build. The --nd- variables give each tone its tokens:
+ * the light tone answers to the default, and the dark tone answers to
+ * `html.dark`. The header and the footer use the dark tone in both, the way
+ * the phalcon.io nav does.
+ *
+ * The sheet has three parts, in cascade order: the layout rules of the old
+ * shared sheet, the blog rules, and the design. Most colors come from the
+ * design part, the last one.
  */
 
 :root {
-    --nd-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-    --nd-font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --nd-font-mono: var(--ph-font-mono);
+    --nd-font-sans: var(--ph-font-sans);
 
     /* light tone */
-    --nd-accent: #0f9e86;
-    --nd-accent-hover: #0b7d6a;
-    --nd-bg: #f7faf8;
-    --nd-border: #e4ede8;
-    --nd-border-strong: #d3e2d9;
-    --nd-faint: #7d938a;
-    --nd-heading: #0f1a17;
-    --nd-kicker: #5c7a6e;
-    --nd-muted: #4b6157;
-    --nd-surface: #ffffff;
-    --nd-text: #0f1a17;
+    --nd-accent: var(--ph-light-accent);
+    --nd-accent-contrast: var(--ph-light-accent-contrast);
+    --nd-accent-hover: var(--ph-light-accent-hover);
+    --nd-bg: var(--ph-light-bg);
+    --nd-border: var(--ph-light-border);
+    --nd-border-strong: var(--ph-light-border-strong);
+    --nd-code-border: var(--ph-light-code-border);
+    --nd-danger: var(--ph-light-danger);
+    --nd-danger-bg: var(--ph-light-danger-bg);
+    --nd-faint: var(--ph-light-faint);
+    --nd-heading: var(--ph-light-heading);
+    --nd-info: var(--ph-light-info);
+    --nd-info-bg: var(--ph-light-info-bg);
+    --nd-kicker: var(--ph-light-kicker);
+    --nd-muted: var(--ph-light-muted);
+    --nd-success: var(--ph-light-success);
+    --nd-success-bg: var(--ph-light-success-bg);
+    --nd-surface: var(--ph-light-surface);
+    --nd-text: var(--ph-light-text);
+    --nd-warning: var(--ph-light-warning);
+    --nd-warning-bg: var(--ph-light-warning-bg);
 
-    /* chrome — fixed in both tones */
-    --nd-chrome: #070d0c;
-    --nd-chrome-border: #17221f;
-    --nd-chrome-muted: #9db3aa;
-    --nd-chrome-text: #e6f2ec;
-
-    /* code surface */
-    --nd-code-bg: #f2f7f4;
-    --nd-code-border: #d3e2d9;
+    /* chrome: the dark tone in both tones */
+    --nd-chrome: var(--ph-dark-bg);
+    --nd-chrome-border: var(--ph-dark-border);
+    --nd-chrome-muted: var(--ph-dark-muted);
+    --nd-chrome-text: var(--ph-dark-text);
 }
 
 html.dark {
-    --nd-accent: #74ccb2;
-    --nd-accent-hover: #57b49b;
-    --nd-bg: #070d0c;
-    --nd-border: #17221f;
-    --nd-border-strong: #2f3a3c;
-    --nd-code-bg: #0d1614;
-    --nd-code-border: #17221f;
-    --nd-faint: #5e7269;
-    --nd-heading: #e6f2ec;
-    --nd-kicker: #8fa39b;
-    --nd-muted: #9db3aa;
-    --nd-surface: #0d1614;
-    --nd-text: #e6f2ec;
+    --nd-accent: var(--ph-dark-accent);
+    --nd-accent-contrast: var(--ph-dark-accent-contrast);
+    --nd-accent-hover: var(--ph-dark-accent-hover);
+    --nd-bg: var(--ph-dark-bg);
+    --nd-border: var(--ph-dark-border);
+    --nd-border-strong: var(--ph-dark-border-strong);
+    --nd-code-border: var(--ph-dark-code-border);
+    --nd-danger: var(--ph-dark-danger);
+    --nd-danger-bg: var(--ph-dark-danger-bg);
+    --nd-faint: var(--ph-dark-faint);
+    --nd-heading: var(--ph-dark-heading);
+    --nd-info: var(--ph-dark-info);
+    --nd-info-bg: var(--ph-dark-info-bg);
+    --nd-kicker: var(--ph-dark-kicker);
+    --nd-muted: var(--ph-dark-muted);
+    --nd-success: var(--ph-dark-success);
+    --nd-success-bg: var(--ph-dark-success-bg);
+    --nd-surface: var(--ph-dark-surface);
+    --nd-text: var(--ph-dark-text);
+    --nd-warning: var(--ph-dark-warning);
+    --nd-warning-bg: var(--ph-dark-warning-bg);
 }
+
+
+/* ============================================================ layout */
+
+/*
+ * The rules below come from the old shared sheet
+ * (https://assets.phalcon.io/css/style.css), which the blog no longer loads.
+ * Only the rules that the blog markup uses are here, in the order of that
+ * sheet. The sections after them come later in the cascade and set most of
+ * the colors.
+ */
+
+/* The dark tone of the old sheet. */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark p,
+html.dark ul li,
+html.dark ol li,
+html.dark .phalcon-blog__title,
+html.dark .phalcon-blog__projects-text,
+html.dark .phalcon-blog__main-title,
+html.dark .tag-button {
+    color: var(--nd-text);
+}
+
+/* Base (normalize.css v3.0.3, MIT License, the parts that the blog uses). */
+html {
+    -webkit-text-size-adjust: 100%;
+    font-family: var(--nd-font-sans);
+}
+
+body {
+    margin: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+small {
+    font-size: 80%;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+
+pre {
+    overflow: auto;
+}
+
+code,
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+button,
+input {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    -webkit-appearance: button;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: visible;
+    padding: 0;
+    text-transform: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--nd-accent);
+    outline: 0;
+    text-decoration: none;
+}
+
+/* The 404 page button: the accent button of the design, in both tones. */
+.phalcon-blog .phalcon-blog__main .green-button {
+    background-color: var(--nd-accent);
+    border: 0;
+    border-radius: 4px;
+    color: var(--nd-accent-contrast);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 16px;
+    transition: 0.2s;
+}
+
+.phalcon-blog .phalcon-blog__main .green-button:hover {
+    background-color: var(--nd-accent-hover);
+    color: var(--nd-accent-contrast);
+}
+
+input:focus {
+    outline: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Header */
+.header {
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.header .container {
+    align-items: center;
+    display: flex;
+}
+
+.header a {
+    transition: 0.135s;
+}
+
+.header__left {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.header__logo {
+    align-items: center;
+    display: flex;
+    margin-right: 35px;
+}
+
+.header__logo a {
+    background-image: url("https://assets.phalcon.io/phalcon/images/svg/phalcon-logo-white-105x40.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 43px;
+    width: 105px;
+}
+
+.header__sitename {
+    font-size: 9px;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 10px;
+    padding: 0 12px;
+}
+
+.header-nav {
+    align-items: center;
+    display: flex;
+    margin-right: 35px;
+}
+
+.header-nav > li {
+    margin-right: 30px;
+}
+
+.header-nav > li:last-child {
+    margin-right: 0;
+}
+
+.header-nav > li a {
+    transition: 0.135s;
+}
+
+.header-nav > li:hover > a {
+    transition: 0.135s;
+}
+
+.header-nav > li.expand {
+    position: relative;
+}
+
+.header-nav > li.expand:hover .header-dropdown-wrapper {
+    display: block;
+}
+
+.header-nav > li.expand > a::after {
+    color: var(--ph-white);
+    content: url("https://assets.phalcon.io/phalcon/images/svg/arrow.svg");
+    margin-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+/* The mobile nav. Header.astro adds `.active` when the burger is clicked. */
+.header-nav--mobile {
+    height: 100%;
+    left: -250px;
+    overflow-y: scroll;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    transition: 0.4s;
+    width: 230px;
+    z-index: 20;
+}
+
+.header-nav--mobile::-webkit-scrollbar {
+    width: 6px;
+}
+
+.header-nav--mobile::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--ph-mist-100) 70%, transparent);
+}
+
+.header-nav--mobile.active {
+    left: 0;
+    transition: 0.4s;
+}
+
+.header-nav--mobile > ul > li {
+    margin-bottom: 15px;
+}
+
+.header-nav--mobile > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+.header-nav--mobile li.extendable .header-dropdown--mobile {
+    margin-top: 15px;
+}
+
+.header-nav--mobile li.extendable .header-dropdown--mobile__title {
+    font-size: 14px;
+}
+
+.header-nav--mobile li.extendable .header-dropdown--mobile ul {
+    font-size: 13px;
+    padding-left: 9px;
+}
+
+.header-nav--mobile li.extended .header-dropdown--mobile {
+    display: block;
+}
+
+/*
+ * The Community dropdown. It is part of the dark header in both tones, as the
+ * nav dropdown of phalcon.io: a dark panel, mono titles and mono links.
+ */
+.header-dropdown {
+    background-color: var(--ph-dark-surface);
+    border: 1px solid var(--ph-dark-border-strong);
+    border-radius: 5px;
+    box-shadow: 0 12px 34px color-mix(in srgb, var(--ph-night-950) 50%, transparent);
+    min-width: 13rem;
+    padding: 5px;
+    z-index: 10;
+}
+
+.header-dropdown .header-dropdown__title {
+    color: var(--ph-dark-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    padding: 9px 11px 4px;
+    text-transform: uppercase;
+}
+
+.header .header-nav .header-dropdown a {
+    border-radius: 3px;
+    color: var(--ph-mist-300);
+    display: block;
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 9px 11px;
+    transition: 0.135s;
+}
+
+.header .header-nav .header-dropdown a:hover {
+    background-color: var(--ph-surface-800);
+    color: var(--ph-mist-100);
+}
+
+.header-dropdown-wrapper {
+    display: none;
+    padding-top: 11px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+
+.header-dropdown--mobile {
+    display: none;
+    padding-left: 8px;
+}
+
+.header-dropdown--mobile li {
+    margin-bottom: 13px;
+}
+
+.header__search {
+    background-color: color-mix(in srgb, var(--ph-mist-100) 40%, transparent);
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 30px;
+    margin-right: 20px;
+    padding: 0 15px;
+    transition: 0.2s;
+    width: 172px;
+}
+
+.header__search::placeholder {
+    color: var(--ph-white);
+}
+
+.header__search:focus {
+    background-color: var(--ph-white);
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--ph-ink-500);
+    transition: 0.2s;
+}
+
+.header__search:focus::placeholder {
+    color: var(--ph-ink-500);
+}
+
+.header__right {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.header-nav__burger {
+    border: 0;
+    display: none;
+    flex-direction: column;
+    height: 16px;
+    justify-content: space-between;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.header-nav__burger span {
+    background-color: var(--ph-white);
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: ease all 0.135s;
+    width: 20px;
+}
+
+/* The three bars become a cross while the mobile nav is open. */
+.header-nav__burger.active span:nth-child(2) {
+    display: none;
+}
+
+.header-nav__burger.active span:nth-child(1) {
+    top: 7px;
+    transform: rotate(45deg);
+}
+
+.header-nav__burger.active span:nth-child(3) {
+    bottom: 7px;
+    transform: rotate(-45deg);
+}
+
+.header__github {
+    margin-right: 10px;
+}
+
+.header__github a {
+    display: block;
+    height: 20px;
+}
+
+.header__discord a {
+    display: block;
+    height: 22px;
+}
+
+/* The theme switcher. The moon and the sun are white, on the dark header. */
+.switcher button {
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    font-size: inherit;
+    height: 20px;
+    margin-left: 8px;
+    outline: none;
+    width: 20px;
+}
+
+.switcher button:before {
+    width: 20px;
+}
+
+.switcher-light button::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z'%3E%3C/path%3E%3C/svg%3E");
+    margin-top: 1px;
+    width: 17px;
+}
+
+.switcher-dark button::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        font-size: 13px;
+    }
+
+    .header__logo a {
+        background-image: url("https://assets.phalcon.io/phalcon/images/svg/phalcon-logo-35x39.svg");
+        height: 39px;
+        width: 34px;
+    }
+
+    .header__search {
+        width: 110px;
+    }
+
+    .header-nav {
+        margin-right: 28px;
+    }
+
+    .header-nav > li {
+        margin-right: 20px;
+    }
+
+    .header-nav > li.expand > a::after {
+        top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-nav,
+    .header__search {
+        display: none;
+    }
+
+    .header-nav__burger {
+        display: flex;
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 750px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 958px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 1200px;
+    }
+}
+
+/* Footer */
+.footer {
+    padding-bottom: 27px;
+    padding-top: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 20px;
+    max-width: 100%;
+}
+
+.footer-nav li {
+    border-bottom: 1px solid transparent;
+    margin: 0 15px;
+    transition: 0.135s;
+}
+
+.footer-nav li:hover {
+    transition: 0.135s;
+}
+
+.footer__license {
+    line-height: 23px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .footer-nav li {
+        line-height: 23px;
+    }
+}
+
+/* Page layout and post cards */
+.phalcon-blog {
+    padding: 50px 0;
+}
+
+.phalcon-blog .container {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.phalcon-blog__main {
+    flex: 1;
+}
+
+.phalcon-blog__right {
+    margin-left: 20px;
+    top: 10px;
+    width: 350px;
+}
+
+.phalcon-blog__item {
+    display: flex;
+}
+
+.phalcon-blog__item-content {
+    width: 100%;
+}
+
+.phalcon-blog__item-img {
+    display: block;
+    flex-shrink: 0;
+    height: 180px;
+    margin-left: 20px;
+    position: relative;
+    text-align: center;
+    width: 180px;
+}
+
+.phalcon-blog__item-img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.phalcon-blog__item-img:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.phalcon-blog__item-title {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.phalcon-blog__item-info {
+    display: flex;
+    line-height: 17px;
+    margin-bottom: 5px;
+}
+
+.phalcon-blog__item-date {
+    margin-right: 22px;
+    position: relative;
+}
+
+.phalcon-blog__item-date:after {
+    border-radius: 50%;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 2px;
+}
+
+.phalcon-blog__item-article {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.phalcon-blog__item-read-more {
+    transition: all 0.125s;
+}
+
+.phalcon-blog__main-title {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.phalcon-blog__last-article .phalcon-blog__item {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Sidebar */
+.phalcon-blog__right-item {
+    margin-bottom: 35px;
+}
+
+.phalcon-blog__title {
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.phalcon-blog__tags-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.phalcon-blog__tags-item {
+    transition: all 0.125s;
+}
+
+.phalcon-blog__tags-item span:first-child {
+    text-transform: capitalize;
+    transition: all 0.125s;
+}
+
+.phalcon-blog__tags-item span:last-child {
+    font-weight: 700;
+}
+
+@media (max-width: 1439px) {
+    .phalcon-blog__right {
+        margin-left: 20px;
+        width: 280px;
+    }
+}
+
+.phalcon-blog__projects-text {
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.phalcon-blog__projects-text a {
+    border-bottom: 1px solid var(--nd-accent);
+    font-size: 16px;
+    line-height: 23px;
+    transition: all 0.125s;
+}
+
+.phalcon-blog__projects-text a:hover {
+    border-bottom-color: transparent;
+}
+
+@media (max-width: 1023px) {
+    .phalcon-blog .container {
+        flex-wrap: wrap;
+    }
+
+    .phalcon-blog__main {
+        width: 100%;
+    }
+
+    .phalcon-blog__right {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .phalcon-blog__item {
+        flex-wrap: wrap;
+    }
+
+    .phalcon-blog__item-img {
+        margin-bottom: 10px;
+        margin-left: 0;
+        order: -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .phalcon-blog__item-article {
+        -webkit-line-clamp: 6;
+    }
+}
+
+/* Post body */
+.phalcon-blog-detail__info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.phalcon-blog-detail__date {
+    margin-bottom: 5px;
+    margin-right: 22px;
+    position: relative;
+}
+
+.phalcon-blog-detail__date:after {
+    border-radius: 50%;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 2px;
+}
+
+.phalcon-blog-detail__author {
+    margin-bottom: 5px;
+    margin-right: 22px;
+    position: relative;
+}
+
+.phalcon-blog-detail__author:nth-child(2):after {
+    border-radius: 50%;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 2px;
+}
+
+.phalcon-blog-detail__author:last-child:after {
+    display: none;
+}
+
+.phalcon-blog-detail {
+    margin-bottom: 35px;
+}
+
+.phalcon-blog-detail table {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow: auto;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.phalcon-blog-detail table thead {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23px;
+}
+
+.phalcon-blog-detail table td {
+    border: 1px solid;
+    min-width: 150px;
+    padding: 8px 14px;
+}
+
+.phalcon-blog-detail blockquote {
+    display: block;
+    margin: 0;
+}
+
+.phalcon-blog-detail h1,
+.phalcon-blog-detail h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.phalcon-blog-detail h3 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 12px 0;
+}
+
+.phalcon-blog-detail h4 {
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+.phalcon-blog-detail iframe {
+    max-width: 100%;
+}
+
+.phalcon-blog-detail img {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.phalcon-blog-detail p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 0 0 10px;
+}
+
+.phalcon-blog-detail a {
+    border-bottom: 1px solid;
+    font-size: 16px;
+    line-height: 23px;
+    transition: all 0.125s;
+}
+
+.phalcon-blog-detail a:hover {
+    border-bottom-color: transparent;
+}
+
+.phalcon-blog-detail pre {
+    border-radius: 4px;
+    color: var(--nd-text);
+    display: block;
+    font-size: 16px;
+    line-height: 0;
+    margin-bottom: 20px;
+    margin-top: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.phalcon-blog-detail pre code {
+    word-break: normal;
+    word-wrap: normal;
+}
+
+.phalcon-blog-detail code {
+    background-color: transparent;
+    color: inherit;
+    font-weight: 400;
+    line-height: 21px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 14px;
+}
+
+.phalcon-blog-detail ul {
+    display: block;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    padding-left: 30px;
+}
+
+.phalcon-blog-detail ul li {
+    font-size: 16px;
+    line-height: 23px;
+    list-style-type: disc;
+    margin-bottom: 8px;
+    max-width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.phalcon-blog-detail ol {
+    margin: 10px 0 25px;
+    max-width: 100%;
+    padding-inline-start: 0;
+    padding-left: 20px;
+}
+
+.phalcon-blog-detail ol li {
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 8px;
+    max-width: 100%;
+}
+
+.phalcon-blog-detail .phalcon-blog-detail__author a {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.phalcon-blog-detail .headline {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .phalcon-blog-detail table {
+        display: block;
+    }
+}
+
+/* Page */
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+}
+
+html,
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+header,
+footer {
+    flex: 0 0 auto;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+}
+
+/* body.hidden stops the page from scrolling while the mobile nav is open. */
+.hidden {
+    overflow: hidden;
+}
+
+.alert {
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* iOS sends click events only to an element with a pointer cursor. */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        cursor: pointer;
+    }
+}
+
+.header-nav--mobile .extendable a:after {
+    content: url("https://assets.phalcon.io/phalcon/images/svg/arrow.svg");
+    margin-left: 5px;
+}
+
+.header-nav--mobile .header-dropdown--mobile a:after {
+    display: none;
+}
+
+.tag-button {
+    display: inline-block;
+    font-weight: 700;
+    line-height: 23px;
+    margin-bottom: 13px;
+    padding: 5px 12px;
+    transition: all 0.125s;
+}
+
+.pagination a {
+    border-bottom: 1px solid var(--nd-accent);
+    font-size: 16px;
+    line-height: 23px;
+    transition: all 0.125s;
+}
+
+.pagination a:hover {
+    border-bottom-color: transparent;
+}
+
+@media (max-width: 1023px) {
+    .pagination {
+        margin-bottom: 35px;
+    }
+}
+
+.phalcon-blog-detail p img {
+    margin-bottom: 0;
+}
+
+/* ========================================================= blog rules */
+
+/* The sidebar sponsors block (Sponsors.astro): a logo grid and a name list. */
+.phalcon-blog__sponsors-section {
+    margin-top: 1.25rem;
+}
+
+.phalcon-blog__sponsors-section:first-child {
+    margin-top: 0;
+}
+
+.phalcon-blog__sponsors-heading {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.phalcon-blog__sponsors-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.phalcon-blog__sponsors-logo {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 5.5rem;
+}
+
+.phalcon-blog__sponsors-logo-link {
+    align-items: center;
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 6px;
+    display: flex;
+    height: 3.25rem;
+    justify-content: center;
+    padding: 0.4rem;
+}
+
+.phalcon-blog__sponsors-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Below 1200px the nav and the search do not fit, and the burger opens the mobile nav. */
+@media screen and (max-width: 1200px) {
+    .header-nav,
+    .header__search {
+        display: none;
+    }
+
+    .header-nav__burger {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .phalcon-blog__item-img img {
+        object-fit: contain;
+    }
+}
+
+.phalcon-blog__item-img img {
+    height: auto;
+    max-width: 100%;
+}
+
+.phalcon-blog__last-article .phalcon-blog__item-img {
+    height: auto;
+}
+
+/* The list card image box uses the banner ratio (1200 x 444), so the full banner shows. */
+.phalcon-blog__items .phalcon-blog__item-img {
+    align-self: flex-start;
+    aspect-ratio: 1200 / 444;
+    height: auto;
+}
+
+.phalcon-blog__items .phalcon-blog__item-img img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .phalcon-blog__items .phalcon-blog__item-img {
+        width: 320px;
+    }
+}
+
+body,
+.alert,
+.footer,
+.header,
+.header-dropdown__count,
+.header-dropdown__title,
+.input,
+.phalcon-blog,
+.phalcon-blog__item-title,
+.phalcon-blog__main-title,
+.phalcon-blog-detail h1,
+.phalcon-blog-detail h2,
+.phalcon-blog-detail h3,
+.phalcon-blog-detail p,
+.phalcon-blog-detail table thead {
+    font-family: var(--nd-font-sans);
+}
+
+.phalcon-blog-detail code {
+    font-family: var(--nd-font-mono);
+}
+
+/* ======================================================== the design */
 
 /* ---------------------------------------------------------------- page */
 
@@ -95,7 +1257,7 @@ html.dark .phalcon-blog a:hover,
 
 /*
  * Keep the header at the top of the viewport. A sticky element stays inside
- * its parent. The external sheet sets `height: 100%` on body, so the header
+ * its parent. The layout rules set `height: 100%` on body, so the header
  * would scroll away after the first screen. Body grows with its content here.
  */
 body {
@@ -133,7 +1295,7 @@ html.dark .header a:hover,
 
 .header__sitename {
     background-color: transparent;
-    border: 1px solid #2f4a42;
+    border: 1px solid var(--ph-line-600);
     border-radius: 3px;
     color: var(--nd-accent);
     font-family: var(--nd-font-mono);
@@ -162,10 +1324,14 @@ html.dark .footer-nav li a,
     border-bottom-color: var(--nd-accent);
 }
 
+.footer .footer-nav li a:hover {
+    color: var(--nd-chrome-text);
+}
+
 html.dark .footer__license,
 .footer__license,
 .footer__supported {
-    color: #3f5950;
+    color: var(--ph-faint-700);
     font-family: var(--nd-font-mono);
     font-size: 12px;
 }
@@ -244,11 +1410,6 @@ html.dark .phalcon-blog__item-author,
     color: var(--nd-accent-hover);
 }
 
-/* The old sheet lays a gray veil over every card image. The design has none. */
-.phalcon-blog__item-img:after {
-    background: transparent;
-}
-
 .phalcon-blog__item-img img {
     border-radius: 4px;
 }
@@ -278,20 +1439,20 @@ html.dark .phalcon-blog__title,
  * per row. Smaller type and tighter gaps bring the pill width back to about
  * what the live blog shows.
  */
-html.dark .phalcon-blog__right .phalcon-blog__tags-items .phalcon-blog__tags-item,
-.phalcon-blog__tags-item {
+.phalcon-blog .phalcon-blog__tags-items .phalcon-blog__tags-item {
     border: 1px solid var(--nd-border-strong);
     border-radius: 3px;
     color: var(--nd-muted);
     font-family: var(--nd-font-mono);
     font-size: 10px;
     font-weight: 600;
+    line-height: normal;
     margin-bottom: 8px;
     margin-right: 8px;
     padding: 4px 9px;
 }
 
-.phalcon-blog__tags-item:hover {
+.phalcon-blog .phalcon-blog__tags-items .phalcon-blog__tags-item:hover {
     border-color: var(--nd-accent);
     color: var(--nd-accent);
 }
@@ -393,15 +1554,12 @@ html.dark .phalcon-blog-detail table td,
 
 .tag-button:hover {
     background-color: var(--nd-accent);
-    color: #06120e;
+    color: var(--ph-ink-950);
 }
 
-html.dark .previous,
-html.dark .page_number,
-html.dark .next,
-.previous,
-.page_number,
-.next {
+.pagination .previous,
+.pagination .page_number,
+.pagination .next {
     color: var(--nd-faint);
     font-family: var(--nd-font-mono);
     font-size: 12px;
@@ -411,14 +1569,25 @@ html.dark .next,
 /* ------------------------------------------------------ code blocks */
 
 /*
- * `astro.config.mjs` moves Shiki off the `nord` placeholder to a pair:
- * `github-dark-default`, which the redesign uses, and its light twin. Astro
- * writes the light colors inline and the dark ones as `--shiki-dark*` custom
- * properties, so the dark tone reads them back below. The background comes
- * from the design tokens in both tones, not from either theme.
+ * Code blocks use the Phalcon code theme (src/code-theme.json, a copy of
+ * phalcon/css/code-theme.json in phalcon/assets): GitHub's rules, with a
+ * --code-<role> variable for each color. Here the variables take the syntax
+ * tokens of the page tone.
  */
 .astro-code {
-    background-color: var(--nd-code-bg) !important;
+    --code-bg: var(--ph-light-code-bg);
+    --code-changed: var(--ph-light-syntax-changed);
+    --code-comment: var(--ph-light-syntax-comment);
+    --code-constant: var(--ph-light-syntax-constant);
+    --code-deleted: var(--ph-light-syntax-deleted);
+    --code-function: var(--ph-light-syntax-function);
+    --code-inserted: var(--ph-light-syntax-inserted);
+    --code-keyword: var(--ph-light-syntax-keyword);
+    --code-parameter: var(--ph-light-syntax-parameter);
+    --code-string: var(--ph-light-syntax-string);
+    --code-string-expression: var(--ph-light-syntax-string-expression);
+    --code-text: var(--ph-light-syntax-text);
+
     border: 1px solid var(--nd-code-border);
     border-radius: 6px;
     font-family: var(--nd-font-mono);
@@ -427,26 +1596,35 @@ html.dark .next,
     padding: 18px 20px;
 }
 
-html.dark .astro-code,
-html.dark .astro-code span {
-    color: var(--shiki-dark) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
+html.dark .astro-code {
+    --code-bg: var(--ph-dark-code-bg);
+    --code-changed: var(--ph-dark-syntax-changed);
+    --code-comment: var(--ph-dark-syntax-comment);
+    --code-constant: var(--ph-dark-syntax-constant);
+    --code-deleted: var(--ph-dark-syntax-deleted);
+    --code-function: var(--ph-dark-syntax-function);
+    --code-inserted: var(--ph-dark-syntax-inserted);
+    --code-keyword: var(--ph-dark-syntax-keyword);
+    --code-parameter: var(--ph-dark-syntax-parameter);
+    --code-string: var(--ph-dark-syntax-string);
+    --code-string-expression: var(--ph-dark-syntax-string-expression);
+    --code-text: var(--ph-dark-syntax-text);
 }
 
 /* --------------------------------------------------------- callouts */
 
 /*
- * The 107 alert callouts, redrawn as the redesign's admonition card:
- * a 3px left bar, a mono uppercase label, and a plain surface. The label is
- * not in the markup, so it comes from the class.
+ * The alert callouts (Callout.astro), drawn as the redesign's admonition
+ * card: a 3px left bar, a mono uppercase label, and the status background.
+ * The label is not in the markup, so it comes from the class.
  */
 .alert {
-    background: var(--nd-surface);
     border: 1px solid var(--nd-border-strong);
     border-left-width: 3px;
     border-radius: 0 4px 4px 0;
+    color: var(--nd-text);
+    font-family: var(--nd-font-sans);
+    margin-bottom: 20px;
     padding: 16px 22px;
 }
 
@@ -464,51 +1642,49 @@ html.dark .astro-code span {
     margin-bottom: 0;
 }
 
-/*
- * `.phalcon-blog-detail blockquote` zeroes both block margins and beats
- * `.alert` on specificity, so a callout sits against the text above and below
- * it. That went unnoticed while the callout had no visible border.
- */
+/* `.phalcon-blog-detail blockquote` sets no block margins, so a callout needs its own. */
 .phalcon-blog-detail blockquote.alert {
     margin-bottom: 24px;
     margin-top: 24px;
 }
 
 .alert-info {
-    border-left-color: #74ccb2;
+    background: var(--nd-info-bg);
+    border-left-color: var(--nd-info);
 }
 
 .alert-info:before {
-    color: #74ccb2;
+    color: var(--nd-info);
     content: "Note";
 }
 
-/* The old sheet has no rule for `.alert-notice`, so it renders unstyled. */
 .alert-notice {
-    border-left-color: #8fc19a;
+    background: var(--nd-success-bg);
+    border-left-color: var(--nd-success);
 }
 
 .alert-notice:before {
-    color: #8fc19a;
+    color: var(--nd-success);
     content: "Notice";
 }
 
 .alert-warning {
-    border-left-color: #e2c37a;
+    background: var(--nd-warning-bg);
+    border-left-color: var(--nd-warning);
 }
 
 .alert-warning:before {
-    color: #e2c37a;
+    color: var(--nd-warning);
     content: "Warning";
 }
 
 .alert-danger {
-    border-left-color: #e08f8f;
-    color: var(--nd-text);
+    background: var(--nd-danger-bg);
+    border-left-color: var(--nd-danger);
 }
 
 .alert-danger:before {
-    color: #e08f8f;
+    color: var(--nd-danger);
     content: "Important";
 }
 
@@ -524,7 +1700,7 @@ html.dark .astro-code span {
  * `anywhere` counts in that minimum width, which `break-word` does not, so it
  * is the value that lets the column shrink. It breaks a word only when the
  * word does not fit, so text that fits is unchanged. Code blocks are not
- * touched: `.phalcon-blog-detail pre` in the shared sheet sets its own
+ * touched: `.phalcon-blog-detail pre` in the layout rules sets its own
  * `word-break` and `word-wrap`, and a value set on the element beats the one
  * it would inherit.
  */

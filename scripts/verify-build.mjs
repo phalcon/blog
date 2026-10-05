@@ -4,6 +4,8 @@
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 
+import { missingTokens, resolveToken, usedTokens } from '../src/lib/tokens.mjs';
+
 /* Expected counts for the build. Update these when content is added or removed. */
 const EXPECTED = {
     /* Every file under dist/assets, in all folders. A silent drift here is how
@@ -169,6 +171,43 @@ checks.push({
     ok: existsSync('dist/tag.html') || existsSync('dist/tag/index.html'),
 });
 
+/*
+ * Design tokens. Every page loads tokens.css and then newdesign.css, and no
+ * other stylesheet. The stylesheet uses only tokens that tokens.css defines,
+ * and the browser bar takes its color from the tokens.
+ */
+count(
+    'pages that do not load exactly tokens.css and then newdesign.css',
+    measure(
+        () =>
+            listFiles('dist')
+                .filter((file) => file.endsWith('.html') && !file.startsWith('dist/pagefind/'))
+                .filter((file) => {
+                    const links = [...readFileSync(file, 'utf8').matchAll(/<link[^>]*rel="stylesheet"[^>]*>/g)]
+                        .map((match) => /href="([^"]*)"/.exec(match[0])?.[1]);
+
+                    return links.join(' ') !== '/css/tokens.css /css/newdesign.css';
+                }).length
+    ),
+    0
+);
+count(
+    'tokens that newdesign.css uses and tokens.css does not define',
+    measure(
+        () =>
+            missingTokens(
+                readFileSync('dist/css/tokens.css', 'utf8'),
+                usedTokens(readFileSync('dist/css/newdesign.css', 'utf8'))
+            ).join(', ') || 'none'
+    ),
+    'none'
+);
+count(
+    'browser bar color',
+    measure(() => /<meta name="theme-color" content="([^"]*)"/.exec(readFileSync('dist/index.html', 'utf8'))?.[1] ?? 'none'),
+    resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-slate-900')
+);
+
 for (const path of [
     'dist/index.html',
     'dist/tags.html',
@@ -176,7 +215,8 @@ for (const path of [
     'dist/sitemap-index.xml',
     'dist/robots.txt',
     'dist/humans.txt',
-    'dist/css/style.css',
+    'dist/css/newdesign.css',
+    'dist/css/tokens.css',
     'dist/post/phalcon-0-3-1-released.html',
     'dist/pagefind/pagefind.js',
 ]) {
