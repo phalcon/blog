@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import codeTheme from './src/code-theme.json' with { type: 'json' };
 import { rehypeMermaid } from './src/lib/rehype-mermaid';
 
 // https://astro.build/config
@@ -31,11 +32,11 @@ export default defineConfig({
             type: 'shiki',
             excludeLangs: ['mermaid'],
         },
+        /* The Phalcon code theme (src/code-theme.json, from phalcon/assets).
+           Its colors are --code- variables; newdesign.css maps them to the
+           syntax tokens of each tone. */
         shikiConfig: {
-            themes: {
-                dark: 'github-dark-default',
-                light: 'github-light-default',
-            },
+            theme: /** @type {import('shiki').ThemeRegistration} */ (codeTheme),
             wrap: false,
         },
     },
