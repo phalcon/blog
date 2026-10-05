@@ -36,6 +36,14 @@ test('the tokens file defines every token that the blog uses', () => {
     assert.deepEqual(missingTokens(tokens, usedBySite()), []);
 });
 
+test('the source scan counts a token that a component reads by name', () => {
+    // Meta.astro gives --ph-slate-900 and --ph-brand-400 to resolveToken(), for the browser colors.
+    const used = usedBySite();
+
+    assert.ok(used.has('--ph-slate-900'), '--ph-slate-900');
+    assert.ok(used.has('--ph-brand-400'), '--ph-brand-400');
+});
+
 test('the CI workflow gets the design files before the tests', () => {
     // The tests and the build must see the files that the deploy publishes.
     const workflow = readFileSync(new URL('.github/workflows/main.yml', root), 'utf8');

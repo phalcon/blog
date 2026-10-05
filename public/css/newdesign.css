@@ -1557,13 +1557,18 @@ html.dark .phalcon-blog-detail table td,
     color: var(--ph-ink-950);
 }
 
-.pagination .previous,
-.pagination .page_number,
-.pagination .next {
+/* The selectors must beat `html.dark .phalcon-blog a`, so the links have the same style in both tones. */
+.phalcon-blog .pagination .previous,
+.phalcon-blog .pagination .page_number,
+.phalcon-blog .pagination .next {
     color: var(--nd-faint);
     font-family: var(--nd-font-mono);
     font-size: 12px;
     letter-spacing: 0.04em;
+}
+
+.phalcon-blog .pagination a:hover {
+    color: var(--nd-accent-hover);
 }
 
 /* ------------------------------------------------------ code blocks */

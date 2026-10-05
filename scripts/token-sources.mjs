@@ -28,10 +28,16 @@ export function sourceFiles() {
 }
 
 /**
- * Every --ph- token that a source file uses in var().
+ * Every --ph- token that a source file uses in var(), or names in quotes (a
+ * component can read a token by its name, as Meta.astro does).
  *
  * @returns {Set<string>}
  */
 export function usedBySite() {
-    return new Set(sourceFiles().flatMap((file) => [...usedTokens(readFileSync(new URL(file, root), 'utf8'))]));
+    return new Set(sourceFiles().flatMap((file) => {
+        const text = readFileSync(new URL(file, root), 'utf8');
+        const named = [...text.matchAll(/['"](--ph-[a-z0-9-]+)['"]/g)].map((match) => match[1]);
+
+        return [...usedTokens(text), ...named];
+    }));
 }
