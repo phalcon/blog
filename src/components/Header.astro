@@ -147,7 +147,7 @@ import { site } from '../site';
                 <a href="https://phalcon.io/discord" aria-label="discord">
                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240">
                         <style>.st0 {
-                            fill: #FFFFFF;
+                            fill: var(--ph-white);
                         }</style>
                         <path class="st0"
                               d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
@@ -166,16 +166,16 @@ import { site } from '../site';
 <style>
     /*
      * The overlay panel for search results. `.header__search` itself is
-     * styled by the external theme sheet; only the panel needs rules here.
+     * styled by public/css/newdesign.css; only the panel needs rules here.
      */
     .header__search-wrapper {
         position: relative;
     }
 
     #header-search-results {
-        background: var(--color-bg, #fff);
+        background: var(--nd-surface);
         border-radius: 8px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 24px color-mix(in srgb, var(--ph-night-950) 15%, transparent);
         left: 0;
         margin-top: 0.5rem;
         max-height: 70vh;
@@ -218,7 +218,7 @@ import { site } from '../site';
         root.classList.add(tone);
         localStorage.setItem('mode', mode);
 
-        /* The external sheet draws the moon and the sun on `.switcher-light`
+        /* newdesign.css draws the moon and the sun on `.switcher-light`
            and `.switcher-dark` with `::before`. */
         document.querySelectorAll('.switcher').forEach((switcher) => {
             switcher.classList.remove('switcher-light', 'switcher-dark');
@@ -252,7 +252,7 @@ import { site } from '../site';
      * toggles that bundle performs on the header, which is all of it that this
      * markup uses.
      *
-     * The class names are the contract of the external sheet:
+     * The class names are the contract of newdesign.css:
      * `.header-nav--mobile.active` slides the panel in, `.header-nav__burger
      * .active` turns the three bars into a cross, and `body.hidden` stops the
      * page behind the panel from scrolling.
