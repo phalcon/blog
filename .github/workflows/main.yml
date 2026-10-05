@@ -35,6 +35,15 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
+      - name: Get the design tokens
+        # public/css/tokens.css and src/code-theme.json are copies of
+        # phalcon/css/tokens.css and phalcon/css/code-theme.json in
+        # phalcon/assets. The script keeps a committed copy, with a warning,
+        # when its download fails or the file is not correct (for example, a
+        # token that the blog uses is missing). It does not commit. It runs
+        # before the tests, so that they check the files that the build uses.
+        run: node scripts/update-tokens.mjs
+
       - name: Install dependencies
         run: npm ci
 
