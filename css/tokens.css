@@ -1,0 +1,172 @@
+/*
+ * Phalcon design tokens. Every Phalcon site uses these colors and fonts.
+ * Change a value here, and each site gets it on its next deploy.
+ *
+ * The file has one rule and three groups of custom properties:
+ *
+ * - Palette: --ph-<name>. Raw colors, as #rrggbb.
+ * - Tones: --ph-light-<role> and --ph-dark-<role>. The two tones have the
+ *   same roles. A tone value refers to a palette color, or it is
+ *   rgb(r g b / alpha) for a translucent background.
+ * - Fonts: --ph-font-sans and --ph-font-mono.
+ *
+ * There is no theme selector here, because each site switches its theme in
+ * its own way. A site maps its own variables to a tone in its own selector:
+ *
+ *     html.dark { --site-bg: var(--ph-dark-bg); }
+ *
+ * The syntax roles follow the CSS-variables theme of Shiki:
+ *
+ *     --shiki-token-keyword: var(--ph-dark-syntax-keyword);
+ *
+ * Every syntax color has a contrast of 4.5:1 or more on the code-bg of its
+ * tone. php tests/tokens.php checks the file.
+ */
+
+:root {
+    /* Palette */
+    --ph-accent-300: #8ed3bd;
+    --ph-accent-400: #74ccb2;
+    --ph-accent-500: #57b49b;
+    --ph-blue-200: #a5d6ff;
+    --ph-blue-300: #79c0ff;
+    --ph-blue-700: #0550ae;
+    --ph-blue-900: #0a3069;
+    --ph-brand-400: #8fc19a;
+    --ph-danger-100: #f8ecec;
+    --ph-danger-300: #e08f8f;
+    --ph-danger-600: #b23b3b;
+    --ph-faint-500: #5e7269;
+    --ph-faint-600: #678a6f;
+    --ph-faint-700: #3f5950;
+    --ph-green-300: #7ee787;
+    --ph-green-800: #116329;
+    --ph-info-100: #eef1f4;
+    --ph-info-300: #8aa79a;
+    --ph-ink-400: #7d938a;
+    --ph-ink-500: #5c7a6e;
+    --ph-ink-600: #4b6157;
+    --ph-ink-900: #0f1a17;
+    --ph-ink-950: #06120e;
+    --ph-lightline-100: #e4ede8;
+    --ph-lightline-200: #d3e2d9;
+    --ph-lightline-300: #c3d5ca;
+    --ph-lightline-400: #bfe0d5;
+    --ph-line-600: #2f4a42;
+    --ph-line-700: #2f3a3c;
+    --ph-line-900: #17221f;
+    --ph-mist-100: #e6f2ec;
+    --ph-mist-200: #cce2d2;
+    --ph-mist-300: #c7d8d0;
+    --ph-mist-400: #b7c9bd;
+    --ph-night-900: #0a0c0f;
+    --ph-night-950: #070d0c;
+    --ph-orange-300: #ffa657;
+    --ph-orange-800: #953800;
+    --ph-paper-50: #f7faf8;
+    --ph-paper-100: #eef4f0;
+    --ph-purple-300: #d2a8ff;
+    --ph-purple-600: #8250df;
+    --ph-red-200: #ffa198;
+    --ph-red-300: #ff7b72;
+    --ph-red-600: #cf222e;
+    --ph-red-900: #82071e;
+    --ph-sage-400: #9db3aa;
+    --ph-sage-500: #8fa39b;
+    --ph-slate-900: #273646;
+    --ph-success-100: #eaf4ee;
+    --ph-success-600: #2f8f5b;
+    --ph-surface-800: #12201d;
+    --ph-surface-900: #0d1614;
+    --ph-surface-950: #0b1210;
+    --ph-teal-600: #0f9e86;
+    --ph-teal-700: #0b7d6a;
+    --ph-warn-100: #f7f1e2;
+    --ph-warn-300: #e2c37a;
+    --ph-warntext-700: #9a6b12;
+    --ph-white: #ffffff;
+
+    /* Light tone */
+    --ph-light-accent: var(--ph-teal-600);
+    --ph-light-accent-contrast: var(--ph-paper-50);
+    --ph-light-accent-hover: var(--ph-teal-700);
+    --ph-light-bg: var(--ph-paper-50);
+    --ph-light-bg-alt: var(--ph-paper-100);
+    --ph-light-border: var(--ph-lightline-100);
+    --ph-light-border-strong: var(--ph-lightline-200);
+    --ph-light-code-bg: var(--ph-paper-100);
+    --ph-light-code-border: var(--ph-lightline-200);
+    --ph-light-danger: var(--ph-danger-600);
+    --ph-light-danger-bg: var(--ph-danger-100);
+    --ph-light-faint: var(--ph-ink-400);
+    --ph-light-heading: var(--ph-ink-900);
+    --ph-light-info: var(--ph-slate-900);
+    --ph-light-info-bg: var(--ph-info-100);
+    --ph-light-kicker: var(--ph-ink-500);
+    --ph-light-muted: var(--ph-ink-600);
+    --ph-light-panel: var(--ph-white);
+    --ph-light-ring: rgb(15 158 134 / 0.35);
+    --ph-light-success: var(--ph-success-600);
+    --ph-light-success-bg: var(--ph-success-100);
+    --ph-light-surface: var(--ph-white);
+    --ph-light-syntax-changed: var(--ph-orange-800);
+    --ph-light-syntax-comment: var(--ph-ink-600);
+    --ph-light-syntax-constant: var(--ph-blue-700);
+    --ph-light-syntax-deleted: var(--ph-red-900);
+    --ph-light-syntax-function: var(--ph-purple-600);
+    --ph-light-syntax-inserted: var(--ph-green-800);
+    --ph-light-syntax-keyword: var(--ph-red-600);
+    --ph-light-syntax-link: var(--ph-teal-700);
+    --ph-light-syntax-parameter: var(--ph-orange-800);
+    --ph-light-syntax-punctuation: var(--ph-ink-900);
+    --ph-light-syntax-string: var(--ph-blue-900);
+    --ph-light-syntax-string-expression: var(--ph-green-800);
+    --ph-light-syntax-text: var(--ph-ink-900);
+    --ph-light-text: var(--ph-ink-900);
+    --ph-light-warning: var(--ph-warntext-700);
+    --ph-light-warning-bg: var(--ph-warn-100);
+
+    /* Dark tone */
+    --ph-dark-accent: var(--ph-accent-400);
+    --ph-dark-accent-contrast: var(--ph-ink-950);
+    --ph-dark-accent-hover: var(--ph-accent-500);
+    --ph-dark-bg: var(--ph-night-950);
+    --ph-dark-bg-alt: var(--ph-surface-950);
+    --ph-dark-border: var(--ph-line-900);
+    --ph-dark-border-strong: var(--ph-line-700);
+    --ph-dark-code-bg: var(--ph-surface-900);
+    --ph-dark-code-border: var(--ph-line-900);
+    --ph-dark-danger: var(--ph-danger-300);
+    --ph-dark-danger-bg: rgb(224 143 143 / 0.1);
+    --ph-dark-faint: var(--ph-faint-500);
+    --ph-dark-heading: var(--ph-mist-100);
+    --ph-dark-info: var(--ph-info-300);
+    --ph-dark-info-bg: rgb(39 54 70 / 0.35);
+    --ph-dark-kicker: var(--ph-sage-500);
+    --ph-dark-muted: var(--ph-sage-400);
+    --ph-dark-panel: var(--ph-surface-950);
+    --ph-dark-ring: rgb(116 204 178 / 0.4);
+    --ph-dark-success: var(--ph-brand-400);
+    --ph-dark-success-bg: rgb(143 193 154 / 0.12);
+    --ph-dark-surface: var(--ph-surface-900);
+    --ph-dark-syntax-changed: var(--ph-orange-300);
+    --ph-dark-syntax-comment: var(--ph-sage-500);
+    --ph-dark-syntax-constant: var(--ph-blue-300);
+    --ph-dark-syntax-deleted: var(--ph-red-200);
+    --ph-dark-syntax-function: var(--ph-purple-300);
+    --ph-dark-syntax-inserted: var(--ph-green-300);
+    --ph-dark-syntax-keyword: var(--ph-red-300);
+    --ph-dark-syntax-link: var(--ph-accent-400);
+    --ph-dark-syntax-parameter: var(--ph-orange-300);
+    --ph-dark-syntax-punctuation: var(--ph-mist-100);
+    --ph-dark-syntax-string: var(--ph-blue-200);
+    --ph-dark-syntax-string-expression: var(--ph-green-300);
+    --ph-dark-syntax-text: var(--ph-mist-100);
+    --ph-dark-text: var(--ph-mist-100);
+    --ph-dark-warning: var(--ph-warn-300);
+    --ph-dark-warning-bg: rgb(226 195 122 / 0.1);
+
+    /* Fonts */
+    --ph-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --ph-font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
