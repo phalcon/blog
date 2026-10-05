@@ -731,6 +731,17 @@ input:focus {
     margin-bottom: 30px;
 }
 
+/* The first post shows its banner in full, above the text. */
+.phalcon-blog__last-article .phalcon-blog__item-img {
+    margin-bottom: 10px;
+    order: -1;
+    width: 100%;
+}
+
+.phalcon-blog__last-article .phalcon-blog__item-img:after {
+    display: none;
+}
+
 /* Sidebar */
 .phalcon-blog__right-item {
     margin-bottom: 35px;
