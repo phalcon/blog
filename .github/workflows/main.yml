@@ -59,7 +59,7 @@ jobs:
       - name: Get the fan art
         run: |
           curl -fsSL -o src/fanart.html \
-            https://raw.githubusercontent.com/phalcon/assets/master/phalcon/fanart-fragment.html \
+            https://assets.phalcon.io/phalcon/fanart-fragment.html \
             || echo "Download failed, the committed fan art is used"
 
       - name: Get the sponsors
@@ -67,7 +67,7 @@ jobs:
         # committed src/sponsors.json is the fallback when the download fails.
         run: |
           curl -fsSL -o src/sponsors.json \
-            https://raw.githubusercontent.com/phalcon/assets/master/phalcon/sponsors.json \
+            https://assets.phalcon.io/phalcon/sponsors.json \
             || echo "Download failed, the committed roster is used"
 
       - name: Build

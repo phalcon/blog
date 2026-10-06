@@ -52,3 +52,16 @@ test('the CI workflow gets the design files before the tests', () => {
     assert.ok(step > 0, 'the step is missing');
     assert.ok(step < workflow.indexOf('run: npm test'), 'the step must come before the tests');
 });
+
+test('the CI workflow and the refresh script read phalcon/assets from assets.phalcon.io', () => {
+    // assets.phalcon.io is the CDN of the Phalcon sites. Cloudflare answers a
+    // .html URL with a 308 to the URL without .html, so curl must follow it (-L).
+    const workflow = readFileSync(new URL('.github/workflows/main.yml', root), 'utf8');
+    const script = readFileSync(new URL('scripts/update-tokens.mjs', root), 'utf8');
+
+    assert.doesNotMatch(workflow, /raw\.githubusercontent\.com/, 'main.yml');
+    assert.doesNotMatch(script, /raw\.githubusercontent\.com/, 'update-tokens.mjs');
+    assert.match(script, /const SOURCE = 'https:\/\/assets\.phalcon\.io\/phalcon\/css';/);
+    assert.match(workflow, /curl -fsSL -o src\/fanart\.html \\\n\s+https:\/\/assets\.phalcon\.io\/phalcon\/fanart-fragment\.html/);
+    assert.match(workflow, /curl -fsSL -o src\/sponsors\.json \\\n\s+https:\/\/assets\.phalcon\.io\/phalcon\/sponsors\.json/);
+});

@@ -4,7 +4,7 @@
  * phalcon/css/code-theme.json). The CI workflow runs it before the tests and
  * the build. It does not commit: the committed copies are the default.
  *
- *   node scripts/update-tokens.mjs             download the files from GitHub
+ *   node scripts/update-tokens.mjs             download the files from assets.phalcon.io
  *   node scripts/update-tokens.mjs --from DIR  read DIR/tokens.css and DIR/code-theme.json instead
  *
  * A file that cannot be read, or that has a problem (see tokensProblems and
@@ -17,7 +17,7 @@ import { codeThemeProblems, definedCodeRoles } from '../src/lib/code-theme.mjs';
 import { tokensProblems } from '../src/lib/tokens.mjs';
 import { usedBySite } from './token-sources.mjs';
 
-const SOURCE = 'https://raw.githubusercontent.com/phalcon/assets/master/phalcon/css';
+const SOURCE = 'https://assets.phalcon.io/phalcon/css';
 
 const FILES = [
     {
