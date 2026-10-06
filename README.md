@@ -36,6 +36,7 @@ The colors and the fonts come from `phalcon/css/tokens.css` in [phalcon/assets](
 
 - To change a color, change `tokens.css` in phalcon/assets. The blog gets it on its next CI run.
 - To get the new files now, for a local preview or to commit them: `docker run --rm -v "$PWD:/app" -w /app node:22-alpine node scripts/update-tokens.mjs`.
+- The checks and the refresh are the shared design tools of phalcon/assets: `src/lib/design-checks.mjs` and `src/lib/design-refresh.mjs` are copies of `phalcon/tools/` there, and every CI run gets them again first. Change them in phalcon/assets, not here.
 - `public/css/newdesign.css` is the only stylesheet. Use a color through the tokens: `var(--nd-…)` or `var(--ph-…)`. `npm test` fails on a typed color (`#…` or `rgb(…)`) in `public/css/` and `src/`.
 - Code blocks use the code theme (`src/code-theme.json`, set in `astro.config.mjs`): the rules of GitHub's dark theme with `--code-<role>` variables. `.astro-code` in `newdesign.css` maps them to the syntax tokens of each tone.
 

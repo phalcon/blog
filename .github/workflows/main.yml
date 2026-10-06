@@ -35,6 +35,24 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
+      - name: Get the design tools
+        # src/lib/design-checks.mjs and src/lib/design-refresh.mjs are copies of
+        # phalcon/tools/ in phalcon/assets: the checks and the refresh of the
+        # design files, the same on every Phalcon site. A download that fails,
+        # or a file that is not valid JavaScript, keeps the committed copy. The
+        # design files and the tests that come next use the new tools.
+        run: |
+          for file in design-checks.mjs design-refresh.mjs; do
+            new="src/lib/${file%.mjs}.new.mjs"
+
+            if curl -fsSL -o "$new" "https://assets.phalcon.io/phalcon/tools/$file" && node --check "$new"; then
+              mv "$new" "src/lib/$file"
+            else
+              rm -f "$new"
+              echo "::warning title=Design tools::$file: the committed copy is used"
+            fi
+          done
+
       - name: Get the design tokens
         # public/css/tokens.css and src/code-theme.json are copies of
         # phalcon/css/tokens.css and phalcon/css/code-theme.json in

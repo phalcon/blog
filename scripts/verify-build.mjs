@@ -4,7 +4,7 @@
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 
-import { missingTokens, resolveToken, usedTokens } from '../src/lib/tokens.mjs';
+import { missingTokens, resolveToken, usedTokens } from '../src/lib/design-checks.mjs';
 
 /* Expected counts for the build. Update these when content is added or removed. */
 const EXPECTED = {

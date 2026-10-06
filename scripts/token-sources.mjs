@@ -4,7 +4,7 @@
  */
 import { readdirSync, readFileSync } from 'node:fs';
 
-import { usedTokens } from '../src/lib/tokens.mjs';
+import { usedTokens } from '../src/lib/design-checks.mjs';
 
 const root = new URL('../', import.meta.url);
 

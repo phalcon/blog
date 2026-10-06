@@ -2,7 +2,7 @@ import { strict as assert } from 'node:assert';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
-import { missingTokens } from '../src/lib/tokens.mjs';
+import { missingTokens } from '../src/lib/design-checks.mjs';
 import { sourceFiles, usedBySite } from './token-sources.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -64,4 +64,16 @@ test('the CI workflow and the refresh script read phalcon/assets from assets.pha
     assert.match(script, /const SOURCE = 'https:\/\/assets\.phalcon\.io\/phalcon\/css';/);
     assert.match(workflow, /curl -fsSL -o src\/fanart\.html \\\n\s+https:\/\/assets\.phalcon\.io\/phalcon\/fanart-fragment\.html/);
     assert.match(workflow, /curl -fsSL -o src\/sponsors\.json \\\n\s+https:\/\/assets\.phalcon\.io\/phalcon\/sponsors\.json/);
+});
+
+test('the CI workflow gets the design tools first, and keeps the committed copy when a file is not valid', () => {
+    // The tools come from assets.phalcon.io. The design files and the tests must use the tools that the build uses.
+    const workflow = readFileSync(new URL('.github/workflows/main.yml', root), 'utf8');
+    const step = workflow.indexOf('https://assets.phalcon.io/phalcon/tools/$file');
+
+    assert.ok(step > 0, 'the step is missing');
+    assert.ok(step < workflow.indexOf('run: node scripts/update-tokens.mjs'), 'the step must come before the design files');
+    assert.match(workflow, /for file in design-checks\.mjs design-refresh\.mjs; do/);
+    assert.match(workflow, /new="src\/lib\/\$\{file%\.mjs\}\.new\.mjs"/);
+    assert.match(workflow, /curl -fsSL -o "\$new" "https:\/\/assets\.phalcon\.io\/phalcon\/tools\/\$file" && node --check "\$new"; then/);
 });
