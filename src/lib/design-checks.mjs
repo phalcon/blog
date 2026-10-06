@@ -158,7 +158,7 @@ export function resolveToken(css, name) {
 /**
  * The problems of a tokens file for a site: it must be a single :root rule of
  * --ph- tokens, each with a color, a var() or a font stack (the file goes into
- * every page, so it can bring no other rule, no @import and no url()); it must
+ * every page, so it can bring no other rule, no import rule and no url()); it must
  * define every token that the site uses and every token that it refers to, and
  * give a value to every token that the site uses. An empty list means that the
  * file can replace the committed copy.

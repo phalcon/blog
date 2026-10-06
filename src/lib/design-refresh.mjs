@@ -16,7 +16,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 /**
  * @typedef {object} DesignFile
  * @property {string} copy the committed copy, relative to the current folder or absolute
- * @property {string} name the name of the file under the source (or under the folder of --from)
+ * @property {string} name the name of the file under the source (or under the folder `from`)
  * @property {(text: string) => string[]} problems the problems of a new file; an empty list means that it can replace the copy
  */
 
@@ -24,7 +24,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
  * @typedef {object} RefreshResult
  * @property {string} copy
  * @property {string[]} problems
- * @property {'changed' | 'kept' | 'same'} result
+ * @property {'changed' | 'kept' | 'missing' | 'same'} result
  */
 
 /**
@@ -54,11 +54,13 @@ export async function refresh({ files, from = null, log = console.log, source })
     for (const { copy, name, problems: check } of files) {
         const loaded = await load(name, from, source);
         const problems = 'problem' in loaded ? [loaded.problem] : check(loaded.text);
-        /** @type {'changed' | 'kept' | 'same'} */
+        /** @type {'changed' | 'kept' | 'missing' | 'same'} */
         let result = 'kept';
 
         if (problems.length > 0) {
             problems.forEach((problem) => log(`::warning title=Design tokens::${name}: ${problem}`));
+            // With no committed copy, there is nothing to keep.
+            result = existsSync(copy) ? 'kept' : 'missing';
         } else if ('text' in loaded && existsSync(copy) && readFileSync(copy, 'utf8') === loaded.text) {
             result = 'same';
         } else if ('text' in loaded) {

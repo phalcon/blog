@@ -45,7 +45,7 @@ jobs:
           for file in design-checks.mjs design-refresh.mjs; do
             new="src/lib/${file%.mjs}.new.mjs"
 
-            if curl -fsSL -o "$new" "https://assets.phalcon.io/phalcon/tools/$file" && node --check "$new"; then
+            if curl -fsSL --max-time 30 -o "$new" "https://assets.phalcon.io/phalcon/tools/$file" && node --check "$new"; then
               mv "$new" "src/lib/$file"
             else
               rm -f "$new"
