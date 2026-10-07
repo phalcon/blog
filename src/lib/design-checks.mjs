@@ -92,6 +92,37 @@ export function codeThemeProblems(json, roles) {
 }
 
 /**
+ * The problems of a common.css file for a site: it must be the stylesheet of
+ * the shared header and footer (rules for .ph-nav and .ph-footer, no HTML),
+ * whole (each rule closed), and the site's tokens file must define every
+ * token that it uses. phalcon/assets checks the rules themselves
+ * (tests/tokens.php). An empty list means that the file can replace the
+ * committed copy.
+ *
+ * @param {string} css
+ * @param {string} tokens the text of the site's tokens file
+ * @returns {string[]}
+ */
+export function commonCssProblems(css, tokens) {
+    const text = withoutComments(css).trim();
+
+    // A server that does not have the file answers with an HTML page.
+    if (text === '' || text.includes('<')) {
+        return ['the file is not a stylesheet'];
+    }
+
+    if (!/\.ph-nav[\s,{]/.test(text) || !/\.ph-footer[\s,{]/.test(text)) {
+        return ['the file has no rules for .ph-nav and .ph-footer'];
+    }
+
+    if ((text.match(/\{/g) ?? []).length !== (text.match(/\}/g) ?? []).length || !text.endsWith('}')) {
+        return ['the file is not whole'];
+    }
+
+    return missingTokens(tokens, usedTokens(css)).map((name) => `${name} is not in the tokens file`);
+}
+
+/**
  * The --code- roles that a stylesheet gives a value to. Comments do not count.
  *
  * @param {string} css
