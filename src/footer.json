@@ -1,0 +1,51 @@
+{
+    "tagline": "A full-stack PHP framework, delivered as a C extension or as pure PHP.",
+    "columns": [
+        {
+            "title": "Framework",
+            "links": [
+                { "label": "Documentation", "href": "https://docs.phalcon.io" },
+                { "label": "Download", "href": "https://phalcon.io/download" },
+                { "label": "IDE Stubs", "href": "https://phalcon.io/download/stubs" },
+                { "label": "Hosting", "href": "https://phalcon.io/hosting" }
+            ]
+        },
+        {
+            "title": "Project",
+            "links": [
+                { "label": "Contribute", "href": "https://phalcon.io/contribute" },
+                { "label": "Team", "href": "https://phalcon.io/team" },
+                { "label": "Testimonials", "href": "https://phalcon.io/testimonials" },
+                { "label": "Sponsors", "href": "https://phalcon.io/sponsors" },
+                { "label": "Consulting", "href": "https://phalcon.io/consulting" },
+                { "label": "Built with Phalcon", "href": "https://builtwith.phalcon.io" }
+            ]
+        },
+        {
+            "title": "Community",
+            "links": [
+                { "label": "Discord", "href": "https://phalcon.io/discord" },
+                { "label": "Discussions (v5)", "href": "https://github.com/phalcon/cphalcon/discussions" },
+                { "label": "Discussions (v6)", "href": "https://github.com/phalcon/phalcon/discussions" },
+                { "label": "GitHub (v5)", "href": "https://github.com/phalcon/cphalcon" },
+                { "label": "GitHub (v6)", "href": "https://github.com/phalcon/phalcon" },
+                { "label": "Stack Overflow", "href": "https://phalcon.io/so" },
+                { "label": "Blog", "href": "https://phalcon.io/blog" },
+                { "label": "Support", "href": "https://phalcon.io/support" }
+            ]
+        }
+    ],
+    "socials": [
+        { "label": "Telegram", "href": "https://phalcon.io/telegram" },
+        { "label": "Gab", "href": "https://phalcon.io/gab" },
+        { "label": "MeWe", "href": "https://phalcon.io/mewe" },
+        { "label": "Facebook", "href": "https://phalcon.io/fb" },
+        { "label": "X (Twitter)", "href": "https://phalcon.io/t" },
+        { "label": "BitChute", "href": "https://phalcon.io/bitchute" },
+        { "label": "Brighteon", "href": "https://phalcon.io/brighteon" },
+        { "label": "YouTube", "href": "https://phalcon.io/youtube" },
+        { "label": "LinkedIn", "href": "https://phalcon.io/linkedin" },
+        { "label": "Reddit", "href": "https://phalcon.io/reddit" }
+    ],
+    "copyright": "Phalcon Team · cphalcon (v5) BSD-3-Clause · phalcon (v6) MIT"
+}

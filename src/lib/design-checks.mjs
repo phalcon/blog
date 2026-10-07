@@ -1,8 +1,8 @@
 /**
- * The checks of the shared design files of the Phalcon sites: the design
- * tokens (phalcon/css/tokens.css), the code theme (phalcon/css/code-theme.json)
- * and the shared header and footer (phalcon/css/common.css). phalcon/assets
- * serves this file at
+ * The checks of the shared files of the Phalcon sites: the design tokens
+ * (phalcon/css/tokens.css), the code theme (phalcon/css/code-theme.json), the
+ * shared header and footer (phalcon/css/common.css) and the footer links
+ * (phalcon/footer.json). phalcon/assets serves this file at
  * https://assets.phalcon.io/phalcon/tools/design-checks.mjs. Each site keeps a
  * copy in src/lib/, and its deploy gets the file again first. Do not change a
  * copy: change phalcon/tools/design-checks.mjs in phalcon/assets.
@@ -14,6 +14,9 @@
 
 /** The last line of common.css. A file without it is cut. */
 const COMMON_END = '/* The end of common.css. */';
+
+/** The top-level keys of footer.json. */
+const FOOTER_KEYS = ['columns', 'copyright', 'socials', 'tagline'];
 
 /** The top-level keys of a code theme. Shiki also reads bg, fg and settings, in place of colors and tokenColors. */
 const THEME_KEYS = ['colors', 'name', 'tokenColors', 'type'];
@@ -150,6 +153,51 @@ export function definedCodeRoles(css) {
  */
 export function definedTokens(css) {
     return new Set([...withoutComments(css).matchAll(/(--ph-[a-z0-9-]+)\s*:/g)].map((match) => match[1]));
+}
+
+/**
+ * The problems of a footer.json file for a site: a JSON object with the
+ * tagline, the columns of links, the social links and the copyright line, and
+ * no other key. Each link has a label and an absolute https:// address, so
+ * that it works on every site. An empty list means that the file can replace
+ * the committed copy.
+ *
+ * @param {string} json
+ * @returns {string[]}
+ */
+export function footerProblems(json) {
+    let parsed;
+
+    try {
+        parsed = JSON.parse(json);
+    } catch {
+        return ['the file is not JSON'];
+    }
+
+    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        return ['the file is not a JSON object'];
+    }
+
+    const text = (value) => typeof value === 'string' && value.trim() !== '';
+    const links = (list, name) => (Array.isArray(list) && list.length > 0
+        ? list.flatMap((link, index) => (text(link?.label) && /^https:\/\/\S+$/.test(String(link?.href))
+            ? []
+            : [`${name}[${index}] needs a label and an https:// address`]))
+        : [`${name} needs at least one link`]);
+    const keys = Object.keys(parsed)
+        .filter((key) => !FOOTER_KEYS.includes(key))
+        .map((key) => `${key} is not allowed`);
+    const lines = ['copyright', 'tagline']
+        .filter((key) => !text(parsed[key]))
+        .map((key) => `${key} needs text`);
+    const columns = Array.isArray(parsed.columns) && parsed.columns.length > 0
+        ? parsed.columns.flatMap((column, index) => [
+            ...(text(column?.title) ? [] : [`columns[${index}] needs a title`]),
+            ...links(column?.links, `columns[${index}].links`),
+        ])
+        : ['columns needs at least one column'];
+
+    return [...keys, ...lines, ...columns, ...links(parsed.socials, 'socials')].sort();
 }
 
 /**

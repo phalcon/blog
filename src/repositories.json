@@ -1,0 +1,148 @@
+{
+    "repositories": [
+        {
+            "id": "phalcon/cphalcon",
+            "url": "https://github.com/phalcon/cphalcon",
+            "stars": 10821,
+            "stable": {
+                "tag": "v5.22.1",
+                "version": "5.22.1",
+                "date": "2026-10-01"
+            },
+            "latest": {
+                "tag": "v5.22.1",
+                "version": "5.22.1",
+                "date": "2026-10-01"
+            }
+        },
+        {
+            "id": "phalcon/phalcon",
+            "url": "https://github.com/phalcon/phalcon",
+            "stars": 254,
+            "stable": null,
+            "latest": {
+                "tag": "v6.0.0RC3",
+                "version": "6.0.0RC3",
+                "date": "2026-10-01"
+            }
+        },
+        {
+            "id": "phalcon/documentation",
+            "url": "https://github.com/phalcon/documentation",
+            "stars": 23,
+            "stable": null,
+            "latest": null
+        },
+        {
+            "id": "zephir-lang/zephir",
+            "url": "https://github.com/zephir-lang/zephir",
+            "stars": 3384,
+            "stable": {
+                "tag": "1.6.1",
+                "version": "1.6.1",
+                "date": "2026-10-02"
+            },
+            "latest": {
+                "tag": "1.6.1",
+                "version": "1.6.1",
+                "date": "2026-10-02"
+            }
+        },
+        {
+            "id": "phalcon/vokuro",
+            "url": "https://github.com/phalcon/vokuro",
+            "stars": 366,
+            "stable": {
+                "tag": "v5.0.4",
+                "version": "5.0.4",
+                "date": "2026-07-15"
+            },
+            "latest": {
+                "tag": "v5.0.4",
+                "version": "5.0.4",
+                "date": "2026-07-15"
+            }
+        },
+        {
+            "id": "phalcon/crest",
+            "url": "https://github.com/phalcon/crest",
+            "stars": 1,
+            "stable": null,
+            "latest": null
+        },
+        {
+            "id": "phalcon/talon",
+            "url": "https://github.com/phalcon/talon",
+            "stars": 3,
+            "stable": {
+                "tag": "v1.0.4",
+                "version": "1.0.4",
+                "date": "2026-09-09"
+            },
+            "latest": {
+                "tag": "v1.0.4",
+                "version": "1.0.4",
+                "date": "2026-09-09"
+            }
+        },
+        {
+            "id": "phalcon/phalcon.io",
+            "url": "https://github.com/phalcon/phalcon.io",
+            "stars": 7,
+            "stable": null,
+            "latest": null
+        },
+        {
+            "id": "phalcon/phalcon-devtools",
+            "url": "https://github.com/phalcon/phalcon-devtools",
+            "stars": 1325,
+            "stable": {
+                "tag": "v4.2.0",
+                "version": "4.2.0",
+                "date": "2021-08-03"
+            },
+            "latest": {
+                "tag": "v4.2.0",
+                "version": "4.2.0",
+                "date": "2021-08-03"
+            }
+        },
+        {
+            "id": "phalcon/quill",
+            "url": "https://github.com/phalcon/quill",
+            "stars": 1,
+            "stable": {
+                "tag": "v0.5.0",
+                "version": "0.5.0",
+                "date": "2026-09-02"
+            },
+            "latest": {
+                "tag": "v0.5.0",
+                "version": "0.5.0",
+                "date": "2026-09-02"
+            }
+        },
+        {
+            "id": "phalcon/vokuro-adr",
+            "url": "https://github.com/phalcon/vokuro-adr",
+            "stars": 0,
+            "stable": null,
+            "latest": null
+        },
+        {
+            "id": "phalcon/invo",
+            "url": "https://github.com/phalcon/invo",
+            "stars": 346,
+            "stable": {
+                "tag": "v5.0.2",
+                "version": "5.0.2",
+                "date": "2026-07-02"
+            },
+            "latest": {
+                "tag": "v5.0.2",
+                "version": "5.0.2",
+                "date": "2026-07-02"
+            }
+        }
+    ]
+}

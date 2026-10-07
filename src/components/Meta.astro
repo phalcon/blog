@@ -110,7 +110,10 @@ const tileColor = resolveToken(tokens, '--ph-slate-900');
     therefore too late for this. An unset `mode` reads as `auto`, the way it
     does there; without that the class becomes the string `null`. */}
 <script is:inline>(function () { var mode = localStorage.getItem('mode') || 'auto'; document.documentElement.classList.add(mode === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : mode); })()</script>
-{/* The design tokens first: newdesign.css uses them. It is the only
-    stylesheet; the blog loads no shared sheet from assets.phalcon.io. */}
+{/* The design tokens first: common.css and site.css use them. common.css is
+    the shared nav and footer (a copy of phalcon/css/common.css), and site.css
+    has the blog's own rules. The blog loads no stylesheet from
+    assets.phalcon.io at runtime. */}
 <link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/newdesign.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/site.css">
