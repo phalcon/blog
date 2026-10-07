@@ -1,7 +1,8 @@
 /**
  * The checks of the shared design files of the Phalcon sites: the design
- * tokens (phalcon/css/tokens.css) and the code theme
- * (phalcon/css/code-theme.json). phalcon/assets serves this file at
+ * tokens (phalcon/css/tokens.css), the code theme (phalcon/css/code-theme.json)
+ * and the shared header and footer (phalcon/css/common.css). phalcon/assets
+ * serves this file at
  * https://assets.phalcon.io/phalcon/tools/design-checks.mjs. Each site keeps a
  * copy in src/lib/, and its deploy gets the file again first. Do not change a
  * copy: change phalcon/tools/design-checks.mjs in phalcon/assets.
@@ -10,6 +11,9 @@
  * checks only that it can use a file. Pure functions: they read no files and
  * use no network.
  */
+
+/** The last line of common.css. A file without it is cut. */
+const COMMON_END = '/* The end of common.css. */';
 
 /** The top-level keys of a code theme. Shiki also reads bg, fg and settings, in place of colors and tokenColors. */
 const THEME_KEYS = ['colors', 'name', 'tokenColors', 'type'];
@@ -94,7 +98,8 @@ export function codeThemeProblems(json, roles) {
 /**
  * The problems of a common.css file for a site: it must be the stylesheet of
  * the shared header and footer (rules for .ph-nav and .ph-footer, no HTML),
- * whole (each rule closed), and the site's tokens file must define every
+ * whole (each rule closed, and its last line COMMON_END), and the site's
+ * tokens file must define every
  * token that it uses. phalcon/assets checks the rules themselves
  * (tests/tokens.php). An empty list means that the file can replace the
  * committed copy.
@@ -106,8 +111,8 @@ export function codeThemeProblems(json, roles) {
 export function commonCssProblems(css, tokens) {
     const text = withoutComments(css).trim();
 
-    // A server that does not have the file answers with an HTML page.
-    if (text === '' || text.includes('<')) {
+    // A server that does not have the file answers with an HTML page. A < in a rule (a media range) is valid CSS.
+    if (text === '' || /^<|<(?:!doctype|html|head|body)\b/i.test(text)) {
         return ['the file is not a stylesheet'];
     }
 
@@ -115,7 +120,12 @@ export function commonCssProblems(css, tokens) {
         return ['the file has no rules for .ph-nav and .ph-footer'];
     }
 
-    if ((text.match(/\{/g) ?? []).length !== (text.match(/\}/g) ?? []).length || !text.endsWith('}')) {
+    // A file that is cut right after a rule has whole rules, but not the last line.
+    if (
+        (text.match(/\{/g) ?? []).length !== (text.match(/\}/g) ?? []).length
+        || !text.endsWith('}')
+        || !css.trimEnd().endsWith(COMMON_END)
+    ) {
         return ['the file is not whole'];
     }
 
