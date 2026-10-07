@@ -5,6 +5,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 
 import { missingTokens, resolveToken, usedTokens } from '../src/lib/design-checks.mjs';
+import { cphalconStars, formatStars } from '../src/lib/stars.mjs';
 
 /* Expected counts for the build. Update these when content is added or removed. */
 const EXPECTED = {
@@ -172,12 +173,12 @@ checks.push({
 });
 
 /*
- * Design tokens. Every page loads tokens.css and then newdesign.css, and no
- * other stylesheet. The stylesheet uses only tokens that tokens.css defines,
- * and the browser bar takes its color from the tokens.
+ * Design tokens. Every page loads tokens.css, common.css and then site.css,
+ * and no other stylesheet. The two stylesheets use only tokens that
+ * tokens.css defines, and the browser bar takes its color from the tokens.
  */
 count(
-    'pages that do not load exactly tokens.css and then newdesign.css',
+    'pages that do not load exactly tokens.css, common.css and then site.css',
     measure(
         () =>
             listFiles('dist')
@@ -186,19 +187,19 @@ count(
                     const links = [...readFileSync(file, 'utf8').matchAll(/<link[^>]*rel="stylesheet"[^>]*>/g)]
                         .map((match) => /href="([^"]*)"/.exec(match[0])?.[1]);
 
-                    return links.join(' ') !== '/css/tokens.css /css/newdesign.css';
+                    return links.join(' ') !== '/css/tokens.css /css/common.css /css/site.css';
                 }).length
     ),
     0
 );
 count(
-    'tokens that newdesign.css uses and tokens.css does not define',
+    'tokens that site.css and common.css use and tokens.css does not define',
     measure(
         () =>
-            missingTokens(
-                readFileSync('dist/css/tokens.css', 'utf8'),
-                usedTokens(readFileSync('dist/css/newdesign.css', 'utf8'))
-            ).join(', ') || 'none'
+            missingTokens(readFileSync('dist/css/tokens.css', 'utf8'), [
+                ...usedTokens(readFileSync('dist/css/site.css', 'utf8')),
+                ...usedTokens(readFileSync('dist/css/common.css', 'utf8')),
+            ]).join(', ') || 'none'
     ),
     'none'
 );
@@ -208,6 +209,40 @@ count(
     resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-slate-900')
 );
 
+/*
+ * The shared nav and footer (common.css, the classes of phalcon.io). Every
+ * page has them, with the blog's search box, theme switcher and mobile menu
+ * script, and no part of the old header and footer. Header.astro has a scoped
+ * style, so its elements carry a data-astro-cid attribute. The nav shows the
+ * stars of src/repositories.json, and the footer every link of src/footer.json.
+ */
+const pages = listFiles('dist').filter((file) => file.endsWith('.html') && !file.startsWith('dist/pagefind/'));
+const without = (...parts) =>
+    pages.filter((file) => {
+        const html = readFileSync(file, 'utf8');
+
+        return parts.some((part) => !part.test(html));
+    }).length;
+
+count('pages without the shared nav and footer', measure(() => without(/<nav class="ph-nav"[\s>]/, /<footer class="ph-footer"[\s>]/)), 0);
+count('pages without the search box and the theme switcher', measure(() => without(/id="header-search-input"/, /<div class="switcher"[\s>]/)), 0);
+count('pages without the mobile menu script', measure(() => without(/<script[^>]*src="\/js\/nav\.js"/)), 0);
+count(
+    'pages with the old header or footer',
+    measure(() => pages.filter((file) => /class="(?:header|footer|header-nav|footer-nav)"/.test(readFileSync(file, 'utf8'))).length),
+    0
+);
+count(
+    'stars in the nav',
+    measure(() => /class="ph-nav__stars"[^>]*>★ ([^<]*)</.exec(readFileSync('dist/index.html', 'utf8'))?.[1] ?? 'none'),
+    measure(() => formatStars(cphalconStars(readFileSync('src/repositories.json', 'utf8'))))
+);
+count(
+    'footer links',
+    measure(() => (readFileSync('dist/index.html', 'utf8').match(/class="ph-footer__link"/g) ?? []).length),
+    measure(() => JSON.parse(readFileSync('src/footer.json', 'utf8')).columns.flatMap((column) => column.links).length)
+);
+
 for (const path of [
     'dist/index.html',
     'dist/tags.html',
@@ -215,8 +250,10 @@ for (const path of [
     'dist/sitemap-index.xml',
     'dist/robots.txt',
     'dist/humans.txt',
-    'dist/css/newdesign.css',
+    'dist/css/site.css',
+    'dist/css/common.css',
     'dist/css/tokens.css',
+    'dist/js/nav.js',
     'dist/post/phalcon-0-3-1-released.html',
     'dist/pagefind/pagefind.js',
 ]) {

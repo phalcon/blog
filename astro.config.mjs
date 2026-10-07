@@ -33,7 +33,7 @@ export default defineConfig({
             excludeLangs: ['mermaid'],
         },
         /* The Phalcon code theme (src/code-theme.json, from phalcon/assets).
-           Its colors are --code- variables; newdesign.css maps them to the
+           Its colors are --code- variables; site.css maps them to the
            syntax tokens of each tone. */
         shikiConfig: {
             theme: /** @type {import('shiki').ThemeRegistration} */ (codeTheme),

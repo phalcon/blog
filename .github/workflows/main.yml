@@ -54,12 +54,15 @@ jobs:
           done
 
       - name: Get the design tokens
-        # public/css/tokens.css and src/code-theme.json are copies of
-        # phalcon/css/tokens.css and phalcon/css/code-theme.json in
-        # phalcon/assets. The script keeps a committed copy, with a warning,
-        # when its download fails or the file is not correct (for example, a
-        # token that the blog uses is missing). It does not commit. It runs
-        # before the tests, so that they check the files that the build uses.
+        # public/css/tokens.css, src/code-theme.json, public/css/common.css,
+        # src/footer.json and src/repositories.json are copies of
+        # phalcon/css/tokens.css, phalcon/css/code-theme.json,
+        # phalcon/css/common.css, phalcon/footer.json and
+        # phalcon/repositories.json in phalcon/assets. The script keeps a
+        # committed copy, with a warning, when its download fails or the file
+        # is not correct (for example, a token that the blog uses is missing).
+        # It does not commit. It runs before the tests, so that they check the
+        # files that the build uses.
         run: node scripts/update-tokens.mjs
 
       - name: Install dependencies
