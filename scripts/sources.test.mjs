@@ -37,11 +37,13 @@ test('the blog stylesheet is public/css/site.css, and no file names the old name
 
 test('no source types a color', () => {
     // Colors come from public/css/tokens.css (phalcon/assets), so a palette change is made once. The copy of
-    // common.css is not this site's source: phalcon/assets checks its colors, and its comments can name colors.
+    // common.css is not this site's source: phalcon/assets checks its colors, and its comments can name colors. A
+    // data URI hides a hex color as %23…, and an SVG paint attribute can type one (fill="white").
+    const color = /#[0-9a-fA-F]{3,8}\b|rgba?\(|%23[0-9a-fA-F]{3,8}\b|\b(?:fill|stroke|stop-color|flood-color|lighting-color)=["'](?!currentColor|none|var\(|url\(|inherit|transparent)[^"']+["']/g;
     const typed = sourceFiles().filter((file) => file !== 'public/css/common.css').flatMap((file) =>
         readFileSync(new URL(file, root), 'utf8')
             .split('\n')
-            .flatMap((line, index) => [...line.matchAll(/#[0-9a-fA-F]{3,8}\b|rgba?\(/g)].map((match) => `${file}:${index + 1} ${match[0]}`))
+            .flatMap((line, index) => [...line.matchAll(color)].map((match) => `${file}:${index + 1} ${match[0]}`))
     );
 
     assert.deepEqual(typed, []);
@@ -54,11 +56,12 @@ test('the tokens file defines every token that the blog uses', () => {
 });
 
 test('the source scan counts a token that a component reads by name', () => {
-    // Meta.astro gives --ph-slate-900 and --ph-brand-400 to resolveToken(), for the browser colors.
+    // Meta.astro gives --ph-brand-400 and --ph-dark-bg to resolveToken(), for the browser colors. No stylesheet uses
+    // --ph-brand-400, so it shows that the scan counts a name in quotes.
     const used = usedBySite();
 
-    assert.ok(used.has('--ph-slate-900'), '--ph-slate-900');
     assert.ok(used.has('--ph-brand-400'), '--ph-brand-400');
+    assert.ok(used.has('--ph-dark-bg'), '--ph-dark-bg');
 });
 
 test('the CI workflow gets the design files before the tests', () => {

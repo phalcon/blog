@@ -6,8 +6,9 @@
  * them, except for the blog's own parts of the nav (the "nav" part below).
  *
  * A rule here that reaches into the nav or the footer changes them when it
- * is stronger than the rule of common.css (html.dark p), or when it sets a
- * property that common.css does not set (cursor, outline). Such rules have
+ * is stronger than the rule of common.css (for example a class and an
+ * element, as html.dark p), or when it sets a property that common.css does
+ * not set (cursor, outline). Such rules have
  * :where(:not(.ph-nav *, .ph-footer *)): it keeps them out of the nav and the
  * footer, and it does not change their weight.
  *
@@ -86,17 +87,6 @@ html.dark {
  */
 
 /* The dark tone of the old sheet. */
-html.dark h1,
-html.dark h2,
-html.dark h3,
-html.dark h4,
-html.dark h5,
-html.dark p:where(:not(.ph-nav *, .ph-footer *)),
-html.dark ul li:where(:not(.ph-nav *, .ph-footer *)),
-html.dark ol li,
-html.dark .phalcon-blog__title,
-html.dark .phalcon-blog__projects-text,
-html.dark .phalcon-blog__main-title,
 html.dark .tag-button {
     color: var(--nd-text);
 }
@@ -111,32 +101,17 @@ body {
     margin: 0;
 }
 
-[hidden] {
-    display: none;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-
 small {
     font-size: 80%;
 }
 
 hr {
     box-sizing: content-box;
-    height: 0;
-}
-
-pre {
-    overflow: auto;
 }
 
 code,
 pre {
     font-family: monospace, monospace;
-    font-size: 1em;
 }
 
 button,
@@ -150,9 +125,7 @@ button:where(:not(.ph-nav *, .ph-footer *)) {
     -webkit-appearance: button;
     background-color: transparent;
     cursor: pointer;
-    overflow: visible;
     padding: 0;
-    text-transform: none;
 }
 
 button::-moz-focus-inner,
@@ -177,17 +150,9 @@ th {
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-ul li {
-    margin: 0;
-    padding: 0;
 }
 
 a:where(:not(.ph-nav *, .ph-footer *)) {
-    color: var(--nd-accent);
     outline: 0;
     text-decoration: none;
 }
@@ -195,7 +160,6 @@ a:where(:not(.ph-nav *, .ph-footer *)) {
 /* The 404 page button: the accent button of the design, in both tones. */
 .phalcon-blog .phalcon-blog__main .green-button {
     background-color: var(--nd-accent);
-    border: 0;
     border-radius: 4px;
     color: var(--nd-accent-contrast);
     display: inline-block;
@@ -254,7 +218,6 @@ input:focus {
     background-color: color-mix(in srgb, var(--ph-mist-100) 40%, transparent);
     border: 0;
     border-radius: 100px;
-    box-sizing: border-box;
     font-size: 12px;
     height: 30px;
     padding: 0 15px;
@@ -279,30 +242,51 @@ input:focus {
     color: var(--ph-ink-500);
 }
 
-/* The theme switcher. The moon and the sun are white, on the dark nav. E3 keeps cursor: pointer out of the nav. */
+/* The theme switcher. The moon and the sun are white, on the dark nav. The button rule of the base part keeps cursor: pointer out of the nav, so this rule sets it. */
 .switcher button {
     border: none;
     border-radius: 100px;
     cursor: pointer;
     display: flex;
-    font-size: inherit;
     height: 20px;
     outline: none;
     width: 20px;
 }
 
-.switcher button:before {
+/*
+ * The icon is a mask on the white token: the moon in the light tone, the sun in
+ * the dark tone. The script of the header sets the tone class; with no tone
+ * class (no script), there is no content, so nothing shows.
+ */
+.switcher button::before {
+    -webkit-mask: center / contain no-repeat;
+    background-color: var(--ph-white);
+    height: 20px;
+    mask: center / contain no-repeat;
     width: 20px;
 }
 
 .switcher-light button::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z'%3E%3C/path%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z'%3E%3C/path%3E%3C/svg%3E");
+    content: "";
+    height: 17px;
     margin-top: 1px;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z'%3E%3C/path%3E%3C/svg%3E");
     width: 17px;
 }
 
 .switcher-dark button::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
+    content: "";
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* In forced colors, the browser paints the background in the color of the page behind it: the icon takes the text color. */
+@media (forced-colors: active) {
+    .switcher button::before {
+        background-color: CanvasText;
+        forced-color-adjust: none;
+    }
 }
 
 .container {
@@ -364,13 +348,11 @@ input:focus {
 }
 
 .phalcon-blog__item-img {
-    display: block;
     flex-shrink: 0;
     height: 180px;
     margin-left: 20px;
     position: relative;
     text-align: center;
-    width: 180px;
 }
 
 .phalcon-blog__item-img img {
@@ -388,7 +370,6 @@ input:focus {
 }
 
 .phalcon-blog__item-title {
-    display: block;
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 5px;
@@ -482,7 +463,6 @@ input:focus {
 
 @media (max-width: 1439px) {
     .phalcon-blog__right {
-        margin-left: 20px;
         width: 280px;
     }
 }
@@ -494,8 +474,6 @@ input:focus {
 
 .phalcon-blog__projects-text a {
     border-bottom: 1px solid var(--nd-accent);
-    font-size: 16px;
-    line-height: 23px;
     transition: all 0.125s;
 }
 
@@ -604,21 +582,17 @@ input:focus {
 }
 
 .phalcon-blog-detail blockquote {
-    display: block;
     margin: 0;
 }
 
 .phalcon-blog-detail h1,
 .phalcon-blog-detail h2 {
     font-size: 28px;
-    font-weight: 700;
-    line-height: normal;
     margin: 0;
 }
 
 .phalcon-blog-detail h3 {
     font-size: 25px;
-    font-weight: 700;
     line-height: 36px;
     margin: 12px 0;
 }
@@ -639,7 +613,6 @@ input:focus {
 
 .phalcon-blog-detail p {
     font-size: 16px;
-    font-weight: 400;
     line-height: 23px;
     margin: 0 0 10px;
 }
@@ -657,13 +630,10 @@ input:focus {
 
 .phalcon-blog-detail pre {
     border-radius: 4px;
-    color: var(--nd-text);
-    display: block;
     font-size: 16px;
     line-height: 0;
     margin-bottom: 20px;
     margin-top: 0;
-    overflow-x: auto;
     overflow-y: hidden;
     word-break: break-all;
     word-wrap: break-word;
@@ -675,8 +645,6 @@ input:focus {
 }
 
 .phalcon-blog-detail code {
-    background-color: transparent;
-    color: inherit;
     font-weight: 400;
     line-height: 21px;
     white-space: pre-wrap;
@@ -686,7 +654,6 @@ input:focus {
 }
 
 .phalcon-blog-detail ul {
-    display: block;
     margin-bottom: 25px;
     margin-top: 10px;
     max-width: 100%;
@@ -707,7 +674,6 @@ input:focus {
 .phalcon-blog-detail ol {
     margin: 10px 0 25px;
     max-width: 100%;
-    padding-inline-start: 0;
     padding-left: 20px;
 }
 
@@ -760,9 +726,7 @@ body {
 }
 
 .alert {
-    font-style: normal;
     font-weight: normal;
-    margin-bottom: 20px;
 }
 
 /* iOS sends click events only to an element with a pointer cursor. */
@@ -783,7 +747,6 @@ body {
 
 .pagination a {
     border-bottom: 1px solid var(--nd-accent);
-    font-size: 16px;
     line-height: 23px;
     transition: all 0.125s;
 }
@@ -809,10 +772,6 @@ body {
     margin-top: 1.25rem;
 }
 
-.phalcon-blog__sponsors-section:first-child {
-    margin-top: 0;
-}
-
 .phalcon-blog__sponsors-heading {
     font-size: 0.8125rem;
     font-weight: 600;
@@ -823,7 +782,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -874,27 +832,12 @@ body {
 .phalcon-blog__items .phalcon-blog__item-img img {
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 @media screen and (min-width: 1024px) {
     .phalcon-blog__items .phalcon-blog__item-img {
         width: 320px;
     }
-}
-
-body,
-.alert,
-.input,
-.phalcon-blog,
-.phalcon-blog__item-title,
-.phalcon-blog__main-title,
-.phalcon-blog-detail h1,
-.phalcon-blog-detail h2,
-.phalcon-blog-detail h3,
-.phalcon-blog-detail p,
-.phalcon-blog-detail table thead {
-    font-family: var(--nd-font-sans);
 }
 
 .phalcon-blog-detail code {
@@ -920,15 +863,12 @@ body,
     font-family: var(--nd-font-sans);
 }
 
-html.dark body,
-html.dark .phalcon-blog,
 body,
 .phalcon-blog {
     background-color: var(--nd-bg);
     color: var(--nd-text);
 }
 
-html.dark .phalcon-blog a,
 .phalcon-blog a {
     color: var(--nd-accent);
 }
@@ -994,8 +934,6 @@ html.dark .phalcon-blog__item-title a:hover,
     color: var(--nd-accent);
 }
 
-html.dark .phalcon-blog__item-date,
-html.dark .phalcon-blog__item-author,
 .phalcon-blog__item-info,
 .phalcon-blog__item-date,
 .phalcon-blog__item-author {
@@ -1077,9 +1015,7 @@ html.dark .phalcon-blog__title,
     color: var(--nd-accent);
 }
 
-html.dark .phalcon-blog__tags-item span:first-child,
 .phalcon-blog__tags-item span:first-child {
-    color: inherit;
     font-size: 11px;
     margin-right: 4px;
 }
@@ -1091,10 +1027,6 @@ html.dark .phalcon-blog__projects-text,
 
 /* --------------------------------------------------------- post body */
 
-html.dark .phalcon-blog-detail h1,
-html.dark .phalcon-blog-detail h2,
-html.dark .phalcon-blog-detail h3,
-html.dark .phalcon-blog-detail h4,
 .phalcon-blog-detail h1,
 .phalcon-blog-detail h2,
 .phalcon-blog-detail h3,
@@ -1108,7 +1040,6 @@ html.dark .phalcon-blog-detail h4,
     line-height: 1.06;
 }
 
-html.dark .phalcon-blog-detail__info,
 .phalcon-blog-detail__info {
     color: var(--nd-faint);
     font-family: var(--nd-font-mono);
@@ -1121,9 +1052,6 @@ html.dark .phalcon-blog-detail__info,
     background-color: var(--nd-faint);
 }
 
-html.dark .phalcon-blog-detail p,
-html.dark .phalcon-blog-detail ul li,
-html.dark .phalcon-blog-detail ol li,
 .phalcon-blog-detail p,
 .phalcon-blog-detail ul,
 .phalcon-blog-detail ol,
@@ -1147,18 +1075,9 @@ html.dark .phalcon-blog-detail ol li,
     border: 1px solid var(--nd-border-strong);
     border-radius: 3px;
     color: var(--nd-accent);
-    font-family: var(--nd-font-mono);
     padding: 1px 5px;
 }
 
-html.dark .phalcon-blog-detail table th,
-html.dark .phalcon-blog-detail table td,
-.phalcon-blog-detail table thead,
-.phalcon-blog-detail table tbody {
-    color: var(--nd-text);
-}
-
-html.dark .phalcon-blog-detail table td,
 .phalcon-blog-detail table td {
     border-color: var(--nd-border-strong);
 }
@@ -1177,7 +1096,7 @@ html.dark .phalcon-blog-detail table td,
     color: var(--ph-ink-950);
 }
 
-/* The selectors must beat `html.dark .phalcon-blog a`, so the links have the same style in both tones. */
+/* The selectors must beat `.phalcon-blog a`, so the links take the faint color, not the accent color. */
 .phalcon-blog .pagination .previous,
 .phalcon-blog .pagination .page_number,
 .phalcon-blog .pagination .next {
@@ -1247,8 +1166,6 @@ html.dark .astro-code {
     border: 1px solid var(--nd-border-strong);
     border-left-width: 3px;
     border-radius: 0 4px 4px 0;
-    color: var(--nd-text);
-    font-family: var(--nd-font-sans);
     margin-bottom: 20px;
     padding: 16px 22px;
 }

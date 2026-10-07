@@ -206,7 +206,7 @@ count(
 count(
     'browser bar color',
     measure(() => /<meta name="theme-color" content="([^"]*)"/.exec(readFileSync('dist/index.html', 'utf8'))?.[1] ?? 'none'),
-    resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-slate-900')
+    resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-dark-bg')
 );
 
 /*
