@@ -1,13 +1,21 @@
 /*
- * The blog stylesheet. The blog loads no other stylesheet, except
- * tokens.css before this one.
+ * The blog stylesheet: the blog's own rules. The blog loads tokens.css and
+ * common.css before this one, and no other stylesheet. common.css is the
+ * shared nav and footer of the Phalcon sites (a copy of
+ * phalcon/css/common.css in phalcon/assets), so this file has no rules for
+ * them, except for the blog's own parts of the nav (the "nav" part below).
+ *
+ * A rule here that reaches into the nav or the footer changes them when it
+ * is stronger than the rule of common.css (html.dark p), or when it sets a
+ * property that common.css does not set (cursor, outline). Such rules have
+ * :where(:not(.ph-nav *, .ph-footer *)): it keeps them out of the nav and the
+ * footer, and it does not change their weight.
  *
  * The colors and the fonts come from tokens.css, a copy of
  * phalcon/css/tokens.css in phalcon/assets. The CI workflow gets the file
  * again before every build. The --nd- variables give each tone its tokens:
  * the light tone answers to the default, and the dark tone answers to
- * `html.dark`. The header and the footer use the dark tone in both, the way
- * the phalcon.io nav does.
+ * `html.dark`.
  *
  * The sheet has three parts, in cascade order: the layout rules of the old
  * shared sheet, the blog rules, and the design. Most colors come from the
@@ -40,12 +48,6 @@
     --nd-text: var(--ph-light-text);
     --nd-warning: var(--ph-light-warning);
     --nd-warning-bg: var(--ph-light-warning-bg);
-
-    /* chrome: the dark tone in both tones */
-    --nd-chrome: var(--ph-dark-bg);
-    --nd-chrome-border: var(--ph-dark-border);
-    --nd-chrome-muted: var(--ph-dark-muted);
-    --nd-chrome-text: var(--ph-dark-text);
 }
 
 html.dark {
@@ -89,8 +91,8 @@ html.dark h2,
 html.dark h3,
 html.dark h4,
 html.dark h5,
-html.dark p,
-html.dark ul li,
+html.dark p:where(:not(.ph-nav *, .ph-footer *)),
+html.dark ul li:where(:not(.ph-nav *, .ph-footer *)),
 html.dark ol li,
 html.dark .phalcon-blog__title,
 html.dark .phalcon-blog__projects-text,
@@ -144,7 +146,7 @@ input {
     margin: 0;
 }
 
-button {
+button:where(:not(.ph-nav *, .ph-footer *)) {
     -webkit-appearance: button;
     background-color: transparent;
     cursor: pointer;
@@ -184,7 +186,7 @@ ul li {
     padding: 0;
 }
 
-a {
+a:where(:not(.ph-nav *, .ph-footer *)) {
     color: var(--nd-accent);
     outline: 0;
     text-decoration: none;
@@ -217,195 +219,35 @@ input:focus {
     justify-content: space-between;
 }
 
-/* Header */
-.header {
-    font-size: 15px;
-    position: relative;
-    z-index: 1;
-}
-
-.header .container {
-    align-items: center;
-    display: flex;
-}
-
-.header a {
-    transition: 0.135s;
-}
-
-.header__left {
-    align-items: center;
-    display: flex;
-    flex-shrink: 0;
-}
-
-.header__logo {
-    align-items: center;
-    display: flex;
-    margin-right: 35px;
-}
-
-.header__logo a {
-    background-image: url("https://assets.phalcon.io/phalcon/images/svg/phalcon-logo-white-105x40.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    height: 43px;
-    width: 105px;
-}
-
-.header__sitename {
-    font-size: 9px;
-    height: 18px;
-    line-height: 18px;
-    margin-left: 10px;
-    padding: 0 12px;
-}
-
-.header-nav {
-    align-items: center;
-    display: flex;
-    margin-right: 35px;
-}
-
-.header-nav > li {
-    margin-right: 30px;
-}
-
-.header-nav > li:last-child {
-    margin-right: 0;
-}
-
-.header-nav > li a {
-    transition: 0.135s;
-}
-
-.header-nav > li:hover > a {
-    transition: 0.135s;
-}
-
-.header-nav > li.expand {
-    position: relative;
-}
-
-.header-nav > li.expand:hover .header-dropdown-wrapper {
-    display: block;
-}
-
-.header-nav > li.expand > a::after {
-    color: var(--ph-white);
-    content: url("https://assets.phalcon.io/phalcon/images/svg/arrow.svg");
-    margin-left: 5px;
-    position: relative;
-    top: -1px;
-}
-
-/* The mobile nav. Header.astro adds `.active` when the burger is clicked. */
-.header-nav--mobile {
-    height: 100%;
-    left: -250px;
-    overflow-y: scroll;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    transition: 0.4s;
-    width: 230px;
-    z-index: 20;
-}
-
-.header-nav--mobile::-webkit-scrollbar {
-    width: 6px;
-}
-
-.header-nav--mobile::-webkit-scrollbar-thumb {
-    background: color-mix(in srgb, var(--ph-mist-100) 70%, transparent);
-}
-
-.header-nav--mobile.active {
-    left: 0;
-    transition: 0.4s;
-}
-
-.header-nav--mobile > ul > li {
-    margin-bottom: 15px;
-}
-
-.header-nav--mobile > ul > li:last-child {
-    margin-bottom: 0;
-}
-
-.header-nav--mobile li.extendable .header-dropdown--mobile {
-    margin-top: 15px;
-}
-
-.header-nav--mobile li.extendable .header-dropdown--mobile__title {
-    font-size: 14px;
-}
-
-.header-nav--mobile li.extendable .header-dropdown--mobile ul {
-    font-size: 13px;
-    padding-left: 9px;
-}
-
-.header-nav--mobile li.extended .header-dropdown--mobile {
-    display: block;
-}
+/* ----------------------------------------------------------------- nav */
 
 /*
- * The Community dropdown. It is part of the dark header in both tones, as the
- * nav dropdown of phalcon.io: a dark panel, mono titles and mono links.
+ * The blog's parts of the shared nav (common.css). .nav-end holds the links
+ * of common.css, the theme switcher and the burger, so that the switcher
+ * stays next to the burger below 64rem. The search box is the last item of
+ * the links.
  */
-.header-dropdown {
-    background-color: var(--ph-dark-surface);
-    border: 1px solid var(--ph-dark-border-strong);
-    border-radius: 5px;
-    box-shadow: 0 12px 34px color-mix(in srgb, var(--ph-night-950) 50%, transparent);
-    min-width: 13rem;
-    padding: 5px;
-    z-index: 10;
+.nav-end {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
 }
 
-.header-dropdown .header-dropdown__title {
-    color: var(--ph-dark-faint);
-    font-family: var(--nd-font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    padding: 9px 11px 4px;
-    text-transform: uppercase;
+/* Up to 1200px the search box does not fit in the nav. */
+@media screen and (max-width: 1200px) {
+    .header__search-wrapper {
+        display: none;
+    }
 }
 
-.header .header-nav .header-dropdown a {
-    border-radius: 3px;
-    color: var(--ph-mist-300);
-    display: block;
-    font-family: var(--nd-font-mono);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 9px 11px;
-    transition: 0.135s;
+/* The search results: the text of the page, on the surface of each tone. The links keep their own rules. */
+#header-search-results {
+    color: var(--nd-text);
 }
 
-.header .header-nav .header-dropdown a:hover {
-    background-color: var(--ph-surface-800);
-    color: var(--ph-mist-100);
-}
-
-.header-dropdown-wrapper {
-    display: none;
-    padding-top: 11px;
-    position: absolute;
-    right: 0;
-    top: 100%;
-}
-
-.header-dropdown--mobile {
-    display: none;
-    padding-left: 8px;
-}
-
-.header-dropdown--mobile li {
-    margin-bottom: 13px;
+/* A search hit keeps the colors of the browser's highlight: in the nav, common.css gives each element the color of its parent. */
+#header-search-results mark {
+    color: MarkText;
 }
 
 .header__search {
@@ -415,7 +257,6 @@ input:focus {
     box-sizing: border-box;
     font-size: 12px;
     height: 30px;
-    margin-right: 20px;
     padding: 0 15px;
     transition: 0.2s;
     width: 172px;
@@ -438,70 +279,14 @@ input:focus {
     color: var(--ph-ink-500);
 }
 
-.header__right {
-    align-items: center;
-    display: flex;
-    flex-shrink: 0;
-    margin-left: auto;
-}
-
-.header-nav__burger {
-    border: 0;
-    display: none;
-    flex-direction: column;
-    height: 16px;
-    justify-content: space-between;
-    margin-right: 10px;
-    width: 20px;
-}
-
-.header-nav__burger span {
-    background-color: var(--ph-white);
-    border-radius: 1px;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: ease all 0.135s;
-    width: 20px;
-}
-
-/* The three bars become a cross while the mobile nav is open. */
-.header-nav__burger.active span:nth-child(2) {
-    display: none;
-}
-
-.header-nav__burger.active span:nth-child(1) {
-    top: 7px;
-    transform: rotate(45deg);
-}
-
-.header-nav__burger.active span:nth-child(3) {
-    bottom: 7px;
-    transform: rotate(-45deg);
-}
-
-.header__github {
-    margin-right: 10px;
-}
-
-.header__github a {
-    display: block;
-    height: 20px;
-}
-
-.header__discord a {
-    display: block;
-    height: 22px;
-}
-
-/* The theme switcher. The moon and the sun are white, on the dark header. */
+/* The theme switcher. The moon and the sun are white, on the dark nav. E3 keeps cursor: pointer out of the nav. */
 .switcher button {
     border: none;
     border-radius: 100px;
+    cursor: pointer;
     display: flex;
     font-size: inherit;
     height: 20px;
-    margin-left: 8px;
     outline: none;
     width: 20px;
 }
@@ -518,45 +303,6 @@ input:focus {
 
 .switcher-dark button::before {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .header {
-        font-size: 13px;
-    }
-
-    .header__logo a {
-        background-image: url("https://assets.phalcon.io/phalcon/images/svg/phalcon-logo-35x39.svg");
-        height: 39px;
-        width: 34px;
-    }
-
-    .header__search {
-        width: 110px;
-    }
-
-    .header-nav {
-        margin-right: 28px;
-    }
-
-    .header-nav > li {
-        margin-right: 20px;
-    }
-
-    .header-nav > li.expand > a::after {
-        top: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .header-nav,
-    .header__search {
-        display: none;
-    }
-
-    .header-nav__burger {
-        display: flex;
-    }
 }
 
 .container {
@@ -585,42 +331,6 @@ input:focus {
         padding-left: 10px;
         padding-right: 10px;
         width: 1200px;
-    }
-}
-
-/* Footer */
-.footer {
-    padding-bottom: 27px;
-    padding-top: 20px;
-}
-
-.footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto 20px;
-    max-width: 100%;
-}
-
-.footer-nav li {
-    border-bottom: 1px solid transparent;
-    margin: 0 15px;
-    transition: 0.135s;
-}
-
-.footer-nav li:hover {
-    transition: 0.135s;
-}
-
-.footer__license {
-    line-height: 23px;
-    margin-bottom: 17px;
-    text-align: center;
-}
-
-@media (max-width: 767px) {
-    .footer-nav li {
-        line-height: 23px;
     }
 }
 
@@ -1037,25 +747,16 @@ body {
     height: 100%;
 }
 
-header,
-footer {
-    flex: 0 0 auto;
-}
-
 *,
 *:before,
 *:after {
     box-sizing: border-box;
 }
 
-* {
+/* Every element: the nav and the footer themselves too. */
+:where(:not(.ph-nav, .ph-nav *, .ph-footer, .ph-footer *)) {
     -webkit-tap-highlight-color: transparent;
     outline: 0;
-}
-
-/* body.hidden stops the page from scrolling while the mobile nav is open. */
-.hidden {
-    overflow: hidden;
 }
 
 .alert {
@@ -1069,15 +770,6 @@ footer {
     body {
         cursor: pointer;
     }
-}
-
-.header-nav--mobile .extendable a:after {
-    content: url("https://assets.phalcon.io/phalcon/images/svg/arrow.svg");
-    margin-left: 5px;
-}
-
-.header-nav--mobile .header-dropdown--mobile a:after {
-    display: none;
 }
 
 .tag-button {
@@ -1157,18 +849,6 @@ footer {
     object-fit: contain;
 }
 
-/* Below 1200px the nav and the search do not fit, and the burger opens the mobile nav. */
-@media screen and (max-width: 1200px) {
-    .header-nav,
-    .header__search {
-        display: none;
-    }
-
-    .header-nav__burger {
-        display: flex;
-    }
-}
-
 @media screen and (max-width: 1023px) {
     .phalcon-blog__item-img img {
         object-fit: contain;
@@ -1205,10 +885,6 @@ footer {
 
 body,
 .alert,
-.footer,
-.header,
-.header-dropdown__count,
-.header-dropdown__title,
 .input,
 .phalcon-blog,
 .phalcon-blog__item-title,
@@ -1230,8 +906,6 @@ body,
 /* ---------------------------------------------------------------- page */
 
 body,
-.header,
-.footer,
 .phalcon-blog,
 .phalcon-blog-detail,
 .phalcon-blog-detail p,
@@ -1280,71 +954,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
-}
-
-html.dark .header,
-.header {
-    background-color: var(--nd-chrome);
-    border-bottom: 1px solid var(--nd-chrome-border);
-    color: var(--nd-chrome-text);
-    height: auto;
-    padding: 18px 0;
-}
-
-html.dark .header a,
-.header a,
-.header-nav > li a {
-    color: var(--nd-chrome-muted);
-}
-
-html.dark .header a:hover,
-.header a:hover,
-.header-nav > li.active > a,
-.header-nav > li:hover > a {
-    color: var(--nd-chrome-text);
-}
-
-.header__sitename {
-    background-color: transparent;
-    border: 1px solid var(--ph-line-600);
-    border-radius: 3px;
-    color: var(--nd-accent);
-    font-family: var(--nd-font-mono);
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-}
-
-.header-nav--mobile {
-    background-color: var(--nd-chrome);
-}
-
-html.dark .footer,
-.footer {
-    background: var(--nd-chrome);
-    border-top: 1px solid var(--nd-chrome-border);
-}
-
-html.dark .footer-nav li a,
-.footer-nav li a,
-.footer-nav {
-    color: var(--nd-chrome-muted);
-}
-
-.footer-nav li:hover {
-    border-bottom-color: var(--nd-accent);
-}
-
-.footer .footer-nav li a:hover {
-    color: var(--nd-chrome-text);
-}
-
-html.dark .footer__license,
-.footer__license,
-.footer__supported {
-    color: var(--ph-faint-700);
-    font-family: var(--nd-font-mono);
-    font-size: 12px;
 }
 
 /* --------------------------------------------------------- post cards */

@@ -1,0 +1,563 @@
+/*
+ * The shared header and footer of the Phalcon sites: the nav and the footer of
+ * phalcon.io, which is the source of the design. Each site copies this file
+ * and tokens.css from https://assets.phalcon.io/phalcon/css/ at deploy time,
+ * and loads tokens.css too. The colors and the fonts come from the tokens.
+ *
+ * The last line of this file must be the end comment: a site that gets a file
+ * without it takes the file as cut, and keeps its copy.
+ *
+ * To rename a token that this file uses: first add the new token to
+ * tokens.css and keep the old one, then change this file. Remove the old token
+ * only when every site has the new common.css. A site keeps its old copies of
+ * both files while one of them needs a token that the other does not have.
+ *
+ * Each selector starts with .ph-nav or .ph-footer, so the file changes nothing
+ * else on a page. The first rules reset the elements in the nav and in the
+ * footer, so that the body styles and the plain element rules of a site (a,
+ * button, ul) do not change them. A site rule that is stronger than one class
+ * is stronger than these rules too: an element with a pseudo-class (a:hover,
+ * a:visited, li:last-child), or a class with an element (.page a). A site
+ * must put such rules on its own content only (for example main a:hover).
+ *
+ * The sizes in rem need the font size of the browser on html (16px). A site
+ * must not change the font size of html: the rem sizes then change and the px
+ * sizes do not, and the nav and the footer lose their proportions.
+ *
+ * The markup. Each site keeps its own copy. The mobile menu script uses the
+ * ids and the aria attributes.
+ *
+ * <nav class="ph-nav">
+ *   <div class="ph-nav__bar">
+ *     <a class="ph-nav__brand" href="/">
+ *       <img class="ph-nav__logo" src="…/falcon.svg" alt="">
+ *       <span class="ph-nav__name">Phalcon</span>
+ *     </a>
+ *     <div class="ph-nav__links">
+ *       <a class="ph-nav__link" href="…">Docs</a>                  (one for each link)
+ *       <div class="ph-nav__menu">                                (one for each menu)
+ *         <button class="ph-nav__menu-button" aria-haspopup="true">
+ *           Community <span class="ph-nav__caret" aria-hidden="true">▾</span>
+ *         </button>
+ *         <div class="ph-nav__dropdown">
+ *           <ul class="ph-nav__dropdown-list">
+ *             <li><a class="ph-nav__dropdown-link" href="…">Discord</a></li>
+ *           </ul>
+ *         </div>
+ *       </div>
+ *       <a class="ph-nav__github" href="…">GitHub <span class="ph-nav__stars">★ 10.8k</span></a>
+ *       <a class="ph-nav__cta" href="/download">Get Phalcon</a>
+ *     </div>
+ *     <button class="ph-nav__burger" id="nav-burger" aria-label="Toggle navigation"
+ *             aria-expanded="false" aria-controls="nav-mobile">
+ *       <span class="ph-nav__burger-line"></span>                  (three times)
+ *     </button>
+ *   </div>
+ *   <div class="ph-nav__mobile" id="nav-mobile" hidden>
+ *     <ul class="ph-nav__mobile-list">
+ *       <li><a class="ph-nav__mobile-link" href="…">Docs</a></li>
+ *       <li class="ph-nav__mobile-heading">Community</li>
+ *       <li class="ph-nav__mobile-github"><a class="ph-nav__mobile-link" href="…">GitHub ★ 10.8k</a></li>
+ *       <li class="ph-nav__mobile-action"><a class="ph-nav__mobile-cta" href="/download">Get Phalcon</a></li>
+ *     </ul>
+ *   </div>
+ * </nav>
+ *
+ * <footer class="ph-footer">
+ *   <div class="ph-footer__grid">
+ *     <div>
+ *       <div class="ph-footer__brand">
+ *         <img class="ph-footer__logo" src="…/falcon.svg" alt="">
+ *         <span class="ph-footer__name">Phalcon</span>
+ *       </div>
+ *       <p class="ph-footer__tagline">…</p>
+ *     </div>
+ *     <div>                                                       (one for each column)
+ *       <p class="ph-footer__title">Framework</p>
+ *       <div class="ph-footer__links">
+ *         <a class="ph-footer__link" href="…">Docs</a>
+ *       </div>
+ *     </div>
+ *   </div>
+ *   <div class="ph-footer__socials">
+ *     <a class="ph-footer__social" href="…">Telegram</a>
+ *   </div>
+ *   <div class="ph-footer__bottom">
+ *     <div class="ph-footer__bottom-inner">
+ *       <span class="ph-footer__copyright">© 2026 Phalcon Team · …</span>
+ *     </div>
+ *   </div>
+ * </footer>
+ */
+
+/* ------------------------------------------------------------- reset */
+
+/* The box model and the spacing of each element in the nav and in the footer. */
+.ph-nav,
+.ph-nav *,
+.ph-nav ::before,
+.ph-nav ::after,
+.ph-footer,
+.ph-footer *,
+.ph-footer ::before,
+.ph-footer ::after {
+    border: 0 solid;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* The text of the nav and of the footer does not take the text styles of the page. */
+.ph-nav,
+.ph-footer {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    color: var(--ph-dark-text);
+    font: normal 400 1rem / 1.5 var(--ph-font-sans);
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    letter-spacing: normal;
+    tab-size: 4;
+    text-align: start;
+    text-indent: 0;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+.ph-nav *,
+.ph-footer * {
+    color: inherit;
+}
+
+.ph-nav :where(a),
+.ph-footer :where(a) {
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+}
+
+.ph-nav :where(button) {
+    appearance: button;
+    background-color: transparent;
+    border-radius: 0;
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    opacity: 1;
+}
+
+.ph-nav :where(img),
+.ph-footer :where(img) {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.ph-nav :where(ul) {
+    list-style: none;
+}
+
+.ph-nav [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+}
+
+/* --------------------------------------------------------------- nav */
+
+/* A bar at the top of the viewport. The color-mix() block below makes it see-through. */
+.ph-nav {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: var(--ph-night-950);
+    border-bottom-width: 1px;
+    border-color: var(--ph-line-900);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.ph-nav__bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 1.25rem;
+}
+
+.ph-nav__brand {
+    align-items: center;
+    color: var(--ph-mist-100);
+    display: flex;
+    gap: 11px;
+}
+
+.ph-nav__logo {
+    height: 26px;
+    width: 26px;
+}
+
+.ph-nav__name {
+    font-family: var(--ph-font-sans);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* The links, the menus, the GitHub link and the button. Below 64rem the burger shows them in the mobile menu. */
+.ph-nav__links {
+    align-items: center;
+    color: var(--ph-sage-400);
+    display: none;
+    font-size: 0.875rem;
+    gap: 1.5rem;
+    line-height: calc(1.25 / 0.875);
+}
+
+.ph-nav__link {
+    color: var(--ph-sage-400);
+    white-space: nowrap;
+}
+
+.ph-nav__menu {
+    position: relative;
+}
+
+.ph-nav__menu-button {
+    align-items: center;
+    color: var(--ph-sage-400);
+    display: flex;
+    gap: 0.25rem;
+}
+
+.ph-nav__caret {
+    font-size: 10px;
+}
+
+/* The dropdown shows while the pointer is on its menu, or while the focus is in it. */
+.ph-nav__dropdown {
+    opacity: 0;
+    padding-top: 0.75rem;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+}
+
+.ph-nav__menu:focus-within .ph-nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ph-nav__dropdown-list {
+    background-color: var(--ph-surface-900);
+    border-color: var(--ph-line-700);
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: 0 12px 34px var(--ph-night-950);
+    padding: 5px;
+    width: 13rem;
+}
+
+.ph-nav__dropdown-link {
+    border-radius: 3px;
+    color: var(--ph-mist-300);
+    display: block;
+    font-family: var(--ph-font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: calc(1 / 0.75);
+    padding: 9px 11px;
+}
+
+.ph-nav__github {
+    align-items: center;
+    color: var(--ph-sage-400);
+    display: flex;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.ph-nav__stars {
+    border-color: var(--ph-line-700);
+    border-radius: 3px;
+    border-width: 1px;
+    color: var(--ph-mist-300);
+    font-family: var(--ph-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 6px;
+}
+
+.ph-nav__cta {
+    background-color: var(--ph-accent-400);
+    border-radius: 4px;
+    color: var(--ph-ink-950);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: calc(1.25 / 0.875);
+    padding: 9px 1rem;
+    white-space: nowrap;
+}
+
+/* The burger shows below 64rem. It opens and closes the mobile menu. */
+.ph-nav__burger {
+    align-items: center;
+    border-color: var(--ph-line-700);
+    border-radius: 4px;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 2.25rem;
+    justify-content: center;
+    width: 2.25rem;
+}
+
+.ph-nav__burger-line {
+    background-color: var(--ph-mist-100);
+    display: block;
+    height: 2px;
+    width: 1rem;
+}
+
+/* The mobile menu, below 64rem. The script removes the hidden attribute to show it. */
+.ph-nav__mobile {
+    background-color: var(--ph-night-950);
+    border-color: var(--ph-line-900);
+    border-top-width: 1px;
+    padding: 0.75rem 1.25rem 1.5rem;
+}
+
+.ph-nav__mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.ph-nav__mobile-link {
+    color: var(--ph-sage-400);
+    display: block;
+    font-size: 15px;
+    padding-block: 0.5rem;
+}
+
+.ph-nav__mobile-heading {
+    color: var(--ph-faint-500);
+    font-family: var(--ph-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    padding-top: 1rem;
+    text-transform: uppercase;
+}
+
+.ph-nav__mobile-github {
+    padding-top: 1rem;
+}
+
+.ph-nav__mobile-action {
+    padding-top: 0.5rem;
+}
+
+.ph-nav__mobile-cta {
+    background-color: var(--ph-accent-400);
+    border-radius: 4px;
+    color: var(--ph-ink-950);
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: calc(1.25 / 0.875);
+    padding: 9px 1rem;
+}
+
+/* ------------------------------------------------------------ footer */
+
+.ph-footer {
+    background-color: var(--ph-night-950);
+    border-color: var(--ph-line-900);
+    border-top-width: 1px;
+    color: var(--ph-mist-100);
+}
+
+.ph-footer__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-inline: auto;
+    max-width: 1240px;
+    padding: 3.5rem 1.25rem 2.5rem;
+}
+
+.ph-footer__brand {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.ph-footer__logo {
+    height: 30px;
+    width: 30px;
+}
+
+.ph-footer__name {
+    font-family: var(--ph-font-sans);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: calc(1.75 / 1.125);
+}
+
+.ph-footer__tagline {
+    color: var(--ph-faint-500);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    margin-top: 1rem;
+    max-width: 260px;
+}
+
+.ph-footer__title {
+    color: var(--ph-faint-500);
+    font-family: var(--ph-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.ph-footer__links {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    gap: 10px;
+    line-height: calc(1.25 / 0.875);
+}
+
+.ph-footer__link {
+    color: var(--ph-accent-400);
+}
+
+.ph-footer__socials {
+    column-gap: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: auto;
+    max-width: 1240px;
+    padding: 0 1.25rem 2rem;
+    row-gap: 0.5rem;
+}
+
+.ph-footer__social {
+    color: var(--ph-sage-400);
+    font-family: var(--ph-font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: calc(1 / 0.75);
+}
+
+.ph-footer__bottom {
+    border-color: var(--ph-line-900);
+    border-top-width: 1px;
+}
+
+.ph-footer__bottom-inner {
+    margin-inline: auto;
+    max-width: 1240px;
+    padding: 18px 1.25rem;
+}
+
+.ph-footer__copyright {
+    color: var(--ph-faint-700);
+    font-family: var(--ph-font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: calc(1 / 0.75);
+}
+
+/* ------------------------------------------------------- color-mix() */
+
+/*
+ * A browser that has color-mix() gets the see-through nav and the soft
+ * dropdown shadow. Another browser keeps the solid colors of the rules above,
+ * as phalcon.io does. A fallback line in the same rule does not work: a value
+ * with var() is checked only when it is used, and an unknown function then
+ * makes the property transparent.
+ */
+@supports (color: color-mix(in lab, red, red)) {
+    .ph-nav {
+        background-color: color-mix(in oklab, var(--ph-night-950) 92%, transparent);
+    }
+
+    .ph-nav__dropdown-list {
+        box-shadow: 0 12px 34px color-mix(in srgb, var(--ph-night-950) 50%, transparent);
+    }
+}
+
+/* ------------------------------------------------- hover and widths */
+
+/* Hover styles only on a device with a pointer that can hover, as phalcon.io. */
+@media (hover: hover) {
+    .ph-nav__link:hover,
+    .ph-nav__github:hover,
+    .ph-nav__mobile-link:hover,
+    .ph-nav__menu:hover .ph-nav__menu-button {
+        color: var(--ph-mist-100);
+    }
+
+    .ph-nav__menu:hover .ph-nav__dropdown {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .ph-nav__dropdown-link:hover {
+        background-color: var(--ph-surface-800);
+        color: var(--ph-mist-100);
+    }
+
+    .ph-nav__cta:hover {
+        background-color: var(--ph-accent-500);
+    }
+
+    .ph-footer__link:hover {
+        color: var(--ph-accent-500);
+    }
+
+    .ph-footer__social:hover {
+        color: var(--ph-mist-100);
+    }
+}
+
+@media (min-width: 40rem) {
+    .ph-footer__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 48rem) {
+    .ph-nav__bar,
+    .ph-footer__grid,
+    .ph-footer__socials,
+    .ph-footer__bottom-inner {
+        padding-inline: 2.5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .ph-nav__links {
+        display: flex;
+    }
+
+    .ph-nav__burger,
+    .ph-nav__mobile {
+        display: none;
+    }
+
+    .ph-footer__grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    }
+}
+
+/* The end of common.css. */
