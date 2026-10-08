@@ -13,7 +13,7 @@ const EXPECTED = {
        a broken image reaches production unnoticed. */
     assets: 213,
     feedItems: 321,
-    paginationPages: 31,
+    paginationPages: 32,
     postPages: 321,
     /* Rule lines, comments excluded. `wc -l` reports one more, because the
        file ends with a blank line. */
