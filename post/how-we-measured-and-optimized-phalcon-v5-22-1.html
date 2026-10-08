@@ -1,0 +1,420 @@
+<!DOCTYPE html><!--
+
+Phalcon Framework
+
+A full-stack PHP framework delivered as a PHP extension,
+offering lower resource consumption and high performance.
+
+<3 Phalcon Team
+
+                         ..
+                         ....
+   %                  ,   ......
+     %%%               ,,  .......
+      %%%%%%           ,,,,.........
+       %%%%%%%%&        ,,,,,.........,
+    /    %%%%%%%%%%      ,,,,,,..........
+      //  %%%%%%%%%%%%%    ,,,,,,..........
+       //// %%%%%%%%%%%%%%%  ,,,,,,..........,
+         ////%%%%%%%%%%%%%%%%%%,,,,,,...........
+          ///////%%%%%%%%%%%%%%%%%%,,,,...........
+            ////////%%%%%%%%%%%%%%%%%%/,,...........
+          %%%%/////////(%%%%%%%%%%%%%%%%%%,..........
+            %%%%%//////////%%%%%%%%%%%%%%%%%%........(
+               %%%%///////////(%%%%%%%%%%%%%%%%.......(
+                 %%%%%////////////%%%%%%%%%%%%%%%.....//
+                ....%%%%%////////////#%%%%%%%%%%%%%....//
+                   .......(%/////////////%%%%%%%%%%%%..  /
+                      ...........///////********/%%%%%..
+                     ,,,,.............,/***************.
+                         ,,,,,.............************......,/(
+                               ,,,,,,..........********.....//////////
+                              ((((((((**((((((((((((((*.....///////////
+                                  %*********.../(((((((..........///(/#/
+                               **********..........#%%%           ..*%%%
+                            *********(..........%%%                  %%%
+                         *********/..........%%%                     %%
+                   %    *******%%.........%%%%
+                  %   ******%%%%...../.*((((((   %%%%
+                     ****%%%%%%.....///* (((((((%%%%%
+                    ***&%%%%%%.....////* ((((((((%%  %
+                    *  &%%%%%#..../////*  (((     %
+                       &%%%%%....//////*           %
+                        %%%% ....//////***   %%%
+                     (  %%%   ...*/////*****%%%%
+                     (   %     ...  //(*****/%%
+                      (  &      ..   // ***  %%
+                                 .     /      %
+-->
+<html lang="en"><head><title>How We Measured and Optimized Phalcon v5.22.1</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="MobileOptimized" content="320"><meta name="HandheldFriendly" content="true"><meta charset="utf-8"><meta name="author" content="Phalcon Team"><meta name="application-name" content="Phalcon Blog"><meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><meta name="description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="article:published_time" content="2026-10-07T00:00:00.000Z"><!-- Facebook --><meta property="og:url" content="https://blog.phalcon.io"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="How We Measured and Optimized Phalcon v5.22.1"><meta property="og:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta property="og:site_name" content="Phalcon Blog"><meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How We Measured and Optimized Phalcon v5.22.1"><meta name="twitter:description" content="We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption"><meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png"><meta name="twitter:image:alt" content="Phalcon Blog"><meta name="twitter:site" content="@phalconphp"><meta name="twitter:creator" content="Phalcon Team"><meta itemprop="image" content="https://blog.phalcon.io/assets/banners/2026/2026-10-07-phalcon-benchmarks.svg"><meta itemprop="publisher" content="Phalcon Team"><meta name="telegram:channel" content="@phalcon_news"><link rel="canonical" href="https://blog.phalcon.io/post/how-we-measured-and-optimized-phalcon-v5-22-1"><link rel="publisher" href="https://blog.phalcon.io"><link rel="author" href="/humans.txt"><link rel="apple-touch-icon" sizes="180x180" href="https://assets.phalcon.io/phalcon/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://assets.phalcon.io/phalcon/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets.phalcon.io/phalcon/favicons/favicon-16x16.png"><link rel="icon" type="image/svg+xml" href="https://assets.phalcon.io/phalcon/favicons/favicon.svg"><link rel="icon" type="image/png" href="https://assets.phalcon.io/phalcon/favicons/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://assets.phalcon.io/phalcon/favicons/favicon.ico"><link rel="mask-icon" href="https://assets.phalcon.io/phalcon/favicons/safari-pinned-tab.svg" color="#8fc19a"><meta name="msapplication-config" content="https://assets.phalcon.io/phalcon/favicons/browserconfig.xml"><meta name="msapplication-TileColor" content="#070d0c"><meta name="theme-color" content="#070d0c"><link rel="alternate" type="application/rss+xml" title="Phalcon Blog - We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption" href="/feed.xml"><script>(function () { var mode = localStorage.getItem('mode') || 'auto'; document.documentElement.classList.add(mode === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : mode); })()</script><link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/common.css"><link rel="stylesheet" href="/css/site.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JGM81GDBF"></script><script>(function(){const analyticsId = "G-9JGM81GDBF";
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+        })();</script><style>.post-footer__row[data-astro-cid-grg5p222]{flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:8px;display:flex}.post-footer__label[data-astro-cid-grg5p222]{letter-spacing:.14em;opacity:.65;text-transform:uppercase;flex:0 0 74px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,Liberation Mono,monospace;font-size:11px;font-weight:600}.post-footer__links[data-astro-cid-grg5p222]{flex:260px;line-height:1.9}.post-footer__dot[data-astro-cid-grg5p222]{opacity:.5;margin:0 7px}.post-footer__sign[data-astro-cid-grg5p222]{opacity:.7;margin-top:14px}
+.header__search-wrapper[data-astro-cid-nen7h5rs]{position:relative}#header-search-results[data-astro-cid-nen7h5rs]{background:var(--nd-surface);box-shadow:0 8px 24px color-mix(in srgb, var(--ph-night-950) 15%, transparent);z-index:20;border-radius:8px;width:24rem;max-height:70vh;margin-top:.5rem;position:absolute;top:100%;right:0;overflow-y:auto}
+</style></head><body><div class="header-sticky" data-pagefind-ignore><nav class="ph-nav" data-astro-cid-nen7h5rs><div class="ph-nav__bar" data-astro-cid-nen7h5rs><a href="/" class="ph-nav__brand" data-astro-cid-nen7h5rs><img src="https://assets.phalcon.io/phalcon/images/svg/falcon.svg" alt="" class="ph-nav__logo" data-astro-cid-nen7h5rs><span class="ph-nav__name" data-astro-cid-nen7h5rs>Phalcon Blog</span></a><div class="nav-end" data-astro-cid-nen7h5rs><div class="ph-nav__links" data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" class="ph-nav__link" data-astro-cid-nen7h5rs>Download</a><a href="https://docs.phalcon.io" class="ph-nav__link" data-astro-cid-nen7h5rs>Docs</a><a href="https://phalcon.io/#features" class="ph-nav__link" data-astro-cid-nen7h5rs>Features</a><div class="ph-nav__menu" data-astro-cid-nen7h5rs><button class="ph-nav__menu-button" aria-haspopup="true" data-astro-cid-nen7h5rs>Community <span aria-hidden="true" class="ph-nav__caret" data-astro-cid-nen7h5rs>▾</span></button><div class="ph-nav__dropdown" data-astro-cid-nen7h5rs><ul class="ph-nav__dropdown-list" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Discussions (v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Stack Overflow</a></li><li data-astro-cid-nen7h5rs><a href="/" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Blog</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/support" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Support</a></li></ul></div></div><div class="ph-nav__menu" data-astro-cid-nen7h5rs><button class="ph-nav__menu-button" aria-haspopup="true" data-astro-cid-nen7h5rs>Project <span aria-hidden="true" class="ph-nav__caret" data-astro-cid-nen7h5rs>▾</span></button><div class="ph-nav__dropdown" data-astro-cid-nen7h5rs><ul class="ph-nav__dropdown-list" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/contribute" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Contribute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/team" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Team</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/testimonials" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Testimonials</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/sponsors" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Sponsors</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/hosting" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Hosting</a></li><li data-astro-cid-nen7h5rs><a href="https://builtwith.phalcon.io" class="ph-nav__dropdown-link" data-astro-cid-nen7h5rs>Built with Phalcon</a></li></ul></div></div><a href="https://github.com/phalcon/cphalcon" class="ph-nav__github" data-astro-cid-nen7h5rs>GitHub <span class="ph-nav__stars" data-astro-cid-nen7h5rs>★ 10.8k</span></a><a href="https://phalcon.io/download" class="ph-nav__cta" data-astro-cid-nen7h5rs>Get Phalcon</a><div class="header__search-wrapper" data-astro-cid-nen7h5rs><input type="text" id="header-search-input" class="header__search" placeholder="Search..." aria-label="Search" autocomplete="off" data-astro-cid-nen7h5rs><div id="header-search-results" class="phalcon-blog-detail" hidden data-astro-cid-nen7h5rs><div id="articles" data-astro-cid-nen7h5rs></div></div></div></div><div class="switcher" data-astro-cid-nen7h5rs><button aria-label="Theme switcher" data-astro-cid-nen7h5rs></button></div><button id="nav-burger" class="ph-nav__burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-mobile" data-astro-cid-nen7h5rs><span class="ph-nav__burger-line" data-astro-cid-nen7h5rs></span><span class="ph-nav__burger-line" data-astro-cid-nen7h5rs></span><span class="ph-nav__burger-line" data-astro-cid-nen7h5rs></span></button></div></div><div id="nav-mobile" hidden class="ph-nav__mobile" data-astro-cid-nen7h5rs><ul class="ph-nav__mobile-list" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Download</a></li><li data-astro-cid-nen7h5rs><a href="https://docs.phalcon.io" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Docs</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/#features" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Features</a></li><li class="ph-nav__mobile-heading" data-astro-cid-nen7h5rs>Community</li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/discord" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Discord</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon/discussions" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Discussions (v5)</a></li><li data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/phalcon/discussions" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Discussions (v6)</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/so" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Stack Overflow</a></li><li data-astro-cid-nen7h5rs><a href="/" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Blog</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/support" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Support</a></li><li class="ph-nav__mobile-heading" data-astro-cid-nen7h5rs>Project</li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/contribute" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Contribute</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/team" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Team</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/testimonials" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Testimonials</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/sponsors" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Sponsors</a></li><li data-astro-cid-nen7h5rs><a href="https://phalcon.io/hosting" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Hosting</a></li><li data-astro-cid-nen7h5rs><a href="https://builtwith.phalcon.io" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>Built with Phalcon</a></li><li class="ph-nav__mobile-github" data-astro-cid-nen7h5rs><a href="https://github.com/phalcon/cphalcon" class="ph-nav__mobile-link" data-astro-cid-nen7h5rs>GitHub ★ 10.8k</a></li><li class="ph-nav__mobile-action" data-astro-cid-nen7h5rs><a href="https://phalcon.io/download" class="ph-nav__mobile-cta" data-astro-cid-nen7h5rs>Get Phalcon</a></li></ul></div></nav><script src="/js/nav.js" defer></script><script type="module">var e=document.documentElement,t=matchMedia(`(prefers-color-scheme: dark)`),n=()=>t.matches?`dark`:`light`,r=()=>localStorage.getItem(`mode`)??`auto`,i=t=>{let r=t===`auto`?n():t;e.style.colorScheme=t===`auto`?`light dark`:r,e.classList.remove(`light`,`dark`),e.classList.add(r),localStorage.setItem(`mode`,t),document.querySelectorAll(`.switcher`).forEach(e=>{e.classList.remove(`switcher-light`,`switcher-dark`),e.classList.add(`switcher-${r}`)})};document.querySelectorAll(`.switcher`).forEach(e=>{e.addEventListener(`click`,()=>{i(r()===`auto`?n()===`light`?`dark`:`light`:`auto`)})}),t.addEventListener(`change`,()=>{r()===`auto`&&i(`auto`)}),i(r());</script><script type="module" src="/_astro/Header.astro_astro_type_script_index_1_lang.ycDKod5C.js"></script></div><div class="phalcon-blog"><div class="container"><div class="phalcon-blog__main"><div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article"><h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">How We Measured and Optimized Phalcon v5.22.1</h2><div class="phalcon-blog-detail__info"><div id="phalcon-blog-detail__date" class="phalcon-blog-detail__date" itemprop="datePublished" data-pagefind-meta="date" content="2026-10-07">Oct 07, 2026</div><div id="phalcon-blog-detail__author" class="phalcon-blog-detail__author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span></div><div class="phalcon-blog-detail__author">Read time: 18 minutes</div></div><div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body><div id="phalcon-blog-detail__image"><img src="/assets/banners/2026/2026-10-07-phalcon-benchmarks.svg" alt="How We Measured and Optimized Phalcon v5.22.1" itemprop="image"></div><p>In the <a href="/post/phalcon-v5-22-1-released">v5.22.1 release post</a>, we said that a second post would explain the method. This is that post. It shows how we measured the extension, how we found the hot spots, how we decided what to keep, and what did not work.</p>
+<p>All the tools are in the cphalcon repository, in <a href="https://github.com/phalcon/cphalcon/tree/5.0.x/tests/benchmarks"><code>tests/benchmarks</code></a>. You can run each command in this post on your computer.</p>
+<h2 id="the-rules">The rules</h2>
+<p>We set these rules before we changed one line of code:</p>
+<ul>
+<li><strong>Measure first.</strong> No code change before a baseline exists.</li>
+<li><strong>One change, one measurement.</strong> Each commit has one pattern, so each gain traces to one change.</li>
+<li><strong>Each benchmark checks its output.</strong> A fast result from a broken code path is not a gain.</li>
+<li><strong>Noise is not a gain.</strong> A change stays only if it is better than the measured noise, and no other metric is worse.</li>
+<li><strong>Do not work around the compiler.</strong> If the cost comes from the C code that Zephir generates, we record it for Zephir. We do not change the Phalcon source to hide it. A fix in Zephir removes the problem in all places.</li>
+</ul>
+<h2 id="count-instructions-not-seconds">Count instructions, not seconds</h2>
+<p>We work in virtual machines (Qubes, on Xen). Wall time in a virtual machine is noisy, and the virtual machine gives no access to the hardware performance counters. Thus, <code>perf</code> cannot help us.</p>
+<p>The main metric is the <strong>instruction count</strong> (Ir), from valgrind (<code>cachegrind</code> and <code>callgrind</code>). The instruction count of a PHP run changes very little from run to run, so a change of 0.5% is easy to see. Wall time is the second metric. We use it only for large differences.</p>
+<p>All runs use a separate Docker service (<code>bench</code>) with fixed conditions:</p>
+<ul>
+<li>PHP 8.4.26, from an image pinned by its digest</li>
+<li>no Xdebug, OPcache on for the CLI, JIT off</li>
+<li>an empty environment (<code>env -i</code>)</li>
+<li>the flags of a release build (<code>-O2 -flto</code>), plus <code>-g</code> for the profiles</li>
+</ul>
+<h3 id="cold-and-warm">Cold and warm</h3>
+<p>One PHP run includes the process start, the extension start (MINIT) and the script compile. These costs are much larger than one request. To remove them, <code>bin/instr</code> runs a subject 0, 1 and 1+k times under valgrind, and calculates two numbers:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>cold_ir = Ir(1) - Ir(0)              the first call, with lazy setup</span></span>
+<span class="line"><span>warm_ir = (Ir(1 + k) - Ir(1)) / k    one call after the first call</span></span></code></pre>
+<p>The process costs cancel out. <code>warm_ir</code> is the main number for an A/B comparison. <code>cold_ir</code> also includes the script compile and the regex compile, which php-fpm does one time for each worker. A php-fpm request is between the two numbers.</p>
+<h2 id="make-the-numbers-repeatable">Make the numbers repeatable</h2>
+<p>Two results surprised us. In both, the instruction count changed, but the machine code did not change.</p>
+<p><strong>Debug information changes the count.</strong> We need <code>-g</code> for profiles with file and line numbers. We compiled the same source with and without <code>-g</code>. The <code>.text</code> section had the same checksum, but under valgrind the <code>-g</code> build counted 13.8K more instructions. When we removed the debug information (<code>objcopy --strip-debug</code>), the difference was about 550 Ir, which is inside the noise. Now <code>bin/store-build</code> keeps two files for each build: one without debug information for the measurements, and one with it for the profiles.</p>
+<p><strong>The path length changes the count.</strong> We loaded the same <code>.so</code> through a path of 1 character and through a path of 30 characters. The longer path counted 14,781 more instructions, about 510 Ir for each character. Now <code>bin/php-bench</code> loads each build through a symlink with a fixed-length name.</p>
+<p>Both effects are process-start costs, so the cold and warm calculation removes them. With the two fixes, a single run is also clean.</p>
+<p>Two more effects are important when you compare numbers:</p>
+<ul>
+<li><strong>The garbage collector.</strong> Each app request makes reference cycles, so the number of calls (k) changes the number of collections. The MVC page is 3.99M Ir with k=100 and 4.05M Ir with k=200. Compare only runs with the same k. <code>bin/run-all</code> always uses the same k for a subject.</li>
+<li><strong>The heap layout.</strong> We moved the setup code of the benchmarks into a function. The code that the subject runs did not change, but <code>Collection::get()</code> went from 4,994 to 4,976 Ir (-0.35%), because the heap layout changed. A small subject can move this much with no real change. Thus, the thresholds need a relative floor.</li>
+</ul>
+<h2 id="what-we-measure">What we measure</h2>
+<p>We wrote four small reference applications. They use the same code paths as real applications:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>App</th><th>What it does</th></tr></thead><tbody><tr><td>Micro</td><td>A “hello world” route with <code>Phalcon\Mvc\Micro</code></td></tr><tr><td>ADR</td><td>A “hello world” action with the ADR application and <code>Phalcon\Container</code></td></tr><tr><td>MVC + Volt</td><td>A page with the router, the dispatcher, a controller and a Volt view</td></tr><tr><td>REST + SQLite</td><td>List, show and create endpoints with models</td></tr></tbody></table>
+<p>Each call of an app subject is one request: a new container, a new application, <code>handle()</code>, <code>send()</code> into an output buffer, and a check of the body. If the body is wrong, the subject throws an exception, and the run stops.</p>
+<p>There are also 28 micro subjects, one for each component entry point that the apps use: Container, Di, Router, Dispatcher, View, Volt, Model, PHQL, Pdo, Events, Response, Filter, Escaper, Collection and Json. The coverage data of the apps (<code>bin/coverage</code>) gave us the list.</p>
+<p>For each subject, <code>bin/run-all</code> records these metrics:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Source</th></tr></thead><tbody><tr><td><code>warm_ir</code>, <code>cold_ir</code></td><td>cachegrind</td></tr><tr><td>Allocations and bytes, cold and warm</td><td>DHAT, with <code>USE_ZEND_ALLOC=0</code> (each <code>emalloc()</code> is one allocation)</td></tr><tr><td>Peak, retained before GC, leaked after GC, reference cycles</td><td><code>memory_get_usage()</code>, <code>gc_collect_cycles()</code></td></tr><tr><td>Wall time</td><td>PHPBench, pinned to one CPU</td></tr></tbody></table>
+<p>One problem in the apps took some time to find. The first <code>Phalcon\Di\Di</code> in a process stays the default container. Without <code>Di::reset()</code> before each request, the models used the container and the database connection of the first request. The REST “create” subject then wrote its rows outside the transaction of the subject. php-fpm clears the default container at the end of each request, so production code does not have this problem. A benchmark loop has it.</p>
+<h2 id="noise-and-thresholds">Noise and thresholds</h2>
+<p>Before we changed code, we ran the full suite two times on the same build (an A/A run). The largest difference between the two runs gives the noise of each metric:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th style="text-align:right">Largest A/A difference</th><th>Threshold</th></tr></thead><tbody><tr><td><code>warm_ir</code></td><td style="text-align:right">21.8 Ir</td><td>0.5% and 70 Ir</td></tr><tr><td><code>cold_ir</code></td><td style="text-align:right">2,505 Ir</td><td>1% and 7,500 Ir</td></tr><tr><td>Warm allocations</td><td style="text-align:right">0.1</td><td>1</td></tr><tr><td>Cold allocations</td><td style="text-align:right">2</td><td>6</td></tr><tr><td>Warm bytes</td><td style="text-align:right">1 byte</td><td>1% and 3 bytes</td></tr><tr><td>Peak, retained, leaked</td><td style="text-align:right">0</td><td>1% and 64 bytes</td></tr><tr><td>Reference cycles</td><td style="text-align:right">0</td><td>1</td></tr><tr><td>Wall time</td><td style="text-align:right">3.99%</td><td>5%</td></tr></tbody></table>
+<p>A threshold is 3 times the largest A/A difference, with a relative floor. A difference is “better” or “worse” only if it is at or above both values. If not, it is noise. <code>bin/compare.php</code> applies these rules to two result folders. For the A/A run, it shows 0 better, 0 worse and 320 noise.</p>
+<p>The cold metrics are not fully deterministic, so their thresholds are larger. A real cold change below 7,500 Ir shows as noise. We accept this, because <code>warm_ir</code> is the main number.</p>
+<p>Wall time needs more care. We stop all other containers and pin PHPBench to one CPU. With pinning, the median relative standard deviation goes from 1.50% to 0.78%, and the largest from 32% to 5.3%.</p>
+<h2 id="find-the-hot-spots">Find the hot spots</h2>
+<p>A flat profile shows which functions use the time. It does not show which Phalcon method to change. When Zephir calls a method by name, many engine functions run: <code>zend_call_function</code>, <code>zend_hash_func</code>, <code>zend_str_tolower_copy</code>, <code>_emalloc</code>. A flat profile shows each of them as a separate line, with no owner.</p>
+<p><code>bin/attribute</code> solves this. It runs callgrind with caller chains (<code>--separate-callers=50</code>) and gives each instruction to the nearest Phalcon method in its chain. The result is the <strong>own cost</strong> of a method: its own instructions, plus the helpers and the engine functions that it calls. The own cost does not include the other Phalcon methods that it calls. Each instruction counts one time only, so the own costs of a request add up to 100%.</p>
+<p>Our first try used chains of 12 callers. The REST subjects then had 12-17% of the cost with no owner, because the SQLite call chains are deep. With 50 callers, the cost with no owner is about 2% or less.</p>
+<p><code>bin/rank.php</code> then gives each method a score: the sum of its shares in the 6 app requests. These were the first five:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th style="text-align:right">Score</th><th>Largest share</th></tr></thead><tbody><tr><td><code>Mvc\Router::rebuildMethodIndex</code></td><td style="text-align:right">49.18%</td><td>23.04% of the MVC page</td></tr><tr><td><code>Di\FactoryDefault::__construct</code></td><td style="text-align:right">22.88%</td><td>12.73% of Micro</td></tr><tr><td><code>Db\Adapter\Pdo\AbstractPdo::connect</code></td><td style="text-align:right">20.30%</td><td>7.09% of REST show</td></tr><tr><td><code>Di\Di::get</code></td><td style="text-align:right">17.34%</td><td>5.91% of Micro</td></tr><tr><td><code>Db\Adapter\Pdo\AbstractPdo::queryStatement</code></td><td style="text-align:right">17.05%</td><td>8.55% of REST show</td></tr></tbody></table>
+<p>The helpers show a pattern. The call path of a Zephir method call by name (<code>zephir_call_user_function</code>, <code>zend_call_function</code>, <code>zephir_call_class_method_aparams</code>, <code>populate_fcic</code>) is about 18% of an average app request. With <code>zend_str_tolower_copy</code>, which makes lowercase copies of the method names for the lookup, it is about 24%. <code>zend_hash_func</code> is 8.4%.</p>
+<p>To find the costly line in a method, we used line profiles. valgrind 3.24 cannot read the line table of a GCC 14.2 LTO build (all lines show as 0). Thus, we used <code>callgrind --dump-instr=yes</code>, and <code>addr2line</code> changed the addresses to lines. Two examples:</p>
+<ul>
+<li>In <code>FactoryDefault::__construct()</code>, the line that creates the <code>filter</code> service is 57.2% of the constructor. The apps do not use this service.</li>
+<li>In <code>Filter::set()</code>, which <code>Filter::init()</code> calls 23 times, a property array write is 55.6% and a property array <code>unset</code> is 42.2%.</li>
+</ul>
+<p>Two static scanners find patterns in the source. <code>bin/scan-zep.php</code> reads the 1,505 <code>.zep</code> files. It finds property array writes in loops, <code>isset</code> followed by a read of the same key, method calls in loops, dynamic calls and untyped variables. <code>bin/scan-c.php</code> reads the generated C. It finds method calls with no cache, memory frames in small methods and property defaults that are set on each object creation. Each finding gets the score of its method, so the hot methods come first.</p>
+<p>The scanners read lines, not a syntax tree. In a check by hand, 8 of 10 findings were real. Thus, we read the source before a finding became a candidate.</p>
+<p>The scanners found an important fact: in the 50 hottest methods, <strong>257 of 649 method calls by name have no call cache</strong>. Zephir gives no cache to a call on a loop variable. For example, in <code>for route in this-&gt;routes</code>, <code>route-&gt;getCompiledPattern()</code> finds the method by name again for each route.</p>
+<h3 id="rank-the-candidates">Rank the candidates</h3>
+<p>From these data, we wrote 13 candidates. For each candidate, we added the instructions of the lines that it changes (from the line profiles), and calculated a score:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>score = (sum of the shares of the 6 app requests) / risk</span></span>
+<span class="line"><span>risk  = 1 (mechanical), 2 (structural), 3 (algorithmic)</span></span></code></pre>
+<p>The score sets the order of the work. It is an upper limit of the gain. Only the measurement after the change gives the real gain.</p>
+<p>Some findings did not become candidates:</p>
+<ul>
+<li><code>AbstractPdo::connect()</code> and <code>queryStatement()</code>: the cost is in PDO and SQLite, not in Phalcon.</li>
+<li>Method calls by name and string hashing: the cost comes from the code that Zephir generates. These findings went into a log for Zephir (see “Next: Zephir”).</li>
+</ul>
+<h2 id="the-loop">The loop</h2>
+<p>We changed one component at a time, with one issue and one branch for each component (<a href="https://github.com/phalcon/cphalcon/issues/17617">#17617</a> Filter and Di, <a href="https://github.com/phalcon/cphalcon/issues/17618">#17618</a> Router, <a href="https://github.com/phalcon/cphalcon/issues/17619">#17619</a> Container, <a href="https://github.com/phalcon/cphalcon/issues/17620">#17620</a> Settings). For each change:</p>
+<ol>
+<li>Store the build before the change and run the full suite on it.</li>
+<li>Make one change. Compile with <code>bin/build-so</code> and store the build with <code>bin/store-build</code>.</li>
+<li>Run the full unit test suite.</li>
+<li>Run the full benchmark suite on the new build.</li>
+<li>Compare the two result folders with <code>bin/compare.php</code>.</li>
+<li>Keep the change if it is better and nothing is worse. If not, revert it, or record it as an exception (see “Trades we accepted”).</li>
+</ol>
+<p>A full <code>run-all</code> takes about 20 minutes. Each result goes into a log, with the names of the two builds.</p>
+<h2 id="what-we-changed-and-what-we-learned">What we changed, and what we learned</h2>
+<p>The <a href="/post/phalcon-v5-22-1-released">release post</a> lists all the changes. Some of them teach something about Zephir code.</p>
+<h3 id="assign-a-map-in-one-step">Assign a map in one step</h3>
+<p><code>Filter::init()</code> called <code>set()</code> for each of the 23 default filters. Each call wrote to one property array and removed a key from another one:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Before</span></span>
+<span class="line"><span>for name, service in mapper {</span></span>
+<span class="line"><span>    this-&gt;set(name, service);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// After</span></span>
+<span class="line"><span>let this-&gt;mapper = array_replace(this-&gt;mapper, mapper);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if !empty this-&gt;services {</span></span>
+<span class="line"><span>    let this-&gt;services = array_diff_key(this-&gt;services, mapper);</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>This change alone made <code>new FactoryDefault()</code> 36.9% faster (instructions) and the Micro request 14.7% faster. Note: if your subclass of <code>Filter</code> overrides <code>set()</code>, <code>init()</code> does not call it now.</p>
+<h3 id="do-not-write-to-a-parameter">Do not write to a parameter</h3>
+<p><code>Route::getRoutePaths()</code> had this code:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>if paths === null {</span></span>
+<span class="line"><span>    let paths = [];</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>When a method writes to a parameter, Zephir adds <code>ZEPHIR_SEPARATE_PARAM()</code> at the start of the method. This copies the parameter on each call, also when the write does not run. We changed the line to <code>return [];</code>. The MVC request now makes 100 fewer allocations.</p>
+<h3 id="call-a-getter-one-time">Call a getter one time</h3>
+<p><code>Router::rebuildMethodIndex()</code> was 23% of the MVC page. It called <code>getCompiledPattern()</code> and <code>getHostName()</code> for each route, and then again in each method bucket. These calls are on the loop variable, so they have no cache. The method also wrote to nested property arrays in its loops.</p>
+<p>Now the method reads the values of each route one time, keeps them in local arrays by position, and assigns each property one time at the end. Our first form used <code>spl_object_id()</code> as the key of the local arrays. The second form uses the position of the route. It was faster, and it used less memory.</p>
+<p>For a router with 50 routes, the definition and the first match are now 13.1% faster, and 22.9% faster when the routes use HTTP methods.</p>
+<h3 id="fetch-is-not-always-faster"><code>fetch</code> is not always faster</h3>
+<p><code>Container::detectCircularAlias()</code> created an empty <code>seen</code> array on each call. But most names are not aliases, so the loop stopped at the first step. Our first form used <code>fetch</code> and removed the array. It was 5.5 Ir slower for each <code>Container::get()</code>: in the generated C, the <code>fetch</code> form tracks one more variable and calls <code>zephir_array_isset_fetch()</code>. On the usual path, this cost more than the array.</p>
+<p>The second form creates <code>seen</code> only at the first loop step that needs it:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (seen === null) {</span></span>
+<span class="line"><span>    let seen = [];</span></span>
+<span class="line"><span>} elseif (array_key_exists(current, seen)) {</span></span>
+<span class="line"><span>    break;</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Always measure a “mechanical” change. A pattern that is faster in one place can be slower in a different place.</p>
+<h3 id="more-variables-more-allocations">More variables, more allocations</h3>
+<p>In <code>Router::rebuildMethodIndex()</code>, two more declared variables gave one more allocation for each call. Zephir tracks each variable in the memory frame of the method, and DHAT shows the extra allocation in the frame code. We did not trace the exact cause yet. The number of variables in a method can change its allocations.</p>
+<h3 id="remove-the-call-keep-the-behavior">Remove the call, keep the behavior</h3>
+<p><code>Support\Settings::get()</code> called a private method, <code>readGlobal()</code>, by name for each read. A REST “create” request calls <code>get()</code> 30 times. The ranking proposed a static cache. But with a cache, <code>get()</code> does not see an <code>ini_set()</code> of a <code>phalcon.*</code> setting at run time.</p>
+<p>The profile showed that the cost was the method call, not the read. <code>globals_get()</code> compiles to a direct read of a C field. Thus, we moved the <code>switch</code> of <code>readGlobal()</code> into <code>get()</code> and removed the call. There is no cache, and the behavior is the same. Model <code>save()</code> is 7.1% faster, and the REST “create” request is 3.2% faster.</p>
+<h2 id="trades-we-accepted">Trades we accepted</h2>
+<p>In the release post, we said that some changes use more memory to save work. By our rules, a change with a worse metric does not stay. We examined each one and kept four of them as exceptions:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Change</th><th>Gain</th><th>Cost</th></tr></thead><tbody><tr><td>Create the <code>filter</code> service on first use</td><td>-10.7K Ir in each Di request</td><td>+1,280 bytes kept in each container: the lazy definition array is larger than the <code>Filter</code> object</td></tr><tr><td>Build the router indexes in local arrays</td><td>-100K Ir in the MVC request</td><td>+2,192 bytes peak during the index build</td></tr><tr><td>Read the route getters one time (first form)</td><td>-82.6K Ir in the MVC request</td><td>+5,232 bytes peak during the index build. The second form removed most of it</td></tr><tr><td>One pass over the routes for the method buckets</td><td>-10.5% for routes with HTTP methods</td><td>+1 allocation (Zephir memory frame), +1,336 bytes peak</td></tr></tbody></table>
+<p>In the final comparison, the largest increase of the peak is about 10 KB, for 50 routes with HTTP methods. The MVC request keeps 2.3 KB more before the garbage collector runs.</p>
+<p>The peak of the router changes has a cause in the generated C. When Zephir assigns an array to a property (<code>let this-&gt;x = localArray;</code>), the kernel always copies the array (<code>zend_array_dup()</code>). The local array and the copy then exist at the same time, until the method ends. We did not add a workaround in Phalcon, because this is a Zephir item.</p>
+<p>We have a plan to remove the extra memory of the <code>filter</code> service in v7.</p>
+<h2 id="what-did-not-work">What did not work</h2>
+<ul>
+<li><strong>A change below the noise.</strong> In <code>Router::handle()</code>, <code>isset x &amp;&amp; !empty x</code> can be <code>!empty x</code>. This saves about 394 Ir in the MVC request (0.01%). No subject can show it, and it could cause a notice for a missing key. We did not do it.</li>
+<li><strong>The first main number.</strong> First, we used <code>cold_ir</code> as the main number for the apps. We thought that it was the nearest number to a php-fpm request. It is not, because it includes compile costs that php-fpm pays one time for each worker. We changed to <code>warm_ir</code> before we changed code.</li>
+<li><strong>The first form of two changes.</strong> The <code>fetch</code> form of the alias check, and the <code>spl_object_id()</code> form of the route getters. The measurements found better forms for both.</li>
+<li><strong>A wall-time result with no cause.</strong> In the final comparison, one match on a router with 50 routes was 5.75% slower in wall time. Its instruction count did not change (-0.08%). We repeated the A/B run three times, and the ranges did not overlap, so the difference is real. Then we measured each stored build of the router work. No single change causes it: the time goes up and down, also with builds that do not change the router. cachegrind with cache and branch simulation explains 0.1 µs at most, of 0.92 µs. We closed it as an effect of the code placement in the <code>-O2 -flto</code> build: instruction alignment, the micro-op cache or the branch target buffer of the real CPU. valgrind does not model these. Instruction counts and wall time do not always agree. That is why we record both.</li>
+</ul>
+<h2 id="the-result">The result</h2>
+<p>We compared v5.22.0 and v5.22.1 with runs on the same day: 84 better, 19 worse, 237 noise. 17 of the worse rows are the memory of the trades above. One is the wall-time result above. The last one is the wall time of <code>Collection::get()</code> (+5.22%). Collection did not change, and the noise of its baseline was 9.84%, so it is noise. The release post has the numbers for each app.</p>
+<h2 id="next-zephir">Next: Zephir</h2>
+<p>Most of the cost that remains is in the C code that Zephir generates. Our log for the Zephir team has these items, among others:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Item</th><th>Cost in an average app request</th></tr></thead><tbody><tr><td>Method calls by name with no cache, through <code>zend_call_function()</code></td><td>About 18%, and about 24% with the next row</td></tr><tr><td>Method names made lowercase on each call</td><td><code>zend_str_tolower_copy()</code>: 6.1%</td></tr><tr><td>String keys hashed again on each access</td><td><code>zend_hash_func()</code>: 8.4%</td></tr><tr><td>A memory frame in small methods</td><td>About 4%</td></tr><tr><td>Arrays copied on each property assignment</td><td>Memory (see “Trades we accepted”)</td></tr></tbody></table>
+<p>We shared these findings with the Zephir team, and work on them has started. A fix in Zephir helps each extension that is written in Zephir, not only Phalcon.</p>
+<p>When the new Zephir version is available, we will compile the same Phalcon source with the old and the new Zephir and compare the two builds. Then the difference comes from Zephir only.</p>
+<p>After that, we will examine the hot methods that have no candidate yet. For example, <code>Volt\Compiler::compile()</code> uses about 112K Ir in each MVC request.</p>
+<h2 id="try-it">Try it</h2>
+<p>You can measure your own change to the extension. Start the <code>bench</code> container:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> compose</span><span style="color:var(--code-constant)"> --profile</span><span style="color:var(--code-string)"> bench</span><span style="color:var(--code-string)"> up</span><span style="color:var(--code-constant)"> -d</span></span></code></pre>
+<p>Store a build before your change, and run the suite on it. The build name is <code>&lt;commit&gt;-&lt;label&gt;</code>, where <code>&lt;commit&gt;</code> is the last commit that changed <code>phalcon/</code> or <code>ext/</code>:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-dev-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/build-so</span></span>
+<span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-dev-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/store-build</span><span style="color:var(--code-string)"> before</span></span>
+<span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-bench-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/run-all</span><span style="color:var(--code-keyword)"> &lt;</span><span style="color:var(--code-string)">commi</span><span style="color:var(--code-text)">t</span><span style="color:var(--code-keyword)">&gt;</span><span style="color:var(--code-string)">-before</span><span style="color:var(--code-string)"> before</span></span></code></pre>
+<p>Make your change, then do the same steps with a different label:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-dev-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/build-so</span></span>
+<span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-dev-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/store-build</span><span style="color:var(--code-string)"> after</span></span>
+<span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-bench-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/run-all</span><span style="color:var(--code-keyword)"> &lt;</span><span style="color:var(--code-string)">commi</span><span style="color:var(--code-text)">t</span><span style="color:var(--code-keyword)">&gt;</span><span style="color:var(--code-string)">-after</span><span style="color:var(--code-string)"> after</span></span></code></pre>
+<p>Compare the two runs:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-bench-8.4</span><span style="color:var(--code-string)"> php</span><span style="color:var(--code-string)"> tests/benchmarks/bin/compare.php</span><span style="color:var(--code-keyword)"> \</span></span>
+<span class="line"><span style="color:var(--code-string)">    /srv/.local/bench/results/</span><span style="color:var(--code-keyword)">&lt;</span><span style="color:var(--code-string)">commi</span><span style="color:var(--code-text)">t</span><span style="color:var(--code-keyword)">&gt;</span><span style="color:var(--code-string)">-before/before</span><span style="color:var(--code-keyword)"> \</span></span>
+<span class="line"><span style="color:var(--code-string)">    /srv/.local/bench/results/</span><span style="color:var(--code-keyword)">&lt;</span><span style="color:var(--code-string)">commi</span><span style="color:var(--code-text)">t</span><span style="color:var(--code-keyword)">&gt;</span><span style="color:var(--code-string)">-after/after</span></span></code></pre>
+<p>For one subject only, use <code>bin/instr</code>:</p>
+<pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--code-parameter)">docker</span><span style="color:var(--code-string)"> exec</span><span style="color:var(--code-string)"> cphalcon-bench-8.4</span><span style="color:var(--code-string)"> tests/benchmarks/bin/instr</span><span style="color:var(--code-keyword)"> &lt;</span><span style="color:var(--code-string)">buil</span><span style="color:var(--code-text)">d</span><span style="color:var(--code-keyword)">&gt;</span><span style="color:var(--code-keyword)"> \</span></span>
+<span class="line"><span style="color:var(--code-string)">    &#39;Phalcon\Tests\Benchmarks\Apps\Mvc\MvcBench&#39;</span><span style="color:var(--code-string)"> benchPage</span><span style="color:var(--code-constant)"> 200</span></span></code></pre>
+<p>The <a href="https://github.com/phalcon/cphalcon/blob/5.0.x/tests/benchmarks/README.md">README</a> has all the scripts: profiles, own cost, static scans, memory and wall time. If you send a pull request that makes Phalcon faster, add the output of <code>compare.php</code> to it.</p><div data-pagefind-ignore><hr data-astro-cid-grg5p222><div class="post-footer" data-astro-cid-grg5p222><div class="post-footer__row" data-astro-cid-grg5p222><span class="post-footer__label" data-astro-cid-grg5p222>Chat</span><span class="post-footer__links" data-astro-cid-grg5p222><a href="https://phalcon.io/discord" data-astro-cid-grg5p222>Discord Chat</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://github.com/phalcon/cphalcon/discussions" data-astro-cid-grg5p222>Discussions (v4,v5)</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://github.com/phalcon/phalcon/discussions" data-astro-cid-grg5p222>Discussions (v6+)</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/forum" data-astro-cid-grg5p222>Forum (archive)</a></span></div><div class="post-footer__row" data-astro-cid-grg5p222><span class="post-footer__label" data-astro-cid-grg5p222>Support</span><span class="post-footer__links" data-astro-cid-grg5p222><a href="https://phalcon.io/fund" data-astro-cid-grg5p222>GitHub Sponsors</a></span></div><div class="post-footer__row" data-astro-cid-grg5p222><span class="post-footer__label" data-astro-cid-grg5p222>Social</span><span class="post-footer__links" data-astro-cid-grg5p222><a href="https://phalcon.io/telegram" data-astro-cid-grg5p222>Telegram</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/gab" data-astro-cid-grg5p222>Gab</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/mewe" data-astro-cid-grg5p222>MeWe</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://dev.to/phalcon" data-astro-cid-grg5p222>DevTo</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/reddit" data-astro-cid-grg5p222>Reddit</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/linkedin" data-astro-cid-grg5p222>LinkedIn</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/fb" data-astro-cid-grg5p222>Facebook</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/t" data-astro-cid-grg5p222>X (twitter)</a></span></div><div class="post-footer__row" data-astro-cid-grg5p222><span class="post-footer__label" data-astro-cid-grg5p222>Videos</span><span class="post-footer__links" data-astro-cid-grg5p222><a href="https://phalcon.io/bitchute" data-astro-cid-grg5p222>BitChute</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/brighteon" data-astro-cid-grg5p222>Brighteon</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/lbry" data-astro-cid-grg5p222>LBRY</a><span class="post-footer__dot" data-astro-cid-grg5p222>·</span><wbr data-astro-cid-grg5p222><a href="https://phalcon.io/youtube" data-astro-cid-grg5p222>YouTube</a></span></div></div><p class="post-footer__sign" data-astro-cid-grg5p222>&lt;3 Phalcon Team</p></div></div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span></a><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span></a><a href="/tags#performance" class="phalcon-blog__tags-item"><span>performance</span></a><a href="/tags#zephir" class="phalcon-blog__tags-item"><span>zephir</span></a></div></div></div><div class="phalcon-blog__right" data-pagefind-ignore><div class="phalcon-blog__right-item phalcon-blog__sponsors"><div class="phalcon-blog__title">Supporters</div><div class="phalcon-blog__sponsors-section"><div class="phalcon-blog__sponsors-heading">Sponsors</div><ul class="phalcon-blog__sponsors-logos"><li class="phalcon-blog__sponsors-logo"><a href="https://opencollective.com/commercesuite" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://images.opencollective.com/commercesuite/5c683c0/logo.png" alt="Commercesuite" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li><li class="phalcon-blog__sponsors-logo"><a href="https://github.com/markofo" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://avatars.githubusercontent.com/u/59839390?v=4" alt="markofo" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li></ul></div><div class="phalcon-blog__sponsors-section"><div class="phalcon-blog__sponsors-heading">Partners</div><ul class="phalcon-blog__sponsors-logos"><li class="phalcon-blog__sponsors-logo"><a href="https://abits.com" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://assets.phalcon.io/phalcon/images/backers/abits-100x34.svg" alt="Abits" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li><li class="phalcon-blog__sponsors-logo"><a href="https://www.cloudflare.com/" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://assets.phalcon.io/phalcon/images/backers/cloudflare.svg" alt="Cloudflare" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li><li class="phalcon-blog__sponsors-logo"><a href="https://crowdin.com/" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://assets.phalcon.io/phalcon/images/backers/crowdin.png" alt="Crowdin" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li><li class="phalcon-blog__sponsors-logo"><a href="https://www.digitalocean.com/" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://assets.phalcon.io/phalcon/images/backers/digitalocean.svg" alt="DigitalOcean" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li><li class="phalcon-blog__sponsors-logo"><a href="https://mctekk.com" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://assets.phalcon.io/phalcon/images/backers/mctekk-149x34.svg" alt="mctekk" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li><li class="phalcon-blog__sponsors-logo"><a href="https://odva.pro/" rel="noopener sponsored" target="_blank" class="phalcon-blog__sponsors-logo-link"><img src="https://assets.phalcon.io/phalcon/images/backers/odva.svg" alt="odva" loading="lazy" class="phalcon-blog__sponsors-logo-img"></a></li></ul></div></div><div class="phalcon-blog__right-item phalcon-blog__projects"><div class="phalcon-blog__title">Projects</div><div class="phalcon-blog__projects-text">We're a nonprofit organization that creates&nbsp; solutions for web developers. Our products are&nbsp;<a href="https://phalcon.io">Phalcon</a>,&nbsp;<a href="https://zephir-lang.com">Zephir</a> and&nbsp;<a href="https://github.com/phalcon?type=source">others</a>.&nbsp; If you would like to help us stay free and open,&nbsp; please consider <a href="https://phalcon.io/fund">supporting us</a>.</div></div><div class="phalcon-blog__right-item phalcon-blog__tags"><div class="phalcon-blog__title">Tags</div><div class="phalcon-blog__tags-items"><a href="/tags#phalcon" class="phalcon-blog__tags-item"><span>phalcon</span><span>(259)</span></a><a href="/tags#release" class="phalcon-blog__tags-item"><span>release</span><span>(157)</span></a><a href="/tags#php" class="phalcon-blog__tags-item"><span>php</span><span>(155)</span></a><a href="/tags#phalcon5" class="phalcon-blog__tags-item"><span>phalcon5</span><span>(76)</span></a><a href="/tags#phalcon4" class="phalcon-blog__tags-item"><span>phalcon4</span><span>(74)</span></a><a href="/tags#phalcon3" class="phalcon-blog__tags-item"><span>phalcon3</span><span>(40)</span></a><a href="/tags#update" class="phalcon-blog__tags-item"><span>update</span><span>(39)</span></a><a href="/tags#community" class="phalcon-blog__tags-item"><span>community</span><span>(27)</span></a><a href="/tags#hangout" class="phalcon-blog__tags-item"><span>hangout</span><span>(27)</span></a><a href="/tags#framework" class="phalcon-blog__tags-item"><span>framework</span><span>(26)</span></a><a href="/tags#lts" class="phalcon-blog__tags-item"><span>lts</span><span>(25)</span></a><a href="/tags#rfc" class="phalcon-blog__tags-item"><span>rfc</span><span>(23)</span></a><a href="/tags#phalcon2" class="phalcon-blog__tags-item"><span>phalcon2</span><span>(20)</span></a><a href="/tags#zephir" class="phalcon-blog__tags-item"><span>zephir</span><span>(20)</span></a><a href="/tags#phalcon6" class="phalcon-blog__tags-item"><span>phalcon6</span><span>(18)</span></a><a href="/tags#php7" class="phalcon-blog__tags-item"><span>php7</span><span>(16)</span></a><a href="/tags#status" class="phalcon-blog__tags-item"><span>status</span><span>(15)</span></a><a href="/tags#beta" class="phalcon-blog__tags-item"><span>beta</span><span>(12)</span></a><a href="/tags#roadmap" class="phalcon-blog__tags-item"><span>roadmap</span><span>(12)</span></a><a href="/tags#mvc" class="phalcon-blog__tags-item"><span>mvc</span><span>(11)</span></a></div><a href="/tags" class="phalcon-blog__item-read-more">Show More</a></div></div></div></div><div data-pagefind-ignore><footer class="ph-footer"><div class="ph-footer__grid"><div><div class="ph-footer__brand"><img src="https://assets.phalcon.io/phalcon/images/svg/falcon.svg" alt="" class="ph-footer__logo"><span class="ph-footer__name">Phalcon</span></div><p class="ph-footer__tagline">A full-stack PHP framework, delivered as a C extension or as pure PHP.</p></div><div><p class="ph-footer__title">Framework</p><div class="ph-footer__links"><a href="https://docs.phalcon.io" class="ph-footer__link">Documentation</a><a href="https://phalcon.io/download" class="ph-footer__link">Download</a><a href="https://phalcon.io/download/stubs" class="ph-footer__link">IDE Stubs</a><a href="https://phalcon.io/hosting" class="ph-footer__link">Hosting</a><a href="https://license.phalcon.io" class="ph-footer__link">License</a></div></div><div><p class="ph-footer__title">Project</p><div class="ph-footer__links"><a href="https://phalcon.io/contribute" class="ph-footer__link">Contribute</a><a href="https://phalcon.io/team" class="ph-footer__link">Team</a><a href="https://phalcon.io/testimonials" class="ph-footer__link">Testimonials</a><a href="https://phalcon.io/sponsors" class="ph-footer__link">Sponsors</a><a href="https://phalcon.io/consulting" class="ph-footer__link">Consulting</a><a href="https://builtwith.phalcon.io" class="ph-footer__link">Built with Phalcon</a></div></div><div><p class="ph-footer__title">Community</p><div class="ph-footer__links"><a href="https://phalcon.io/discord" class="ph-footer__link">Discord</a><a href="https://github.com/phalcon/cphalcon/discussions" class="ph-footer__link">Discussions (v5)</a><a href="https://github.com/phalcon/phalcon/discussions" class="ph-footer__link">Discussions (v6)</a><a href="https://github.com/phalcon/cphalcon" class="ph-footer__link">GitHub (v5)</a><a href="https://github.com/phalcon/phalcon" class="ph-footer__link">GitHub (v6)</a><a href="https://phalcon.io/so" class="ph-footer__link">Stack Overflow</a><a href="https://phalcon.io/blog" class="ph-footer__link">Blog</a><a href="https://phalcon.io/support" class="ph-footer__link">Support</a></div></div></div><div class="ph-footer__socials"><a href="https://phalcon.io/telegram" class="ph-footer__social">Telegram</a><a href="https://phalcon.io/gab" class="ph-footer__social">Gab</a><a href="https://phalcon.io/mewe" class="ph-footer__social">MeWe</a><a href="https://phalcon.io/fb" class="ph-footer__social">Facebook</a><a href="https://phalcon.io/t" class="ph-footer__social">X (Twitter)</a><a href="https://phalcon.io/bitchute" class="ph-footer__social">BitChute</a><a href="https://phalcon.io/brighteon" class="ph-footer__social">Brighteon</a><a href="https://phalcon.io/youtube" class="ph-footer__social">YouTube</a><a href="https://phalcon.io/linkedin" class="ph-footer__social">LinkedIn</a><a href="https://phalcon.io/reddit" class="ph-footer__social">Reddit</a></div><div class="ph-footer__bottom"><div class="ph-footer__bottom-inner"><span class="ph-footer__copyright">© 2026 Phalcon Team · cphalcon (v5) BSD-3-Clause · phalcon (v6) MIT</span></div></div></footer></div><script type="module" src="/_astro/Mermaid.astro_astro_type_script_index_0_lang.NVEbrlzo.js"></script></body></html>
