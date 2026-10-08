@@ -93,7 +93,7 @@ test('the CI workflow gets the design tools first, and keeps the committed copy 
 
     assert.ok(step > 0, 'the step is missing');
     assert.ok(step < workflow.indexOf('run: node scripts/update-tokens.mjs'), 'the step must come before the design files');
-    assert.match(workflow, /for file in design-checks\.mjs design-refresh\.mjs; do/);
+    assert.match(workflow, /for file in design-checks\.mjs design-refresh\.mjs stars\.mjs; do/);
     assert.match(workflow, /new="src\/lib\/\$\{file%\.mjs\}\.new\.mjs"/);
     assert.match(workflow, /curl -fsSL --max-time 30 -o "\$new" "https:\/\/assets\.phalcon\.io\/phalcon\/tools\/\$file" && node --check "\$new"/);
 });

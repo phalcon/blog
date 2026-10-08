@@ -41,9 +41,10 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Get the design tools
-        # src/lib/design-checks.mjs and src/lib/design-refresh.mjs are copies of
-        # phalcon/tools/ in phalcon/assets: the checks and the refresh of the
-        # design files, the same on every Phalcon site. A download that fails,
+        # src/lib/design-checks.mjs, src/lib/design-refresh.mjs and src/lib/stars.mjs
+        # are copies of phalcon/tools/ in phalcon/assets: the checks and the refresh
+        # of the design files, and the star count of the nav, the same on every
+        # Phalcon site. A download that fails,
         # a file that is not valid JavaScript, or a file that lacks an export of
         # the committed copy keeps the committed copy. The design files and the
         # tests that come next use the new tools.
@@ -53,7 +54,7 @@ jobs:
             const [next, last] = await Promise.all(process.argv.slice(1).map((file) => import(process.cwd() + '/' + file)));
             process.exit(Object.keys(last).every((name) => name in next) ? 0 : 1);
         run: |
-          for file in design-checks.mjs design-refresh.mjs; do
+          for file in design-checks.mjs design-refresh.mjs stars.mjs; do
             new="src/lib/${file%.mjs}.new.mjs"
 
             if curl -fsSL --max-time 30 -o "$new" "https://assets.phalcon.io/phalcon/tools/$file" && node --check "$new" \

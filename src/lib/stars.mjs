@@ -1,8 +1,9 @@
 /**
- * The GitHub stars of cphalcon, which the shared nav shows next to "GitHub",
- * as phalcon.io does. src/repositories.json is a copy of
- * phalcon/repositories.json in phalcon/assets (a scheduled workflow there
- * updates it). The CI workflow gets the file again before every build.
+ * The GitHub stars of cphalcon, which the shared nav of the Phalcon sites
+ * shows next to "GitHub". A shared tool of phalcon/assets
+ * (phalcon/tools/stars.mjs): each site gets it again before every build, as
+ * it gets the design tools. The count comes from phalcon/repositories.json,
+ * which a scheduled workflow of phalcon/assets updates.
  */
 
 /** The repository whose stars the nav shows. */
