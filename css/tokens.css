@@ -15,9 +15,10 @@
  *
  *     html.dark { --site-bg: var(--ph-dark-bg); }
  *
- * The syntax roles follow the CSS-variables theme of Shiki:
+ * The syntax roles feed the code theme (code-theme.json), which reads
+ * --code-<role>. A site maps each role to a tone in its own selector:
  *
- *     --shiki-token-keyword: var(--ph-dark-syntax-keyword);
+ *     html.dark { --code-keyword: var(--ph-dark-syntax-keyword); }
  *
  * Every syntax color has a contrast of 4.5:1 or more on the code-bg of its
  * tone. php tests/tokens.php checks the file.
