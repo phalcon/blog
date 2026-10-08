@@ -13,6 +13,11 @@ on:
 permissions:
   contents: write
 
+# Two runs must not publish at the same time: a run waits for the one before it.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
 env:
   # The branch Cloudflare Pages serves. It holds the built site only.
   DEPLOY_BRANCH: production
@@ -39,13 +44,20 @@ jobs:
         # src/lib/design-checks.mjs and src/lib/design-refresh.mjs are copies of
         # phalcon/tools/ in phalcon/assets: the checks and the refresh of the
         # design files, the same on every Phalcon site. A download that fails,
-        # or a file that is not valid JavaScript, keeps the committed copy. The
-        # design files and the tests that come next use the new tools.
+        # a file that is not valid JavaScript, or a file that lacks an export of
+        # the committed copy keeps the committed copy. The design files and the
+        # tests that come next use the new tools.
+        env:
+          # Exits with 0 when the first file has every export of the second one.
+          EXPORTS: >-
+            const [next, last] = await Promise.all(process.argv.slice(1).map((file) => import(process.cwd() + '/' + file)));
+            process.exit(Object.keys(last).every((name) => name in next) ? 0 : 1);
         run: |
           for file in design-checks.mjs design-refresh.mjs; do
             new="src/lib/${file%.mjs}.new.mjs"
 
-            if curl -fsSL --max-time 30 -o "$new" "https://assets.phalcon.io/phalcon/tools/$file" && node --check "$new"; then
+            if curl -fsSL --max-time 30 -o "$new" "https://assets.phalcon.io/phalcon/tools/$file" && node --check "$new" \
+              && node --input-type=module -e "$EXPORTS" "$new" "src/lib/$file"; then
               mv "$new" "src/lib/$file"
             else
               rm -f "$new"

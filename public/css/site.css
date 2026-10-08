@@ -249,8 +249,13 @@ input:focus {
     cursor: pointer;
     display: flex;
     height: 20px;
-    outline: none;
     width: 20px;
+}
+
+/* A ring for the keyboard focus only (not for a click), white as the icon. */
+.switcher button:focus-visible {
+    outline: 2px solid var(--ph-white);
+    outline-offset: 2px;
 }
 
 /*

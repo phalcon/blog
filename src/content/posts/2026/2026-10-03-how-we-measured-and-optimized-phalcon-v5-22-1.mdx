@@ -1,0 +1,336 @@
+---
+title: How We Measured and Optimized Phalcon v5.22.1
+date: 2026-10-03T00:00:00.000Z
+# Remove the # below when the banner file exists.
+# image: /assets/banners/2026/2026-10-03-phalcon-benchmarks.svg
+tags:
+  - phalcon
+  - phalcon5
+  - performance
+  - zephir
+---
+
+In the [v5.22.1 release post][release], we said that a second post would explain the method. This is that post. It shows how we measured the extension, how we found the hot spots, how we decided what to keep, and what did not work.
+
+All the tools are in the cphalcon repository, in [`tests/benchmarks`][benchmarks]. You can run each command in this post on your computer.
+
+## The rules
+
+We set these rules before we changed one line of code:
+
+- **Measure first.** No code change before a baseline exists.
+- **One change, one measurement.** Each commit has one pattern, so each gain traces to one change.
+- **Each benchmark checks its output.** A fast result from a broken code path is not a gain.
+- **Noise is not a gain.** A change stays only if it is better than the measured noise, and no other metric is worse.
+- **Do not work around the compiler.** If the cost comes from the C code that Zephir generates, we record it for Zephir. We do not change the Phalcon source to hide it. A fix in Zephir removes the problem in all places.
+
+## Count instructions, not seconds
+
+We work in virtual machines (Qubes, on Xen). Wall time in a virtual machine is noisy, and the virtual machine gives no access to the hardware performance counters. Thus, `perf` cannot help us.
+
+The main metric is the **instruction count** (Ir), from valgrind (`cachegrind` and `callgrind`). The instruction count of a PHP run changes very little from run to run, so a change of 0.5% is easy to see. Wall time is the second metric. We use it only for large differences.
+
+All runs use a separate Docker service (`bench`) with fixed conditions:
+
+- PHP 8.4.26, from an image pinned by its digest
+- no Xdebug, OPcache on for the CLI, JIT off
+- an empty environment (`env -i`)
+- the flags of a release build (`-O2 -flto`), plus `-g` for the profiles
+
+### Cold and warm
+
+One PHP run includes the process start, the extension start (MINIT) and the script compile. These costs are much larger than one request. To remove them, `bin/instr` runs a subject 0, 1 and 1+k times under valgrind, and calculates two numbers:
+
+```
+cold_ir = Ir(1) - Ir(0)              the first call, with lazy setup
+warm_ir = (Ir(1 + k) - Ir(1)) / k    one call after the first call
+```
+
+The process costs cancel out. `warm_ir` is the main number for an A/B comparison. `cold_ir` also includes the script compile and the regex compile, which php-fpm does one time for each worker. A php-fpm request is between the two numbers.
+
+## Make the numbers repeatable
+
+Two results surprised us. In both, the instruction count changed, but the machine code did not change.
+
+**Debug information changes the count.** We need `-g` for profiles with file and line numbers. We compiled the same source with and without `-g`. The `.text` section had the same checksum, but under valgrind the `-g` build counted 13.8K more instructions. When we removed the debug information (`objcopy --strip-debug`), the difference was about 550 Ir, which is inside the noise. Now `bin/store-build` keeps two files for each build: one without debug information for the measurements, and one with it for the profiles.
+
+**The path length changes the count.** We loaded the same `.so` through a path of 1 character and through a path of 30 characters. The longer path counted 14,781 more instructions, about 510 Ir for each character. Now `bin/php-bench` loads each build through a symlink with a fixed-length name.
+
+Both effects are process-start costs, so the cold and warm calculation removes them. With the two fixes, a single run is also clean.
+
+Two more effects are important when you compare numbers:
+
+- **The garbage collector.** Each app request makes reference cycles, so the number of calls (k) changes the number of collections. The MVC page is 3.99M Ir with k=100 and 4.05M Ir with k=200. Compare only runs with the same k. `bin/run-all` always uses the same k for a subject.
+- **The heap layout.** We moved the setup code of the benchmarks into a function. The code that the subject runs did not change, but `Collection::get()` went from 4,994 to 4,976 Ir (-0.35%), because the heap layout changed. A small subject can move this much with no real change. Thus, the thresholds need a relative floor.
+
+## What we measure
+
+We wrote four small reference applications. They use the same code paths as real applications:
+
+| App           | What it does                                                             |
+|---------------|--------------------------------------------------------------------------|
+| Micro         | A "hello world" route with `Phalcon\Mvc\Micro`                           |
+| ADR           | A "hello world" action with the ADR application and `Phalcon\Container` |
+| MVC + Volt    | A page with the router, the dispatcher, a controller and a Volt view     |
+| REST + SQLite | List, show and create endpoints with models                              |
+
+Each call of an app subject is one request: a new container, a new application, `handle()`, `send()` into an output buffer, and a check of the body. If the body is wrong, the subject throws an exception, and the run stops.
+
+There are also 28 micro subjects, one for each component entry point that the apps use: Container, Di, Router, Dispatcher, View, Volt, Model, PHQL, Pdo, Events, Response, Filter, Escaper, Collection and Json. The coverage data of the apps (`bin/coverage`) gave us the list.
+
+For each subject, `bin/run-all` records these metrics:
+
+| Metric                                                     | Source                                                                 |
+|------------------------------------------------------------|------------------------------------------------------------------------|
+| `warm_ir`, `cold_ir`                                       | cachegrind                                                             |
+| Allocations and bytes, cold and warm                       | DHAT, with `USE_ZEND_ALLOC=0` (each `emalloc()` is one allocation)     |
+| Peak, retained before GC, leaked after GC, reference cycles | `memory_get_usage()`, `gc_collect_cycles()`                           |
+| Wall time                                                  | PHPBench, pinned to one CPU                                            |
+
+One problem in the apps took some time to find. The first `Phalcon\Di\Di` in a process stays the default container. Without `Di::reset()` before each request, the models used the container and the database connection of the first request. The REST "create" subject then wrote its rows outside the transaction of the subject. php-fpm clears the default container at the end of each request, so production code does not have this problem. A benchmark loop has it.
+
+## Noise and thresholds
+
+Before we changed code, we ran the full suite two times on the same build (an A/A run). The largest difference between the two runs gives the noise of each metric:
+
+| Metric                  | Largest A/A difference | Threshold       |
+|-------------------------|-----------------------:|-----------------|
+| `warm_ir`               |                21.8 Ir | 0.5% and 70 Ir  |
+| `cold_ir`               |               2,505 Ir | 1% and 7,500 Ir |
+| Warm allocations        |                    0.1 | 1               |
+| Cold allocations        |                      2 | 6               |
+| Warm bytes              |                 1 byte | 1% and 3 bytes  |
+| Peak, retained, leaked  |                      0 | 1% and 64 bytes |
+| Reference cycles        |                      0 | 1               |
+| Wall time               |                  3.99% | 5%              |
+
+A threshold is 3 times the largest A/A difference, with a relative floor. A difference is "better" or "worse" only if it is at or above both values. If not, it is noise. `bin/compare.php` applies these rules to two result folders. For the A/A run, it shows 0 better, 0 worse and 320 noise.
+
+The cold metrics are not fully deterministic, so their thresholds are larger. A real cold change below 7,500 Ir shows as noise. We accept this, because `warm_ir` is the main number.
+
+Wall time needs more care. We stop all other containers and pin PHPBench to one CPU. With pinning, the median relative standard deviation goes from 1.50% to 0.78%, and the largest from 32% to 5.3%.
+
+## Find the hot spots
+
+A flat profile shows which functions use the time. It does not show which Phalcon method to change. When Zephir calls a method by name, many engine functions run: `zend_call_function`, `zend_hash_func`, `zend_str_tolower_copy`, `_emalloc`. A flat profile shows each of them as a separate line, with no owner.
+
+`bin/attribute` solves this. It runs callgrind with caller chains (`--separate-callers=50`) and gives each instruction to the nearest Phalcon method in its chain. The result is the **own cost** of a method: its own instructions, plus the helpers and the engine functions that it calls. The own cost does not include the other Phalcon methods that it calls. Each instruction counts one time only, so the own costs of a request add up to 100%.
+
+Our first try used chains of 12 callers. The REST subjects then had 12-17% of the cost with no owner, because the SQLite call chains are deep. With 50 callers, the cost with no owner is about 2% or less.
+
+`bin/rank.php` then gives each method a score: the sum of its shares in the 6 app requests. These were the first five:
+
+| Method                                | Score  | Largest share          |
+|---------------------------------------|-------:|------------------------|
+| `Mvc\Router::rebuildMethodIndex`      | 49.18% | 23.04% of the MVC page |
+| `Di\FactoryDefault::__construct`      | 22.88% | 12.73% of Micro        |
+| `Db\Adapter\Pdo\AbstractPdo::connect` | 20.30% | 7.09% of REST show     |
+| `Di\Di::get`                          | 17.34% | 5.91% of Micro         |
+| `Db\Adapter\Pdo\AbstractPdo::queryStatement` | 17.05% | 8.55% of REST show |
+
+The helpers show a pattern. The call path of a Zephir method call by name (`zephir_call_user_function`, `zend_call_function`, `zephir_call_class_method_aparams`, `populate_fcic`) is about 18% of an average app request. With `zend_str_tolower_copy`, which makes lowercase copies of the method names for the lookup, it is about 24%. `zend_hash_func` is 8.4%.
+
+To find the costly line in a method, we used line profiles. valgrind 3.24 cannot read the line table of a GCC 14.2 LTO build (all lines show as 0). Thus, we used `callgrind --dump-instr=yes`, and `addr2line` changed the addresses to lines. Two examples:
+
+- In `FactoryDefault::__construct()`, the line that creates the `filter` service is 57.2% of the constructor. The apps do not use this service.
+- In `Filter::set()`, which `Filter::init()` calls 23 times, a property array write is 55.6% and a property array `unset` is 42.2%.
+
+Two static scanners find patterns in the source. `bin/scan-zep.php` reads the 1,505 `.zep` files. It finds property array writes in loops, `isset` followed by a read of the same key, method calls in loops, dynamic calls and untyped variables. `bin/scan-c.php` reads the generated C. It finds method calls with no cache, memory frames in small methods and property defaults that are set on each object creation. Each finding gets the score of its method, so the hot methods come first.
+
+The scanners read lines, not a syntax tree. In a check by hand, 8 of 10 findings were real. Thus, we read the source before a finding became a candidate.
+
+The scanners found an important fact: in the 50 hottest methods, **257 of 649 method calls by name have no call cache**. Zephir gives no cache to a call on a loop variable. For example, in `for route in this->routes`, `route->getCompiledPattern()` finds the method by name again for each route.
+
+### Rank the candidates
+
+From these data, we wrote 13 candidates. For each candidate, we added the instructions of the lines that it changes (from the line profiles), and calculated a score:
+
+```
+score = (sum of the shares of the 6 app requests) / risk
+risk  = 1 (mechanical), 2 (structural), 3 (algorithmic)
+```
+
+The score sets the order of the work. It is an upper limit of the gain. Only the measurement after the change gives the real gain.
+
+Some findings did not become candidates:
+
+- `AbstractPdo::connect()` and `queryStatement()`: the cost is in PDO and SQLite, not in Phalcon.
+- Method calls by name and string hashing: the cost comes from the code that Zephir generates. These findings went into a log for Zephir (see "Next: Zephir").
+
+## The loop
+
+We changed one component at a time, with one issue and one branch for each component ([#17617][17617] Filter and Di, [#17618][17618] Router, [#17619][17619] Container, [#17620][17620] Settings). For each change:
+
+1. Store the build before the change and run the full suite on it.
+2. Make one change. Compile with `bin/build-so` and store the build with `bin/store-build`.
+3. Run the full unit test suite.
+4. Run the full benchmark suite on the new build.
+5. Compare the two result folders with `bin/compare.php`.
+6. Keep the change if it is better and nothing is worse. If not, revert it, or record it as an exception (see "Trades we accepted").
+
+A full `run-all` takes about 20 minutes. Each result goes into a log, with the names of the two builds.
+
+## What we changed, and what we learned
+
+The [release post][release] lists all the changes. Some of them teach something about Zephir code.
+
+### Assign a map in one step
+
+`Filter::init()` called `set()` for each of the 23 default filters. Each call wrote to one property array and removed a key from another one:
+
+```zephir
+// Before
+for name, service in mapper {
+    this->set(name, service);
+}
+
+// After
+let this->mapper = array_replace(this->mapper, mapper);
+
+if !empty this->services {
+    let this->services = array_diff_key(this->services, mapper);
+}
+```
+
+This change alone made `new FactoryDefault()` 36.9% faster (instructions) and the Micro request 14.7% faster. Note: if your subclass of `Filter` overrides `set()`, `init()` does not call it now.
+
+### Do not write to a parameter
+
+`Route::getRoutePaths()` had this code:
+
+```zephir
+if paths === null {
+    let paths = [];
+}
+```
+
+When a method writes to a parameter, Zephir adds `ZEPHIR_SEPARATE_PARAM()` at the start of the method. This copies the parameter on each call, also when the write does not run. We changed the line to `return [];`. The MVC request now makes 100 fewer allocations.
+
+### Call a getter one time
+
+`Router::rebuildMethodIndex()` was 23% of the MVC page. It called `getCompiledPattern()` and `getHostName()` for each route, and then again in each method bucket. These calls are on the loop variable, so they have no cache. The method also wrote to nested property arrays in its loops.
+
+Now the method reads the values of each route one time, keeps them in local arrays by position, and assigns each property one time at the end. Our first form used `spl_object_id()` as the key of the local arrays. The second form uses the position of the route. It was faster, and it used less memory.
+
+For a router with 50 routes, the definition and the first match are now 13.1% faster, and 22.9% faster when the routes use HTTP methods.
+
+### `fetch` is not always faster
+
+`Container::detectCircularAlias()` created an empty `seen` array on each call. But most names are not aliases, so the loop stopped at the first step. Our first form used `fetch` and removed the array. It was 5.5 Ir slower for each `Container::get()`: in the generated C, the `fetch` form tracks one more variable and calls `zephir_array_isset_fetch()`. On the usual path, this cost more than the array.
+
+The second form creates `seen` only at the first loop step that needs it:
+
+```zephir
+if (seen === null) {
+    let seen = [];
+} elseif (array_key_exists(current, seen)) {
+    break;
+}
+```
+
+Always measure a "mechanical" change. A pattern that is faster in one place can be slower in a different place.
+
+### More variables, more allocations
+
+In `Router::rebuildMethodIndex()`, two more declared variables gave one more allocation for each call. Zephir tracks each variable in the memory frame of the method, and DHAT shows the extra allocation in the frame code. We did not trace the exact cause yet. The number of variables in a method can change its allocations.
+
+### Remove the call, keep the behavior
+
+`Support\Settings::get()` called a private method, `readGlobal()`, by name for each read. A REST "create" request calls `get()` 30 times. The ranking proposed a static cache. But with a cache, `get()` does not see an `ini_set()` of a `phalcon.*` setting at run time.
+
+The profile showed that the cost was the method call, not the read. `globals_get()` compiles to a direct read of a C field. Thus, we moved the `switch` of `readGlobal()` into `get()` and removed the call. There is no cache, and the behavior is the same. Model `save()` is 7.1% faster, and the REST "create" request is 3.2% faster.
+
+## Trades we accepted
+
+In the release post, we said that some changes use more memory to save work. By our rules, a change with a worse metric does not stay. We examined each one and kept four of them as exceptions:
+
+| Change | Gain | Cost |
+|---|---|---|
+| Create the `filter` service on first use | -10.7K Ir in each Di request | +1,280 bytes kept in each container: the lazy definition array is larger than the `Filter` object |
+| Build the router indexes in local arrays | -100K Ir in the MVC request | +2,192 bytes peak during the index build |
+| Read the route getters one time (first form) | -82.6K Ir in the MVC request | +5,232 bytes peak during the index build. The second form removed most of it |
+| One pass over the routes for the method buckets | -10.5% for routes with HTTP methods | +1 allocation (Zephir memory frame), +1,336 bytes peak |
+
+In the final comparison, the largest increase of the peak is about 10 KB, for 50 routes with HTTP methods. The MVC request keeps 2.3 KB more before the garbage collector runs.
+
+The peak of the router changes has a cause in the generated C. When Zephir assigns an array to a property (`let this->x = localArray;`), the kernel always copies the array (`zend_array_dup()`). The local array and the copy then exist at the same time, until the method ends. We did not add a workaround in Phalcon, because this is a Zephir item.
+
+We have a plan to remove the extra memory of the `filter` service in v7.
+
+## What did not work
+
+- **A change below the noise.** In `Router::handle()`, `isset x && !empty x` can be `!empty x`. This saves about 394 Ir in the MVC request (0.01%). No subject can show it, and it could cause a notice for a missing key. We did not do it.
+- **The first main number.** First, we used `cold_ir` as the main number for the apps. We thought that it was the nearest number to a php-fpm request. It is not, because it includes compile costs that php-fpm pays one time for each worker. We changed to `warm_ir` before we changed code.
+- **The first form of two changes.** The `fetch` form of the alias check, and the `spl_object_id()` form of the route getters. The measurements found better forms for both.
+- **A wall-time result with no cause.** In the final comparison, one match on a router with 50 routes was 5.75% slower in wall time. Its instruction count did not change (-0.08%). We repeated the A/B run three times, and the ranges did not overlap, so the difference is real. Then we measured each stored build of the router work. No single change causes it: the time goes up and down, also with builds that do not change the router. cachegrind with cache and branch simulation explains 0.1 µs at most, of 0.92 µs. We closed it as an effect of the code placement in the `-O2 -flto` build: instruction alignment, the micro-op cache or the branch target buffer of the real CPU. valgrind does not model these. Instruction counts and wall time do not always agree. That is why we record both.
+
+## The result
+
+We compared v5.22.0 and v5.22.1 with runs on the same day: 84 better, 19 worse, 237 noise. 17 of the worse rows are the memory of the trades above. One is the wall-time result above. The last one is the wall time of `Collection::get()` (+5.22%). Collection did not change, and the noise of its baseline was 9.84%, so it is noise. The release post has the numbers for each app.
+
+## Next: Zephir
+
+Most of the cost that remains is in the C code that Zephir generates. Our log for the Zephir team has these items, among others:
+
+| Item | Cost in an average app request |
+|---|---|
+| Method calls by name with no cache, through `zend_call_function()` | About 18%, and about 24% with the next row |
+| Method names made lowercase on each call | `zend_str_tolower_copy()`: 6.1% |
+| String keys hashed again on each access | `zend_hash_func()`: 8.4% |
+| A memory frame in small methods | About 4% |
+| Arrays copied on each property assignment | Memory (see "Trades we accepted") |
+
+We shared these findings with the Zephir team, and work on them has started. A fix in Zephir helps each extension that is written in Zephir, not only Phalcon.
+
+When the new Zephir version is available, we will compile the same Phalcon source with the old and the new Zephir and compare the two builds. Then the difference comes from Zephir only.
+
+After that, we will examine the hot methods that have no candidate yet. For example, `Volt\Compiler::compile()` uses about 112K Ir in each MVC request.
+
+## Try it
+
+You can measure your own change to the extension. Start the `bench` container:
+
+```bash
+docker compose --profile bench up -d
+```
+
+Store a build before your change, and run the suite on it. The build name is `<commit>-<label>`, where `<commit>` is the last commit that changed `phalcon/` or `ext/`:
+
+```bash
+docker exec cphalcon-dev-8.4 tests/benchmarks/bin/build-so
+docker exec cphalcon-dev-8.4 tests/benchmarks/bin/store-build before
+docker exec cphalcon-bench-8.4 tests/benchmarks/bin/run-all <commit>-before before
+```
+
+Make your change, then do the same steps with a different label:
+
+```bash
+docker exec cphalcon-dev-8.4 tests/benchmarks/bin/build-so
+docker exec cphalcon-dev-8.4 tests/benchmarks/bin/store-build after
+docker exec cphalcon-bench-8.4 tests/benchmarks/bin/run-all <commit>-after after
+```
+
+Compare the two runs:
+
+```bash
+docker exec cphalcon-bench-8.4 php tests/benchmarks/bin/compare.php \
+    /srv/.local/bench/results/<commit>-before/before \
+    /srv/.local/bench/results/<commit>-after/after
+```
+
+For one subject only, use `bin/instr`:
+
+```bash
+docker exec cphalcon-bench-8.4 tests/benchmarks/bin/instr <build> \
+    'Phalcon\Tests\Benchmarks\Apps\Mvc\MvcBench' benchPage 200
+```
+
+The [README][readme] has all the scripts: profiles, own cost, static scans, memory and wall time. If you send a pull request that makes Phalcon faster, add the output of `compare.php` to it.
+
+[17617]: https://github.com/phalcon/cphalcon/issues/17617
+[17618]: https://github.com/phalcon/cphalcon/issues/17618
+[17619]: https://github.com/phalcon/cphalcon/issues/17619
+[17620]: https://github.com/phalcon/cphalcon/issues/17620
+[benchmarks]: https://github.com/phalcon/cphalcon/tree/5.0.x/tests/benchmarks
+[readme]: https://github.com/phalcon/cphalcon/blob/5.0.x/tests/benchmarks/README.md
+[release]: /post/phalcon-v5-22-1-released

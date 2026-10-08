@@ -95,7 +95,7 @@ test('the CI workflow gets the design tools first, and keeps the committed copy 
     assert.ok(step < workflow.indexOf('run: node scripts/update-tokens.mjs'), 'the step must come before the design files');
     assert.match(workflow, /for file in design-checks\.mjs design-refresh\.mjs; do/);
     assert.match(workflow, /new="src\/lib\/\$\{file%\.mjs\}\.new\.mjs"/);
-    assert.match(workflow, /curl -fsSL --max-time 30 -o "\$new" "https:\/\/assets\.phalcon\.io\/phalcon\/tools\/\$file" && node --check "\$new"; then/);
+    assert.match(workflow, /curl -fsSL --max-time 30 -o "\$new" "https:\/\/assets\.phalcon\.io\/phalcon\/tools\/\$file" && node --check "\$new"/);
 });
 
 test('the refresh script copies the shared files and checks each one', () => {
@@ -150,4 +150,27 @@ test('the nav has the links of phalcon.io, with absolute addresses', () => {
 
     assert.ok(links.length >= 15, `${links.length} links`);
     assert.deepEqual(links.filter((href) => !href.startsWith('https://') && href !== '/'), []);
+});
+
+test('the theme switcher shows a ring for the keyboard focus', () => {
+    // WCAG 2.4.7: a keyboard user sees where the focus is. A mouse click shows no ring (:focus-visible).
+    const css = readFileSync(new URL('public/css/site.css', root), 'utf8');
+
+    assert.doesNotMatch(/\.switcher button \{[^}]*\}/.exec(css)?.[0] ?? '', /outline:\s*none/);
+    assert.match(css, /\.switcher button:focus-visible \{\s*outline: 2px solid var\(--ph-white\);\s*outline-offset: 2px;\s*\}/);
+});
+
+test('the CI workflow runs one deploy at a time, as phalcon.io does', () => {
+    // Two pushes close together must not let the older build publish last.
+    const workflow = readFileSync(new URL('.github/workflows/main.yml', root), 'utf8');
+
+    assert.match(workflow, /\nconcurrency:\n {2}group: deploy\n {2}cancel-in-progress: false\n/);
+});
+
+test('the CI workflow keeps the committed design tools when a new file lacks one of their exports', () => {
+    // The site imports the functions by name: a new file with an export less would stop the refresh.
+    const workflow = readFileSync(new URL('.github/workflows/main.yml', root), 'utf8');
+
+    assert.match(workflow, /node --check "\$new" \\\n\s+&& node --input-type=module -e "\$EXPORTS" "\$new" "src\/lib\/\$file"; then/);
+    assert.match(workflow, /Object\.keys\(last\)\.every\(\(name\) => name in next\)/);
 });
