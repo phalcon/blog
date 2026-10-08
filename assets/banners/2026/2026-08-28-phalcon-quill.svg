@@ -9,13 +9,12 @@
 
   <defs>
     <style type="text/css"><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&amp;display=swap');
       .bg          { fill: #303942; }
       .watermark   { stroke: #5F5FD7; stroke-opacity: 0.18; stroke-width: 4; stroke-linecap: round; fill: none; }
       .mark        { stroke: #5F5FD7; stroke-width: 4; stroke-linecap: round; fill: none; }
-      .title       { fill: #719882; font-family: 'Titillium Web', sans-serif; font-weight: 700; font-size: 68px; letter-spacing: 0.5px; }
-      .subtitle    { fill: #FFFFFF; font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 42px; }
-      .command     { fill: #FFFFFF; font-family: 'DejaVu Sans Mono', 'Menlo', 'Consolas', monospace; font-weight: 400; font-size: 32px; }
+      .title       { fill: #719882; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 68px; letter-spacing: 0.5px; }
+      .subtitle    { fill: #FFFFFF; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; font-size: 42px; }
+      .command     { fill: #FFFFFF; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-weight: 400; font-size: 32px; }
       .prompt      { fill: #5F5FD7; }
     ]]></style>
   </defs>

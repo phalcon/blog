@@ -8,12 +8,11 @@
 
   <defs>
     <style type="text/css"><![CDATA[
-      @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&amp;display=swap');
       .bg          { fill: #303942; }
-      .watermark   { fill: #363F47; font-family: 'Titillium Web', sans-serif; font-weight: 700; font-size: 620px; }
-      .title       { fill: #719882; font-family: 'Titillium Web', sans-serif; font-weight: 700; font-size: 68px; letter-spacing: 0.5px; }
-      .subtitle    { fill: #FFFFFF; font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 42px; }
-      .timeline    { fill: #FFFFFF; font-family: 'Titillium Web', sans-serif; font-weight: 400; font-size: 42px; }
+      .watermark   { fill: #363F47; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 620px; }
+      .title       { fill: #719882; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 68px; letter-spacing: 0.5px; }
+      .subtitle    { fill: #FFFFFF; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; font-size: 42px; }
+      .timeline    { fill: #FFFFFF; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; font-size: 42px; }
     ]]></style>
   </defs>
 
