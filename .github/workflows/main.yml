@@ -14,8 +14,10 @@ permissions:
   contents: write
 
 # Two runs must not publish at the same time: a run waits for the one before it.
+# Each branch has its own group, because a group keeps only one waiting run: a
+# pull request run must not cancel a waiting master run.
 concurrency:
-  group: deploy
+  group: deploy-${{ github.ref }}
   cancel-in-progress: false
 
 env:
