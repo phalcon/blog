@@ -220,3 +220,11 @@ test('the nav has the GitHub icon and the star count as the last item of the lin
     // The GitHub glyph of Simple Icons 16.32.0 (CC0-1.0), the same on every site.
     assert.equal(createHash('sha256').update(github?.[1] ?? '').digest('hex'), 'd82e21f6c9bfbfd889fed4b8d8604121be1d364ef75b7fe42cc9c0b8737ae529');
 });
+
+test('the social card address has a version, so that platforms fetch a new card', () => {
+    // A platform (Discord, X, LinkedIn) keeps a preview image by its address. Change the version when the card changes.
+    const meta = readFileSync(new URL('src/components/Meta.astro', root), 'utf8');
+
+    assert.equal(meta.match(/"https:\/\/assets\.phalcon\.io\/phalcon\/social\/github\.phalcon\.blog\.png\?v=2"/g)?.length, 3);
+    assert.doesNotMatch(meta, /github\.phalcon\.blog\.png"/);
+});

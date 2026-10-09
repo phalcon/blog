@@ -9,6 +9,10 @@
  * as well. Its `initial-scale` belongs on the real viewport tag, which is where
  * it now is: without it, mobile Safari answers a page that is wider than the
  * screen by shrinking the whole page to fit.
+ *
+ * The social card address has a version (`?v=2`). A platform (Discord, X,
+ * LinkedIn) keeps a preview image by its address: when the card in
+ * phalcon/assets changes, change the version.
  */
 import tokens from '../../public/css/tokens.css?raw';
 import { resolveToken } from '../lib/design-checks.mjs';
@@ -57,8 +61,8 @@ const tileColor = resolveToken(tokens, '--ph-dark-bg');
     ? <meta property="og:description" content={description} />
     : <meta property="og:description" content={site.description} />}
 <meta property="og:site_name" content={site.name}>
-<meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
-<meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+<meta property="og:image" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png?v=2">
+<meta property="og:image:secure_url" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png?v=2">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -69,7 +73,7 @@ const tileColor = resolveToken(tokens, '--ph-dark-bg');
 {description
     ? <meta name="twitter:description" content={description} />
     : <meta name="twitter:description" content={site.description} />}
-<meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png">
+<meta name="twitter:image:src" content="https://assets.phalcon.io/phalcon/social/github.phalcon.blog.png?v=2">
 <meta name="twitter:image:alt" content={site.name}>
 <meta name="twitter:site" content={`@${site.social.twitter}`}>
 <meta name="twitter:creator" content="Phalcon Team">
