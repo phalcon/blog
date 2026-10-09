@@ -186,16 +186,10 @@ input:focus {
 /* ----------------------------------------------------------------- nav */
 
 /*
- * The blog's parts of the shared nav (common.css). .nav-end holds the links
- * of common.css, the theme switcher and the burger, so that the switcher
- * stays next to the burger below 64rem. The search box is the last item of
- * the links.
+ * The blog's parts of the shared nav (common.css). The theme switcher is in
+ * .ph-nav__end of common.css, between the Discord icon and the burger. The
+ * search box is in the links, after "Get Phalcon" and before the GitHub link.
  */
-.nav-end {
-    align-items: center;
-    display: flex;
-    gap: 1.5rem;
-}
 
 /* Up to 1200px the search box does not fit in the nav. */
 @media screen and (max-width: 1200px) {
