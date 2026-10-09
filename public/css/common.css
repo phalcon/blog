@@ -33,25 +33,39 @@
  *       <img class="ph-nav__logo" src="…/falcon.svg" alt="">
  *       <span class="ph-nav__name">Phalcon</span>
  *     </a>
- *     <div class="ph-nav__links">
- *       <a class="ph-nav__link" href="…">Docs</a>                  (one for each link)
- *       <div class="ph-nav__menu">                                (one for each menu)
- *         <button class="ph-nav__menu-button" aria-haspopup="true">
- *           Community <span class="ph-nav__caret" aria-hidden="true">▾</span>
- *         </button>
- *         <div class="ph-nav__dropdown">
- *           <ul class="ph-nav__dropdown-list">
- *             <li><a class="ph-nav__dropdown-link" href="…">Discord</a></li>
- *           </ul>
+ *     <div class="ph-nav__end">
+ *       <div class="ph-nav__links">
+ *         <a class="ph-nav__link" href="…">Docs</a>                (one for each link)
+ *         <div class="ph-nav__menu">                              (one for each menu)
+ *           <button class="ph-nav__menu-button" aria-haspopup="true">
+ *             Community <span class="ph-nav__caret" aria-hidden="true">▾</span>
+ *           </button>
+ *           <div class="ph-nav__dropdown">
+ *             <ul class="ph-nav__dropdown-list">
+ *               <li><a class="ph-nav__dropdown-link" href="…">Discord</a></li>
+ *             </ul>
+ *           </div>
  *         </div>
+ *         <a class="ph-nav__cta" href="/download">Get Phalcon</a>
+ *                                                                 (the items of a site, for example a search box)
+ *         <a class="ph-nav__github" href="…" aria-label="GitHub, 10.8k stars">
+ *           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+ *             <path fill="currentColor" d="…"/>                  (the GitHub glyph of Simple Icons)
+ *           </svg>
+ *           <span class="ph-nav__stars">★ 10.8k</span>
+ *         </a>
  *       </div>
- *       <a class="ph-nav__github" href="…">GitHub <span class="ph-nav__stars">★ 10.8k</span></a>
- *       <a class="ph-nav__cta" href="/download">Get Phalcon</a>
+ *       <a class="ph-nav__discord" href="…/discord" aria-label="Discord">
+ *         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+ *           <path fill="currentColor" d="…"/>                    (the Discord glyph of Simple Icons)
+ *         </svg>
+ *       </a>
+ *                                                                 (the items of a site, for example a theme switcher)
+ *       <button class="ph-nav__burger" id="nav-burger" aria-label="Toggle navigation"
+ *               aria-expanded="false" aria-controls="nav-mobile">
+ *         <span class="ph-nav__burger-line"></span>                (three times)
+ *       </button>
  *     </div>
- *     <button class="ph-nav__burger" id="nav-burger" aria-label="Toggle navigation"
- *             aria-expanded="false" aria-controls="nav-mobile">
- *       <span class="ph-nav__burger-line"></span>                  (three times)
- *     </button>
  *   </div>
  *   <div class="ph-nav__mobile" id="nav-mobile" hidden>
  *     <ul class="ph-nav__mobile-list">
@@ -206,6 +220,13 @@
     letter-spacing: -0.01em;
 }
 
+/* The end of the bar: the links, the Discord icon, the items of a site (for example a theme switcher) and the burger. */
+.ph-nav__end {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
 /* The links, the menus, the GitHub link and the button. Below 64rem the burger shows them in the mobile menu. */
 .ph-nav__links {
     align-items: center;
@@ -303,6 +324,13 @@
     white-space: nowrap;
 }
 
+/* The Discord icon shows at all widths. The markup gives the SVG its size (20px); the padding makes a 24px target. */
+.ph-nav__discord {
+    color: var(--ph-sage-400);
+    display: flex;
+    padding: 2px;
+}
+
 /* The burger shows below 64rem. It opens and closes the mobile menu. */
 .ph-nav__burger {
     align-items: center;
@@ -317,8 +345,13 @@
     width: 2.25rem;
 }
 
+/*
+ * Each line is a top border, not a background: in forced colors the browser
+ * removes a background color, but it keeps a border and gives it a system color.
+ */
 .ph-nav__burger-line {
-    background-color: var(--ph-mist-100);
+    border-color: var(--ph-mist-100);
+    border-top-width: 2px;
     display: block;
     height: 2px;
     width: 1rem;
@@ -502,6 +535,7 @@
 @media (hover: hover) {
     .ph-nav__link:hover,
     .ph-nav__github:hover,
+    .ph-nav__discord:hover,
     .ph-nav__mobile-link:hover,
     .ph-nav__menu:hover .ph-nav__menu-button {
         color: var(--ph-mist-100);

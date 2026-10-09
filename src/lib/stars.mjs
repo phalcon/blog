@@ -1,6 +1,6 @@
 /**
  * The GitHub stars of cphalcon, which the shared nav of the Phalcon sites
- * shows next to "GitHub". A shared tool of phalcon/assets
+ * shows next to the GitHub icon. A shared tool of phalcon/assets
  * (phalcon/tools/stars.mjs): each site gets it again before every build, as
  * it gets the design tools. The count comes from phalcon/repositories.json,
  * which a scheduled workflow of phalcon/assets updates.

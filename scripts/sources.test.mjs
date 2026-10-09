@@ -1,4 +1,5 @@
 import { strict as assert } from 'node:assert';
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
@@ -182,4 +183,40 @@ test('the committed repositories.json has a star count for cphalcon', () => {
     const json = readFileSync(new URL('src/repositories.json', root), 'utf8');
 
     assert.notEqual(cphalconStars(json), null);
+});
+
+test('the nav has the Discord icon in the end group of common.css, after the links', () => {
+    // Discord is one click away at all widths (roadmap Phase 9). The link has a name for screen readers; the SVG
+    // has none. The order of the end group: the links, the icon, the theme switcher, the burger.
+    const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
+    const order = ['class="ph-nav__end"', 'class="ph-nav__links"', 'class="ph-nav__discord"', 'class="switcher"', 'class="ph-nav__burger"']
+        .map((part) => nav.indexOf(part));
+    const glyph = /class="ph-nav__discord"[^>]*>\s*<svg[^>]*>\s*<path fill="currentColor" d="([^"]+)"\/>/.exec(nav)?.[1] ?? '';
+
+    assert.ok(order.every((at, index) => at > (order[index - 1] ?? -1)), `the places: ${order.join(', ')}`);
+    // The burger is the last item of the end group, and the end group is the last item of the bar.
+    assert.match(nav, /<span class="ph-nav__burger-line"><\/span>\s*<\/button>\s*<\/div>\s*<\/div>\s*<div id="nav-mobile"/);
+    assert.match(nav, /<a href="https:\/\/phalcon\.io\/discord" class="ph-nav__discord" aria-label="Discord">\s*<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">/);
+    // The Discord glyph of Simple Icons 16.32.0 (CC0-1.0), the same on every site.
+    assert.equal(createHash('sha256').update(glyph).digest('hex'), '6806ec0e2319eb7f7d9f5d02636a197d42903ff8f8e9bab0c267c8fabc1b03fe');
+});
+
+test('the nav uses the end group of common.css, not one of its own', () => {
+    // .nav-end was the end group of the blog before common.css had .ph-nav__end.
+    const files = ['src/components/Header.astro', 'public/css/site.css'];
+
+    assert.deepEqual(files.filter((file) => readFileSync(new URL(file, root), 'utf8').includes('nav-end')), []);
+});
+
+test('the nav has the GitHub icon and the star count as the last item of the links, left of the Discord icon', () => {
+    // The end of the bar: the links (the search box, then the GitHub icon and the star count), then the Discord icon
+    // (roadmap Phase 9). The link has a name for screen readers; the SVG has none.
+    const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
+    const github = /<a href=\{github\} class="ph-nav__github" aria-label=\{`GitHub, \$\{stars\} stars`\}>\s*<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">\s*<path fill="currentColor" d="([^"]+)"\/>\s*<\/svg>\s*<span class="ph-nav__stars">★ \{stars\}<\/span>\s*<\/a>\s*<\/div>\s*<a href="https:\/\/phalcon\.io\/discord"/.exec(nav);
+
+    assert.ok(github, 'the GitHub link, with its icon and the star count, is the last item of the links');
+    assert.ok(nav.indexOf('class="ph-nav__cta"') < nav.indexOf('class="header__search-wrapper"'), 'the search box comes after "Get Phalcon"');
+    assert.ok(nav.indexOf('class="header__search-wrapper"') < nav.indexOf('class="ph-nav__github"'), 'the GitHub link comes after the search box');
+    // The GitHub glyph of Simple Icons 16.32.0 (CC0-1.0), the same on every site.
+    assert.equal(createHash('sha256').update(github?.[1] ?? '').digest('hex'), 'd82e21f6c9bfbfd889fed4b8d8604121be1d364ef75b7fe42cc9c0b8737ae529');
 });

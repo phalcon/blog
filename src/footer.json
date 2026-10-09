@@ -7,7 +7,8 @@
                 { "label": "Documentation", "href": "https://docs.phalcon.io" },
                 { "label": "Download", "href": "https://phalcon.io/download" },
                 { "label": "IDE Stubs", "href": "https://phalcon.io/download/stubs" },
-                { "label": "Hosting", "href": "https://phalcon.io/hosting" }
+                { "label": "Hosting", "href": "https://phalcon.io/hosting" },
+                { "label": "License", "href": "https://license.phalcon.io" }
             ]
         },
         {
