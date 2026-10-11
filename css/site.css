@@ -643,6 +643,18 @@ input:focus {
     word-wrap: normal;
 }
 
+/*
+ * Mermaid writes the labels of a diagram as HTML p elements. The text rules
+ * of the post must not reach them: Mermaid sets the size of each label for
+ * its own font, and the diagram gives the colors of its text.
+ */
+.phalcon-blog-detail pre.mermaid p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
 .phalcon-blog-detail code {
     font-weight: 400;
     line-height: 21px;
