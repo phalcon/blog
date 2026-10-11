@@ -3,6 +3,9 @@
  * Renders ```mermaid fences. The library is imported only when the page has
  * a diagram, so pages without one download nothing. With JS off the fence
  * stays on screen as readable diagram source.
+ *
+ * The diagrams use the Mermaid theme of the tone of the page: `dark` when
+ * html has the class `dark`, else `default`.
  */
 ---
 
@@ -27,23 +30,53 @@
 
         try {
             const mermaid = (await import('mermaid')).default;
+            const root = document.documentElement;
+            const themeOfPage = (): 'dark' | 'default' =>
+                root.classList.contains('dark') ? 'dark' : 'default';
+            let drawn = '';
+            let drawing = Promise.resolve();
 
-            mermaid.initialize({ startOnLoad: false, theme: 'default' });
+            /* Draws every diagram with the Mermaid theme of the tone of the
+               page, if the diagrams do not have that theme yet. */
+            const draw = async (): Promise<void> => {
+                const theme = themeOfPage();
 
-            for (const [position, block] of blocks.entries()) {
-                try {
-                    const { svg } = await mermaid.render(
-                        `mermaid-${position}`,
-                        block.dataset.source ?? ''
-                    );
-
-                    block.innerHTML = svg;
-                } catch (error) {
-                    /* Leave the source readable when it does not parse. */
-                    block.textContent = block.dataset.source ?? '';
+                if (theme === drawn) {
+                    return;
                 }
-            }
 
+                drawn = theme;
+                mermaid.initialize({ startOnLoad: false, theme });
+
+                for (const [position, block] of blocks.entries()) {
+                    try {
+                        const { svg } = await mermaid.render(
+                            `mermaid-${position}`,
+                            block.dataset.source ?? ''
+                        );
+
+                        block.innerHTML = svg;
+                    } catch (error) {
+                        /* Leave the source readable when it does not parse. */
+                        block.textContent = block.dataset.source ?? '';
+                    }
+                }
+            };
+
+            /* One draw after the other: the first draw now, and one more each
+               time the switcher in the header changes the class of html. */
+            const drawNext = (): Promise<void> => {
+                drawing = drawing.then(draw);
+
+                return drawing;
+            };
+
+            new MutationObserver(drawNext).observe(root, {
+                attributes: true,
+                attributeFilter: ['class'],
+            });
+
+            await drawNext();
             reveal();
         } catch (error) {
             /* Mermaid could not load at all; show the source instead. */
