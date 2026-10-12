@@ -86,11 +86,6 @@ html.dark {
  * the colors.
  */
 
-/* The dark tone of the old sheet. */
-html.dark .tag-button {
-    color: var(--nd-text);
-}
-
 /* Base (normalize.css v3.0.3, MIT License, the parts that the blog uses). */
 html {
     -webkit-text-size-adjust: 100%;
@@ -1144,10 +1139,7 @@ html.dark .phalcon-blog__projects-text,
     --code-text: var(--ph-light-syntax-text);
 
     border: 1px solid var(--nd-code-border);
-    border-radius: 6px;
     font-family: var(--nd-font-mono);
-    font-size: 13.5px;
-    line-height: 1.85;
     padding: 18px 20px;
 }
 
@@ -1164,6 +1156,23 @@ html.dark .astro-code {
     --code-string: var(--ph-dark-syntax-string);
     --code-string-expression: var(--ph-dark-syntax-string-expression);
     --code-text: var(--ph-dark-syntax-text);
+}
+
+/*
+ * The layout rules `.phalcon-blog-detail pre` and `.phalcon-blog-detail code`
+ * set their own corners, size and line height. These selectors are more
+ * specific, so the values of the design apply. The code element takes the
+ * values of its block.
+ */
+.phalcon-blog-detail pre.astro-code {
+    border-radius: 6px;
+    font-size: 13.5px;
+    line-height: 1.85;
+}
+
+.phalcon-blog-detail pre.astro-code > code {
+    font-size: inherit;
+    line-height: inherit;
 }
 
 /* --------------------------------------------------------- callouts */
