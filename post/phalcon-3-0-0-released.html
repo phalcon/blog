@@ -161,7 +161,7 @@ Returns the next available job.</p>
 <span class="line"><span style="color:var(--code-text)">$memcache</span><span style="color:var(--code-keyword)">-&gt;</span><span style="color:var(--code-function)">addServers</span><span style="color:var(--code-text)">(</span><span style="color:var(--code-string)">&#39;10.4.6.11&#39;</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-constant)">11000</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-constant)">true</span><span style="color:var(--code-text)">);</span></span>
 <span class="line"><span style="color:var(--code-text)">$memcache</span><span style="color:var(--code-keyword)">-&gt;</span><span style="color:var(--code-function)">addServers</span><span style="color:var(--code-text)">(</span><span style="color:var(--code-string)">&#39;10.4.6.12&#39;</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-constant)">11000</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-constant)">true</span><span style="color:var(--code-text)">);</span></span></code></pre>
 <h4 id="crypt">CRYPT</h4>
-<p>• Mcrypt is replaced with <code>openssl</code> in <code>Phalcon\Crypt</code> <a href="https://github.com/phalcon/cphalcon/pull/11530">11530</a><a href="https://github.com/phalcon/cphalcon/issues/11486">11486</a>
+<p>• Mcrypt is replaced with <code>openssl</code> in <code>Phalcon\Crypt</code> <a href="https://github.com/phalcon/cphalcon/pull/11530">11530</a>, <a href="https://github.com/phalcon/cphalcon/issues/11486">11486</a>
 Due to the lack of updates for mcrypt for a number of years, its slow performance and the fact that the PHP core team decided to deprecate mcrypt <a href="https://wiki.php.net/rfc/mcrypt-viking-funeral">as soon as possible</a> (version 7.1 onward), we have replaced it with the much faster and supported openssl.</p>
 <p>• Default encrypt algorithm in <code>Phalcon\Crypt</code> is now changed to <code>AES-256-CFB</code></p>
 <p>• Removed methods <code>setMode()</code>, <code>getMode()</code>, <code>getAvailableModes()</code> in <code>Phalcon\CryptInterface</code> (no longer apply with openssl)</p>
@@ -170,7 +170,7 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 <p>If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore <code>openssl</code>. <strong>Failure to do so will result in loss of data</strong>. A port is available in the incubator. Please see the code <a href="https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy">here</a></p>
 </blockquote>
 <h4 id="database">DATABASE</h4>
-<p>• Dropped support of Oracle <a href="https://github.com/phalcon/cphalcon/issues/12008">12008</a><a href="https://github.com/phalcon/cphalcon/pull/12009">12009</a>
+<p>• Dropped support of Oracle <a href="https://github.com/phalcon/cphalcon/issues/12008">12008</a>, <a href="https://github.com/phalcon/cphalcon/pull/12009">12009</a>
 Support of Oracle has been dropped from the Phalcon Core for the following reasons:
 •• The lack of Oracle maintainer
 •• The lack of relevant experience among the Phalcon Core Team
@@ -357,7 +357,7 @@ Most browsers do not support sending <code>PUT</code> and <code>DELETE</code> re
 <li><code>PURGE</code>: Although not defined in the HTTP RFCs, some HTTP servers and caching systems implement this method and use it to purge cached data.</li>
 </ul>
 <p>• Refactored <code>Phalcon\Http\Request::getHttpHost</code>.
-Now it always returns the hostname or empty an string. Optionally validates and cleans host name <a href="https://github.com/phalcon/cphalcon/issues/2573">2573</a><a href="https://github.com/phalcon/cphalcon/pull/11921">11921</a></p>
+Now it always returns the hostname or empty an string. Optionally validates and cleans host name <a href="https://github.com/phalcon/cphalcon/issues/2573">2573</a>, <a href="https://github.com/phalcon/cphalcon/pull/11921">11921</a></p>
 <p>• Renamed <code>Phalcon\Http\Request::isSoapRequest</code> to <code>Phalcon\Http\Request::isSoap</code> and <code>Phalcon\Http\Request::isSecureRequest</code> to <code>Phalcon\Http\Request::isSecure</code>.
 Left the originals functions as aliases and marked them deprecated.</p>
 <blockquote>
@@ -525,7 +525,7 @@ Returns the join parts from query builder</p>
 <span class="line"><span style="color:var(--code-comment)">// Check whether role has access to the operation with custom function</span></span>
 <span class="line"><span style="color:var(--code-text)">$acl</span><span style="color:var(--code-keyword)">-&gt;</span><span style="color:var(--code-function)">isAllowed</span><span style="color:var(--code-text)">(</span><span style="color:var(--code-string)">&#39;Guests&#39;</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-string)">&#39;Customers&#39;</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-string)">&#39;search&#39;</span><span style="color:var(--code-text)">, [</span><span style="color:var(--code-string)">&#39;a&#39;</span><span style="color:var(--code-keyword)"> =&gt;</span><span style="color:var(--code-constant)"> 4</span><span style="color:var(--code-text)">]); </span><span style="color:var(--code-comment)">// Returns true</span></span>
 <span class="line"><span style="color:var(--code-text)">$acl</span><span style="color:var(--code-keyword)">-&gt;</span><span style="color:var(--code-function)">isAllowed</span><span style="color:var(--code-text)">(</span><span style="color:var(--code-string)">&#39;Guests&#39;</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-string)">&#39;Customers&#39;</span><span style="color:var(--code-text)">, </span><span style="color:var(--code-string)">&#39;search&#39;</span><span style="color:var(--code-text)">, [</span><span style="color:var(--code-string)">&#39;a&#39;</span><span style="color:var(--code-keyword)"> =&gt;</span><span style="color:var(--code-constant)"> 3</span><span style="color:var(--code-text)">]); </span><span style="color:var(--code-comment)">// Returns false</span></span></code></pre>
-<p>• Fixed wildcard inheritance in <code>Phalcon\Acl\Adapter\Memory</code> <a href="https://github.com/phalcon/cphalcon/issues/12004">12004</a><a href="https://github.com/phalcon/cphalcon/pull/12006">12006</a></p>
+<p>• Fixed wildcard inheritance in <code>Phalcon\Acl\Adapter\Memory</code> <a href="https://github.com/phalcon/cphalcon/issues/12004">12004</a>, <a href="https://github.com/phalcon/cphalcon/pull/12006">12006</a></p>
 <pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:var(--code-keyword)">use</span><span style="color:var(--code-constant)"> Phalcon\Acl</span><span style="color:var(--code-text)">;</span></span>
 <span class="line"><span style="color:var(--code-keyword)">use</span><span style="color:var(--code-constant)"> Phalcon\Acl\Adapter\Memory</span><span style="color:var(--code-keyword)"> as</span><span style="color:var(--code-constant)"> MemoryAcl</span><span style="color:var(--code-text)">;</span></span>
 <span class="line"></span>
@@ -753,7 +753,7 @@ The functionality of both components is merged into one, allowing us to reduce t
 <span class="line"><span style="color:var(--code-text)">    )</span></span>
 <span class="line"><span style="color:var(--code-text)">);</span></span></code></pre>
 <p>• Fixed <code>Phalcon\Validation::appendMessage</code> to allow append message to the empty stack <a href="https://github.com/phalcon/cphalcon/issues/10405">10405</a></p>
-<p>• Added <code>convert</code> option to the <code>Phalcon\Validation\Validator\Uniqueness</code> to convert values to the database lookup <a href="https://github.com/phalcon/cphalcon/issues/12005">12005</a><a href="https://github.com/phalcon/cphalcon/pull/12030">12030</a></p>
+<p>• Added <code>convert</code> option to the <code>Phalcon\Validation\Validator\Uniqueness</code> to convert values to the database lookup <a href="https://github.com/phalcon/cphalcon/issues/12005">12005</a>, <a href="https://github.com/phalcon/cphalcon/pull/12030">12030</a></p>
 <pre class="astro-code phalcon" style="background-color:var(--code-bg);color:var(--code-text);overflow-x:auto" tabindex="0" data-language="php"><code><span class="line"><span style="color:var(--code-keyword)">use</span><span style="color:var(--code-constant)"> Phalcon\Validation\Validator\Uniqueness</span><span style="color:var(--code-text)">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--code-text)">$validator</span><span style="color:var(--code-keyword)">-&gt;</span><span style="color:var(--code-function)">add</span><span style="color:var(--code-text)">(</span></span>
@@ -769,7 +769,7 @@ The functionality of both components is merged into one, allowing us to reduce t
 <span class="line"><span style="color:var(--code-text)">    )</span></span>
 <span class="line"><span style="color:var(--code-text)">);</span></span></code></pre>
 <h4 id="interfaces">INTERFACES</h4>
-<p>• Removed <code>__construct</code> from all interfaces <a href="https://github.com/phalcon/cphalcon/issues/11410">11410</a><a href="https://github.com/phalcon/cphalcon/pull/11411">11441</a></p>
+<p>• Removed <code>__construct</code> from all interfaces <a href="https://github.com/phalcon/cphalcon/issues/11410">11410</a>, <a href="https://github.com/phalcon/cphalcon/pull/11411">11441</a></p>
 <p>• Added <code>Phalcon\Cli\DispatcherInterface</code>, <code>Phalcon\Cli\TaskInterface</code>, <code>Phalcon\Cli\RouterInterface</code> and <code>Phalcon\Cli\Router\RouteInterface</code>.</p>
 <h4 id="documentation">DOCUMENTATION</h4>
 <p>• Added Indonesian translation <a href="https://github.com/phalcon/docs/pull/840">840</a></p>
