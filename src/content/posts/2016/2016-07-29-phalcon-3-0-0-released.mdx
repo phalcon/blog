@@ -147,7 +147,7 @@ $memcache->addServers('10.4.6.12', 11000, true);
 ```
 
 #### CRYPT
-&bull; Mcrypt is replaced with `openssl` in `Phalcon\Crypt` [11530](https://github.com/phalcon/cphalcon/pull/11530)[11486](https://github.com/phalcon/cphalcon/issues/11486)
+&bull; Mcrypt is replaced with `openssl` in `Phalcon\Crypt` [11530](https://github.com/phalcon/cphalcon/pull/11530), [11486](https://github.com/phalcon/cphalcon/issues/11486)
 Due to the lack of updates for mcrypt for a number of years, its slow performance and the fact that the PHP core team decided to deprecate mcrypt [as soon as possible](https://wiki.php.net/rfc/mcrypt-viking-funeral) (version 7.1 onward), we have replaced it with the much faster and supported openssl.
 
 &bull; Default encrypt algorithm in `Phalcon\Crypt` is now changed to `AES-256-CFB`
@@ -158,7 +158,7 @@ Due to the lack of updates for mcrypt for a number of years, its slow performanc
 > If you have data that has already been encrypted with mcrypt, you will need first to decrypt it before upgrading to 3.0 and then encrypt it again using 3.0 and therefore `openssl`. **Failure to do so will result in loss of data**. A port is available in the incubator. Please see the code [here](https://github.com/phalcon/incubator/tree/2.1.x/Library/Phalcon/Legacy)
 
 #### DATABASE
-&bull; Dropped support of Oracle [12008](https://github.com/phalcon/cphalcon/issues/12008)[12009](https://github.com/phalcon/cphalcon/pull/12009)
+&bull; Dropped support of Oracle [12008](https://github.com/phalcon/cphalcon/issues/12008), [12009](https://github.com/phalcon/cphalcon/pull/12009)
 Support of Oracle has been dropped from the Phalcon Core for the following reasons:
 &bull;&bull; The lack of Oracle maintainer
 &bull;&bull; The lack of relevant experience among the Phalcon Core Team
@@ -410,7 +410,7 @@ Most browsers do not support sending `PUT` and `DELETE` requests via the method 
 - `PURGE`: Although not defined in the HTTP RFCs, some HTTP servers and caching systems implement this method and use it to purge cached data.
 
 &bull; Refactored `Phalcon\Http\Request::getHttpHost`. 
-Now it always returns the hostname or empty an string. Optionally validates and cleans host name [2573](https://github.com/phalcon/cphalcon/issues/2573)[11921](https://github.com/phalcon/cphalcon/pull/11921)
+Now it always returns the hostname or empty an string. Optionally validates and cleans host name [2573](https://github.com/phalcon/cphalcon/issues/2573), [11921](https://github.com/phalcon/cphalcon/pull/11921)
 
 &bull; Renamed `Phalcon\Http\Request::isSoapRequest` to `Phalcon\Http\Request::isSoap` and `Phalcon\Http\Request::isSecureRequest` to `Phalcon\Http\Request::isSecure`. 
 Left the originals functions as aliases and marked them deprecated. 
@@ -636,7 +636,7 @@ $acl->isAllowed('Guests', 'Customers', 'search', ['a' => 4]); // Returns true
 $acl->isAllowed('Guests', 'Customers', 'search', ['a' => 3]); // Returns false
 ```
 
-&bull; Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [12004](https://github.com/phalcon/cphalcon/issues/12004)[12006](https://github.com/phalcon/cphalcon/pull/12006)
+&bull; Fixed wildcard inheritance in `Phalcon\Acl\Adapter\Memory` [12004](https://github.com/phalcon/cphalcon/issues/12004), [12006](https://github.com/phalcon/cphalcon/pull/12006)
 
 ```php
 use Phalcon\Acl;
@@ -928,7 +928,7 @@ $validator->add(
 
 &bull; Fixed `Phalcon\Validation::appendMessage` to allow append message to the empty stack [10405](https://github.com/phalcon/cphalcon/issues/10405)
 
-&bull; Added `convert` option to the `Phalcon\Validation\Validator\Uniqueness` to convert values to the database lookup [12005](https://github.com/phalcon/cphalcon/issues/12005)[12030](https://github.com/phalcon/cphalcon/pull/12030)
+&bull; Added `convert` option to the `Phalcon\Validation\Validator\Uniqueness` to convert values to the database lookup [12005](https://github.com/phalcon/cphalcon/issues/12005), [12030](https://github.com/phalcon/cphalcon/pull/12030)
 
 ```php
 use Phalcon\Validation\Validator\Uniqueness;
@@ -948,7 +948,7 @@ $validator->add(
 ```
 
 #### INTERFACES
-&bull; Removed `__construct` from all interfaces [11410](https://github.com/phalcon/cphalcon/issues/11410)[11441](https://github.com/phalcon/cphalcon/pull/11411)
+&bull; Removed `__construct` from all interfaces [11410](https://github.com/phalcon/cphalcon/issues/11410), [11441](https://github.com/phalcon/cphalcon/pull/11411)
 
 &bull; Added `Phalcon\Cli\DispatcherInterface`, `Phalcon\Cli\TaskInterface`, `Phalcon\Cli\RouterInterface` and `Phalcon\Cli\Router\RouteInterface`.
 
