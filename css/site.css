@@ -1,9 +1,11 @@
 /*
- * The blog stylesheet: the blog's own rules. The blog loads tokens.css and
- * common.css before this one, and no other stylesheet. common.css is the
- * shared nav and footer of the Phalcon sites (a copy of
- * phalcon/css/common.css in phalcon/assets), so this file has no rules for
- * them, except for the blog's own parts of the nav (the "nav" part below).
+ * The blog stylesheet: the blog's own rules. The blog loads tokens.css,
+ * common.css and sidebar.css before this one, and no other stylesheet.
+ * common.css is the shared nav and footer and sidebar.css the shared sidebar
+ * of the Phalcon sites (copies of phalcon/css/common.css and
+ * phalcon/css/sidebar.css in phalcon/assets), so this file has no rules for
+ * them, except for the blog's own parts of the nav (the "nav" part, the last
+ * one) and its tags box.
  *
  * A rule here that reaches into the nav or the footer changes them when it
  * is stronger than the rule of common.css (for example a class and an
@@ -18,9 +20,11 @@
  * the light tone answers to the default, and the dark tone answers to
  * `html.dark`.
  *
- * The sheet has three parts, in cascade order: the layout rules of the old
- * shared sheet, the blog rules, and the design. Most colors come from the
- * design part, the last one.
+ * Each part has the rules of one component: one rule for each element, then
+ * its states, then its width rules. The order of the parts is part of the
+ * cascade: a later rule wins over an earlier rule of the same weight. The
+ * page links (.page a) come before the post cards, and the post text
+ * (.prose p) comes before the callouts (.alert p).
  */
 
 :root {
@@ -75,25 +79,55 @@ html.dark {
     --nd-warning-bg: var(--ph-dark-warning-bg);
 }
 
-
-/* ============================================================ layout */
+/* ---------------------------------------------------------------- base */
 
 /*
- * The rules below come from the old shared sheet
- * (https://assets.phalcon.io/css/style.css), which the blog no longer loads.
- * Only the rules that the blog markup uses are here, in the order of that
- * sheet. The sections after them come later in the cascade and set most of
- * the colors.
+ * The elements of every page. The resets come from normalize.css v3.0.3 (MIT
+ * License, the parts that the blog uses), by way of the old shared sheet.
  */
-
-/* Base (normalize.css v3.0.3, MIT License, the parts that the blog uses). */
 html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     font-family: var(--nd-font-sans);
+    height: 100%;
 }
 
+/*
+ * Body grows with its content: a sticky element stays inside its parent, so
+ * with a fixed height the header would scroll away after the first screen.
+ */
 body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--nd-bg);
+    color: var(--nd-text);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--nd-font-sans);
+    height: auto;
     margin: 0;
+    min-height: 100%;
+    min-width: 320px;
+}
+
+/* iOS sends click events only to an element with a pointer cursor. */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        cursor: pointer;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Every element: the nav and the footer themselves too. */
+:where(:not(.ph-nav, .ph-nav *, .ph-footer, .ph-footer *)) {
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
 }
 
 small {
@@ -109,8 +143,7 @@ pre {
     font-family: monospace, monospace;
 }
 
-button,
-input {
+button {
     color: inherit;
     font: inherit;
     margin: 0;
@@ -129,8 +162,16 @@ input::-moz-focus-inner {
     padding: 0;
 }
 
+/* The font shorthand sets the line height too, so line-height comes after it. */
 input {
+    color: inherit;
+    font: inherit;
     line-height: normal;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
 }
 
 table {
@@ -152,8 +193,805 @@ a:where(:not(.ph-nav *, .ph-footer *)) {
     text-decoration: none;
 }
 
+/* ---------------------------------------------------------------- page */
+
+/* The page: the main column and the sidebar (Base.astro). */
+.page {
+    background-color: var(--nd-bg);
+    color: var(--nd-text);
+    font-family: var(--nd-font-sans);
+    padding: 50px 0;
+}
+
+.page a {
+    color: var(--nd-accent);
+}
+
+html.dark .page a:hover,
+.page a:hover {
+    color: var(--nd-accent-hover);
+}
+
+.page__inner {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page .page__inner {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page__main {
+    flex: 1;
+}
+
+.page__side {
+    margin-left: 20px;
+    top: 10px;
+    width: 350px;
+}
+
+html.dark .page__title,
+.page__title {
+    color: var(--nd-kicker);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .page__inner {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 750px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page__inner {
+        width: 958px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .page__inner {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 1200px;
+    }
+}
+
+@media (max-width: 1439px) {
+    .page__side {
+        width: 280px;
+    }
+}
+
+/* The sidebar goes below the main column. */
+@media (max-width: 1023px) {
+    .page .page__inner {
+        flex-wrap: wrap;
+    }
+
+    .page__main {
+        width: 100%;
+    }
+
+    .page__side {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------------- post cards */
+
+/* The post cards of the lists (PostCard.astro): the latest post first, then the others. */
+.post-card {
+    background: var(--nd-surface);
+    border: 1px solid var(--nd-border);
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 18px;
+    padding: 22px;
+}
+
+.posts__latest .post-card {
+    border-left: 3px solid var(--nd-accent);
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.post-card__content {
+    width: 100%;
+}
+
+.post-card__img {
+    flex-shrink: 0;
+    height: 180px;
+    margin-left: 20px;
+    position: relative;
+    text-align: center;
+}
+
+/* The first post shows its banner in full, above the text. */
+.posts__latest .post-card__img {
+    height: auto;
+    margin-bottom: 10px;
+    order: -1;
+    width: 100%;
+}
+
+/* The list card image box uses the banner ratio (1200 x 444), so the full banner shows. */
+.posts .post-card__img {
+    align-self: flex-start;
+    aspect-ratio: 1200 / 444;
+    height: auto;
+}
+
+.post-card__img img {
+    border-radius: 4px;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.posts .post-card__img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-card__img:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.posts__latest .post-card__img:after {
+    display: none;
+}
+
+.post-card__title {
+    font-family: var(--nd-font-sans);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+html.dark .post-card__title a,
+.post-card__title a {
+    color: var(--nd-heading);
+}
+
+html.dark .post-card__title a:hover,
+.post-card__title a:hover {
+    color: var(--nd-accent);
+}
+
+.post-card__info {
+    color: var(--nd-faint);
+    display: flex;
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    line-height: 17px;
+    margin-bottom: 5px;
+}
+
+.post-card__date {
+    color: var(--nd-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    margin-right: 22px;
+    position: relative;
+}
+
+/* The dot between the date and the author. */
+.post-card__date:after {
+    background-color: var(--nd-faint);
+    border-radius: 50%;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 2px;
+}
+
+.post-card__author {
+    color: var(--nd-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.post-card__excerpt {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    color: var(--nd-muted);
+    display: -webkit-box;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* The "Read more" and "Show More" links (the post cards, the tags box, /tags). */
+.read-more {
+    border-bottom: 0;
+    color: var(--nd-accent);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: all 0.125s;
+}
+
+.read-more:after {
+    content: " \2192";
+}
+
+.read-more:hover {
+    color: var(--nd-accent-hover);
+}
+
+/* The image goes above the text. */
+@media (max-width: 1023px) {
+    .post-card {
+        flex-wrap: wrap;
+    }
+
+    .post-card__img {
+        margin-bottom: 10px;
+        margin-left: 0;
+        order: -1;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .post-card__img img {
+        object-fit: contain;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .posts .post-card__img {
+        width: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    .post-card__excerpt {
+        -webkit-line-clamp: 6;
+    }
+}
+
+/* ---------------------------------------------------------------- post */
+
+/* The line under the title of a post (post/[slug].astro): the date, the author and the read time. */
+.post__info {
+    color: var(--nd-faint);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.post__date {
+    margin-bottom: 5px;
+    margin-right: 22px;
+    position: relative;
+}
+
+/* The dots between the parts. */
+.post__date:after {
+    background-color: var(--nd-faint);
+    border-radius: 50%;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 2px;
+}
+
+.post__author {
+    margin-bottom: 5px;
+    margin-right: 22px;
+    position: relative;
+}
+
+.post__author:nth-child(2):after {
+    background-color: var(--nd-faint);
+    border-radius: 50%;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 2px;
+}
+
+.post__author:last-child:after {
+    display: none;
+}
+
+.prose .post__author a {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+/* --------------------------------------------------------------- prose */
+
+/*
+ * The text of a post, of the tag pages and of the search results. A word with
+ * no space in it — a class name, a URL, a hash — is as wide as it is long, and
+ * the article body and the post cards sit in flex items that cannot go below
+ * the width of their content. One such word therefore makes the whole page
+ * wider than a phone screen, which mobile Safari answers by shrinking the page
+ * to fit. `anywhere` counts in that minimum width, which `break-word` does
+ * not, so it is the value that lets the column shrink. It breaks a word only
+ * when the word does not fit, so text that fits is unchanged. Code blocks are
+ * not touched: `.prose pre` sets its own `word-break` and `word-wrap`, and a
+ * value set on the element beats the one it would inherit.
+ */
+.prose {
+    font-family: var(--nd-font-sans);
+    margin-bottom: 35px;
+    overflow-wrap: anywhere;
+}
+
+.prose h1,
+.prose h2 {
+    color: var(--nd-heading);
+    font-family: var(--nd-font-sans);
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.prose h2.headline {
+    font-size: 40px;
+    line-height: 1.06;
+}
+
+.prose .headline {
+    margin-bottom: 10px;
+}
+
+.prose h3 {
+    color: var(--nd-heading);
+    font-family: var(--nd-font-sans);
+    font-size: 25px;
+    letter-spacing: -0.02em;
+    line-height: 36px;
+    margin: 12px 0;
+}
+
+.prose h4 {
+    color: var(--nd-heading);
+    font-family: var(--nd-font-sans);
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    margin: 6px 0;
+}
+
+.prose p {
+    color: var(--nd-text);
+    font-family: var(--nd-font-sans);
+    font-size: 16px;
+    line-height: 23px;
+    margin: 0 0 10px;
+}
+
+.prose a {
+    border-bottom: 1px solid;
+    border-bottom-color: var(--nd-accent);
+    color: var(--nd-accent);
+    font-size: 16px;
+    line-height: 23px;
+    transition: all 0.125s;
+}
+
+.prose a:hover {
+    border-bottom-color: transparent;
+}
+
+.prose img {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.prose p img {
+    margin-bottom: 0;
+}
+
+.prose iframe {
+    max-width: 100%;
+}
+
+.prose blockquote {
+    margin: 0;
+}
+
+.prose ul {
+    color: var(--nd-text);
+    margin-bottom: 25px;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    padding-left: 30px;
+}
+
+.prose ul li {
+    color: var(--nd-text);
+    font-size: 16px;
+    line-height: 23px;
+    list-style-type: disc;
+    margin-bottom: 8px;
+    max-width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.prose ol {
+    color: var(--nd-text);
+    margin: 10px 0 25px;
+    max-width: 100%;
+    padding-left: 20px;
+}
+
+.prose ol li {
+    color: var(--nd-text);
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 8px;
+    max-width: 100%;
+}
+
+.prose table {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow: auto;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.prose table thead {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23px;
+}
+
+.prose table td {
+    border: 1px solid;
+    border-color: var(--nd-border-strong);
+    min-width: 150px;
+    padding: 8px 14px;
+}
+
+.prose pre {
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 0;
+    margin-bottom: 20px;
+    margin-top: 0;
+    overflow-y: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.prose pre code {
+    word-break: normal;
+    word-wrap: normal;
+}
+
+/*
+ * Mermaid writes the labels of a diagram as HTML p elements. The text rules
+ * of the post must not reach them: Mermaid sets the size of each label for
+ * its own font, and the diagram gives the colors of its text.
+ */
+.prose pre.mermaid p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.prose code {
+    font-family: var(--nd-font-mono);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/*
+ * Inline code only. `pre > code` must not match. `code` is an inline element,
+ * so a border and side padding draw a box around each wrapped line inside a
+ * Shiki block and indent the first line of it.
+ */
+.prose *:not(pre) > code {
+    background-color: var(--nd-surface);
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 3px;
+    color: var(--nd-accent);
+    padding: 1px 5px;
+}
+
+@media (max-width: 768px) {
+    .prose table {
+        display: block;
+    }
+}
+
+/* --------------------------------------------------------- code blocks */
+
+/*
+ * Code blocks use the Phalcon code theme (src/code-theme.json, a copy of
+ * phalcon/css/code-theme.json in phalcon/assets): GitHub's rules, with a
+ * --code-<role> variable for each color. Here the variables take the syntax
+ * tokens of the page tone.
+ */
+.astro-code {
+    --code-bg: var(--ph-light-code-bg);
+    --code-changed: var(--ph-light-syntax-changed);
+    --code-comment: var(--ph-light-syntax-comment);
+    --code-constant: var(--ph-light-syntax-constant);
+    --code-deleted: var(--ph-light-syntax-deleted);
+    --code-function: var(--ph-light-syntax-function);
+    --code-inserted: var(--ph-light-syntax-inserted);
+    --code-keyword: var(--ph-light-syntax-keyword);
+    --code-parameter: var(--ph-light-syntax-parameter);
+    --code-string: var(--ph-light-syntax-string);
+    --code-string-expression: var(--ph-light-syntax-string-expression);
+    --code-text: var(--ph-light-syntax-text);
+
+    border: 1px solid var(--nd-code-border);
+    font-family: var(--nd-font-mono);
+    padding: 18px 20px;
+}
+
+html.dark .astro-code {
+    --code-bg: var(--ph-dark-code-bg);
+    --code-changed: var(--ph-dark-syntax-changed);
+    --code-comment: var(--ph-dark-syntax-comment);
+    --code-constant: var(--ph-dark-syntax-constant);
+    --code-deleted: var(--ph-dark-syntax-deleted);
+    --code-function: var(--ph-dark-syntax-function);
+    --code-inserted: var(--ph-dark-syntax-inserted);
+    --code-keyword: var(--ph-dark-syntax-keyword);
+    --code-parameter: var(--ph-dark-syntax-parameter);
+    --code-string: var(--ph-dark-syntax-string);
+    --code-string-expression: var(--ph-dark-syntax-string-expression);
+    --code-text: var(--ph-dark-syntax-text);
+}
+
+/*
+ * The rules `.prose pre` and `.prose code` set their own corners, size and
+ * line height. These selectors are more specific, so the values of the code
+ * block apply. The code element takes the values of its block.
+ */
+.prose pre.astro-code {
+    border-radius: 6px;
+    font-size: 13.5px;
+    line-height: 1.85;
+}
+
+.prose pre.astro-code > code {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* ------------------------------------------------------------ callouts */
+
+/*
+ * The alert callouts (Callout.astro), drawn as the redesign's admonition
+ * card: a 3px left bar, a mono uppercase label, and the status background.
+ * The label is not in the markup, so it comes from the class.
+ */
+.alert {
+    border: 1px solid var(--nd-border-strong);
+    border-left-width: 3px;
+    border-radius: 0 4px 4px 0;
+    font-family: var(--nd-font-sans);
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding: 16px 22px;
+}
+
+.alert:before {
+    display: block;
+    font-family: var(--nd-font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* After `.prose p`, which has the same weight. */
+.alert p {
+    margin-bottom: 0;
+}
+
+/* `.prose blockquote` sets no block margins, so a callout needs its own. */
+.prose blockquote.alert {
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.alert-info {
+    background: var(--nd-info-bg);
+    border-left-color: var(--nd-info);
+}
+
+.alert-info:before {
+    color: var(--nd-info);
+    content: "Note";
+}
+
+.alert-notice {
+    background: var(--nd-success-bg);
+    border-left-color: var(--nd-success);
+}
+
+.alert-notice:before {
+    color: var(--nd-success);
+    content: "Notice";
+}
+
+.alert-warning {
+    background: var(--nd-warning-bg);
+    border-left-color: var(--nd-warning);
+}
+
+.alert-warning:before {
+    color: var(--nd-warning);
+    content: "Warning";
+}
+
+.alert-danger {
+    background: var(--nd-danger-bg);
+    border-left-color: var(--nd-danger);
+}
+
+.alert-danger:before {
+    color: var(--nd-danger);
+    content: "Important";
+}
+
+/* ---------------------------------------------------------------- tags */
+
+/* The tags of a post and of the tags box of the sidebar (SidebarTags.astro, TagPill.astro). */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*
+ * The mono face is wider per character than the Titillium it replaces, so the
+ * live sizes — 14px name, 10px count — wrap the 350px sidebar list to one tag
+ * per row. Smaller type and tighter gaps bring the pill width back to about
+ * what the live blog shows. The selector must beat `.page a`.
+ */
+.page .tags .tags__item {
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 3px;
+    color: var(--nd-muted);
+    font-family: var(--nd-font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    padding: 4px 9px;
+    transition: all 0.125s;
+}
+
+.page .tags .tags__item:hover {
+    border-color: var(--nd-accent);
+    color: var(--nd-accent);
+}
+
+/* The name of the tag. */
+.tags__item span:first-child {
+    font-size: 11px;
+    margin-right: 4px;
+    text-transform: capitalize;
+    transition: all 0.125s;
+}
+
+/* The count of the posts. */
+.tags__item span:last-child {
+    font-weight: 700;
+}
+
+/* The tags of the /tags page (tags.astro). */
+.tag-button {
+    border: 1px solid var(--nd-border-strong);
+    border-radius: 3px;
+    color: var(--nd-heading);
+    display: inline-block;
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 23px;
+    margin-bottom: 13px;
+    padding: 5px 12px;
+    transition: all 0.125s;
+}
+
+.tag-button:hover {
+    background-color: var(--nd-accent);
+    color: var(--ph-ink-950);
+}
+
+/* ---------------------------------------------------------- pagination */
+
+/* The links to the newer and the older posts (index.astro, [page].astro). */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination a {
+    border-bottom: 1px solid var(--nd-accent);
+    line-height: 23px;
+    transition: all 0.125s;
+}
+
+.pagination a:hover {
+    border-bottom-color: transparent;
+}
+
+/* The selectors must beat `.page a`, so the links take the faint color, not the accent color. */
+.page .pagination .previous,
+.page .pagination .page_number,
+.page .pagination .next {
+    color: var(--nd-faint);
+    font-family: var(--nd-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.page .pagination a:hover {
+    color: var(--nd-accent-hover);
+}
+
+@media (max-width: 1023px) {
+    .pagination {
+        margin-bottom: 35px;
+    }
+}
+
+/* -------------------------------------------------------------- button */
+
 /* The 404 page button: the accent button of the design, in both tones. */
-.phalcon-blog .phalcon-blog__main .green-button {
+.page .page__main .green-button {
     background-color: var(--nd-accent);
     border-radius: 4px;
     color: var(--nd-accent-contrast);
@@ -164,43 +1002,23 @@ a:where(:not(.ph-nav *, .ph-footer *)) {
     transition: 0.2s;
 }
 
-.phalcon-blog .phalcon-blog__main .green-button:hover {
+.page .page__main .green-button:hover {
     background-color: var(--nd-accent-hover);
     color: var(--nd-accent-contrast);
-}
-
-input:focus {
-    outline: none;
-}
-
-.pagination {
-    display: flex;
-    justify-content: space-between;
 }
 
 /* ----------------------------------------------------------------- nav */
 
 /*
- * The blog's parts of the shared nav (common.css). The theme switcher is in
- * .ph-nav__end of common.css, between the Discord icon and the burger. The
- * search box is in the links, after "Get Phalcon" and before the GitHub link.
+ * The blog's parts of the shared nav (common.css). The nav stays at the top
+ * of the viewport. The theme switcher is in .ph-nav__end of common.css,
+ * between the Discord icon and the burger. The search box is in the links,
+ * after "Get Phalcon" and before the GitHub link.
  */
-
-/* Up to 1200px the search box does not fit in the nav. */
-@media screen and (max-width: 1200px) {
-    .header__search-wrapper {
-        display: none;
-    }
-}
-
-/* The search results: the text of the page, on the surface of each tone. The links keep their own rules. */
-#header-search-results {
-    color: var(--nd-text);
-}
-
-/* A search hit keeps the colors of the browser's highlight: in the nav, common.css gives each element the color of its parent. */
-#header-search-results mark {
-    color: MarkText;
+.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header__search {
@@ -229,6 +1047,16 @@ input:focus {
 
 .header__search:focus::placeholder {
     color: var(--ph-ink-500);
+}
+
+/* The search results: the text of the page, on the surface of each tone. The links keep their own rules. */
+#header-search-results {
+    color: var(--nd-text);
+}
+
+/* A search hit keeps the colors of the browser's highlight: in the nav, common.css gives each element the color of its parent. */
+#header-search-results mark {
+    color: MarkText;
 }
 
 /* The theme switcher. The moon and the sun are white, on the dark nav. The button rule of the base part keeps cursor: pointer out of the nav, so this rule sets it. */
@@ -275,998 +1103,17 @@ input:focus {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
 }
 
+/* Up to 1200px the search box does not fit in the nav. */
+@media screen and (max-width: 1200px) {
+    .header__search-wrapper {
+        display: none;
+    }
+}
+
 /* In forced colors, the browser paints the background in the color of the page behind it: the icon takes the text color. */
 @media (forced-colors: active) {
     .switcher button::before {
         background-color: CanvasText;
         forced-color-adjust: none;
     }
-}
-
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 750px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        width: 958px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 1200px;
-    }
-}
-
-/* Page layout and post cards */
-.phalcon-blog {
-    padding: 50px 0;
-}
-
-.phalcon-blog .container {
-    align-items: flex-start;
-    display: flex;
-    justify-content: space-between;
-}
-
-.phalcon-blog__main {
-    flex: 1;
-}
-
-.phalcon-blog__right {
-    margin-left: 20px;
-    top: 10px;
-    width: 350px;
-}
-
-.phalcon-blog__item {
-    display: flex;
-}
-
-.phalcon-blog__item-content {
-    width: 100%;
-}
-
-.phalcon-blog__item-img {
-    flex-shrink: 0;
-    height: 180px;
-    margin-left: 20px;
-    position: relative;
-    text-align: center;
-}
-
-.phalcon-blog__item-img img {
-    object-fit: cover;
-    width: 100%;
-}
-
-.phalcon-blog__item-img:after {
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
-.phalcon-blog__item-title {
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.phalcon-blog__item-info {
-    display: flex;
-    line-height: 17px;
-    margin-bottom: 5px;
-}
-
-.phalcon-blog__item-date {
-    margin-right: 22px;
-    position: relative;
-}
-
-.phalcon-blog__item-date:after {
-    border-radius: 50%;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: -12px;
-    top: 7px;
-    width: 2px;
-}
-
-.phalcon-blog__item-article {
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    display: -webkit-box;
-    font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 11px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.phalcon-blog__item-read-more {
-    transition: all 0.125s;
-}
-
-.phalcon-blog__main-title {
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-.phalcon-blog__last-article .phalcon-blog__item {
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-/* The first post shows its banner in full, above the text. */
-.phalcon-blog__last-article .phalcon-blog__item-img {
-    margin-bottom: 10px;
-    order: -1;
-    width: 100%;
-}
-
-.phalcon-blog__last-article .phalcon-blog__item-img:after {
-    display: none;
-}
-
-/* Sidebar */
-.phalcon-blog__right-item {
-    margin-bottom: 35px;
-}
-
-.phalcon-blog__title {
-    height: 20px;
-    margin-bottom: 15px;
-}
-
-.phalcon-blog__tags-items {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.phalcon-blog__tags-item {
-    transition: all 0.125s;
-}
-
-.phalcon-blog__tags-item span:first-child {
-    text-transform: capitalize;
-    transition: all 0.125s;
-}
-
-.phalcon-blog__tags-item span:last-child {
-    font-weight: 700;
-}
-
-@media (max-width: 1439px) {
-    .phalcon-blog__right {
-        width: 280px;
-    }
-}
-
-.phalcon-blog__projects-text {
-    font-size: 16px;
-    line-height: 23px;
-}
-
-.phalcon-blog__projects-text a {
-    border-bottom: 1px solid var(--nd-accent);
-    transition: all 0.125s;
-}
-
-.phalcon-blog__projects-text a:hover {
-    border-bottom-color: transparent;
-}
-
-@media (max-width: 1023px) {
-    .phalcon-blog .container {
-        flex-wrap: wrap;
-    }
-
-    .phalcon-blog__main {
-        width: 100%;
-    }
-
-    .phalcon-blog__right {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    .phalcon-blog__item {
-        flex-wrap: wrap;
-    }
-
-    .phalcon-blog__item-img {
-        margin-bottom: 10px;
-        margin-left: 0;
-        order: -1;
-        width: 100%;
-    }
-}
-
-@media (max-width: 767px) {
-    .phalcon-blog__item-article {
-        -webkit-line-clamp: 6;
-    }
-}
-
-/* Post body */
-.phalcon-blog-detail__info {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-}
-
-.phalcon-blog-detail__date {
-    margin-bottom: 5px;
-    margin-right: 22px;
-    position: relative;
-}
-
-.phalcon-blog-detail__date:after {
-    border-radius: 50%;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: -12px;
-    top: 7px;
-    width: 2px;
-}
-
-.phalcon-blog-detail__author {
-    margin-bottom: 5px;
-    margin-right: 22px;
-    position: relative;
-}
-
-.phalcon-blog-detail__author:nth-child(2):after {
-    border-radius: 50%;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: -12px;
-    top: 7px;
-    width: 2px;
-}
-
-.phalcon-blog-detail__author:last-child:after {
-    display: none;
-}
-
-.phalcon-blog-detail {
-    margin-bottom: 35px;
-}
-
-.phalcon-blog-detail table {
-    margin-bottom: 15px;
-    margin-top: 10px;
-    max-width: 100%;
-    overflow: auto;
-    table-layout: fixed;
-    width: 100%;
-}
-
-.phalcon-blog-detail table thead {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 23px;
-}
-
-.phalcon-blog-detail table td {
-    border: 1px solid;
-    min-width: 150px;
-    padding: 8px 14px;
-}
-
-.phalcon-blog-detail blockquote {
-    margin: 0;
-}
-
-.phalcon-blog-detail h1,
-.phalcon-blog-detail h2 {
-    font-size: 28px;
-    margin: 0;
-}
-
-.phalcon-blog-detail h3 {
-    font-size: 25px;
-    line-height: 36px;
-    margin: 12px 0;
-}
-
-.phalcon-blog-detail h4 {
-    font-size: 18px;
-    margin: 6px 0;
-}
-
-.phalcon-blog-detail iframe {
-    max-width: 100%;
-}
-
-.phalcon-blog-detail img {
-    margin-bottom: 10px;
-    max-width: 100%;
-}
-
-.phalcon-blog-detail p {
-    font-size: 16px;
-    line-height: 23px;
-    margin: 0 0 10px;
-}
-
-.phalcon-blog-detail a {
-    border-bottom: 1px solid;
-    font-size: 16px;
-    line-height: 23px;
-    transition: all 0.125s;
-}
-
-.phalcon-blog-detail a:hover {
-    border-bottom-color: transparent;
-}
-
-.phalcon-blog-detail pre {
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 0;
-    margin-bottom: 20px;
-    margin-top: 0;
-    overflow-y: hidden;
-    word-break: break-all;
-    word-wrap: break-word;
-}
-
-.phalcon-blog-detail pre code {
-    word-break: normal;
-    word-wrap: normal;
-}
-
-/*
- * Mermaid writes the labels of a diagram as HTML p elements. The text rules
- * of the post must not reach them: Mermaid sets the size of each label for
- * its own font, and the diagram gives the colors of its text.
- */
-.phalcon-blog-detail pre.mermaid p {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-
-.phalcon-blog-detail code {
-    font-weight: 400;
-    line-height: 21px;
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word;
-    font-size: 14px;
-}
-
-.phalcon-blog-detail ul {
-    margin-bottom: 25px;
-    margin-top: 10px;
-    max-width: 100%;
-    overflow: hidden;
-    padding-left: 30px;
-}
-
-.phalcon-blog-detail ul li {
-    font-size: 16px;
-    line-height: 23px;
-    list-style-type: disc;
-    margin-bottom: 8px;
-    max-width: 100%;
-    word-break: break-all;
-    word-wrap: break-word;
-}
-
-.phalcon-blog-detail ol {
-    margin: 10px 0 25px;
-    max-width: 100%;
-    padding-left: 20px;
-}
-
-.phalcon-blog-detail ol li {
-    font-size: 16px;
-    line-height: 23px;
-    margin-bottom: 8px;
-    max-width: 100%;
-}
-
-.phalcon-blog-detail .phalcon-blog-detail__author a {
-    font-size: 12px;
-    line-height: 12px;
-}
-
-.phalcon-blog-detail .headline {
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .phalcon-blog-detail table {
-        display: block;
-    }
-}
-
-/* Page */
-body {
-    display: flex;
-    flex-direction: column;
-    min-width: 320px;
-}
-
-html,
-body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    height: 100%;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
-/* Every element: the nav and the footer themselves too. */
-:where(:not(.ph-nav, .ph-nav *, .ph-footer, .ph-footer *)) {
-    -webkit-tap-highlight-color: transparent;
-    outline: 0;
-}
-
-.alert {
-    font-weight: normal;
-}
-
-/* iOS sends click events only to an element with a pointer cursor. */
-@supports (-webkit-overflow-scrolling: touch) {
-    body {
-        cursor: pointer;
-    }
-}
-
-.tag-button {
-    display: inline-block;
-    font-weight: 700;
-    line-height: 23px;
-    margin-bottom: 13px;
-    padding: 5px 12px;
-    transition: all 0.125s;
-}
-
-.pagination a {
-    border-bottom: 1px solid var(--nd-accent);
-    line-height: 23px;
-    transition: all 0.125s;
-}
-
-.pagination a:hover {
-    border-bottom-color: transparent;
-}
-
-@media (max-width: 1023px) {
-    .pagination {
-        margin-bottom: 35px;
-    }
-}
-
-.phalcon-blog-detail p img {
-    margin-bottom: 0;
-}
-
-/* ========================================================= blog rules */
-
-/* The sidebar sponsors block (Sponsors.astro): a logo grid and a name list. */
-.phalcon-blog__sponsors-section {
-    margin-top: 1.25rem;
-}
-
-.phalcon-blog__sponsors-heading {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.phalcon-blog__sponsors-logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-}
-
-.phalcon-blog__sponsors-logo {
-    flex: 1 1 calc(50% - 0.25rem);
-    min-width: 5.5rem;
-}
-
-.phalcon-blog__sponsors-logo-link {
-    align-items: center;
-    border: 1px solid var(--nd-border-strong);
-    border-radius: 6px;
-    display: flex;
-    height: 3.25rem;
-    justify-content: center;
-    padding: 0.4rem;
-}
-
-.phalcon-blog__sponsors-logo-img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-@media screen and (max-width: 1023px) {
-    .phalcon-blog__item-img img {
-        object-fit: contain;
-    }
-}
-
-.phalcon-blog__item-img img {
-    height: auto;
-    max-width: 100%;
-}
-
-.phalcon-blog__last-article .phalcon-blog__item-img {
-    height: auto;
-}
-
-/* The list card image box uses the banner ratio (1200 x 444), so the full banner shows. */
-.phalcon-blog__items .phalcon-blog__item-img {
-    align-self: flex-start;
-    aspect-ratio: 1200 / 444;
-    height: auto;
-}
-
-.phalcon-blog__items .phalcon-blog__item-img img {
-    height: 100%;
-    object-fit: cover;
-}
-
-@media screen and (min-width: 1024px) {
-    .phalcon-blog__items .phalcon-blog__item-img {
-        width: 320px;
-    }
-}
-
-.phalcon-blog-detail code {
-    font-family: var(--nd-font-mono);
-}
-
-/* ======================================================== the design */
-
-/* ---------------------------------------------------------------- page */
-
-body,
-.phalcon-blog,
-.phalcon-blog-detail,
-.phalcon-blog-detail p,
-.phalcon-blog-detail h1,
-.phalcon-blog-detail h2,
-.phalcon-blog-detail h3,
-.phalcon-blog-detail h4,
-.phalcon-blog__item-title,
-.phalcon-blog__main-title,
-.alert,
-.tag-button {
-    font-family: var(--nd-font-sans);
-}
-
-body,
-.phalcon-blog {
-    background-color: var(--nd-bg);
-    color: var(--nd-text);
-}
-
-.phalcon-blog a {
-    color: var(--nd-accent);
-}
-
-html.dark .phalcon-blog a:hover,
-.phalcon-blog a:hover {
-    color: var(--nd-accent-hover);
-}
-
-/* -------------------------------------------------------------- chrome */
-
-/*
- * Keep the header at the top of the viewport. A sticky element stays inside
- * its parent. The layout rules set `height: 100%` on body, so the header
- * would scroll away after the first screen. Body grows with its content here.
- */
-body {
-    height: auto;
-    min-height: 100%;
-}
-
-.header-sticky {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-/* --------------------------------------------------------- post cards */
-
-html.dark .phalcon-blog__main-title,
-.phalcon-blog__main-title {
-    color: var(--nd-kicker);
-    font-family: var(--nd-font-mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.24em;
-}
-
-.phalcon-blog__item {
-    background: var(--nd-surface);
-    border: 1px solid var(--nd-border);
-    border-radius: 5px;
-    margin-bottom: 18px;
-    padding: 22px;
-}
-
-.phalcon-blog__last-article .phalcon-blog__item {
-    border-left: 3px solid var(--nd-accent);
-}
-
-.phalcon-blog__item-title {
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-}
-
-html.dark .phalcon-blog__item-title a,
-.phalcon-blog__item-title a {
-    color: var(--nd-heading);
-}
-
-html.dark .phalcon-blog__item-title a:hover,
-.phalcon-blog__item-title a:hover {
-    color: var(--nd-accent);
-}
-
-.phalcon-blog__item-info,
-.phalcon-blog__item-date,
-.phalcon-blog__item-author {
-    color: var(--nd-faint);
-    font-family: var(--nd-font-mono);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-}
-
-.phalcon-blog__item-date:after {
-    background-color: var(--nd-faint);
-}
-
-.phalcon-blog__item-article {
-    color: var(--nd-muted);
-}
-
-.phalcon-blog__item-read-more {
-    border-bottom: 0;
-    color: var(--nd-accent);
-    font-family: var(--nd-font-mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-}
-
-.phalcon-blog__item-read-more:after {
-    content: " \2192";
-}
-
-.phalcon-blog__item-read-more:hover {
-    color: var(--nd-accent-hover);
-}
-
-.phalcon-blog__item-img img {
-    border-radius: 4px;
-}
-
-/* ------------------------------------------------------------ sidebar */
-
-.phalcon-blog__right-item {
-    background: var(--nd-surface);
-    border: 1px solid var(--nd-border);
-    border-radius: 5px;
-    padding: 14px;
-}
-
-html.dark .phalcon-blog__title,
-.phalcon-blog__title {
-    color: var(--nd-kicker);
-    font-family: var(--nd-font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-/*
- * The mono face is wider per character than the Titillium it replaces, so the
- * live sizes — 14px name, 10px count — wrap the 350px sidebar list to one tag
- * per row. Smaller type and tighter gaps bring the pill width back to about
- * what the live blog shows.
- */
-.phalcon-blog .phalcon-blog__tags-items .phalcon-blog__tags-item {
-    border: 1px solid var(--nd-border-strong);
-    border-radius: 3px;
-    color: var(--nd-muted);
-    font-family: var(--nd-font-mono);
-    font-size: 10px;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    padding: 4px 9px;
-}
-
-.phalcon-blog .phalcon-blog__tags-items .phalcon-blog__tags-item:hover {
-    border-color: var(--nd-accent);
-    color: var(--nd-accent);
-}
-
-.phalcon-blog__tags-item span:first-child {
-    font-size: 11px;
-    margin-right: 4px;
-}
-
-html.dark .phalcon-blog__projects-text,
-.phalcon-blog__projects-text {
-    color: var(--nd-muted);
-}
-
-/* --------------------------------------------------------- post body */
-
-.phalcon-blog-detail h1,
-.phalcon-blog-detail h2,
-.phalcon-blog-detail h3,
-.phalcon-blog-detail h4 {
-    color: var(--nd-heading);
-    letter-spacing: -0.02em;
-}
-
-.phalcon-blog-detail h2.headline {
-    font-size: 40px;
-    line-height: 1.06;
-}
-
-.phalcon-blog-detail__info {
-    color: var(--nd-faint);
-    font-family: var(--nd-font-mono);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-}
-
-.phalcon-blog-detail__date:after,
-.phalcon-blog-detail__author:nth-child(2):after {
-    background-color: var(--nd-faint);
-}
-
-.phalcon-blog-detail p,
-.phalcon-blog-detail ul,
-.phalcon-blog-detail ol,
-.phalcon-blog-detail ul li,
-.phalcon-blog-detail ol li {
-    color: var(--nd-text);
-}
-
-.phalcon-blog-detail a {
-    border-bottom-color: var(--nd-accent);
-    color: var(--nd-accent);
-}
-
-/*
- * Inline code only. `pre > code` must not match. `code` is an inline element,
- * so a border and side padding draw a box around each wrapped line inside a
- * Shiki block and indent the first line of it.
- */
-.phalcon-blog-detail *:not(pre) > code {
-    background-color: var(--nd-surface);
-    border: 1px solid var(--nd-border-strong);
-    border-radius: 3px;
-    color: var(--nd-accent);
-    padding: 1px 5px;
-}
-
-.phalcon-blog-detail table td {
-    border-color: var(--nd-border-strong);
-}
-
-.tag-button {
-    border: 1px solid var(--nd-border-strong);
-    border-radius: 3px;
-    color: var(--nd-heading);
-    font-family: var(--nd-font-mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-}
-
-.tag-button:hover {
-    background-color: var(--nd-accent);
-    color: var(--ph-ink-950);
-}
-
-/* The selectors must beat `.phalcon-blog a`, so the links take the faint color, not the accent color. */
-.phalcon-blog .pagination .previous,
-.phalcon-blog .pagination .page_number,
-.phalcon-blog .pagination .next {
-    color: var(--nd-faint);
-    font-family: var(--nd-font-mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-}
-
-.phalcon-blog .pagination a:hover {
-    color: var(--nd-accent-hover);
-}
-
-/* ------------------------------------------------------ code blocks */
-
-/*
- * Code blocks use the Phalcon code theme (src/code-theme.json, a copy of
- * phalcon/css/code-theme.json in phalcon/assets): GitHub's rules, with a
- * --code-<role> variable for each color. Here the variables take the syntax
- * tokens of the page tone.
- */
-.astro-code {
-    --code-bg: var(--ph-light-code-bg);
-    --code-changed: var(--ph-light-syntax-changed);
-    --code-comment: var(--ph-light-syntax-comment);
-    --code-constant: var(--ph-light-syntax-constant);
-    --code-deleted: var(--ph-light-syntax-deleted);
-    --code-function: var(--ph-light-syntax-function);
-    --code-inserted: var(--ph-light-syntax-inserted);
-    --code-keyword: var(--ph-light-syntax-keyword);
-    --code-parameter: var(--ph-light-syntax-parameter);
-    --code-string: var(--ph-light-syntax-string);
-    --code-string-expression: var(--ph-light-syntax-string-expression);
-    --code-text: var(--ph-light-syntax-text);
-
-    border: 1px solid var(--nd-code-border);
-    font-family: var(--nd-font-mono);
-    padding: 18px 20px;
-}
-
-html.dark .astro-code {
-    --code-bg: var(--ph-dark-code-bg);
-    --code-changed: var(--ph-dark-syntax-changed);
-    --code-comment: var(--ph-dark-syntax-comment);
-    --code-constant: var(--ph-dark-syntax-constant);
-    --code-deleted: var(--ph-dark-syntax-deleted);
-    --code-function: var(--ph-dark-syntax-function);
-    --code-inserted: var(--ph-dark-syntax-inserted);
-    --code-keyword: var(--ph-dark-syntax-keyword);
-    --code-parameter: var(--ph-dark-syntax-parameter);
-    --code-string: var(--ph-dark-syntax-string);
-    --code-string-expression: var(--ph-dark-syntax-string-expression);
-    --code-text: var(--ph-dark-syntax-text);
-}
-
-/*
- * The layout rules `.phalcon-blog-detail pre` and `.phalcon-blog-detail code`
- * set their own corners, size and line height. These selectors are more
- * specific, so the values of the design apply. The code element takes the
- * values of its block.
- */
-.phalcon-blog-detail pre.astro-code {
-    border-radius: 6px;
-    font-size: 13.5px;
-    line-height: 1.85;
-}
-
-.phalcon-blog-detail pre.astro-code > code {
-    font-size: inherit;
-    line-height: inherit;
-}
-
-/* --------------------------------------------------------- callouts */
-
-/*
- * The alert callouts (Callout.astro), drawn as the redesign's admonition
- * card: a 3px left bar, a mono uppercase label, and the status background.
- * The label is not in the markup, so it comes from the class.
- */
-.alert {
-    border: 1px solid var(--nd-border-strong);
-    border-left-width: 3px;
-    border-radius: 0 4px 4px 0;
-    margin-bottom: 20px;
-    padding: 16px 22px;
-}
-
-.alert:before {
-    display: block;
-    font-family: var(--nd-font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.alert p {
-    margin-bottom: 0;
-}
-
-/* `.phalcon-blog-detail blockquote` sets no block margins, so a callout needs its own. */
-.phalcon-blog-detail blockquote.alert {
-    margin-bottom: 24px;
-    margin-top: 24px;
-}
-
-.alert-info {
-    background: var(--nd-info-bg);
-    border-left-color: var(--nd-info);
-}
-
-.alert-info:before {
-    color: var(--nd-info);
-    content: "Note";
-}
-
-.alert-notice {
-    background: var(--nd-success-bg);
-    border-left-color: var(--nd-success);
-}
-
-.alert-notice:before {
-    color: var(--nd-success);
-    content: "Notice";
-}
-
-.alert-warning {
-    background: var(--nd-warning-bg);
-    border-left-color: var(--nd-warning);
-}
-
-.alert-warning:before {
-    color: var(--nd-warning);
-    content: "Warning";
-}
-
-.alert-danger {
-    background: var(--nd-danger-bg);
-    border-left-color: var(--nd-danger);
-}
-
-.alert-danger:before {
-    color: var(--nd-danger);
-    content: "Important";
-}
-
-/* ------------------------------------------------------- long words */
-
-/*
- * A word with no space in it — a class name, a URL, a hash — is as wide as
- * it is long, and the article body and the post cards sit in flex items that
- * cannot go below the width of their content. One such word therefore makes
- * the whole page wider than a phone screen, which mobile Safari answers by
- * shrinking the page to fit.
- *
- * `anywhere` counts in that minimum width, which `break-word` does not, so it
- * is the value that lets the column shrink. It breaks a word only when the
- * word does not fit, so text that fits is unchanged. Code blocks are not
- * touched: `.phalcon-blog-detail pre` in the layout rules sets its own
- * `word-break` and `word-wrap`, and a value set on the element beats the one
- * it would inherit.
- */
-.phalcon-blog-detail,
-.phalcon-blog__item-title {
-    overflow-wrap: anywhere;
 }
