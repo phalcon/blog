@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
-import { footerProblems, missingTokens } from '../src/lib/design-checks.mjs';
+import { footerProblems, missingTokens, sidebarProblems } from '../src/lib/design-checks.mjs';
 import { cphalconStars } from '../src/lib/stars.mjs';
 import { sourceFiles, usedBySite } from './token-sources.mjs';
 
@@ -17,6 +17,7 @@ test('the source scan covers the stylesheet, components, layout and pages, not t
         assert.ok(files.includes(file), file);
     }
     assert.ok(files.includes('public/css/common.css'), 'the tokens of the shared nav and footer count as used');
+    assert.ok(files.includes('public/css/sidebar.css'), 'the tokens of the shared sidebar count as used');
 
     assert.ok(!files.includes('public/css/tokens.css'));
     assert.ok(!files.some((file) => file.endsWith('.test.mjs') || file.startsWith('src/content/')));
@@ -38,11 +39,12 @@ test('the blog stylesheet is public/css/site.css, and no file names the old name
 });
 
 test('no source types a color', () => {
-    // Colors come from public/css/tokens.css (phalcon/assets), so a palette change is made once. The copy of
-    // common.css is not this site's source: phalcon/assets checks its colors, and its comments can name colors. A
-    // data URI hides a hex color as %23…, and an SVG paint attribute can type one (fill="white").
+    // Colors come from public/css/tokens.css (phalcon/assets), so a palette change is made once. The copies of
+    // common.css and of sidebar.css are not this site's source: phalcon/assets checks their colors, and their
+    // comments can name colors. A data URI hides a hex color as %23…, and an SVG paint attribute can type one
+    // (fill="white").
     const color = /#[0-9a-fA-F]{3,8}\b|rgba?\(|%23[0-9a-fA-F]{3,8}\b|\b(?:fill|stroke|stop-color|flood-color|lighting-color)=["'](?!currentColor|none|var\(|url\(|inherit|transparent)[^"']+["']/g;
-    const typed = sourceFiles().filter((file) => file !== 'public/css/common.css').flatMap((file) =>
+    const typed = sourceFiles().filter((file) => !['public/css/common.css', 'public/css/sidebar.css'].includes(file)).flatMap((file) =>
         readFileSync(new URL(file, root), 'utf8')
             .split('\n')
             .flatMap((line, index) => [...line.matchAll(color)].map((match) => `${file}:${index + 1} ${match[0]}`))
@@ -106,6 +108,8 @@ test('the refresh script copies the shared files and checks each one', () => {
         ['public/css/tokens.css', 'css/tokens.css'],
         ['src/code-theme.json', 'css/code-theme.json'],
         ['public/css/common.css', 'css/common.css'],
+        ['public/css/sidebar.css', 'css/sidebar.css'],
+        ['src/sidebar.json', 'sidebar.json'],
         ['src/footer.json', 'footer.json'],
         ['src/repositories.json', 'repositories.json'],
     ];
@@ -118,16 +122,104 @@ test('the refresh script copies the shared files and checks each one', () => {
 
     assert.ok(script.includes("problems: (text) => commonCssProblems(text, readFileSync('public/css/tokens.css', 'utf8')),"));
     assert.ok(script.includes('problems: footerProblems,'));
-    // The tokens come first: the check of common.css must read the new tokens copy.
+    assert.ok(script.includes("problems: (text) => sidebarCssProblems(text, readFileSync('public/css/tokens.css', 'utf8')),"));
+    assert.ok(script.includes('problems: sidebarProblems,'));
+    // The tokens come first: the checks of common.css and sidebar.css must read the new tokens copy.
     assert.ok(
-        script.indexOf("copy: 'public/css/tokens.css'") < script.indexOf("copy: 'public/css/common.css'"),
-        'the tokens must come before common.css',
+        script.indexOf("copy: 'public/css/tokens.css'")
+            < Math.min(script.indexOf("copy: 'public/css/common.css'"), script.indexOf("copy: 'public/css/sidebar.css'")),
+        'the tokens must come before common.css and sidebar.css',
     );
 });
 
 test('the committed footer.json has no problems', () => {
     // Footer.astro reads this copy at build time.
     assert.deepEqual(footerProblems(readFileSync(new URL('src/footer.json', root), 'utf8')), []);
+});
+
+test('the committed sidebar.json has no problems', () => {
+    // Sidebar.astro reads this copy at build time.
+    assert.deepEqual(sidebarProblems(readFileSync(new URL('src/sidebar.json', root), 'utf8')), []);
+});
+
+test('sidebar.css has a rule for every ph-side class that the sidebar uses', () => {
+    // A class that phalcon/assets renames would leave the sidebar with no style. The tests run after the refresh.
+    // The tags box of the blog is on the shared box too.
+    const css = readFileSync(new URL('public/css/sidebar.css', root), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+    const used = ['src/components/Sidebar.astro', 'src/components/Sponsors.astro', 'src/components/SidebarTags.astro']
+        .flatMap((file) => [...readFileSync(new URL(file, root), 'utf8').matchAll(/class="([^"]*)"/g)])
+        .flatMap((match) => match[1].split(/\s+/))
+        .filter((name) => name.startsWith('ph-side'));
+    const missing = [...new Set(used)].filter((name) => !new RegExp(`\\.${name}(?![\\w-])`).test(css));
+
+    assert.ok(used.length >= 10, 'the sidebar uses the shared classes');
+    assert.deepEqual(missing, []);
+});
+
+test('no source names a class of the old shared sheet (phalcon-blog)', () => {
+    // The page classes have neutral names, as on the license site, and the sidebar has the shared classes (the
+    // sites roadmap, Open Item 15).
+    assert.deepEqual(sourceFiles().filter((file) => readFileSync(new URL(file, root), 'utf8').includes('phalcon-blog')), []);
+});
+
+test('site.css has one rule for each selector in each context', () => {
+    // The sites roadmap, Open Item 12: each element of a component has one rule, then its states and its width rules,
+    // so that a change to it is made in one place. A context is the at-rules around a rule. A tone selector
+    // (html.dark …) next to its own light selector in a list counts once.
+    const css = readFileSync(new URL('public/css/site.css', root), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+    const seen = new Map();
+    // The members of a selector list: a comma inside parentheses (:where(a, b)) does not split it.
+    const members = (head) => {
+        const list = [''];
+        let depth = 0;
+
+        for (const char of head) {
+            depth += char === '(' ? 1 : char === ')' ? -1 : 0;
+
+            if (char === ',' && depth === 0) {
+                list.push('');
+            } else {
+                list[list.length - 1] += char;
+            }
+        }
+
+        return list.map((selector) => selector.trim());
+    };
+    const walk = (text, context) => {
+        let depth = 0;
+        let start = 0;
+        let head = '';
+
+        for (let index = 0; index < text.length; index += 1) {
+            if (text[index] === '{') {
+                if (depth === 0) {
+                    head = text.slice(start, index).trim().replace(/\s+/g, ' ');
+                    start = index + 1;
+                }
+
+                depth += 1;
+            } else if (text[index] === '}') {
+                depth -= 1;
+
+                if (depth === 0) {
+                    if (head.startsWith('@')) {
+                        walk(text.slice(start, index), `${context}${head} `);
+                    } else {
+                        const list = members(head);
+
+                        list.filter((selector) => !(selector.startsWith('html.dark ') && list.includes(selector.slice(10))))
+                            .forEach((selector) => seen.set(`${context}${selector}`, (seen.get(`${context}${selector}`) ?? 0) + 1));
+                    }
+
+                    start = index + 1;
+                }
+            }
+        }
+    };
+
+    walk(css, '');
+    assert.ok(seen.size > 100, 'the walk finds the rules');
+    assert.deepEqual([...seen].filter(([, count]) => count > 1).map(([key]) => key), []);
 });
 
 test('common.css has a rule for every ph- class that the nav and the footer use', () => {

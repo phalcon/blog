@@ -2,10 +2,12 @@
  * Updates the shared files from phalcon/assets: public/css/tokens.css (from
  * phalcon/css/tokens.css), src/code-theme.json (from
  * phalcon/css/code-theme.json), public/css/common.css (the shared nav and
- * footer, from phalcon/css/common.css), src/footer.json (the footer links,
- * from phalcon/footer.json) and src/repositories.json (the GitHub stars of
- * the nav, from phalcon/repositories.json). The CI workflow runs it before
- * the tests and the build. It does not commit: the committed copies are the
+ * footer, from phalcon/css/common.css), public/css/sidebar.css (the shared
+ * sidebar, from phalcon/css/sidebar.css), src/sidebar.json (its titles and
+ * text, from phalcon/sidebar.json), src/footer.json (the footer links, from
+ * phalcon/footer.json) and src/repositories.json (the GitHub stars of the
+ * nav, from phalcon/repositories.json). The CI workflow runs it before the
+ * tests and the build. It does not commit: the committed copies are the
  * default.
  *
  *   node scripts/update-tokens.mjs             download the files from assets.phalcon.io
@@ -18,7 +20,9 @@
  */
 import { readFileSync } from 'node:fs';
 
-import { codeThemeProblems, commonCssProblems, definedCodeRoles, footerProblems, tokensProblems } from '../src/lib/design-checks.mjs';
+import {
+    codeThemeProblems, commonCssProblems, definedCodeRoles, footerProblems, sidebarCssProblems, sidebarProblems, tokensProblems,
+} from '../src/lib/design-checks.mjs';
 import { fromArgument, refresh } from '../src/lib/design-refresh.mjs';
 import { cphalconStars } from '../src/lib/stars.mjs';
 import { usedBySite } from './token-sources.mjs';
@@ -41,6 +45,16 @@ await refresh({
             copy: 'public/css/common.css',
             name: 'css/common.css',
             problems: (text) => commonCssProblems(text, readFileSync('public/css/tokens.css', 'utf8')),
+        },
+        {
+            copy: 'public/css/sidebar.css',
+            name: 'css/sidebar.css',
+            problems: (text) => sidebarCssProblems(text, readFileSync('public/css/tokens.css', 'utf8')),
+        },
+        {
+            copy: 'src/sidebar.json',
+            name: 'sidebar.json',
+            problems: sidebarProblems,
         },
         {
             copy: 'src/footer.json',

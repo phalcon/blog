@@ -173,12 +173,12 @@ checks.push({
 });
 
 /*
- * Design tokens. Every page loads tokens.css, common.css and then site.css,
- * and no other stylesheet. The two stylesheets use only tokens that
+ * Design tokens. Every page loads tokens.css, common.css, sidebar.css and
+ * then site.css, and no other stylesheet. The stylesheets use only tokens that
  * tokens.css defines, and the browser bar takes its color from the tokens.
  */
 count(
-    'pages that do not load exactly tokens.css, common.css and then site.css',
+    'pages that do not load exactly tokens.css, common.css, sidebar.css and then site.css',
     measure(
         () =>
             listFiles('dist')
@@ -187,18 +187,19 @@ count(
                     const links = [...readFileSync(file, 'utf8').matchAll(/<link[^>]*rel="stylesheet"[^>]*>/g)]
                         .map((match) => /href="([^"]*)"/.exec(match[0])?.[1]);
 
-                    return links.join(' ') !== '/css/tokens.css /css/common.css /css/site.css';
+                    return links.join(' ') !== '/css/tokens.css /css/common.css /css/sidebar.css /css/site.css';
                 }).length
     ),
     0
 );
 count(
-    'tokens that site.css and common.css use and tokens.css does not define',
+    'tokens that site.css, common.css and sidebar.css use and tokens.css does not define',
     measure(
         () =>
             missingTokens(readFileSync('dist/css/tokens.css', 'utf8'), [
                 ...usedTokens(readFileSync('dist/css/site.css', 'utf8')),
                 ...usedTokens(readFileSync('dist/css/common.css', 'utf8')),
+                ...usedTokens(readFileSync('dist/css/sidebar.css', 'utf8')),
             ]).join(', ') || 'none'
     ),
     'none'
@@ -243,6 +244,18 @@ count(
     measure(() => JSON.parse(readFileSync('src/footer.json', 'utf8')).columns.flatMap((column) => column.links).length)
 );
 
+/*
+ * The shared sidebar (sidebar.css): the box of the supporters, the box of the
+ * projects text with every link of the text of src/sidebar.json, and the tags
+ * box of the blog on the shared box.
+ */
+count('sidebar boxes', measure(() => (readFileSync('dist/index.html', 'utf8').match(/<div class="ph-side__box">/g) ?? []).length), 3);
+count(
+    'links of the projects text',
+    measure(() => (/<div class="ph-side__text">([\s\S]*?)<\/div>/.exec(readFileSync('dist/index.html', 'utf8'))?.[1].match(/<a /g) ?? []).length),
+    measure(() => JSON.parse(readFileSync('src/sidebar.json', 'utf8')).projects.text.filter((part) => typeof part === 'object').length)
+);
+
 for (const path of [
     'dist/index.html',
     'dist/tags.html',
@@ -252,6 +265,7 @@ for (const path of [
     'dist/humans.txt',
     'dist/css/site.css',
     'dist/css/common.css',
+    'dist/css/sidebar.css',
     'dist/css/tokens.css',
     'dist/js/nav.js',
     'dist/post/phalcon-0-3-1-released.html',

@@ -1,0 +1,156 @@
+/*
+ * The shared sidebar of the Phalcon sites that have one (the license site
+ * first, then the assets site and the blog): the box of the supporters and
+ * the box of the projects text. Each site copies this file and tokens.css
+ * from https://assets.phalcon.io/phalcon/css/ at deploy time, and loads
+ * tokens.css too. The colors and the fonts come from the tokens. The content
+ * comes from phalcon/sidebar.json and phalcon/sponsors.json.
+ *
+ * The last line of this file must be the end comment: a site that gets a file
+ * without it takes the file as cut, and keeps its copy.
+ *
+ * Each selector starts with .ph-side (or html.dark .ph-side for the dark
+ * tone), so the file changes nothing else on a page. A site sets the dark
+ * tone with the class dark on html (the theme switcher of the sites).
+ *
+ * The markup. Each site keeps its own copy (src/components/Sidebar.astro and
+ * src/components/Sponsors.astro).
+ *
+ * <div class="ph-side__box">
+ *   <div class="ph-side__title">Supporters</div>
+ *   <div class="ph-side__group">                                (one for each group with logos)
+ *     <div class="ph-side__group-title">Sponsors</div>
+ *     <ul class="ph-side__logos">
+ *       <li class="ph-side__logo">
+ *         <a class="ph-side__logo-link" href="…"><img class="ph-side__logo-img" src="…" alt="…"></a>
+ *       </li>
+ *     </ul>
+ *   </div>
+ * </div>
+ * <div class="ph-side__box">
+ *   <div class="ph-side__title">Projects</div>
+ *   <div class="ph-side__text">We're a nonprofit … <a href="…">Phalcon</a> …</div>
+ * </div>
+ */
+
+/* ----------------------------------------------------------------- boxes */
+
+.ph-side__box {
+    background-color: var(--ph-light-surface);
+    border: 1px solid var(--ph-light-border);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--ph-light-text);
+    font-family: var(--ph-font-sans);
+    margin-bottom: 35px;
+    padding: 14px;
+}
+
+.ph-side__title {
+    color: var(--ph-light-kicker);
+    font-family: var(--ph-font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    height: 1.25rem;
+    letter-spacing: 0.14em;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------- projects text */
+
+.ph-side__text {
+    color: var(--ph-light-muted);
+    font-size: 1rem;
+    line-height: 1.4375rem;
+    overflow-wrap: anywhere;
+}
+
+.ph-side__text a {
+    border-bottom: 1px solid var(--ph-light-accent);
+    color: var(--ph-light-accent);
+    text-decoration: none;
+    transition: all 0.125s;
+}
+
+.ph-side__text a:hover {
+    border-bottom-color: transparent;
+    color: var(--ph-light-accent-hover);
+}
+
+/* ------------------------------------------------------------ supporters */
+
+.ph-side__group {
+    margin-top: 1.25rem;
+}
+
+.ph-side__group-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.ph-side__logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ph-side__logo {
+    flex: 1 1 calc(50% - 0.25rem);
+    margin: 0;
+    min-width: 5.5rem;
+    padding: 0;
+}
+
+.ph-side__logo-link {
+    align-items: center;
+    border: 1px solid var(--ph-light-border-strong);
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: flex;
+    height: 3.25rem;
+    justify-content: center;
+    padding: 0.4rem;
+}
+
+.ph-side__logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* ------------------------------------------------------------- dark tone */
+
+html.dark .ph-side__box {
+    background-color: var(--ph-dark-surface);
+    border-color: var(--ph-dark-border);
+    color: var(--ph-dark-text);
+}
+
+html.dark .ph-side__title {
+    color: var(--ph-dark-kicker);
+}
+
+html.dark .ph-side__text {
+    color: var(--ph-dark-muted);
+}
+
+html.dark .ph-side__text a {
+    border-bottom-color: var(--ph-dark-accent);
+    color: var(--ph-dark-accent);
+}
+
+html.dark .ph-side__text a:hover {
+    border-bottom-color: transparent;
+    color: var(--ph-dark-accent-hover);
+}
+
+html.dark .ph-side__logo-link {
+    border-color: var(--ph-dark-border-strong);
+}
+
+/* The end of sidebar.css. */
