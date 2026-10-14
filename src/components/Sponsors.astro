@@ -1,23 +1,24 @@
 ---
 /**
- * Sponsors — the roster shown inside the sidebar "Supporters" block.
+ * The logos of the supporters box of the shared sidebar (Sidebar.astro), with
+ * the classes of public/css/sidebar.css.
  *
- * The data comes from src/sponsors.json, refreshed from phalcon/assets by
+ * The roster comes from src/sponsors.json, refreshed from phalcon/assets by
  * the deploy workflow the way the fan art is. Imported rather than injected
  * with `set:html`: malformed JSON fails the build with a parse error, where
- * malformed HTML would render broken markup on every page.
+ * malformed HTML would render broken markup on every page. The committed copy
+ * is an empty roster on purpose: a failed download then shows no logos, which
+ * is visible, rather than a roster that is months out of date.
  *
- * The committed copy is an empty roster on purpose. A failed download then
- * renders nothing, which is visible and can be alerted on, rather than
- * quietly serving a roster that is months out of date.
- *
- * Only the logo groups render here. The roster also carries `supporter` and
- * `backer` entries; those are deliberately not shown, because the sidebar is
- * a narrow column and the name list ran to twenty-two entries. Nothing here
- * states an amount: `group` is the only signal the data carries, and the
- * labels below are the only place it is named.
+ * The groups that show, and their titles, come from src/sidebar.json. An entry
+ * without a logo cannot be shown here, so it is dropped. Nothing here states
+ * an amount: `group` is the only signal the data carries.
  */
 import data from '../sponsors.json';
+
+interface Props {
+    groups: { group: string; title: string }[];
+}
 
 interface Sponsor {
     group: string;
@@ -29,40 +30,35 @@ interface Sponsor {
     url: string;
 }
 
-const logoSections: { group: string; title: string }[] = [
-    { group: 'sponsor', title: 'Sponsors' },
-    { group: 'partner', title: 'Partners' },
-];
-
+const { groups } = Astro.props;
 const sponsors = data.sponsors as Sponsor[];
 
-/** An entry without a logo cannot be shown here, so it is dropped. */
 const inGroup = (group: string): Sponsor[] =>
     sponsors
         .filter((sponsor) => sponsor.group === group && null !== sponsor.logo)
         .sort((a, b) => a.name.localeCompare(b.name));
 ---
 
-{logoSections.map(({ group, title }) => {
+{groups.map(({ group, title }) => {
     const entries = inGroup(group);
 
     return entries.length > 0 && (
-        <div class="phalcon-blog__sponsors-section">
-            <div class="phalcon-blog__sponsors-heading">{title}</div>
-            <ul class="phalcon-blog__sponsors-logos">
+        <div class="ph-side__group">
+            <div class="ph-side__group-title">{title}</div>
+            <ul class="ph-side__logos">
                 {entries.map((sponsor) => (
-                    <li class="phalcon-blog__sponsors-logo">
+                    <li class="ph-side__logo">
                         <a
                             href={sponsor.url}
                             rel="noopener sponsored"
                             target="_blank"
-                            class="phalcon-blog__sponsors-logo-link"
+                            class="ph-side__logo-link"
                         >
                             <img
                                 src={sponsor.logo}
                                 alt={sponsor.name}
                                 loading="lazy"
-                                class="phalcon-blog__sponsors-logo-img"
+                                class="ph-side__logo-img"
                             />
                         </a>
                     </li>

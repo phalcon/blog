@@ -34,13 +34,13 @@ const { allTags, matched, tag }: Props = Astro.props;
 ---
 
 <Base title={tag}>
-    <div id="articles" class="phalcon-blog-detail">
+    <div id="articles" class="prose">
         <h2 itemprop="name headline" class="headline">{tag}</h2>
         <p>{matched.length} post(s)</p>
-        <div class="phalcon-blog__items">
+        <div class="posts">
             {matched.map((post) => <PostCard post={post} />)}
         </div>
-        <div class="phalcon-blog__tags-items">
+        <div class="tags">
             {allTags.map((item) => (
                 <TagPill count={item.count} tag={item.tag} />
             ))}

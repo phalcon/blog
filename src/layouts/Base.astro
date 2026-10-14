@@ -42,12 +42,12 @@ const { canonical, description, image, publishedAt, title } = Astro.props;
     <Header />
 </div>
 
-<div class="phalcon-blog">
-    <div class="container">
-        <div class="phalcon-blog__main">
+<div class="page">
+    <div class="page__inner">
+        <div class="page__main">
             <slot />
         </div>
-        <div class="phalcon-blog__right" data-pagefind-ignore>
+        <div class="page__side" data-pagefind-ignore>
             <slot name="sidebar" />
         </div>
     </div>

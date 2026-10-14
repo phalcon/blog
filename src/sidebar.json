@@ -1,0 +1,23 @@
+{
+    "supporters": {
+        "title": "Supporters",
+        "groups": [
+            { "group": "sponsor", "title": "Sponsors" },
+            { "group": "partner", "title": "Partners" }
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "text": [
+            "We're a nonprofit organization that creates solutions for web developers. Our products are ",
+            { "label": "Phalcon", "href": "https://phalcon.io" },
+            ", ",
+            { "label": "Zephir", "href": "https://zephir-lang.com" },
+            " and ",
+            { "label": "others", "href": "https://github.com/phalcon?type=source" },
+            ". If you would like to help us stay free and open, please consider ",
+            { "label": "supporting us", "href": "https://phalcon.io/fund" },
+            "."
+        ]
+    }
+}

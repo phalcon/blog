@@ -32,16 +32,16 @@ const fallbackImage = `${site.url}/assets/site/phalcon-logo-320x180.png`;
 const dateAttrs = { content: formatIsoDate(post.data.date) };
 ---
 
-<div class="phalcon-blog__item" itemscope itemtype="http://schema.org/Article">
-    <div class="phalcon-blog__item-content">
-        <div class="phalcon-blog__item-title" itemprop="name headline">
+<div class="post-card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-card__content">
+        <div class="post-card__title" itemprop="name headline">
             <a href={url}>{post.data.title}</a>
         </div>
-        <div class="phalcon-blog__item-info">
-            <div class="phalcon-blog__item-date" itemprop="datePublished" {...dateAttrs}>
+        <div class="post-card__info">
+            <div class="post-card__date" itemprop="datePublished" {...dateAttrs}>
                 {formatDate(post.data.date)}
             </div>
-            <div class="phalcon-blog__item-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <div class="post-card__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
                 {featured ? (
                     <span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span>
                 ) : (
@@ -49,15 +49,15 @@ const dateAttrs = { content: formatIsoDate(post.data.date) };
                 )}
             </div>
         </div>
-        <div class="phalcon-blog__item-article" itemprop="articleSection">
+        <div class="post-card__excerpt" itemprop="articleSection">
             {excerpt(post.body)}
         </div>
-        <a href={url} class="phalcon-blog__item-read-more" itemprop="url">Read More</a>
+        <a href={url} class="read-more" itemprop="url">Read More</a>
     </div>
     {post.data.image ? (
         <Fragment>
             <meta itemprop="image" content={post.data.image} />
-            <a href={url} class="phalcon-blog__item-img">
+            <a href={url} class="post-card__img">
                 <img src={post.data.image} alt={post.data.title} />
             </a>
         </Fragment>

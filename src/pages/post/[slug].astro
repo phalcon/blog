@@ -46,32 +46,32 @@ const dateAttrs = { content: formatIsoDate(post.data.date) };
     publishedAt={post.data.date}
     title={post.data.title}
 >
-    <div id="phalcon-blog-detail" class="phalcon-blog-detail" itemscope itemtype="http://schema.org/Article">
-        <h2 id="phalcon-blog-detail-headline" itemprop="name headline" class="headline">
+    <div id="post" class="prose" itemscope itemtype="http://schema.org/Article">
+        <h2 id="post-headline" itemprop="name headline" class="headline">
             {post.data.title}
         </h2>
-        <div class="phalcon-blog-detail__info">
-            <div id="phalcon-blog-detail__date"
-                 class="phalcon-blog-detail__date"
+        <div class="post__info">
+            <div id="post__date"
+                 class="post__date"
                  itemprop="datePublished"
                  data-pagefind-meta="date"
                  {...dateAttrs}>
                 {formatDate(post.data.date)}
             </div>
-            <div id="phalcon-blog-detail__author"
-                 class="phalcon-blog-detail__author"
+            <div id="post__author"
+                 class="post__author"
                  itemprop="author"
                  itemscope
                  itemtype="http://schema.org/Person">
                 <span itemprop="name">Phalcon Team (<a href="https://github.com/niden">niden</a>)</span>
             </div>
-            <div class="phalcon-blog-detail__author">
+            <div class="post__author">
                 Read time: {readTime}
             </div>
         </div>
-        <div id="phalcon-blog-detail__body" itemprop="articleBody" data-pagefind-body>
+        <div id="post__body" itemprop="articleBody" data-pagefind-body>
             {post.data.image && (
-                <div id="phalcon-blog-detail__image">
+                <div id="post__image">
                     <img src={post.data.image} alt={post.data.title} itemprop="image" />
                 </div>
             )}
@@ -80,9 +80,9 @@ const dateAttrs = { content: formatIsoDate(post.data.date) };
                 <PostFooter />
             </div>
         </div>
-        <div class="phalcon-blog__tags-items">
+        <div class="tags">
             {post.data.tags.map((tag) => (
-                <a href={`/tags#${tagSlug(tag)}`} class="phalcon-blog__tags-item">
+                <a href={`/tags#${tagSlug(tag)}`} class="tags__item">
                     <span>{tag}</span>
                 </a>
             ))}

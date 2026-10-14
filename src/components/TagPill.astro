@@ -9,6 +9,6 @@ interface Props {
 const { count, tag } = Astro.props;
 ---
 
-<a class="phalcon-blog__tags-item" href={tagUrl(tag)}>
+<a class="tags__item" href={tagUrl(tag)}>
     <span>{tag}</span>{count === undefined ? null : <span>({count})</span>}
 </a>

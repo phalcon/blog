@@ -83,7 +83,7 @@ const stars = formatStars(cphalconStars(repositories));
                         aria-label="Search"
                         autocomplete="off"
                     >
-                    <div id="header-search-results" class="phalcon-blog-detail" hidden>
+                    <div id="header-search-results" class="prose" hidden>
                         <div id="articles"></div>
                     </div>
                 </div>
@@ -264,13 +264,13 @@ const stars = formatStars(cphalconStars(repositories));
             const href = servedPath(data.url);
 
             return `
-            <div class="phalcon-blog__item">
-                <div class="phalcon-blog__item-content">
-                    <div class="phalcon-blog__item-title">
+            <div class="post-card">
+                <div class="post-card__content">
+                    <div class="post-card__title">
                         <a href="${href}">${data.meta.title ?? 'Untitled'}</a>
                     </div>
-                    ${data.meta.date ? `<div class="phalcon-blog__item-date">${data.meta.date}</div>` : ''}
-                    <div class="phalcon-blog__item-article">${data.excerpt}</div>
+                    ${data.meta.date ? `<div class="post-card__date">${data.meta.date}</div>` : ''}
+                    <div class="post-card__excerpt">${data.excerpt}</div>
                 </div>
             </div>
         `;

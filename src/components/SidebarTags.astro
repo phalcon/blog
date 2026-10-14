@@ -32,15 +32,15 @@ const { tags } = Astro.props;
 const shown = tags.filter((item) => !isVersionSeries(item.tag)).slice(0, LIMIT);
 ---
 
-<div class="phalcon-blog__right-item phalcon-blog__tags">
-    <div class="phalcon-blog__title">Tags</div>
-    <div class="phalcon-blog__tags-items">
+<div class="ph-side__box">
+    <div class="ph-side__title">Tags</div>
+    <div class="tags">
         {shown.map((item) => (
-            <a href={`/tags#${tagSlug(item.tag)}`} class="phalcon-blog__tags-item">
+            <a href={`/tags#${tagSlug(item.tag)}`} class="tags__item">
                 <span>{item.tag}</span>
                 <span>({item.count})</span>
             </a>
         ))}
     </div>
-    <a href="/tags" class="phalcon-blog__item-read-more">Show More</a>
+    <a href="/tags" class="read-more">Show More</a>
 </div>

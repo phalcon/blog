@@ -18,15 +18,15 @@ const items = rest.slice(0, perPage - 1);
 ---
 
 <Base>
-    <div class="phalcon-blog__last-article">
+    <div class="posts__latest">
         <PostCard post={featuredPost} featured />
     </div>
 
-    <div class="phalcon-blog__main-title">
+    <div class="page__title">
         LATEST POSTS
     </div>
 
-    <div class="phalcon-blog__items">
+    <div class="posts">
         {items.map((post) => <PostCard post={post} />)}
     </div>
 

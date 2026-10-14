@@ -16,7 +16,7 @@ const sorted = [...tags].sort((a, b) => a.tag.localeCompare(b.tag));
 ---
 
 <Base title="Tags">
-    <div id="articles" class="phalcon-blog-detail">
+    <div id="articles" class="prose">
         <a href="/tags">
             <h2 itemprop="name headline" class="headline">Tags</h2>
         </a>
@@ -39,7 +39,7 @@ const sorted = [...tags].sort((a, b) => a.tag.localeCompare(b.tag));
                 </Fragment>
             ))}
         </div>
-        <a href="/tag" class="phalcon-blog__item-read-more">Browse Tags by Post Count</a>
+        <a href="/tag" class="read-more">Browse Tags by Post Count</a>
     </div>
 
     <Sidebar slot="sidebar" tags={tags} />

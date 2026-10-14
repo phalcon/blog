@@ -1,8 +1,9 @@
 /**
  * The checks of the shared files of the Phalcon sites: the design tokens
  * (phalcon/css/tokens.css), the code theme (phalcon/css/code-theme.json), the
- * shared header and footer (phalcon/css/common.css) and the footer links
- * (phalcon/footer.json). phalcon/assets serves this file at
+ * shared header and footer (phalcon/css/common.css), the footer links
+ * (phalcon/footer.json) and the shared sidebar (phalcon/css/sidebar.css and
+ * phalcon/sidebar.json). phalcon/assets serves this file at
  * https://assets.phalcon.io/phalcon/tools/design-checks.mjs. Each site keeps a
  * copy in src/lib/, and its deploy gets the file again first. Do not change a
  * copy: change phalcon/tools/design-checks.mjs in phalcon/assets.
@@ -17,6 +18,12 @@ const COMMON_END = '/* The end of common.css. */';
 
 /** The top-level keys of footer.json. */
 const FOOTER_KEYS = ['columns', 'copyright', 'socials', 'tagline'];
+
+/** The last line of sidebar.css. A file without it is cut. */
+const SIDEBAR_END = '/* The end of sidebar.css. */';
+
+/** The top-level keys of sidebar.json. */
+const SIDEBAR_KEYS = ['projects', 'supporters'];
 
 /** The top-level keys of a code theme. Shiki also reads bg, fg and settings, in place of colors and tokenColors. */
 const THEME_KEYS = ['colors', 'name', 'tokenColors', 'type'];
@@ -34,6 +41,38 @@ const isToken = (declaration) => {
     const match = /^--ph-[a-z0-9-]+\s*:\s*([\s\S]+)$/.exec(declaration);
 
     return match !== null && TOKEN_VALUES.some((value) => value.test(match[1].replace(/\s+/g, ' ')));
+};
+
+/**
+ * The problems of a shared stylesheet (common.css, sidebar.css) for a site: it
+ * must be a stylesheet (no HTML), have rules for each of the classes, be whole
+ * (each rule closed, and its last line `end`), and the site's tokens file must
+ * define every token that it uses. It checks that a downloaded copy can replace
+ * the committed one; the content rules of the source file (the selectors, the
+ * colors, the at-rules) are in sharedCssProblems() of scripts/tokens/functions.php.
+ */
+const sharedCssProblems = (css, tokens, classes, end) => {
+    const text = withoutComments(css).trim();
+
+    // A server that does not have the file answers with an HTML page. A < in a rule (a media range) is valid CSS.
+    if (text === '' || /^<|<(?:!doctype|html|head|body)\b/i.test(text)) {
+        return ['the file is not a stylesheet'];
+    }
+
+    if (classes.some((name) => !new RegExp(`\\.${name}[\\s,{]`).test(text))) {
+        return [`the file has no rules for ${classes.map((name) => `.${name}`).join(' and ')}`];
+    }
+
+    // A file that is cut right after a rule has whole rules, but not the last line.
+    if (
+        (text.match(/\{/g) ?? []).length !== (text.match(/\}/g) ?? []).length
+        || !text.endsWith('}')
+        || !css.trimEnd().endsWith(end)
+    ) {
+        return ['the file is not whole'];
+    }
+
+    return missingTokens(tokens, usedTokens(css)).map((name) => `${name} is not in the tokens file`);
 };
 
 /** The text with its CSS comments removed. */
@@ -112,27 +151,7 @@ export function codeThemeProblems(json, roles) {
  * @returns {string[]}
  */
 export function commonCssProblems(css, tokens) {
-    const text = withoutComments(css).trim();
-
-    // A server that does not have the file answers with an HTML page. A < in a rule (a media range) is valid CSS.
-    if (text === '' || /^<|<(?:!doctype|html|head|body)\b/i.test(text)) {
-        return ['the file is not a stylesheet'];
-    }
-
-    if (!/\.ph-nav[\s,{]/.test(text) || !/\.ph-footer[\s,{]/.test(text)) {
-        return ['the file has no rules for .ph-nav and .ph-footer'];
-    }
-
-    // A file that is cut right after a rule has whole rules, but not the last line.
-    if (
-        (text.match(/\{/g) ?? []).length !== (text.match(/\}/g) ?? []).length
-        || !text.endsWith('}')
-        || !css.trimEnd().endsWith(COMMON_END)
-    ) {
-        return ['the file is not whole'];
-    }
-
-    return missingTokens(tokens, usedTokens(css)).map((name) => `${name} is not in the tokens file`);
+    return sharedCssProblems(css, tokens, ['ph-nav', 'ph-footer'], COMMON_END);
 }
 
 /**
@@ -242,6 +261,78 @@ export function resolveToken(css, name) {
     }
 
     return null;
+}
+
+/**
+ * The problems of a sidebar.css file for a site: it must be the stylesheet of
+ * the shared sidebar (rules for .ph-side__box, no HTML), whole (each rule
+ * closed, and its last line SIDEBAR_END), and the site's tokens file must
+ * define every token that it uses. phalcon/assets checks the rules themselves
+ * (tests/tokens.php). An empty list means that the file can replace the
+ * committed copy.
+ *
+ * @param {string} css
+ * @param {string} tokens the text of the site's tokens file
+ * @returns {string[]}
+ */
+export function sidebarCssProblems(css, tokens) {
+    return sharedCssProblems(css, tokens, ['ph-side__box'], SIDEBAR_END);
+}
+
+/**
+ * The problems of a sidebar.json file for a site: a JSON object with the box
+ * of the supporters (its title, and the title of each group of sponsors.json
+ * that shows) and the box of the projects (its title, and its text as parts:
+ * a string, or a link with a label and an absolute https:// address), and no
+ * other key. An empty list means that the file can replace the committed copy.
+ *
+ * @param {string} json
+ * @returns {string[]}
+ */
+export function sidebarProblems(json) {
+    let parsed;
+
+    try {
+        parsed = JSON.parse(json);
+    } catch {
+        return ['the file is not JSON'];
+    }
+
+    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        return ['the file is not a JSON object'];
+    }
+
+    const text = (value) => typeof value === 'string' && value.trim() !== '';
+    const keys = Object.keys(parsed)
+        .filter((key) => !SIDEBAR_KEYS.includes(key))
+        .map((key) => `${key} is not allowed`);
+    const titles = ['projects', 'supporters']
+        .filter((key) => !text(parsed[key]?.title))
+        .map((key) => `${key}.title needs text`);
+    const isGroup = (group) => text(group?.group) && text(group?.title);
+    const isLink = (part) => text(part?.label) && /^https:\/\/\S+$/.test(String(part?.href));
+    const isPart = (part) => (typeof part === 'string' ? part !== '' : isLink(part));
+    // The problems of a list: one for each wrong item, or one when the list is missing or empty.
+    const list = (items, isItem, wrong, empty) => (Array.isArray(items) && items.length > 0
+        ? items.flatMap((item, index) => (isItem(item) ? [] : [wrong(index)]))
+        : [empty]);
+
+    return [
+        ...keys,
+        ...titles,
+        ...list(
+            parsed.supporters?.groups,
+            isGroup,
+            (index) => `supporters.groups[${index}] needs a group and a title`,
+            'supporters.groups needs at least one group',
+        ),
+        ...list(
+            parsed.projects?.text,
+            isPart,
+            (index) => `projects.text[${index}] needs text, or a label and an https:// address`,
+            'projects.text needs at least one part',
+        ),
+    ].sort();
 }
 
 /**
