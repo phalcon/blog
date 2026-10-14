@@ -227,6 +227,11 @@ const without = (...parts) =>
 
 count('pages without the shared nav and footer', measure(() => without(/<nav class="ph-nav"[\s>]/, /<footer class="ph-footer"[\s>]/)), 0);
 count('pages without the search box and the theme switcher', measure(() => without(/id="header-search-input"/, /<div class="switcher"[\s>]/)), 0);
+count(
+    'pages without the search button and the search row',
+    measure(() => without(/<button id="header-search-toggle"[^>]*aria-controls="header-search-row"/, /<div id="header-search-row" hidden[^>]*><input[^>]*id="header-search-row-input"/)),
+    0
+);
 count('pages without the mobile menu script', measure(() => without(/<script[^>]*src="\/js\/nav\.js"/)), 0);
 count(
     'pages with the old header or footer',

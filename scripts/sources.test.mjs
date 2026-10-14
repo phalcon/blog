@@ -382,16 +382,18 @@ test('the committed repositories.json has a star count for cphalcon', () => {
 });
 
 test('the nav has the Discord icon in the end group of common.css, after the links', () => {
-    // Discord is one click away at all widths (roadmap Phase 9). The link has a name for screen readers; the SVG
-    // has none. The order of the end group: the links, the icon, the theme switcher, the burger.
+    // The Discord icon of roadmap Phase 9. On the blog it does not show below 640px and from 1024px to 1200px
+    // (site.css): there the search button needs the room. The link has a name for screen readers; the SVG has none.
+    // The order of the end group: the links, the icon, the search button, the theme switcher, the burger.
     const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
-    const order = ['class="ph-nav__end"', 'class="ph-nav__links"', 'class="ph-nav__discord"', 'class="switcher"', 'class="ph-nav__burger"']
+    const order = ['class="ph-nav__end"', 'class="ph-nav__links"', 'class="ph-nav__discord"', 'class="header__search-toggle"', 'class="switcher"', 'class="ph-nav__burger"']
         .map((part) => nav.indexOf(part));
     const glyph = /class="ph-nav__discord"[^>]*>\s*<svg[^>]*>\s*<path fill="currentColor" d="([^"]+)"\/>/.exec(nav)?.[1] ?? '';
 
     assert.ok(order.every((at, index) => at > (order[index - 1] ?? -1)), `the places: ${order.join(', ')}`);
-    // The burger is the last item of the end group, and the end group is the last item of the bar.
-    assert.match(nav, /<span class="ph-nav__burger-line"><\/span>\s*<\/button>\s*<\/div>\s*<\/div>\s*<div id="nav-mobile"/);
+    // The burger is the last item of the end group, and the end group is the last item of the bar. The search row
+    // comes after the bar.
+    assert.match(nav, /<span class="ph-nav__burger-line"><\/span>\s*<\/button>\s*<\/div>\s*<\/div>\s*<div id="header-search-row"/);
     assert.match(nav, /<a href="https:\/\/phalcon\.io\/discord" class="ph-nav__discord" aria-label="Discord">\s*<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">/);
     // The Discord glyph of Simple Icons 16.32.0 (CC0-1.0), the same on every site.
     assert.equal(createHash('sha256').update(glyph).digest('hex'), '6806ec0e2319eb7f7d9f5d02636a197d42903ff8f8e9bab0c267c8fabc1b03fe');
@@ -415,6 +417,68 @@ test('the nav has the GitHub icon and the star count as the last item of the lin
     assert.ok(nav.indexOf('class="header__search-wrapper"') < nav.indexOf('class="ph-nav__github"'), 'the GitHub link comes after the search box');
     // The GitHub glyph of Simple Icons 16.32.0 (CC0-1.0), the same on every site.
     assert.equal(createHash('sha256').update(github?.[1] ?? '').digest('hex'), 'd82e21f6c9bfbfd889fed4b8d8604121be1d364ef75b7fe42cc9c0b8737ae529');
+});
+
+test('the nav has a search button and a search row for the widths up to 1200px', () => {
+    // The search button opens the search row below the bar, and the row has its own field. The page has one results
+    // panel: the script puts it below the field in use, so no id is on two elements.
+    const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
+
+    assert.match(nav, /<button\s+id="header-search-toggle"\s+class="header__search-toggle"\s+aria-label="Search"\s+aria-expanded="false"\s+aria-controls="header-search-row"\s*>\s*<svg [^>]*aria-hidden="true" focusable="false">/);
+    assert.match(nav, /<\/div>\s*<div id="header-search-row" hidden class="header__search-row">\s*<input\s+type="text"\s+id="header-search-row-input"\s+class="header__search"\s+placeholder="Search\.\.\."\s+aria-label="Search"\s+autocomplete="off"\s*>\s*<\/div>\s*<div id="nav-mobile"/);
+    assert.equal(nav.match(/id="header-search-results"/g)?.length, 1);
+    assert.equal(nav.match(/id="articles"/g)?.length, 1);
+});
+
+test('site.css shows the search button and the search row up to 1200px, and hides the Discord icon where the bar has little room', () => {
+    // Up to 1200px the search button and the search row show in place of the search box. The Discord icon does not
+    // show below 640px and from 1024px to 1200px. common.css keeps the icon at every width for the other sites.
+    const css = readFileSync(new URL('public/css/site.css', root), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+
+    assert.match(css, /\n\.header__search-toggle \{[^}]*\sdisplay: none;/);
+    assert.match(css, /@media screen and \(max-width: 1200px\) \{\s*\.header__search-wrapper \{\s*display: none;\s*\}\s*\.header__search-toggle \{\s*display: flex;\s*\}\s*\}/);
+    assert.match(css, /@media screen and \(min-width: 1201px\) \{\s*\.header__search-row \{\s*display: none;\s*\}\s*\}/);
+    assert.match(css, /@media \(max-width: 639px\), \(min-width: 1024px\) and \(max-width: 1200px\) \{\s*\.ph-nav__discord \{\s*display: none;\s*\}\s*\}/);
+    assert.deepEqual(ruleKeys(css).filter((key) => key.endsWith('.ph-nav__discord')), ['@media (max-width: 639px), (min-width: 1024px) and (max-width: 1200px) .ph-nav__discord']);
+});
+
+test('the field of the search row has 16px text, so that iOS does not zoom the page', () => {
+    // iOS Safari zooms the page when a field with text under 16px gets the focus, and the search button puts the focus
+    // in the field of the row. The search box of the links (above 1200px) keeps its 12px text.
+    const css = readFileSync(new URL('public/css/site.css', root), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+
+    assert.match(css, /\n\.header__search-row \.header__search \{[^}]*\sfont-size: 16px;/);
+    assert.match(css, /\n\.header__search \{[^}]*\sfont-size: 12px;/);
+});
+
+test('the search script listens on the two fields and puts the one results panel below the field in use', () => {
+    // The browser checks of the dry run (tools/behavior.mjs) run outside the CI. These tests keep each part of the
+    // script that the checks found correct.
+    const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
+
+    assert.match(nav, /const fields = \['header-search-input', 'header-search-row-input'\]/);
+    assert.match(nav, /input\.addEventListener\('input', \(\) => \{[^}]*?input\.after\(panel\);/);
+    assert.match(nav, /if \(!panel\.contains\(event\.target\) && !fields\.some\(\(field\) => field === event\.target\)\) \{\s*panel\.hidden = true;/);
+});
+
+test('the search button opens and closes the search row, and closes the mobile menu', () => {
+    const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
+
+    ['header-search-toggle', 'header-search-row', 'header-search-row-input', 'nav-burger', 'nav-mobile']
+        .forEach((id) => assert.match(nav, new RegExp(`document\\.getElementById\\('${id}'\\)`), id));
+    assert.match(nav, /const show = \(open: boolean\): void => \{\s*row\.hidden = !open;\s*toggle\.setAttribute\('aria-expanded', String\(open\)\);\s*\};/);
+    assert.match(nav, /toggle\.addEventListener\('click', \(\) => \{\s*const open = row\.hidden !== false;\s*show\(open\);\s*if \(open\) \{\s*menu\.hidden = true;\s*burger\.setAttribute\('aria-expanded', 'false'\);\s*rowInput\.focus\(\);\s*\}\s*\}\);/);
+});
+
+test('the burger and Escape close the search row, and Escape puts the focus on the search button', () => {
+    const nav = readFileSync(new URL('src/components/Header.astro', root), 'utf8');
+    const escape = /rowInput\.addEventListener\('keydown', \(event\) => \{\s*if \(event\.key === 'Escape'\) \{\s*show\(false\);\s*toggle\.focus\(\);/;
+
+    assert.match(nav, /burger\.addEventListener\('click', \(\) => \{\s*show\(false\);\s*\}\);/);
+    assert.match(nav, escape);
+    // The Escape handler of the fields puts the focus in the field. The handler of the row must come after it.
+    assert.ok(nav.indexOf("input.addEventListener('keydown'") > -1, 'the fields have an Escape handler');
+    assert.ok(nav.indexOf("input.addEventListener('keydown'") < nav.search(escape), 'the Escape handler of the row comes after the one of the fields');
 });
 
 test('the social card address has a version, so that platforms fetch a new card', () => {

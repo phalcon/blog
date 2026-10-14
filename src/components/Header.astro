@@ -5,9 +5,11 @@
  * phalcon/assets). The links are the links of phalcon.io, with absolute
  * addresses; the Blog link goes to the home page of the blog. The blog adds
  * its search box (in the links, after "Get Phalcon" and before the GitHub
- * link) and its theme switcher (between the Discord icon and the burger);
- * public/css/site.css styles them. public/js/nav.js, a copy of the script of
- * phalcon.io, opens and closes the mobile menu.
+ * link), its search button (between the Discord icon and the theme switcher)
+ * with the search row below the bar, and its theme switcher (before the
+ * burger); public/css/site.css styles them. Up to 1200px the search button
+ * and the search row show in place of the search box. public/js/nav.js, a
+ * copy of the script of phalcon.io, opens and closes the mobile menu.
  */
 import { cphalconStars, formatStars } from '../lib/stars.mjs';
 import repositories from '../repositories.json?raw';
@@ -101,6 +103,19 @@ const stars = formatStars(cphalconStars(repositories));
                 </svg>
             </a>
 
+            <button
+                id="header-search-toggle"
+                class="header__search-toggle"
+                aria-label="Search"
+                aria-expanded="false"
+                aria-controls="header-search-row"
+            >
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="10.5" cy="10.5" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M15.5 15.5 21 21" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/>
+                </svg>
+            </button>
+
             <div class="switcher"><button aria-label="Theme switcher"></button></div>
 
             <button
@@ -115,6 +130,17 @@ const stars = formatStars(cphalconStars(repositories));
                 <span class="ph-nav__burger-line"></span>
             </button>
         </div>
+    </div>
+
+    <div id="header-search-row" hidden class="header__search-row">
+        <input
+            type="text"
+            id="header-search-row-input"
+            class="header__search"
+            placeholder="Search..."
+            aria-label="Search"
+            autocomplete="off"
+        >
     </div>
 
     <div id="nav-mobile" hidden class="ph-nav__mobile">
@@ -164,6 +190,12 @@ const stars = formatStars(cphalconStars(repositories));
         top: 100%;
         width: 24rem;
         z-index: 20;
+    }
+
+    /* In the search row, the panel is below the field and has the width of the row. */
+    .header__search-row #header-search-results {
+        position: static;
+        width: auto;
     }
 </style>
 
@@ -253,11 +285,14 @@ const stars = formatStars(cphalconStars(repositories));
         return pagefind;
     }
 
-    const input = document.getElementById('header-search-input') as HTMLInputElement | null;
+    /* The search box of the links (above 1200px) and the field of the search row (up to 1200px). */
+    const fields = ['header-search-input', 'header-search-row-input']
+        .map((id) => document.getElementById(id))
+        .filter((field): field is HTMLInputElement => field instanceof HTMLInputElement);
     const panel = document.getElementById('header-search-results');
     const list = document.getElementById('articles');
 
-    if (input && panel && list) {
+    if (fields.length > 0 && panel && list) {
         let debounce: ReturnType<typeof setTimeout> | undefined;
 
         const renderRow = (data: PagefindResultData): string => {
@@ -287,22 +322,33 @@ const stars = formatStars(cphalconStars(repositories));
             panel.hidden = false;
         };
 
-        input.addEventListener('input', () => {
-            const term = input.value.trim();
+        fields.forEach((input) => {
+            input.addEventListener('input', () => {
+                const term = input.value.trim();
 
-            clearTimeout(debounce);
+                clearTimeout(debounce);
+                /* There is one results panel. It goes below the field that the user types in. */
+                input.after(panel);
 
-            if (term.length === 0) {
-                panel.hidden = true;
-                list.innerHTML = '';
-                return;
-            }
-
-            debounce = setTimeout(() => {
-                runSearch(term).catch(() => {
+                if (term.length === 0) {
                     panel.hidden = true;
-                });
-            }, 150);
+                    list.innerHTML = '';
+                    return;
+                }
+
+                debounce = setTimeout(() => {
+                    runSearch(term).catch(() => {
+                        panel.hidden = true;
+                    });
+                }, 150);
+            });
+
+            input.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    panel.hidden = true;
+                    input.focus();
+                }
+            });
         });
 
         document.addEventListener('click', (event) => {
@@ -310,15 +356,52 @@ const stars = formatStars(cphalconStars(repositories));
                 return;
             }
 
-            if (!panel.contains(event.target) && event.target !== input) {
+            if (!panel.contains(event.target) && !fields.some((field) => field === event.target)) {
                 panel.hidden = true;
             }
         });
+    }
 
-        input.addEventListener('keydown', (event) => {
+    /*
+     * Up to 1200px, the search button opens and closes the search row (site.css shows the button and the row only
+     * at these widths). The search row and the mobile menu are not open at the same time.
+     */
+    const toggle = document.getElementById('header-search-toggle');
+    const row = document.getElementById('header-search-row');
+    const rowInput = document.getElementById('header-search-row-input');
+    const burger = document.getElementById('nav-burger');
+    const menu = document.getElementById('nav-mobile');
+
+    if (toggle && row && rowInput && burger && menu) {
+        const show = (open: boolean): void => {
+            row.hidden = !open;
+            toggle.setAttribute('aria-expanded', String(open));
+        };
+
+        toggle.addEventListener('click', () => {
+            const open = row.hidden !== false;
+
+            show(open);
+
+            if (open) {
+                menu.hidden = true;
+                burger.setAttribute('aria-expanded', 'false');
+                rowInput.focus();
+            }
+        });
+
+        burger.addEventListener('click', () => {
+            show(false);
+        });
+
+        /*
+         * Each field also has an Escape handler: it closes the results and puts the focus in the field. This handler
+         * runs after it, because the script adds it later. So the focus goes to the button.
+         */
+        rowInput.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
-                panel.hidden = true;
-                input.focus();
+                show(false);
+                toggle.focus();
             }
         });
     }
