@@ -982,9 +982,11 @@ html.dark .astro-code {
 
 /*
  * The blog's parts of the shared nav (common.css). The nav stays at the top
- * of the viewport. The theme switcher is in .ph-nav__end of common.css,
- * between the Discord icon and the burger. The search box is in the links,
- * after "Get Phalcon" and before the GitHub link.
+ * of the viewport. The search box is in the links, after "Get Phalcon" and
+ * before the GitHub link. In .ph-nav__end of common.css, the search button
+ * and the theme switcher come after the Discord icon, before the burger. Up
+ * to 1200px the search button shows in place of the search box, and it opens
+ * the search row below the bar.
  */
 .header-sticky {
     position: sticky;
@@ -1074,9 +1076,74 @@ html.dark .astro-code {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-/* Up to 1200px the search box does not fit in the nav. */
+/*
+ * The search button: up to 1200px, where the search box does not show. It opens and closes the search row. It has the
+ * look of the burger of common.css.
+ */
+.header__search-toggle {
+    align-items: center;
+    border-color: var(--ph-line-700);
+    border-radius: 4px;
+    border-width: 1px;
+    color: var(--ph-sage-400);
+    cursor: pointer;
+    display: none;
+    height: 2.25rem;
+    justify-content: center;
+    width: 2.25rem;
+}
+
+/* The search row: below the bar, with the colors of the mobile menu of common.css. The field fills the row. */
+.header__search-row {
+    background-color: var(--ph-night-950);
+    border-color: var(--ph-line-900);
+    border-top-width: 1px;
+    padding: 0.75rem 1.25rem;
+}
+
+/* The field has 16px text: iOS Safari zooms the page when a field with smaller text gets the focus. */
+.header__search-row .header__search {
+    font-size: 16px;
+    width: 100%;
+}
+
+@media (hover: hover) {
+    .header__search-toggle:hover {
+        color: var(--ph-mist-100);
+    }
+}
+
+/* From 768px the row has the side padding of the bar, so the field starts below the logo. */
+@media (min-width: 768px) {
+    .header__search-row {
+        padding-inline: 2.5rem;
+    }
+}
+
+/*
+ * The search button takes the place of the Discord icon where the bar has little room: below 640px (a phone), and
+ * from 1024px to 1200px (the links show). Discord is in the mobile menu and in the Community menu.
+ */
+@media (max-width: 639px), (min-width: 1024px) and (max-width: 1200px) {
+    .ph-nav__discord {
+        display: none;
+    }
+}
+
+/* Up to 1200px the search box does not fit in the nav: the search button shows in its place. */
 @media screen and (max-width: 1200px) {
     .header__search-wrapper {
+        display: none;
+    }
+
+    .header__search-toggle {
+        display: flex;
+    }
+}
+
+/* Above 1200px the search box shows, so the search row does not show, also when it is open. */
+@media screen and (min-width: 1201px) {
+    .header__search-row {
         display: none;
     }
 }
