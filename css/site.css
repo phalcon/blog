@@ -10,7 +10,7 @@
  * A rule here that reaches into the nav or the footer changes them when it
  * is stronger than the rule of common.css (for example a class and an
  * element, as html.dark p), or when it sets a property that common.css does
- * not set (cursor, outline). Such rules have
+ * not set (cursor). Such rules have
  * :where(:not(.ph-nav *, .ph-footer *)): it keeps them out of the nav and the
  * footer, and it does not change their weight.
  *
@@ -23,7 +23,7 @@
  * Each part has the rules of one component: one rule for each element, then
  * its states, then its width rules. The order of the parts is part of the
  * cascade: a later rule wins over an earlier rule of the same weight. The
- * page links (.page a) come before the post cards, and the post text
+ * page links (.page__main a) come before the post cards, and the post text
  * (.prose p) comes before the callouts (.alert p).
  */
 
@@ -127,7 +127,6 @@ body {
 /* Every element: the nav and the footer themselves too. */
 :where(:not(.ph-nav, .ph-nav *, .ph-footer, .ph-footer *)) {
     -webkit-tap-highlight-color: transparent;
-    outline: 0;
 }
 
 small {
@@ -189,7 +188,6 @@ ul {
 }
 
 a:where(:not(.ph-nav *, .ph-footer *)) {
-    outline: 0;
     text-decoration: none;
 }
 
@@ -203,12 +201,12 @@ a:where(:not(.ph-nav *, .ph-footer *)) {
     padding: 50px 0;
 }
 
-.page a {
+.page__main a {
     color: var(--nd-accent);
 }
 
-html.dark .page a:hover,
-.page a:hover {
+html.dark .page__main a:hover,
+.page__main a:hover {
     color: var(--nd-accent-hover);
 }
 
@@ -401,8 +399,10 @@ html.dark .post-card__title a:hover,
     position: relative;
 }
 
-/* The dot between the date and the author. */
-.post-card__date:after {
+/* The dots between the parts of the info line: after the date (a post card, a post) and after the author (a post). */
+.post-card__date:after,
+.post__date:after,
+.post__author:nth-child(2):after {
     background-color: var(--nd-faint);
     border-radius: 50%;
     content: "";
@@ -411,13 +411,6 @@ html.dark .post-card__title a:hover,
     right: -12px;
     top: 7px;
     width: 2px;
-}
-
-.post-card__author {
-    color: var(--nd-faint);
-    font-family: var(--nd-font-mono);
-    font-size: 11px;
-    letter-spacing: 0.04em;
 }
 
 .post-card__excerpt {
@@ -502,35 +495,13 @@ html.dark .post-card__title a:hover,
     position: relative;
 }
 
-/* The dots between the parts. */
-.post__date:after {
-    background-color: var(--nd-faint);
-    border-radius: 50%;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: -12px;
-    top: 7px;
-    width: 2px;
-}
-
 .post__author {
     margin-bottom: 5px;
     margin-right: 22px;
     position: relative;
 }
 
-.post__author:nth-child(2):after {
-    background-color: var(--nd-faint);
-    border-radius: 50%;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: -12px;
-    top: 7px;
-    width: 2px;
-}
-
+/* The last part has no dot. The rule of the dots is with the dot of the post cards (.post-card__date:after). */
 .post__author:last-child:after {
     display: none;
 }
@@ -895,7 +866,7 @@ html.dark .astro-code {
  * The mono face is wider per character than the Titillium it replaces, so the
  * live sizes — 14px name, 10px count — wrap the 350px sidebar list to one tag
  * per row. Smaller type and tighter gaps bring the pill width back to about
- * what the live blog shows. The selector must beat `.page a`.
+ * what the live blog shows. The selector must beat `.page__main a`.
  */
 .page .tags .tags__item {
     border: 1px solid var(--nd-border-strong);
@@ -968,7 +939,7 @@ html.dark .astro-code {
     border-bottom-color: transparent;
 }
 
-/* The selectors must beat `.page a`, so the links take the faint color, not the accent color. */
+/* The selectors must beat `.page__main a`, so the links take the faint color, not the accent color. */
 .page .pagination .previous,
 .page .pagination .page_number,
 .page .pagination .next {
