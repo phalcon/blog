@@ -34,7 +34,7 @@ const { allTags, matched, tag }: Props = Astro.props;
 ---
 
 <Base title={tag}>
-    <div id="articles" class="prose">
+    <div class="prose">
         <h2 itemprop="name headline" class="headline">{tag}</h2>
         <p>{matched.length} post(s)</p>
         <div class="posts">

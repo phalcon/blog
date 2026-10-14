@@ -3,16 +3,17 @@
  * The logos of the supporters box of the shared sidebar (Sidebar.astro), with
  * the classes of public/css/sidebar.css.
  *
- * The roster comes from src/sponsors.json, refreshed from phalcon/assets by
- * the deploy workflow the way the fan art is. Imported rather than injected
- * with `set:html`: malformed JSON fails the build with a parse error, where
- * malformed HTML would render broken markup on every page. The committed copy
- * is an empty roster on purpose: a failed download then shows no logos, which
- * is visible, rather than a roster that is months out of date.
+ * The roster is src/sponsors.json. The deploy workflow gets it again from
+ * phalcon/assets before each build, as it does for the fan art. This file
+ * imports the roster. It does not add the roster as HTML with `set:html`.
+ * JSON that is not correct stops the build with an error. HTML that is not
+ * correct shows broken markup on every page. The committed copy is an empty
+ * roster on purpose: when the download fails, the box shows no logos. You can
+ * see this easily, and an empty box is better than a roster that is months old.
  *
- * The groups that show, and their titles, come from src/sidebar.json. An entry
- * without a logo cannot be shown here, so it is dropped. Nothing here states
- * an amount: `group` is the only signal the data carries.
+ * src/sidebar.json gives the groups that show, and their titles. An entry
+ * that has no logo cannot show here, so this file removes it. This file shows
+ * no amount: in the data, the `group` is the only sign of the support level.
  */
 import data from '../sponsors.json';
 

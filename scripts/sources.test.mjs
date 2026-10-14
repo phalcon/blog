@@ -9,6 +9,87 @@ import { sourceFiles, usedBySite } from './token-sources.mjs';
 
 const root = new URL('../', import.meta.url);
 
+// The rules of a stylesheet, in their order: `<context><selector>` for each member of each selector list. A context is
+// the at-rules around a rule. An at-rule with no block (@import …;) is not a rule. A combinator (>, +, ~) has one
+// space on each side, so that a>b and a > b give the same key.
+const ruleKeys = (css) => {
+    const keys = [];
+    // The members of a selector list: a comma inside parentheses (:where(a, b)) does not split it.
+    const members = (head) => {
+        const list = [''];
+        let depth = 0;
+
+        for (const char of head) {
+            depth += char === '(' ? 1 : char === ')' ? -1 : 0;
+
+            if (char === ',' && depth === 0) {
+                list.push('');
+            } else {
+                list[list.length - 1] += char;
+            }
+        }
+
+        return list.map((selector) => selector.trim());
+    };
+    const walk = (text, context) => {
+        let depth = 0;
+        let start = 0;
+        let head = '';
+
+        for (let index = 0; index < text.length; index += 1) {
+            if (text[index] === ';' && depth === 0) {
+                start = index + 1;
+            } else if (text[index] === '{') {
+                if (depth === 0) {
+                    head = text.slice(start, index).trim().replace(/\s+/g, ' ');
+                    start = index + 1;
+                }
+
+                depth += 1;
+            } else if (text[index] === '}') {
+                depth -= 1;
+
+                if (depth === 0) {
+                    if (head.startsWith('@')) {
+                        walk(text.slice(start, index), `${context}${head} `);
+                    } else {
+                        members(head).forEach((selector) => keys.push(`${context}${selector.replace(/\s*([>+~])\s*/g, ' $1 ')}`));
+                    }
+
+                    start = index + 1;
+                }
+            }
+        }
+    };
+
+    walk(css.replace(/\/\*[\s\S]*?\*\//g, ''), '');
+
+    return keys;
+};
+
+// The pairs of site.css rules that have the same weight and match the same elements: the first rule must come first.
+const CASCADE = [
+    ['.page__main a', '.post-card__title a'],
+    ['.page__main a:hover', '.post-card__title a:hover'],
+    ['html.dark .page__main a:hover', 'html.dark .post-card__title a:hover'],
+    ['.prose p', '.alert p'],
+    ['@media (max-width: 1439px) .page__side', '@media (max-width: 1023px) .page__side'],
+    ['.post-card__title a', '.prose a'],
+    ['@media (min-width: 768px) .page__inner', '@media (min-width: 1024px) .page__inner'],
+    ['@media (min-width: 1024px) .page__inner', '@media (min-width: 1280px) .page__inner'],
+];
+
+// The pairs of CASCADE that the keys (of ruleKeys) do not have in the correct order. A missing rule is a problem too.
+const cascadeProblems = (keys) => CASCADE
+    .filter(([first, second]) => !(keys.includes(first) && keys.includes(second) && keys.lastIndexOf(first) < keys.indexOf(second)))
+    .map(([first, second]) => `${first} before ${second}`);
+
+// The rules of a stylesheet that remove the focus ring of the browser: the selector of each rule that sets outline,
+// outline-style or outline-width to 0 (with or without a unit) or none.
+const outlineRemovals = (css) => [...css.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+    .filter((match) => /\boutline(?:-style|-width)?\s*:\s*(?:0[a-z]*|none)(?![\w.%-])/.test(match[2]))
+    .map((match) => match[1].trim());
+
 test('the source scan covers the stylesheet, components, layout and pages, not tests, posts or the tokens file', () => {
     // A token that only a component uses must count as used.
     const files = sourceFiles();
@@ -158,68 +239,67 @@ test('sidebar.css has a rule for every ph-side class that the sidebar uses', () 
 
 test('no source names a class of the old shared sheet (phalcon-blog)', () => {
     // The page classes have neutral names, as on the license site, and the sidebar has the shared classes (the
-    // sites roadmap, Open Item 15).
-    assert.deepEqual(sourceFiles().filter((file) => readFileSync(new URL(file, root), 'utf8').includes('phalcon-blog')), []);
+    // sites roadmap, Open Item 15). The copies from phalcon/assets are not this site's source: the CI workflow gets
+    // them again before the tests, and a comment in one of them must not stop the deploy.
+    const copies = [
+        'public/css/common.css',
+        'public/css/sidebar.css',
+        'src/lib/design-checks.mjs',
+        'src/lib/design-refresh.mjs',
+        'src/lib/stars.mjs',
+    ];
+    const named = sourceFiles()
+        .filter((file) => !copies.includes(file))
+        .filter((file) => readFileSync(new URL(file, root), 'utf8').includes('phalcon-blog'));
+
+    assert.deepEqual(named, []);
 });
 
 test('site.css has one rule for each selector in each context', () => {
     // The sites roadmap, Open Item 12: each element of a component has one rule, then its states and its width rules,
-    // so that a change to it is made in one place. A context is the at-rules around a rule. A tone selector
-    // (html.dark …) next to its own light selector in a list counts once.
-    const css = readFileSync(new URL('public/css/site.css', root), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-    const seen = new Map();
-    // The members of a selector list: a comma inside parentheses (:where(a, b)) does not split it.
-    const members = (head) => {
-        const list = [''];
-        let depth = 0;
+    // so that a change to it is made in one place.
+    const counts = new Map();
 
-        for (const char of head) {
-            depth += char === '(' ? 1 : char === ')' ? -1 : 0;
+    ruleKeys(readFileSync(new URL('public/css/site.css', root), 'utf8')).forEach((key) => counts.set(key, (counts.get(key) ?? 0) + 1));
+    assert.ok(counts.size > 100, 'the walk finds the rules');
+    assert.deepEqual([...counts].filter(([, count]) => count > 1).map(([key]) => key), []);
+});
 
-            if (char === ',' && depth === 0) {
-                list.push('');
-            } else {
-                list[list.length - 1] += char;
-            }
-        }
+test('the rule walk skips an at-rule with no block', () => {
+    assert.deepEqual(ruleKeys('@import url("a.css");\n.a { color: red; }'), ['.a']);
+});
 
-        return list.map((selector) => selector.trim());
-    };
-    const walk = (text, context) => {
-        let depth = 0;
-        let start = 0;
-        let head = '';
+test('the rule walk gives one key for a selector with or without spaces around a combinator', () => {
+    assert.deepEqual(ruleKeys('a>b {} a > b {} a+b {} a ~ b {}'), ['a > b', 'a > b', 'a + b', 'a ~ b']);
+});
 
-        for (let index = 0; index < text.length; index += 1) {
-            if (text[index] === '{') {
-                if (depth === 0) {
-                    head = text.slice(start, index).trim().replace(/\s+/g, ' ');
-                    start = index + 1;
-                }
+test('the rule walk counts a tone selector that is in a list with its light selector', () => {
+    assert.deepEqual(ruleKeys('.x, html.dark .x {} html.dark .x {}'), ['.x', 'html.dark .x', 'html.dark .x']);
+});
 
-                depth += 1;
-            } else if (text[index] === '}') {
-                depth -= 1;
+test('site.css keeps the order of the rules whose order sets the look', () => {
+    // A later rule wins over an earlier rule of the same weight (the header comment of site.css).
+    assert.deepEqual(cascadeProblems(ruleKeys(readFileSync(new URL('public/css/site.css', root), 'utf8'))), []);
+});
 
-                if (depth === 0) {
-                    if (head.startsWith('@')) {
-                        walk(text.slice(start, index), `${context}${head} `);
-                    } else {
-                        const list = members(head);
+test('the cascade order check finds a missing rule and a pair in the wrong order', () => {
+    const keys = CASCADE.flat();
 
-                        list.filter((selector) => !(selector.startsWith('html.dark ') && list.includes(selector.slice(10))))
-                            .forEach((selector) => seen.set(`${context}${selector}`, (seen.get(`${context}${selector}`) ?? 0) + 1));
-                    }
+    assert.deepEqual(cascadeProblems(keys), []);
+    assert.deepEqual(cascadeProblems(keys.filter((key) => key !== '.alert p')), ['.prose p before .alert p']);
+    assert.deepEqual(cascadeProblems([...keys.filter((key) => key !== '.prose p'), '.prose p']), ['.prose p before .alert p']);
+});
 
-                    start = index + 1;
-                }
-            }
-        }
-    };
+test('the cascade order check knows the post card titles in the post text and the widths of the page', () => {
+    // On the tag pages the post cards are in .prose, so .prose a sets their title links. The min-width rules of
+    // .page__inner come in the order of their widths.
+    const keys = ruleKeys(readFileSync(new URL('public/css/site.css', root), 'utf8'));
+    const swap = (one, two) => keys.map((key) => (key === one ? two : key === two ? one : key));
+    const widths = ['@media (min-width: 768px) .page__inner', '@media (min-width: 1024px) .page__inner', '@media (min-width: 1280px) .page__inner'];
 
-    walk(css, '');
-    assert.ok(seen.size > 100, 'the walk finds the rules');
-    assert.deepEqual([...seen].filter(([, count]) => count > 1).map(([key]) => key), []);
+    assert.deepEqual(cascadeProblems(swap('.post-card__title a', '.prose a')), ['.post-card__title a before .prose a']);
+    assert.deepEqual(cascadeProblems(swap(widths[0], widths[1])), [`${widths[0]} before ${widths[1]}`]);
+    assert.deepEqual(cascadeProblems(swap(widths[1], widths[2])), [`${widths[1]} before ${widths[2]}`]);
 });
 
 test('common.css has a rule for every ph- class that the nav and the footer use', () => {
@@ -252,6 +332,30 @@ test('the theme switcher shows a ring for the keyboard focus', () => {
 
     assert.doesNotMatch(/\.switcher button \{[^}]*\}/.exec(css)?.[0] ?? '', /outline:\s*none/);
     assert.match(css, /\.switcher button:focus-visible \{\s*outline: 2px solid var\(--ph-white\);\s*outline-offset: 2px;\s*\}/);
+});
+
+test('the page keeps the focus ring of the browser', () => {
+    // WCAG 2.4.7: a keyboard user sees which element has the focus (a link, a code block). The browser shows its ring
+    // for the keyboard focus only (:focus-visible). Only the search box removes the ring: it has its own focus sign
+    // (a white background).
+    assert.deepEqual(outlineRemovals(readFileSync(new URL('public/css/site.css', root), 'utf8')), ['input:focus']);
+});
+
+test('the focus ring check finds each way to remove the ring', () => {
+    const css = [
+        'a { outline: 0; }',
+        'b { outline: none }',
+        'c { outline: 0px; }',
+        'd { outline-style: none; }',
+        'e { outline-width: 0; }',
+        'f { outline: none !important; }',
+        '@media (min-width: 1px) { g { outline: 0; } }',
+        'h { outline: 2px solid red; }',
+        'i { outline-offset: 0; }',
+        'j { outline: 0.5px solid red; }',
+    ].join('\n');
+
+    assert.deepEqual(outlineRemovals(css), ['a', 'b', 'c', 'd', 'e', 'f', 'g']);
 });
 
 test('the CI workflow runs one deploy at a time on each branch, as phalcon.io does', () => {

@@ -233,6 +233,17 @@ count(
     measure(() => pages.filter((file) => /class="(?:header|footer|header-nav|footer-nav)"/.test(readFileSync(file, 'utf8'))).length),
     0
 );
+/* An id names one element of a page. Astro gives each heading of a post an id
+   from its text, so a heading can take an id of the page (post, post__date, …). */
+count(
+    'pages with an id on two elements',
+    measure(() => pages.filter((file) => {
+        const ids = [...readFileSync(file, 'utf8').matchAll(/\sid="([^"]*)"/g)].map((match) => match[1]);
+
+        return new Set(ids).size !== ids.length;
+    }).length),
+    0
+);
 count(
     'stars in the nav',
     measure(() => /class="ph-nav__stars"[^>]*>★ ([^<]*)</.exec(readFileSync('dist/index.html', 'utf8'))?.[1] ?? 'none'),
