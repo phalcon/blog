@@ -19,7 +19,7 @@
                 { "label": "Testimonials", "href": "https://phalcon.io/testimonials" },
                 { "label": "Sponsors", "href": "https://phalcon.io/sponsors" },
                 { "label": "Consulting", "href": "https://phalcon.io/consulting" },
-                { "label": "Built with Phalcon", "href": "https://builtwith.phalcon.io" }
+                { "label": "Built with Phalcon", "href": "https://phalcon.io/built-with" }
             ]
         },
         {

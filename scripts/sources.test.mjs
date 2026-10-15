@@ -488,3 +488,13 @@ test('the social card address has a version, so that platforms fetch a new card'
     assert.equal(meta.match(/"https:\/\/assets\.phalcon\.io\/phalcon\/social\/github\.phalcon\.blog\.png\?v=2"/g)?.length, 3);
     assert.doesNotMatch(meta, /github\.phalcon\.blog\.png"/);
 });
+
+test('Built with Phalcon links to the page on phalcon.io', () => {
+    // The page replaces builtwith.phalcon.io (2026-10-14). src/footer.json is the committed copy of phalcon/footer.json.
+    for (const file of ['src/components/Header.astro', 'src/footer.json']) {
+        const source = readFileSync(new URL(file, root), 'utf8');
+
+        assert.match(source, /["']Built with Phalcon["'], ["']?href["']?: ["']https:\/\/phalcon\.io\/built-with["']/, file);
+        assert.doesNotMatch(source, /builtwith\.phalcon\.io/, file);
+    }
+});
