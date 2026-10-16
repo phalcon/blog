@@ -60,6 +60,4 @@ Support us with a monthly donation and help us continue our activities. [[Become
 
 #### License
 
-Phalcon Blog is open-sourced software licensed under the [New BSD License][6]. © Phalcon Framework Team and contributors
-
-[6]: https://github.com/phalcon/blog/blob/master/docs/LICENSE.md
+Phalcon Blog is open-sourced software licensed under the [BSD 3-Clause License](LICENSE). Copyright (c) 2011-present, Phalcon Team.
