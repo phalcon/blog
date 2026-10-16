@@ -1,0 +1,188 @@
+---
+title: Phalcon v5.23.0 Released
+date: 2026-10-15T00:00:00.000Z
+image: /assets/banners/2026/2026-10-15-phalcon-5.23.0-release.svg
+tags:
+  - phalcon
+  - phalcon5
+  - release
+  - performance
+---
+
+Phalcon [v5.23.0][5_23_0] and [v6.0.0RC4][v6_0_0_RC_4] have been released. This is our second performance release, after [v5.22.1][release_5_22_1]. We used the same method again, one component at a time: the router, the Di container, `Micro`, the ADR container, the models, the events manager, the request and the response, the SQL dialect, PHQL, and the view with Volt. The extension now also uses Zephir 1.6.1.
+
+## Faster requests
+
+We measured the same four reference applications as for v5.22.1:
+
+- **Micro**: a "hello world" route with `Phalcon\Mvc\Micro`.
+- **MVC**: a page with the router, the dispatcher, a controller and a Volt view.
+- **REST**: list, show and create endpoints with models on SQLite.
+- **ADR**: a "hello world" action with the ADR application and `Phalcon\Container`.
+
+The results, for each request:
+
+| Application   | Instructions (from v5.22.1) | Memory allocations (from v5.22.1) | Instructions (from v5.22.0) |
+|---------------|----------------------------:|----------------------------------:|----------------------------:|
+| MVC           |                     -18.2%  |                           -13.6%  |                     -26.5%  |
+| Micro         |                     -16.6%  |                           -17.5%  |                     -33.8%  |
+| ADR           |                     -12.9%  |                           -12.9%  |                     -17.0%  |
+| REST (show)   |                     -11.3%  |                           -14.8%  |                     -19.3%  |
+| REST (list)   |                      -9.9%  |                           -14.1%  |                     -17.4%  |
+| REST (create) |                      -5.7%  |                            -6.8%  |                     -14.7%  |
+
+The last column shows the two performance releases together. For example, our MVC page used 3.58 million instructions in v5.22.1 and uses 2.93 million in v5.23.0. Compared with v5.22.0, an MVC page now does about one quarter less work, and a Micro "hello world" about one third less.
+
+Wall time is noisier than the instruction count. Thus, we compare it only between runs of the same session, on one pinned CPU core. Against v5.22.1, with all the changes up to the SQL dialect and PHQL work:
+
+- Micro: **-14.3%** (27.0 µs to 23.1 µs)
+- ADR: **-15.0%** (57.6 µs to 49.0 µs)
+- MVC: **-8.9%** (602.5 µs to 549.0 µs)
+- REST list: -9.7%, REST show: -7.8%. The change for REST create was inside the noise.
+
+We measured the view and Volt work separately, after the Zephir upgrade. It made the MVC page 5.8% faster again (556.0 µs to 524.0 µs), and Volt compiled a template 22.8% faster. The wall time of the MVC page changes by a few percent from one session to the next, so read the 5.8% as an approximate value.
+
+How we measured: PHP 8.4 on the command line, with OPcache on and JIT off. We counted instructions with valgrind, which gives the same number on each run, so even a small change is visible. Both builds are the released code: v5.22.1 with Zephir 1.5.0, and v5.23.0 with Zephir 1.6.1. Your numbers will be different, and they depend on your application. The full method is in [How We Measured and Optimized Phalcon v5.22.1][method].
+
+## What changed
+
+The numbers below are instructions for each call, v5.22.1 against v5.23.0.
+
+### Router
+
+- Matching a request: **-81.1%**. The fast path for combined regular expressions now also works when the routes accept all HTTP methods.
+- Defining 50 routes and matching a request: **-21.8%**, and **-14.0%** when the routes use HTTP methods. The router reads the data of each route with one call when it builds its indexes. `Route::__construct()` stores the HTTP methods directly. The router looks for named groups only in the patterns that can have them.
+
+([#17628][17628])
+
+### Di and Micro
+
+- `Phalcon\Di\Di` resolves an alias only when the service name has one. Shared service lookups: **-33%** to **-49%**. A new instance: -14.9% ([#17629][17629]).
+- `Phalcon\Mvc\Micro` gets the default router without its two default routes, which it removed anyway. This change alone made Micro 8.3% faster ([#17630][17630]).
+
+### ADR container
+
+- `Phalcon\Container\Container` checks for aliases and for frozen definitions only when it is necessary. `get()`: **-46.3%** ([#17631][17631]).
+
+### Models, the SQL dialect and PHQL
+
+- Model hydration reads the metadata only at the first `null` value of a row. It makes the list of setters only when `orm.call_setters_on_hydration` is on ([#17632][17632]).
+- `Phalcon\Db\Dialect` resolves a plain column directly, and escapes a dotted name with one call ([#17660][17660]).
+- Together: `find()` **-24.7%**, `findFirst()` **-16.9%**.
+
+### Events, request and response
+
+- `Phalcon\Events\Manager::fire()` calls the `beforeFire()` and `afterFire()` hooks only for a subclass, and checks if the event stopped only when listeners ran. `fire()`: **-27.4%**, `fire()` with no listener: **-27.0%**.
+- `Phalcon\Http\Request` reads `$_SERVER` directly.
+- `Phalcon\Http\Response::sendHeaders()` fires its events only when an events manager is set. `send()`: **-16.8%**.
+- The dispatcher: -10.9%.
+
+([#17633][17633])
+
+### View and Volt
+
+- `Phalcon\Mvc\View::partial()` cleans up the path only when the path has a `.` or a `\`.
+- The Volt compiler keeps the resolved path of each template, and fires its extension events only when you register extensions.
+- Rendering a view with 10 partials: **-17.1%**. One partial: **-18.8%**. Compiling a Volt template: **-22.9%**.
+
+([#17668][17668])
+
+### Zephir 1.6.1
+
+We compiled the same source with Zephir 1.5.0 and with Zephir 1.6.1. 34 of the 36 benchmarks did not change. JSON encoding is 5.6% faster. The first call of some code paths uses 1% to 3% more instructions, because of changes in the C code that Zephir generates. We recorded these findings for future Zephir work.
+
+### Memory
+
+A few changes keep a small amount of data to save work. For example, the Volt compiler keeps the resolved path of each template. For our MVC page, this is about 0.5 KB more memory until the garbage collector runs. We accepted these trades one by one.
+
+## Upgrading
+
+Most of these changes do not change what your application sees. Some can affect your application, mostly when a class in your application extends a Phalcon class and overrides a method. Read [Upgrading from v5.22 to v5.23][upgrade] before you upgrade. In short:
+
+- `Mvc\Router::getMatches()` and `Cli\Router::getMatches()` return an empty array after a static-route match, or when no route matches.
+- `Route::__construct()` does not call `via()`.
+- The Volt compiler no longer gives the blocks or the `{% extends %}` state of one template to the next template. Remove your compiled templates after the upgrade.
+- The Volt compiler keeps the virtual path of each template until the next `setOption()` or `setOptions()` call.
+- The routes of a `Micro` application get route IDs that are 2 lower. Code that reads the IDs with `getRouteId()` is not affected.
+- After hydration of a row with no `null` value, the `modelsMetaData` property of a model is `null` until the first `getModelsMetaData()` call.
+- Overrides of `ServiceDefinition::checkFrozen()`, `Dialect::getSqlExpression()`, `Dialect::prepareColumnAlias()` and `Response::fireManagerEvent()` get fewer calls.
+
+## Bug fixes
+
+- Router: `getMatches()` no longer returns the internal `MARK` key or the matches of an earlier request. Combined-regex matching now works correctly with named groups, with a `|` outside a group, with a pattern that does not compile and after a `beforeMatch` veto. Static-route matching no longer passes over a regex route ([#17634][17634], [#17635][17635], [#17636][17636], [#17638][17638], [#17642][17642], [#17643][17643], [#17644][17644], [#17645][17645], [#17646][17646]).
+- `Model::__set()` now calls your setter when you assign `null` to a relationship alias ([#17662][17662]).
+- The Volt compiler no longer uses the blocks and the `{% extends %}` state of an earlier template ([#17668][17668]).
+
+## PHP implementation
+
+The PHP implementation ([phalcon/phalcon][phalcon]) received the same changes where they apply, so that the two codebases stay in sync.
+
+## A new look
+
+You may have noticed that our sites look different. [phalcon.io][site], the [documentation][docs] and this blog now have one design: the same colors and fonts, the same navigation bar and footer, the same sidebar, and the same code highlighting, in a light and a dark tone. All of these come from one place, [assets.phalcon.io][assets] (the [phalcon/assets][assets_repo] repository). When we change a color there, each site gets it on its next build. Each code color has a contrast of 4.5:1 or more on its background, so code is easy to read in both tones.
+
+## Thanks
+
+As always, thank you to everyone who reported an issue, opened a pull request, or tested a build before it shipped!
+
+---
+
+## [5.23.0](https://github.com/phalcon/cphalcon/releases/tag/v5.23.0) (2026-10-15)
+
+### Tools
+
+- Zephir 1.6.1
+
+### Changed
+
+- Faster SQL generation in `Phalcon\Db\Dialect` and select execution in `Phalcon\Mvc\Model\Query`. [#17660](https://github.com/phalcon/cphalcon/issues/17660) [[doc]](https://docs.phalcon.io/5.23/db-layer/) [[doc]](https://docs.phalcon.io/5.23/db-phql/)
+- Faster event dispatch in `Phalcon\Events\Manager`, method detection in `Phalcon\Http\Request` and header sending in `Phalcon\Http\Response`. [#17633](https://github.com/phalcon/cphalcon/issues/17633) [[doc]](https://docs.phalcon.io/5.23/events/) [[doc]](https://docs.phalcon.io/5.23/request/) [[doc]](https://docs.phalcon.io/5.23/response/)
+- Faster model hydration in `Phalcon\Mvc\Model` and `Phalcon\Mvc\Model\Resultset\Complex`. [#17632](https://github.com/phalcon/cphalcon/issues/17632) [[doc]](https://docs.phalcon.io/5.23/db-models/)
+- Faster rendering and template compilation in `Phalcon\Mvc\View` and `Phalcon\Mvc\View\Engine\Volt\Compiler`. [#17668](https://github.com/phalcon/cphalcon/issues/17668) [[doc]](https://docs.phalcon.io/5.23/views/) [[doc]](https://docs.phalcon.io/5.23/volt/)
+- Faster route matching and route index build in `Phalcon\Mvc\Router`. [#17628](https://github.com/phalcon/cphalcon/issues/17628) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- Faster router setup in `Phalcon\Mvc\Micro`: the default router is created without its default routes. [#17630](https://github.com/phalcon/cphalcon/issues/17630) [[doc]](https://docs.phalcon.io/5.23/application-micro/)
+- Faster service registration and resolution in `Phalcon\Container\Container`. [#17631](https://github.com/phalcon/cphalcon/issues/17631) [[doc]](https://docs.phalcon.io/5.23/container/)
+- Faster service resolution in `Phalcon\Di\Di` for service names with no alias. [#17629](https://github.com/phalcon/cphalcon/issues/17629) [[doc]](https://docs.phalcon.io/5.23/di/)
+
+### Fixed
+
+- `Phalcon\Mvc\Model::__set()` skipping the user-defined setter when `null` is assigned to a relationship alias. [#17662](https://github.com/phalcon/cphalcon/issues/17662) [[doc]](https://docs.phalcon.io/5.23/db-models-relationships/)
+- `Phalcon\Mvc\Router::getMatches()` and `Phalcon\Cli\Router::getMatches()` returning the matches of an earlier request after a static-route match or no match. [#17646](https://github.com/phalcon/cphalcon/issues/17646) [[doc]](https://docs.phalcon.io/5.23/routing/) [[doc]](https://docs.phalcon.io/5.23/application-cli/)
+- `Phalcon\Mvc\Router::getMatches()` returning the internal `MARK` key after a combined-regex match. [#17634](https://github.com/phalcon/cphalcon/issues/17634) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` combined-regex matching changing the meaning of a route pattern with `|` outside a group. [#17645](https://github.com/phalcon/cphalcon/issues/17645) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` combined-regex matching failing to compile or mixing matches for routes with named groups. [#17636](https://github.com/phalcon/cphalcon/issues/17636) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` combined-regex matching returning a wrong route when a route pattern in the same chunk does not compile. [#17644](https://github.com/phalcon/cphalcon/issues/17644) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` combined-regex matching skipping a route after a `beforeMatch` veto and calling the callback two times. [#17635](https://github.com/phalcon/cphalcon/issues/17635) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` static-route matching calling a `beforeMatch` callback two times after a veto. [#17638](https://github.com/phalcon/cphalcon/issues/17638) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` static-route matching ignoring a later-attached regex route of the request method. [#17642](https://github.com/phalcon/cphalcon/issues/17642) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\Router` static-route matching passing over a regex route when a later static route is skipped by its host name or `beforeMatch`. [#17643](https://github.com/phalcon/cphalcon/issues/17643) [[doc]](https://docs.phalcon.io/5.23/routing/)
+- `Phalcon\Mvc\View\Engine\Volt\Compiler` using the blocks and the `{% extends %}` state of an earlier template when one compiler compiles more than one template. [#17668](https://github.com/phalcon/cphalcon/issues/17668) [[doc]](https://docs.phalcon.io/5.23/volt/)
+
+[17628]: https://github.com/phalcon/cphalcon/issues/17628
+[17629]: https://github.com/phalcon/cphalcon/issues/17629
+[17630]: https://github.com/phalcon/cphalcon/issues/17630
+[17631]: https://github.com/phalcon/cphalcon/issues/17631
+[17632]: https://github.com/phalcon/cphalcon/issues/17632
+[17633]: https://github.com/phalcon/cphalcon/issues/17633
+[17634]: https://github.com/phalcon/cphalcon/issues/17634
+[17635]: https://github.com/phalcon/cphalcon/issues/17635
+[17636]: https://github.com/phalcon/cphalcon/issues/17636
+[17638]: https://github.com/phalcon/cphalcon/issues/17638
+[17642]: https://github.com/phalcon/cphalcon/issues/17642
+[17643]: https://github.com/phalcon/cphalcon/issues/17643
+[17644]: https://github.com/phalcon/cphalcon/issues/17644
+[17645]: https://github.com/phalcon/cphalcon/issues/17645
+[17646]: https://github.com/phalcon/cphalcon/issues/17646
+[17660]: https://github.com/phalcon/cphalcon/issues/17660
+[17662]: https://github.com/phalcon/cphalcon/issues/17662
+[17668]: https://github.com/phalcon/cphalcon/issues/17668
+[5_23_0]: https://github.com/phalcon/cphalcon/releases/tag/v5.23.0
+[assets]: https://assets.phalcon.io/
+[assets_repo]: https://github.com/phalcon/assets
+[docs]: https://docs.phalcon.io/
+[method]: /post/how-we-measured-and-optimized-phalcon-v5-22-1
+[phalcon]: https://github.com/phalcon/phalcon
+[release_5_22_1]: /post/phalcon-v5-22-1-released
+[site]: https://phalcon.io/
+[upgrade]: https://docs.phalcon.io/5.23/upgrade/#upgrading-from-v522-to-v523
+[v6_0_0_RC_4]: https://github.com/phalcon/phalcon/releases/tag/v6.0.0RC4

@@ -11,10 +11,10 @@ import { cphalconStars, formatStars } from '../src/lib/stars.mjs';
 const EXPECTED = {
     /* Every file under dist/assets, in all folders. A silent drift here is how
        a broken image reaches production unnoticed. */
-    assets: 213,
-    feedItems: 321,
+    assets: 214,
+    feedItems: 322,
     paginationPages: 32,
-    postPages: 321,
+    postPages: 322,
     /* Rule lines, comments excluded. `wc -l` reports one more, because the
        file ends with a blank line. */
     redirectRules: 59,
