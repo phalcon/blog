@@ -1,0 +1,21 @@
+{
+    "name": "Phalcon Blog",
+    "short_name": "Blog",
+    "description": "We are an open source web framework for PHP delivered as a C extension offering high performance and lower resource consumption",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#070d0c",
+    "theme_color": "#070d0c",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
