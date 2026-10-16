@@ -74,7 +74,11 @@ jobs:
         # src/repositories.json are copies of phalcon/css/tokens.css,
         # phalcon/css/code-theme.json, phalcon/css/common.css,
         # phalcon/css/sidebar.css, phalcon/sidebar.json, phalcon/footer.json
-        # and phalcon/repositories.json in phalcon/assets. The script keeps a
+        # and phalcon/repositories.json in phalcon/assets. public/favicon.ico,
+        # public/favicon.svg, public/apple-touch-icon.png,
+        # public/android-chrome-192x192.png and
+        # public/android-chrome-512x512.png are copies of the icons in
+        # phalcon/favicons/ there. The script keeps a
         # committed copy, with a warning, when its download fails or the file
         # is not correct (for example, a token that the blog uses is missing).
         # It does not commit. It runs before the tests, so that they check the

@@ -272,6 +272,47 @@ count(
     measure(() => JSON.parse(readFileSync('src/sidebar.json', 'utf8')).projects.text.filter((part) => typeof part === 'object').length)
 );
 
+/*
+ * The icons, the same set as on the other Phalcon sites. Every page links the
+ * copies in public/ of phalcon/favicons/ (phalcon/assets) and the manifest, and
+ * no tag of the old set. The manifest has the name of the site, a short name of
+ * the site part only (the icon shows the brand), the description of the pages,
+ * the color of the browser bar, and the two icons of a home screen, which are
+ * in dist/. A home screen icon opens the home page in the browser.
+ */
+const ICON_TAGS = [
+    '<link rel="icon" href="/favicon.ico" sizes="32x32">',
+    '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
+    '<link rel="apple-touch-icon" href="/apple-touch-icon.png">',
+    '<link rel="manifest" href="/site.webmanifest">',
+].join(' ');
+const manifest = measure(() => JSON.parse(readFileSync('dist/site.webmanifest', 'utf8')));
+const darkBg = resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-dark-bg');
+
+count(
+    'pages without exactly the icon tags',
+    measure(() => pages.filter((file) => [...readFileSync(file, 'utf8').matchAll(/<link[^>]*rel="(?:apple-touch-icon|icon|manifest|mask-icon|shortcut icon)"[^>]*>/g)]
+        .map((match) => match[0])
+        .join(' ') !== ICON_TAGS).length),
+    0
+);
+count('pages with a tag of the Windows tiles', measure(() => pages.filter((file) => /name="msapplication-/.test(readFileSync(file, 'utf8'))).length), 0);
+count('manifest name', measure(() => manifest.name), 'Phalcon Blog');
+count('manifest short name', measure(() => manifest.short_name), 'Blog');
+count(
+    'manifest description',
+    measure(() => manifest.description),
+    measure(() => /<meta name="description" content="([^"]*)"/.exec(readFileSync('dist/index.html', 'utf8'))?.[1] ?? 'none')
+);
+count('manifest display and start URL', measure(() => `${manifest.display} ${manifest.start_url}`), 'browser /');
+count('manifest colors', measure(() => `${manifest.background_color} ${manifest.theme_color}`), `${darkBg} ${darkBg}`);
+count('manifest icon sizes', measure(() => manifest.icons.map((icon) => icon.sizes).join(' ')), '192x192 512x512');
+count(
+    'manifest icons that are not in dist',
+    measure(() => manifest.icons.filter((icon) => !existsSync(`dist${icon.src}`)).map((icon) => icon.src).join(', ') || 'none'),
+    'none'
+);
+
 for (const path of [
     'dist/index.html',
     'dist/tags.html',
@@ -284,6 +325,9 @@ for (const path of [
     'dist/css/sidebar.css',
     'dist/css/tokens.css',
     'dist/js/nav.js',
+    'dist/favicon.ico',
+    'dist/favicon.svg',
+    'dist/apple-touch-icon.png',
     'dist/post/phalcon-0-3-1-released.html',
     'dist/pagefind/pagefind.js',
 ]) {

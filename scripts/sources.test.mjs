@@ -5,7 +5,7 @@ import { test } from 'node:test';
 
 import { footerProblems, missingTokens, sidebarProblems } from '../src/lib/design-checks.mjs';
 import { cphalconStars } from '../src/lib/stars.mjs';
-import { sourceFiles, usedBySite } from './token-sources.mjs';
+import { sourceFiles, tokensIn, usedBySite } from './token-sources.mjs';
 
 const root = new URL('../', import.meta.url);
 
@@ -141,12 +141,10 @@ test('the tokens file defines every token that the blog uses', () => {
 });
 
 test('the source scan counts a token that a component reads by name', () => {
-    // Meta.astro gives --ph-brand-400 and --ph-dark-bg to resolveToken(), for the browser colors. No stylesheet uses
-    // --ph-brand-400, so it shows that the scan counts a name in quotes.
-    const used = usedBySite();
-
-    assert.ok(used.has('--ph-brand-400'), '--ph-brand-400');
-    assert.ok(used.has('--ph-dark-bg'), '--ph-dark-bg');
+    // Meta.astro and site.webmanifest.ts give --ph-dark-bg to resolveToken(), for the browser bar. A text with a token
+    // only in quotes shows that the scan counts a name.
+    assert.deepEqual([...tokensIn("resolveToken(tokens, '--ph-only-named'); color: var(--ph-in-var);")].sort(), ['--ph-in-var', '--ph-only-named']);
+    assert.ok(usedBySite().has('--ph-dark-bg'), '--ph-dark-bg');
 });
 
 test('the CI workflow gets the design files before the tests', () => {
@@ -211,6 +209,23 @@ test('the refresh script copies the shared files and checks each one', () => {
             < Math.min(script.indexOf("copy: 'public/css/common.css'"), script.indexOf("copy: 'public/css/sidebar.css'")),
         'the tokens must come before common.css and sidebar.css',
     );
+});
+
+test('the refresh script copies the icons of phalcon/assets as bytes, and checks each one', () => {
+    // An icon is an image: refresh() must read, compare and write its bytes (binary: true). The copies are at the root
+    // of the site, where browsers and other clients ask for /favicon.ico.
+    const script = readFileSync(new URL('scripts/update-tokens.mjs', root), 'utf8');
+    const entries = [
+        ['public/favicon.ico', 'favicons/favicon.ico', 'icoProblems'],
+        ['public/favicon.svg', 'favicons/favicon.svg', 'svgProblems'],
+        ['public/apple-touch-icon.png', 'favicons/apple-touch-icon.png', '(bytes) => pngProblems(bytes, 180)'],
+        ['public/android-chrome-192x192.png', 'favicons/android-chrome-192x192.png', '(bytes) => pngProblems(bytes, 192)'],
+        ['public/android-chrome-512x512.png', 'favicons/android-chrome-512x512.png', '(bytes) => pngProblems(bytes, 512)'],
+    ];
+
+    for (const [copy, name, check] of entries) {
+        assert.ok(script.includes(`binary: true,\n            copy: '${copy}',\n            name: '${name}',\n            problems: ${check},`), copy);
+    }
 });
 
 test('the committed footer.json has no problems', () => {

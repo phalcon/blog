@@ -2,8 +2,9 @@
  * The checks of the shared files of the Phalcon sites: the design tokens
  * (phalcon/css/tokens.css), the code theme (phalcon/css/code-theme.json), the
  * shared header and footer (phalcon/css/common.css), the footer links
- * (phalcon/footer.json) and the shared sidebar (phalcon/css/sidebar.css and
- * phalcon/sidebar.json). phalcon/assets serves this file at
+ * (phalcon/footer.json), the shared sidebar (phalcon/css/sidebar.css and
+ * phalcon/sidebar.json) and the icons (phalcon/favicons/). phalcon/assets
+ * serves this file at
  * https://assets.phalcon.io/phalcon/tools/design-checks.mjs. Each site keeps a
  * copy in src/lib/, and its deploy gets the file again first. Do not change a
  * copy: change phalcon/tools/design-checks.mjs in phalcon/assets.
@@ -18,6 +19,12 @@ const COMMON_END = '/* The end of common.css. */';
 
 /** The top-level keys of footer.json. */
 const FOOTER_KEYS = ['columns', 'copyright', 'socials', 'tagline'];
+
+/** The last 12 bytes of a PNG image: the IEND chunk (a length of 0, its name and its CRC). */
+const PNG_END = [0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82];
+
+/** The first 8 bytes of a PNG image. */
+const PNG_SIGNATURE = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
 
 /** The last line of sidebar.css. A file without it is cut. */
 const SIDEBAR_END = '/* The end of sidebar.css. */';
@@ -220,6 +227,30 @@ export function footerProblems(json) {
 }
 
 /**
+ * The problems of an ICO icon (favicon.ico) for a site: an ICO image, whole
+ * (the list of images and each image are in the file), with a 32x32 image.
+ * An empty list means that the file can replace the committed copy.
+ *
+ * @param {Buffer} bytes
+ * @returns {string[]}
+ */
+export function icoProblems(bytes) {
+    // The header: 0, then 1 (an icon), then the number of images, each a 16-bit little-endian number.
+    if (bytes.length < 6 || bytes.readUInt16LE(0) !== 0 || bytes.readUInt16LE(2) !== 1 || bytes.readUInt16LE(4) === 0) {
+        return ['the file is not an ICO image'];
+    }
+
+    // Each image has an entry of 16 bytes: its width and height (0 is 256), its size at byte 8 and its offset at byte 12.
+    const entries = Array.from({ length: bytes.readUInt16LE(4) }, (_, index) => 6 + 16 * index);
+
+    if (entries.some((at) => at + 16 > bytes.length || bytes.readUInt32LE(at + 12) + bytes.readUInt32LE(at + 8) > bytes.length)) {
+        return ['the file is not whole'];
+    }
+
+    return entries.some((at) => bytes[at] === 32 && bytes[at + 1] === 32) ? [] : ['the file has no 32x32 image'];
+}
+
+/**
  * The used names that the stylesheet does not define, sorted.
  *
  * @param {string} css
@@ -230,6 +261,32 @@ export function missingTokens(css, used) {
     const defined = definedTokens(css);
 
     return [...new Set(used)].filter((name) => !defined.has(name)).sort();
+}
+
+/**
+ * The problems of a PNG icon for a site: a PNG image, whole (its last chunk
+ * is IEND), of size x size pixels. An empty list means that the file can
+ * replace the committed copy.
+ *
+ * @param {Buffer} bytes
+ * @param {number} size the width and the height, in pixels
+ * @returns {string[]}
+ */
+export function pngProblems(bytes, size) {
+    // After the signature, the IHDR chunk: its length and its name (4 bytes each), then the width and the height
+    // (32-bit big-endian numbers).
+    if (bytes.length < 24 || PNG_SIGNATURE.some((byte, index) => bytes[index] !== byte) || bytes.toString('latin1', 12, 16) !== 'IHDR') {
+        return ['the file is not a PNG image'];
+    }
+
+    if (PNG_END.some((byte, index) => bytes[bytes.length - PNG_END.length + index] !== byte)) {
+        return ['the file is not whole'];
+    }
+
+    const width = bytes.readUInt32BE(16);
+    const height = bytes.readUInt32BE(20);
+
+    return width === size && height === size ? [] : [`the image is ${width}x${height}, not ${size}x${size}`];
 }
 
 /**
@@ -333,6 +390,33 @@ export function sidebarProblems(json) {
             'projects.text needs at least one part',
         ),
     ].sort();
+}
+
+/**
+ * The problems of an SVG icon for a site: a whole SVG image (one <svg>
+ * element, after an optional XML declaration), not an HTML page, and with no
+ * script. The site serves its copy from its own origin, so a script in the
+ * file would run there. The check stops a mistake (an editor that adds a
+ * script), not an attack: a person who can change the icon on assets can also
+ * change this file. An empty list means that the file can replace the
+ * committed copy.
+ *
+ * @param {Buffer} bytes
+ * @returns {string[]}
+ */
+export function svgProblems(bytes) {
+    const text = bytes.toString('utf8').trim();
+
+    // A server that does not have the file answers with an HTML page. A file that is cut has no end tag.
+    if (!/^(?:<\?xml[^>]*\?>\s*)?<svg[\s>]/.test(text) || !text.endsWith('</svg>')) {
+        return ['the file is not an SVG image'];
+    }
+
+    // A script element (also with a prefix, as svg:script), an event attribute, a javascript: URL, or a foreignObject
+    // (it can hold HTML).
+    const script = /<(?:[\w-]+:)?script[\s>]|\son[a-z]+\s*=|javascript:|<(?:[\w-]+:)?foreignObject[\s>]/i;
+
+    return script.test(text) ? ['the file has a script'] : [];
 }
 
 /**

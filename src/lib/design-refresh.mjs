@@ -7,18 +7,35 @@
  *
  * A site lists its files in scripts/update-tokens.mjs: the name of the file,
  * the committed copy, and the check that a new file must pass (see
- * design-checks.mjs). A file that cannot be read, or that has a problem, keeps
- * its committed copy and prints a GitHub Actions warning. Each file is checked
- * alone. Nothing is committed: the committed copies are the default.
+ * design-checks.mjs). An image (an icon) has `binary: true`: the tool reads,
+ * compares and writes its bytes as they are. A file that cannot be read, that
+ * has a problem, or whose check fails with an error, keeps its committed copy
+ * and prints a GitHub Actions warning. Each file is checked alone. Nothing is committed: the committed
+ * copies are the default.
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 /**
- * @typedef {object} DesignFile
+ * A shared file of text (a stylesheet, a JSON file).
+ *
+ * @typedef {object} TextFile
+ * @property {false} [binary]
  * @property {string} copy the committed copy, relative to the current folder or absolute
  * @property {string} name the name of the file under the source (or under the folder `from`)
  * @property {(text: string) => string[]} problems the problems of a new file; an empty list means that it can replace the copy
  */
+
+/**
+ * A shared file of bytes (an image): the tool reads, compares and writes it as it is.
+ *
+ * @typedef {object} BinaryFile
+ * @property {true} binary
+ * @property {string} copy the committed copy, relative to the current folder or absolute
+ * @property {string} name the name of the file under the source (or under the folder `from`)
+ * @property {(bytes: Buffer) => string[]} problems the problems of a new file; an empty list means that it can replace the copy
+ */
+
+/** @typedef {TextFile | BinaryFile} DesignFile */
 
 /**
  * @typedef {object} RefreshResult
@@ -51,9 +68,9 @@ export async function refresh({ files, from = null, log = console.log, source })
     /** @type {RefreshResult[]} */
     const results = [];
 
-    for (const { copy, name, problems: check } of files) {
-        const loaded = await load(name, from, source);
-        const problems = 'problem' in loaded ? [loaded.problem] : check(loaded.text);
+    for (const { binary = false, copy, name, problems: check } of files) {
+        const loaded = await load(name, from, source, binary);
+        const problems = 'problem' in loaded ? [loaded.problem] : checked(check, loaded.content);
         /** @type {'changed' | 'kept' | 'missing' | 'same'} */
         let result = 'kept';
 
@@ -61,10 +78,10 @@ export async function refresh({ files, from = null, log = console.log, source })
             problems.forEach((problem) => log(`::warning title=Design tokens::${name}: ${problem}`));
             // With no committed copy, there is nothing to keep.
             result = existsSync(copy) ? 'kept' : 'missing';
-        } else if ('text' in loaded && existsSync(copy) && readFileSync(copy, 'utf8') === loaded.text) {
+        } else if ('content' in loaded && existsSync(copy) && sameAsCopy(copy, loaded.content)) {
             result = 'same';
-        } else if ('text' in loaded) {
-            writeFileSync(copy, loaded.text);
+        } else if ('content' in loaded) {
+            writeFileSync(copy, loaded.content);
             result = 'changed';
         }
 
@@ -76,17 +93,35 @@ export async function refresh({ files, from = null, log = console.log, source })
 }
 
 /**
- * One new file, as { text } or { problem }.
+ * The problems that the check finds in the new file. An error of the check is
+ * a problem too, so that one wrong entry does not stop the other files.
+ *
+ * @param {(content: any) => string[]} check
+ * @param {string | Buffer} content
+ * @returns {string[]}
+ */
+function checked(check, content) {
+    try {
+        return check(content);
+    } catch (error) {
+        return [`the check failed: ${error instanceof Error ? error.message : String(error)}`];
+    }
+}
+
+/**
+ * One new file, as { content } or { problem }: its text, or its bytes when
+ * binary is true.
  *
  * @param {string} name
  * @param {string | null} from
  * @param {string} source
- * @returns {Promise<{ text: string } | { problem: string }>}
+ * @param {boolean} binary
+ * @returns {Promise<{ content: string | Buffer } | { problem: string }>}
  */
-async function load(name, from, source) {
+async function load(name, from, source, binary) {
     try {
         if (from) {
-            return { text: readFileSync(`${from}/${name}`, 'utf8') };
+            return { content: binary ? readFileSync(`${from}/${name}`) : readFileSync(`${from}/${name}`, 'utf8') };
         }
 
         const response = await fetch(`${source}/${name}`, { signal: AbortSignal.timeout(30000) });
@@ -95,8 +130,20 @@ async function load(name, from, source) {
             throw new Error(`HTTP ${response.status}`);
         }
 
-        return { text: await response.text() };
+        return { content: binary ? Buffer.from(await response.arrayBuffer()) : await response.text() };
     } catch (error) {
         return { problem: `cannot read the file: ${error instanceof Error ? error.message : String(error)}` };
     }
+}
+
+/**
+ * True when the committed copy has this content: the same text, or the same
+ * bytes.
+ *
+ * @param {string} copy
+ * @param {string | Buffer} content
+ * @returns {boolean}
+ */
+function sameAsCopy(copy, content) {
+    return typeof content === 'string' ? readFileSync(copy, 'utf8') === content : readFileSync(copy).equals(content);
 }
