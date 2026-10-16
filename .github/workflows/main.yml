@@ -78,11 +78,11 @@ jobs:
         # public/favicon.svg, public/apple-touch-icon.png,
         # public/android-chrome-192x192.png and
         # public/android-chrome-512x512.png are copies of the icons in
-        # phalcon/favicons/ there. The script keeps a
-        # committed copy, with a warning, when its download fails or the file
-        # is not correct (for example, a token that the blog uses is missing).
-        # It does not commit. It runs before the tests, so that they check the
-        # files that the build uses.
+        # phalcon/favicons/ there. The script keeps a committed copy, with a
+        # warning, when its download fails or the file is not correct (for
+        # example, a token that the blog uses is missing, or an icon is not an
+        # image of its size). It does not commit. It runs before the tests, so
+        # that they check the files that the build uses.
         run: node scripts/update-tokens.mjs
 
       - name: Install dependencies

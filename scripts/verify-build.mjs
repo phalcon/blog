@@ -274,24 +274,26 @@ count(
 
 /*
  * The icons, the same set as on the other Phalcon sites. Every page links the
- * copies in public/ of phalcon/favicons/ (phalcon/assets) and the manifest, and
- * no tag of the old set. The manifest has the name of the site, a short name of
- * the site part only (the icon shows the brand), the description of the pages,
- * the color of the browser bar, and the two icons of a home screen, which are
- * in dist/. A home screen icon opens the home page in the browser.
+ * copies in public/ of phalcon/favicons/ (phalcon/assets) and the manifest,
+ * has the browser bar color of the tokens, and has no tag of the old set. The
+ * manifest has the name of the site, a short name of the site part only (the
+ * icon shows the brand), the description of the pages, the color of the
+ * browser bar, and the two icons of a home screen, which are in dist/. A home
+ * screen icon opens the home page in the browser.
  */
+const darkBg = resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-dark-bg');
 const ICON_TAGS = [
     '<link rel="icon" href="/favicon.ico" sizes="32x32">',
     '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
     '<link rel="apple-touch-icon" href="/apple-touch-icon.png">',
     '<link rel="manifest" href="/site.webmanifest">',
+    `<meta name="theme-color" content="${darkBg}">`,
 ].join(' ');
 const manifest = measure(() => JSON.parse(readFileSync('dist/site.webmanifest', 'utf8')));
-const darkBg = resolveToken(readFileSync('public/css/tokens.css', 'utf8'), '--ph-dark-bg');
 
 count(
     'pages without exactly the icon tags',
-    measure(() => pages.filter((file) => [...readFileSync(file, 'utf8').matchAll(/<link[^>]*rel="(?:apple-touch-icon|icon|manifest|mask-icon|shortcut icon)"[^>]*>/g)]
+    measure(() => pages.filter((file) => [...readFileSync(file, 'utf8').matchAll(/<link[^>]*rel="(?:apple-touch-icon|icon|manifest|mask-icon|shortcut icon)"[^>]*>|<meta[^>]*name="theme-color"[^>]*>/g)]
         .map((match) => match[0])
         .join(' ') !== ICON_TAGS).length),
     0
@@ -306,7 +308,11 @@ count(
 );
 count('manifest display and start URL', measure(() => `${manifest.display} ${manifest.start_url}`), 'browser /');
 count('manifest colors', measure(() => `${manifest.background_color} ${manifest.theme_color}`), `${darkBg} ${darkBg}`);
-count('manifest icon sizes', measure(() => manifest.icons.map((icon) => icon.sizes).join(' ')), '192x192 512x512');
+count(
+    'manifest icons',
+    measure(() => manifest.icons.map((icon) => `${icon.src} ${icon.sizes} ${icon.type}`).join(', ')),
+    '/android-chrome-192x192.png 192x192 image/png, /android-chrome-512x512.png 512x512 image/png'
+);
 count(
     'manifest icons that are not in dist',
     measure(() => manifest.icons.filter((icon) => !existsSync(`dist${icon.src}`)).map((icon) => icon.src).join(', ') || 'none'),
