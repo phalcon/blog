@@ -4,7 +4,7 @@ services:
     phalcon-blog-astro:
         container_name: phalcon-blog-astro
         hostname: phalcon-blog-astro
-        image: node:22-alpine
+        image: node:26-alpine
         working_dir: /app
         volumes:
             - .:/app
